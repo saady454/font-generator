@@ -1,0 +1,205 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TextStyleConverter from '../../components/TextStyleConverter.astro';
+import FontStyleGrid from '../../components/FontStyleGrid.astro';
+import GameEnhancedSections from '../../components/GameEnhancedSections.astro';
+import { GAMES_DATA, type GameInfo } from '../../data/game-metadata';
+import { GAME_NICKNAMES_DATA } from '../../data/game-nicknames';
+import { NAVIGATION_DATA } from '../../data/navigation';
+
+const gameInfo: GameInfo = GAMES_DATA['free-fire'] || {
+  id: 'free-fire',
+  name: 'Free Fire',
+  slug: '/spiele/free-fire',
+  genre: 'Mobile Battle Royale',
+  description: 'Spezielle Symbole, Kronen und Clan-Namen für Garena Free Fire.',
+  exampleNicknames: [
+    '👑 𝕯 𝕰 𝕬 𝕿 𝕳 👑',
+    '꧁༒☬FREE_FIRE☬༒꧂',
+    '🔥 𝕱𝖎𝖗𝖊𝕾𝖙𝖔𝖗𝖒 🔥',
+    '⚡ 𝕭𝖑𝖆𝖈𝖐𝕺𝖕𝖘 ⚡',
+    '☠️ 𝕾𝖓𝖎𝖕𝖊𝖗 ☠️',
+  ],
+  namingRules: [
+    'Free Fire Namen können bis zu 12 Zeichen lang sein.',
+    'Sonderzeichen und Symbole werden von der Free Fire Engine direkt unterstützt.',
+    'Achte darauf, dass manche Symbole auf älteren Android-Geräten als Rechteck erscheinen können.',
+  ],
+  recommendedStyles: ['Flügel & Kronen', 'Gotisch', 'Zalgo'],
+};
+
+const gameSectionsConfig = GAME_NICKNAMES_DATA['free-fire'];
+
+const gameFaqs = [
+  {
+    q: 'Wie ändere ich meinen Spielernamen in Free Fire?',
+    a: '1. Öffne Free Fire und tippe oben links auf dein Profilbanner.\n2. Klicke auf das gelbe Bearbeiten-Symbol neben deinem aktuellen Nickname.\n3. Füge deinen kopierten stylischen Namen ein und bestätige die Änderung (mit Diamanten oder einer Namensänderungskarte).',
+  },
+  {
+    q: 'Gibt es ein Zeichenlimit für Free Fire Nicknames?',
+    a: 'Ja, Free Fire beschränkt Spielernamen auf maximal 12 Zeichen. Da manche Unicode-Symbole zwei Zeichen belegen können, empfiehlt sich ein kurzer Basisname.',
+  },
+  {
+    q: 'Werden alle Sonderzeichen in Free Fire angezeigt?',
+    a: 'Die meisten standardisierten Unicode-Symbole (wie Sterne, Kronen, Blitze und japanische Klammern) werden auf iOS und modernen Android-Geräten fehlerfrei dargestellt.',
+  },
+  {
+    q: 'Kann ich für Sonderzeichen in Free Fire gebannt werden?',
+    a: 'Nein. Unicode-Schriftzeichen und Symbole sind standardisierter Text und stellen keinen Cheat oder Hack dar.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": gameFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+---
+
+<Layout
+  title="Free Fire Nickname Generator – Coole Spielernamen & Symbole"
+  description="Kostenloser Free Fire Nickname Generator: Erstelle epische Spielernamen, Clantags und Sonderzeichen für Garena Free Fire. Jetzt kostenlos kopieren!"
+  canonicalUrl="/spiele/free-fire"
+  schema={faqSchema}
+>
+  <main class="py-12 md:py-16 bg-[#0a0a08] game-theme-free-fire" data-game-theme="free-fire">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <a href="/spiele" class="hover:text-white transition-colors">Spiele</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Free Fire</span>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="game-guide-badge inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3 transition-all">
+          <span>🎮 Mobile Battle Royale</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <span class="game-h1-accent transition-colors">Free Fire</span> Nickname Generator
+        </h1>
+        <p class="mt-4 text-base text-stone-300 leading-relaxed max-w-2xl mx-auto">
+          {gameInfo.description} Gestalte deinen individuellen Spielernamen mit Kronen, Flügeln und einzigartigen Symbolen für das perfekte Free Fire Profil.
+        </p>
+      </div>
+
+      <!-- Main Interactive Text Converter Tool -->
+      <TextStyleConverter
+        defaultText="PlayerOne"
+        pageSlug="free-fire"
+        filterCategory="spiele"
+        showCategoryTabs={true}
+        showPresets={true}
+        maxChars={12}
+        limit={10}
+        showMoreButton={true}
+      />
+
+      <!-- Content Grid: 4 New Enhanced Sections + Rules & FAQs (Left) & Sidebar (Right) -->
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- LEFT COLUMN (lg:col-span-2) -->
+        <div class="lg:col-span-2 space-y-8">
+          <!-- 4 Enhanced Sections (Ready-made, Distinct styles, Categorized + Symbols, Manual Generator) -->
+          {gameSectionsConfig && (
+            <GameEnhancedSections
+              gameData={gameSectionsConfig}
+              gameId="free-fire"
+            />
+          )}
+
+          <!-- Existing Section: Beliebte Nickname-Ideen für Free Fire -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <span>⚡</span> Beliebte Nickname-Ideen für {gameInfo.name}
+            </h2>
+            <p class="text-xs sm:text-sm text-stone-400 mb-6">
+              Klicke auf einen Namen, um ihn sofort in die Zwischenablage zu kopieren:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="game-nicknames-grid">
+              {gameInfo.exampleNicknames.map((nick) => (
+                <button
+                  type="button"
+                  class="btn-copy-game-nick p-3.5 rounded-2xl bg-[#0a0a08] border border-white/5 hover:border-amber-500/40 text-left font-mono text-sm text-white flex items-center justify-between group hover:-translate-y-0.5 transition-all"
+                  data-text={nick}
+                >
+                  <span class="break-all">{nick}</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-white/5 text-[11px] font-bold text-amber-400 group-hover:bg-amber-500 group-hover:text-black transition-colors shrink-0 ml-2">
+                    Kopieren
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <!-- Existing Section: Namensregeln in Free Fire -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <span>📋</span> Namensregeln in {gameInfo.name}
+            </h2>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-stone-300">
+              {gameInfo.namingRules.map((rule) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="text-amber-400 font-bold">✓</span>
+                  <span>{rule}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Existing Section: FAQ zu Free Fire Spielernamen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> FAQ zu {gameInfo.name} Spielernamen
+            </h2>
+            <div class="space-y-4">
+              {gameFaqs.map((faq) => (
+                <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
+                  <h3 class="text-sm font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed whitespace-pre-line">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDEBAR COLUMN -->
+        <div class="space-y-6">
+          <FontStyleGrid
+            title="Empfohlene Schriftstile"
+            titleIcon="🎨"
+            isAmberTitle={true}
+          />
+
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-stone-300 mb-4">
+              Weitere Spiele
+            </h3>
+            <div class="space-y-2">
+              {NAVIGATION_DATA.games.items
+                .filter((item) => !item.href.includes('free-fire'))
+                .map((other) => (
+                  <a
+                    href={other.href}
+                    class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-amber-500/10 border border-white/5 hover:border-amber-500/30 text-xs font-semibold text-stone-300 hover:text-white transition-all group"
+                  >
+                    <span>{other.icon} {other.title}</span>
+                    <span class="group-hover:translate-x-1 transition-transform text-amber-400">→</span>
+                  </a>
+                ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

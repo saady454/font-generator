@@ -1,0 +1,79 @@
+---
+import '../styles/global.css';
+import { SITE_CONFIG } from '../config/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = SITE_CONFIG.meta.title,
+  description = SITE_CONFIG.meta.description,
+} = Astro.props;
+
+const webApplicationSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": SITE_CONFIG.name,
+  "url": SITE_CONFIG.baseUrl,
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "de-DE",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  }
+});
+
+const organizationSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": SITE_CONFIG.name,
+  "url": SITE_CONFIG.baseUrl,
+  "logo": SITE_CONFIG.logoUrl
+});
+---
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Canonical and Hreflang -->
+    <link rel="canonical" href={SITE_CONFIG.baseUrl} />
+    <link rel="alternate" hreflang="de-de" href={SITE_CONFIG.baseUrl} />
+    <link rel="alternate" hreflang="de" href={SITE_CONFIG.baseUrl} />
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Immediate Theme Initialization to Prevent FOUC -->
+    <script is:inline>
+      (function() {
+        try {
+          var saved = localStorage.getItem('theme');
+          var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+          if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+          } else {
+            document.documentElement.removeAttribute('data-theme');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={webApplicationSchema} />
+    <script type="application/ld+json" set:html={organizationSchema} />
+  </head>
+  <body class="bg-void text-ghost antialiased selection:bg-amber-500 selection:text-void min-h-screen">
+    <slot />
+  </body>
+</html>

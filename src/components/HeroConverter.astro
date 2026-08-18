@@ -1,0 +1,40 @@
+---
+import TextStyleConverter from './TextStyleConverter.astro';
+---
+
+<section class="relative pt-12 pb-20 md:pt-16 md:pb-24 overflow-hidden">
+  <!-- Subtle Background Radial Glow -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-[radial-gradient(circle,_rgba(245,158,11,0.08)_0%,_transparent_70%)] blur-3xl"></div>
+  </div>
+
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6">
+    <!-- Hero Header -->
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
+        <span>✨ 500+ Unicode Schriftstile</span>
+      </div>
+
+      <!-- EXACT H1 HEAD KEYWORD TARGET: "Schriftarten Generator" -->
+      <h1 class="text-3xl sm:text-5xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+        Schriftarten Generator — Kostenlos schöne Schriften erstellen
+      </h1>
+
+      <!-- FIRST 100 WORDS: Naturally contains "Schriftarten" and "Schriftgenerator" -->
+      <p class="mt-4 text-base sm:text-lg text-stone-300 leading-relaxed max-w-2xl mx-auto">
+        Mit unserem kostenlosen <strong class="text-white font-semibold">Schriftarten Generator</strong> erstellst du im Handumdrehen auffällige Unicode-Texte. Unser moderner <strong class="text-white font-semibold">Schriftgenerator</strong> wandelt deine Texte in über 500 Schriftstile für Instagram Bio, TikTok, WhatsApp, Discord Server und epische Gaming-Nicknames um.
+      </p>
+    </div>
+
+    <!-- Universal Converter Component -->
+    <TextStyleConverter
+      defaultText="Schriftarten Generator"
+      filterCategory="alle"
+      showCategoryTabs={true}
+      showPresets={true}
+      maxChars={200}
+      limit={10}
+      showMoreButton={true}
+    />
+  </div>
+</section>

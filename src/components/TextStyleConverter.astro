@@ -1,0 +1,525 @@
+---
+import { categories } from '../data/unicode-styles';
+import { FONT_PAGE_VARIANTS, type FontVariant } from '../data/font-variants';
+import { generateAlgorithmicMixedStyles, type GeneratedStyleOutput } from '../data/mixed-style-generator';
+
+interface Props {
+  defaultText?: string;
+  pageSlug?: string;
+  filterCategory?: string;
+  showCategoryTabs?: boolean;
+  showPresets?: boolean;
+  maxChars?: number;
+  limit?: number;
+  showMoreButton?: boolean;
+}
+
+const {
+  defaultText = 'Schriftarten Generator',
+  pageSlug,
+  filterCategory = 'alle',
+  showCategoryTabs = true,
+  showPresets = true,
+  maxChars = 200,
+  limit = 10,
+  showMoreButton = true,
+} = Astro.props;
+
+const initialPresets = [
+  'Schriftarten Generator',
+  'Instagram Bio Vibes ✨',
+  '꧁༺ Pro Gamer ༻꧂',
+  'Liebe & Träume 💖',
+  'Aesthetic Style',
+];
+
+// Check if this page has dedicated specific variants
+const isDedicatedPage = Boolean(pageSlug && FONT_PAGE_VARIANTS[pageSlug]);
+const dedicatedVariants: FontVariant[] = isDedicatedPage && pageSlug ? FONT_PAGE_VARIANTS[pageSlug] : [];
+const dedicatedLimit = 10;
+
+// Universal algorithmic 500+ styles for homepage
+const allGeneratedStyles = !isDedicatedPage ? generateAlgorithmicMixedStyles(defaultText, 520) : [];
+const totalUniversalCount = allGeneratedStyles.length;
+
+const initialVisibleStyles = isDedicatedPage
+  ? dedicatedVariants.slice(0, dedicatedLimit)
+  : allGeneratedStyles.slice(0, limit);
+
+const initialHiddenCount = isDedicatedPage
+  ? Math.max(0, dedicatedVariants.length - dedicatedLimit)
+  : Math.max(0, totalUniversalCount - limit);
+---
+
+<div
+  class="converter-wrapper w-full"
+  data-page-slug={pageSlug || ''}
+  data-initial-category={filterCategory}
+  data-limit={isDedicatedPage ? dedicatedLimit : limit}
+  data-max-chars={maxChars}
+>
+  <!-- Text Input Card -->
+  <div class="bg-[#141412] border border-white/10 rounded-3xl p-5 sm:p-7 shadow-2xl shadow-black/60 relative glow-amber-hover transition-all">
+    <!-- Input Box -->
+    <div class="relative">
+      <textarea
+        id="converter-input-box"
+        rows="3"
+        maxlength={maxChars}
+        placeholder="Tippe deinen Text hier ein (z. B. Dein Name, Zitat oder Spruch)..."
+        class="w-full bg-[#0a0a08] border-2 border-white/10 focus:border-amber-500 rounded-2xl p-4 text-base sm:text-lg font-medium text-white placeholder:text-stone-500 focus:outline-none focus:ring-4 focus:ring-amber-500/20 transition-all resize-none"
+        aria-label="Text zum Konvertieren eingeben"
+      >{defaultText}</textarea>
+
+      <!-- Input Controls (Char count + Quick actions) -->
+      <div class="flex items-center justify-between mt-2 px-1 text-xs text-stone-400">
+        <div id="converter-char-count" class="font-mono font-semibold text-amber-500">
+          {defaultText.length} / {maxChars} Zeichen
+        </div>
+        <div class="flex items-center gap-2">
+          <button
+            type="button"
+            id="btn-uppercase"
+            class="px-2 py-1 rounded-md bg-white/5 hover:bg-white/10 text-stone-300 hover:text-white font-semibold transition-colors"
+            title="In Großbuchstaben umwandeln"
+          >
+            AA
+          </button>
+          <button
+            type="button"
+            id="btn-lowercase"
+            class="px-2 py-1 rounded-md bg-white/5 hover:bg-white/10 text-stone-300 hover:text-white font-semibold transition-colors"
+            title="In Kleinbuchstaben umwandeln"
+          >
+            aa
+          </button>
+          <button
+            type="button"
+            id="btn-clear-text"
+            class="px-2.5 py-1 rounded-md bg-white/5 hover:bg-red-500/20 text-stone-300 hover:text-red-400 font-semibold transition-colors"
+            title="Textfeld leeren"
+          >
+            ✕ Leeren
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inspiration Preset Pills -->
+    {showPresets && (
+      <div class="mt-5 flex flex-wrap items-center gap-2">
+        <span class="text-xs font-semibold text-stone-400 uppercase tracking-wider mr-1">
+          Beispiele:
+        </span>
+        {initialPresets.map((preset) => (
+          <button
+            type="button"
+            class="preset-pill px-3 py-1 rounded-full text-xs bg-white/5 hover:bg-amber-500/20 text-stone-300 hover:text-amber-400 border border-white/5 hover:border-amber-500/30 transition-all cursor-pointer font-medium"
+            data-preset={preset}
+          >
+            {preset}
+          </button>
+        ))}
+      </div>
+    )}
+
+    <!-- Category Filter Tabs -->
+    {showCategoryTabs && !isDedicatedPage && (
+      <div
+        id="converter-filter-tabs"
+        class="mt-6 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none border-t border-white/5 pt-5"
+      >
+        {categories.map((cat) => (
+          <button
+            type="button"
+            data-category={cat.id}
+            class={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border cursor-pointer ${
+              filterCategory === cat.id
+                ? 'bg-amber-500 text-black border-amber-500 shadow-md shadow-amber-500/20 font-extrabold'
+                : 'bg-white/5 text-stone-300 border-white/10 hover:border-amber-500/40 hover:text-white'
+            }`}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+    )}
+
+    {isDedicatedPage ? (
+      <div class="mt-6 flex flex-col sm:flex-row sm:items-center justify-between pb-2 border-b border-white/5 gap-1.5">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5" id="dedicated-styles-count-label">
+          <span>✨</span> Spezifische Variationen ({dedicatedVariants.length} Stile verfügbar)
+          <span class="text-[11px] font-normal text-stone-400 normal-case ml-1" id="dedicated-shown-ratio">
+            — Zeige {Math.min(dedicatedLimit, dedicatedVariants.length)} von {dedicatedVariants.length}
+          </span>
+        </span>
+        <span class="text-[11px] text-stone-400">Tippe oben, um alle Stile live zu verändern</span>
+      </div>
+    ) : (
+      <div class="mt-6 flex flex-col sm:flex-row sm:items-center justify-between pb-2 border-b border-white/5 gap-1.5">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5" id="generic-styles-count-label">
+          <span>✨</span> <span id="generic-total-count">500+ Unicode Schriftstile</span>
+          <span class="text-[11px] font-normal text-stone-400 normal-case ml-1" id="generic-shown-ratio">
+            — Zeige {Math.min(limit, totalUniversalCount)} von 500+
+          </span>
+        </span>
+        <span class="text-[11px] text-stone-400">Tippe oben, um alle 500+ Stile live zu verändern</span>
+      </div>
+    )}
+
+    <!-- Results Cards Stream (Pre-rendered for instantaneous 0ms display + SEO) -->
+    <div id="converter-results-grid" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3.5" aria-live="polite">
+      {isDedicatedPage ? (
+        (initialVisibleStyles as FontVariant[]).map((v) => {
+          const transformed = v.transform(defaultText);
+          return (
+            <div class="flex flex-col justify-between p-4 rounded-2xl bg-[#0e0e0c] border border-white/10 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all shadow-md group">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-stone-400 font-mono flex items-center gap-1.5">
+                  {v.badge && (
+                    <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-400 text-[10px] font-bold">
+                      {v.badge}
+                    </span>
+                  )}
+                  <span class="text-stone-200 font-semibold">{v.name}</span>
+                </span>
+              </div>
+
+              <div class="text-base sm:text-lg text-white font-normal py-2 break-all select-all font-sans">
+                {transformed}
+              </div>
+
+              <div class="flex items-center justify-between pt-2 mt-1 border-t border-white/5">
+                <span class="text-[10px] text-stone-500 truncate max-w-[170px]">
+                  {v.description || '1-Klick Kopieren'}
+                </span>
+                <button
+                  type="button"
+                  class="btn-copy-style inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-amber-500 text-black hover:bg-amber-400 font-bold text-xs shadow-sm hover:shadow-amber-500/20 transition-all focus:outline-none cursor-pointer"
+                  data-copy={transformed}
+                >
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                  <span>Kopieren</span>
+                </button>
+              </div>
+            </div>
+          );
+        })
+      ) : (
+        (initialVisibleStyles as GeneratedStyleOutput[]).map((item) => (
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-2xl bg-[#0e0e0c] border border-white/10 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all shadow-md group gap-3">
+            <div class="text-base sm:text-lg text-white font-normal py-1 break-all select-all font-sans">
+              {item.styledText}
+            </div>
+
+            <button
+              type="button"
+              class="btn-copy-style shrink-0 inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-amber-500 text-black hover:bg-amber-400 font-bold text-xs shadow-sm hover:shadow-amber-500/20 transition-all focus:outline-none cursor-pointer"
+              data-copy={item.styledText}
+            >
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              <span>Kopieren</span>
+            </button>
+          </div>
+        ))
+      )}
+    </div>
+
+    <!-- Show More Button -->
+    {((!isDedicatedPage && showMoreButton) || (isDedicatedPage && initialHiddenCount > 0)) && (
+      <div class={`mt-8 text-center ${initialHiddenCount > 0 ? '' : 'hidden'}`} id="show-more-wrapper">
+        <button
+          type="button"
+          id="btn-show-more-styles"
+          class="inline-flex items-center justify-center px-8 py-3.5 rounded-2xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 hover:text-amber-300 border border-amber-500/30 font-bold text-sm transition-all focus:outline-none hover:scale-105 cursor-pointer shadow-lg shadow-black/40"
+        >
+          <span>{isDedicatedPage ? 'Weitere Variationen laden' : 'Alle weiteren Schriftarten anzeigen'}</span>
+        </button>
+      </div>
+    )}
+  </div>
+</div>
+
+<script>
+  import { FONT_PAGE_VARIANTS, type FontVariant } from '../data/font-variants';
+  import { generateAlgorithmicMixedStyles, type GeneratedStyleOutput } from '../data/mixed-style-generator';
+
+  function escapeHtml(str: string): string {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function initConverter() {
+    const wrapper = document.querySelector('.converter-wrapper') as HTMLElement;
+    if (!wrapper) return;
+
+    const pageSlug = wrapper.getAttribute('data-page-slug') || '';
+    const initialLimit = parseInt(wrapper.getAttribute('data-limit') || '10', 10);
+    const maxChars = parseInt(wrapper.getAttribute('data-max-chars') || '200', 10);
+
+    const isDedicated = Boolean(pageSlug && FONT_PAGE_VARIANTS[pageSlug]);
+
+    const inputBox = document.getElementById('converter-input-box') as HTMLTextAreaElement;
+    const charCount = document.getElementById('converter-char-count');
+    const resultsGrid = document.getElementById('converter-results-grid');
+    const showMoreBtn = document.getElementById('btn-show-more-styles');
+    const showMoreWrapper = document.getElementById('show-more-wrapper');
+    const filterTabs = document.getElementById('converter-filter-tabs');
+    const shownRatio = document.getElementById('dedicated-shown-ratio');
+    const genericShownRatio = document.getElementById('generic-shown-ratio');
+    const genericTotalCount = document.getElementById('generic-total-count');
+
+    let currentText = inputBox?.value || 'Schriftarten Generator';
+    let visibleCount = initialLimit;
+    let visibleCountGeneric = initialLimit;
+
+    function renderOutputs() {
+      if (!resultsGrid) return;
+
+      const textToTransform = currentText.trim().length > 0 ? currentText : 'Schriftarten Generator';
+
+      if (isDedicated && pageSlug) {
+        const variants: FontVariant[] = FONT_PAGE_VARIANTS[pageSlug] || [];
+        const displayCount = Math.min(visibleCount, variants.length);
+        const visible = variants.slice(0, displayCount);
+        const hiddenCount = Math.max(0, variants.length - displayCount);
+
+        if (shownRatio) {
+          shownRatio.textContent = `— Zeige ${displayCount} von ${variants.length}`;
+        }
+
+        if (showMoreWrapper) {
+          if (hiddenCount > 0) {
+            showMoreWrapper.classList.remove('hidden');
+          } else {
+            showMoreWrapper.classList.add('hidden');
+          }
+        }
+
+        resultsGrid.innerHTML = visible
+          .map((v) => {
+            const transformed = v.transform(textToTransform);
+            const escapedTransformed = escapeHtml(transformed);
+            return `
+              <div class="flex flex-col justify-between p-4 rounded-2xl bg-[#0e0e0c] border border-white/10 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all shadow-md group">
+                <div class="flex items-center justify-between gap-2 mb-2">
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-stone-400 font-mono flex items-center gap-1.5">
+                    ${v.badge ? `<span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-400 text-[10px] font-bold">${v.badge}</span>` : ''}
+                    <span class="text-stone-200 font-semibold">${v.name}</span>
+                  </span>
+                </div>
+
+                <div class="text-base sm:text-lg text-white font-normal py-2 break-all select-all font-sans">
+                  ${escapedTransformed}
+                </div>
+
+                <div class="flex items-center justify-between pt-2 mt-1 border-t border-white/5">
+                  <span class="text-[10px] text-stone-500 truncate max-w-[170px]">
+                    ${v.description || '1-Klick Kopieren'}
+                  </span>
+                  <button
+                    type="button"
+                    class="btn-copy-style inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-amber-500 text-black hover:bg-amber-400 font-bold text-xs shadow-sm hover:shadow-amber-500/20 transition-all focus:outline-none cursor-pointer"
+                    data-copy="${escapedTransformed}"
+                  >
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <span>Kopieren</span>
+                  </button>
+                </div>
+              </div>
+            `;
+          })
+          .join('');
+        return;
+      }
+
+      // Universal 500+ Algorithmic Generator
+      const allGenerated = generateAlgorithmicMixedStyles(textToTransform, 520);
+      const totalCount = allGenerated.length;
+      const displayCount = Math.min(visibleCountGeneric, totalCount);
+      const visible = allGenerated.slice(0, displayCount);
+      const hiddenCount = Math.max(0, totalCount - displayCount);
+
+      if (genericTotalCount) {
+        genericTotalCount.textContent = `500+ Unicode Schriftstile`;
+      }
+      if (genericShownRatio) {
+        genericShownRatio.textContent = `— Zeige ${displayCount} von 500+`;
+      }
+
+      if (showMoreWrapper) {
+        if (hiddenCount > 0) {
+          showMoreWrapper.classList.remove('hidden');
+        } else {
+          showMoreWrapper.classList.add('hidden');
+        }
+      }
+
+      resultsGrid.innerHTML = visible
+        .map((item) => {
+          const escapedTransformed = escapeHtml(item.styledText);
+          return `
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-2xl bg-[#0e0e0c] border border-white/10 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all shadow-md group gap-3">
+              <div class="text-base sm:text-lg text-white font-normal py-1 break-all select-all font-sans">
+                ${escapedTransformed}
+              </div>
+
+              <button
+                type="button"
+                class="btn-copy-style shrink-0 inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-amber-500 text-black hover:bg-amber-400 font-bold text-xs shadow-sm hover:shadow-amber-500/20 transition-all focus:outline-none cursor-pointer"
+                data-copy="${escapedTransformed}"
+              >
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                <span>Kopieren</span>
+              </button>
+            </div>
+          `;
+        })
+        .join('');
+    }
+
+    function updateCount() {
+      if (!charCount || !inputBox) return;
+      const len = inputBox.value.length;
+      charCount.textContent = `${len} / ${maxChars} Zeichen`;
+    }
+
+    // Input typing listener
+    if (inputBox) {
+      const handleInput = () => {
+        currentText = inputBox.value;
+        updateCount();
+        renderOutputs();
+      };
+      inputBox.addEventListener('input', handleInput);
+      inputBox.addEventListener('keyup', handleInput);
+      inputBox.addEventListener('change', handleInput);
+    }
+
+    // Uppercase / Lowercase / Clear
+    document.getElementById('btn-uppercase')?.addEventListener('click', () => {
+      if (!inputBox) return;
+      inputBox.value = inputBox.value.toUpperCase();
+      currentText = inputBox.value;
+      updateCount();
+      renderOutputs();
+    });
+
+    document.getElementById('btn-lowercase')?.addEventListener('click', () => {
+      if (!inputBox) return;
+      inputBox.value = inputBox.value.toLowerCase();
+      currentText = inputBox.value;
+      updateCount();
+      renderOutputs();
+    });
+
+    document.getElementById('btn-clear-text')?.addEventListener('click', () => {
+      if (!inputBox) return;
+      inputBox.value = '';
+      currentText = '';
+      inputBox.focus();
+      updateCount();
+      renderOutputs();
+    });
+
+    // Presets listener
+    document.querySelectorAll('.preset-pill').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const preset = btn.getAttribute('data-preset');
+        if (preset && inputBox) {
+          inputBox.value = preset;
+          currentText = preset;
+          updateCount();
+          renderOutputs();
+        }
+      });
+    });
+
+    // Filter Tabs
+    filterTabs?.addEventListener('click', (e) => {
+      const target = (e.target as HTMLElement).closest('button');
+      if (!target) return;
+      const cat = target.getAttribute('data-category');
+      if (!cat) return;
+
+      visibleCountGeneric = initialLimit;
+
+      filterTabs.querySelectorAll('button').forEach((b) => {
+        const isSelected = b.getAttribute('data-category') === cat;
+        b.className = isSelected
+          ? 'px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border bg-amber-500 text-black border-amber-500 shadow-md shadow-amber-500/20 font-extrabold'
+          : 'px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border bg-white/5 text-stone-300 border-white/10 hover:border-amber-500/40 hover:text-white';
+      });
+
+      renderOutputs();
+    });
+
+    // Show More (+40 on generic view, +20 on dedicated pages)
+    showMoreBtn?.addEventListener('click', () => {
+      if (isDedicated) {
+        visibleCount += 20;
+      } else {
+        visibleCountGeneric += 40;
+      }
+      renderOutputs();
+    });
+
+    // Copy click delegation
+    resultsGrid?.addEventListener('click', async (e) => {
+      const btn = (e.target as HTMLElement).closest('.btn-copy-style') as HTMLButtonElement;
+      if (!btn) return;
+
+      const textToCopy = btn.getAttribute('data-copy') || '';
+
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(textToCopy);
+        } else {
+          const textarea = document.createElement('textarea');
+          textarea.value = textToCopy;
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+        }
+
+        // Visual button feedback
+        const originalHtml = btn.innerHTML;
+        btn.innerHTML = `<span>✓ Kopiert!</span>`;
+        btn.classList.add('bg-emerald-500', 'text-white');
+        btn.classList.remove('bg-amber-500', 'text-black');
+
+        window.dispatchEvent(new CustomEvent('show-toast'));
+
+        setTimeout(() => {
+          btn.innerHTML = originalHtml;
+          btn.classList.remove('bg-emerald-500', 'text-white');
+          btn.classList.add('bg-amber-500', 'text-black');
+        }, 1800);
+      } catch (err) {
+        console.error('Clipboard copy failed:', err);
+      }
+    });
+  }
+
+  // Run on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initConverter);
+  } else {
+    initConverter();
+  }
+</script>

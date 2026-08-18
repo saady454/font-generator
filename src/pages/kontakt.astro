@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE_CONFIG } from '../config/site';
+---
+
+<Layout
+  title="Kontakt & Feedback | Schriftarten.io"
+  description="Nimm Kontakt mit dem Team von Schriftarten.io auf für Fragen, Feedback, Schriftarten-Wünsche oder rechtliche Anfragen."
+  canonicalUrl="/kontakt"
+>
+  <main class="py-16 bg-[#0a0a08]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Kontakt</span>
+      </nav>
+
+      <div class="mb-10 pb-8 border-b border-white/10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
+          <span>📬 Kundenservice & Support</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Kontakt & Feedback
+        </h1>
+        <p class="mt-2 text-sm text-stone-400">
+          Du hast eine Frage, wünschst dir einen bestimmten Schriftstil oder möchtest Feedback geben?
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Direct Contact Card -->
+        <div class="bg-[#141412] border border-white/10 rounded-3xl p-8 flex flex-col justify-between">
+          <div>
+            <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+              <span>✉️</span> E-Mail Support
+            </h2>
+            <p class="text-xs sm:text-sm text-stone-300 leading-relaxed mb-6">
+              Wir antworten in der Regel innerhalb von 24 bis 48 Stunden auf Anfragen zu unserem Schriftarten Generator.
+            </p>
+
+            <div class="bg-[#0a0a08] border border-white/5 rounded-2xl p-5 space-y-3 font-mono text-xs sm:text-sm text-stone-300">
+              <div>
+                <span class="text-stone-500 text-[11px] block">Offizielle E-Mail Adresse:</span>
+                <a href={`mailto:${SITE_CONFIG.contactEmail}`} class="text-amber-400 font-bold hover:underline">
+                  {SITE_CONFIG.contactEmail}
+                </a>
+              </div>
+              <div>
+                <span class="text-stone-500 text-[11px] block">Postanschrift:</span>
+                <span class="text-stone-300">[NAME_DES_BETREIBERS] — Siehe Impressum</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-white/5 text-xs text-stone-400">
+            Rechtliche Hinweise und Anbieterkennzeichnung findest du in unserem <a href="/impressum" class="text-amber-400 hover:underline">Impressum</a>.
+          </div>
+        </div>
+
+        <!-- Feedback & Feature Requests Card -->
+        <div class="bg-[#141412] border border-white/10 rounded-3xl p-8 flex flex-col justify-between">
+          <div>
+            <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+              <span>💡</span> Wünsche & Feature-Ideen
+            </h2>
+            <p class="text-xs sm:text-sm text-stone-300 leading-relaxed mb-4">
+              Fehlt dir ein bestimmtes Symbol, ein Spiel oder ein Unicode-Stil? Wir erweitern unser Tool kontinuierlich um neue Schriftfamilien und Funktionen.
+            </p>
+            <ul class="text-xs sm:text-sm text-stone-400 space-y-2 list-disc list-inside">
+              <li>Neue Schriftarten & Zalgo-Varianten</li>
+              <li>Plattform-spezifische Bio-Formatierungen</li>
+              <li>Feedback zur Barrierefreiheit (BFSG)</li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-white/5 text-xs text-stone-400">
+            <a href={`mailto:${SITE_CONFIG.contactEmail}?subject=Schriftarten-Wunsch`} class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-500 text-black font-bold hover:bg-amber-400 transition-all">
+              <span>Vorschlag einreichen</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

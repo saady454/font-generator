@@ -1,0 +1,240 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TextStyleConverter from '../../components/TextStyleConverter.astro';
+import FontStyleGrid from '../../components/FontStyleGrid.astro';
+import PlatformInteractiveWidgets from '../../components/PlatformInteractiveWidgets.astro';
+import PlatformPreviewWidget from '../../components/PlatformPreviewWidget.astro';
+import { PLATFORMS_DATA } from '../../data/platform-metadata';
+import { PLATFORM_WIDGETS_DATA } from '../../data/platform-widgets';
+import { NAVIGATION_DATA } from '../../data/navigation';
+
+const platformInfo = PLATFORMS_DATA['tiktok'] || {
+  id: 'tiktok',
+  name: 'TikTok',
+  slug: '/plattform/tiktok',
+  icon: '🎵',
+  tagline: 'Virale Schriftarten für TikTok Profilnamen, Bio & Video-Beschreibungen',
+  bioLimit: 80,
+  compatibleStyles: ['Fette Schrift', 'Kursive Schrift', 'Kapitälchen', 'Zalgo Glitch', 'Bubble Schrift'],
+  keyFeatures: [
+    'TikTok Anzeigename mit stylischen Schriftzügen hervorheben',
+    '80-Zeichen Kurz-Bio optisch maximieren',
+    'Video-Captions und Hashtags ansprechender gestalten',
+    'Kommentare und Video-Antworten mit Blickfang-Typografie verfassen',
+  ],
+  tips: [
+    'Wegen des 80-Zeichen-Limits in der TikTok-Bio eignen sich kompakte Schriftarten wie Kapitälchen (Small Caps) besonders gut.',
+    'Nutze Glitch- oder fette Sans-Serif Schriftarten für moderne Gaming- und Tech-Kanäle.',
+    'Wichtig: Ändere deinen Anzeigenamen im Profil (Display Name) – der technische @benutzername bleibt für deinen Account-Login reserviert.',
+  ],
+};
+
+const tiktokFaqs = [
+  {
+    q: 'Kann ich meinen TikTok-Namen mit Sonderschrift ändern?',
+    a: 'Ja, absolut! TikTok unterscheidet zwischen deinem technischen @benutzernamen (nur Standardbuchstaben, Zahlen und Punkte erlaubt) und deinem öffentlichen Anzeigenamen (Display Name). In deinem Anzeigenamen kannst du jede beliebige Unicode-Schriftart aus unserem Generator verwenden.',
+  },
+  {
+    q: 'Funktioniert Sonderschrift in TikTok-Kommentaren?',
+    a: 'Ja! Alle hier generierten Schriftzeichen basieren auf dem universellen Unicode-Standard. Du kannst sie kopieren und direkt in TikTok-Kommentare, Video-Antworten oder DMs einfügen, wo sie für alle Nutzer auf iOS, Android und PC sichtbar sind.',
+  },
+  {
+    q: 'Warum hat die TikTok-Bio ein Limit von 80 Zeichen?',
+    a: 'TikTok hält Profilbeschreibungen bewusst kompakt auf 80 Zeichen. Mit unserem Generator kannst du diese 80 Zeichen optisch aufwerten – z. B. durch Kapitälchen (ᴋʟᴇɪɴᴇ ɢʀᴏßʙᴜᴄʜsᴛᴀʙᴇɴ) oder gezielte fette Hervorhebungen von Schlüsselbegriffen.',
+  },
+  {
+    q: 'Kann ich Sonderschriften in TikTok Video-Captions und Hashtags nutzen?',
+    a: 'In Video-Captions (Videobeschreibungen) funktionieren die Schriften hervorragend, um die ersten Zeilen als Aufmerksamkeits-Hook zu stylen. Bei Hashtags (#) empfiehlt es sich, Standardbuchstaben zu verwenden, damit der TikTok-Suchalgorithmus dein Video bestmöglich kategorisieren kann.',
+  },
+  {
+    q: 'Werden die Schriftarten auf iPhones und Android-Smartphones in TikTok angezeigt?',
+    a: 'Ja. Da es sich um offizielle Unicode-Codepoints handelt, rendern sowohl iOS als auch Android und Desktop-Webbrowser die Zeichen nativ ohne zusätzliche Apps.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": tiktokFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+
+const widgetsConfig = PLATFORM_WIDGETS_DATA['tiktok'];
+---
+
+<Layout
+  title="TikTok Schriftarten Generator – Bio, Captions & Username stylen"
+  description="Kostenloser TikTok Schriftarten Generator: Gestalte deine TikTok Bio (80 Zeichen Limit), Anzeigename und Video-Captions mit coolen Schriftarten zum Kopieren."
+  canonicalUrl="/plattform/tiktok"
+  schema={faqSchema}
+>
+  <main class="py-12 md:py-16 bg-[#0a0a08] platform-theme-tiktok" data-platform-theme="tiktok">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <a href="/plattform" class="hover:text-white transition-colors">Plattformen</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">TikTok</span>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="platform-guide-badge inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3 transition-all">
+          <span>🎵 TikTok Profil & Video Guide</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <span class="platform-h1-accent transition-colors">TikTok</span> Schriftarten Generator – Bio, Captions & Username stylen
+        </h1>
+        <p class="mt-4 text-base text-stone-300 leading-relaxed max-w-2xl mx-auto">
+          Verleihe deinem TikTok-Kanal einen unverwechselbaren Look: Style deinen <strong>Anzeigenamen</strong> (Display Name), maximiere deine <strong>80-Zeichen-Bio</strong> mit kompakten Unicode-Schriften und hebe wichtige Hooks in deinen <strong>Video-Captions</strong> hervor.
+        </p>
+      </div>
+
+      <!-- Interactive Converter Component -->
+      <TextStyleConverter
+        defaultText="TikTok Bio Vibes ✨"
+        pageSlug="tiktok"
+        filterCategory="alle"
+        showCategoryTabs={true}
+        showPresets={true}
+        maxChars={80}
+        limit={12}
+        showMoreButton={true}
+      />
+
+      <!-- Content Grid: Guidelines, Tips, Cross Links & 3 New Interactive Widgets -->
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- LEFT COLUMN (lg:col-span-2): 3 Interactive Widgets + Explanations, Guides, FAQs -->
+        <div class="lg:col-span-2 space-y-8">
+          <!-- 3 Interactive Widgets (Ideas, Symbols, Emojis) -->
+          {widgetsConfig && (
+            <PlatformInteractiveWidgets
+              widgetsData={widgetsConfig}
+              platformId="tiktok"
+            />
+          )}
+
+          <!-- 4. Key Features / Wofür eignet sich TikTok Schrift -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <span>🎯</span> Wofür du Schriftarten in TikTok nutzen kannst
+            </h2>
+            <ul class="space-y-2.5 text-sm text-stone-300">
+              {platformInfo.keyFeatures.map((feat) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="text-amber-400 font-bold">✓</span>
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- 5. Username vs. Display Name & 80-Char Limit Guide -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <span>📱</span> Username vs. Anzeigename & 80-Zeichen Bio Limit
+            </h2>
+            <div class="space-y-4 text-xs sm:text-sm text-stone-300 leading-relaxed">
+              <div class="p-4 rounded-2xl bg-[#0a0a08] border border-white/5 space-y-2">
+                <div class="font-bold text-white flex items-center gap-2">
+                  <span class="text-amber-400">1.</span>
+                  <span>Anzeigename (Display Name) vs. @benutzername</span>
+                </div>
+                <p>
+                  Auf TikTok besitzt jedes Profil zwei Namen: Den technischen <strong>@benutzernamen</strong> (z. B. <code class="text-amber-400 font-mono">@max_muster</code>), der für Erwähnungen und Login dient und nur Standardbuchstaben erlaubt, sowie den sichtbaren <strong>Anzeigenamen</strong>. In den Profileinstellungen unter <em>„Profil bearbeiten → Name“</em> kannst du jede beliebige Unicode-Schriftart aus unserem Generator einfügen.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-[#0a0a08] border border-white/5 space-y-2">
+                <div class="font-bold text-white flex items-center gap-2">
+                  <span class="text-amber-400">2.</span>
+                  <span>Das 80-Zeichen-Limit der TikTok-Bio</span>
+                </div>
+                <p>
+                  Mit maximal <strong>80 Zeichen</strong> zählt die TikTok-Bio zu den kürzesten aller Social-Media-Netzwerke. Damit dein Profiltext nicht abgeschnitten wird, empfehlen sich kompakte Schriftarten wie <span class="text-amber-300 font-semibold">Kapitälchen (Small Caps)</span> oder dezente fette Schriftzüge für dein Haupt-Keyword.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Practical Tips -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <span>💡</span> Tipps für das perfekte TikTok Profil & Video-Captions
+            </h2>
+            <ul class="space-y-3 text-xs sm:text-sm text-stone-300">
+              {platformInfo.tips.map((tip) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="text-amber-400 text-base">📌</span>
+                  <span class="leading-relaxed">{tip}</span>
+                </li>
+              ))}
+              <li class="flex items-start gap-2.5">
+                <span class="text-amber-400 text-base">📌</span>
+                <span class="leading-relaxed">
+                  <strong>Hook in Video-Captions:</strong> Formatiere die allererste Zeile deiner Videobeschreibung in fetter Schrift (<code class="text-amber-400 font-mono">𝐅𝐄𝐓𝐓</code>), um neugierige Blicke direkt beim Durchscrollen der For You Page (FYP) abzufangen.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 7. Platform FAQs (Final section in left column) -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> Häufige Fragen zu TikTok Schriften
+            </h2>
+            <div class="space-y-4">
+              {tiktokFaqs.map((faq) => (
+                <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
+                  <h3 class="text-sm font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed whitespace-pre-line">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDEBAR COLUMN: 1. Live TikTok Preview, 2. Beliebte Stile, 3. Weitere Plattformen -->
+        <div class="space-y-6">
+          <!-- 1. Live TikTok Preview Mockup Widget -->
+          <PlatformPreviewWidget platformId="tiktok" />
+
+          <!-- 2. Beliebte Stile für TikTok (Using shared FontStyleGrid component) -->
+          <FontStyleGrid
+            title="Beliebte Stile für TikTok"
+            titleIcon="🎨"
+            isAmberTitle={true}
+          />
+
+          <!-- 2. Weitere Plattformen (List with arrows format stacked directly below) -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-stone-300 mb-4">
+              Weitere Plattformen
+            </h3>
+            <div class="space-y-2">
+              {NAVIGATION_DATA.platforms.items
+                .filter((item) => !item.href.includes('tiktok'))
+                .map((other) => (
+                  <a
+                    href={other.href}
+                    class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-amber-500/10 border border-white/5 hover:border-amber-500/30 text-xs font-semibold text-stone-300 hover:text-white transition-all group"
+                  >
+                    <span>{other.icon} {other.title}</span>
+                    <span class="group-hover:translate-x-1 transition-transform text-amber-400">→</span>
+                  </a>
+                ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

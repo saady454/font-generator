@@ -1,0 +1,137 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_CONFIG } from '../config/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  schema?: Record<string, any> | Record<string, any>[];
+  articleMeta?: {
+    publishedTime?: string;
+    author?: string;
+    section?: string;
+  };
+}
+
+const {
+  title = SITE_CONFIG.meta.title,
+  description = SITE_CONFIG.meta.description,
+  canonicalUrl = Astro.url.pathname,
+  schema,
+} = Astro.props;
+
+const fullCanonical = `${SITE_CONFIG.baseUrl.replace(/\/$/, '')}${canonicalUrl}`;
+
+const baseSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": SITE_CONFIG.name,
+  "url": fullCanonical,
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "inLanguage": "de-DE",
+  "description": description,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  }
+};
+
+const schemasToRender = schema
+  ? (Array.isArray(schema) ? [baseSchema, ...schema] : [baseSchema, schema])
+  : [baseSchema];
+---
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={fullCanonical} />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={fullCanonical} />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content={SITE_CONFIG.name} />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23f59e0b'/><text y='70' x='50' font-size='56' font-weight='bold' text-anchor='middle' fill='%23000'>𝔖</text></svg>" />
+
+    <!-- Google Fonts Preconnect & Inter / JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+    <!-- Immediate Theme Initialization to Prevent FOUC -->
+    <script is:inline>
+      (function() {
+        try {
+          var saved = localStorage.getItem('theme');
+          var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+          if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+          } else {
+            document.documentElement.removeAttribute('data-theme');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Structured Data (JSON-LD) -->
+    {schemasToRender.map((s) => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
+  </head>
+  <body class="bg-void text-ghost font-sans antialiased min-h-screen flex flex-col selection:bg-amber-500 selection:text-black">
+    <Header />
+    <div class="flex-1 pt-16">
+      <slot />
+    </div>
+    <Footer />
+
+    <!-- Universal Toast Notification for Clipboard Copy -->
+    <div
+      id="global-toast"
+      class="fixed bottom-6 right-6 z-50 bg-[#141412] text-white border border-amber-500/40 px-5 py-3 rounded-2xl shadow-2xl shadow-black/80 flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none"
+      role="status"
+      aria-live="polite"
+    >
+      <div class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm">
+        ✓
+      </div>
+      <div class="text-sm font-semibold">In die Zwischenablage kopiert! 🎉</div>
+    </div>
+
+    <script>
+      // Global toast listener
+      window.addEventListener('show-toast', () => {
+        const toast = document.getElementById('global-toast');
+        if (toast) {
+          toast.classList.remove('translate-y-24', 'opacity-0');
+          toast.classList.add('translate-y-0', 'opacity-100');
+          setTimeout(() => {
+            toast.classList.remove('translate-y-0', 'opacity-100');
+            toast.classList.add('translate-y-24', 'opacity-0');
+          }, 2200);
+        }
+      });
+    </script>
+  </body>
+</html>

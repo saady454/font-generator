@@ -1,0 +1,47 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Text eingeben',
+    description: 'Tippe deinen Text, Zitat oder Nickname oben in das Eingabefeld ein.',
+  },
+  {
+    number: '02',
+    title: 'Stil auswählen',
+    description: 'Wähle aus über 50 Schriftstilen: Fett, Kursiv, Gotisch, Bubble, Small Caps & Symbole.',
+  },
+  {
+    number: '03',
+    title: '1-Klick Kopieren',
+    description: 'Klicke auf den "Kopieren" Button neben deiner Lieblingsschrift für die Zwischenablage.',
+  },
+  {
+    number: '04',
+    title: 'Überall Einfügen',
+    description: 'Füge deinen Text direkt in Instagram, TikTok, WhatsApp, Discord oder dein Spiel ein.',
+  },
+];
+---
+
+<section class="py-16 bg-[#0e0e0c] border-y border-white/5">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+        So funktioniert der Schriftarten Generator
+      </h2>
+      <p class="mt-2 text-sm text-stone-400">
+        In nur 4 einfachen Schritten zu deiner individuellen Profil-Schriftart.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {steps.map((step) => (
+        <div class="bg-[#141412] border border-white/10 rounded-2xl p-6 relative hover:border-amber-500/30 transition-all">
+          <div class="text-3xl font-extrabold text-amber-500/40 font-mono mb-3">{step.number}</div>
+          <h3 class="text-base font-bold text-white mb-2">{step.title}</h3>
+          <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

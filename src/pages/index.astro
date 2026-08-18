@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GradientMeshBackground from '../components/GradientMeshBackground.astro';
+import HeroConverter from '../components/HeroConverter.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import CategoryShowcase from '../components/CategoryShowcase.astro';
+import PlatformTeaser from '../components/PlatformTeaser.astro';
+import GamingTeaser from '../components/GamingTeaser.astro';
+import UnicodeExplainer from '../components/UnicodeExplainer.astro';
+import FAQ from '../components/FAQ.astro';
+import { SITE_CONFIG } from '../config/site';
+---
+
+<Layout
+  title={SITE_CONFIG.meta.title}
+  description={SITE_CONFIG.meta.description}
+  canonicalUrl="/"
+>
+  <main class="relative bg-[#0F1220] min-h-screen overflow-hidden homepage-mesh-wrapper">
+    <!-- Reusable Multi-Color Gradient Mesh Layer -->
+    <GradientMeshBackground />
+
+    <!-- Section 1: Hero + Universal Font Converter Tool -->
+    <HeroConverter />
+
+    <!-- Section 2: So funktioniert's (4 Steps) -->
+    <HowItWorks />
+
+    <!-- Section 3: Category Showcase / Trending Styles -->
+    <CategoryShowcase />
+
+    <!-- Section 4: Platform Use-Case Teasers & Native vs Unicode explainer -->
+    <PlatformTeaser />
+
+    <!-- Section 5: Gaming Nicknames Teaser (Fortnite & Minecraft first) -->
+    <GamingTeaser />
+
+    <!-- Section 6: Unicode & Tofu (☐) Explainer Teaser with Blog Links -->
+    <UnicodeExplainer />
+
+    <!-- Section 7: Broad FAQ Block (15+ Questions, Schema-Marked) -->
+    <FAQ />
+  </main>
+</Layout>

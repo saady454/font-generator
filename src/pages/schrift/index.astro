@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import GradientMeshBackground from '../../components/GradientMeshBackground.astro';
+import { NAVIGATION_DATA } from '../../data/navigation';
+import { FONT_STYLES_DETAIL } from '../../data/font-details';
+import { SITE_CONFIG } from '../../config/site';
+
+const fontCards = NAVIGATION_DATA.fontStyles.items.map((item) => {
+  const slug = item.href.replace('/schrift/', '');
+  const detail = FONT_STYLES_DETAIL[slug];
+  return {
+    title: item.title,
+    href: item.href,
+    icon: item.icon,
+    badge: detail?.badge || 'Beliebt',
+    description: detail?.tagline || item.description || 'Kostenloser Schriftgenerator zum Kopieren',
+    preview: detail?.previewText || item.title,
+    useCase: detail?.useCases?.[0] || 'Perfekt für Instagram Bio, WhatsApp & TikTok.',
+  };
+});
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Alle Schriftarten – 14 kostenlose Schriftgeneratoren',
+  description: 'Entdecke alle 14 spezialisierten Unicode-Schriftarten Generatoren: Fette Schrift, Kursiv, Gotisch, Bubble, Small Caps & mehr.',
+  url: `${SITE_CONFIG.baseUrl}/schrift`,
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: fontCards.map((font, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      name: font.title,
+      url: `${SITE_CONFIG.baseUrl}${font.href}`,
+    })),
+  },
+};
+---
+
+<Layout
+  title="Alle Schriftarten – 14 kostenlose Schriftgeneratoren | Schriftarten.io"
+  description="Übersicht aller 14 Schriftarten Generatoren: Fette Schrift, Kursiv, Gotisch, Bubble, Small Caps, Zalgo Glitch & mehr. Kostenlos formatieren und kopieren."
+  canonicalUrl="/schrift"
+  schema={schema}
+>
+  <main class="relative bg-[#0F1220] min-h-screen py-12 md:py-16 overflow-hidden homepage-mesh-wrapper">
+    <!-- Reusable Multi-Color Gradient Mesh Layer -->
+    <GradientMeshBackground />
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Schriftarten</span>
+      </nav>
+
+      <!-- Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
+          <span>🎨 14 Typografische Stile</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          Alle Schriftarten – 14 kostenlose Schriftgeneratoren
+        </h1>
+        <p class="mt-4 text-base sm:text-lg text-stone-300 leading-relaxed">
+          Entdecke unsere vollständige Sammlung spezialisierter Unicode-Schriftarten Generatoren. Egal ob markante fette Buchstaben, elegante Kursivschrift, historische gotische Fraktur oder verspielte Bubble-Schrift – hier findest du für jedes Profil und jeden Anlass den passenden Stil.
+        </p>
+      </div>
+
+      <!-- 14 Font Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {fontCards.map((font) => (
+            <a
+              href={font.href}
+              class="group block p-6 rounded-3xl bg-[#141412] border border-white/10 hover:border-amber-500/40 shadow-xl hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-200 relative overflow-hidden"
+            >
+              <div class="flex items-start justify-between gap-3 mb-4">
+                <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xl font-mono group-hover:scale-110 transition-transform">
+                  {font.icon}
+                </div>
+                <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-stone-300 group-hover:bg-amber-500/20 group-hover:text-amber-300 group-hover:border-amber-500/30 transition-colors">
+                  {font.badge}
+                </span>
+              </div>
+
+              <h3 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors mb-2 flex items-center justify-between">
+                <span>{font.title}</span>
+                <span class="text-stone-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all">→</span>
+              </h3>
+
+              <p class="text-xs sm:text-sm text-stone-400 leading-relaxed mb-4">
+                {font.description}
+              </p>
+
+              <div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-amber-400/90 font-medium">
+                <span class="truncate">{font.useCase}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+  </main>
+</Layout>

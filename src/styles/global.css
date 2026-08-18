@@ -1,0 +1,3578 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-void: #0a0a08;
+  --color-card: #141412;
+  --color-card-elevated: #1a1814;
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+  --color-amber-600: #d97706;
+  --color-burnt: #f97316;
+  --color-ghost: #fafaf9;
+  --color-sand: #a8a29e;
+  --color-muted: #78716c;
+
+  --bg-page: #0a0a08;
+  --bg-surface: #141412;
+  --bg-surface-elevated: #1a1814;
+  --bg-surface-subtle: rgba(255, 255, 255, 0.05);
+  --bg-surface-hover: rgba(255, 255, 255, 0.08);
+  --bg-header: rgba(10, 10, 8, 0.90);
+  --bg-footer: #0e0e0c;
+  --bg-drawer: rgba(10, 10, 8, 0.98);
+  --bg-input: #0a0a08;
+  --bg-toast: #141412;
+
+  --text-primary: #fafaf9;
+  --text-secondary: #d6d3d1;
+  --text-muted: #a8a29e;
+  --text-faint: #78716c;
+
+  --border-color: rgba(255, 255, 255, 0.10);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-card: rgba(255, 255, 255, 0.10);
+
+  --badge-amber-bg: rgba(245, 158, 11, 0.10);
+  --badge-amber-text: #fbbf24;
+  --badge-amber-border: rgba(245, 158, 11, 0.30);
+
+  --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+  --glow-color: rgba(245, 158, 11, 0.12);
+}
+
+[data-theme="light"] {
+  --color-void: #f8fafc;
+  --color-card: #ffffff;
+  --color-card-elevated: #f1f5f9;
+  --color-amber-400: #d97706;
+  --color-amber-500: #f59e0b;
+  --color-amber-600: #b45309;
+  --color-burnt: #ea580c;
+  --color-ghost: #0f172a;
+  --color-sand: #475569;
+  --color-muted: #64748b;
+
+  --bg-page: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --bg-surface-subtle: rgba(0, 0, 0, 0.04);
+  --bg-surface-hover: rgba(0, 0, 0, 0.07);
+  --bg-header: rgba(255, 255, 255, 0.92);
+  --bg-footer: #f1f5f9;
+  --bg-drawer: rgba(255, 255, 255, 0.98);
+  --bg-input: #ffffff;
+  --bg-toast: #ffffff;
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+
+  --border-color: rgba(0, 0, 0, 0.10);
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-card: rgba(0, 0, 0, 0.08);
+
+  --badge-amber-bg: rgba(245, 158, 11, 0.14);
+  --badge-amber-text: #b45309;
+  --badge-amber-border: rgba(245, 158, 11, 0.35);
+
+  --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+  --glow-color: rgba(245, 158, 11, 0.18);
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* ==========================================================================
+   LIGHT MODE STYLING & COMPONENT OVERRIDES
+   ========================================================================== */
+
+[data-theme="light"] body {
+  background-color: var(--bg-page) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] header {
+  background-color: var(--bg-header) !important;
+  border-bottom-color: var(--border-color) !important;
+}
+
+[data-theme="light"] footer {
+  background-color: var(--bg-footer) !important;
+  border-top-color: var(--border-color) !important;
+  color: var(--text-muted) !important;
+}
+
+[data-theme="light"] footer h3 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] footer a {
+  color: var(--text-muted);
+}
+
+[data-theme="light"] footer a:hover {
+  color: var(--text-primary);
+}
+
+/* Base dark container overrides */
+[data-theme="light"] .bg-\[\#0a0a08\],
+[data-theme="light"] .bg-\[\#0e0e0c\],
+[data-theme="light"] .bg-void {
+  background-color: var(--bg-page) !important;
+}
+
+/* Cards & Surfaces */
+[data-theme="light"] .bg-\[\#141412\],
+[data-theme="light"] .bg-\[\#1a1814\],
+[data-theme="light"] .bg-\[\#121210\],
+[data-theme="light"] .bg-card {
+  background-color: var(--bg-surface) !important;
+  box-shadow: var(--card-shadow) !important;
+  border-color: var(--border-card) !important;
+}
+
+/* Nested inner containers inside cards (e.g. results, suggestions, code boxes) */
+[data-theme="light"] .bg-\[\#141412\] .bg-\[\#0a0a08\],
+[data-theme="light"] .bg-\[\#141412\] .bg-\[\#121210\],
+[data-theme="light"] .bg-\[\#141412\] .bg-\[\#0e0e0c\],
+[data-theme="light"] .bg-\[\#1a1814\] .bg-\[\#0a0a08\],
+[data-theme="light"] .bg-card .bg-\[\#0a0a08\] {
+  background-color: var(--bg-surface-elevated) !important;
+  border-color: var(--border-subtle) !important;
+}
+
+/* Input Fields & Textareas */
+[data-theme="light"] textarea#converter-input-box,
+[data-theme="light"] input[type="text"],
+[data-theme="light"] input[type="email"],
+[data-theme="light"] textarea {
+  background-color: var(--bg-input) !important;
+  color: var(--text-primary) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+[data-theme="light"] textarea#converter-input-box::placeholder,
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: var(--text-faint) !important;
+}
+
+/* High Contrast Typography */
+[data-theme="light"] .text-white,
+[data-theme="light"] .text-stone-100,
+[data-theme="light"] .text-ghost {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .text-stone-200,
+[data-theme="light"] .text-stone-300 {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .text-stone-400 {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="light"] .text-stone-500 {
+  color: var(--text-faint) !important;
+}
+
+/* Borders */
+[data-theme="light"] .border-white\/10,
+[data-theme="light"] .border-white\/5,
+[data-theme="light"] .border-white\/20,
+[data-theme="light"] .border-white\/15 {
+  border-color: var(--border-color) !important;
+}
+
+/* Translucent Surface Elements */
+[data-theme="light"] .bg-white\/5 {
+  background-color: var(--bg-surface-subtle) !important;
+}
+
+[data-theme="light"] .bg-white\/10 {
+  background-color: var(--bg-surface-hover) !important;
+}
+
+[data-theme="light"] .hover\:bg-white\/5:hover {
+  background-color: var(--bg-surface-subtle) !important;
+}
+
+[data-theme="light"] .hover\:bg-white\/10:hover {
+  background-color: var(--bg-surface-hover) !important;
+}
+
+[data-theme="light"] .hover\:text-white:hover {
+  color: var(--text-primary) !important;
+}
+
+/* Amber Accents & Badges */
+[data-theme="light"] .bg-amber-500\/10,
+[data-theme="light"] .bg-amber-500\/15 {
+  background-color: var(--badge-amber-bg) !important;
+}
+
+[data-theme="light"] .text-amber-400 {
+  color: var(--badge-amber-text) !important;
+}
+
+[data-theme="light"] .border-amber-500\/30,
+[data-theme="light"] .border-amber-500\/20,
+[data-theme="light"] .border-amber-500\/40 {
+  border-color: var(--badge-amber-border) !important;
+}
+
+/* Dropdown Menus in Header */
+[data-theme="light"] header .bg-\[\#141412\] {
+  background-color: #ffffff !important;
+  border-color: var(--border-color) !important;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Mobile Drawer */
+[data-theme="light"] #mobile-drawer {
+  background-color: var(--bg-drawer) !important;
+}
+
+[data-theme="light"] #mobile-drawer .mobile-link {
+  background-color: var(--bg-surface-elevated) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] #mobile-drawer .text-white {
+  color: var(--text-primary) !important;
+}
+
+/* Global Toast Notification */
+[data-theme="light"] #global-toast {
+  background-color: #ffffff !important;
+  color: var(--text-primary) !important;
+  border-color: rgba(245, 158, 11, 0.5) !important;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.15) !important;
+}
+
+/* Glass & Glow */
+[data-theme="light"] .glass {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .glow-amber {
+  box-shadow: 0 0 35px var(--glow-color) !important;
+}
+
+[data-theme="light"] .glow-amber-hover:hover {
+  box-shadow: 0 0 45px var(--glow-color) !important;
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Signature Gradient */
+.gradient-signature {
+  background: linear-gradient(135deg, #1a1814 0%, #f59e0b 50%, #f97316 100%);
+}
+
+/* Glass Card */
+.glass {
+  background: rgba(251, 191, 36, 0.03);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(168, 162, 158, 0.15);
+}
+
+/* Glow Utilities */
+.glow-amber {
+  box-shadow: 0 0 40px rgba(245, 158, 11, 0.12);
+}
+
+.glow-amber-hover:hover {
+  box-shadow: 0 0 60px rgba(251, 191, 36, 0.20);
+}
+
+/* Animated Floating Mesh Background */
+@keyframes floatMesh {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -40px) scale(1.08);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-float-slow {
+  animation: floatMesh 20s infinite ease-in-out;
+}
+
+.animate-float-reverse {
+  animation: floatMesh 25s infinite ease-in-out reverse;
+}
+
+/* Underline link animation */
+.nav-link-underline {
+  position: relative;
+}
+
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #f59e0b;
+  transition: width 200ms ease-in-out;
+}
+
+.nav-link-underline:hover::after {
+  width: 100%;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-float-slow,
+  .animate-float-reverse {
+    animation: none !important;
+  }
+}
+
+/* Hide scrollbar helper */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ==========================================================================
+   PLATFORM-SPECIFIC BRAND ACCENT THEMES (PAGE-SCOPED)
+   ========================================================================== */
+
+/* WhatsApp Theme: Scoped accent system using #25D366 / #1FA855 */
+.platform-theme-whatsapp {
+  --wa-accent: #25d366;
+  --wa-accent-hover: #1fa855;
+  --wa-accent-dark: #128c7e;
+  --wa-accent-glow: rgba(37, 211, 102, 0.22);
+  --wa-accent-bg-subtle: rgba(37, 211, 102, 0.10);
+  --wa-accent-bg-badge: rgba(37, 211, 102, 0.15);
+  --wa-accent-bg-hover: rgba(37, 211, 102, 0.20);
+  --wa-accent-border: rgba(37, 211, 102, 0.30);
+  --wa-accent-border-hover: rgba(37, 211, 102, 0.50);
+}
+
+/* 1. WhatsApp Guide Badge & H1 Key Phrase Accent */
+.platform-theme-whatsapp .platform-guide-badge {
+  background-color: var(--wa-accent-bg-subtle) !important;
+  border-color: var(--wa-accent-border) !important;
+  color: var(--wa-accent) !important;
+  box-shadow: 0 0 16px var(--wa-accent-glow) !important;
+}
+
+.platform-theme-whatsapp .platform-h1-accent {
+  color: var(--wa-accent) !important;
+  text-shadow: 0 0 24px var(--wa-accent-glow) !important;
+}
+
+/* 2. Main Converter Card Focus & Hover */
+.platform-theme-whatsapp .glow-amber-hover:hover {
+  box-shadow: 0 0 50px var(--wa-accent-glow) !important;
+}
+
+.platform-theme-whatsapp textarea#converter-input-box:focus {
+  border-color: var(--wa-accent) !important;
+  box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.16) !important;
+}
+
+.platform-theme-whatsapp #converter-char-count {
+  color: var(--wa-accent) !important;
+}
+
+.platform-theme-whatsapp .preset-pill:hover {
+  background-color: var(--wa-accent-bg-hover) !important;
+  color: var(--wa-accent) !important;
+  border-color: var(--wa-accent-border) !important;
+}
+
+.platform-theme-whatsapp #dedicated-styles-count-label,
+.platform-theme-whatsapp #generic-styles-count-label {
+  color: var(--wa-accent) !important;
+}
+
+/* 3. Kopieren Buttons in Variation Cards */
+.platform-theme-whatsapp .btn-copy-style {
+  background-color: var(--wa-accent) !important;
+  color: #0b141a !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.platform-theme-whatsapp .btn-copy-style:hover {
+  background-color: var(--wa-accent-hover) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35) !important;
+}
+
+/* 4. Variation Card Category Badges (EDGY, KONTAKT, STATUS, EXKLUSIV, etc.) */
+.platform-theme-whatsapp .converter-wrapper .bg-amber-500\/20,
+.platform-theme-whatsapp #converter-results-grid span.bg-amber-500\/20,
+.platform-theme-whatsapp .converter-wrapper span.text-amber-400 {
+  background-color: var(--wa-accent-bg-badge) !important;
+  color: var(--wa-accent) !important;
+  border-color: var(--wa-accent-border) !important;
+}
+
+.platform-theme-whatsapp #converter-results-grid > div:hover {
+  border-color: rgba(37, 211, 102, 0.40) !important;
+}
+
+/* 5. "Weitere Variationen laden" Button */
+.platform-theme-whatsapp #btn-show-more-styles {
+  background-color: var(--wa-accent-bg-subtle) !important;
+  color: var(--wa-accent) !important;
+  border-color: var(--wa-accent-border) !important;
+}
+
+.platform-theme-whatsapp #btn-show-more-styles:hover {
+  background-color: var(--wa-accent-bg-hover) !important;
+  color: #5cf492 !important;
+  border-color: var(--wa-accent-border-hover) !important;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.20) !important;
+}
+
+.platform-theme-whatsapp #hidden-styles-badge {
+  background-color: var(--wa-accent) !important;
+  color: #0b141a !important;
+}
+
+/* 6. Filter Tabs (if rendered) */
+.platform-theme-whatsapp #converter-filter-tabs button.bg-amber-500 {
+  background-color: var(--wa-accent) !important;
+  color: #0b141a !important;
+  border-color: var(--wa-accent) !important;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25) !important;
+}
+
+/* 7. Status-Ideen-Generator & Interactive Widgets */
+.platform-theme-whatsapp .platform-widgets-wrapper .bg-amber-500\/10,
+.platform-theme-whatsapp .platform-widgets-wrapper span.bg-amber-500\/10 {
+  background-color: var(--wa-accent-bg-subtle) !important;
+  border-color: var(--wa-accent-border) !important;
+  color: var(--wa-accent) !important;
+}
+
+.platform-theme-whatsapp .active-idea-pill,
+.platform-theme-whatsapp .idea-cat-pill.active-idea-pill,
+.platform-theme-whatsapp .idea-cat-pill.bg-amber-500 {
+  background-color: var(--wa-accent) !important;
+  color: #0b141a !important;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25) !important;
+  border-color: var(--wa-accent) !important;
+}
+
+.platform-theme-whatsapp .idea-cat-pill:hover {
+  border-color: var(--wa-accent-border) !important;
+}
+
+.platform-theme-whatsapp .ideas-suggestions-container > div:hover {
+  border-color: var(--wa-accent-border) !important;
+}
+
+.platform-theme-whatsapp .btn-copy-idea:hover,
+.platform-theme-whatsapp .btn-copy-combo:hover {
+  background-color: var(--wa-accent) !important;
+  color: #0b141a !important;
+  border-color: var(--wa-accent) !important;
+}
+
+.platform-theme-whatsapp .symbol-wrap-input:focus {
+  border-color: var(--wa-accent) !important;
+  box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.20) !important;
+}
+
+.platform-theme-whatsapp .symbol-combos-container > div:hover {
+  border-color: var(--wa-accent-border) !important;
+}
+
+.platform-theme-whatsapp .active-emoji-pill,
+.platform-theme-whatsapp .emoji-cat-pill.active-emoji-pill,
+.platform-theme-whatsapp .emoji-cat-pill.bg-amber-500 {
+  background-color: var(--wa-accent) !important;
+  color: #0b141a !important;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25) !important;
+  border-color: var(--wa-accent) !important;
+}
+
+.platform-theme-whatsapp .emoji-cat-pill:hover {
+  border-color: var(--wa-accent-border) !important;
+}
+
+.platform-theme-whatsapp .btn-copy-all-emojis {
+  background-color: var(--wa-accent) !important;
+  color: #0b141a !important;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.25) !important;
+}
+
+.platform-theme-whatsapp .btn-copy-all-emojis:hover {
+  background-color: var(--wa-accent-hover) !important;
+  color: #ffffff !important;
+}
+
+/* 8. Right Sidebar Live Preview & Stile */
+.platform-theme-whatsapp #platform-live-widget .bg-amber-500\/10 {
+  background-color: var(--wa-accent-bg-subtle) !important;
+  border-color: var(--wa-accent-border) !important;
+  color: var(--wa-accent) !important;
+}
+
+.platform-theme-whatsapp #platform-live-widget .w-1\.5.h-1\.5.bg-amber-500 {
+  background-color: var(--wa-accent) !important;
+}
+
+.platform-theme-whatsapp #preview-active-style-label {
+  color: var(--wa-accent) !important;
+}
+
+.platform-theme-whatsapp #preview-style-pills .preview-style-pill.active,
+.platform-theme-whatsapp #preview-style-pills .preview-style-pill.bg-amber-500 {
+  background-color: var(--wa-accent) !important;
+  color: #0b141a !important;
+}
+
+.platform-theme-whatsapp .hover\:border-amber-500\/30:hover {
+  border-color: var(--wa-accent-border) !important;
+}
+
+.platform-theme-whatsapp .hover\:bg-amber-500\/10:hover {
+  background-color: var(--wa-accent-bg-subtle) !important;
+}
+
+.platform-theme-whatsapp .hover\:bg-amber-500\/20:hover {
+  background-color: var(--wa-accent-bg-hover) !important;
+}
+
+.platform-theme-whatsapp .hover\:text-amber-400:hover {
+  color: var(--wa-accent) !important;
+}
+
+.platform-theme-whatsapp .group:hover .group-hover\:text-amber-400 {
+  color: var(--wa-accent) !important;
+}
+
+/* 9. Content Highlights & Checkmarks on WhatsApp Page */
+.platform-theme-whatsapp .text-amber-400 {
+  color: var(--wa-accent) !important;
+}
+
+.platform-theme-whatsapp .text-amber-300 {
+  color: #5cf492 !important;
+}
+
+.platform-theme-whatsapp .bg-amber-500\/5 {
+  background-color: rgba(37, 211, 102, 0.05) !important;
+}
+
+.platform-theme-whatsapp .border-amber-500\/20 {
+  border-color: rgba(37, 211, 102, 0.20) !important;
+}
+
+/* Light Mode support for WhatsApp Theme */
+[data-theme="light"] .platform-theme-whatsapp {
+  --wa-accent: #128c7e;
+  --wa-accent-hover: #075e54;
+  --wa-accent-glow: rgba(18, 140, 126, 0.16);
+  --wa-accent-bg-subtle: rgba(18, 140, 126, 0.10);
+  --wa-accent-bg-badge: rgba(18, 140, 126, 0.14);
+  --wa-accent-bg-hover: rgba(18, 140, 126, 0.18);
+  --wa-accent-border: rgba(18, 140, 126, 0.28);
+}
+
+[data-theme="light"] .platform-theme-whatsapp .btn-copy-style {
+  background-color: #25d366 !important;
+  color: #0b141a !important;
+}
+
+[data-theme="light"] .platform-theme-whatsapp .btn-copy-style:hover {
+  background-color: #128c7e !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   1. INSTAGRAM THEME: Warm Pink / Magenta (#E1306C / #D62E7A)
+   ========================================================================== */
+.platform-theme-instagram {
+  --ig-accent: #e1306c;
+  --ig-accent-hover: #c1275b;
+  --ig-accent-glow: rgba(225, 48, 108, 0.24);
+  --ig-accent-bg-subtle: rgba(225, 48, 108, 0.10);
+  --ig-accent-bg-badge: rgba(225, 48, 108, 0.15);
+  --ig-accent-bg-hover: rgba(225, 48, 108, 0.20);
+  --ig-accent-border: rgba(225, 48, 108, 0.30);
+  --ig-accent-border-hover: rgba(225, 48, 108, 0.50);
+}
+
+.platform-theme-instagram .platform-guide-badge {
+  background-color: var(--ig-accent-bg-subtle) !important;
+  border-color: var(--ig-accent-border) !important;
+  color: var(--ig-accent) !important;
+  box-shadow: 0 0 16px var(--ig-accent-glow) !important;
+}
+
+.platform-theme-instagram .platform-h1-accent {
+  color: var(--ig-accent) !important;
+  text-shadow: 0 0 24px var(--ig-accent-glow) !important;
+}
+
+.platform-theme-instagram .glow-amber-hover:hover {
+  box-shadow: 0 0 50px var(--ig-accent-glow) !important;
+}
+
+.platform-theme-instagram textarea#converter-input-box:focus {
+  border-color: var(--ig-accent) !important;
+  box-shadow: 0 0 0 4px rgba(225, 48, 108, 0.16) !important;
+}
+
+.platform-theme-instagram #converter-char-count {
+  color: var(--ig-accent) !important;
+}
+
+.platform-theme-instagram .preset-pill:hover {
+  background-color: var(--ig-accent-bg-hover) !important;
+  color: var(--ig-accent) !important;
+  border-color: var(--ig-accent-border) !important;
+}
+
+.platform-theme-instagram #dedicated-styles-count-label,
+.platform-theme-instagram #generic-styles-count-label {
+  color: var(--ig-accent) !important;
+}
+
+.platform-theme-instagram .btn-copy-style {
+  background-color: var(--ig-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.platform-theme-instagram .btn-copy-style:hover {
+  background-color: var(--ig-accent-hover) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(225, 48, 108, 0.40) !important;
+}
+
+.platform-theme-instagram .converter-wrapper .bg-amber-500\/20,
+.platform-theme-instagram #converter-results-grid span.bg-amber-500\/20,
+.platform-theme-instagram .converter-wrapper span.text-amber-400 {
+  background-color: var(--ig-accent-bg-badge) !important;
+  color: var(--ig-accent) !important;
+  border-color: var(--ig-accent-border) !important;
+}
+
+.platform-theme-instagram #converter-results-grid > div:hover {
+  border-color: rgba(225, 48, 108, 0.40) !important;
+}
+
+.platform-theme-instagram #btn-show-more-styles {
+  background-color: var(--ig-accent-bg-subtle) !important;
+  color: var(--ig-accent) !important;
+  border-color: var(--ig-accent-border) !important;
+}
+
+.platform-theme-instagram #btn-show-more-styles:hover {
+  background-color: var(--ig-accent-bg-hover) !important;
+  color: #ff6b9d !important;
+  border-color: var(--ig-accent-border-hover) !important;
+  box-shadow: 0 8px 24px rgba(225, 48, 108, 0.20) !important;
+}
+
+.platform-theme-instagram #hidden-styles-badge {
+  background-color: var(--ig-accent) !important;
+  color: #ffffff !important;
+}
+
+.platform-theme-instagram #converter-filter-tabs button.bg-amber-500 {
+  background-color: var(--ig-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--ig-accent) !important;
+  box-shadow: 0 4px 15px rgba(225, 48, 108, 0.25) !important;
+}
+
+.platform-theme-instagram .platform-widgets-wrapper .bg-amber-500\/10,
+.platform-theme-instagram .platform-widgets-wrapper span.bg-amber-500\/10 {
+  background-color: var(--ig-accent-bg-subtle) !important;
+  border-color: var(--ig-accent-border) !important;
+  color: var(--ig-accent) !important;
+}
+
+.platform-theme-instagram .active-idea-pill,
+.platform-theme-instagram .idea-cat-pill.active-idea-pill,
+.platform-theme-instagram .idea-cat-pill.bg-amber-500 {
+  background-color: var(--ig-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(225, 48, 108, 0.25) !important;
+  border-color: var(--ig-accent) !important;
+}
+
+.platform-theme-instagram .idea-cat-pill:hover {
+  border-color: var(--ig-accent-border) !important;
+}
+
+.platform-theme-instagram .ideas-suggestions-container > div:hover {
+  border-color: var(--ig-accent-border) !important;
+}
+
+.platform-theme-instagram .btn-copy-idea:hover,
+.platform-theme-instagram .btn-copy-combo:hover {
+  background-color: var(--ig-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--ig-accent) !important;
+}
+
+.platform-theme-instagram .symbol-wrap-input:focus {
+  border-color: var(--ig-accent) !important;
+  box-shadow: 0 0 0 3px rgba(225, 48, 108, 0.20) !important;
+}
+
+.platform-theme-instagram .symbol-combos-container > div:hover {
+  border-color: var(--ig-accent-border) !important;
+}
+
+.platform-theme-instagram .active-emoji-pill,
+.platform-theme-instagram .emoji-cat-pill.active-emoji-pill,
+.platform-theme-instagram .emoji-cat-pill.bg-amber-500 {
+  background-color: var(--ig-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(225, 48, 108, 0.25) !important;
+  border-color: var(--ig-accent) !important;
+}
+
+.platform-theme-instagram .emoji-cat-pill:hover {
+  border-color: var(--ig-accent-border) !important;
+}
+
+.platform-theme-instagram .btn-copy-all-emojis {
+  background-color: var(--ig-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(225, 48, 108, 0.25) !important;
+}
+
+.platform-theme-instagram .btn-copy-all-emojis:hover {
+  background-color: var(--ig-accent-hover) !important;
+  color: #ffffff !important;
+}
+
+.platform-theme-instagram #platform-live-widget .bg-amber-500\/10 {
+  background-color: var(--ig-accent-bg-subtle) !important;
+  border-color: var(--ig-accent-border) !important;
+  color: var(--ig-accent) !important;
+}
+
+.platform-theme-instagram #platform-live-widget .w-1\.5.h-1\.5.bg-amber-500 {
+  background-color: var(--ig-accent) !important;
+}
+
+.platform-theme-instagram #preview-active-style-label {
+  color: var(--ig-accent) !important;
+}
+
+.platform-theme-instagram #preview-style-pills .preview-style-pill.active,
+.platform-theme-instagram #preview-style-pills .preview-style-pill.bg-amber-500 {
+  background-color: var(--ig-accent) !important;
+  color: #ffffff !important;
+}
+
+.platform-theme-instagram .hover\:border-amber-500\/30:hover {
+  border-color: var(--ig-accent-border) !important;
+}
+
+.platform-theme-instagram .hover\:bg-amber-500\/10:hover {
+  background-color: var(--ig-accent-bg-subtle) !important;
+}
+
+.platform-theme-instagram .hover\:bg-amber-500\/20:hover {
+  background-color: var(--ig-accent-bg-hover) !important;
+}
+
+.platform-theme-instagram .hover\:text-amber-400:hover {
+  color: var(--ig-accent) !important;
+}
+
+.platform-theme-instagram .group:hover .group-hover\:text-amber-400 {
+  color: var(--ig-accent) !important;
+}
+
+.platform-theme-instagram .text-amber-400 {
+  color: var(--ig-accent) !important;
+}
+
+.platform-theme-instagram .text-amber-300 {
+  color: #ff85ad !important;
+}
+
+.platform-theme-instagram .bg-amber-500\/5 {
+  background-color: rgba(225, 48, 108, 0.05) !important;
+}
+
+.platform-theme-instagram .border-amber-500\/20 {
+  border-color: rgba(225, 48, 108, 0.20) !important;
+}
+
+[data-theme="light"] .platform-theme-instagram {
+  --ig-accent: #c1275b;
+  --ig-accent-hover: #9e1c48;
+  --ig-accent-glow: rgba(193, 39, 91, 0.16);
+  --ig-accent-bg-subtle: rgba(193, 39, 91, 0.10);
+  --ig-accent-bg-badge: rgba(193, 39, 91, 0.14);
+  --ig-accent-bg-hover: rgba(193, 39, 91, 0.18);
+  --ig-accent-border: rgba(193, 39, 91, 0.28);
+}
+
+/* ==========================================================================
+   2. TIKTOK THEME: Vibrant Cyan / Teal (#25F4EE / #1FC9C4)
+   ========================================================================== */
+.platform-theme-tiktok {
+  --tt-accent: #25f4ee;
+  --tt-accent-hover: #1fc9c4;
+  --tt-accent-glow: rgba(37, 244, 238, 0.25);
+  --tt-accent-bg-subtle: rgba(37, 244, 238, 0.10);
+  --tt-accent-bg-badge: rgba(37, 244, 238, 0.14);
+  --tt-accent-bg-hover: rgba(37, 244, 238, 0.20);
+  --tt-accent-border: rgba(37, 244, 238, 0.30);
+  --tt-accent-border-hover: rgba(37, 244, 238, 0.50);
+}
+
+.platform-theme-tiktok .platform-guide-badge {
+  background-color: var(--tt-accent-bg-subtle) !important;
+  border-color: var(--tt-accent-border) !important;
+  color: var(--tt-accent) !important;
+  box-shadow: 0 0 16px var(--tt-accent-glow) !important;
+}
+
+.platform-theme-tiktok .platform-h1-accent {
+  color: var(--tt-accent) !important;
+  text-shadow: 0 0 24px var(--tt-accent-glow) !important;
+}
+
+.platform-theme-tiktok .glow-amber-hover:hover {
+  box-shadow: 0 0 50px var(--tt-accent-glow) !important;
+}
+
+.platform-theme-tiktok textarea#converter-input-box:focus {
+  border-color: var(--tt-accent) !important;
+  box-shadow: 0 0 0 4px rgba(37, 244, 238, 0.16) !important;
+}
+
+.platform-theme-tiktok #converter-char-count {
+  color: var(--tt-accent) !important;
+}
+
+.platform-theme-tiktok .preset-pill:hover {
+  background-color: var(--tt-accent-bg-hover) !important;
+  color: var(--tt-accent) !important;
+  border-color: var(--tt-accent-border) !important;
+}
+
+.platform-theme-tiktok #dedicated-styles-count-label,
+.platform-theme-tiktok #generic-styles-count-label {
+  color: var(--tt-accent) !important;
+}
+
+.platform-theme-tiktok .btn-copy-style {
+  background-color: var(--tt-accent) !important;
+  color: #09090e !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.platform-theme-tiktok .btn-copy-style:hover {
+  background-color: var(--tt-accent-hover) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(37, 244, 238, 0.40) !important;
+}
+
+.platform-theme-tiktok .converter-wrapper .bg-amber-500\/20,
+.platform-theme-tiktok #converter-results-grid span.bg-amber-500\/20,
+.platform-theme-tiktok .converter-wrapper span.text-amber-400 {
+  background-color: var(--tt-accent-bg-badge) !important;
+  color: var(--tt-accent) !important;
+  border-color: var(--tt-accent-border) !important;
+}
+
+.platform-theme-tiktok #converter-results-grid > div:hover {
+  border-color: rgba(37, 244, 238, 0.40) !important;
+}
+
+.platform-theme-tiktok #btn-show-more-styles {
+  background-color: var(--tt-accent-bg-subtle) !important;
+  color: var(--tt-accent) !important;
+  border-color: var(--tt-accent-border) !important;
+}
+
+.platform-theme-tiktok #btn-show-more-styles:hover {
+  background-color: var(--tt-accent-bg-hover) !important;
+  color: #7dfbf6 !important;
+  border-color: var(--tt-accent-border-hover) !important;
+  box-shadow: 0 8px 24px rgba(37, 244, 238, 0.20) !important;
+}
+
+.platform-theme-tiktok #hidden-styles-badge {
+  background-color: var(--tt-accent) !important;
+  color: #09090e !important;
+}
+
+.platform-theme-tiktok #converter-filter-tabs button.bg-amber-500 {
+  background-color: var(--tt-accent) !important;
+  color: #09090e !important;
+  border-color: var(--tt-accent) !important;
+  box-shadow: 0 4px 15px rgba(37, 244, 238, 0.25) !important;
+}
+
+.platform-theme-tiktok .platform-widgets-wrapper .bg-amber-500\/10,
+.platform-theme-tiktok .platform-widgets-wrapper span.bg-amber-500\/10 {
+  background-color: var(--tt-accent-bg-subtle) !important;
+  border-color: var(--tt-accent-border) !important;
+  color: var(--tt-accent) !important;
+}
+
+.platform-theme-tiktok .active-idea-pill,
+.platform-theme-tiktok .idea-cat-pill.active-idea-pill,
+.platform-theme-tiktok .idea-cat-pill.bg-amber-500 {
+  background-color: var(--tt-accent) !important;
+  color: #09090e !important;
+  box-shadow: 0 4px 15px rgba(37, 244, 238, 0.25) !important;
+  border-color: var(--tt-accent) !important;
+}
+
+.platform-theme-tiktok .idea-cat-pill:hover {
+  border-color: var(--tt-accent-border) !important;
+}
+
+.platform-theme-tiktok .ideas-suggestions-container > div:hover {
+  border-color: var(--tt-accent-border) !important;
+}
+
+.platform-theme-tiktok .btn-copy-idea:hover,
+.platform-theme-tiktok .btn-copy-combo:hover {
+  background-color: var(--tt-accent) !important;
+  color: #09090e !important;
+  border-color: var(--tt-accent) !important;
+}
+
+.platform-theme-tiktok .symbol-wrap-input:focus {
+  border-color: var(--tt-accent) !important;
+  box-shadow: 0 0 0 3px rgba(37, 244, 238, 0.20) !important;
+}
+
+.platform-theme-tiktok .symbol-combos-container > div:hover {
+  border-color: var(--tt-accent-border) !important;
+}
+
+.platform-theme-tiktok .active-emoji-pill,
+.platform-theme-tiktok .emoji-cat-pill.active-emoji-pill,
+.platform-theme-tiktok .emoji-cat-pill.bg-amber-500 {
+  background-color: var(--tt-accent) !important;
+  color: #09090e !important;
+  box-shadow: 0 4px 15px rgba(37, 244, 238, 0.25) !important;
+  border-color: var(--tt-accent) !important;
+}
+
+.platform-theme-tiktok .emoji-cat-pill:hover {
+  border-color: var(--tt-accent-border) !important;
+}
+
+.platform-theme-tiktok .btn-copy-all-emojis {
+  background-color: var(--tt-accent) !important;
+  color: #09090e !important;
+  box-shadow: 0 4px 16px rgba(37, 244, 238, 0.25) !important;
+}
+
+.platform-theme-tiktok .btn-copy-all-emojis:hover {
+  background-color: var(--tt-accent-hover) !important;
+  color: #ffffff !important;
+}
+
+.platform-theme-tiktok #platform-live-widget .bg-amber-500\/10 {
+  background-color: var(--tt-accent-bg-subtle) !important;
+  border-color: var(--tt-accent-border) !important;
+  color: var(--tt-accent) !important;
+}
+
+.platform-theme-tiktok #platform-live-widget .w-1\.5.h-1\.5.bg-amber-500 {
+  background-color: var(--tt-accent) !important;
+}
+
+.platform-theme-tiktok #preview-active-style-label {
+  color: var(--tt-accent) !important;
+}
+
+.platform-theme-tiktok #preview-style-pills .preview-style-pill.active,
+.platform-theme-tiktok #preview-style-pills .preview-style-pill.bg-amber-500 {
+  background-color: var(--tt-accent) !important;
+  color: #09090e !important;
+}
+
+.platform-theme-tiktok .hover\:border-amber-500\/30:hover {
+  border-color: var(--tt-accent-border) !important;
+}
+
+.platform-theme-tiktok .hover\:bg-amber-500\/10:hover {
+  background-color: var(--tt-accent-bg-subtle) !important;
+}
+
+.platform-theme-tiktok .hover\:bg-amber-500\/20:hover {
+  background-color: var(--tt-accent-bg-hover) !important;
+}
+
+.platform-theme-tiktok .hover\:text-amber-400:hover {
+  color: var(--tt-accent) !important;
+}
+
+.platform-theme-tiktok .group:hover .group-hover\:text-amber-400 {
+  color: var(--tt-accent) !important;
+}
+
+.platform-theme-tiktok .text-amber-400 {
+  color: var(--tt-accent) !important;
+}
+
+.platform-theme-tiktok .text-amber-300 {
+  color: #7dfbf6 !important;
+}
+
+.platform-theme-tiktok .bg-amber-500\/5 {
+  background-color: rgba(37, 244, 238, 0.05) !important;
+}
+
+.platform-theme-tiktok .border-amber-500\/20 {
+  border-color: rgba(37, 244, 238, 0.20) !important;
+}
+
+[data-theme="light"] .platform-theme-tiktok {
+  --tt-accent: #0891b2;
+  --tt-accent-hover: #0e7490;
+  --tt-accent-glow: rgba(8, 145, 178, 0.16);
+  --tt-accent-bg-subtle: rgba(8, 145, 178, 0.10);
+  --tt-accent-bg-badge: rgba(8, 145, 178, 0.14);
+  --tt-accent-bg-hover: rgba(8, 145, 178, 0.18);
+  --tt-accent-border: rgba(8, 145, 178, 0.28);
+}
+
+/* ==========================================================================
+   3. DISCORD THEME: Blurple (#5865F2 / #4752C4)
+   ========================================================================== */
+.platform-theme-discord {
+  --dc-accent: #5865f2;
+  --dc-accent-hover: #4752c4;
+  --dc-accent-glow: rgba(88, 101, 242, 0.25);
+  --dc-accent-bg-subtle: rgba(88, 101, 242, 0.10);
+  --dc-accent-bg-badge: rgba(88, 101, 242, 0.15);
+  --dc-accent-bg-hover: rgba(88, 101, 242, 0.20);
+  --dc-accent-border: rgba(88, 101, 242, 0.32);
+  --dc-accent-border-hover: rgba(88, 101, 242, 0.50);
+}
+
+.platform-theme-discord .platform-guide-badge {
+  background-color: var(--dc-accent-bg-subtle) !important;
+  border-color: var(--dc-accent-border) !important;
+  color: #7983f5 !important;
+  box-shadow: 0 0 16px var(--dc-accent-glow) !important;
+}
+
+.platform-theme-discord .platform-h1-accent {
+  color: #7983f5 !important;
+  text-shadow: 0 0 24px var(--dc-accent-glow) !important;
+}
+
+.platform-theme-discord .glow-amber-hover:hover {
+  box-shadow: 0 0 50px var(--dc-accent-glow) !important;
+}
+
+.platform-theme-discord textarea#converter-input-box:focus {
+  border-color: var(--dc-accent) !important;
+  box-shadow: 0 0 0 4px rgba(88, 101, 242, 0.16) !important;
+}
+
+.platform-theme-discord #converter-char-count {
+  color: #7983f5 !important;
+}
+
+.platform-theme-discord .preset-pill:hover {
+  background-color: var(--dc-accent-bg-hover) !important;
+  color: #7983f5 !important;
+  border-color: var(--dc-accent-border) !important;
+}
+
+.platform-theme-discord #dedicated-styles-count-label,
+.platform-theme-discord #generic-styles-count-label {
+  color: #7983f5 !important;
+}
+
+.platform-theme-discord .btn-copy-style {
+  background-color: var(--dc-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.platform-theme-discord .btn-copy-style:hover {
+  background-color: var(--dc-accent-hover) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(88, 101, 242, 0.40) !important;
+}
+
+.platform-theme-discord .converter-wrapper .bg-amber-500\/20,
+.platform-theme-discord #converter-results-grid span.bg-amber-500\/20,
+.platform-theme-discord .converter-wrapper span.text-amber-400 {
+  background-color: var(--dc-accent-bg-badge) !important;
+  color: #7983f5 !important;
+  border-color: var(--dc-accent-border) !important;
+}
+
+.platform-theme-discord #converter-results-grid > div:hover {
+  border-color: rgba(88, 101, 242, 0.40) !important;
+}
+
+.platform-theme-discord #btn-show-more-styles {
+  background-color: var(--dc-accent-bg-subtle) !important;
+  color: #7983f5 !important;
+  border-color: var(--dc-accent-border) !important;
+}
+
+.platform-theme-discord #btn-show-more-styles:hover {
+  background-color: var(--dc-accent-bg-hover) !important;
+  color: #9aa2f8 !important;
+  border-color: var(--dc-accent-border-hover) !important;
+  box-shadow: 0 8px 24px rgba(88, 101, 242, 0.20) !important;
+}
+
+.platform-theme-discord #hidden-styles-badge {
+  background-color: var(--dc-accent) !important;
+  color: #ffffff !important;
+}
+
+.platform-theme-discord #converter-filter-tabs button.bg-amber-500 {
+  background-color: var(--dc-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--dc-accent) !important;
+  box-shadow: 0 4px 15px rgba(88, 101, 242, 0.25) !important;
+}
+
+.platform-theme-discord .platform-widgets-wrapper .bg-amber-500\/10,
+.platform-theme-discord .platform-widgets-wrapper span.bg-amber-500\/10 {
+  background-color: var(--dc-accent-bg-subtle) !important;
+  border-color: var(--dc-accent-border) !important;
+  color: #7983f5 !important;
+}
+
+.platform-theme-discord .active-idea-pill,
+.platform-theme-discord .idea-cat-pill.active-idea-pill,
+.platform-theme-discord .idea-cat-pill.bg-amber-500 {
+  background-color: var(--dc-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(88, 101, 242, 0.25) !important;
+  border-color: var(--dc-accent) !important;
+}
+
+.platform-theme-discord .idea-cat-pill:hover {
+  border-color: var(--dc-accent-border) !important;
+}
+
+.platform-theme-discord .ideas-suggestions-container > div:hover {
+  border-color: var(--dc-accent-border) !important;
+}
+
+.platform-theme-discord .btn-copy-idea:hover,
+.platform-theme-discord .btn-copy-combo:hover {
+  background-color: var(--dc-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--dc-accent) !important;
+}
+
+.platform-theme-discord .symbol-wrap-input:focus {
+  border-color: var(--dc-accent) !important;
+  box-shadow: 0 0 0 3px rgba(88, 101, 242, 0.20) !important;
+}
+
+.platform-theme-discord .symbol-combos-container > div:hover {
+  border-color: var(--dc-accent-border) !important;
+}
+
+.platform-theme-discord .active-emoji-pill,
+.platform-theme-discord .emoji-cat-pill.active-emoji-pill,
+.platform-theme-discord .emoji-cat-pill.bg-amber-500 {
+  background-color: var(--dc-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(88, 101, 242, 0.25) !important;
+  border-color: var(--dc-accent) !important;
+}
+
+.platform-theme-discord .emoji-cat-pill:hover {
+  border-color: var(--dc-accent-border) !important;
+}
+
+.platform-theme-discord .btn-copy-all-emojis {
+  background-color: var(--dc-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(88, 101, 242, 0.25) !important;
+}
+
+.platform-theme-discord .btn-copy-all-emojis:hover {
+  background-color: var(--dc-accent-hover) !important;
+  color: #ffffff !important;
+}
+
+.platform-theme-discord #platform-live-widget .bg-amber-500\/10 {
+  background-color: var(--dc-accent-bg-subtle) !important;
+  border-color: var(--dc-accent-border) !important;
+  color: #7983f5 !important;
+}
+
+.platform-theme-discord #platform-live-widget .w-1\.5.h-1\.5.bg-amber-500 {
+  background-color: var(--dc-accent) !important;
+}
+
+.platform-theme-discord #preview-active-style-label {
+  color: #7983f5 !important;
+}
+
+.platform-theme-discord #preview-style-pills .preview-style-pill.active,
+.platform-theme-discord #preview-style-pills .preview-style-pill.bg-amber-500 {
+  background-color: var(--dc-accent) !important;
+  color: #ffffff !important;
+}
+
+.platform-theme-discord .hover\:border-amber-500\/30:hover {
+  border-color: var(--dc-accent-border) !important;
+}
+
+.platform-theme-discord .hover\:bg-amber-500\/10:hover {
+  background-color: var(--dc-accent-bg-subtle) !important;
+}
+
+.platform-theme-discord .hover\:bg-amber-500\/20:hover {
+  background-color: var(--dc-accent-bg-hover) !important;
+}
+
+.platform-theme-discord .hover\:text-amber-400:hover {
+  color: #7983f5 !important;
+}
+
+.platform-theme-discord .group:hover .group-hover\:text-amber-400 {
+  color: #7983f5 !important;
+}
+
+.platform-theme-discord .text-amber-400 {
+  color: #7983f5 !important;
+}
+
+.platform-theme-discord .text-amber-300 {
+  color: #9aa2f8 !important;
+}
+
+.platform-theme-discord .bg-amber-500\/5 {
+  background-color: rgba(88, 101, 242, 0.05) !important;
+}
+
+.platform-theme-discord .border-amber-500\/20 {
+  border-color: rgba(88, 101, 242, 0.20) !important;
+}
+
+[data-theme="light"] .platform-theme-discord {
+  --dc-accent: #4752c4;
+  --dc-accent-hover: #3c45a5;
+  --dc-accent-glow: rgba(71, 82, 196, 0.16);
+  --dc-accent-bg-subtle: rgba(71, 82, 196, 0.10);
+  --dc-accent-bg-badge: rgba(71, 82, 196, 0.14);
+  --dc-accent-bg-hover: rgba(71, 82, 196, 0.18);
+  --dc-accent-border: rgba(71, 82, 196, 0.28);
+}
+
+/* ==========================================================================
+   4. FACEBOOK THEME: Facebook Blue (#1877F2 / #166FE5)
+   ========================================================================== */
+.platform-theme-facebook {
+  --fb-accent: #1877f2;
+  --fb-accent-hover: #166fe5;
+  --fb-accent-glow: rgba(24, 119, 242, 0.25);
+  --fb-accent-bg-subtle: rgba(24, 119, 242, 0.10);
+  --fb-accent-bg-badge: rgba(24, 119, 242, 0.15);
+  --fb-accent-bg-hover: rgba(24, 119, 242, 0.20);
+  --fb-accent-border: rgba(24, 119, 242, 0.32);
+  --fb-accent-border-hover: rgba(24, 119, 242, 0.50);
+}
+
+.platform-theme-facebook .platform-guide-badge {
+  background-color: var(--fb-accent-bg-subtle) !important;
+  border-color: var(--fb-accent-border) !important;
+  color: #3b82f6 !important;
+  box-shadow: 0 0 16px var(--fb-accent-glow) !important;
+}
+
+.platform-theme-facebook .platform-h1-accent {
+  color: #3b82f6 !important;
+  text-shadow: 0 0 24px var(--fb-accent-glow) !important;
+}
+
+.platform-theme-facebook .glow-amber-hover:hover {
+  box-shadow: 0 0 50px var(--fb-accent-glow) !important;
+}
+
+.platform-theme-facebook textarea#converter-input-box:focus {
+  border-color: var(--fb-accent) !important;
+  box-shadow: 0 0 0 4px rgba(24, 119, 242, 0.16) !important;
+}
+
+.platform-theme-facebook #converter-char-count {
+  color: #3b82f6 !important;
+}
+
+.platform-theme-facebook .preset-pill:hover {
+  background-color: var(--fb-accent-bg-hover) !important;
+  color: #3b82f6 !important;
+  border-color: var(--fb-accent-border) !important;
+}
+
+.platform-theme-facebook #dedicated-styles-count-label,
+.platform-theme-facebook #generic-styles-count-label {
+  color: #3b82f6 !important;
+}
+
+.platform-theme-facebook .btn-copy-style {
+  background-color: var(--fb-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.platform-theme-facebook .btn-copy-style:hover {
+  background-color: var(--fb-accent-hover) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(24, 119, 242, 0.40) !important;
+}
+
+.platform-theme-facebook .converter-wrapper .bg-amber-500\/20,
+.platform-theme-facebook #converter-results-grid span.bg-amber-500\/20,
+.platform-theme-facebook .converter-wrapper span.text-amber-400 {
+  background-color: var(--fb-accent-bg-badge) !important;
+  color: #3b82f6 !important;
+  border-color: var(--fb-accent-border) !important;
+}
+
+.platform-theme-facebook #converter-results-grid > div:hover {
+  border-color: rgba(24, 119, 242, 0.40) !important;
+}
+
+.platform-theme-facebook #btn-show-more-styles {
+  background-color: var(--fb-accent-bg-subtle) !important;
+  color: #3b82f6 !important;
+  border-color: var(--fb-accent-border) !important;
+}
+
+.platform-theme-facebook #btn-show-more-styles:hover {
+  background-color: var(--fb-accent-bg-hover) !important;
+  color: #60a5fa !important;
+  border-color: var(--fb-accent-border-hover) !important;
+  box-shadow: 0 8px 24px rgba(24, 119, 242, 0.20) !important;
+}
+
+.platform-theme-facebook #hidden-styles-badge {
+  background-color: var(--fb-accent) !important;
+  color: #ffffff !important;
+}
+
+.platform-theme-facebook #converter-filter-tabs button.bg-amber-500 {
+  background-color: var(--fb-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--fb-accent) !important;
+  box-shadow: 0 4px 15px rgba(24, 119, 242, 0.25) !important;
+}
+
+.platform-theme-facebook .platform-widgets-wrapper .bg-amber-500\/10,
+.platform-theme-facebook .platform-widgets-wrapper span.bg-amber-500\/10 {
+  background-color: var(--fb-accent-bg-subtle) !important;
+  border-color: var(--fb-accent-border) !important;
+  color: #3b82f6 !important;
+}
+
+.platform-theme-facebook .active-idea-pill,
+.platform-theme-facebook .idea-cat-pill.active-idea-pill,
+.platform-theme-facebook .idea-cat-pill.bg-amber-500 {
+  background-color: var(--fb-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(24, 119, 242, 0.25) !important;
+  border-color: var(--fb-accent) !important;
+}
+
+.platform-theme-facebook .idea-cat-pill:hover {
+  border-color: var(--fb-accent-border) !important;
+}
+
+.platform-theme-facebook .ideas-suggestions-container > div:hover {
+  border-color: var(--fb-accent-border) !important;
+}
+
+.platform-theme-facebook .btn-copy-idea:hover,
+.platform-theme-facebook .btn-copy-combo:hover {
+  background-color: var(--fb-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--fb-accent) !important;
+}
+
+.platform-theme-facebook .symbol-wrap-input:focus {
+  border-color: var(--fb-accent) !important;
+  box-shadow: 0 0 0 3px rgba(24, 119, 242, 0.20) !important;
+}
+
+.platform-theme-facebook .symbol-combos-container > div:hover {
+  border-color: var(--fb-accent-border) !important;
+}
+
+.platform-theme-facebook .active-emoji-pill,
+.platform-theme-facebook .emoji-cat-pill.active-emoji-pill,
+.platform-theme-facebook .emoji-cat-pill.bg-amber-500 {
+  background-color: var(--fb-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(24, 119, 242, 0.25) !important;
+  border-color: var(--fb-accent) !important;
+}
+
+.platform-theme-facebook .emoji-cat-pill:hover {
+  border-color: var(--fb-accent-border) !important;
+}
+
+.platform-theme-facebook .btn-copy-all-emojis {
+  background-color: var(--fb-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(24, 119, 242, 0.25) !important;
+}
+
+.platform-theme-facebook .btn-copy-all-emojis:hover {
+  background-color: var(--fb-accent-hover) !important;
+  color: #ffffff !important;
+}
+
+.platform-theme-facebook #platform-live-widget .bg-amber-500\/10 {
+  background-color: var(--fb-accent-bg-subtle) !important;
+  border-color: var(--fb-accent-border) !important;
+  color: #3b82f6 !important;
+}
+
+.platform-theme-facebook #platform-live-widget .w-1\.5.h-1\.5.bg-amber-500 {
+  background-color: var(--fb-accent) !important;
+}
+
+.platform-theme-facebook #preview-active-style-label {
+  color: #3b82f6 !important;
+}
+
+.platform-theme-facebook #preview-style-pills .preview-style-pill.active,
+.platform-theme-facebook #preview-style-pills .preview-style-pill.bg-amber-500 {
+  background-color: var(--fb-accent) !important;
+  color: #ffffff !important;
+}
+
+.platform-theme-facebook .hover\:border-amber-500\/30:hover {
+  border-color: var(--fb-accent-border) !important;
+}
+
+.platform-theme-facebook .hover\:bg-amber-500\/10:hover {
+  background-color: var(--fb-accent-bg-subtle) !important;
+}
+
+.platform-theme-facebook .hover\:bg-amber-500\/20:hover {
+  background-color: var(--fb-accent-bg-hover) !important;
+}
+
+.platform-theme-facebook .hover\:text-amber-400:hover {
+  color: #3b82f6 !important;
+}
+
+.platform-theme-facebook .group:hover .group-hover\:text-amber-400 {
+  color: #3b82f6 !important;
+}
+
+.platform-theme-facebook .text-amber-400 {
+  color: #3b82f6 !important;
+}
+
+.platform-theme-facebook .text-amber-300 {
+  color: #60a5fa !important;
+}
+
+.platform-theme-facebook .bg-amber-500\/5 {
+  background-color: rgba(24, 119, 242, 0.05) !important;
+}
+
+.platform-theme-facebook .border-amber-500\/20 {
+  border-color: rgba(24, 119, 242, 0.20) !important;
+}
+
+[data-theme="light"] .platform-theme-facebook {
+  --fb-accent: #166fe5;
+  --fb-accent-hover: #0e56b8;
+  --fb-accent-glow: rgba(22, 111, 229, 0.16);
+  --fb-accent-bg-subtle: rgba(22, 111, 229, 0.10);
+  --fb-accent-bg-badge: rgba(22, 111, 229, 0.14);
+  --fb-accent-bg-hover: rgba(22, 111, 229, 0.18);
+  --fb-accent-border: rgba(22, 111, 229, 0.28);
+}
+
+/* ==========================================================================
+   5. TWITTER / X THEME: Clean Minimal Monochrome Silver-White (#F3F4F6)
+   ========================================================================== */
+.platform-theme-twitter-x {
+  --x-accent: #f3f4f6;
+  --x-accent-hover: #ffffff;
+  --x-accent-glow: rgba(255, 255, 255, 0.20);
+  --x-accent-bg-subtle: rgba(255, 255, 255, 0.08);
+  --x-accent-bg-badge: rgba(255, 255, 255, 0.12);
+  --x-accent-bg-hover: rgba(255, 255, 255, 0.18);
+  --x-accent-border: rgba(255, 255, 255, 0.28);
+  --x-accent-border-hover: rgba(255, 255, 255, 0.50);
+}
+
+.platform-theme-twitter-x .platform-guide-badge {
+  background-color: var(--x-accent-bg-subtle) !important;
+  border-color: var(--x-accent-border) !important;
+  color: var(--x-accent) !important;
+  box-shadow: 0 0 16px var(--x-accent-glow) !important;
+}
+
+.platform-theme-twitter-x .platform-h1-accent {
+  color: var(--x-accent) !important;
+  text-shadow: 0 0 24px var(--x-accent-glow) !important;
+}
+
+.platform-theme-twitter-x .glow-amber-hover:hover {
+  box-shadow: 0 0 50px var(--x-accent-glow) !important;
+}
+
+.platform-theme-twitter-x textarea#converter-input-box:focus {
+  border-color: var(--x-accent) !important;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.15) !important;
+}
+
+.platform-theme-twitter-x #converter-char-count {
+  color: var(--x-accent) !important;
+}
+
+.platform-theme-twitter-x .preset-pill:hover {
+  background-color: var(--x-accent-bg-hover) !important;
+  color: var(--x-accent) !important;
+  border-color: var(--x-accent-border) !important;
+}
+
+.platform-theme-twitter-x #dedicated-styles-count-label,
+.platform-theme-twitter-x #generic-styles-count-label {
+  color: var(--x-accent) !important;
+}
+
+.platform-theme-twitter-x .btn-copy-style {
+  background-color: var(--x-accent) !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+.platform-theme-twitter-x .btn-copy-style:hover {
+  background-color: var(--x-accent-hover) !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.35) !important;
+}
+
+.platform-theme-twitter-x .converter-wrapper .bg-amber-500\/20,
+.platform-theme-twitter-x #converter-results-grid span.bg-amber-500\/20,
+.platform-theme-twitter-x .converter-wrapper span.text-amber-400 {
+  background-color: var(--x-accent-bg-badge) !important;
+  color: var(--x-accent) !important;
+  border-color: var(--x-accent-border) !important;
+}
+
+.platform-theme-twitter-x #converter-results-grid > div:hover {
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.platform-theme-twitter-x #btn-show-more-styles {
+  background-color: var(--x-accent-bg-subtle) !important;
+  color: var(--x-accent) !important;
+  border-color: var(--x-accent-border) !important;
+}
+
+.platform-theme-twitter-x #btn-show-more-styles:hover {
+  background-color: var(--x-accent-bg-hover) !important;
+  color: #ffffff !important;
+  border-color: var(--x-accent-border-hover) !important;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.18) !important;
+}
+
+.platform-theme-twitter-x #hidden-styles-badge {
+  background-color: var(--x-accent) !important;
+  color: #000000 !important;
+}
+
+.platform-theme-twitter-x #converter-filter-tabs button.bg-amber-500 {
+  background-color: var(--x-accent) !important;
+  color: #000000 !important;
+  border-color: var(--x-accent) !important;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.20) !important;
+}
+
+.platform-theme-twitter-x .platform-widgets-wrapper .bg-amber-500\/10,
+.platform-theme-twitter-x .platform-widgets-wrapper span.bg-amber-500\/10 {
+  background-color: var(--x-accent-bg-subtle) !important;
+  border-color: var(--x-accent-border) !important;
+  color: var(--x-accent) !important;
+}
+
+.platform-theme-twitter-x .active-idea-pill,
+.platform-theme-twitter-x .idea-cat-pill.active-idea-pill,
+.platform-theme-twitter-x .idea-cat-pill.bg-amber-500 {
+  background-color: var(--x-accent) !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.20) !important;
+  border-color: var(--x-accent) !important;
+}
+
+.platform-theme-twitter-x .idea-cat-pill:hover {
+  border-color: var(--x-accent-border) !important;
+}
+
+.platform-theme-twitter-x .ideas-suggestions-container > div:hover {
+  border-color: var(--x-accent-border) !important;
+}
+
+.platform-theme-twitter-x .btn-copy-idea:hover,
+.platform-theme-twitter-x .btn-copy-combo:hover {
+  background-color: var(--x-accent) !important;
+  color: #000000 !important;
+  border-color: var(--x-accent) !important;
+}
+
+.platform-theme-twitter-x .symbol-wrap-input:focus {
+  border-color: var(--x-accent) !important;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.20) !important;
+}
+
+.platform-theme-twitter-x .symbol-combos-container > div:hover {
+  border-color: var(--x-accent-border) !important;
+}
+
+.platform-theme-twitter-x .active-emoji-pill,
+.platform-theme-twitter-x .emoji-cat-pill.active-emoji-pill,
+.platform-theme-twitter-x .emoji-cat-pill.bg-amber-500 {
+  background-color: var(--x-accent) !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.20) !important;
+  border-color: var(--x-accent) !important;
+}
+
+.platform-theme-twitter-x .emoji-cat-pill:hover {
+  border-color: var(--x-accent-border) !important;
+}
+
+.platform-theme-twitter-x .btn-copy-all-emojis {
+  background-color: var(--x-accent) !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.20) !important;
+}
+
+.platform-theme-twitter-x .btn-copy-all-emojis:hover {
+  background-color: var(--x-accent-hover) !important;
+  color: #000000 !important;
+}
+
+.platform-theme-twitter-x #platform-live-widget .bg-amber-500\/10 {
+  background-color: var(--x-accent-bg-subtle) !important;
+  border-color: var(--x-accent-border) !important;
+  color: var(--x-accent) !important;
+}
+
+.platform-theme-twitter-x #platform-live-widget .w-1\.5.h-1\.5.bg-amber-500 {
+  background-color: var(--x-accent) !important;
+}
+
+.platform-theme-twitter-x #preview-active-style-label {
+  color: var(--x-accent) !important;
+}
+
+.platform-theme-twitter-x #preview-style-pills .preview-style-pill.active,
+.platform-theme-twitter-x #preview-style-pills .preview-style-pill.bg-amber-500 {
+  background-color: var(--x-accent) !important;
+  color: #000000 !important;
+}
+
+.platform-theme-twitter-x .hover\:border-amber-500\/30:hover {
+  border-color: var(--x-accent-border) !important;
+}
+
+.platform-theme-twitter-x .hover\:bg-amber-500\/10:hover {
+  background-color: var(--x-accent-bg-subtle) !important;
+}
+
+.platform-theme-twitter-x .hover\:bg-amber-500\/20:hover {
+  background-color: var(--x-accent-bg-hover) !important;
+}
+
+.platform-theme-twitter-x .hover\:text-amber-400:hover {
+  color: var(--x-accent) !important;
+}
+
+.platform-theme-twitter-x .group:hover .group-hover\:text-amber-400 {
+  color: var(--x-accent) !important;
+}
+
+.platform-theme-twitter-x .text-amber-400 {
+  color: var(--x-accent) !important;
+}
+
+.platform-theme-twitter-x .text-amber-300 {
+  color: #ffffff !important;
+}
+
+.platform-theme-twitter-x .bg-amber-500\/5 {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.platform-theme-twitter-x .border-amber-500\/20 {
+  border-color: rgba(255, 255, 255, 0.20) !important;
+}
+
+[data-theme="light"] .platform-theme-twitter-x {
+  --x-accent: #1e293b;
+  --x-accent-hover: #0f172a;
+  --x-accent-glow: rgba(30, 41, 59, 0.16);
+  --x-accent-bg-subtle: rgba(30, 41, 59, 0.08);
+  --x-accent-bg-badge: rgba(30, 41, 59, 0.12);
+  --x-accent-bg-hover: rgba(30, 41, 59, 0.16);
+  --x-accent-border: rgba(30, 41, 59, 0.25);
+}
+
+[data-theme="light"] .platform-theme-twitter-x .btn-copy-style {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .platform-theme-twitter-x .btn-copy-style:hover {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   6. TELEGRAM THEME: Telegram Sky Blue (#2AABEE / #229ED9)
+   ========================================================================== */
+.platform-theme-telegram {
+  --tg-accent: #229ed9;
+  --tg-accent-hover: #1d87bc;
+  --tg-accent-glow: rgba(34, 158, 217, 0.25);
+  --tg-accent-bg-subtle: rgba(34, 158, 217, 0.10);
+  --tg-accent-bg-badge: rgba(34, 158, 217, 0.15);
+  --tg-accent-bg-hover: rgba(34, 158, 217, 0.20);
+  --tg-accent-border: rgba(34, 158, 217, 0.32);
+  --tg-accent-border-hover: rgba(34, 158, 217, 0.50);
+}
+
+.platform-theme-telegram .platform-guide-badge {
+  background-color: var(--tg-accent-bg-subtle) !important;
+  border-color: var(--tg-accent-border) !important;
+  color: #38bdf8 !important;
+  box-shadow: 0 0 16px var(--tg-accent-glow) !important;
+}
+
+.platform-theme-telegram .platform-h1-accent {
+  color: #38bdf8 !important;
+  text-shadow: 0 0 24px var(--tg-accent-glow) !important;
+}
+
+.platform-theme-telegram .glow-amber-hover:hover {
+  box-shadow: 0 0 50px var(--tg-accent-glow) !important;
+}
+
+.platform-theme-telegram textarea#converter-input-box:focus {
+  border-color: var(--tg-accent) !important;
+  box-shadow: 0 0 0 4px rgba(34, 158, 217, 0.16) !important;
+}
+
+.platform-theme-telegram #converter-char-count {
+  color: #38bdf8 !important;
+}
+
+.platform-theme-telegram .preset-pill:hover {
+  background-color: var(--tg-accent-bg-hover) !important;
+  color: #38bdf8 !important;
+  border-color: var(--tg-accent-border) !important;
+}
+
+.platform-theme-telegram #dedicated-styles-count-label,
+.platform-theme-telegram #generic-styles-count-label {
+  color: #38bdf8 !important;
+}
+
+.platform-theme-telegram .btn-copy-style {
+  background-color: var(--tg-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.platform-theme-telegram .btn-copy-style:hover {
+  background-color: var(--tg-accent-hover) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(34, 158, 217, 0.40) !important;
+}
+
+.platform-theme-telegram .converter-wrapper .bg-amber-500\/20,
+.platform-theme-telegram #converter-results-grid span.bg-amber-500\/20,
+.platform-theme-telegram .converter-wrapper span.text-amber-400 {
+  background-color: var(--tg-accent-bg-badge) !important;
+  color: #38bdf8 !important;
+  border-color: var(--tg-accent-border) !important;
+}
+
+.platform-theme-telegram #converter-results-grid > div:hover {
+  border-color: rgba(34, 158, 217, 0.40) !important;
+}
+
+.platform-theme-telegram #btn-show-more-styles {
+  background-color: var(--tg-accent-bg-subtle) !important;
+  color: #38bdf8 !important;
+  border-color: var(--tg-accent-border) !important;
+}
+
+.platform-theme-telegram #btn-show-more-styles:hover {
+  background-color: var(--tg-accent-bg-hover) !important;
+  color: #7dd3fc !important;
+  border-color: var(--tg-accent-border-hover) !important;
+  box-shadow: 0 8px 24px rgba(34, 158, 217, 0.20) !important;
+}
+
+.platform-theme-telegram #hidden-styles-badge {
+  background-color: var(--tg-accent) !important;
+  color: #ffffff !important;
+}
+
+.platform-theme-telegram #converter-filter-tabs button.bg-amber-500 {
+  background-color: var(--tg-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--tg-accent) !important;
+  box-shadow: 0 4px 15px rgba(34, 158, 217, 0.25) !important;
+}
+
+.platform-theme-telegram .platform-widgets-wrapper .bg-amber-500\/10,
+.platform-theme-telegram .platform-widgets-wrapper span.bg-amber-500\/10 {
+  background-color: var(--tg-accent-bg-subtle) !important;
+  border-color: var(--tg-accent-border) !important;
+  color: #38bdf8 !important;
+}
+
+.platform-theme-telegram .active-idea-pill,
+.platform-theme-telegram .idea-cat-pill.active-idea-pill,
+.platform-theme-telegram .idea-cat-pill.bg-amber-500 {
+  background-color: var(--tg-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(34, 158, 217, 0.25) !important;
+  border-color: var(--tg-accent) !important;
+}
+
+.platform-theme-telegram .idea-cat-pill:hover {
+  border-color: var(--tg-accent-border) !important;
+}
+
+.platform-theme-telegram .ideas-suggestions-container > div:hover {
+  border-color: var(--tg-accent-border) !important;
+}
+
+.platform-theme-telegram .btn-copy-idea:hover,
+.platform-theme-telegram .btn-copy-combo:hover {
+  background-color: var(--tg-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--tg-accent) !important;
+}
+
+.platform-theme-telegram .symbol-wrap-input:focus {
+  border-color: var(--tg-accent) !important;
+  box-shadow: 0 0 0 3px rgba(34, 158, 217, 0.20) !important;
+}
+
+.platform-theme-telegram .symbol-combos-container > div:hover {
+  border-color: var(--tg-accent-border) !important;
+}
+
+.platform-theme-telegram .active-emoji-pill,
+.platform-theme-telegram .emoji-cat-pill.active-emoji-pill,
+.platform-theme-telegram .emoji-cat-pill.bg-amber-500 {
+  background-color: var(--tg-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(34, 158, 217, 0.25) !important;
+  border-color: var(--tg-accent) !important;
+}
+
+.platform-theme-telegram .emoji-cat-pill:hover {
+  border-color: var(--tg-accent-border) !important;
+}
+
+.platform-theme-telegram .btn-copy-all-emojis {
+  background-color: var(--tg-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(34, 158, 217, 0.25) !important;
+}
+
+.platform-theme-telegram .btn-copy-all-emojis:hover {
+  background-color: var(--tg-accent-hover) !important;
+  color: #ffffff !important;
+}
+
+.platform-theme-telegram #platform-live-widget .bg-amber-500\/10 {
+  background-color: var(--tg-accent-bg-subtle) !important;
+  border-color: var(--tg-accent-border) !important;
+  color: #38bdf8 !important;
+}
+
+.platform-theme-telegram #platform-live-widget .w-1\.5.h-1\.5.bg-amber-500 {
+  background-color: var(--tg-accent) !important;
+}
+
+.platform-theme-telegram #preview-active-style-label {
+  color: #38bdf8 !important;
+}
+
+.platform-theme-telegram #preview-style-pills .preview-style-pill.active,
+.platform-theme-telegram #preview-style-pills .preview-style-pill.bg-amber-500 {
+  background-color: var(--tg-accent) !important;
+  color: #ffffff !important;
+}
+
+.platform-theme-telegram .hover\:border-amber-500\/30:hover {
+  border-color: var(--tg-accent-border) !important;
+}
+
+.platform-theme-telegram .hover\:bg-amber-500\/10:hover {
+  background-color: var(--tg-accent-bg-subtle) !important;
+}
+
+.platform-theme-telegram .hover\:bg-amber-500\/20:hover {
+  background-color: var(--tg-accent-bg-hover) !important;
+}
+
+.platform-theme-telegram .hover\:text-amber-400:hover {
+  color: #38bdf8 !important;
+}
+
+.platform-theme-telegram .group:hover .group-hover\:text-amber-400 {
+  color: #38bdf8 !important;
+}
+
+.platform-theme-telegram .text-amber-400 {
+  color: #38bdf8 !important;
+}
+
+.platform-theme-telegram .text-amber-300 {
+  color: #7dd3fc !important;
+}
+
+.platform-theme-telegram .bg-amber-500\/5 {
+  background-color: rgba(34, 158, 217, 0.05) !important;
+}
+
+.platform-theme-telegram .border-amber-500\/20 {
+  border-color: rgba(34, 158, 217, 0.20) !important;
+}
+
+[data-theme="light"] .platform-theme-telegram {
+  --tg-accent: #0284c7;
+  --tg-accent-hover: #0369a1;
+  --tg-accent-glow: rgba(2, 132, 199, 0.16);
+  --tg-accent-bg-subtle: rgba(2, 132, 199, 0.10);
+  --tg-accent-bg-badge: rgba(2, 132, 199, 0.14);
+  --tg-accent-bg-hover: rgba(2, 132, 199, 0.18);
+  --tg-accent-border: rgba(2, 132, 199, 0.28);
+}
+
+/* ==========================================================================
+   GAME-SPECIFIC BRAND ACCENT THEMES (PAGE-SCOPED)
+   ========================================================================== */
+
+/* Fortnite Theme: Battle Royale Purple (#9D4EDD / #8B3FD1) with Electric Blue highlights (#4CC9F0) */
+.game-theme-fortnite {
+  --fn-accent: #9d4edd;
+  --fn-accent-hover: #7b2cbf;
+  --fn-accent-light: #c77dff;
+  --fn-accent-secondary: #4cc9f0;
+  --fn-accent-glow: rgba(157, 78, 221, 0.28);
+  --fn-accent-bg-subtle: rgba(157, 78, 221, 0.12);
+  --fn-accent-bg-badge: rgba(157, 78, 221, 0.16);
+  --fn-accent-bg-hover: rgba(157, 78, 221, 0.22);
+  --fn-accent-border: rgba(157, 78, 221, 0.35);
+  --fn-accent-border-hover: rgba(157, 78, 221, 0.55);
+}
+
+/* 1. Battle Royale Guide Badge & H1 Accent */
+.game-theme-fortnite .game-guide-badge {
+  background-color: var(--fn-accent-bg-subtle) !important;
+  border-color: var(--fn-accent-border) !important;
+  color: var(--fn-accent-light) !important;
+  box-shadow: 0 0 18px var(--fn-accent-glow) !important;
+}
+
+.game-theme-fortnite .game-h1-accent {
+  color: var(--fn-accent-light) !important;
+  text-shadow: 0 0 24px var(--fn-accent-glow) !important;
+}
+
+/* 2. Main Converter Card Focus & Glow */
+.game-theme-fortnite .glow-amber-hover:hover {
+  box-shadow: 0 0 50px var(--fn-accent-glow) !important;
+}
+
+.game-theme-fortnite textarea#converter-input-box:focus {
+  border-color: var(--fn-accent) !important;
+  box-shadow: 0 0 0 4px rgba(157, 78, 221, 0.18) !important;
+}
+
+.game-theme-fortnite #converter-char-count {
+  color: var(--fn-accent-light) !important;
+}
+
+.game-theme-fortnite .preset-pill:hover {
+  background-color: var(--fn-accent-bg-hover) !important;
+  color: var(--fn-accent-light) !important;
+  border-color: var(--fn-accent-border) !important;
+}
+
+.game-theme-fortnite #dedicated-styles-count-label,
+.game-theme-fortnite #generic-styles-count-label {
+  color: var(--fn-accent-light) !important;
+}
+
+/* 3. Kopieren Buttons in Variation Cards */
+.game-theme-fortnite .btn-copy-style {
+  background-color: var(--fn-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.game-theme-fortnite .btn-copy-style:hover {
+  background-color: var(--fn-accent-hover) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(157, 78, 221, 0.45) !important;
+}
+
+/* 4. Variation Card Category Badges (VICTORY, ORDEN, ROYAL, CROWN, etc.) */
+.game-theme-fortnite .converter-wrapper .bg-amber-500\/20,
+.game-theme-fortnite #converter-results-grid span.bg-amber-500\/20,
+.game-theme-fortnite .converter-wrapper span.text-amber-400 {
+  background-color: var(--fn-accent-bg-badge) !important;
+  color: var(--fn-accent-light) !important;
+  border-color: var(--fn-accent-border) !important;
+}
+
+.game-theme-fortnite #converter-results-grid > div:hover {
+  border-color: rgba(157, 78, 221, 0.40) !important;
+}
+
+/* 5. "Weitere Variationen laden" Button */
+.game-theme-fortnite #btn-show-more-styles {
+  background-color: var(--fn-accent-bg-subtle) !important;
+  color: var(--fn-accent-light) !important;
+  border-color: var(--fn-accent-border) !important;
+}
+
+.game-theme-fortnite #btn-show-more-styles:hover {
+  background-color: var(--fn-accent-bg-hover) !important;
+  color: #e0aaff !important;
+  border-color: var(--fn-accent-border-hover) !important;
+  box-shadow: 0 8px 24px rgba(157, 78, 221, 0.25) !important;
+}
+
+.game-theme-fortnite #hidden-styles-badge {
+  background-color: var(--fn-accent) !important;
+  color: #ffffff !important;
+}
+
+/* 6. Filter Tabs (if rendered) */
+.game-theme-fortnite #converter-filter-tabs button.bg-amber-500 {
+  background-color: var(--fn-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--fn-accent) !important;
+  box-shadow: 0 4px 15px rgba(157, 78, 221, 0.25) !important;
+}
+
+/* 7. Game Enhanced Sections & Nickname Cards */
+.game-theme-fortnite .game-enhanced-sections-wrapper .bg-amber-500\/10,
+.game-theme-fortnite .game-enhanced-sections-wrapper span.bg-amber-500\/10 {
+  background-color: var(--fn-accent-bg-subtle) !important;
+  border-color: var(--fn-accent-border) !important;
+  color: var(--fn-accent-light) !important;
+}
+
+.game-theme-fortnite .btn-copy-game-nick:hover {
+  background-color: var(--fn-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--fn-accent) !important;
+}
+
+.game-theme-fortnite .btn-copy-game-nick span.group-hover\:bg-amber-500 {
+  background-color: var(--fn-accent) !important;
+  color: #ffffff !important;
+}
+
+.game-theme-fortnite .btn-copy-game-nick span.text-amber-400 {
+  color: var(--fn-accent-light) !important;
+}
+
+.game-theme-fortnite .game-enhanced-sections-wrapper h3.text-amber-400 {
+  color: var(--fn-accent-light) !important;
+}
+
+.game-theme-fortnite .btn-copy-game-symbol:hover {
+  border-color: var(--fn-accent) !important;
+  background-color: var(--fn-accent-bg-hover) !important;
+}
+
+.game-theme-fortnite .game-manual-input:focus {
+  border-color: var(--fn-accent) !important;
+  box-shadow: 0 0 0 3px rgba(157, 78, 221, 0.20) !important;
+}
+
+.game-theme-fortnite .game-manual-combos > div:hover {
+  border-color: var(--fn-accent-border) !important;
+}
+
+.game-theme-fortnite .hover\:border-amber-500\/30:hover {
+  border-color: var(--fn-accent-border) !important;
+}
+
+.game-theme-fortnite .hover\:border-amber-500\/40:hover {
+  border-color: var(--fn-accent-border-hover) !important;
+}
+
+/* 8. Rules & Sidebar */
+.game-theme-fortnite .text-amber-400 {
+  color: var(--fn-accent-light) !important;
+}
+
+.game-theme-fortnite .text-amber-300 {
+  color: #e0aaff !important;
+}
+
+.game-theme-fortnite .hover\:bg-amber-500\/10:hover {
+  background-color: var(--fn-accent-bg-subtle) !important;
+}
+
+.game-theme-fortnite .hover\:bg-amber-500\/20:hover {
+  background-color: var(--fn-accent-bg-hover) !important;
+}
+
+.game-theme-fortnite .hover\:text-amber-400:hover {
+  color: var(--fn-accent-light) !important;
+}
+
+.game-theme-fortnite .group:hover .group-hover\:text-amber-400 {
+  color: var(--fn-accent-light) !important;
+}
+
+/* Light Mode support for Fortnite Theme */
+[data-theme="light"] .game-theme-fortnite {
+  --fn-accent: #7b2cbf;
+  --fn-accent-hover: #5a189a;
+  --fn-accent-glow: rgba(123, 44, 191, 0.16);
+  --fn-accent-bg-subtle: rgba(123, 44, 191, 0.10);
+  --fn-accent-bg-badge: rgba(123, 44, 191, 0.14);
+  --fn-accent-bg-hover: rgba(123, 44, 191, 0.18);
+  --fn-accent-border: rgba(123, 44, 191, 0.28);
+}
+
+/* ==========================================================================
+   MINECRAFT THEME: Emerald Green (#10B981)
+   ========================================================================== */
+.game-theme-minecraft {
+  --mc-accent: #10b981;
+  --mc-accent-hover: #059669;
+  --mc-accent-light: #34d399;
+  --mc-accent-glow: rgba(16, 185, 129, 0.28);
+  --mc-accent-bg-subtle: rgba(16, 185, 129, 0.12);
+  --mc-accent-bg-badge: rgba(16, 185, 129, 0.16);
+  --mc-accent-bg-hover: rgba(16, 185, 129, 0.22);
+  --mc-accent-border: rgba(16, 185, 129, 0.35);
+  --mc-accent-border-hover: rgba(16, 185, 129, 0.55);
+}
+
+.game-theme-minecraft .game-guide-badge {
+  background-color: var(--mc-accent-bg-subtle) !important;
+  border-color: var(--mc-accent-border) !important;
+  color: var(--mc-accent-light) !important;
+  box-shadow: 0 0 18px var(--mc-accent-glow) !important;
+}
+
+.game-theme-minecraft .game-h1-accent {
+  color: var(--mc-accent-light) !important;
+  text-shadow: 0 0 24px var(--mc-accent-glow) !important;
+}
+
+.game-theme-minecraft .glow-amber-hover:hover {
+  box-shadow: 0 0 50px var(--mc-accent-glow) !important;
+}
+
+.game-theme-minecraft textarea#converter-input-box:focus {
+  border-color: var(--mc-accent) !important;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.18) !important;
+}
+
+.game-theme-minecraft #converter-char-count {
+  color: var(--mc-accent-light) !important;
+}
+
+.game-theme-minecraft .preset-pill:hover {
+  background-color: var(--mc-accent-bg-hover) !important;
+  color: var(--mc-accent-light) !important;
+  border-color: var(--mc-accent-border) !important;
+}
+
+.game-theme-minecraft #dedicated-styles-count-label,
+.game-theme-minecraft #generic-styles-count-label {
+  color: var(--mc-accent-light) !important;
+}
+
+.game-theme-minecraft .btn-copy-style {
+  background-color: var(--mc-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.game-theme-minecraft .btn-copy-style:hover {
+  background-color: var(--mc-accent-hover) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.45) !important;
+}
+
+.game-theme-minecraft .converter-wrapper .bg-amber-500\/20,
+.game-theme-minecraft #converter-results-grid span.bg-amber-500\/20,
+.game-theme-minecraft .converter-wrapper span.text-amber-400 {
+  background-color: var(--mc-accent-bg-badge) !important;
+  color: var(--mc-accent-light) !important;
+  border-color: var(--mc-accent-border) !important;
+}
+
+.game-theme-minecraft #converter-results-grid > div:hover {
+  border-color: rgba(16, 185, 129, 0.40) !important;
+}
+
+.game-theme-minecraft #btn-show-more-styles {
+  background-color: var(--mc-accent-bg-subtle) !important;
+  color: var(--mc-accent-light) !important;
+  border-color: var(--mc-accent-border) !important;
+}
+
+.game-theme-minecraft #btn-show-more-styles:hover {
+  background-color: var(--mc-accent-bg-hover) !important;
+  color: #a7f3d0 !important;
+  border-color: var(--mc-accent-border-hover) !important;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.25) !important;
+}
+
+.game-theme-minecraft #hidden-styles-badge {
+  background-color: var(--mc-accent) !important;
+  color: #ffffff !important;
+}
+
+.game-theme-minecraft #converter-filter-tabs button.bg-amber-500 {
+  background-color: var(--mc-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--mc-accent) !important;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25) !important;
+}
+
+.game-theme-minecraft .game-enhanced-sections-wrapper .bg-amber-500\/10,
+.game-theme-minecraft .game-enhanced-sections-wrapper span.bg-amber-500\/10 {
+  background-color: var(--mc-accent-bg-subtle) !important;
+  border-color: var(--mc-accent-border) !important;
+  color: var(--mc-accent-light) !important;
+}
+
+.game-theme-minecraft .btn-copy-game-nick:hover {
+  background-color: var(--mc-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--mc-accent) !important;
+}
+
+.game-theme-minecraft .btn-copy-game-nick span.group-hover\:bg-amber-500 {
+  background-color: var(--mc-accent) !important;
+  color: #ffffff !important;
+}
+
+.game-theme-minecraft .btn-copy-game-nick span.text-amber-400 {
+  color: var(--mc-accent-light) !important;
+}
+
+.game-theme-minecraft .game-enhanced-sections-wrapper h3.text-amber-400 {
+  color: var(--mc-accent-light) !important;
+}
+
+.game-theme-minecraft .btn-copy-game-symbol:hover {
+  border-color: var(--mc-accent) !important;
+  background-color: var(--mc-accent-bg-hover) !important;
+}
+
+.game-theme-minecraft .game-manual-input:focus {
+  border-color: var(--mc-accent) !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.20) !important;
+}
+
+.game-theme-minecraft .game-manual-combos > div:hover {
+  border-color: var(--mc-accent-border) !important;
+}
+
+.game-theme-minecraft .hover\:border-amber-500\/30:hover {
+  border-color: var(--mc-accent-border) !important;
+}
+
+.game-theme-minecraft .hover\:border-amber-500\/40:hover {
+  border-color: var(--mc-accent-border-hover) !important;
+}
+
+.game-theme-minecraft .text-amber-400 {
+  color: var(--mc-accent-light) !important;
+}
+
+.game-theme-minecraft .text-amber-300 {
+  color: #a7f3d0 !important;
+}
+
+.game-theme-minecraft .hover\:bg-amber-500\/10:hover {
+  background-color: var(--mc-accent-bg-subtle) !important;
+}
+
+.game-theme-minecraft .hover\:bg-amber-500\/20:hover {
+  background-color: var(--mc-accent-bg-hover) !important;
+}
+
+.game-theme-minecraft .hover\:text-amber-400:hover {
+  color: var(--mc-accent-light) !important;
+}
+
+.game-theme-minecraft .group:hover .group-hover\:text-amber-400 {
+  color: var(--mc-accent-light) !important;
+}
+
+[data-theme="light"] .game-theme-minecraft {
+  --mc-accent: #059669;
+  --mc-accent-hover: #047857;
+  --mc-accent-glow: rgba(5, 150, 105, 0.16);
+  --mc-accent-bg-subtle: rgba(5, 150, 105, 0.10);
+  --mc-accent-bg-badge: rgba(5, 150, 105, 0.14);
+  --mc-accent-bg-hover: rgba(5, 150, 105, 0.18);
+  --mc-accent-border: rgba(5, 150, 105, 0.28);
+}
+
+/* ==========================================================================
+   VALORANT THEME: Radiant Crimson / Coral Red (#FF4655)
+   ========================================================================== */
+.game-theme-valorant {
+  --val-accent: #ff4655;
+  --val-accent-hover: #e03241;
+  --val-accent-light: #ff7582;
+  --val-accent-glow: rgba(255, 70, 85, 0.28);
+  --val-accent-bg-subtle: rgba(255, 70, 85, 0.12);
+  --val-accent-bg-badge: rgba(255, 70, 85, 0.16);
+  --val-accent-bg-hover: rgba(255, 70, 85, 0.22);
+  --val-accent-border: rgba(255, 70, 85, 0.35);
+  --val-accent-border-hover: rgba(255, 70, 85, 0.55);
+}
+
+.game-theme-valorant .game-guide-badge {
+  background-color: var(--val-accent-bg-subtle) !important;
+  border-color: var(--val-accent-border) !important;
+  color: var(--val-accent-light) !important;
+  box-shadow: 0 0 18px var(--val-accent-glow) !important;
+}
+
+.game-theme-valorant .game-h1-accent {
+  color: var(--val-accent-light) !important;
+  text-shadow: 0 0 24px var(--val-accent-glow) !important;
+}
+
+.game-theme-valorant .glow-amber-hover:hover {
+  box-shadow: 0 0 50px var(--val-accent-glow) !important;
+}
+
+.game-theme-valorant textarea#converter-input-box:focus {
+  border-color: var(--val-accent) !important;
+  box-shadow: 0 0 0 4px rgba(255, 70, 85, 0.18) !important;
+}
+
+.game-theme-valorant #converter-char-count {
+  color: var(--val-accent-light) !important;
+}
+
+.game-theme-valorant .preset-pill:hover {
+  background-color: var(--val-accent-bg-hover) !important;
+  color: var(--val-accent-light) !important;
+  border-color: var(--val-accent-border) !important;
+}
+
+.game-theme-valorant #dedicated-styles-count-label,
+.game-theme-valorant #generic-styles-count-label {
+  color: var(--val-accent-light) !important;
+}
+
+.game-theme-valorant .btn-copy-style {
+  background-color: var(--val-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.game-theme-valorant .btn-copy-style:hover {
+  background-color: var(--val-accent-hover) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(255, 70, 85, 0.45) !important;
+}
+
+.game-theme-valorant .converter-wrapper .bg-amber-500\/20,
+.game-theme-valorant #converter-results-grid span.bg-amber-500\/20,
+.game-theme-valorant .converter-wrapper span.text-amber-400 {
+  background-color: var(--val-accent-bg-badge) !important;
+  color: var(--val-accent-light) !important;
+  border-color: var(--val-accent-border) !important;
+}
+
+.game-theme-valorant #converter-results-grid > div:hover {
+  border-color: rgba(255, 70, 85, 0.40) !important;
+}
+
+.game-theme-valorant #btn-show-more-styles {
+  background-color: var(--val-accent-bg-subtle) !important;
+  color: var(--val-accent-light) !important;
+  border-color: var(--val-accent-border) !important;
+}
+
+.game-theme-valorant #btn-show-more-styles:hover {
+  background-color: var(--val-accent-bg-hover) !important;
+  color: #ffb3ba !important;
+  border-color: var(--val-accent-border-hover) !important;
+  box-shadow: 0 8px 24px rgba(255, 70, 85, 0.25) !important;
+}
+
+.game-theme-valorant #hidden-styles-badge {
+  background-color: var(--val-accent) !important;
+  color: #ffffff !important;
+}
+
+.game-theme-valorant #converter-filter-tabs button.bg-amber-500 {
+  background-color: var(--val-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--val-accent) !important;
+  box-shadow: 0 4px 15px rgba(255, 70, 85, 0.25) !important;
+}
+
+.game-theme-valorant .game-enhanced-sections-wrapper .bg-amber-500\/10,
+.game-theme-valorant .game-enhanced-sections-wrapper span.bg-amber-500\/10 {
+  background-color: var(--val-accent-bg-subtle) !important;
+  border-color: var(--val-accent-border) !important;
+  color: var(--val-accent-light) !important;
+}
+
+.game-theme-valorant .btn-copy-game-nick:hover {
+  background-color: var(--val-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--val-accent) !important;
+}
+
+.game-theme-valorant .btn-copy-game-nick span.group-hover\:bg-amber-500 {
+  background-color: var(--val-accent) !important;
+  color: #ffffff !important;
+}
+
+.game-theme-valorant .btn-copy-game-nick span.text-amber-400 {
+  color: var(--val-accent-light) !important;
+}
+
+.game-theme-valorant .game-enhanced-sections-wrapper h3.text-amber-400 {
+  color: var(--val-accent-light) !important;
+}
+
+.game-theme-valorant .btn-copy-game-symbol:hover {
+  border-color: var(--val-accent) !important;
+  background-color: var(--val-accent-bg-hover) !important;
+}
+
+.game-theme-valorant .game-manual-input:focus {
+  border-color: var(--val-accent) !important;
+  box-shadow: 0 0 0 3px rgba(255, 70, 85, 0.20) !important;
+}
+
+.game-theme-valorant .game-manual-combos > div:hover {
+  border-color: var(--val-accent-border) !important;
+}
+
+.game-theme-valorant .hover\:border-amber-500\/30:hover {
+  border-color: var(--val-accent-border) !important;
+}
+
+.game-theme-valorant .hover\:border-amber-500\/40:hover {
+  border-color: var(--val-accent-border-hover) !important;
+}
+
+.game-theme-valorant .text-amber-400 {
+  color: var(--val-accent-light) !important;
+}
+
+.game-theme-valorant .text-amber-300 {
+  color: #ffb3ba !important;
+}
+
+.game-theme-valorant .hover\:bg-amber-500\/10:hover {
+  background-color: var(--val-accent-bg-subtle) !important;
+}
+
+.game-theme-valorant .hover\:bg-amber-500\/20:hover {
+  background-color: var(--val-accent-bg-hover) !important;
+}
+
+.game-theme-valorant .hover\:text-amber-400:hover {
+  color: var(--val-accent-light) !important;
+}
+
+.game-theme-valorant .group:hover .group-hover\:text-amber-400 {
+  color: var(--val-accent-light) !important;
+}
+
+[data-theme="light"] .game-theme-valorant {
+  --val-accent: #e03241;
+  --val-accent-hover: #c42331;
+  --val-accent-glow: rgba(224, 50, 65, 0.16);
+  --val-accent-bg-subtle: rgba(224, 50, 65, 0.10);
+  --val-accent-bg-badge: rgba(224, 50, 65, 0.14);
+  --val-accent-bg-hover: rgba(224, 50, 65, 0.18);
+  --val-accent-border: rgba(224, 50, 65, 0.28);
+}
+
+/* ==========================================================================
+   ROBLOX THEME: Roblox Ruby Red / Rose (#E11D48)
+   ========================================================================== */
+.game-theme-roblox {
+  --rbx-accent: #e11d48;
+  --rbx-accent-hover: #be123c;
+  --rbx-accent-light: #fb7185;
+  --rbx-accent-glow: rgba(225, 29, 72, 0.28);
+  --rbx-accent-bg-subtle: rgba(225, 29, 72, 0.12);
+  --rbx-accent-bg-badge: rgba(225, 29, 72, 0.16);
+  --rbx-accent-bg-hover: rgba(225, 29, 72, 0.22);
+  --rbx-accent-border: rgba(225, 29, 72, 0.35);
+  --rbx-accent-border-hover: rgba(225, 29, 72, 0.55);
+}
+
+.game-theme-roblox .game-guide-badge {
+  background-color: var(--rbx-accent-bg-subtle) !important;
+  border-color: var(--rbx-accent-border) !important;
+  color: var(--rbx-accent-light) !important;
+  box-shadow: 0 0 18px var(--rbx-accent-glow) !important;
+}
+
+.game-theme-roblox .game-h1-accent {
+  color: var(--rbx-accent-light) !important;
+  text-shadow: 0 0 24px var(--rbx-accent-glow) !important;
+}
+
+.game-theme-roblox .glow-amber-hover:hover {
+  box-shadow: 0 0 50px var(--rbx-accent-glow) !important;
+}
+
+.game-theme-roblox textarea#converter-input-box:focus {
+  border-color: var(--rbx-accent) !important;
+  box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.18) !important;
+}
+
+.game-theme-roblox #converter-char-count {
+  color: var(--rbx-accent-light) !important;
+}
+
+.game-theme-roblox .preset-pill:hover {
+  background-color: var(--rbx-accent-bg-hover) !important;
+  color: var(--rbx-accent-light) !important;
+  border-color: var(--rbx-accent-border) !important;
+}
+
+.game-theme-roblox #dedicated-styles-count-label,
+.game-theme-roblox #generic-styles-count-label {
+  color: var(--rbx-accent-light) !important;
+}
+
+.game-theme-roblox .btn-copy-style {
+  background-color: var(--rbx-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.game-theme-roblox .btn-copy-style:hover {
+  background-color: var(--rbx-accent-hover) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(225, 29, 72, 0.45) !important;
+}
+
+.game-theme-roblox .converter-wrapper .bg-amber-500\/20,
+.game-theme-roblox #converter-results-grid span.bg-amber-500\/20,
+.game-theme-roblox .converter-wrapper span.text-amber-400 {
+  background-color: var(--rbx-accent-bg-badge) !important;
+  color: var(--rbx-accent-light) !important;
+  border-color: var(--rbx-accent-border) !important;
+}
+
+.game-theme-roblox #converter-results-grid > div:hover {
+  border-color: rgba(225, 29, 72, 0.40) !important;
+}
+
+.game-theme-roblox #btn-show-more-styles {
+  background-color: var(--rbx-accent-bg-subtle) !important;
+  color: var(--rbx-accent-light) !important;
+  border-color: var(--rbx-accent-border) !important;
+}
+
+.game-theme-roblox #btn-show-more-styles:hover {
+  background-color: var(--rbx-accent-bg-hover) !important;
+  color: #fecdd3 !important;
+  border-color: var(--rbx-accent-border-hover) !important;
+  box-shadow: 0 8px 24px rgba(225, 29, 72, 0.25) !important;
+}
+
+.game-theme-roblox #hidden-styles-badge {
+  background-color: var(--rbx-accent) !important;
+  color: #ffffff !important;
+}
+
+.game-theme-roblox #converter-filter-tabs button.bg-amber-500 {
+  background-color: var(--rbx-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--rbx-accent) !important;
+  box-shadow: 0 4px 15px rgba(225, 29, 72, 0.25) !important;
+}
+
+.game-theme-roblox .game-enhanced-sections-wrapper .bg-amber-500\/10,
+.game-theme-roblox .game-enhanced-sections-wrapper span.bg-amber-500\/10 {
+  background-color: var(--rbx-accent-bg-subtle) !important;
+  border-color: var(--rbx-accent-border) !important;
+  color: var(--rbx-accent-light) !important;
+}
+
+.game-theme-roblox .btn-copy-game-nick:hover {
+  background-color: var(--rbx-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--rbx-accent) !important;
+}
+
+.game-theme-roblox .btn-copy-game-nick span.group-hover\:bg-amber-500 {
+  background-color: var(--rbx-accent) !important;
+  color: #ffffff !important;
+}
+
+.game-theme-roblox .btn-copy-game-nick span.text-amber-400 {
+  color: var(--rbx-accent-light) !important;
+}
+
+.game-theme-roblox .game-enhanced-sections-wrapper h3.text-amber-400 {
+  color: var(--rbx-accent-light) !important;
+}
+
+.game-theme-roblox .btn-copy-game-symbol:hover {
+  border-color: var(--rbx-accent) !important;
+  background-color: var(--rbx-accent-bg-hover) !important;
+}
+
+.game-theme-roblox .game-manual-input:focus {
+  border-color: var(--rbx-accent) !important;
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.20) !important;
+}
+
+.game-theme-roblox .game-manual-combos > div:hover {
+  border-color: var(--rbx-accent-border) !important;
+}
+
+.game-theme-roblox .hover\:border-amber-500\/30:hover {
+  border-color: var(--rbx-accent-border) !important;
+}
+
+.game-theme-roblox .hover\:border-amber-500\/40:hover {
+  border-color: var(--rbx-accent-border-hover) !important;
+}
+
+.game-theme-roblox .text-amber-400 {
+  color: var(--rbx-accent-light) !important;
+}
+
+.game-theme-roblox .text-amber-300 {
+  color: #fecdd3 !important;
+}
+
+.game-theme-roblox .hover\:bg-amber-500\/10:hover {
+  background-color: var(--rbx-accent-bg-subtle) !important;
+}
+
+.game-theme-roblox .hover\:bg-amber-500\/20:hover {
+  background-color: var(--rbx-accent-bg-hover) !important;
+}
+
+.game-theme-roblox .hover\:text-amber-400:hover {
+  color: var(--rbx-accent-light) !important;
+}
+
+.game-theme-roblox .group:hover .group-hover\:text-amber-400 {
+  color: var(--rbx-accent-light) !important;
+}
+
+[data-theme="light"] .game-theme-roblox {
+  --rbx-accent: #be123c;
+  --rbx-accent-hover: #9f1239;
+  --rbx-accent-glow: rgba(190, 18, 60, 0.16);
+  --rbx-accent-bg-subtle: rgba(190, 18, 60, 0.10);
+  --rbx-accent-bg-badge: rgba(190, 18, 60, 0.14);
+  --rbx-accent-bg-hover: rgba(190, 18, 60, 0.18);
+  --rbx-accent-border: rgba(190, 18, 60, 0.28);
+}
+
+/* ==========================================================================
+   FREE FIRE THEME: Flame Blaze Orange (#FF6B00 / #FF5500)
+   ========================================================================== */
+.game-theme-free-fire {
+  --ff-accent: #ff6b00;
+  --ff-accent-hover: #e04b00;
+  --ff-accent-light: #ffa043;
+  --ff-accent-glow: rgba(255, 107, 0, 0.28);
+  --ff-accent-bg-subtle: rgba(255, 107, 0, 0.12);
+  --ff-accent-bg-badge: rgba(255, 107, 0, 0.16);
+  --ff-accent-bg-hover: rgba(255, 107, 0, 0.22);
+  --ff-accent-border: rgba(255, 107, 0, 0.35);
+  --ff-accent-border-hover: rgba(255, 107, 0, 0.55);
+}
+
+.game-theme-free-fire .game-guide-badge {
+  background-color: var(--ff-accent-bg-subtle) !important;
+  border-color: var(--ff-accent-border) !important;
+  color: var(--ff-accent-light) !important;
+  box-shadow: 0 0 18px var(--ff-accent-glow) !important;
+}
+
+.game-theme-free-fire .game-h1-accent {
+  color: var(--ff-accent-light) !important;
+  text-shadow: 0 0 24px var(--ff-accent-glow) !important;
+}
+
+.game-theme-free-fire .glow-amber-hover:hover {
+  box-shadow: 0 0 50px var(--ff-accent-glow) !important;
+}
+
+.game-theme-free-fire textarea#converter-input-box:focus {
+  border-color: var(--ff-accent) !important;
+  box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.18) !important;
+}
+
+.game-theme-free-fire #converter-char-count {
+  color: var(--ff-accent-light) !important;
+}
+
+.game-theme-free-fire .preset-pill:hover {
+  background-color: var(--ff-accent-bg-hover) !important;
+  color: var(--ff-accent-light) !important;
+  border-color: var(--ff-accent-border) !important;
+}
+
+.game-theme-free-fire #dedicated-styles-count-label,
+.game-theme-free-fire #generic-styles-count-label {
+  color: var(--ff-accent-light) !important;
+}
+
+.game-theme-free-fire .btn-copy-style {
+  background-color: var(--ff-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.game-theme-free-fire .btn-copy-style:hover {
+  background-color: var(--ff-accent-hover) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(255, 107, 0, 0.45) !important;
+}
+
+.game-theme-free-fire .converter-wrapper .bg-amber-500\/20,
+.game-theme-free-fire #converter-results-grid span.bg-amber-500\/20,
+.game-theme-free-fire .converter-wrapper span.text-amber-400 {
+  background-color: var(--ff-accent-bg-badge) !important;
+  color: var(--ff-accent-light) !important;
+  border-color: var(--ff-accent-border) !important;
+}
+
+.game-theme-free-fire #converter-results-grid > div:hover {
+  border-color: rgba(255, 107, 0, 0.40) !important;
+}
+
+.game-theme-free-fire #btn-show-more-styles {
+  background-color: var(--ff-accent-bg-subtle) !important;
+  color: var(--ff-accent-light) !important;
+  border-color: var(--ff-accent-border) !important;
+}
+
+.game-theme-free-fire #btn-show-more-styles:hover {
+  background-color: var(--ff-accent-bg-hover) !important;
+  color: #fed7aa !important;
+  border-color: var(--ff-accent-border-hover) !important;
+  box-shadow: 0 8px 24px rgba(255, 107, 0, 0.25) !important;
+}
+
+.game-theme-free-fire #hidden-styles-badge {
+  background-color: var(--ff-accent) !important;
+  color: #ffffff !important;
+}
+
+.game-theme-free-fire #converter-filter-tabs button.bg-amber-500 {
+  background-color: var(--ff-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--ff-accent) !important;
+  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.25) !important;
+}
+
+.game-theme-free-fire .game-enhanced-sections-wrapper .bg-amber-500\/10,
+.game-theme-free-fire .game-enhanced-sections-wrapper span.bg-amber-500\/10 {
+  background-color: var(--ff-accent-bg-subtle) !important;
+  border-color: var(--ff-accent-border) !important;
+  color: var(--ff-accent-light) !important;
+}
+
+.game-theme-free-fire .btn-copy-game-nick:hover {
+  background-color: var(--ff-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--ff-accent) !important;
+}
+
+.game-theme-free-fire .btn-copy-game-nick span.group-hover\:bg-amber-500 {
+  background-color: var(--ff-accent) !important;
+  color: #ffffff !important;
+}
+
+.game-theme-free-fire .btn-copy-game-nick span.text-amber-400 {
+  color: var(--ff-accent-light) !important;
+}
+
+.game-theme-free-fire .game-enhanced-sections-wrapper h3.text-amber-400 {
+  color: var(--ff-accent-light) !important;
+}
+
+.game-theme-free-fire .btn-copy-game-symbol:hover {
+  border-color: var(--ff-accent) !important;
+  background-color: var(--ff-accent-bg-hover) !important;
+}
+
+.game-theme-free-fire .game-manual-input:focus {
+  border-color: var(--ff-accent) !important;
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.20) !important;
+}
+
+.game-theme-free-fire .game-manual-combos > div:hover {
+  border-color: var(--ff-accent-border) !important;
+}
+
+.game-theme-free-fire .hover\:border-amber-500\/30:hover {
+  border-color: var(--ff-accent-border) !important;
+}
+
+.game-theme-free-fire .hover\:border-amber-500\/40:hover {
+  border-color: var(--ff-accent-border-hover) !important;
+}
+
+.game-theme-free-fire .text-amber-400 {
+  color: var(--ff-accent-light) !important;
+}
+
+.game-theme-free-fire .text-amber-300 {
+  color: #fed7aa !important;
+}
+
+.game-theme-free-fire .hover\:bg-amber-500\/10:hover {
+  background-color: var(--ff-accent-bg-subtle) !important;
+}
+
+.game-theme-free-fire .hover\:bg-amber-500\/20:hover {
+  background-color: var(--ff-accent-bg-hover) !important;
+}
+
+.game-theme-free-fire .hover\:text-amber-400:hover {
+  color: var(--ff-accent-light) !important;
+}
+
+.game-theme-free-fire .group:hover .group-hover\:text-amber-400 {
+  color: var(--ff-accent-light) !important;
+}
+
+[data-theme="light"] .game-theme-free-fire {
+  --ff-accent: #ea580c;
+  --ff-accent-hover: #c2410c;
+  --ff-accent-glow: rgba(234, 88, 12, 0.16);
+  --ff-accent-bg-subtle: rgba(234, 88, 12, 0.10);
+  --ff-accent-bg-badge: rgba(234, 88, 12, 0.14);
+  --ff-accent-bg-hover: rgba(234, 88, 12, 0.18);
+  --ff-accent-border: rgba(234, 88, 12, 0.28);
+}
+
+/* ==========================================================================
+   CS2 THEME: Tactical CS2 Gold / Amber (#EAB308)
+   ========================================================================== */
+.game-theme-cs2 {
+  --cs-accent: #eab308;
+  --cs-accent-hover: #ca8a04;
+  --cs-accent-light: #fde047;
+  --cs-accent-glow: rgba(234, 179, 8, 0.28);
+  --cs-accent-bg-subtle: rgba(234, 179, 8, 0.12);
+  --cs-accent-bg-badge: rgba(234, 179, 8, 0.16);
+  --cs-accent-bg-hover: rgba(234, 179, 8, 0.22);
+  --cs-accent-border: rgba(234, 179, 8, 0.35);
+  --cs-accent-border-hover: rgba(234, 179, 8, 0.55);
+}
+
+.game-theme-cs2 .game-guide-badge {
+  background-color: var(--cs-accent-bg-subtle) !important;
+  border-color: var(--cs-accent-border) !important;
+  color: var(--cs-accent-light) !important;
+  box-shadow: 0 0 18px var(--cs-accent-glow) !important;
+}
+
+.game-theme-cs2 .game-h1-accent {
+  color: var(--cs-accent-light) !important;
+  text-shadow: 0 0 24px var(--cs-accent-glow) !important;
+}
+
+.game-theme-cs2 .glow-amber-hover:hover {
+  box-shadow: 0 0 50px var(--cs-accent-glow) !important;
+}
+
+.game-theme-cs2 textarea#converter-input-box:focus {
+  border-color: var(--cs-accent) !important;
+  box-shadow: 0 0 0 4px rgba(234, 179, 8, 0.18) !important;
+}
+
+.game-theme-cs2 #converter-char-count {
+  color: var(--cs-accent-light) !important;
+}
+
+.game-theme-cs2 .preset-pill:hover {
+  background-color: var(--cs-accent-bg-hover) !important;
+  color: var(--cs-accent-light) !important;
+  border-color: var(--cs-accent-border) !important;
+}
+
+.game-theme-cs2 #dedicated-styles-count-label,
+.game-theme-cs2 #generic-styles-count-label {
+  color: var(--cs-accent-light) !important;
+}
+
+.game-theme-cs2 .btn-copy-style {
+  background-color: var(--cs-accent) !important;
+  color: #0b0f14 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.game-theme-cs2 .btn-copy-style:hover {
+  background-color: var(--cs-accent-hover) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(234, 179, 8, 0.45) !important;
+}
+
+.game-theme-cs2 .converter-wrapper .bg-amber-500\/20,
+.game-theme-cs2 #converter-results-grid span.bg-amber-500\/20,
+.game-theme-cs2 .converter-wrapper span.text-amber-400 {
+  background-color: var(--cs-accent-bg-badge) !important;
+  color: var(--cs-accent-light) !important;
+  border-color: var(--cs-accent-border) !important;
+}
+
+.game-theme-cs2 #converter-results-grid > div:hover {
+  border-color: rgba(234, 179, 8, 0.40) !important;
+}
+
+.game-theme-cs2 #btn-show-more-styles {
+  background-color: var(--cs-accent-bg-subtle) !important;
+  color: var(--cs-accent-light) !important;
+  border-color: var(--cs-accent-border) !important;
+}
+
+.game-theme-cs2 #btn-show-more-styles:hover {
+  background-color: var(--cs-accent-bg-hover) !important;
+  color: #fef08a !important;
+  border-color: var(--cs-accent-border-hover) !important;
+  box-shadow: 0 8px 24px rgba(234, 179, 8, 0.25) !important;
+}
+
+.game-theme-cs2 #hidden-styles-badge {
+  background-color: var(--cs-accent) !important;
+  color: #0b0f14 !important;
+  font-weight: 800 !important;
+}
+
+.game-theme-cs2 #converter-filter-tabs button.bg-amber-500 {
+  background-color: var(--cs-accent) !important;
+  color: #0b0f14 !important;
+  border-color: var(--cs-accent) !important;
+  box-shadow: 0 4px 15px rgba(234, 179, 8, 0.25) !important;
+}
+
+.game-theme-cs2 .game-enhanced-sections-wrapper .bg-amber-500\/10,
+.game-theme-cs2 .game-enhanced-sections-wrapper span.bg-amber-500\/10 {
+  background-color: var(--cs-accent-bg-subtle) !important;
+  border-color: var(--cs-accent-border) !important;
+  color: var(--cs-accent-light) !important;
+}
+
+.game-theme-cs2 .btn-copy-game-nick:hover {
+  background-color: var(--cs-accent) !important;
+  color: #0b0f14 !important;
+  border-color: var(--cs-accent) !important;
+}
+
+.game-theme-cs2 .btn-copy-game-nick span.group-hover\:bg-amber-500 {
+  background-color: var(--cs-accent) !important;
+  color: #0b0f14 !important;
+}
+
+.game-theme-cs2 .btn-copy-game-nick span.text-amber-400 {
+  color: var(--cs-accent-light) !important;
+}
+
+.game-theme-cs2 .game-enhanced-sections-wrapper h3.text-amber-400 {
+  color: var(--cs-accent-light) !important;
+}
+
+.game-theme-cs2 .btn-copy-game-symbol:hover {
+  border-color: var(--cs-accent) !important;
+  background-color: var(--cs-accent-bg-hover) !important;
+}
+
+.game-theme-cs2 .game-manual-input:focus {
+  border-color: var(--cs-accent) !important;
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.20) !important;
+}
+
+.game-theme-cs2 .game-manual-combos > div:hover {
+  border-color: var(--cs-accent-border) !important;
+}
+
+.game-theme-cs2 .hover\:border-amber-500\/30:hover {
+  border-color: var(--cs-accent-border) !important;
+}
+
+.game-theme-cs2 .hover\:border-amber-500\/40:hover {
+  border-color: var(--cs-accent-border-hover) !important;
+}
+
+.game-theme-cs2 .text-amber-400 {
+  color: var(--cs-accent-light) !important;
+}
+
+.game-theme-cs2 .text-amber-300 {
+  color: #fef08a !important;
+}
+
+.game-theme-cs2 .hover\:bg-amber-500\/10:hover {
+  background-color: var(--cs-accent-bg-subtle) !important;
+}
+
+.game-theme-cs2 .hover\:bg-amber-500\/20:hover {
+  background-color: var(--cs-accent-bg-hover) !important;
+}
+
+.game-theme-cs2 .hover\:text-amber-400:hover {
+  color: var(--cs-accent-light) !important;
+}
+
+.game-theme-cs2 .group:hover .group-hover\:text-amber-400 {
+  color: var(--cs-accent-light) !important;
+}
+
+[data-theme="light"] .game-theme-cs2 {
+  --cs-accent: #d97706;
+  --cs-accent-hover: #b45309;
+  --cs-accent-glow: rgba(217, 119, 6, 0.16);
+  --cs-accent-bg-subtle: rgba(217, 119, 6, 0.10);
+  --cs-accent-bg-badge: rgba(217, 119, 6, 0.14);
+  --cs-accent-bg-hover: rgba(217, 119, 6, 0.18);
+  --cs-accent-border: rgba(217, 119, 6, 0.28);
+}
+
+/* ==========================================================================
+   FONT THEMES: TAILORED COLOR PALETTES & BACKGROUND LIGHTING FOR ALL 14 STYLES
+   ========================================================================== */
+
+/* 1. Fette Schrift (Bold / Fire Ember & Blaze Orange) */
+.font-theme-fette-schrift {
+  --font-accent: #ff6b00;
+  --font-accent-hover: #ff8533;
+  --font-accent-secondary: #fbbf24;
+  --font-accent-glow: rgba(255, 107, 0, 0.28);
+  --font-accent-bg-subtle: rgba(255, 107, 0, 0.12);
+  --font-accent-bg-badge: rgba(255, 107, 0, 0.18);
+  --font-accent-bg-hover: rgba(255, 107, 0, 0.24);
+  --font-accent-border: rgba(255, 107, 0, 0.35);
+  --font-accent-border-hover: rgba(255, 107, 0, 0.60);
+  background: radial-gradient(circle 900px at 50% -10%, rgba(255, 107, 0, 0.15), transparent 70%),
+              radial-gradient(circle 600px at 90% 20%, rgba(245, 158, 11, 0.08), transparent 60%),
+              radial-gradient(circle 700px at 10% 65%, rgba(234, 88, 12, 0.07), transparent 60%),
+              #0a0a08 !important;
+  position: relative;
+}
+
+/* 2. Kursive Schrift (Italics / Elegant Rose Pink & Lavender) */
+.font-theme-kursive-schrift {
+  --font-accent: #ec4899;
+  --font-accent-hover: #db2777;
+  --font-accent-secondary: #f472b6;
+  --font-accent-glow: rgba(236, 72, 153, 0.28);
+  --font-accent-bg-subtle: rgba(236, 72, 153, 0.12);
+  --font-accent-bg-badge: rgba(236, 72, 153, 0.18);
+  --font-accent-bg-hover: rgba(236, 72, 153, 0.24);
+  --font-accent-border: rgba(236, 72, 153, 0.35);
+  --font-accent-border-hover: rgba(236, 72, 153, 0.60);
+  background: radial-gradient(circle 900px at 50% -10%, rgba(236, 72, 153, 0.15), transparent 70%),
+              radial-gradient(circle 600px at 90% 20%, rgba(217, 70, 239, 0.08), transparent 60%),
+              radial-gradient(circle 700px at 10% 65%, rgba(244, 114, 182, 0.07), transparent 60%),
+              #0a0a08 !important;
+  position: relative;
+}
+
+/* 3. Gotische Schrift (Fraktur / Medieval Crimson Red & Gold) */
+.font-theme-gotische-schrift {
+  --font-accent: #dc2626;
+  --font-accent-hover: #b91c1c;
+  --font-accent-secondary: #f59e0b;
+  --font-accent-glow: rgba(220, 38, 38, 0.28);
+  --font-accent-bg-subtle: rgba(220, 38, 38, 0.12);
+  --font-accent-bg-badge: rgba(220, 38, 38, 0.18);
+  --font-accent-bg-hover: rgba(220, 38, 38, 0.24);
+  --font-accent-border: rgba(220, 38, 38, 0.35);
+  --font-accent-border-hover: rgba(220, 38, 38, 0.60);
+  background: radial-gradient(circle 900px at 50% -10%, rgba(220, 38, 38, 0.16), transparent 70%),
+              radial-gradient(circle 600px at 90% 20%, rgba(245, 158, 11, 0.08), transparent 60%),
+              radial-gradient(circle 700px at 10% 65%, rgba(185, 28, 28, 0.08), transparent 60%),
+              #0a0a08 !important;
+  position: relative;
+}
+
+/* 4. Bubble Schrift (Circled / Electric Cyan & Aqua Blue) */
+.font-theme-bubble-schrift {
+  --font-accent: #06b6d4;
+  --font-accent-hover: #0891b2;
+  --font-accent-secondary: #38bdf8;
+  --font-accent-glow: rgba(6, 182, 212, 0.28);
+  --font-accent-bg-subtle: rgba(6, 182, 212, 0.12);
+  --font-accent-bg-badge: rgba(6, 182, 212, 0.18);
+  --font-accent-bg-hover: rgba(6, 182, 212, 0.24);
+  --font-accent-border: rgba(6, 182, 212, 0.35);
+  --font-accent-border-hover: rgba(6, 182, 212, 0.60);
+  background: radial-gradient(circle 900px at 50% -10%, rgba(6, 182, 212, 0.15), transparent 70%),
+              radial-gradient(circle 600px at 90% 20%, rgba(56, 189, 248, 0.08), transparent 60%),
+              radial-gradient(circle 700px at 10% 65%, rgba(14, 165, 233, 0.07), transparent 60%),
+              #0a0a08 !important;
+  position: relative;
+}
+
+/* 5. Kleine Schrift (Small Caps / Emerald Jade & Clean Mint) */
+.font-theme-kleine-schrift {
+  --font-accent: #10b981;
+  --font-accent-hover: #059669;
+  --font-accent-secondary: #34d399;
+  --font-accent-glow: rgba(16, 185, 129, 0.28);
+  --font-accent-bg-subtle: rgba(16, 185, 129, 0.12);
+  --font-accent-bg-badge: rgba(16, 185, 129, 0.18);
+  --font-accent-bg-hover: rgba(16, 185, 129, 0.24);
+  --font-accent-border: rgba(16, 185, 129, 0.35);
+  --font-accent-border-hover: rgba(16, 185, 129, 0.60);
+  background: radial-gradient(circle 900px at 50% -10%, rgba(16, 185, 129, 0.15), transparent 70%),
+              radial-gradient(circle 600px at 90% 20%, rgba(52, 211, 153, 0.08), transparent 60%),
+              radial-gradient(circle 700px at 10% 65%, rgba(5, 150, 105, 0.07), transparent 60%),
+              #0a0a08 !important;
+  position: relative;
+}
+
+/* 6. Graffiti Schrift (Urban / Acid Lime & Streetwear Yellow) */
+.font-theme-graffiti-schrift {
+  --font-accent: #84cc16;
+  --font-accent-hover: #65a30d;
+  --font-accent-secondary: #eab308;
+  --font-accent-glow: rgba(132, 204, 22, 0.28);
+  --font-accent-bg-subtle: rgba(132, 204, 22, 0.12);
+  --font-accent-bg-badge: rgba(132, 204, 22, 0.18);
+  --font-accent-bg-hover: rgba(132, 204, 22, 0.24);
+  --font-accent-border: rgba(132, 204, 22, 0.35);
+  --font-accent-border-hover: rgba(132, 204, 22, 0.60);
+  background: radial-gradient(circle 900px at 50% -10%, rgba(132, 204, 22, 0.15), transparent 70%),
+              radial-gradient(circle 600px at 90% 20%, rgba(234, 179, 8, 0.08), transparent 60%),
+              radial-gradient(circle 700px at 10% 65%, rgba(101, 163, 13, 0.07), transparent 60%),
+              #0a0a08 !important;
+  position: relative;
+}
+
+/* 7. Glitch Schrift (Zalgo / Cyberpunk Neon Purple & Violet) */
+.font-theme-glitch-schrift {
+  --font-accent: #a855f7;
+  --font-accent-hover: #9333ea;
+  --font-accent-secondary: #ec4899;
+  --font-accent-glow: rgba(168, 85, 247, 0.28);
+  --font-accent-bg-subtle: rgba(168, 85, 247, 0.12);
+  --font-accent-bg-badge: rgba(168, 85, 247, 0.18);
+  --font-accent-bg-hover: rgba(168, 85, 247, 0.24);
+  --font-accent-border: rgba(168, 85, 247, 0.35);
+  --font-accent-border-hover: rgba(168, 85, 247, 0.60);
+  background: radial-gradient(circle 900px at 50% -10%, rgba(168, 85, 247, 0.16), transparent 70%),
+              radial-gradient(circle 600px at 90% 20%, rgba(236, 72, 153, 0.08), transparent 60%),
+              radial-gradient(circle 700px at 10% 65%, rgba(139, 92, 246, 0.08), transparent 60%),
+              #0a0a08 !important;
+  position: relative;
+}
+
+/* 8. Durchgestrichen (Strikethrough / Fiery Coral & Scarlet Rose) */
+.font-theme-durchgestrichen {
+  --font-accent: #f43f5e;
+  --font-accent-hover: #e11d48;
+  --font-accent-secondary: #fb7185;
+  --font-accent-glow: rgba(244, 63, 94, 0.28);
+  --font-accent-bg-subtle: rgba(244, 63, 94, 0.12);
+  --font-accent-bg-badge: rgba(244, 63, 94, 0.18);
+  --font-accent-bg-hover: rgba(244, 63, 94, 0.24);
+  --font-accent-border: rgba(244, 63, 94, 0.35);
+  --font-accent-border-hover: rgba(244, 63, 94, 0.60);
+  background: radial-gradient(circle 900px at 50% -10%, rgba(244, 63, 94, 0.15), transparent 70%),
+              radial-gradient(circle 600px at 90% 20%, rgba(251, 113, 133, 0.08), transparent 60%),
+              radial-gradient(circle 700px at 10% 65%, rgba(225, 29, 72, 0.07), transparent 60%),
+              #0a0a08 !important;
+  position: relative;
+}
+
+/* 9. Tattoo Schrift (Chicano / Dark Obsidian & Lavender Violet) */
+.font-theme-tattoo-schrift {
+  --font-accent: #9333ea;
+  --font-accent-hover: #7e22ce;
+  --font-accent-secondary: #c084fc;
+  --font-accent-glow: rgba(147, 51, 234, 0.28);
+  --font-accent-bg-subtle: rgba(147, 51, 234, 0.12);
+  --font-accent-bg-badge: rgba(147, 51, 234, 0.18);
+  --font-accent-bg-hover: rgba(147, 51, 234, 0.24);
+  --font-accent-border: rgba(147, 51, 234, 0.35);
+  --font-accent-border-hover: rgba(147, 51, 234, 0.60);
+  background: radial-gradient(circle 900px at 50% -10%, rgba(147, 51, 234, 0.15), transparent 70%),
+              radial-gradient(circle 600px at 90% 20%, rgba(192, 132, 252, 0.08), transparent 60%),
+              radial-gradient(circle 700px at 10% 65%, rgba(126, 34, 206, 0.07), transparent 60%),
+              #0a0a08 !important;
+  position: relative;
+}
+
+/* 10. Handschrift (Warm Script / Sunset Amber & Honey Gold) */
+.font-theme-handschrift {
+  --font-accent: #f59e0b;
+  --font-accent-hover: #d97706;
+  --font-accent-secondary: #fbbf24;
+  --font-accent-glow: rgba(245, 158, 11, 0.28);
+  --font-accent-bg-subtle: rgba(245, 158, 11, 0.12);
+  --font-accent-bg-badge: rgba(245, 158, 11, 0.18);
+  --font-accent-bg-hover: rgba(245, 158, 11, 0.24);
+  --font-accent-border: rgba(245, 158, 11, 0.35);
+  --font-accent-border-hover: rgba(245, 158, 11, 0.60);
+  background: radial-gradient(circle 900px at 50% -10%, rgba(245, 158, 11, 0.15), transparent 70%),
+              radial-gradient(circle 600px at 90% 20%, rgba(251, 191, 36, 0.08), transparent 60%),
+              radial-gradient(circle 700px at 10% 65%, rgba(217, 119, 6, 0.07), transparent 60%),
+              #0a0a08 !important;
+  position: relative;
+}
+
+/* 11. Unterschrift (Executive / Royal Sapphire & Cobalt Blue) */
+.font-theme-unterschrift {
+  --font-accent: #3b82f6;
+  --font-accent-hover: #2563eb;
+  --font-accent-secondary: #60a5fa;
+  --font-accent-glow: rgba(59, 130, 246, 0.28);
+  --font-accent-bg-subtle: rgba(59, 130, 246, 0.12);
+  --font-accent-bg-badge: rgba(59, 130, 246, 0.18);
+  --font-accent-bg-hover: rgba(59, 130, 246, 0.24);
+  --font-accent-border: rgba(59, 130, 246, 0.35);
+  --font-accent-border-hover: rgba(59, 130, 246, 0.60);
+  background: radial-gradient(circle 900px at 50% -10%, rgba(59, 130, 246, 0.15), transparent 70%),
+              radial-gradient(circle 600px at 90% 20%, rgba(96, 165, 250, 0.08), transparent 60%),
+              radial-gradient(circle 700px at 10% 65%, rgba(37, 99, 235, 0.07), transparent 60%),
+              #0a0a08 !important;
+  position: relative;
+}
+
+/* 12. Dekorative Schrift (Aesthetic Wings / Radiant Violet & Celestial Indigo) */
+.font-theme-dekorative-schrift {
+  --font-accent: #8b5cf6;
+  --font-accent-hover: #7c3aed;
+  --font-accent-secondary: #c084fc;
+  --font-accent-glow: rgba(139, 92, 246, 0.28);
+  --font-accent-bg-subtle: rgba(139, 92, 246, 0.12);
+  --font-accent-bg-badge: rgba(139, 92, 246, 0.18);
+  --font-accent-bg-hover: rgba(139, 92, 246, 0.24);
+  --font-accent-border: rgba(139, 92, 246, 0.35);
+  --font-accent-border-hover: rgba(139, 92, 246, 0.60);
+  background: radial-gradient(circle 900px at 50% -10%, rgba(139, 92, 246, 0.15), transparent 70%),
+              radial-gradient(circle 600px at 90% 20%, rgba(192, 132, 252, 0.08), transparent 60%),
+              radial-gradient(circle 700px at 10% 65%, rgba(124, 58, 237, 0.07), transparent 60%),
+              #0a0a08 !important;
+  position: relative;
+}
+
+/* 13. Eckige Schrift (Cyber Brackets / Futuristic Teal & Turquoise) */
+.font-theme-eckige-schrift {
+  --font-accent: #14b8a6;
+  --font-accent-hover: #0d9488;
+  --font-accent-secondary: #2dd4bf;
+  --font-accent-glow: rgba(20, 184, 166, 0.28);
+  --font-accent-bg-subtle: rgba(20, 184, 166, 0.12);
+  --font-accent-bg-badge: rgba(20, 184, 166, 0.18);
+  --font-accent-bg-hover: rgba(20, 184, 166, 0.24);
+  --font-accent-border: rgba(20, 184, 166, 0.35);
+  --font-accent-border-hover: rgba(20, 184, 166, 0.60);
+  background: radial-gradient(circle 900px at 50% -10%, rgba(20, 184, 166, 0.15), transparent 70%),
+              radial-gradient(circle 600px at 90% 20%, rgba(45, 212, 191, 0.08), transparent 60%),
+              radial-gradient(circle 700px at 10% 65%, rgba(13, 148, 136, 0.07), transparent 60%),
+              #0a0a08 !important;
+  position: relative;
+}
+
+/* 14. Wellige Schrift (Ocean Ripple / Deep Marine & Cyan Wave) */
+.font-theme-wellige-schrift {
+  --font-accent: #0284c7;
+  --font-accent-hover: #0369a1;
+  --font-accent-secondary: #38bdf8;
+  --font-accent-glow: rgba(2, 132, 199, 0.28);
+  --font-accent-bg-subtle: rgba(2, 132, 199, 0.12);
+  --font-accent-bg-badge: rgba(2, 132, 199, 0.18);
+  --font-accent-bg-hover: rgba(2, 132, 199, 0.24);
+  --font-accent-border: rgba(2, 132, 199, 0.35);
+  --font-accent-border-hover: rgba(2, 132, 199, 0.60);
+  background: radial-gradient(circle 900px at 50% -10%, rgba(2, 132, 199, 0.15), transparent 70%),
+              radial-gradient(circle 600px at 90% 20%, rgba(56, 189, 248, 0.08), transparent 60%),
+              radial-gradient(circle 700px at 10% 65%, rgba(3, 105, 161, 0.07), transparent 60%),
+              #0a0a08 !important;
+  position: relative;
+}
+
+/* ==========================================================================
+   SHARED DYNAMIC COMPONENT STYLING ACROSS ALL FONT THEMES
+   ========================================================================== */
+
+/* 1. Hero Badge & Accent Header */
+[class*="font-theme-"] .font-hero-badge {
+  background: var(--font-accent-bg-subtle) !important;
+  border-color: var(--font-accent-border) !important;
+  color: var(--font-accent) !important;
+  box-shadow: 0 0 20px var(--font-accent-glow) !important;
+}
+
+[class*="font-theme-"] .font-h1-accent {
+  background: linear-gradient(135deg, var(--font-accent) 0%, var(--font-accent-secondary, #fbbf24) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+/* 2. Converter Input Focus & Char Count */
+[class*="font-theme-"] .converter-wrapper textarea#converter-input-box:focus {
+  border-color: var(--font-accent) !important;
+  box-shadow: 0 0 0 4px var(--font-accent-bg-badge) !important;
+}
+
+[class*="font-theme-"] #converter-char-count {
+  color: var(--font-accent) !important;
+}
+
+[class*="font-theme-"] .preset-pill:hover {
+  background-color: var(--font-accent-bg-hover) !important;
+  color: var(--font-accent) !important;
+  border-color: var(--font-accent-border) !important;
+}
+
+[class*="font-theme-"] #dedicated-styles-count-label,
+[class*="font-theme-"] #generic-styles-count-label {
+  color: var(--font-accent) !important;
+}
+
+/* 3. Kopieren Buttons */
+[class*="font-theme-"] .btn-copy-style {
+  background: linear-gradient(135deg, var(--font-accent) 0%, var(--font-accent-secondary, #fbbf24) 100%) !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 2px 10px var(--font-accent-glow) !important;
+  border: none !important;
+  transition: all 200ms ease !important;
+}
+
+[class*="font-theme-"] .btn-copy-style:hover {
+  background: linear-gradient(135deg, var(--font-accent-hover) 0%, var(--font-accent-secondary, #fbbf24) 100%) !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 18px var(--font-accent-glow) !important;
+  transform: translateY(-1px);
+}
+
+/* 4. Variation Cards & Badges */
+[class*="font-theme-"] .converter-wrapper .bg-amber-500\/20,
+[class*="font-theme-"] #converter-results-grid span.bg-amber-500\/20,
+[class*="font-theme-"] .converter-wrapper span.text-amber-400 {
+  background-color: var(--font-accent-bg-badge) !important;
+  color: var(--font-accent) !important;
+  border-color: var(--font-accent-border) !important;
+}
+
+[class*="font-theme-"] #converter-results-grid > div:hover {
+  border-color: var(--font-accent-border-hover) !important;
+  box-shadow: 0 4px 20px var(--font-accent-glow) !important;
+}
+
+/* 5. Load More Button */
+[class*="font-theme-"] #btn-show-more-styles {
+  background-color: var(--font-accent-bg-subtle) !important;
+  color: var(--font-accent) !important;
+  border-color: var(--font-accent-border) !important;
+}
+
+[class*="font-theme-"] #btn-show-more-styles:hover {
+  background-color: var(--font-accent-bg-hover) !important;
+  color: var(--font-accent-secondary, #ffffff) !important;
+  border-color: var(--font-accent-border-hover) !important;
+  box-shadow: 0 8px 24px var(--font-accent-glow) !important;
+}
+
+[class*="font-theme-"] #hidden-styles-badge {
+  background: linear-gradient(135deg, var(--font-accent), var(--font-accent-secondary, #fbbf24)) !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+/* 6. Filter Tabs */
+[class*="font-theme-"] #converter-filter-tabs button.bg-amber-500 {
+  background: linear-gradient(135deg, var(--font-accent), var(--font-accent-secondary, #fbbf24)) !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+  border-color: var(--font-accent) !important;
+  box-shadow: 0 4px 15px var(--font-accent-glow) !important;
+}
+
+/* 7. Content Cards, Checkmarks & Platform Cross-links */
+[class*="font-theme-"] .text-amber-400 {
+  color: var(--font-accent) !important;
+}
+
+[class*="font-theme-"] .text-amber-300 {
+  color: var(--font-accent-secondary, #ffffff) !important;
+}
+
+[class*="font-theme-"] .bg-amber-500\/20 {
+  background-color: var(--font-accent-bg-badge) !important;
+}
+
+[class*="font-theme-"] .bg-amber-500\/10 {
+  background-color: var(--font-accent-bg-subtle) !important;
+}
+
+[class*="font-theme-"] .border-amber-500\/30,
+[class*="font-theme-"] .border-amber-500\/40 {
+  border-color: var(--font-accent-border) !important;
+}
+
+[class*="font-theme-"] .hover\:border-amber-500\/40:hover {
+  border-color: var(--font-accent-border-hover) !important;
+}
+
+[class*="font-theme-"] .hover\:bg-amber-500\/10:hover {
+  background-color: var(--font-accent-bg-hover) !important;
+}
+
+[class*="font-theme-"] .group:hover .group-hover\:text-amber-400 {
+  color: var(--font-accent) !important;
+}
+
+/* 8. Main Cards & Surfaces */
+[class*="font-theme-"] .bg-\[\#141412\] {
+  border-color: var(--font-accent-bg-badge) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px var(--font-accent-glow) !important;
+}
+
+/* 9. Light Mode Adaptations */
+[data-theme="light"] [class*="font-theme-"] {
+  background: radial-gradient(circle 900px at 50% -10%, var(--font-accent-bg-subtle), transparent 70%),
+              radial-gradient(circle 600px at 90% 20%, var(--font-accent-bg-subtle), transparent 60%),
+              radial-gradient(circle 700px at 10% 65%, var(--font-accent-bg-subtle), transparent 60%),
+              var(--bg-page) !important;
+}
+
+[data-theme="light"] [class*="font-theme-"] .bg-\[\#141412\] {
+  border-color: var(--font-accent-border) !important;
+  box-shadow: 0 10px 30px -10px var(--font-accent-glow) !important;
+}
+
+/* ==========================================================================
+   HOMEPAGE MULTI-COLOR GRADIENT MESH BACKGROUND
+   ========================================================================== */
+.homepage-mesh-wrapper {
+  background-color: #0F1220 !important;
+  background-image: 
+    radial-gradient(circle 900px at 50% 0%, rgba(245, 166, 35, 0.16), transparent 70%),
+    radial-gradient(circle 800px at 10% 28%, rgba(107, 63, 160, 0.20), transparent 65%),
+    radial-gradient(circle 850px at 90% 55%, rgba(31, 138, 140, 0.18), transparent 65%),
+    radial-gradient(circle 750px at 30% 85%, rgba(179, 58, 107, 0.15), transparent 70%),
+    radial-gradient(circle 600px at 70% 95%, rgba(107, 63, 160, 0.12), transparent 60%) !important;
+  position: relative;
+}
+
+/* Ensure intermediate sections on homepage allow mesh gradients to shine through cleanly */
+.homepage-mesh-wrapper section {
+  background-color: transparent !important;
+}
+
+.homepage-mesh-wrapper .bg-\[\#0a0a08\],
+.homepage-mesh-wrapper .bg-\[\#0e0e0c\] {
+  background-color: rgba(15, 18, 32, 0.35) !important;
+}
+
+/* Light mode support for homepage */
+[data-theme="light"] .homepage-mesh-wrapper {
+  background-color: #f8fafc !important;
+  background-image: 
+    radial-gradient(circle 900px at 50% 0%, rgba(245, 166, 35, 0.08), transparent 70%),
+    radial-gradient(circle 800px at 10% 28%, rgba(107, 63, 160, 0.06), transparent 65%),
+    radial-gradient(circle 850px at 90% 55%, rgba(31, 138, 140, 0.06), transparent 65%),
+    radial-gradient(circle 750px at 30% 85%, rgba(179, 58, 107, 0.05), transparent 70%) !important;
+}
+
+[data-theme="light"] .homepage-mesh-wrapper .bg-\[\#0a0a08\],
+[data-theme="light"] .homepage-mesh-wrapper .bg-\[\#0e0e0c\] {
+  background-color: rgba(255, 255, 255, 0.45) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+

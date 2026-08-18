@@ -1,0 +1,163 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { SYMBOLS_DATA, type SymbolCategory } from '../../data/symbol-data';
+import { NAVIGATION_DATA } from '../../data/navigation';
+
+export function getStaticPaths() {
+  const dedicated = ['sterne', 'herzen', 'rahmen', 'emotikons'];
+  return Object.keys(SYMBOLS_DATA)
+    .filter((catKey) => !dedicated.includes(catKey))
+    .map((catKey) => ({
+      params: { category: catKey },
+      props: { categoryData: SYMBOLS_DATA[catKey] },
+    }));
+}
+
+interface Props {
+  categoryData: SymbolCategory;
+}
+
+const { categoryData } = Astro.props;
+---
+
+<Layout
+  title={`${categoryData.name} zum Kopieren – Schöne Symbole & Emojis`}
+  description={`Kopiere ${categoryData.name} mit nur 1 Klick in deine Zwischenablage. Perfekt für Instagram Bio, TikTok, Discord & Gaming Nicknames.`}
+  canonicalUrl={`/symbole/${categoryData.id}`}
+>
+  <main class="py-12 md:py-16 bg-[#0a0a08]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <a href="/symbole" class="hover:text-white transition-colors">Symbole</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">{categoryData.name}</span>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
+          <span>{categoryData.icon} 1-Klick Kopieren</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          {categoryData.name} zum Kopieren
+        </h1>
+        <p class="mt-4 text-base text-stone-300 leading-relaxed max-w-2xl mx-auto">
+          {categoryData.description} Klicke auf ein beliebiges Symbol, um es sofort in deine Zwischenablage zu legen.
+        </p>
+      </div>
+
+      <!-- Quick Text Combiner Box -->
+      <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 mb-10">
+        <label for="symbol-combiner-input" class="block text-xs font-bold uppercase tracking-wider text-amber-400 mb-2">
+          ⚡ Text-Kombinierer: Klicke unten auf Symbole, um sie hier einzufügen
+        </label>
+        <div class="flex flex-col sm:flex-row items-center gap-3">
+          <input
+            id="symbol-combiner-input"
+            type="text"
+            placeholder="Dein Text..."
+            value="Aesthetic Bio"
+            class="flex-1 w-full bg-[#0a0a08] border border-white/10 focus:border-amber-500 rounded-xl px-4 py-3 text-white text-base focus:outline-none"
+          />
+          <button
+            type="button"
+            id="btn-copy-combined-text"
+            class="w-full sm:w-auto px-6 py-3 rounded-xl bg-amber-500 text-black font-bold text-sm hover:bg-amber-400 transition-all shrink-0"
+          >
+            Gesamten Text kopieren
+          </button>
+        </div>
+      </div>
+
+      <!-- Interactive Symbols Grid -->
+      <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+        <h2 class="text-lg font-bold text-white mb-6 flex items-center justify-between">
+          <span>Alle {categoryData.name}</span>
+          <span class="text-xs text-stone-400 font-normal">{categoryData.symbols.length} Symbole verfügbar</span>
+        </h2>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5" id="symbols-click-grid">
+          {categoryData.symbols.map((sym) => (
+            <button
+              type="button"
+              class="symbol-card p-4 rounded-2xl bg-[#0a0a08] border border-white/5 hover:border-amber-500/40 hover:-translate-y-1 transition-all flex flex-col items-center justify-center gap-2 group focus:outline-none"
+              data-char={sym.char}
+            >
+              <span class="text-2xl sm:text-3xl text-white group-hover:scale-110 transition-transform select-all">
+                {sym.char}
+              </span>
+              <span class="text-[11px] text-stone-400 group-hover:text-amber-400 font-medium text-center truncate max-w-full">
+                {sym.name}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Cross Links to other Symbol categories & Silos -->
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {NAVIGATION_DATA.symbols.items
+          .filter((item) => !item.href.includes(categoryData.id))
+          .map((other) => (
+            <a
+              href={other.href}
+              class="p-5 rounded-2xl bg-[#141412] border border-white/10 hover:border-amber-500/30 transition-all block group"
+            >
+              <div class="text-base font-bold text-white group-hover:text-amber-400 flex items-center justify-between">
+                <span>{other.icon} {other.title}</span>
+                <span>→</span>
+              </div>
+              <div class="text-xs text-stone-400 mt-1">{other.description}</div>
+            </a>
+          ))}
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const combinerInput = document.getElementById('symbol-combiner-input') as HTMLInputElement;
+  const copyCombinedBtn = document.getElementById('btn-copy-combined-text');
+  const symbolsGrid = document.getElementById('symbols-click-grid');
+
+  // Click symbol to copy AND append to input box
+  symbolsGrid?.addEventListener('click', async (e) => {
+    const btn = (e.target as HTMLElement).closest('.symbol-card') as HTMLButtonElement;
+    if (!btn) return;
+
+    const char = btn.getAttribute('data-char');
+    if (!char) return;
+
+    // Append to combiner input
+    if (combinerInput) {
+      combinerInput.value += ` ${char} `;
+      combinerInput.focus();
+    }
+
+    // Direct clipboard copy
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(char);
+      }
+      window.dispatchEvent(new CustomEvent('show-toast'));
+    } catch (err) {
+      console.error('Copy error:', err);
+    }
+  });
+
+  // Copy whole combined text
+  copyCombinedBtn?.addEventListener('click', async () => {
+    if (!combinerInput || !combinerInput.value) return;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(combinerInput.value);
+      }
+      window.dispatchEvent(new CustomEvent('show-toast'));
+    } catch (err) {
+      console.error('Copy error:', err);
+    }
+  });
+</script>

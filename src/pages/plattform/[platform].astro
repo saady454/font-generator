@@ -1,0 +1,206 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TextStyleConverter from '../../components/TextStyleConverter.astro';
+import FontStyleGrid from '../../components/FontStyleGrid.astro';
+import PlatformInteractiveWidgets from '../../components/PlatformInteractiveWidgets.astro';
+import PlatformPreviewWidget from '../../components/PlatformPreviewWidget.astro';
+import { PLATFORMS_DATA, type PlatformInfo } from '../../data/platform-metadata';
+import { PLATFORM_WIDGETS_DATA } from '../../data/platform-widgets';
+import { NAVIGATION_DATA } from '../../data/navigation';
+
+export function getStaticPaths() {
+  return Object.keys(PLATFORMS_DATA)
+    .filter((platKey) => platKey !== 'tiktok')
+    .map((platKey) => ({
+      params: { platform: platKey },
+      props: { platformInfo: PLATFORMS_DATA[platKey] },
+    }));
+}
+
+interface Props {
+  platformInfo: PlatformInfo;
+}
+
+const { platformInfo } = Astro.props;
+const widgetsConfig = PLATFORM_WIDGETS_DATA[platformInfo.id];
+
+const platformFaqs = [
+  {
+    q: `Wie füge ich die Schriftart in ${platformInfo.name} ein?`,
+    a: `1. Tippe deinen gewünschten Text oben in das Eingabefeld ein.\n2. Klicke bei deiner Lieblingsschrift auf den Button "Kopieren".\n3. Öffne ${platformInfo.name}, gehe in dein Profil oder Chat und füge den kopierten Text mit Strg+V (oder langem Antippen auf dem Smartphone) ein.`,
+  },
+  {
+    q: `Gibt es ein Zeichenlimit bei ${platformInfo.name}?`,
+    a: `Ja, ${platformInfo.name} hat spezifische Limits (z. B. ${platformInfo.bioLimit} Zeichen im Bio- oder Statusfeld). Unser Konverter zeigt dir die genaue Zeichenanzahl in Echtzeit an.`,
+  },
+  {
+    q: `Werden die Schriftarten auf allen Geräten korrekt dargestellt?`,
+    a: `Ja, über 99 % aller modernen Smartphones (iOS und Android) sowie Desktop-Browser unterstützen diese standardisierten Unicode-Zeichen ohne Probleme.`,
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": platformFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+
+const isWhatsApp = platformInfo.id === 'whatsapp' || platformInfo.accentTheme === 'whatsapp';
+const themeClass = platformInfo.accentTheme ? `platform-theme-${platformInfo.accentTheme}` : (isWhatsApp ? 'platform-theme-whatsapp' : '');
+---
+
+<Layout
+  title={`${platformInfo.name} Schriftarten – Coole Schrift für Bio, Story & Posts`}
+  description={`Kostenloser ${platformInfo.name} Schriftarten Generator: Gestalte deine ${platformInfo.name} Bio, Namen und Nachrichten mit coolen Unicode-Schriften zum Kopieren.`}
+  canonicalUrl={`/plattform/${platformInfo.id}`}
+  schema={faqSchema}
+>
+  <main class={`py-12 md:py-16 bg-[#0a0a08] ${themeClass}`} data-platform-theme={platformInfo.accentTheme || (isWhatsApp ? 'whatsapp' : undefined)}>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <a href="/plattform" class="hover:text-white transition-colors">Plattformen</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">{platformInfo.name}</span>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="platform-guide-badge inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3 transition-all">
+          <span>{platformInfo.icon} {platformInfo.name} Guide</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <span class="platform-h1-accent transition-colors">{platformInfo.name}</span> Schriftarten Generator
+        </h1>
+        <p class="mt-4 text-base text-stone-300 leading-relaxed max-w-2xl mx-auto">
+          {platformInfo.tagline}
+        </p>
+      </div>
+
+      <!-- Interactive Converter Component -->
+      <TextStyleConverter
+        defaultText={`${platformInfo.name} Bio Vibes ✨`}
+        pageSlug={platformInfo.id}
+        filterCategory="alle"
+        showCategoryTabs={true}
+        showPresets={true}
+        maxChars={platformInfo.bioLimit > 0 ? platformInfo.bioLimit : 200}
+        limit={12}
+        showMoreButton={true}
+      />
+
+      <!-- Content Grid: Guidelines, Tips & Cross Links (2-Column Layout) -->
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- LEFT COLUMN (lg:col-span-2): 3 Interactive Widgets + Features, Native Note, Tips & Ends with FAQs -->
+        <div class="lg:col-span-2 space-y-8">
+          <!-- 3 Interactive Widgets (Ideas, Symbols, Emojis) -->
+          {widgetsConfig && (
+            <PlatformInteractiveWidgets
+              widgetsData={widgetsConfig}
+              platformId={platformInfo.id}
+            />
+          )}
+
+          <!-- 1. Key Features -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <span>🎯</span> Wofür du Schriftarten in {platformInfo.name} nutzen kannst
+            </h2>
+            <ul class="space-y-2.5 text-sm text-stone-300">
+              {platformInfo.keyFeatures.map((feat) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="text-amber-400 font-bold">✓</span>
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- 2. Native Formatting vs Unicode Note (if applicable) -->
+          {platformInfo.hasNativeFormatting && (
+            <div class="bg-amber-500/5 border border-amber-500/20 rounded-3xl p-6 sm:p-8">
+              <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
+                <span>💡</span> Native Formatierung vs. Unicode-Generator
+              </h3>
+              <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                In WhatsApp kannst du Text mit Sternchen (<code class="text-amber-400 font-mono">*fett*</code>) oder Unterstrichen formatieren. Dies funktioniert jedoch nur innerhalb von WhatsApp. Unser Unicode-Generator erzeugt echte universelle Schriftzeichen, die auch beim Weiterleiten in E-Mails, Instagram oder Discord exakt formatiert bleiben.
+              </p>
+            </div>
+          )}
+
+          <!-- 3. Practical Tips -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <span>💡</span> Tipps für das perfekte {platformInfo.name} Profil
+            </h2>
+            <ul class="space-y-3 text-xs sm:text-sm text-stone-300">
+              {platformInfo.tips.map((tip) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="text-amber-400 text-base">📌</span>
+                  <span class="leading-relaxed">{tip}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- 4. Platform FAQs (Final section in left column) -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> Häufige Fragen zu {platformInfo.name} Schriften
+            </h2>
+            <div class="space-y-4">
+              {platformFaqs.map((faq) => (
+                <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
+                  <h3 class="text-sm font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed whitespace-pre-line">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDEBAR COLUMN: 1. Live Preview, 2. Beliebte Stile, 3. Weitere Plattformen -->
+        <div class="space-y-6">
+          <!-- 1. Live Platform Preview Mockup Widget (At the very top of the sidebar) -->
+          <PlatformPreviewWidget platformId={platformInfo.id} />
+
+          <!-- 2. Beliebte Stile für Platform (Using shared FontStyleGrid component) -->
+          <FontStyleGrid
+            title={`Beliebte Stile für ${platformInfo.name}`}
+            titleIcon="🎨"
+            isAmberTitle={true}
+          />
+
+          <!-- 3. Weitere Plattformen (List with arrows format stacked directly below) -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-stone-300 mb-4">
+              Weitere Plattformen
+            </h3>
+            <div class="space-y-2">
+              {NAVIGATION_DATA.platforms.items
+                .filter((item) => !item.href.includes(platformInfo.id))
+                .map((other) => (
+                  <a
+                    href={other.href}
+                    class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-amber-500/10 border border-white/5 hover:border-amber-500/30 text-xs font-semibold text-stone-300 hover:text-white transition-all group"
+                  >
+                    <span>{other.icon} {other.title}</span>
+                    <span class="group-hover:translate-x-1 transition-transform text-amber-400">→</span>
+                  </a>
+                ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,194 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TextStyleConverter from '../../components/TextStyleConverter.astro';
+import FontStyleGrid from '../../components/FontStyleGrid.astro';
+import { FONT_STYLES_DETAIL, type FontStyleDetail } from '../../data/font-details';
+import { NAVIGATION_DATA } from '../../data/navigation';
+
+export function getStaticPaths() {
+  return Object.keys(FONT_STYLES_DETAIL).map((styleKey) => ({
+    params: { style: styleKey },
+    props: { font: FONT_STYLES_DETAIL[styleKey] },
+  }));
+}
+
+interface Props {
+  font: FontStyleDetail;
+}
+
+const { font } = Astro.props;
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": font.faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+
+const themeClass = `font-theme-${font.slug}`;
+
+const FONT_ICONS: Record<string, string> = {
+  'fette-schrift': '🔥',
+  'kursive-schrift': '🌸',
+  'gotische-schrift': '⚔️',
+  'bubble-schrift': '🫧',
+  'kleine-schrift': '💎',
+  'graffiti-schrift': '🎨',
+  'glitch-schrift': '⚡',
+  'durchgestrichen': '🚫',
+  'tattoo-schrift': '🗡️',
+  'handschrift': '✍️',
+  'unterschrift': '✒️',
+  'dekorative-schrift': '꧁',
+  'eckige-schrift': '【】',
+  'wellige-schrift': '〰️',
+};
+
+const fontIcon = FONT_ICONS[font.slug] || '✨';
+---
+
+<Layout
+  title={font.metaTitle}
+  description={font.metaDescription}
+  canonicalUrl={`/schrift/${font.slug}`}
+  schema={faqSchema}
+>
+  <main class={`py-12 md:py-16 relative overflow-hidden ${themeClass}`}>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <a href="/schrift" class="hover:text-white transition-colors">Schriftarten</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">{font.name}</span>
+      </nav>
+
+      <!-- Hero Title -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="font-hero-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-extrabold uppercase tracking-wider mb-3 shadow-md">
+          <span class="text-sm">{fontIcon}</span>
+          <span>{font.badge}</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+          {font.h1.includes('—') ? (
+            <>
+              {font.h1.split('—')[0]} &mdash; <span class="font-h1-accent">{font.h1.split('—')[1]}</span>
+            </>
+          ) : font.h1.includes('–') ? (
+            <>
+              {font.h1.split('–')[0]} &ndash; <span class="font-h1-accent">{font.h1.split('–')[1]}</span>
+            </>
+          ) : (
+            <span class="font-h1-accent">{font.h1}</span>
+          )}
+        </h1>
+        <p class="mt-4 text-base text-stone-300 leading-relaxed max-w-2xl mx-auto">
+          {font.tagline}
+        </p>
+      </div>
+
+      <!-- Interactive Converter Component (Dedicated multi-variant suite for this style) -->
+      <TextStyleConverter
+        defaultText={font.previewText}
+        pageSlug={font.slug}
+        maxChars={200}
+        showPresets={true}
+      />
+
+      <!-- Content Grid: Background, Use Cases & Cross-Linking to Platforms -->
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Main Column: Use Cases, History & Explanation -->
+        <div class="lg:col-span-2 space-y-8">
+          <!-- 1. Dedicated Use Cases Section -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <span>🎯</span> Wofür eignet sich diese Schrift?
+            </h2>
+            <ul class="space-y-3 text-sm text-stone-300">
+              {font.useCases.map((useCase) => (
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-md bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                    ✓
+                  </span>
+                  <span class="leading-relaxed">{useCase}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- 2. Background & Unicode Typografie -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <span>📖</span> Hintergrund & Unicode-Typografie
+            </h2>
+            <p class="text-sm text-stone-300 leading-relaxed mb-4">
+              {font.historyText}
+            </p>
+            <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
+              Im Gegensatz zu herkömmlichen Schriftdateien (.ttf/.otf) können diese Zeichen ohne jegliche Software-Installation direkt kopiert und in Eingabefeldern von Apps und Browsern verwendet werden.
+            </p>
+          </div>
+
+          <!-- 3. FAQ Accordion for this Style -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> Häufige Fragen zu {font.name}
+            </h2>
+            <div class="space-y-4">
+              {font.faqs.map((faq) => (
+                <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
+                  <h3 class="text-sm font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar: Full List of 7 Platforms & Reusable FontStyleGrid for other 13 styles -->
+        <div class="space-y-6">
+          <!-- 1. Empfohlene Plattformen (All 7 platforms) -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-amber-400 mb-4 flex items-center gap-1.5">
+              <span>📱</span> Empfohlene Plattformen
+            </h3>
+            <p class="text-xs text-stone-400 mb-4">
+              Hier kommt {font.name} besonders gut zur Geltung:
+            </p>
+            <div class="space-y-3">
+              {font.recommendedPlatforms.map((plat) => (
+                <a
+                  href={plat.slug}
+                  class="block p-3 rounded-2xl bg-white/5 border border-white/5 hover:border-amber-500/40 hover:bg-amber-500/10 transition-all group"
+                >
+                  <div class="text-xs font-bold text-white group-hover:text-amber-400 flex items-center justify-between">
+                    <span class="flex items-center gap-1.5">
+                      <span>{plat.icon}</span>
+                      <span>{plat.name}</span>
+                    </span>
+                    <span class="group-hover:translate-x-1 transition-transform">→</span>
+                  </div>
+                  <div class="text-[11px] text-stone-400 mt-1 leading-snug">{plat.reason}</div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- 2. Weitere Schriftstile (Reusable FontStyleGrid component) -->
+          <FontStyleGrid
+            title="Weitere Schriftstile"
+            titleIcon=""
+            currentSlug={font.slug}
+          />
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

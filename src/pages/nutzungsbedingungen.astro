@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE_CONFIG } from '../config/site';
+---
+
+<Layout
+  title="Nutzungsbedingungen (AGB) | Schriftarten.io"
+  description="Allgemeine Nutzungsbedingungen für die kostenlose Nutzung des Online-Schriftarten-Generators Schriftarten.io."
+  canonicalUrl="/nutzungsbedingungen"
+>
+  <main class="py-16 bg-[#0a0a08]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Nutzungsbedingungen</span>
+      </nav>
+
+      <div class="mb-10 pb-8 border-b border-white/10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
+          <span>📜 Rechtliche Vereinbarung</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Nutzungsbedingungen
+        </h1>
+        <p class="mt-2 text-sm text-stone-400">
+          Gültig für alle Besucher und Nutzer von Schriftarten.io
+        </p>
+      </div>
+
+      <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-10 space-y-8 text-stone-300 text-sm leading-relaxed">
+        <div>
+          <h2 class="text-lg font-bold text-white mb-2">1. Geltungsbereich & Gegenstand</h2>
+          <p>
+            Diese Nutzungsbedingungen regeln die kostenfreie Nutzung des Online-Tools auf Schriftarten.io. Durch den Aufruf der Website erklärst du dich mit diesen Bedingungen einverstanden.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-bold text-white mb-2">2. Kostenlose Bereitstellung & Verfügbarkeit</h2>
+          <p>
+            Unser Schriftarten-Generator wird kostenfrei und ohne Gewähr für eine ununterbrochene Verfügbarkeit bereitgestellt. Wir behalten uns das Recht vor, Funktionen jederzeit anzupassen oder zu erweitern.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-bold text-white mb-2">3. Zulässige Nutzung</h2>
+          <p>
+            Die generierten Unicode-Texte dürfen frei für private und geschäftliche Zwecke (z. B. Social-Media-Profile, Blogbeiträge, Nicknames) kopiert und verwendet werden. Es ist untersagt, die Plattform durch automatisierte Scraping-Bots oder Denial-of-Service-Angriffe zu überlasten.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-bold text-white mb-2">4. Haftungsbeschränkung</h2>
+          <p>
+            Wir haften nur für Schäden, die auf vorsätzlicher oder grob fahrlässiger Pflichtverletzung beruhen. Eine Haftung für fehlerhafte Darstellung von Sonderzeichen auf Drittgeräten ist ausgeschlossen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

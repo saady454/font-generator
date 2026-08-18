@@ -1,0 +1,142 @@
+---
+import { NAVIGATION_DATA } from '../data/navigation';
+import { SITE_CONFIG } from '../config/site';
+---
+
+<footer class="bg-[#0e0e0c] border-t border-white/10 text-stone-400">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+    <!-- 6-Column Responsive Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+      <!-- Column 1: Brand & Identity -->
+      <div class="sm:col-span-2 md:col-span-1 lg:col-span-1">
+        <a href="/" class="flex items-center gap-2 group focus:outline-none" aria-label="Zur Startseite">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center text-black font-extrabold text-lg shadow-md shadow-amber-500/20">
+            𝔖
+          </div>
+          <div class="flex items-center tracking-tight">
+            <span class="text-white font-bold text-base">Schriftarten</span>
+            <span class="text-amber-500 font-bold text-base">.io</span>
+          </div>
+        </a>
+        <p class="mt-4 text-xs text-stone-400 leading-relaxed">
+          Kostenloser Unicode-Schriftarten Generator für Deutschland, Österreich und die Schweiz (DACH). 100% werbefrei und ohne Installation.
+        </p>
+      </div>
+
+      <!-- Column 2: Schriftarten -->
+      <div>
+        <h3 class="text-xs font-bold text-white uppercase tracking-wider mb-4">
+          <a href="/schrift" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+            <span>🎨</span> Schriftarten
+          </a>
+        </h3>
+        <ul class="space-y-2 text-xs">
+          {NAVIGATION_DATA.fontStyles.items.slice(0, 7).map((item) => (
+            <li>
+              <a href={item.href} class="hover:text-white transition-colors block py-0.5">
+                {item.title}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href="/schrift" class="text-amber-400 hover:text-amber-300 font-semibold block pt-1">
+              Alle 14 Schriftarten →
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Plattformen -->
+      <div>
+        <h3 class="text-xs font-bold text-white uppercase tracking-wider mb-4">
+          <a href="/plattform" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+            <span>📱</span> Plattformen
+          </a>
+        </h3>
+        <ul class="space-y-2 text-xs">
+          {NAVIGATION_DATA.platforms.items.map((item) => (
+            <li>
+              <a href={item.href} class="hover:text-white transition-colors block py-0.5">
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 4: Gaming -->
+      <div>
+        <h3 class="text-xs font-bold text-white uppercase tracking-wider mb-4">
+          <a href="/spiele" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+            <span>🎮</span> Gaming
+          </a>
+        </h3>
+        <ul class="space-y-2 text-xs">
+          {NAVIGATION_DATA.games.items.map((item) => (
+            <li>
+              <a href={item.href} class="hover:text-white transition-colors block py-0.5">
+                {item.title} Nicknames
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 5: Symbole (Dedicated Column for all 4 symbol pages) -->
+      <div>
+        <h3 class="text-xs font-bold text-white uppercase tracking-wider mb-4">
+          <a href="/symbole" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+            <span>✨</span> Symbole
+          </a>
+        </h3>
+        <ul class="space-y-2 text-xs">
+          {NAVIGATION_DATA.symbols.items.map((item) => (
+            <li>
+              <a href={item.href} class="hover:text-white transition-colors block py-0.5">
+                {item.icon} {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 6: Blog & Rechtliches -->
+      <div>
+        <h3 class="text-xs font-bold text-white uppercase tracking-wider mb-4">
+          <a href="/blog" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+            <span>⚖️</span> Blog & Rechtliches
+          </a>
+        </h3>
+        <ul class="space-y-2 text-xs">
+          <li>
+            <a href="/blog" class="text-amber-400 hover:text-amber-300 font-semibold block py-0.5">
+              📖 Blog & Ratgeber
+            </a>
+          </li>
+          {NAVIGATION_DATA.legal.map((item) => (
+            <li>
+              <a href={item.href} class="hover:text-white transition-colors block py-0.5">
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-stone-400">
+      <div>
+        © 2026 {SITE_CONFIG.brandName}. Alle Rechte vorbehalten. Made with precision for DACH.
+      </div>
+      <div class="flex flex-wrap gap-4 text-xs">
+        <a href="/impressum" class="hover:text-white transition-colors">Impressum</a>
+        <a href="/datenschutz" class="hover:text-white transition-colors">Datenschutz</a>
+        <a href="/nutzungsbedingungen" class="hover:text-white transition-colors">Nutzungsbedingungen</a>
+        <a href="/cookie-richtlinie" class="hover:text-white transition-colors">Cookie-Richtlinie</a>
+        <a href="/kontakt" class="hover:text-white transition-colors">Kontakt</a>
+        <a href="/disclaimer" class="hover:text-white transition-colors">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE_CONFIG } from '../config/site';
+---
+
+<Layout
+  title="Disclaimer & Haftungsausschluss | Schriftarten.io"
+  description="Rechtlicher Haftungsausschluss, Markenzeichen-Hinweise und Information über Plattform-Unabhängigkeit auf Schriftarten.io."
+  canonicalUrl="/disclaimer"
+>
+  <main class="py-16 bg-[#0a0a08]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Disclaimer</span>
+      </nav>
+
+      <div class="mb-10 pb-8 border-b border-white/10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
+          <span>⚖️ Rechtlicher Hinweis</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Disclaimer & Haftungsausschluss
+        </h1>
+        <p class="mt-2 text-sm text-stone-400">
+          Markenrechtliche Klarstellung und technischer Haftungsausschluss
+        </p>
+      </div>
+
+      <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-10 space-y-8 text-stone-300 text-sm leading-relaxed">
+        <div>
+          <h2 class="text-lg font-bold text-white mb-2">1. Unabhängigkeit von Drittplattformen</h2>
+          <p>
+            Schriftarten.io ist ein unabhängiger Generator für Unicode-Zeichen und steht in keiner geschäftlichen Beziehung zu <strong>Instagram, Meta Platforms Inc., TikTok (ByteDance), WhatsApp LLC, Discord Inc., Twitter / X Corp., Epic Games Inc. oder Mojang / Microsoft</strong>.
+          </p>
+          <p class="mt-2 text-xs sm:text-sm text-stone-400">
+            Alle genannten Marken-, Firmen- oder Produktnamen sind eingetragene Warenzeichen ihrer jeweiligen Eigentümer und dienen auf dieser Website ausschließlich beschreibenden Zwecken zur Erläuterung der technischen Kompatibilität.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-bold text-white mb-2">2. Keine Gewähr für Darstellung auf Endgeräten</h2>
+          <p>
+            Die korrekte optische Darstellung von Unicode-Zeichen hängt von der auf dem Endgerät des jeweiligen Nutzers installierten Schriftarten-Bibliothek und dem Betriebssystem ab. Für fehlende Glyphen oder Kästchendarstellungen (Tofu) auf veralteten Betriebssystemen übernehmen wir keine Gewähr.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-bold text-white mb-2">3. Keine Rechtsberatung</h2>
+          <p>
+            Die auf dieser Website bereitgestellten Inhalte zu Themen wie dem Barrierefreiheitsstärkungsgesetz (BFSG) oder der DSGVO stellen rein redaktionelle und informative Beiträge dar und ersetzen keine individuelle rechtliche Beratung.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

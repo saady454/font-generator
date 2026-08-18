@@ -1,0 +1,216 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import GradientMeshBackground from '../../components/GradientMeshBackground.astro';
+import { HERZEN_CATEGORIES, HERZEN_SYMBOLS_DATA } from '../../data/expanded-symbols-data';
+import { NAVIGATION_DATA } from '../../data/navigation';
+
+const totalCount = HERZEN_SYMBOLS_DATA.length;
+---
+
+<Layout
+  title="Herzen Symbole zum Kopieren – ♥ ♡ 💖 Romantische Zeichen"
+  description={`Kopiere über ${totalCount} Herz-Symbole, farbige Herz-Emojis, romantische Ornamente und Liebeszeichen mit 1 Klick. Perfekt für Instagram Bio, WhatsApp & TikTok.`}
+  canonicalUrl="/symbole/herzen"
+>
+  <main class="relative bg-[#0F1220] min-h-screen py-12 md:py-16 overflow-hidden homepage-mesh-wrapper">
+    <!-- Romantic Hearts Themed Gradient Mesh Layer -->
+    <GradientMeshBackground variant="herzen" />
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <a href="/symbole" class="hover:text-white transition-colors">Symbole</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Herzen & Liebe</span>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
+          <span>♥ 1-Klick Kopieren</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          Herzen Symbole zum Kopieren
+        </h1>
+        <p class="mt-4 text-base text-stone-300 leading-relaxed max-w-2xl mx-auto">
+          Kopiere ästhetische Text-Herzen, farbige Herz-Emojis, romantische EKG-Linien und Liebes-Symbole mit nur einem Klick. Perfekt für deinen Beziehungsstatus, Bios und Nachrichten.
+        </p>
+      </div>
+
+      <!-- Filterable Heart Symbols Library -->
+      <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-xl">
+        <!-- Section Header with Dynamic Counter -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-white/5">
+          <div>
+            <h2 class="text-xl font-bold text-white flex items-center gap-2">
+              <span>♥</span> Herz-Symbole & Romantik Bibliothek
+            </h2>
+            <p class="text-xs text-stone-400 mt-1">
+              Wähle eine Kategorie, um die Herzen zu filtern, oder klicke direkt auf eine Karte zum Kopieren:
+            </p>
+          </div>
+          <span
+            id="heart-count-display"
+            class="px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold shrink-0 self-start sm:self-center"
+          >
+            {totalCount} Symbole verfügbar
+          </span>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="flex flex-wrap gap-2 mb-8" id="heart-category-pills">
+          {HERZEN_CATEGORIES.map((cat, idx) => (
+            <button
+              type="button"
+              class={`btn-heart-cat px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 focus:outline-none ${
+                idx === 0
+                  ? 'bg-amber-500 text-black shadow-md shadow-amber-500/20'
+                  : 'bg-[#0a0a08] text-stone-300 border border-white/10 hover:border-amber-500/40 hover:text-white'
+              }`}
+              data-category={cat.id}
+            >
+              <span>{cat.icon}</span>
+              <span>{cat.name}</span>
+            </button>
+          ))}
+        </div>
+
+        <!-- Symbol Cards Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5" id="hearts-library-grid">
+          {HERZEN_SYMBOLS_DATA.map((sym) => (
+            <div
+              class="heart-card p-4 rounded-2xl bg-[#0a0a08] border border-white/5 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all flex flex-col items-center justify-between gap-3 group text-center"
+              data-char={sym.char}
+              data-category={sym.category}
+            >
+              <!-- Symbol Display -->
+              <span class="text-2xl sm:text-3xl text-white group-hover:scale-110 transition-transform select-all font-mono min-h-[36px] flex items-center justify-center">
+                {sym.char}
+              </span>
+
+              <!-- German Label -->
+              <span class="text-[11px] text-stone-400 group-hover:text-stone-200 font-medium truncate max-w-full px-1" title={sym.germanLabel}>
+                {sym.germanLabel}
+              </span>
+
+              <!-- Kopieren Button -->
+              <button
+                type="button"
+                class="btn-copy-heart-card w-full py-1.5 px-2 rounded-lg bg-white/5 group-hover:bg-amber-500/20 group-hover:text-amber-300 border border-white/10 group-hover:border-amber-500/40 text-xs font-bold text-stone-300 transition-all"
+                data-char={sym.char}
+                title={`"${sym.char}" kopieren`}
+              >
+                Kopieren
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Cross Links to other Symbol categories & Silos -->
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {NAVIGATION_DATA.symbols.items
+          .filter((item) => !item.href.includes('herzen'))
+          .map((other) => (
+            <a
+              href={other.href}
+              class="p-5 rounded-2xl bg-[#141412] border border-white/10 hover:border-amber-500/30 transition-all block group"
+            >
+              <div class="text-base font-bold text-white group-hover:text-amber-400 flex items-center justify-between">
+                <span>{other.icon} {other.title}</span>
+                <span>→</span>
+              </div>
+              <div class="text-xs text-stone-400 mt-1">{other.description}</div>
+            </a>
+          ))}
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<!-- Client Side Interactivity for Filterable Hearts Library -->
+<script define:vars={{ totalSymbolsCount: totalCount }}>
+  const heartsGrid = document.getElementById('hearts-library-grid');
+  const countDisplay = document.getElementById('heart-count-display');
+  const categoryPills = document.querySelectorAll('.btn-heart-cat');
+
+  async function copyToClipboard(text) {
+    if (!text) return;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      }
+      window.dispatchEvent(new CustomEvent('show-toast'));
+    } catch (err) {
+      console.error('Copy error:', err);
+    }
+  }
+
+  // 1. Client-Side Category Filtering
+  categoryPills.forEach((pill) => {
+    pill.addEventListener('click', () => {
+      categoryPills.forEach((p) => {
+        p.classList.remove('bg-amber-500', 'text-black', 'shadow-md', 'shadow-amber-500/20');
+        p.classList.add('bg-[#0a0a08]', 'text-stone-300', 'border', 'border-white/10');
+      });
+      pill.classList.remove('bg-[#0a0a08]', 'text-stone-300', 'border', 'border-white/10');
+      pill.classList.add('bg-amber-500', 'text-black', 'shadow-md', 'shadow-amber-500/20');
+
+      const selectedCategory = pill.getAttribute('data-category');
+      const allCards = document.querySelectorAll('.heart-card');
+      let visibleCount = 0;
+
+      allCards.forEach((card) => {
+        const cardCat = card.getAttribute('data-category');
+        if (selectedCategory === 'all' || cardCat === selectedCategory) {
+          (card).style.display = 'flex';
+          visibleCount++;
+        } else {
+          (card).style.display = 'none';
+        }
+      });
+
+      if (countDisplay) {
+        if (selectedCategory === 'all') {
+          countDisplay.textContent = `${totalSymbolsCount} Symbole verfügbar`;
+        } else {
+          countDisplay.textContent = `${visibleCount} von ${totalSymbolsCount} Symbolen`;
+        }
+      }
+    });
+  });
+
+  // 2. Click Heart Card / Copy Button
+  heartsGrid?.addEventListener('click', (e) => {
+    const copyBtn = e.target.closest('.btn-copy-heart-card');
+    const card = e.target.closest('.heart-card');
+    if (!card) return;
+
+    const char = card.getAttribute('data-char');
+    if (!char) return;
+
+    copyToClipboard(char);
+
+    const targetBtn = copyBtn || card.querySelector('.btn-copy-heart-card');
+    if (targetBtn) {
+      const origText = targetBtn.textContent;
+      targetBtn.textContent = 'Kopiert!';
+      targetBtn.classList.add('bg-amber-500', 'text-black');
+      setTimeout(() => {
+        targetBtn.textContent = origText;
+        targetBtn.classList.remove('bg-amber-500', 'text-black');
+      }, 1500);
+    }
+  });
+</script>

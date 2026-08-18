@@ -1,0 +1,97 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import GradientMeshBackground from '../../components/GradientMeshBackground.astro';
+import { PLATFORMS_DATA } from '../../data/platform-metadata';
+import { SITE_CONFIG } from '../../config/site';
+
+const platformsList = Object.values(PLATFORMS_DATA);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Schriftarten für alle Plattformen – Instagram, TikTok, WhatsApp & mehr',
+  description: 'Finde maßgeschneiderte Schriftarten, Bio-Vorlagen und Sonderzeichen für deine Lieblings-Apps.',
+  url: `${SITE_CONFIG.baseUrl}/plattform`,
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: platformsList.map((platform, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      name: platform.name,
+      url: `${SITE_CONFIG.baseUrl}${platform.slug}`,
+    })),
+  },
+};
+---
+
+<Layout
+  title="Schriftarten für Plattformen – Instagram, TikTok & WhatsApp | Schriftarten.io"
+  description="Übersicht aller Social Media Schriftgeneratoren für Instagram, TikTok, WhatsApp, Discord, Twitter/X, Facebook und Telegram. Perfekt optimiert für jedes Profil."
+  canonicalUrl="/plattform"
+  schema={schema}
+>
+  <main class="relative bg-[#0F1220] min-h-screen py-12 md:py-16 overflow-hidden homepage-mesh-wrapper">
+    <!-- Reusable Multi-Color Gradient Mesh Layer -->
+    <GradientMeshBackground />
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Plattformen</span>
+      </nav>
+
+      <!-- Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
+          <span>📱 Social Media & Apps</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          Schriftarten für alle Plattformen – Instagram, TikTok, WhatsApp & mehr
+        </h1>
+        <p class="mt-4 text-base sm:text-lg text-stone-300 leading-relaxed">
+          Finde maßgeschneiderte Schriftarten, Bio-Vorlagen und Sonderzeichen für deine Lieblings-Apps. Egal ob Instagram Steckbrief, TikTok Display-Name, WhatsApp Info-Spruch oder Discord Server – hier findest du den passenden Generator mit Berücksichtigung der exakten Zeichenlimits.
+        </p>
+      </div>
+
+      <!-- 7 Platform Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {platformsList.map((platform) => (
+          <a
+            href={platform.slug}
+            class="group block p-7 rounded-3xl bg-[#141412] border border-white/10 hover:border-amber-500/40 shadow-xl hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-200 relative overflow-hidden"
+          >
+            <div class="flex items-start justify-between gap-3 mb-4">
+              <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                {platform.icon}
+              </div>
+              <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-white/5 border border-white/10 text-stone-300 group-hover:bg-amber-500/20 group-hover:text-amber-300 group-hover:border-amber-500/30 transition-colors">
+                Limit: {platform.bioLimit} Zeichen
+              </span>
+            </div>
+
+            <h2 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors mb-2 flex items-center justify-between">
+              <span>{platform.name}</span>
+              <span class="text-stone-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all">→</span>
+            </h2>
+
+            <p class="text-xs sm:text-sm text-stone-400 leading-relaxed mb-6">
+              {platform.tagline}
+            </p>
+
+            <!-- Key Features Bullets -->
+            <div class="space-y-1.5 pt-4 border-t border-white/5">
+              {platform.keyFeatures.slice(0, 3).map((feature) => (
+                <div class="flex items-center gap-2 text-xs text-stone-300">
+                  <span class="text-amber-400 font-bold">✓</span>
+                  <span class="truncate">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+</Layout>

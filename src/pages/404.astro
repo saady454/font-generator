@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GradientMeshBackground from '../components/GradientMeshBackground.astro';
+---
+
+<Layout
+  title="404 – Seite nicht gefunden | Schriftarten.io"
+  description="Die angeforderte Seite konnte leider nicht gefunden werden."
+  canonicalUrl="/404"
+>
+  <main class="relative bg-[#0F1220] min-h-[75vh] flex items-center justify-center text-center overflow-hidden homepage-mesh-wrapper py-20">
+    <GradientMeshBackground />
+
+    <div class="max-w-lg mx-auto px-4 relative z-10">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
+        <span>Fehler 404</span>
+      </div>
+
+      <div class="text-7xl sm:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 font-mono mb-4">
+        404
+      </div>
+
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-white mb-3 tracking-tight">
+        Seite nicht gefunden
+      </h1>
+
+      <p class="text-stone-300 text-sm mb-8 leading-relaxed max-w-md mx-auto">
+        Die von dir aufgerufene Schriftart oder Unterseite existiert leider nicht, wurde umbenannt oder verschoben.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
+        <a
+          href="/"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-amber-500 text-black font-extrabold text-sm hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20"
+        >
+          <span>Zurück zur Startseite</span>
+          <span>→</span>
+        </a>
+        <a
+          href="/schrift"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-500/40 text-white font-bold text-sm transition-all"
+        >
+          <span>Alle 14 Schriftarten</span>
+        </a>
+      </div>
+
+      <!-- Quick Helpful Silo Shortcuts -->
+      <div class="pt-6 border-t border-white/10 grid grid-cols-3 gap-2 text-xs">
+        <a href="/plattform" class="p-2.5 rounded-xl bg-[#141412] border border-white/5 hover:border-amber-500/30 text-stone-300 hover:text-amber-400 transition-colors">
+          📱 Plattformen
+        </a>
+        <a href="/spiele" class="p-2.5 rounded-xl bg-[#141412] border border-white/5 hover:border-amber-500/30 text-stone-300 hover:text-amber-400 transition-colors">
+          🎮 Gaming
+        </a>
+        <a href="/symbole" class="p-2.5 rounded-xl bg-[#141412] border border-white/5 hover:border-amber-500/30 text-stone-300 hover:text-amber-400 transition-colors">
+          ✨ Symbole
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>
