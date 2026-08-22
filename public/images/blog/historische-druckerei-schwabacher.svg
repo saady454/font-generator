@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="druckBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0907"/>
+      <stop offset="50%" stop-color="#17140f"/>
+      <stop offset="100%" stop-color="#050403"/>
+    </linearGradient>
+    <linearGradient id="druckGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="druckShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#druckBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="220" r="260" fill="#f59e0b" fill-opacity="0.08"/>
+  <circle cx="940" cy="450" r="260" fill="#d97706" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-190" y="-16" width="380" height="32" rx="16" fill="#1e1b15" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fbbf24" letter-spacing="2">BUCHDRUCK UM 1500</text>
+    <text y="48" font-family="Georgia, serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Die Schwabacher im <tspan fill="url(#druckGold)">frühen Buchdruck</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Meilensteine von Johann Bämler (1472) über Anton Koberger bis zur Lutherbibel (1522)
+    </text>
+  </g>
+
+  <!-- 3 Milestone Cards -->
+  <g transform="translate(70, 150)">
+    
+    <!-- 1. Johann Bämler &amp; Augsburg -->
+    <g transform="translate(0, 0)" filter="url(#druckShadow)">
+      <rect width="320" height="440" rx="22" fill="#14120e" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 25)">
+        <rect width="130" height="26" rx="6" fill="#f59e0b" fill-opacity="0.15"/>
+        <text x="65" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#fbbf24">AUGSBURG 1472</text>
+
+        <rect y="40" width="270" height="90" rx="12" fill="#0c0a08" stroke="#f59e0b" stroke-opacity="0.2"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">PIONIERDRUCK:</text>
+        <text x="20" y="65" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#ffffff">Johann Bämler</text>
+        <text x="20" y="88" font-family="system-ui, sans-serif" font-size="11" fill="#fbbf24">Früheste Schwabacher-Typen</text>
+
+        <g transform="translate(0, 155)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="800" fill="#fbbf24">Entwicklung:</text>
+          <text x="0" y="24">Entstand als volkstümliche,</text>
+          <text x="0" y="44">flüssiger lesbare Alternative</text>
+          <text x="0" y="64">zur starren Textura.</text>
+          <text x="0" y="84">Beliebt für deutsche Texte.</text>
+        </g>
+
+        <rect y="340" width="270" height="36" rx="8" fill="#221e17"/>
+        <text x="135" y="363" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">Erste Drucke in Augsburg</text>
+      </g>
+    </g>
+
+    <!-- 2. Schedelsche Weltchronik &amp; Dürer -->
+    <g transform="translate(370, 0)" filter="url(#druckShadow)">
+      <rect width="320" height="440" rx="22" fill="#14120e" stroke="#fbbf24" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 25)">
+        <rect width="130" height="26" rx="6" fill="#fbbf24" fill-opacity="0.15"/>
+        <text x="65" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#fbbf24">NÜRNBERG 1493</text>
+
+        <rect y="40" width="270" height="90" rx="12" fill="#0c0a08" stroke="#fbbf24" stroke-opacity="0.2"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">MEISTERWERK:</text>
+        <text x="20" y="65" font-family="Georgia, serif" font-size="17" font-weight="bold" fill="#ffffff">Schedel-Chronik</text>
+        <text x="20" y="88" font-family="system-ui, sans-serif" font-size="11" fill="#fbbf24">Anton Koberger &amp; Dürer</text>
+
+        <g transform="translate(0, 155)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="800" fill="#fbbf24">Druckmonument:</text>
+          <text x="0" y="24">Über 1.800 Holzschnitte</text>
+          <text x="0" y="44">in Schwabacher Schrift</text>
+          <text x="0" y="64">gesetzt. Gilt als eines der</text>
+          <text x="0" y="84">wichtigsten Inkunabeln.</text>
+        </g>
+
+        <rect y="340" width="270" height="36" rx="8" fill="#221e17"/>
+        <text x="135" y="363" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">Höhepunkt der Inkunabeln</text>
+      </g>
+    </g>
+
+    <!-- 3. Lutherbibel 1522 -->
+    <g transform="translate(740, 0)" filter="url(#druckShadow)">
+      <rect width="320" height="440" rx="22" fill="#14120e" stroke="#d97706" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 25)">
+        <rect width="140" height="26" rx="6" fill="#d97706" fill-opacity="0.15"/>
+        <text x="70" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#fbbf24">WITTENBERG 1522</text>
+
+        <rect y="40" width="270" height="90" rx="12" fill="#0c0a08" stroke="#d97706" stroke-opacity="0.2"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">REFORMATION:</text>
+        <text x="20" y="65" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#ffffff">Martin Luther</text>
+        <text x="20" y="88" font-family="system-ui, sans-serif" font-size="11" fill="#fbbf24">Septembertestament</text>
+
+        <g transform="translate(0, 155)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="800" fill="#fbbf24">Verbreitung:</text>
+          <text x="0" y="24">Die volkssprachliche Bibel</text>
+          <text x="0" y="44">machte die Schwabacher</text>
+          <text x="0" y="64">im gesamten deutsch-</text>
+          <text x="0" y="84">sprachigen Raum vertraut.</text>
+        </g>
+
+        <rect y="340" width="270" height="36" rx="8" fill="#221e17"/>
+        <text x="135" y="363" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">Bibelübersetzung 1522</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

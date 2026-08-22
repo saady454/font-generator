@@ -19,57 +19,111 @@ const fontCards = NAVIGATION_DATA.fontStyles.items.map((item) => {
   };
 });
 
+const faqs = [
+  {
+    question: 'Sind die Schriftgeneratoren kostenlos?',
+    answer: 'Ja. Die auf der Website angebotenen Generatoren können direkt im Browser verwendet werden. Für die Nutzung ist keine klassische Font-Installation erforderlich.',
+  },
+  {
+    question: 'Sind das echte installierbare Schriftarten?',
+    answer: 'Nein. Bei den kopierbaren Varianten handelt es sich überwiegend um Unicode-Zeichen und Zeichenkombinationen. Eine echte Font-Datei wie .ttf oder .otf ist etwas anderes.',
+  },
+  {
+    question: 'Funktionieren die Schriftarten überall?',
+    answer: 'Nicht garantiert. Die Darstellung hängt von der verwendeten App, Plattform und den unterstützten Zeichen ab. Bei Problemen solltest du einen anderen Stil ausprobieren.',
+  },
+  {
+    question: 'Kann ich die Schriftarten auf dem Smartphone verwenden?',
+    answer: 'Ja, der Generator lässt sich direkt im mobilen Browser verwenden. Text kann anschließend über die Zwischenablage in unterstützte Apps eingefügt werden.',
+  },
+];
+
 const schema = {
   '@context': 'https://schema.org',
-  '@type': 'CollectionPage',
-  name: 'Alle Schriftarten – 14 kostenlose Schriftgeneratoren',
-  description: 'Entdecke alle 14 spezialisierten Unicode-Schriftarten Generatoren: Fette Schrift, Kursiv, Gotisch, Bubble, Small Caps & mehr.',
-  url: `${SITE_CONFIG.baseUrl}/schrift`,
-  mainEntity: {
-    '@type': 'ItemList',
-    itemListElement: fontCards.map((font, idx) => ({
-      '@type': 'ListItem',
-      position: idx + 1,
-      name: font.title,
-      url: `${SITE_CONFIG.baseUrl}${font.href}`,
-    })),
-  },
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      name: 'Alle Schriftarten – 14 kostenlose Schriftgeneratoren zum Kopieren',
+      description: 'Alle Schriftarten kostenlos ausprobieren: 14 Schriftstile mit unserem Schriftgenerator erstellen, direkt kopieren und für Instagram, TikTok, WhatsApp und Gaming nutzen.',
+      url: `${SITE_CONFIG.baseUrl}/schrift/`,
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: fontCards.map((font, idx) => ({
+          '@type': 'ListItem',
+          position: idx + 1,
+          name: font.title,
+          url: `${SITE_CONFIG.baseUrl}${font.href}`,
+        })),
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    },
+  ],
 };
 ---
 
 <Layout
-  title="Alle Schriftarten – 14 kostenlose Schriftgeneratoren | Schriftarten.io"
-  description="Übersicht aller 14 Schriftarten Generatoren: Fette Schrift, Kursiv, Gotisch, Bubble, Small Caps, Zalgo Glitch & mehr. Kostenlos formatieren und kopieren."
-  canonicalUrl="/schrift"
+  title="Alle Schriftarten – 14 kostenlose Schriftgeneratoren zum Kopieren"
+  description="Alle Schriftarten kostenlos ausprobieren: 14 Schriftstile mit unserem Schriftgenerator erstellen, direkt kopieren und für Instagram, TikTok, WhatsApp und Gaming nutzen."
+  canonicalUrl="/schriftarten/"
   schema={schema}
 >
   <main class="relative bg-[#0F1220] min-h-screen py-12 md:py-16 overflow-hidden homepage-mesh-wrapper">
     <!-- Reusable Multi-Color Gradient Mesh Layer -->
     <GradientMeshBackground />
 
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
       <!-- Breadcrumb -->
       <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
         <a href="/" class="hover:text-white transition-colors">Startseite</a>
         <span>/</span>
-        <span class="text-stone-300 font-semibold">Schriftarten</span>
+        <span class="text-stone-300 font-semibold">Alle Schriftarten</span>
       </nav>
 
-      <!-- Header -->
-      <div class="text-center max-w-3xl mx-auto mb-14">
+      <!-- Header & Intro -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
         <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
-          <span>🎨 14 Typografische Stile</span>
+          <span>🎨 14 Typografische Schriftstile</span>
         </div>
         <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
           Alle Schriftarten – 14 kostenlose Schriftgeneratoren
         </h1>
         <p class="mt-4 text-base sm:text-lg text-stone-300 leading-relaxed">
-          Entdecke unsere vollständige Sammlung spezialisierter Unicode-Schriftarten Generatoren. Egal ob markante fette Buchstaben, elegante Kursivschrift, historische gotische Fraktur oder verspielte Bubble-Schrift – hier findest du für jedes Profil und jeden Anlass den passenden Stil.
+          Eine normale Schrift wirkt manchmal zu schlicht für eine Instagram-Bio, einen Nickname oder einen Status. Wer auffällige Buchstaben sucht, möchte deshalb meist nicht erst eine Schriftdatei herunterladen oder ein Designprogramm öffnen. Genau hier helfen kostenlose Schriftgeneratoren mit direkt kopierbaren Textstilen.
+        </p>
+        <p class="mt-3 text-sm sm:text-base text-stone-400 leading-relaxed">
+          Mit den 14 Schriftgeneratoren von Schriftarten.io kannst du verschiedene Stile ausprobieren und das Ergebnis direkt kopieren. Dazu gehören fette, kursive, gotische, Bubble-, kleine, Graffiti-, Glitch-, Tattoo-, Handschrift- und dekorative Schriftstile. So findest du schneller einen Look für Social Media, Messenger oder Gaming.
         </p>
       </div>
 
-      <!-- 14 Font Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Featured Editorial Image 1 -->
+      <figure class="my-12 rounded-3xl overflow-hidden border border-white/10 bg-[#161614] shadow-2xl">
+        <img
+          src="/images/alle-schriftarten-hero.svg"
+          alt="Online-Schriftgenerator mit verschiedenen Schriftstilen"
+          class="w-full h-auto object-cover"
+          loading="eager"
+        />
+        <figcaption class="p-4 text-xs sm:text-sm text-stone-400 text-center border-t border-white/5 bg-[#121210]">
+          Verschiedene Schriftstile direkt im Browser vergleichen und kopieren.
+        </figcaption>
+      </figure>
+
+      <!-- 14 Font Cards Showcase Grid -->
+      <div class="mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 text-center sm:text-left">
+          Direktzugriff: Alle 14 spezialisierten Schriftgeneratoren
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {fontCards.map((font) => (
             <a
               href={font.href}
@@ -100,5 +154,209 @@ const schema = {
           ))}
         </div>
       </div>
+
+      <!-- Rich Editorial Content Sections -->
+      <article class="prose prose-invert max-w-none space-y-12">
+        
+        <!-- Section 1: 14 Schriftstile kostenlos ausprobieren -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            14 Schriftstile kostenlos ausprobieren
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-6">
+            Die Übersicht bündelt verschiedene Stilrichtungen an einem Ort. Dadurch musst du nicht für jeden Effekt eine neue Website suchen.
+          </p>
+
+          <!-- 14-Row Comparison Table -->
+          <div class="overflow-x-auto my-6 rounded-2xl border border-white/10">
+            <table class="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr class="bg-white/5 text-amber-400 border-b border-white/10">
+                  <th class="p-4 font-bold">Schriftstil</th>
+                  <th class="p-4 font-bold">Besonders geeignet für</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/5 text-stone-300">
+                <tr class="hover:bg-white/[0.02]"><td class="p-4 font-semibold text-white">Fette Schrift</td><td class="p-4">Namen, Überschriften, Bios</td></tr>
+                <tr class="hover:bg-white/[0.02]"><td class="p-4 font-semibold text-white">Kursive Schrift</td><td class="p-4">Zitate, Bios, kurze Texte</td></tr>
+                <tr class="hover:bg-white/[0.02]"><td class="p-4 font-semibold text-white">Gotische Schrift</td><td class="p-4">Nicknames, markante Profile</td></tr>
+                <tr class="hover:bg-white/[0.02]"><td class="p-4 font-semibold text-white">Bubble Schrift</td><td class="p-4">Social Media und lockere Chats</td></tr>
+                <tr class="hover:bg-white/[0.02]"><td class="p-4 font-semibold text-white">Kleine Schrift</td><td class="p-4">Kompakte Namen und Profile</td></tr>
+                <tr class="hover:bg-white/[0.02]"><td class="p-4 font-semibold text-white">Graffiti Schrift</td><td class="p-4">Kreative Namen und Posts</td></tr>
+                <tr class="hover:bg-white/[0.02]"><td class="p-4 font-semibold text-white">Glitch Schrift</td><td class="p-4">Gaming und Cyber-Looks</td></tr>
+                <tr class="hover:bg-white/[0.02]"><td class="p-4 font-semibold text-white">Durchgestrichene Schrift</td><td class="p-4">Humorvolle oder kreative Texte</td></tr>
+                <tr class="hover:bg-white/[0.02]"><td class="p-4 font-semibold text-white">Tattoo Schrift</td><td class="p-4">Markante Schriftzüge</td></tr>
+                <tr class="hover:bg-white/[0.02]"><td class="p-4 font-semibold text-white">Handschrift</td><td class="p-4">Persönliche Namen und Grüße</td></tr>
+                <tr class="hover:bg-white/[0.02]"><td class="p-4 font-semibold text-white">Unterschrift</td><td class="p-4">Signatur-ähnliche Texte</td></tr>
+                <tr class="hover:bg-white/[0.02]"><td class="p-4 font-semibold text-white">Dekorative Schrift</td><td class="p-4">Aesthetic Bios und Nicknames</td></tr>
+                <tr class="hover:bg-white/[0.02]"><td class="p-4 font-semibold text-white">Eckige Schrift</td><td class="p-4">Gaming und futuristische Namen</td></tr>
+                <tr class="hover:bg-white/[0.02]"><td class="p-4 font-semibold text-white">Wellige Schrift</td><td class="p-4">Verspielte Texte und Profile</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="text-stone-300 leading-relaxed mb-6">
+            Die einzelnen Stile verwenden unterschiedliche Unicode-Zeichen. Unicode enthält unter anderem mathematische alphanumerische Zeichen in Varianten wie fett, kursiv, Fraktur, Script, Double-Struck und Monospace. Eine detaillierte Übersicht aller mathematischen Glyphenblöcke findest du in der offiziellen Dokumentation der <a href="https://www.unicode.org/charts/nameslist/n_1D400.html" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 underline font-medium">Unicode Mathematical Alphanumeric Symbols</a>.
+          </p>
+
+          <!-- Editorial Image 2 -->
+          <figure class="my-8 rounded-2xl overflow-hidden border border-white/10 bg-[#161614]">
+            <img
+              src="/images/alle-schriftarten-stile-grid.svg"
+              alt="Übersicht mit 14 kostenlosen Schriftstilen"
+              class="w-full h-auto object-cover"
+              loading="lazy"
+            />
+            <figcaption class="p-3 text-xs text-stone-400 text-center border-t border-white/5 bg-[#121210]">
+              Eine Übersicht der wichtigsten Schriftstile und ihrer typischen Einsatzbereiche.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- Section 2: Welche Schrift passt zu welchem Zweck? -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Welche Schrift passt zu welchem Zweck?
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Für eine Instagram-Bio eignen sich kurze fette, kursive oder dekorative Varianten. Bei einem Gaming-Namen wirken dagegen gotische, eckige oder Glitch-Stile oft passender.
+          </p>
+          <p class="text-stone-300 leading-relaxed">
+            Eine Handschrift kann persönliche Namen oder kurze Grüße hervorheben. Für längere informative Texte ist normaler Text dagegen meist die bessere Wahl, weil spezielle Unicode-Zeichen nicht immer gleich verständlich oder barrierefrei für Screenreader dargestellt werden.
+          </p>
+        </section>
+
+        <!-- Section 3: So funktioniert der Schriftgenerator -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            So funktioniert der Schriftgenerator
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Die Anwendung ist bewusst einfach gestaltet:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-stone-300 mb-6">
+            <li><strong>Text eingeben:</strong> Schreibe einen Namen, Satz, Nickname oder ein Zitat in das Eingabefeld.</li>
+            <li><strong>Stil auswählen:</strong> Vergleiche die verschiedenen Varianten direkt in der Live-Vorschau.</li>
+            <li><strong>Kopieren:</strong> Klicke bei deinem Favoriten auf den Button „Kopieren“.</li>
+            <li><strong>Einfügen:</strong> Füge den Text anschließend in das gewünschte Feld auf Instagram, WhatsApp oder Discord ein.</li>
+          </ul>
+          <p class="text-stone-300 leading-relaxed mb-6">
+            Damit kannst du Alle Schriftarten – 14 kostenlose Schriftgeneratoren ausprobieren, ohne eine klassische Font-Datei installieren zu müssen.
+          </p>
+
+          <!-- Editorial Image 3 -->
+          <figure class="my-8 rounded-2xl overflow-hidden border border-white/10 bg-[#161614]">
+            <img
+              src="/images/alle-schriftarten-workflow-anleitung.svg"
+              alt="Schriftgenerator auf Smartphone und Laptop verwenden"
+              class="w-full h-auto object-cover"
+              loading="lazy"
+            />
+            <figcaption class="p-3 text-xs text-stone-400 text-center border-t border-white/5 bg-[#121210]">
+              Text eingeben, Stil auswählen und das Ergebnis kopieren.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- Section 4: Schriftarten für Instagram, TikTok und WhatsApp -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Schriftarten für Instagram, TikTok und WhatsApp
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Solche Textstile sind besonders praktisch, wenn eine Plattform keine frei wählbare Schriftart für ein bestimmtes Textfeld anbietet. Der Generator liefert kopierbaren Text, der anschließend wie normaler Text eingefügt wird.
+          </p>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Allerdings ist Unicode nicht dasselbe wie eine installierte Schriftart. Bei einer klassischen .ttf-, .otf- oder .woff2-Datei wird die Darstellung durch eine lokale Font-Datei bestimmt. Bei einem Unicode-Generator werden dagegen spezielle internationale Zeichen verwendet.
+          </p>
+          <p class="text-stone-300 leading-relaxed mb-6">
+            Deshalb kann die Darstellung je nach App, Betriebssystem oder verwendeter Schriftbibliothek abweichen. Manche Zeichen können beispielsweise als leeres Kästchen erscheinen. Für wichtige Informationen solltest du daher weiterhin normalen Text verwenden. Entdecke unsere optimierten Plattform-Ratgeber für <a href="/plattformen/instagram/" class="text-amber-400 hover:text-amber-300 underline font-medium">Instagram Schriftarten</a>, <a href="/plattformen/tiktok/" class="text-amber-400 hover:text-amber-300 underline font-medium">TikTok Schriftarten</a> und <a href="/plattformen/whatsapp/" class="text-amber-400 hover:text-amber-300 underline font-medium">WhatsApp Schriftarten</a>.
+          </p>
+        </section>
+
+        <!-- Section 5: Schriftarten für Gaming-Nicknames -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Schriftarten für Gaming-Nicknames
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Auch für Gaming-Namen können die verschiedenen Stile interessant sein. Ein kurzer Nickname lässt sich beispielsweise mit einer gotischen, fetten oder dekorativen Variante gestalten.
+          </p>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Dabei gilt jedoch: Nicht jedes Spiel akzeptiert jedes Unicode-Zeichen. Manche Plattformen oder Spiele haben eigene Zeichenfilter und Namensregeln. Deshalb solltest du einen Namen immer direkt im jeweiligen Dienst testen.
+          </p>
+          <p class="text-stone-300 leading-relaxed mb-6">
+            Für beliebte Spiele findest du auf unserer Website eigens optimierte Tools wie den <a href="/spiele/fortnite/" class="text-amber-400 hover:text-amber-300 underline font-medium">Fortnite Nickname Generator</a> und den <a href="/spiele/minecraft/" class="text-amber-400 hover:text-amber-300 underline font-medium">Minecraft Nickname Generator</a> sowie Bereiche für Valorant, Roblox, Free Fire und CS2.
+          </p>
+
+          <!-- Editorial Image 4 -->
+          <figure class="my-8 rounded-2xl overflow-hidden border border-white/10 bg-[#161614]">
+            <img
+              src="/images/alle-schriftarten-gaming-nicknames.svg"
+              alt="Stylische Schriftarten für Gaming-Nicknames"
+              class="w-full h-auto object-cover"
+              loading="lazy"
+            />
+            <figcaption class="p-3 text-xs text-stone-400 text-center border-t border-white/5 bg-[#121210]">
+              Gotische, Glitch- und dekorative Stile können Gaming-Namen hervorheben.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- Section 6: Warum mehrere Schriftstile testen? -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Warum mehrere Schriftstile testen?
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Der erste Stil sieht nicht automatisch am besten aus. Außerdem können Buchstaben je nach Gerät unterschiedlich wirken. Deshalb lohnt sich ein kurzer Vergleich:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-stone-300">
+            <li><strong>Für einen klaren Look:</strong> Fette oder kleine Schrift.</li>
+            <li><strong>Für einen eleganten Look:</strong> Kursive Schrift oder Handschrift.</li>
+            <li><strong>Für einen markanten Look:</strong> Gotische oder Tattoo-Schrift.</li>
+            <li><strong>Für Gaming &amp; Clans:</strong> Glitch, eckige oder dekorative Schrift.</li>
+            <li><strong>Für einen verspielten Look:</strong> Bubble oder wellige Schrift.</li>
+          </ul>
+          <p class="mt-4 text-stone-300 leading-relaxed">
+            So kannst du Alle Schriftarten – 14 kostenlose Schriftgeneratoren nach dem gewünschten Einsatz auswählen, statt nur nach dem Namen des Stils.
+          </p>
+        </section>
+
+        <!-- Section 7: FAQ Accordion -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">
+            Häufige Fragen (FAQ)
+          </h2>
+          <div class="space-y-4">
+            {faqs.map((faq) => (
+              <details class="group bg-white/5 rounded-2xl border border-white/10 p-5 transition-all open:bg-white/[0.08]">
+                <summary class="flex justify-between items-center font-bold text-white cursor-pointer list-none select-none">
+                  <span>{faq.question}</span>
+                  <span class="text-amber-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p class="mt-4 text-sm text-stone-300 leading-relaxed border-t border-white/5 pt-4">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <!-- Section 8: Fazit -->
+        <section class="rounded-3xl bg-gradient-to-br from-amber-500/10 via-[#141412] to-amber-500/5 border border-amber-500/30 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Fazit
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Alle Schriftarten – 14 kostenlose Schriftgeneratoren bieten eine schnelle Möglichkeit, normale Texte optisch zu verändern. Statt Dateien zu installieren, kannst du einen Stil auswählen, den Text kopieren und anschließend an der gewünschten Stelle einfügen.
+          </p>
+          <p class="text-stone-300 leading-relaxed">
+            Am besten wählst du den Stil nach seinem Einsatzzweck. Für Bios reichen oft dezente Varianten wie <a href="/schrift/fette-schrift/" class="text-amber-400 hover:text-amber-300 underline font-medium">Fette Schrift</a> oder <a href="/schrift/kursive-schrift/" class="text-amber-400 hover:text-amber-300 underline font-medium">Kursive Schrift</a>, während Gaming-Nicknames stärker dekoriert werden können. Entdecke auch unsere <a href="/symbole/" class="text-amber-400 hover:text-amber-300 underline font-medium">Symbole &amp; Emojis</a> für noch mehr kreative Gestaltungsoptionen!
+          </p>
+        </section>
+
+      </article>
+    </div>
   </main>
 </Layout>

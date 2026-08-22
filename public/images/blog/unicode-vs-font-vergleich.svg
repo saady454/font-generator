@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0d14"/>
+      <stop offset="100%" stop-color="#121622"/>
+    </linearGradient>
+    <linearGradient id="leftCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#191e2b"/>
+      <stop offset="100%" stop-color="#11141e"/>
+    </linearGradient>
+    <linearGradient id="rightCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#241e17"/>
+      <stop offset="100%" stop-color="#181410"/>
+    </linearGradient>
+    <filter id="shadow3" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad3)"/>
+
+  <!-- Header -->
+  <g transform="translate(600, 60)" text-anchor="middle">
+    <rect x="-180" y="-18" width="360" height="36" rx="18" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="sans-serif" font-size="13" font-weight="800" fill="#60a5fa" letter-spacing="1.5">TECHNISCHER VERGLEICH</text>
+    
+    <text y="55" font-family="sans-serif" font-size="32" font-weight="800" fill="#ffffff">
+      Klassische Schriftdatei <tspan fill="#94a3b8">vs.</tspan> <tspan fill="#fbbf24">Unicode-Schrift</tspan>
+    </text>
+    <text y="85" font-family="sans-serif" font-size="14" fill="#94a3b8">
+      Warum formatierter Text in WhatsApp verloren geht, aber Unicode-Schriften überall funktionieren
+    </text>
+  </g>
+
+  <!-- Split Screen Comparison Cards -->
+  <g transform="translate(80, 185)">
+    
+    <!-- LEFT CARD: Klassische Schriftart (.ttf / .otf / CSS) -->
+    <g transform="translate(0, 0)" filter="url(#shadow3)">
+      <rect width="500" height="420" rx="20" fill="url(#leftCardGrad)" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+      <path d="M 0 20 Q 0 0 20 0 L 480 0 Q 500 0 500 20 L 500 70 L 0 70 Z" fill="#38bdf8" fill-opacity="0.1"/>
+      
+      <!-- Card Title -->
+      <g transform="translate(30, 42)">
+        <circle cx="16" cy="0" r="16" fill="#38bdf8" fill-opacity="0.2"/>
+        <text x="16" y="5" font-family="sans-serif" font-size="16" text-anchor="middle">📁</text>
+        <text x="45" y="6" font-family="sans-serif" font-size="18" font-weight="800" fill="#38bdf8">Klassische Font-Datei</text>
+        <text x="340" y="5" font-family="monospace" font-size="12" fill="#94a3b8">.TTF • .OTF • .WOFF2</text>
+      </g>
+
+      <!-- How it works box -->
+      <g transform="translate(30, 95)">
+        <rect width="440" height="90" rx="12" fill="#0b0e17" stroke="#ffffff" stroke-opacity="0.05"/>
+        <text x="20" y="30" font-family="sans-serif" font-size="12" font-weight="700" fill="#94a3b8">FUNKTIONSWEISE:</text>
+        <text x="20" y="55" font-family="sans-serif" font-size="14" fill="#cbd5e1">
+          Der Buchstabe bleibt <tspan fill="#38bdf8" font-weight="700">"A" (U+0041)</tspan>. Die lokale Font-Datei
+        </text>
+        <text x="20" y="75" font-family="sans-serif" font-size="14" fill="#cbd5e1">
+          definiert lediglich die Vektor-Zeichnung (Glyphe).
+        </text>
+      </g>
+
+      <!-- Feature List -->
+      <g transform="translate(35, 215)" font-family="sans-serif" font-size="13" fill="#cbd5e1">
+        <text y="0"><tspan fill="#38bdf8" font-weight="bold">✓</tspan> Vollständiger Zeichensatz inklusive aller Sonderzeichen</text>
+        <text y="30"><tspan fill="#38bdf8" font-weight="bold">✓</tspan> Pixelgenaue Kontrolle für Print, Web &amp; InDesign</text>
+        <text y="60"><tspan fill="#38bdf8" font-weight="bold">✓</tspan> Unbegrenzte Schriftschnitte (Light bis Ultra Black)</text>
+        <text y="100" fill="#f87171"><tspan font-weight="bold">❌</tspan> Formatierung geht beim Kopieren in Chats verloren</text>
+        <text y="130" fill="#f87171"><tspan font-weight="bold">❌</tspan> Muss auf dem Betriebssystem installiert/eingebunden sein</text>
+        <text y="170" fill="#94a3b8" font-size="12">💡 Ideal für: Webdesign (CSS), Bücher, Logos, PDF-Dokumente</text>
+      </g>
+    </g>
+
+    <!-- RIGHT CARD: Unicode Schriftarten Generator -->
+    <g transform="translate(540, 0)" filter="url(#shadow3)">
+      <rect width="500" height="420" rx="20" fill="url(#rightCardGrad)" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.5"/>
+      <path d="M 0 20 Q 0 0 20 0 L 480 0 Q 500 0 500 20 L 500 70 L 0 70 Z" fill="#f59e0b" fill-opacity="0.15"/>
+      
+      <!-- Card Title -->
+      <g transform="translate(30, 42)">
+        <circle cx="16" cy="0" r="16" fill="#f59e0b" fill-opacity="0.2"/>
+        <text x="16" y="5" font-family="sans-serif" font-size="16" text-anchor="middle">⚡</text>
+        <text x="45" y="6" font-family="sans-serif" font-size="18" font-weight="800" fill="#fbbf24">Unicode-Schriftzeichen</text>
+        <text x="340" y="5" font-family="monospace" font-size="12" fill="#fbbf24">1-KLICK COPY 📋</text>
+      </g>
+
+      <!-- How it works box -->
+      <g transform="translate(30, 95)">
+        <rect width="440" height="90" rx="12" fill="#14100b" stroke="#f59e0b" stroke-opacity="0.2"/>
+        <text x="20" y="30" font-family="sans-serif" font-size="12" font-weight="700" fill="#fbbf24">FUNKTIONSWEISE:</text>
+        <text x="20" y="55" font-family="sans-serif" font-size="14" fill="#cbd5e1">
+          Der Buchstabe wird durch ein <tspan fill="#fbbf24" font-weight="700">eigenständiges Symbol</tspan> ersetzt
+        </text>
+        <text x="20" y="75" font-family="sans-serif" font-size="14" fill="#cbd5e1">
+          (z. B. "𝐀" = U+1D400 oder "𝕬" = U+1D56C).
+        </text>
+      </g>
+
+      <!-- Feature List -->
+      <g transform="translate(35, 215)" font-family="sans-serif" font-size="13" fill="#cbd5e1">
+        <text y="0"><tspan fill="#fbbf24" font-weight="bold">✓</tspan> Bleibt formatiert beim Kopieren &amp; Einfügen</text>
+        <text y="30"><tspan fill="#fbbf24" font-weight="bold">✓</tspan> Funktioniert auf Instagram, TikTok, WhatsApp &amp; Discord</text>
+        <text y="60"><tspan fill="#fbbf24" font-weight="bold">✓</tspan> Keine Installation oder App-Rechte notwendig</text>
+        <text y="100" fill="#fbbf24"><tspan font-weight="bold">⚠️</tspan> Manche Sonderzeichen/Umlaute nicht in allen Stilen</text>
+        <text y="130" fill="#fbbf24"><tspan font-weight="bold">⚠️</tspan> Screenreader buchstabieren Zeichen als Mathe-Symbole</text>
+        <text y="170" fill="#fbbf24" font-weight="bold" font-size="12">💡 Ideal für: Social-Media-Bios, Nicknames, Statusmeldungen</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

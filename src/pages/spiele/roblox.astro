@@ -1,0 +1,448 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TextStyleConverter from '../../components/TextStyleConverter.astro';
+import FontStyleGrid from '../../components/FontStyleGrid.astro';
+import GameEnhancedSections from '../../components/GameEnhancedSections.astro';
+import { GAMES_DATA, type GameInfo } from '../../data/game-metadata';
+import { GAME_NICKNAMES_DATA } from '../../data/game-nicknames';
+import { NAVIGATION_DATA } from '../../data/navigation';
+
+const gameInfo: GameInfo = GAMES_DATA['roblox'] || {
+  id: 'roblox',
+  name: 'Roblox',
+  slug: '/spiele/roblox',
+  genre: 'Sandbox / Metaverse',
+  description: 'Kreative Roblox Nicknames, Anzeigenamen und stylische Gamertags für dein Roblox Profil.',
+  exampleNicknames: [
+    '✨ s ʜ ᴀ ᴅ ᴏ ᴡ _ ɴ ᴏ ᴠ ᴀ ✨',
+    '【 ᴄ ʟ ᴏ ᴜ ᴅ ʏ _ ᴄ ᴀ ᴛ 】',
+    '★ ᴅ ʀ ᴀ ɢ ᴏ ɴ _ ᴠ ᴀ ʟ ᴇ ★',
+    '『 ᴡ ᴀ ꜰ ꜰ ᴇ ʟ _ ɴ ɪ ɴ ᴊ ᴀ 』',
+    '💖 ʙ ᴜ ɴ ɴ ʏ _ s ᴛ ᴀ ʀ 💖',
+  ],
+  namingRules: [
+    'Anzeigenamen können alle 7 Tage kostenlos geändert werden und müssen nicht einzigartig sein.',
+    'Benutzernamen sind die eindeutige ID des Accounts (Änderung kostet 1.000 Robux).',
+    'Alle Namen werden durch die automatischen Roblox-Sicherheitsfilter geprüft.',
+  ],
+  recommendedStyles: ['Cute', 'Cool', 'Fantasy / Aesthetic'],
+};
+
+const gameSectionsConfig = GAME_NICKNAMES_DATA['roblox'];
+
+const robloxFaqs = [
+  {
+    q: 'Kann ich meinen Roblox Nickname später ändern?',
+    a: 'Das hängt davon ab, ob du den Benutzernamen oder den Anzeigenamen meinst. Roblox behandelt beide getrennt. Für Anzeigenamen gilt derzeit eine Änderung pro sieben Tage kostenlos. Die Änderung des Benutzernamens kostet 1.000 Robux.',
+  },
+  {
+    q: 'Kann ein Roblox Anzeigename doppelt vorkommen?',
+    a: 'Ja. Roblox erklärt, dass andere Spieler denselben Anzeigenamen verwenden können. Der Benutzername ist dagegen der eindeutige Account-Name.',
+  },
+  {
+    q: 'Sind coole Unicode-Schriften automatisch erlaubt?',
+    a: 'Nein. Eine Unicode-Darstellung aus einem Generator ist keine Garantie dafür, dass Roblox sie in jedem Namensfeld akzeptiert. Prüfe deshalb immer die Regeln für das konkrete Feld.',
+  },
+  {
+    q: 'Wie finde ich einen einzigartigen Roblox Namen?',
+    a: 'Starte mit einem persönlichen Wort und kombiniere es mit einem Thema wie Fantasy, Gaming, Tiere oder Weltraum. Erstelle anschließend mehrere kurze Varianten und prüfe, welche davon verfügbar und für deinen gewünschten Einsatz geeignet ist.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": robloxFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+
+const otherGames = Object.values(GAMES_DATA).filter((g) => g.id !== 'roblox');
+---
+
+<Layout
+  title="Roblox Nickname Generator – Coole Namen & Ideen zum Kopieren"
+  description="Roblox Nickname Generator für coole Namen und Gamertags: Ideen finden, Namen erstellen und den Unterschied zwischen Benutzername und Anzeigename verstehen."
+  canonicalUrl="/spiele/roblox/"
+  schema={faqSchema}
+>
+  <main class="min-h-screen bg-[#0a0a08] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      
+      <!-- Breadcrumbs Navigation -->
+      <nav class="flex items-center gap-2 text-xs sm:text-sm text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Home</a>
+        <span>/</span>
+        <a href="/spiele" class="hover:text-amber-400 transition-colors">Gaming Nicknames</a>
+        <span>/</span>
+        <span class="text-stone-200">Roblox</span>
+      </nav>
+
+      <!-- Page Header & H1 -->
+      <div class="text-center max-w-4xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-400 text-xs font-semibold uppercase tracking-wider mb-4">
+          <span>🎮</span> Display Name &bull; Benutzername &bull; Aesthetic &bull; 7-Tage-Regel
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
+          Roblox Nickname Generator – Coole Namen &amp; Ideen
+        </h1>
+        <p class="text-base sm:text-lg text-stone-300 max-w-2xl mx-auto">
+          Finde einen passenden Roblox Nickname, entdecke kreative Namensideen und erfahre, worauf du bei Benutzername, Anzeigename und Sonderzeichen achten solltest.
+        </p>
+      </div>
+
+      <!-- Main Interactive Font Converter Component -->
+      <TextStyleConverter
+        defaultText="ShadowNova"
+        pageSlug="roblox"
+        filterCategory="alle"
+        showCategoryTabs={true}
+        showPresets={true}
+        maxChars={20}
+        limit={12}
+        showMoreButton={true}
+      />
+
+      <!-- Content Grid: Left Column (Tools + Editorial Article) & Right Sidebar -->
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- LEFT COLUMN (lg:col-span-2): Tools first, followed by Article Content -->
+        <div class="lg:col-span-2 space-y-8">
+          
+          <!-- Generator & Tool Cards (Gaming Enhancements) -->
+          {gameSectionsConfig && (
+            <GameEnhancedSections
+              gameData={gameSectionsConfig}
+              gameId="roblox"
+            />
+          )}
+
+          <!-- IMAGE 1: Featured Hero Image -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/roblox-nickname-hero.svg"
+              alt="Roblox Nickname Generator für kreative Gaming-Namen"
+              class="w-full h-auto aspect-video object-cover"
+              loading="eager"
+            />
+            <p class="text-xs text-stone-400 p-3 text-center border-t border-white/5 bg-[#0a0a08]">
+              Mit verschiedenen Namensideen den passenden Gaming-Namen finden.
+            </p>
+          </div>
+
+          <!-- Section 1: Intro -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Einen guten <strong>Roblox Nickname</strong> zu finden, kann schwieriger sein als gedacht. Ein Name soll cool aussehen, leicht zu merken sein und zu deinem Roblox-Profil passen. Gleichzeitig gibt es einen wichtigen Unterschied zwischen deinem Benutzernamen und deinem Anzeigenamen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Mit einem Roblox Nickname Generator kannst du deshalb zuerst verschiedene Ideen sammeln und vergleichen. Danach solltest du prüfen, für welchen Bereich der Name gedacht ist. So findest du einen Namen, der nicht nur gut aussieht, sondern auch zu deinem Profil und deiner gewünschten Verwendung passt.
+            </p>
+          </div>
+
+          <!-- Section 2: Was ist ein guter Roblox Nickname? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Was ist ein guter Roblox Nickname?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein guter Name muss nicht besonders kompliziert sein. Oft funktionieren kurze Wörter und klare Kombinationen besser als eine lange Reihe von Zahlen oder Symbolen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Beliebte Richtungen sind zum Beispiel:
+            </p>
+            <ul class="space-y-2 text-sm text-stone-300 leading-relaxed list-disc list-inside">
+              <li><strong>Cool:</strong> ShadowNova, DarkPixel, FrostByte</li>
+              <li><strong>Lustig:</strong> KuchenNinja, WaffelPro, PixelOpa</li>
+              <li><strong>Fantasy:</strong> DragonVale, MysticFox, MoonRider</li>
+              <li><strong>Cute:</strong> BunnyStar, CloudyCat, PinkPixel</li>
+              <li><strong>Gaming:</strong> AimMaster, SpeedRush, GameVibe</li>
+              <li><strong>Clean:</strong> Nexa, Vexo, Zeron</li>
+            </ul>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed pt-2">
+              Natürlich kannst du auch ein eigenes Wort verwenden. Kombiniere beispielsweise deinen Spitznamen mit einem Tier, einer Farbe, einem Hobby oder einem Gaming-Begriff.
+            </p>
+          </div>
+
+          <!-- Section 3: Roblox Nickname erstellen: So funktioniert es -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Roblox Nickname erstellen: So funktioniert es
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein Generator macht die Suche nach Ideen schneller. Gib zunächst ein Wort oder einen Namen ein, der dir gefällt. Anschließend kannst du verschiedene Varianten miteinander vergleichen.
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span>
+                <p class="text-xs sm:text-sm text-stone-300">Wähle ein Ausgangswort (z. B. deinen Spitznamen oder Begriff).</p>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span>
+                <p class="text-xs sm:text-sm text-stone-300">Entscheide dich für einen Stil (Cool, Cute, Fantasy, Lustig).</p>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span>
+                <p class="text-xs sm:text-sm text-stone-300">Erstelle mehrere Namensvarianten und Kombinationen.</p>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">4</span>
+                <p class="text-xs sm:text-sm text-stone-300">Prüfe die Lesbarkeit und wie flüssig der Name klingt.</p>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3 sm:col-span-2">
+                <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">5</span>
+                <p class="text-xs sm:text-sm text-stone-300">Wähle deine Lieblingsversion und prüfe, ob du sie als Benutzername oder Anzeigename verwenden möchtest.</p>
+              </div>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed pt-2">
+              Beispielsweise kann aus <em>Luna</em> ein Name wie <code>LunaPixel</code>, <code>LunaNova</code> oder <code>LunaFox</code> entstehen. Dadurch bekommst du einen persönlichen Namen, ohne eine zufällige Buchstabenfolge verwenden zu müssen.
+            </p>
+          </div>
+
+          <!-- IMAGE 2: Generator UI Concept -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/roblox-nickname-generator-ui.svg"
+              alt="Gaming-Nickname-Generator mit verschiedenen Roblox Namensideen"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Mehrere Namensvarianten vergleichen und die passende Version auswählen.
+            </p>
+          </div>
+
+          <!-- Section 4: Benutzername oder Anzeigename – was ist der Unterschied? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Benutzername oder Anzeigename – was ist der Unterschied?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Bei Roblox solltest du diese beiden Begriffe nicht verwechseln. Der <strong>Benutzername</strong> ist der eindeutige Account-Name. Der <strong>Anzeigename</strong> ist dagegen der Name, der anderen Spielern angezeigt werden kann. Roblox weist ausdrücklich darauf hin, dass Anzeigenamen nicht eindeutig sein müssen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Der Anzeigename kann kostenlos über die Kontoeinstellungen geändert werden. Nach Angaben der <a href="https://en.help.roblox.com/hc/en-us/articles/4401938870292-Changing-Your-Display-Name" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:text-pink-300 underline font-semibold">Roblox-Hilfe zu Anzeigenamen und Benutzername</a> erlaubt Roblox eine Änderung des Anzeigenamens <strong>einmal innerhalb von sieben Tagen</strong>. Außerdem werden Anzeigenamen und andere Texte auf der Plattform auf die Einhaltung der Roblox-Regeln geprüft.
+            </p>
+
+            <!-- Table of Areas -->
+            <div class="overflow-x-auto my-4 border border-white/10 rounded-2xl">
+              <table class="w-full text-left text-sm text-stone-300">
+                <thead class="bg-white/5 text-xs uppercase text-stone-400">
+                  <tr>
+                    <th scope="col" class="px-4 py-3">Bereich</th>
+                    <th scope="col" class="px-4 py-3">Bedeutung</th>
+                    <th scope="col" class="px-4 py-3">Worauf achten?</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Benutzername</td>
+                    <td class="px-4 py-3 text-stone-300">Eindeutige Account-ID</td>
+                    <td class="px-4 py-3 text-stone-400">Verfügbarkeit und Roblox-Regeln (1.000 Robux bei Änderung)</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Anzeigename</td>
+                    <td class="px-4 py-3 text-stone-300">Sichtbarer Name</td>
+                    <td class="px-4 py-3 text-pink-400 font-medium">Lesbarkeit, Community-Regeln (Kostenlos alle 7 Tage)</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Profil/Bio</td>
+                    <td class="px-4 py-3 text-stone-300">Zusätzlicher Text</td>
+                    <td class="px-4 py-3 text-purple-400 font-medium">Darstellung und Filter beachten</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- IMAGE 3: Username vs Display Name -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/roblox-nickname-username-vs-display.svg"
+              alt="Unterschied zwischen Roblox Benutzername und Anzeigename"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Benutzername und Anzeigename erfüllen bei Roblox unterschiedliche Funktionen.
+            </p>
+          </div>
+
+          <!-- Section 5: Sind Sonderzeichen und Unicode-Namen bei Roblox möglich? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Sind Sonderzeichen und Unicode-Namen bei Roblox möglich?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Hier solltest du nicht einfach davon ausgehen, dass jeder dekorative Text funktioniert. Ein Unicode-Generator kann Buchstaben und Symbole optisch verändern. Das bedeutet jedoch nicht automatisch, dass Roblox diese Zeichen in jedem Feld akzeptiert.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Roblox unterstützt inzwischen zusätzliche Zeichen in bestimmten Bereichen, wobei die Unterstützung je nach Funktion variieren kann. Die offiziellen Regeln sind deshalb wichtiger als eine allgemeine Aussage wie „jede Schrift funktioniert“.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für einen möglichst zuverlässigen Namen ist eine klare Schreibweise meist die bessere Wahl. Besonders bei einem Benutzernamen solltest du zuerst die offiziellen Roblox-Vorgaben berücksichtigen und dekorative Varianten eher als Design-Idee betrachten. Entdecke für zusätzliche Zeichen auch unsere Übersicht für <a href="/symbole" class="text-pink-400 hover:text-pink-300 underline font-semibold">Symbole zum Kopieren</a>.
+            </p>
+          </div>
+
+          <!-- Section 6: Welche Roblox-Namen passen zu welchem Stil? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Welche Roblox-Namen passen zu welchem Stil?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Der richtige Stil hängt davon ab, wie dein Profil wirken soll:
+            </p>
+            <ul class="space-y-2 text-sm text-stone-300 leading-relaxed list-disc list-inside">
+              <li><strong>Für einen coolen Look:</strong> ShadowNova, VoidPixel, FrostVex</li>
+              <li><strong>Für einen lustigen Look:</strong> KartoffelPro, WaffelNinja, KeksBoss</li>
+              <li><strong>Für Fantasy:</strong> MysticWolf, DragonVale, MoonKnight</li>
+              <li><strong>Für einen minimalistischen Look:</strong> Nexo, Vexa, Rivo</li>
+              <li><strong>Für einen süßen Look:</strong> CloudBunny, StarKitty, MiniMoon</li>
+            </ul>
+            <p class="text-xs sm:text-sm text-stone-400 leading-relaxed pt-2">
+              Solche Beispiele sind Inspiration und keine Aussage darüber, ob der jeweilige Name noch verfügbar ist.
+            </p>
+          </div>
+
+          <!-- Section 7: Tipps für einen besseren Roblox Nickname -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Tipps für einen besseren Roblox Nickname
+            </h2>
+            <ul class="space-y-2 text-sm text-stone-300 leading-relaxed list-disc list-inside">
+              <li><strong>Mach ihn leicht lesbar:</strong> Ein kurzer Name bleibt schneller im Gedächtnis.</li>
+              <li><strong>Vermeide unnötige Zahlen:</strong> Eine Zahl kann sinnvoll sein, wenn sie einen persönlichen Bezug hat. Zufällige Zahlenfolgen machen einen Namen dagegen oft weniger einprägsam.</li>
+              <li><strong>Nutze ein klares Thema:</strong> Tiere, Fantasy, Farben, Weltraum oder Gaming können gute Ausgangspunkte sein.</li>
+              <li><strong>Teste mehrere Varianten:</strong> Die erste Idee ist nicht immer die beste. Erstelle lieber mehrere Versionen und vergleiche sie.</li>
+              <li><strong>Denke an die Verwendung:</strong> Ein Anzeigename darf anders gestaltet sein als ein eindeutiger Benutzername. Deshalb sollte der Name zum jeweiligen Feld passen.</li>
+            </ul>
+          </div>
+
+          <!-- IMAGE 4: Tipps Setup Graphic -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/roblox-nickname-tipps-setup.svg"
+              alt="Gaming-Schreibtisch mit Ideen für einen Roblox Nickname"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Mehrere Ideen sammeln, vergleichen und anschließend die passende Variante auswählen.
+            </p>
+          </div>
+
+          <!-- Section 8: Häufige Fragen (FAQs) -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> Häufige Fragen zum Roblox Nickname
+            </h2>
+            <div class="space-y-4">
+              {robloxFaqs.map((faq) => (
+                <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
+                  <h3 class="text-sm sm:text-base font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 9: Fazit -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Fazit
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein guter Roblox Nickname muss nicht aus möglichst vielen Symbolen bestehen. Ein kurzer, klarer und passender Name kann wesentlich besser funktionieren. Entscheidend ist außerdem, ob du einen Benutzernamen oder einen Anzeigenamen suchst.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Nutze den Generator zunächst für Ideen und vergleiche mehrere Varianten. Danach solltest du die aktuelle Roblox-Unterstützung und die Regeln für das konkrete Namensfeld prüfen. So kombinierst du Kreativität mit einer praktischen Namenswahl.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Entdecke auch unseren <a href="/spiele" class="text-pink-400 hover:underline font-semibold">Gaming Nickname Generator für alle Spiele</a>, den <a href="/spiele/minecraft-nickname" class="text-emerald-400 hover:underline font-semibold">Minecraft Nickname Generator</a>, den <a href="/spiele/fortnite-nickname" class="text-cyan-400 hover:underline font-semibold">Fortnite Nickname Generator</a> oder den <a href="/spiele/valorant" class="text-[#ff4655] hover:underline font-semibold">Valorant Nickname Generator</a>.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- RIGHT SIDEBAR COLUMN -->
+        <div class="space-y-6">
+          
+          <!-- Beliebte Schriftstile -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>✨</span> Beliebte Gaming Stile
+            </h3>
+            <FontStyleGrid />
+          </div>
+
+          <!-- Weitere Spiele -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>🎮</span> Weitere Spiele
+            </h3>
+            <div class="space-y-2">
+              {otherGames.map((game) => (
+                <a
+                  href={game.slug}
+                  class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-pink-500/40 transition-all text-sm group"
+                >
+                  <span class="font-medium text-stone-200 group-hover:text-pink-400 transition-colors">
+                    {game.name} Nicknames
+                  </span>
+                  <span class="text-xs text-stone-400 group-hover:text-pink-400 transition-colors">
+                    {game.genre} &rarr;
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Beliebte Social-Media Plattformen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>📱</span> Social-Media Schriften
+            </h3>
+            <div class="space-y-2">
+              <a
+                href="/plattform/discord"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#5865F2]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#5865F2] transition-colors">
+                  Discord Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/plattform/tiktok"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#25f4ee]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#25f4ee] transition-colors">
+                  TikTok Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/plattform/instagram"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#ec4899]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#ec4899] transition-colors">
+                  Instagram Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+</Layout>

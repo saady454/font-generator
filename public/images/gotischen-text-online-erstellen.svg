@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="flowGothBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090b10"/>
+      <stop offset="50%" stop-color="#141824"/>
+      <stop offset="100%" stop-color="#07090e"/>
+    </linearGradient>
+    <linearGradient id="flowStepGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a2133"/>
+      <stop offset="100%" stop-color="#0f1320"/>
+    </linearGradient>
+    <filter id="flowShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#flowGothBg)"/>
+
+  <!-- Header -->
+  <g transform="translate(600, 60)" text-anchor="middle">
+    <rect x="-170" y="-18" width="340" height="36" rx="18" fill="#d97706" fill-opacity="0.15" stroke="#d97706" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="sans-serif" font-size="13" font-weight="800" fill="#fbbf24" letter-spacing="1.5">5-SCHRITTE-WORKFLOW</text>
+    
+    <text y="55" font-family="sans-serif" font-size="32" font-weight="900" fill="#ffffff">
+      Gotische Schrift online erstellen &amp; kopieren
+    </text>
+    <text y="85" font-family="sans-serif" font-size="14" fill="#94a3b8">
+      In wenigen Sekunden vom normalen Text zum kopierbaren Fraktur-Ergebnis
+    </text>
+  </g>
+
+  <!-- 5 Workflow Steps Flow -->
+  <g transform="translate(70, 180)">
+    
+    <!-- Step 1: Text eingeben -->
+    <g transform="translate(0, 0)" filter="url(#flowShadow)">
+      <rect width="195" height="380" rx="16" fill="url(#flowStepGrad)" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5"/>
+      <circle cx="97" cy="50" r="24" fill="#d97706" fill-opacity="0.2" stroke="#d97706"/>
+      <text x="97" y="57" font-family="sans-serif" font-size="16" font-weight="900" fill="#fbbf24" text-anchor="middle">1</text>
+
+      <text x="97" y="105" font-family="sans-serif" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">Text eingeben</text>
+      
+      <rect x="15" y="130" width="165" height="70" rx="8" fill="#0a0c14" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="25" y="155" font-family="sans-serif" font-size="11" fill="#64748b">Eingabe:</text>
+      <text x="25" y="180" font-family="sans-serif" font-size="13" font-weight="600" fill="#ffffff">Mein Name</text>
+
+      <text x="97" y="240" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Name, Spruch oder</text>
+      <text x="97" y="258" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">kurzen Text tippen</text>
+    </g>
+
+    <!-- Step 2: Stil auswählen -->
+    <g transform="translate(215, 0)" filter="url(#flowShadow)">
+      <rect width="195" height="380" rx="16" fill="url(#flowStepGrad)" stroke="#d97706" stroke-opacity="0.3" stroke-width="1.5"/>
+      <circle cx="97" cy="50" r="24" fill="#d97706" fill-opacity="0.2" stroke="#d97706"/>
+      <text x="97" y="57" font-family="sans-serif" font-size="16" font-weight="900" fill="#fbbf24" text-anchor="middle">2</text>
+
+      <text x="97" y="105" font-family="sans-serif" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">Stil wählen</text>
+      
+      <rect x="15" y="130" width="165" height="70" rx="8" fill="#0a0c14" stroke="#d97706" stroke-opacity="0.3"/>
+      <text x="25" y="155" font-family="sans-serif" font-size="11" fill="#fbbf24">Fraktur / Gothic</text>
+      <text x="25" y="182" font-family="serif" font-size="18" fill="#ffffff">𝔐𝔢𝔦𝔫 𝔑𝔞𝔪𝔢</text>
+
+      <text x="97" y="240" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Aus 100+ Stilen</text>
+      <text x="97" y="258" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">den Favoriten wählen</text>
+    </g>
+
+    <!-- Step 3: Vorschau prüfen -->
+    <g transform="translate(430, 0)" filter="url(#flowShadow)">
+      <rect width="195" height="380" rx="16" fill="url(#flowStepGrad)" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1.5"/>
+      <circle cx="97" cy="50" r="24" fill="#38bdf8" fill-opacity="0.2" stroke="#38bdf8"/>
+      <text x="97" y="57" font-family="sans-serif" font-size="16" font-weight="900" fill="#38bdf8" text-anchor="middle">3</text>
+
+      <text x="97" y="105" font-family="sans-serif" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">Prüfen</text>
+      
+      <rect x="15" y="130" width="165" height="70" rx="8" fill="#0a0c14" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="25" y="155" font-family="sans-serif" font-size="11" fill="#38bdf8">Zeichen-Check:</text>
+      <text x="25" y="180" font-family="sans-serif" font-size="12" fill="#10b981">✓ Umlaute intakt</text>
+
+      <text x="97" y="240" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Sicherstellen, dass</text>
+      <text x="97" y="258" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">kein Kästchen fehlt</text>
+    </g>
+
+    <!-- Step 4: Kopieren -->
+    <g transform="translate(645, 0)" filter="url(#flowShadow)">
+      <rect width="195" height="380" rx="16" fill="url(#flowStepGrad)" stroke="#10b981" stroke-opacity="0.3" stroke-width="1.5"/>
+      <circle cx="97" cy="50" r="24" fill="#10b981" fill-opacity="0.2" stroke="#10b981"/>
+      <text x="97" y="57" font-family="sans-serif" font-size="16" font-weight="900" fill="#34d399" text-anchor="middle">4</text>
+
+      <text x="97" y="105" font-family="sans-serif" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">1-Klick Kopieren</text>
+      
+      <rect x="15" y="130" width="165" height="70" rx="8" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-opacity="0.4"/>
+      <text x="97" y="170" font-family="sans-serif" font-size="13" font-weight="900" fill="#34d399" text-anchor="middle">📋 KOPIEREN</text>
+
+      <text x="97" y="240" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Direkt in die</text>
+      <text x="97" y="258" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Zwischenablage</text>
+    </g>
+
+    <!-- Step 5: Einfügen -->
+    <g transform="translate(860, 0)" filter="url(#flowShadow)">
+      <rect width="200" height="380" rx="16" fill="url(#flowStepGrad)" stroke="#a855f7" stroke-opacity="0.3" stroke-width="1.5"/>
+      <circle cx="100" cy="50" r="24" fill="#a855f7" fill-opacity="0.2" stroke="#a855f7"/>
+      <text x="100" y="57" font-family="sans-serif" font-size="16" font-weight="900" fill="#c084fc" text-anchor="middle">5</text>
+
+      <text x="100" y="105" font-family="sans-serif" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">Einfügen</text>
+      
+      <rect x="15" y="130" width="170" height="70" rx="8" fill="#0a0c14" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="25" y="155" font-family="sans-serif" font-size="11" fill="#c084fc">Plattform:</text>
+      <text x="25" y="180" font-family="sans-serif" font-size="12" fill="#ffffff">Instagram, Discord...</text>
+
+      <text x="100" y="240" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Per STRG+V / Paste</text>
+      <text x="100" y="258" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">sofort veröffentlichen</text>
+    </g>
+
+  </g>
+</svg>

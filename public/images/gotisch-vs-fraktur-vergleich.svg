@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="compGothBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a0f"/>
+      <stop offset="100%" stop-color="#121622"/>
+    </linearGradient>
+    <linearGradient id="rowGothGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#181e2e"/>
+      <stop offset="100%" stop-color="#0e121c"/>
+    </linearGradient>
+    <filter id="rowGothShadow" x="-5%" y="-10%" width="110%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#compGothBg)"/>
+
+  <!-- Top Title -->
+  <g transform="translate(600, 60)" text-anchor="middle">
+    <text font-family="system-ui, sans-serif" font-size="32" font-weight="900" fill="#ffffff">
+      Vergleich: <tspan fill="#94a3b8">Standardtext</tspan> vs. <tspan fill="#d97706">Gotische Schriftstile</tspan>
+    </text>
+    <text y="32" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Der Begriff „Gotische Schrift“ in vier unterschiedlichen typografischen Ausprägungen
+    </text>
+  </g>
+
+  <!-- Comparison Rows -->
+  <g transform="translate(100, 140)">
+    
+    <!-- Row 1: Normaler Standardtext -->
+    <g transform="translate(0, 0)" filter="url(#rowGothShadow)">
+      <rect width="1000" height="95" rx="16" fill="url(#rowGothGrad)" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+      <rect x="25" y="32" width="130" height="30" rx="8" fill="#ffffff" fill-opacity="0.06"/>
+      <text x="90" y="52" font-family="sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle">STANDARD TEXT</text>
+      
+      <text x="200" y="56" font-family="system-ui, sans-serif" font-size="24" fill="#e2e8f0">Gotische Schrift zum Kopieren und Einfügen</text>
+      <text x="890" y="54" font-family="sans-serif" font-size="13" fill="#64748b" text-anchor="end">Basis / Fließtext</text>
+    </g>
+
+    <!-- Row 2: Fraktur (Classic Gothic) -->
+    <g transform="translate(0, 115)" filter="url(#rowGothShadow)">
+      <rect width="1000" height="95" rx="16" fill="url(#rowGothGrad)" stroke="#d97706" stroke-opacity="0.4" stroke-width="1.5"/>
+      <rect x="25" y="32" width="130" height="30" rx="8" fill="#d97706" fill-opacity="0.2"/>
+      <text x="90" y="52" font-family="sans-serif" font-size="12" font-weight="800" fill="#fbbf24" text-anchor="middle">FRAKTUR</text>
+      
+      <text x="200" y="58" font-family="serif" font-size="28" fill="#ffffff">𝔊𝔬𝔱𝔦𝔰𝔠𝔥𝔢 𝔖𝔠𝔥𝔯𝔦𝔣𝔱 𝔷𝔲𝔪 𝔎𝔬𝔭𝔦𝔢𝔯𝔢𝔫</text>
+      <text x="890" y="54" font-family="sans-serif" font-size="13" font-weight="700" fill="#fbbf24" text-anchor="end">📜 Historisch &amp; Feingliedrig</text>
+    </g>
+
+    <!-- Row 3: Bold Fraktur / Blackletter -->
+    <g transform="translate(0, 230)" filter="url(#rowGothShadow)">
+      <rect width="1000" height="95" rx="16" fill="url(#rowGothGrad)" stroke="#fbbf24" stroke-opacity="0.3" stroke-width="1"/>
+      <rect x="25" y="32" width="130" height="30" rx="8" fill="#fbbf24" fill-opacity="0.15"/>
+      <text x="90" y="52" font-family="sans-serif" font-size="12" font-weight="800" fill="#fbbf24" text-anchor="middle">FETTE FRAKTUR</text>
+      
+      <text x="200" y="58" font-family="serif" font-size="28" font-weight="900" fill="#ffffff">𝕲𝖔𝖙𝖎𝖘𝖈𝖍𝖊 𝕾𝖈𝖍𝖗𝖎𝖋𝖙 𝖟𝖚𝖒 𝕶𝖔𝖕𝖎𝖊𝖗𝖊𝖓</text>
+      <text x="890" y="54" font-family="sans-serif" font-size="13" font-weight="600" fill="#fbbf24" text-anchor="end">⚔️ Dunkel &amp; Kraftvoll</text>
+    </g>
+
+    <!-- Row 4: Gothic Medieval Decorated -->
+    <g transform="translate(0, 345)" filter="url(#rowGothShadow)">
+      <rect width="1000" height="95" rx="16" fill="url(#rowGothGrad)" stroke="#8b5cf6" stroke-opacity="0.3" stroke-width="1"/>
+      <rect x="25" y="32" width="130" height="30" rx="8" fill="#8b5cf6" fill-opacity="0.15"/>
+      <text x="90" y="52" font-family="sans-serif" font-size="12" font-weight="800" fill="#c084fc" text-anchor="middle">DEKORATIV</text>
+      
+      <text x="200" y="56" font-family="monospace" font-size="22" font-weight="700" fill="#ffffff">꧁༺ 𝕲𝖔𝖙𝖎𝖘𝖈𝖍𝖊 𝕾𝖈𝖍𝖗𝖎𝖋𝖙 ༻꧂</text>
+      <text x="890" y="54" font-family="sans-serif" font-size="13" font-weight="600" fill="#c084fc" text-anchor="end">✦ Gaming &amp; Social Profile</text>
+    </g>
+  </g>
+
+  <!-- Bottom Tip -->
+  <text x="600" y="635" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#64748b">
+    Alle gotischen Varianten lassen sich direkt kopieren und ohne Installation in Games und Social Media einsetzen.
+  </text>
+</svg>

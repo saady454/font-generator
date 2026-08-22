@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="waStepBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040d0a"/>
+      <stop offset="50%" stop-color="#0c1d18"/>
+      <stop offset="100%" stop-color="#050a08"/>
+    </linearGradient>
+    <linearGradient id="waGreenStep" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#25D366"/>
+      <stop offset="100%" stop-color="#128C7E"/>
+    </linearGradient>
+    <filter id="waStepShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#waStepBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="250" cy="220" r="240" fill="#25D366" fill-opacity="0.08"/>
+  <circle cx="950" cy="450" r="260" fill="#128C7E" fill-opacity="0.08"/>
+
+  <!-- Badge &amp; Header -->
+  <g transform="translate(600, 55)" text-anchor="middle">
+    <rect x="-160" y="-16" width="320" height="32" rx="16" fill="#10261e" stroke="#25D366" stroke-opacity="0.35"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#25D366" letter-spacing="1.5">SCHRITT-FÜR-SCHRITT ANLEITUNG</text>
+  </g>
+
+  <text x="600" y="125" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="34" font-weight="900" fill="#ffffff">
+    So erstellst du WhatsApp Schriftarten
+  </text>
+  <text x="600" y="158" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#94a3b8">
+    In 5 schnellen Schritten von der Texteingabe zum formatierten WhatsApp Chat &amp; Status
+  </text>
+
+  <!-- 5 Step Cards Grid -->
+  <g transform="translate(60, 200)">
+    
+    <!-- Step 1: Text eingeben -->
+    <g transform="translate(0, 0)" filter="url(#waStepShadow)">
+      <rect width="200" height="400" rx="18" fill="#0d211a" stroke="#25D366" stroke-opacity="0.3" stroke-width="1.5"/>
+      <circle cx="35" cy="40" r="18" fill="url(#waGreenStep)"/>
+      <text x="35" y="46" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#052e16">1</text>
+      
+      <text x="65" y="46" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#ffffff">Text eingeben</text>
+      <text x="18" y="85" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">
+        Schreibe Status, Namen oder Chat-Nachricht in den Generator.
+      </text>
+
+      <g transform="translate(15, 140)">
+        <rect width="170" height="225" rx="10" fill="#07140f" stroke="#ffffff" stroke-opacity="0.06"/>
+        <text x="12" y="25" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#6ee7b7">EINGABE</text>
+        <rect x="12" y="35" width="146" height="45" rx="6" fill="#122a20" stroke="#25D366" stroke-opacity="0.3"/>
+        <text x="20" y="62" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff">Guten Morgen ☕</text>
+        
+        <rect x="12" y="95" width="146" height="115" rx="6" fill="#122a20" stroke="#ffffff" stroke-opacity="0.04"/>
+        <text x="20" y="125" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Limit-Prüfung:</text>
+        <text x="20" y="145" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#25D366">15 / 139 Status-Zeichen</text>
+        <rect x="20" y="160" width="130" height="6" rx="3" fill="#0a1812"/>
+        <rect x="20" y="160" width="20" height="6" rx="3" fill="#25D366"/>
+      </g>
+    </g>
+
+    <!-- Step 2: Stil auswählen -->
+    <g transform="translate(220, 0)" filter="url(#waStepShadow)">
+      <rect width="200" height="400" rx="18" fill="#0d211a" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5"/>
+      <circle cx="35" cy="40" r="18" fill="#16382b" stroke="#25D366" stroke-width="1.5"/>
+      <text x="35" y="46" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#25D366">2</text>
+      
+      <text x="65" y="46" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#ffffff">Stil wählen</text>
+      <text x="18" y="85" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">
+        Vergleiche fette, kursive &amp; geschwungene Vorschauen.
+      </text>
+
+      <g transform="translate(15, 140)">
+        <rect width="170" height="225" rx="10" fill="#07140f" stroke="#ffffff" stroke-opacity="0.06"/>
+        
+        <rect x="12" y="15" width="146" height="38" rx="6" fill="#122a20"/>
+        <text x="20" y="38" font-family="system-ui, sans-serif" font-size="11" font-weight="900" fill="#ffffff">𝗚𝘂𝘁𝗲𝗻 𝗠𝗼𝗿𝗴𝗲𝗻</text>
+        
+        <rect x="12" y="60" width="146" height="38" rx="6" fill="#193b2d" stroke="#25D366" stroke-width="1.5"/>
+        <text x="20" y="83" font-family="system-ui, sans-serif" font-size="11" font-style="italic" font-weight="700" fill="#25D366">𝘎𝘶𝘵𝘦𝘯 𝘔𝘰𝘳𝘨𝘦𝘯</text>
+
+        <rect x="12" y="105" width="146" height="38" rx="6" fill="#122a20"/>
+        <text x="20" y="128" font-family="Georgia, serif" font-size="11" font-weight="700" fill="#ffffff">𝓖𝓾𝓽𝓮𝓷 𝓜𝓸𝓻𝓰𝓮𝓷</text>
+
+        <rect x="12" y="150" width="146" height="38" rx="6" fill="#122a20"/>
+        <text x="20" y="173" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">ⓖⓤⓣⓔⓝ ⓜⓞⓡⓖⓔⓝ</text>
+      </g>
+    </g>
+
+    <!-- Step 3: Kopieren -->
+    <g transform="translate(440, 0)" filter="url(#waStepShadow)">
+      <rect width="200" height="400" rx="18" fill="#0d211a" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5"/>
+      <circle cx="35" cy="40" r="18" fill="#16382b" stroke="#25D366" stroke-width="1.5"/>
+      <text x="35" y="46" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#25D366">3</text>
+      
+      <text x="65" y="46" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#ffffff">Kopieren</text>
+      <text x="18" y="85" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">
+        1-Klick Kopierbutton überträgt den Text sofort.
+      </text>
+
+      <g transform="translate(15, 140)">
+        <rect width="170" height="225" rx="10" fill="#07140f" stroke="#ffffff" stroke-opacity="0.06"/>
+        
+        <rect x="15" y="30" width="140" height="70" rx="8" fill="#122a20" stroke="#25D366" stroke-opacity="0.3"/>
+        <text x="85" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-style="italic" font-weight="700" fill="#ffffff">𝘎𝘶𝘵𝘦𝘯 𝘔𝘰𝘳𝘨𝘦𝘯 ☕</text>
+        <text x="85" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#6ee7b7">Unicode UTF-8</text>
+
+        <rect x="15" y="125" width="140" height="42" rx="8" fill="url(#waGreenStep)"/>
+        <text x="85" y="151" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#052e16">📋 Kopiert!</text>
+      </g>
+    </g>
+
+    <!-- Step 4: WhatsApp öffnen -->
+    <g transform="translate(660, 0)" filter="url(#waStepShadow)">
+      <rect width="200" height="400" rx="18" fill="#0d211a" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5"/>
+      <circle cx="35" cy="40" r="18" fill="#16382b" stroke="#25D366" stroke-width="1.5"/>
+      <text x="35" y="46" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#25D366">4</text>
+      
+      <text x="65" y="46" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#ffffff">WhatsApp öffnen</text>
+      <text x="18" y="85" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">
+        Öffne Chat, Gruppe oder Profil/Status-Einstellungen.
+      </text>
+
+      <g transform="translate(15, 140)">
+        <rect width="170" height="225" rx="10" fill="#07140f" stroke="#ffffff" stroke-opacity="0.06"/>
+        
+        <rect x="20" y="25" width="130" height="40" rx="8" fill="#075E54"/>
+        <text x="85" y="50" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#ffffff">💬 WhatsApp</text>
+
+        <rect x="20" y="80" width="130" height="35" rx="6" fill="#122a20"/>
+        <text x="85" y="102" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#6ee7b7">Chat auswählen →</text>
+
+        <rect x="20" y="130" width="130" height="35" rx="6" fill="#122a20"/>
+        <text x="85" y="152" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#6ee7b7">Status bearbeiten →</text>
+      </g>
+    </g>
+
+    <!-- Step 5: Einfügen &amp; prüfen -->
+    <g transform="translate(880, 0)" filter="url(#waStepShadow)">
+      <rect width="200" height="400" rx="18" fill="#0d211a" stroke="#25D366" stroke-opacity="0.3" stroke-width="1.5"/>
+      <circle cx="35" cy="40" r="18" fill="url(#waGreenStep)"/>
+      <text x="35" y="46" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#052e16">5</text>
+      
+      <text x="65" y="46" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#ffffff">Einfügen &amp; senden</text>
+      <text x="18" y="85" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">
+        Füge den Text ein und sende die formatierte Nachricht.
+      </text>
+
+      <g transform="translate(15, 140)">
+        <rect width="170" height="225" rx="10" fill="#07140f" stroke="#25D366" stroke-opacity="0.2"/>
+        
+        <rect x="15" y="30" width="140" height="60" rx="8" fill="#056162"/>
+        <text x="25" y="55" font-family="system-ui, sans-serif" font-size="11" font-style="italic" font-weight="700" fill="#ffffff">𝘎𝘶𝘵𝘦𝘯 𝘔𝘰𝘳𝘨𝘦𝘯 ☕</text>
+        <text x="145" y="75" text-anchor="end" font-family="system-ui, sans-serif" font-size="8" fill="#a7f3d0">12:35 ✓✓</text>
+
+        <rect x="15" y="115" width="140" height="75" rx="8" fill="#122a20" stroke="#25D366" stroke-opacity="0.3"/>
+        <text x="25" y="140" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#25D366">Status aktiv ✓</text>
+        <text x="25" y="160" font-family="system-ui, sans-serif" font-size="9" fill="#cbd5e1">Sichtbar für alle Kontakte auf iOS &amp; Android.</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

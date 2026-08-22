@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="platHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c17"/>
+      <stop offset="50%" stop-color="#121829"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="platHeroGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="35%" stop-color="#fbbf24"/>
+      <stop offset="70%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="platHeroShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#000000" flood-opacity="0.85"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#platHeroBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="220" r="260" fill="#f43f5e" fill-opacity="0.08"/>
+  <circle cx="940" cy="450" r="260" fill="#38bdf8" fill-opacity="0.08"/>
+
+  <!-- Top Badge -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-210" y="-16" width="420" height="32" rx="16" fill="#1e293b" stroke="#f43f5e" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#f43f5e" letter-spacing="2">📱 CROSS-PLATFORM UNICODE FONTS</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Schriftarten für alle <tspan fill="url(#platHeroGrad)">Social-Media-Plattformen</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Schöne Texte direkt kopieren und auf Instagram, TikTok, WhatsApp, Discord &amp; X einfügen
+    </text>
+  </g>
+
+  <!-- Main Showcase Container -->
+  <g transform="translate(90, 145)" filter="url(#platHeroShadow)">
+    <rect width="1020" height="465" rx="22" fill="#111827" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+
+    <!-- 4 Platform Showcase Columns -->
+    <g transform="translate(25, 25)">
+      
+      <!-- 1. Instagram Card -->
+      <g transform="translate(0, 0)">
+        <rect width="225" height="415" rx="16" fill="#161f30" stroke="#e11d48" stroke-opacity="0.4" stroke-width="1.5"/>
+        <rect x="20" y="20" width="185" height="32" rx="8" fill="#e11d48" fill-opacity="0.15"/>
+        <text x="112" y="41" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#e11d48">📸 INSTAGRAM</text>
+        
+        <rect x="15" y="65" width="195" height="110" rx="12" fill="#080d1a" stroke="#ffffff" stroke-opacity="0.05"/>
+        <text x="25" y="90" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">Bio &amp; Name:</text>
+        <text x="25" y="120" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">★ 𝓜𝔂 𝓟𝓻𝓸𝓯𝓲𝓵𝓮 ★</text>
+        <text x="25" y="145" font-family="system-ui, sans-serif" font-size="13" fill="#fbbf24">𝗖𝗿𝗲𝗮𝘁𝗼𝗿 &amp; 𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲</text>
+
+        <g transform="translate(15, 190)" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">
+          <text x="0" y="20" font-weight="700" fill="#ffffff">Einsatzbereiche:</text>
+          <text x="0" y="45">• 150 Zeichen Steckbrief</text>
+          <text x="0" y="70">• Fette &amp; kursive Captions</text>
+          <text x="0" y="95">• Highlight-Titel</text>
+          <text x="0" y="120">• Story-Sticker Text</text>
+        </g>
+
+        <rect x="15" y="360" width="195" height="32" rx="8" fill="#e11d48" fill-opacity="0.2"/>
+        <text x="112" y="381" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#f43f5e">LIMIT: 150 ZEICHEN</text>
+      </g>
+
+      <!-- 2. TikTok Card -->
+      <g transform="translate(248, 0)">
+        <rect width="225" height="415" rx="16" fill="#161f30" stroke="#06b6d4" stroke-opacity="0.4" stroke-width="1.5"/>
+        <rect x="20" y="20" width="185" height="32" rx="8" fill="#06b6d4" fill-opacity="0.15"/>
+        <text x="112" y="41" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#06b6d4">🎵 TIKTOK</text>
+        
+        <rect x="15" y="65" width="195" height="110" rx="12" fill="#080d1a" stroke="#ffffff" stroke-opacity="0.05"/>
+        <text x="25" y="90" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">Display-Name &amp; Bio:</text>
+        <text x="25" y="120" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">𝕿𝖎𝖐𝕿𝖔𝖐 𝕮𝖗𝖊𝖆𝖙𝖔𝖗</text>
+        <text x="25" y="145" font-family="system-ui, sans-serif" font-size="13" fill="#38bdf8">Ⓛⓘⓚⓔ &amp; Ⓕⓞⓛⓛⓞⓦ</text>
+
+        <g transform="translate(15, 190)" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">
+          <text x="0" y="20" font-weight="700" fill="#ffffff">Einsatzbereiche:</text>
+          <text x="0" y="45">• 80 Zeichen Bio-Limit</text>
+          <text x="0" y="70">• Auffälliger Profilname</text>
+          <text x="0" y="95">• Video-Beschreibungen</text>
+          <text x="0" y="120">• Kommentar-Highlights</text>
+        </g>
+
+        <rect x="15" y="360" width="195" height="32" rx="8" fill="#06b6d4" fill-opacity="0.2"/>
+        <text x="112" y="381" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#06b6d4">LIMIT: 80 ZEICHEN</text>
+      </g>
+
+      <!-- 3. WhatsApp Card -->
+      <g transform="translate(496, 0)">
+        <rect width="225" height="415" rx="16" fill="#161f30" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+        <rect x="20" y="20" width="185" height="32" rx="8" fill="#22c55e" fill-opacity="0.15"/>
+        <text x="112" y="41" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#22c55e">💬 WHATSAPP</text>
+        
+        <rect x="15" y="65" width="195" height="110" rx="12" fill="#080d1a" stroke="#ffffff" stroke-opacity="0.05"/>
+        <text x="25" y="90" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">Info &amp; Chat-Status:</text>
+        <text x="25" y="120" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">~*~ 𝒮𝓉𝒶𝓉𝓊𝓈 ~*~</text>
+        <text x="25" y="145" font-family="system-ui, sans-serif" font-size="13" fill="#22c55e">⚡ 𝕺𝖓𝖑𝖎𝖓𝖊 &amp; 𝕬𝖐𝖙𝖎𝖛</text>
+
+        <g transform="translate(15, 190)" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">
+          <text x="0" y="20" font-weight="700" fill="#ffffff">Einsatzbereiche:</text>
+          <text x="0" y="45">• 139 Zeichen Info-Spruch</text>
+          <text x="0" y="70">• Gruppen-Titel &amp; Regeln</text>
+          <text x="0" y="95">• Fette Chat-Nachrichten</text>
+          <text x="0" y="120">• Statusmeldungen</text>
+        </g>
+
+        <rect x="15" y="360" width="195" height="32" rx="8" fill="#22c55e" fill-opacity="0.2"/>
+        <text x="112" y="381" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#22c55e">LIMIT: 139 ZEICHEN</text>
+      </g>
+
+      <!-- 4. Discord &amp; X Card -->
+      <g transform="translate(744, 0)">
+        <rect width="225" height="415" rx="16" fill="#161f30" stroke="#818cf8" stroke-opacity="0.4" stroke-width="1.5"/>
+        <rect x="20" y="20" width="185" height="32" rx="8" fill="#818cf8" fill-opacity="0.15"/>
+        <text x="112" y="41" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#818cf8">🎮 DISCORD &amp; X</text>
+        
+        <rect x="15" y="65" width="195" height="110" rx="12" fill="#080d1a" stroke="#ffffff" stroke-opacity="0.05"/>
+        <text x="25" y="90" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">Server &amp; Nicknames:</text>
+        <text x="25" y="120" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">[🄲🄻🄰🄽] 𝕾𝖍𝖆𝖉𝖔𝖜</text>
+        <text x="25" y="145" font-family="system-ui, sans-serif" font-size="13" fill="#a855f7">V̶i̶p̶e̶r̶ 👑 𝔎𝔦𝔫𝔤</text>
+
+        <g transform="translate(15, 190)" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">
+          <text x="0" y="20" font-weight="700" fill="#ffffff">Einsatzbereiche:</text>
+          <text x="0" y="45">• 190 Zeichen Über-mich</text>
+          <text x="0" y="70">• Server-Kanalnamen</text>
+          <text x="0" y="95">• Rollenbezeichnungen</text>
+          <text x="0" y="120">• X/Twitter Profilnamen</text>
+        </g>
+
+        <rect x="15" y="360" width="195" height="32" rx="8" fill="#818cf8" fill-opacity="0.2"/>
+        <text x="112" y="381" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#818cf8">LIMIT: 190 ZEICHEN</text>
+      </g>
+
+    </g>
+
+  </g>
+</svg>

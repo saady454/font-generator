@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rfHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c16"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="rfCyanVioletGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="rfGoldAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="rfHeroShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#000000" flood-opacity="0.85"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#rfHeroBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="220" r="300" fill="#38bdf8" fill-opacity="0.10"/>
+  <circle cx="940" cy="450" r="280" fill="#c084fc" fill-opacity="0.10"/>
+  <circle cx="600" cy="300" r="220" fill="#818cf8" fill-opacity="0.05"/>
+
+  <!-- Top Badge -->
+  <g transform="translate(600, 55)" text-anchor="middle">
+    <rect x="-210" y="-18" width="420" height="36" rx="18" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.5" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">꧁ RAHMEN &amp; FLÜGEL STUDIO ꧂</text>
+  </g>
+
+  <!-- Central Title -->
+  <text x="600" y="132" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="38" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+    Rahmen, Klammern &amp; Flügel: <tspan fill="url(#rfCyanVioletGrad)">꧁ ༺ 【 】 ʚɞ zum Kopieren</tspan>
+  </text>
+  <text x="600" y="168" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#94a3b8">
+    Schöne Ornamente, Textboxen &amp; Schmetterlingsformen mit 1 Klick in die Zwischenablage
+  </text>
+
+  <!-- Main Showcase Container -->
+  <g transform="translate(90, 205)" filter="url(#rfHeroShadow)">
+    <rect width="1020" height="420" rx="28" fill="#111827" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5"/>
+
+    <!-- Inner Grid Area -->
+    <rect x="25" y="25" width="970" height="370" rx="20" fill="#090d16" stroke="#ffffff" stroke-opacity="0.05"/>
+
+    <!-- Left: Bracket Showcase Card Mockup -->
+    <g transform="translate(50, 45)">
+      <rect width="280" height="330" rx="20" fill="#172033" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5"/>
+      
+      <!-- Card Header -->
+      <g transform="translate(18, 18)">
+        <circle cx="24" cy="24" r="23" fill="none" stroke="url(#rfCyanVioletGrad)" stroke-width="2.5"/>
+        <circle cx="24" cy="24" r="20" fill="#1e293b"/>
+        <text x="24" y="32" text-anchor="middle" font-size="18" fill="#38bdf8">꧁</text>
+        <text x="58" y="18" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#ffffff">Ornamente</text>
+        <text x="58" y="34" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">1-Klick Copy &amp; Paste</text>
+      </g>
+
+      <!-- Symbol Quick Display Grid -->
+      <g transform="translate(18, 70)">
+        <rect width="244" height="175" rx="12" fill="#0c1322" stroke="#38bdf8" stroke-opacity="0.25"/>
+        
+        <text x="12" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#38bdf8" letter-spacing="1">BELIEBTE SYMBOLE</text>
+        
+        <!-- Big Brackets &amp; Wings Display -->
+        <g transform="translate(12, 38)" font-size="24">
+          <text x="15" y="30" fill="#38bdf8">꧁</text>
+          <text x="65" y="30" fill="#818cf8">༺</text>
+          <text x="115" y="30" fill="#c084fc">『 』</text>
+          <text x="175" y="30" fill="#fbbf24">【 】</text>
+
+          <text x="15" y="75" fill="#ffffff">〖 〗</text>
+          <text x="75" y="75" fill="#f472b6">ʚɞ</text>
+          <text x="125" y="75" fill="#38bdf8">୨୧</text>
+          <text x="175" y="75" fill="#c084fc">❴ ❵</text>
+        </g>
+
+        <!-- Box Drawing Banner -->
+        <rect x="12" y="132" width="220" height="30" rx="8" fill="#1e293b"/>
+        <text x="122" y="152" text-anchor="middle" font-size="12" fill="#38bdf8 font-mono">┌── ꧁ Dein Text ꧂ ──┐</text>
+      </g>
+
+      <!-- Action Button -->
+      <g transform="translate(18, 265)">
+        <rect width="244" height="36" rx="10" fill="url(#rfCyanVioletGrad)"/>
+        <text x="122" y="23" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#090d16">꧁ Symbol kopiert! 📋</text>
+      </g>
+    </g>
+
+    <!-- Right: Combinations &amp; Box Styles Showcase Card -->
+    <g transform="translate(365, 45)">
+      <rect width="605" height="330" rx="20" fill="#172033" stroke="#ffffff" stroke-opacity="0.08"/>
+
+      <!-- Input Simulation -->
+      <g transform="translate(25, 20)">
+        <text x="0" y="14" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#38bdf8" letter-spacing="1">TEXT MIT RAHMEN &amp; KLAMMERN EINBETTEN</text>
+        <rect x="0" y="24" width="555" height="42" rx="10" fill="#090d16" stroke="#38bdf8" stroke-opacity="0.4"/>
+        <text x="16" y="50" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#ffffff">Shadow</text>
+        <rect x="445" y="32" width="100" height="26" rx="6" fill="url(#rfCyanVioletGrad)"/>
+        <text x="495" y="49" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#090d16">꧁ Kopieren</text>
+      </g>
+
+      <!-- Style Grid -->
+      <g transform="translate(25, 95)">
+        
+        <!-- Combination 1: Symmetrische Ranken -->
+        <g transform="translate(0, 0)">
+          <rect width="265" height="46" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.3"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#38bdf8">SYMMETRISCHE RANKEN</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#ffffff">꧁ Shadow ꧂</text>
+          <rect x="200" y="10" width="55" height="26" rx="6" fill="#38bdf8" fill-opacity="0.2"/>
+          <text x="227" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#38bdf8">Kopie</text>
+        </g>
+
+        <!-- Combination 2: Japanische Eckige Klammern -->
+        <g transform="translate(285, 0)">
+          <rect width="270" height="46" rx="10" fill="#1e293b" stroke="#c084fc" stroke-opacity="0.3"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#c084fc">JAPANISCHE BOX-KLAMMERN</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="15" font-weight="900" fill="#ffffff">【 Shadow 】</text>
+          <rect x="205" y="10" width="55" height="26" rx="6" fill="#c084fc" fill-opacity="0.2"/>
+          <text x="232" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#c084fc">Kopie</text>
+        </g>
+
+        <!-- Combination 3: Flügel &amp; Herz -->
+        <g transform="translate(0, 56)">
+          <rect width="265" height="46" rx="10" fill="#1e293b" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#f472b6">FLÜGEL &amp; SCHMETTERLING</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">ʚ♡ɞ Shadow ʚ♡ɞ</text>
+          <rect x="200" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="227" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Combination 4: Doppelranke Clan -->
+        <g transform="translate(285, 56)">
+          <rect width="270" height="46" rx="10" fill="#1e293b" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#fbbf24">CLAN &amp; GAMING DOPPELRANKE</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">꧁༺ Shadow ༻꧂</text>
+          <rect x="205" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="232" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Combination 5: Doppelte Textbox -->
+        <g transform="translate(0, 112)">
+          <rect width="265" height="46" rx="10" fill="#1e293b" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#38bdf8">DOPPELTE TEXTBOX</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#ffffff">╔═ Shadow ═╗</text>
+          <rect x="200" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="227" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Combination 6: Winkelklammern -->
+        <g transform="translate(285, 112)">
+          <rect width="270" height="46" rx="10" fill="#1e293b" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#34d399">WINKELKLAMMERN (AESTHETIC)</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">『 Shadow 』</text>
+          <rect x="205" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="232" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Full width Bottom CTA -->
+        <g transform="translate(0, 168)">
+          <rect width="555" height="46" rx="10" fill="url(#rfCyanVioletGrad)"/>
+          <text x="277" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#090d16">꧁ Über 100+ Rahmen, Klammern &amp; Flügel jetzt kopieren</text>
+        </g>
+
+      </g>
+    </g>
+  </g>
+</svg>

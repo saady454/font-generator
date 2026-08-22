@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="strikeHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a14"/>
+      <stop offset="50%" stop-color="#101526"/>
+      <stop offset="100%" stop-color="#060810"/>
+    </linearGradient>
+    <linearGradient id="strikeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <filter id="strikeGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#strikeHeroBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="280" cy="180" r="260" fill="#38bdf8" fill-opacity="0.10"/>
+  <circle cx="920" cy="480" r="280" fill="#818cf8" fill-opacity="0.10"/>
+
+  <!-- Subtle Lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-dasharray="4 6">
+    <line x1="80" y1="120" x2="1120" y2="120"/>
+    <line x1="80" y1="560" x2="1120" y2="560"/>
+  </g>
+
+  <!-- Header Badge -->
+  <g transform="translate(600, 60)" text-anchor="middle">
+    <rect x="-170" y="-18" width="340" height="36" rx="18" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="800" fill="#38bdf8" letter-spacing="2">🚫 STRIKETHROUGH GENERATOR</text>
+  </g>
+
+  <!-- Central Title -->
+  <text x="600" y="140" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+    Durchgestrichener Text: <tspan fill="url(#strikeGrad)">Schrift online erstellen</tspan>
+  </text>
+  <text x="600" y="175" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#94a3b8">
+    Kombinierendes Unicode-Zeichen U+0336 für Vorher-Nachher Vergleiche, Social Media &amp; Chats
+  </text>
+
+  <!-- Main Generator UI Card -->
+  <g transform="translate(100, 215)" filter="url(#strikeGlow)">
+    <rect width="1000" height="400" rx="28" fill="#121728" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+
+    <!-- Browser Bar Top -->
+    <rect width="1000" height="52" rx="28" fill="#171e32"/>
+    <rect y="28" width="1000" height="24" fill="#171e32"/>
+    <circle cx="35" cy="26" r="6" fill="#ef4444" fill-opacity="0.8"/>
+    <circle cx="55" cy="26" r="6" fill="#eab308" fill-opacity="0.8"/>
+    <circle cx="75" cy="26" r="6" fill="#22c55e" fill-opacity="0.8"/>
+    <rect x="340" y="13" width="320" height="26" rx="13" fill="#0c101c" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="500" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" font-weight="500">schriftarten.io/schrift/durchgestrichen</text>
+
+    <!-- 3 Strikethrough Showcase Rows -->
+    <g transform="translate(60, 80)">
+      
+      <!-- Row 1: Simple Strikethrough -->
+      <g transform="translate(0, 0)">
+        <rect width="880" height="75" rx="16" fill="#0c101c" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+        <rect x="25" y="22" width="140" height="30" rx="8" fill="#38bdf8" fill-opacity="0.15"/>
+        <text x="95" y="42" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#38bdf8">STANDARD STRICH</text>
+        <text x="190" y="48" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="#ffffff">D̶u̶r̶c̶h̶g̶e̶s̶t̶r̶i̶c̶h̶e̶n̶e̶r̶ ̶T̶e̶x̶t̶</text>
+        <rect x="740" y="20" width="115" height="35" rx="8" fill="#38bdf8"/>
+        <text x="797" y="42" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#ffffff">KOPIEREN</text>
+      </g>
+
+      <!-- Row 2: Slash / Diagonaler Durchstrich -->
+      <g transform="translate(0, 95)">
+        <rect width="880" height="75" rx="16" fill="#0c101c" stroke="#ffffff" stroke-opacity="0.08"/>
+        <rect x="25" y="22" width="140" height="30" rx="8" fill="#818cf8" fill-opacity="0.15"/>
+        <text x="95" y="42" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#a5b4fc">SCHRÄGSTRICH</text>
+        <text x="190" y="48" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="#cbd5e1">D̸u̸r̸c̸h̸g̸e̸s̸t̸r̸i̸c̸h̸e̸n̸e̸r̸ ̸T̸e̸x̸t̸</text>
+        <rect x="740" y="20" width="115" height="35" rx="8" fill="#1b2238"/>
+        <text x="797" y="42" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#94a3b8">Kopieren</text>
+      </g>
+
+      <!-- Row 3: Wellenlinie / Tilde Overlay -->
+      <g transform="translate(0, 190)">
+        <rect width="880" height="75" rx="16" fill="#0c101c" stroke="#ffffff" stroke-opacity="0.08"/>
+        <rect x="25" y="22" width="140" height="30" rx="8" fill="#c084fc" fill-opacity="0.15"/>
+        <text x="95" y="42" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#c084fc">WELLENSTRICH</text>
+        <text x="190" y="48" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="#cbd5e1">D̴u̴r̴c̴h̴g̴e̴s̴t̴r̴i̴c̴h̴e̴n̴e̴r̴ ̴T̴e̴x̴t̴</text>
+        <rect x="740" y="20" width="115" height="35" rx="8" fill="#1b2238"/>
+        <text x="797" y="42" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#94a3b8">Kopieren</text>
+      </g>
+    </g>
+  </g>
+</svg>

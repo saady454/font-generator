@@ -1,0 +1,470 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TextStyleConverter from '../../components/TextStyleConverter.astro';
+import FontStyleGrid from '../../components/FontStyleGrid.astro';
+import GameEnhancedSections from '../../components/GameEnhancedSections.astro';
+import { GAMES_DATA, type GameInfo } from '../../data/game-metadata';
+import { GAME_NICKNAMES_DATA } from '../../data/game-nicknames';
+import { NAVIGATION_DATA } from '../../data/navigation';
+
+const gameInfo: GameInfo = GAMES_DATA['valorant'] || {
+  id: 'valorant',
+  name: 'Valorant',
+  slug: '/spiele/valorant',
+  genre: 'Tactical Shooter',
+  description: 'Taktische Gamertags, Riot IDs und Spielernamen für Valorant & Ranked Matches.',
+  exampleNicknames: [
+    '⚡ ᴠ ᴀ ɴ ᴛ ᴀ _ ᴀ ɪ ᴍ ⚡',
+    '【 s ɪ ᴛ ᴇ _ ᴀ ᴄ ᴇ 】',
+    '★ ᴠ ᴏ ɪ ᴅ _ ᴘ ᴇ ᴀ ᴋ ★',
+    '『 ᴅ ᴀ s ʜ _ ɴ ᴏ ᴠ ᴀ 』',
+    '🎯 ᴄ ʀ ᴏ s s ʜ ᴀ ɪ ʀ 🎯',
+  ],
+  namingRules: [
+    'Die Riot ID besteht aus einem Spielnamen (3–16 Zeichen) und einer Tagline (3–5 Zeichen).',
+    'Für den Spielnamen sind standardmäßig alphanumerische Zeichen vorgesehen.',
+    'Die Riot ID kann alle 90 Tage kostenlos im Riot-Konto geändert werden.',
+  ],
+  recommendedStyles: ['Clean', 'Tactical', 'Dark / Void'],
+};
+
+const gameSectionsConfig = GAME_NICKNAMES_DATA['valorant'];
+
+const valorantFaqs = [
+  {
+    q: 'Wie lang darf ein Valorant Nickname sein?',
+    a: 'Der Spielname einer Riot ID darf laut Riot 3 bis 16 alphanumerische Zeichen enthalten. Die Tagline muss 3 bis 5 Zeichen lang sein.',
+  },
+  {
+    q: 'Kann ich einen Namen mit Sonderzeichen kopieren?',
+    a: 'Ein Unicode-Generator kann dekorative Varianten erzeugen. Das bedeutet jedoch nicht, dass jede Variante als Riot ID akzeptiert wird. Prüfe deshalb die aktuelle Riot-Regel.',
+  },
+  {
+    q: 'Was ist besser: kurz oder kreativ?',
+    a: 'Für das Spielen ist ein kurzer, gut lesbarer Name meist praktischer. Kreative Elemente kannst du trotzdem einbauen, solange der Name verständlich bleibt.',
+  },
+  {
+    q: 'Wie finde ich schnell neue Ideen?',
+    a: 'Starte mit einem eigenen Wort und kombiniere es mit Begriffen aus dem taktischen Gaming-Bereich. Danach kannst du mehrere Varianten vergleichen und die beste zulässige Version auswählen.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": valorantFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+
+const otherGames = Object.values(GAMES_DATA).filter((g) => g.id !== 'valorant');
+---
+
+<Layout
+  title="Valorant Nickname Generator – Coole Namen & Gamertags zum Kopieren"
+  description="Valorant Nickname Generator für coole Gamertags: Namen erstellen, Ideen finden und wichtige Riot-ID-Regeln für Zeichen, Länge und Tagline beachten."
+  canonicalUrl="/spiele/valorant/"
+  schema={faqSchema}
+>
+  <main class="min-h-screen bg-[#0a0a08] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      
+      <!-- Breadcrumbs Navigation -->
+      <nav class="flex items-center gap-2 text-xs sm:text-sm text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Home</a>
+        <span>/</span>
+        <a href="/spiele" class="hover:text-amber-400 transition-colors">Gaming Nicknames</a>
+        <span>/</span>
+        <span class="text-stone-200">Valorant</span>
+      </nav>
+
+      <!-- Page Header & H1 -->
+      <div class="text-center max-w-4xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#ff4655]/10 border border-[#ff4655]/30 text-[#ff4655] text-xs font-semibold uppercase tracking-wider mb-4">
+          <span>🎯</span> Riot ID &bull; Tactical Shooter &bull; 3–16 Zeichen
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
+          Valorant Nickname Generator – Coole Namen &amp; Gamertags
+        </h1>
+        <p class="text-base sm:text-lg text-stone-300 max-w-2xl mx-auto">
+          Finde einen passenden Valorant Nickname, erstelle kreative Gamertags und erfahre, welche Riot-ID-Regeln du bei Namen und Sonderzeichen beachten solltest.
+        </p>
+      </div>
+
+      <!-- Main Interactive Font Converter Component -->
+      <TextStyleConverter
+        defaultText="VantaAim"
+        pageSlug="valorant"
+        filterCategory="alle"
+        showCategoryTabs={true}
+        showPresets={true}
+        maxChars={16}
+        limit={12}
+        showMoreButton={true}
+      />
+
+      <!-- Content Grid: Left Column (Tools + Editorial Article) & Right Sidebar -->
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- LEFT COLUMN (lg:col-span-2): Tools first, followed by Article Content -->
+        <div class="lg:col-span-2 space-y-8">
+          
+          <!-- Generator & Tool Cards (Gaming Enhancements) -->
+          {gameSectionsConfig && (
+            <GameEnhancedSections
+              gameData={gameSectionsConfig}
+              gameId="valorant"
+            />
+          )}
+
+          <!-- IMAGE 1: Featured Hero Image -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/valorant-nickname-hero.svg"
+              alt="Valorant Nickname Generator für kreative Gaming-Namen"
+              class="w-full h-auto aspect-video object-cover"
+              loading="eager"
+            />
+            <p class="text-xs text-stone-400 p-3 text-center border-t border-white/5 bg-[#0a0a08]">
+              Einen passenden Gaming-Namen auswählen und vor der Verwendung prüfen.
+            </p>
+          </div>
+
+          <!-- Section 1: Intro -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein guter <strong>Valorant Nickname</strong> soll kurz, einprägsam und passend zu deinem Spielstil sein. Trotzdem ist die Namenswahl nicht ganz so frei, wie viele Generatoren vermuten lassen. Besonders bei dekorativen Unicode-Zeichen kann es passieren, dass ein Name zwar gut aussieht, aber nicht als Riot ID gespeichert werden kann.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Genau deshalb braucht ein guter Valorant Nickname mehr als ein auffälliges Design. Sinnvoll ist ein Name, der leicht zu lesen ist, zu deinem Stil passt und die aktuellen Riot-ID-Regeln berücksichtigt. Hier findest du Ideen, Tipps zur Namenswahl und eine einfache Methode für deinen eigenen Namen.
+            </p>
+          </div>
+
+          <!-- Section 2: Was macht einen guten Valorant Nickname aus? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Was macht einen guten Valorant Nickname aus?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein starker Name funktioniert vor allem im Spiel. Er sollte schnell lesbar sein und sich von ähnlichen Gamertags unterscheiden.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Beliebte Richtungen sind:
+            </p>
+            <ul class="space-y-2 text-sm text-stone-300 leading-relaxed list-disc list-inside">
+              <li><strong>Clean:</strong> Vanta, Nexor oder Aero</li>
+              <li><strong>Taktisch:</strong> Crosshair, Silent, Site oder Clutch</li>
+              <li><strong>Dunkel:</strong> Shadow, Phantom oder Void</li>
+              <li><strong>Agenten-inspiriert:</strong> Begriffe aus Rollen, Fähigkeiten oder dem taktischen Spielgefühl</li>
+              <li><strong>Deutsch:</strong> BlitzAim, NachtShot oder EisBlick</li>
+            </ul>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed pt-2">
+              Dabei muss ein Name nicht kompliziert sein. Ein kurzer Gamertag kann stärker wirken als eine lange Kombination aus Symbolen.
+            </p>
+          </div>
+
+          <!-- IMAGE 2: Generator UI Concept -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/valorant-nickname-generator-ui.svg"
+              alt="Taktischer Gaming-Nickname-Generator mit verschiedenen Namensstilen"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Mehrere Namensvarianten vergleichen, bevor die endgültige Version gewählt wird.
+            </p>
+          </div>
+
+          <!-- Section 3: Valorant Nickname erstellen: So gehst du vor -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Valorant Nickname erstellen: So gehst du vor
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Mit einem Generator kannst du viele Ideen schnell vergleichen. Gib zuerst ein Wort, einen Spitznamen oder ein Thema ein. Danach kannst du verschiedene Schreibweisen ansehen und die passende Variante auswählen.
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-4 space-y-2">
+                <div class="flex items-center gap-2 text-cyan-400 font-bold text-sm">
+                  <span class="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center text-xs">1</span>
+                  Kernwort auswählen
+                </div>
+                <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                  Wähle ein Kernwort, das zu dir passt (z. B. <em>Vanta</em>, <em>Nova</em> oder <em>Void</em>).
+                </p>
+              </div>
+
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-4 space-y-2">
+                <div class="flex items-center gap-2 text-[#ff4655] font-bold text-sm">
+                  <span class="w-6 h-6 rounded-full bg-[#ff4655]/20 flex items-center justify-center text-xs">2</span>
+                  Gaming-Begriff ergänzen
+                </div>
+                <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                  Ergänze einen Begriff aus dem taktischen Gaming-Bereich (z. B. <em>Aim</em>, <em>Ace</em>, <em>Peak</em>).
+                </p>
+              </div>
+
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-4 space-y-2">
+                <div class="flex items-center gap-2 text-amber-400 font-bold text-sm">
+                  <span class="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center text-xs">3</span>
+                  Kurz &amp; lesbar halten
+                </div>
+                <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                  Halte den Namen kurz und gut lesbar, damit Mitspieler im Voice-Chat schnell reagieren können.
+                </p>
+              </div>
+
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-4 space-y-2">
+                <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm">
+                  <span class="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-xs">4</span>
+                  Riot-Regeln prüfen
+                </div>
+                <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                  Prüfe den fertigen Namen bei Riot, bevor du ihn verwendest (3–16 alphanumerische Zeichen).
+                </p>
+              </div>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed pt-2">
+              Beispiele sind <code>VantaAim</code>, <code>SilentVex</code>, <code>NachtAce</code>, <code>ClutchNova</code> oder <code>VoidPeak</code>. Diese Namen sind nur Inspiration. Prüfe vor der Verwendung, ob deine gewünschte Variante verfügbar und zulässig ist.
+            </p>
+          </div>
+
+          <!-- Section 4: Sind Sonderzeichen und Unicode-Schriften in Valorant erlaubt? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Sind Sonderzeichen und Unicode-Schriften in Valorant erlaubt?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Hier ist Vorsicht wichtig. Riot beschreibt die Riot ID als Kombination aus einem Spielnamen und einer Tagline. Laut der aktuellen offiziellen Support-Dokumentation (siehe <a href="https://support-valorant.riotgames.com/hc/es/articles/20631086710163-C%C3%B3mo-cambiar-vuestro-Riot-ID" target="_blank" rel="noopener noreferrer" class="text-[#ff4655] hover:text-[#ff4655]/80 underline font-semibold">Riot: Riot ID ändern und Namensregeln</a>) muss der <strong>Alias zwischen 3 und 16 alphanumerischen Zeichen</strong> liegen. Die <strong>Tagline muss 3 bis 5 alphanumerische Zeichen</strong> enthalten. Beide dürfen außerdem nicht beleidigend oder unangemessen sein.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein dekorierter Name wie <code>꧁Vanta꧂</code> kann in einem Unicode-Generator zwar dargestellt und kopiert werden, ist aber nicht automatisch eine gültige Riot ID. Deshalb sollte ein Generator zwischen Style-Vorschau und tatsächlich nutzbarem Riot-ID-Namen unterscheiden.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für die praktische Nutzung ist eine einfache Schreibweise oft sicherer. Symbole und ausgefallene Unicode-Buchstaben solltest du nur verwenden, wenn Riot sie für das betreffende Feld akzeptiert.
+            </p>
+          </div>
+
+          <!-- IMAGE 3: Riot ID Vergleich -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/valorant-nickname-riot-id-vergleich.svg"
+              alt="Vergleich zwischen einfachem Gaming-Namen und dekorativer Unicode-Schrift"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Eine Style-Vorschau bedeutet nicht automatisch, dass der Name als Riot ID akzeptiert wird.
+            </p>
+          </div>
+
+          <!-- Section 5: Ideen nach Spielstil -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Ideen nach Spielstil
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Je nachdem, welche Rolle oder welchen Agenten du in Valorant spielst, eignen sich verschiedene Stilrichtungen:
+            </p>
+
+            <!-- Table of Styles -->
+            <div class="overflow-x-auto my-4 border border-white/10 rounded-2xl">
+              <table class="w-full text-left text-sm text-stone-300">
+                <thead class="bg-white/5 text-xs uppercase text-stone-400">
+                  <tr>
+                    <th scope="col" class="px-4 py-3">Stil</th>
+                    <th scope="col" class="px-4 py-3">Beispiele</th>
+                    <th scope="col" class="px-4 py-3">Wirkung</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Clean</td>
+                    <td class="px-4 py-3 font-mono text-cyan-400">Vanta, Nexor, Aero</td>
+                    <td class="px-4 py-3 text-stone-300">schlicht</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Tactical</td>
+                    <td class="px-4 py-3 font-mono text-[#ff4655]">SiteAce, CrossAim</td>
+                    <td class="px-4 py-3 text-stone-300">kompetitiv</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Dark</td>
+                    <td class="px-4 py-3 font-mono text-purple-400">VoidPeak, ShadowVex</td>
+                    <td class="px-4 py-3 text-stone-300">geheimnisvoll</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Fast</td>
+                    <td class="px-4 py-3 font-mono text-amber-400">DashNova, RushV</td>
+                    <td class="px-4 py-3 text-stone-300">dynamisch</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Deutsch</td>
+                    <td class="px-4 py-3 font-mono text-emerald-400">BlitzAim, EisBlick</td>
+                    <td class="px-4 py-3 text-stone-300">eigener Stil</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für Ranked sind klare Varianten besonders praktisch. Für Freunde, Streams oder Community-Profile darf der Name kreativer sein. Wichtig ist, den tatsächlichen Einsatzort zu unterscheiden.
+            </p>
+          </div>
+
+          <!-- Section 6: Riot ID richtig verstehen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Riot ID richtig verstehen
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein häufiger Fehler ist, den sichtbaren Namen mit der gesamten Riot ID zu verwechseln. Die Riot ID besteht aus zwei Teilen: dem Spielnamen und der Tagline. Der Spielname muss nicht allein weltweit einzigartig sein. Entscheidend ist die vollständige Kombination.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Deshalb musst du keinen extrem komplizierten Namen erfinden. Wenn <em>Vanta</em> bereits als Spielname existiert, kann eine andere zulässige Tagline wie <code>#EUW</code> oder <code>#1337</code> die vollständige Riot ID unterscheiden. Die aktuellen Regeln solltest du vor dem Speichern in der offiziellen Riot-Hilfe prüfen.
+            </p>
+          </div>
+
+          <!-- Section 7: Tipps für einen besseren Valorant Nickname -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Tipps für einen besseren Valorant Nickname
+            </h2>
+            <ul class="space-y-2 text-sm text-stone-300 leading-relaxed list-disc list-inside">
+              <li><strong>Halte ihn lesbar:</strong> Ein Name sollte auch im schnellen Spiel verständlich bleiben.</li>
+              <li><strong>Vermeide unnötige Zahlen:</strong> Zahlen können sinnvoll sein, wenn sie einen persönlichen Bezug haben. Zufällige Folgen wirken schnell beliebig.</li>
+              <li><strong>Nutze ein klares Thema:</strong> Agenten, taktische Begriffe, Karten oder dein Spielstil können als Inspiration dienen.</li>
+              <li><strong>Teste mehrere Varianten:</strong> Schreibe fünf bis zehn Versionen auf und streiche alles, was schwer auszusprechen oder zu lesen ist.</li>
+              <li><strong>Prüfe die Regeln:</strong> Ein schöner Name bringt wenig, wenn das Riot-System ihn nicht akzeptiert.</li>
+            </ul>
+          </div>
+
+          <!-- IMAGE 4: Tipps Setup Graphic -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/valorant-nickname-tipps-setup.svg"
+              alt="Gaming-Schreibtisch mit Ideen für einen kurzen Valorant-Namen"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Kurze Namen sammeln, Varianten vergleichen und anschließend die Regeln prüfen.
+            </p>
+          </div>
+
+          <!-- Section 8: Häufige Fragen (FAQs) -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> Häufige Fragen zum Valorant Nickname
+            </h2>
+            <div class="space-y-4">
+              {valorantFaqs.map((faq) => (
+                <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
+                  <h3 class="text-sm sm:text-base font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 9: Fazit -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Fazit
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein guter Valorant Nickname muss nicht mit vielen Symbolen auffallen. Entscheidend sind Lesbarkeit, Wiedererkennungswert und ein Stil, der zu dir passt. Mit wenigen klaren Begriffen lassen sich bereits starke Gamertags entwickeln.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Am besten gehst du in zwei Schritten vor: Erst Ideen sammeln, dann die gewünschte Variante gegen die aktuellen Riot-ID-Regeln prüfen. So vermeidest du, dass ein Name nur im Generator gut aussieht, aber später nicht gespeichert werden kann.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Entdecke auch unseren <a href="/spiele" class="text-[#ff4655] hover:underline font-semibold">Gaming Nickname Generator für alle Spiele</a>, den <a href="/spiele/fortnite-nickname" class="text-cyan-400 hover:underline font-semibold">Fortnite Nickname Generator</a> oder den <a href="/spiele/minecraft-nickname" class="text-emerald-400 hover:underline font-semibold">Minecraft Nickname Generator</a>. Für dekorative Schriften teste unseren <a href="/schrift/gotische-schrift" class="text-purple-400 hover:underline font-semibold">Gotische Schrift Generator</a>.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- RIGHT SIDEBAR COLUMN -->
+        <div class="space-y-6">
+          
+          <!-- Beliebte Schriftstile -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>✨</span> Beliebte Gaming Stile
+            </h3>
+            <FontStyleGrid />
+          </div>
+
+          <!-- Weitere Spiele -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>🎮</span> Weitere Spiele
+            </h3>
+            <div class="space-y-2">
+              {otherGames.map((game) => (
+                <a
+                  href={game.slug}
+                  class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#ff4655]/40 transition-all text-sm group"
+                >
+                  <span class="font-medium text-stone-200 group-hover:text-[#ff4655] transition-colors">
+                    {game.name} Nicknames
+                  </span>
+                  <span class="text-xs text-stone-400 group-hover:text-[#ff4655] transition-colors">
+                    {game.genre} &rarr;
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Beliebte Social-Media Plattformen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>📱</span> Social-Media Schriften
+            </h3>
+            <div class="space-y-2">
+              <a
+                href="/plattform/discord"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#5865F2]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#5865F2] transition-colors">
+                  Discord Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/plattform/tiktok"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#25f4ee]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#25f4ee] transition-colors">
+                  TikTok Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/plattform/instagram"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#ec4899]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#ec4899] transition-colors">
+                  Instagram Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+</Layout>

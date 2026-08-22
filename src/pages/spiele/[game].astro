@@ -9,7 +9,7 @@ import { NAVIGATION_DATA } from '../../data/navigation';
 
 export function getStaticPaths() {
   return Object.keys(GAMES_DATA)
-    .filter((gameKey) => gameKey !== 'free-fire')
+    .filter((gameKey) => gameKey !== 'free-fire' && gameKey !== 'fortnite' && gameKey !== 'minecraft' && gameKey !== 'valorant' && gameKey !== 'roblox' && gameKey !== 'cs2')
     .map((gameKey) => ({
       params: { game: gameKey },
       props: { gameInfo: GAMES_DATA[gameKey] },

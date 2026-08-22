@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="heartCombBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0712"/>
+      <stop offset="50%" stop-color="#1f0f24"/>
+      <stop offset="100%" stop-color="#08040a"/>
+    </linearGradient>
+    <linearGradient id="heartCombGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="50%" stop-color="#fb7185"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <filter id="heartCombShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#heartCombBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#f43f5e" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#c084fc" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-180" y="-16" width="360" height="32" rx="16" fill="#2d1230" stroke="#f43f5e" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fb7185" letter-spacing="2">AESTHETIC KOMBINATIONEN</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Dekorative <tspan fill="url(#heartCombGrad)">Herz-Kombinationen</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Fertige Schleifen-, Flügel- und Sternchen-Kombinationen für Instagram, TikTok &amp; Bios
+    </text>
+  </g>
+
+  <!-- 6 Aesthetic Cards Grid (2 rows of 3) -->
+  <g transform="translate(60, 145)">
+    
+    <!-- 1. ୨♡୧ Schleifen-Herz -->
+    <g transform="translate(0, 0)" filter="url(#heartCombShadow)">
+      <rect width="340" height="210" rx="18" fill="#180e1c" stroke="#f43f5e" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="130" height="26" rx="6" fill="#f43f5e" fill-opacity="0.15"/>
+        <text x="65" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#fb7185">SCHLEIFEN-LOOK</text>
+        
+        <rect y="40" width="300" height="60" rx="12" fill="#0d0710" stroke="#f43f5e" stroke-opacity="0.2"/>
+        <text x="150" y="78" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#ffffff">୨♡୧ Name ୨♡୧</text>
+
+        <text x="0" y="125" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Perfekt als Bio-Titel &amp; eleganter Accountname.</text>
+        <text x="0" y="148" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fb7185">★ Beliebtester Coquette- &amp; Aesthetic-Stil</text>
+      </g>
+    </g>
+
+    <!-- 2. ˚ʚ♡ɞ˚ Engel &amp; Flügel -->
+    <g transform="translate(370, 0)" filter="url(#heartCombShadow)">
+      <rect width="340" height="210" rx="18" fill="#180e1c" stroke="#c084fc" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="125" height="26" rx="6" fill="#c084fc" fill-opacity="0.15"/>
+        <text x="62" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#c084fc">FLÜGEL &amp; ENGEL</text>
+        
+        <rect y="40" width="300" height="60" rx="12" fill="#0d0710" stroke="#c084fc" stroke-opacity="0.2"/>
+        <text x="150" y="78" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" font-weight="900" fill="#ffffff">˚ʚ♡ɞ˚ Bio Text ˚ʚ♡ɞ˚</text>
+
+        <text x="0" y="125" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Sanfte Flügel umrahmen deinen Text zart.</text>
+        <text x="0" y="148" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#c084fc">★ Zart, verspielt &amp; magisch</text>
+      </g>
+    </g>
+
+    <!-- 3. ⋆｡♡˚ Kosmisches Herz -->
+    <g transform="translate(740, 0)" filter="url(#heartCombShadow)">
+      <rect width="340" height="210" rx="18" fill="#180e1c" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="130" height="26" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+        <text x="65" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#38bdf8">KOSMISCHE STERNE</text>
+        
+        <rect y="40" width="300" height="60" rx="12" fill="#0d0710" stroke="#38bdf8" stroke-opacity="0.2"/>
+        <text x="150" y="78" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#ffffff">⋆｡♡˚ Dreamer ˚♡｡⋆</text>
+
+        <text x="0" y="125" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Kombination aus Sternenstaub und Herz.</text>
+        <text x="0" y="148" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">★ Träumerischer Nacht-Himmel-Vibe</text>
+      </g>
+    </g>
+
+    <!-- 4. ✧♡✧ Funkeln -->
+    <g transform="translate(0, 230)" filter="url(#heartCombShadow)">
+      <rect width="340" height="210" rx="18" fill="#180e1c" stroke="#fb7185" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="115" height="26" rx="6" fill="#fb7185" fill-opacity="0.15"/>
+        <text x="57" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#fb7185">SPARKLE &amp; GLOW</text>
+        
+        <rect y="40" width="300" height="60" rx="12" fill="#0d0710" stroke="#fb7185" stroke-opacity="0.2"/>
+        <text x="150" y="78" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#ffffff">✧♡✧ Moments ✧♡✧</text>
+
+        <text x="0" y="125" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Symmetrische vierzackige Sterne &amp; Herz.</text>
+        <text x="0" y="148" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fb7185">★ Clean &amp; extrem elegant</text>
+      </g>
+    </g>
+
+    <!-- 5. -`♡´- Strahlen -->
+    <g transform="translate(370, 230)" filter="url(#heartCombShadow)">
+      <rect width="340" height="210" rx="18" fill="#180e1c" stroke="#f43f5e" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="120" height="26" rx="6" fill="#f43f5e" fill-opacity="0.15"/>
+        <text x="60" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#f43f5e">HERZ-STRAHLEN</text>
+        
+        <rect y="40" width="300" height="60" rx="12" fill="#0d0710" stroke="#f43f5e" stroke-opacity="0.2"/>
+        <text x="150" y="78" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#ffffff">-`♡´- Highlight -`♡´-</text>
+
+        <text x="0" y="125" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Leuchtende Akzente für wichtige Stichpunkte.</text>
+        <text x="0" y="148" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f43f5e">★ Zieht Blicke magisch an</text>
+      </g>
+    </g>
+
+    <!-- 6. ♡ ── ♡ Trennlinie -->
+    <g transform="translate(740, 230)" filter="url(#heartCombShadow)">
+      <rect width="340" height="210" rx="18" fill="#180e1c" stroke="#a855f7" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="125" height="26" rx="6" fill="#a855f7" fill-opacity="0.15"/>
+        <text x="62" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#a855f7">TRENNER &amp; DIVIDER</text>
+        
+        <rect y="40" width="300" height="60" rx="12" fill="#0d0710" stroke="#a855f7" stroke-opacity="0.2"/>
+        <text x="150" y="78" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#ffffff">♡ ── ♡ ── ♡</text>
+
+        <text x="0" y="125" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Stilvolle Trennung zwischen Bio-Absätzen.</text>
+        <text x="0" y="148" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#a855f7">★ Strukturierte Profil-Ästhetik</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

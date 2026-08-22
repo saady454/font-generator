@@ -1,0 +1,467 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TextStyleConverter from '../../components/TextStyleConverter.astro';
+import FontStyleGrid from '../../components/FontStyleGrid.astro';
+import GameEnhancedSections from '../../components/GameEnhancedSections.astro';
+import { GAMES_DATA, type GameInfo } from '../../data/game-metadata';
+import { GAME_NICKNAMES_DATA } from '../../data/game-nicknames';
+import { NAVIGATION_DATA } from '../../data/navigation';
+
+const gameInfo: GameInfo = GAMES_DATA['fortnite'] || {
+  id: 'fortnite',
+  name: 'Fortnite',
+  slug: '/spiele/fortnite-nickname',
+  genre: 'Battle Royale',
+  description: 'Erstelle stylische Fortnite Spielernamen, Clantags und Sonderzeichen für dein Epic-Games-Profil.',
+  exampleNicknames: [
+    '꧁ 𝕾 𝖍 𝖆 𝖉 𝖔 𝖜 ꧂',
+    '⚡ ᴠ ᴏ ʀ ᴛ ᴇ x ⚡',
+    '👑 ʀ ᴏ ʏ ᴀ ʟ ᴇ 👑',
+    '★ ɴ ɪ ᴛ ʀ ᴏ ★',
+    '【 ᴄ ʀ ᴀ ɴ ᴋ ᴇ ʀ 】',
+  ],
+  namingRules: [
+    'Der Epic Games Display Name muss zwischen 3 und 16 Zeichen lang sein.',
+    'Änderungen sind grundsätzlich nur einmal alle zwei Wochen (14 Tage) möglich.',
+    'Namen dürfen keine beleidigenden, vulgären oder privaten Informationen enthalten.',
+  ],
+  recommendedStyles: ['Fett', 'Gotisch', 'Symbole & Trenner'],
+};
+
+const gameSectionsConfig = GAME_NICKNAMES_DATA['fortnite'];
+
+const fortniteFaqs = [
+  {
+    q: 'Kann ich meinen Fortnite Nickname mit Sonderzeichen gestalten?',
+    a: 'Einige Sonderzeichen und Unicode-Zeichen können in bestimmten Feldern funktionieren. Allerdings sollte jede gewünschte Variante direkt im relevanten Epic-Feld geprüft werden. Epic legt eigene Regeln für Display Names fest.',
+  },
+  {
+    q: 'Wie lang darf ein Fortnite Nickname sein?',
+    a: 'Der Epic Games Display Name muss laut den aktuellen Regeln zwischen 3 und 16 Zeichen lang sein.',
+  },
+  {
+    q: 'Wie oft kann ich meinen Fortnite-Namen ändern?',
+    a: 'Epic erlaubt eine Änderung des Display Names grundsätzlich einmal alle zwei Wochen. Wenn du ihn kürzlich geändert hast, musst du bis zum Ende der Wartezeit warten.',
+  },
+  {
+    q: 'Warum wird mein Name auf der Konsole manchmal anders angezeigt?',
+    a: 'Bei PlayStation oder Xbox kann der sichtbare Name vom Epic Games Display Name abweichen. Epic erklärt, dass Konsolen den jeweiligen PlayStation- oder Xbox-Gamertag anzeigen können.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": fortniteFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+
+const otherGames = Object.values(GAMES_DATA).filter((g) => g.id !== 'fortnite');
+---
+
+<Layout
+  title="Fortnite Nickname: Coole Namen & Schriften zum Kopieren"
+  description="Erstelle einen coolen Fortnite Nickname mit stylischen Schriften und Symbolen. Ideen finden, Namen gestalten, kopieren und Epic-Regeln beachten."
+  canonicalUrl="/spiele/fortnite-nickname/"
+  schema={faqSchema}
+>
+  <main class="min-h-screen bg-[#0a0a08] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      
+      <!-- Breadcrumbs Navigation -->
+      <nav class="flex items-center gap-2 text-xs sm:text-sm text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Home</a>
+        <span>/</span>
+        <a href="/spiele" class="hover:text-amber-400 transition-colors">Gaming Nicknames</a>
+        <span>/</span>
+        <span class="text-stone-200">Fortnite</span>
+      </nav>
+
+      <!-- Page Header & H1 -->
+      <div class="text-center max-w-4xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4">
+          <span>🎮</span> Epic Games &bull; Battle Royale &bull; 3–16 Zeichen
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
+          Fortnite Nickname – Coole Namen, Schriften &amp; Ideen zum Kopieren
+        </h1>
+        <p class="text-base sm:text-lg text-stone-300 max-w-2xl mx-auto">
+          Finde einen coolen Fortnite Nickname, gestalte ihn mit Unicode-Schriften und kopiere deinen Favoriten direkt für dein Epic-Games-Profil.
+        </p>
+      </div>
+
+      <!-- Main Interactive Font Converter Component -->
+      <TextStyleConverter
+        defaultText="ShadowNova"
+        pageSlug="fortnite"
+        filterCategory="alle"
+        showCategoryTabs={true}
+        showPresets={true}
+        maxChars={16}
+        limit={12}
+        showMoreButton={true}
+      />
+
+      <!-- Content Grid: Left Column (Tools + Editorial Article) & Right Sidebar -->
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- LEFT COLUMN (lg:col-span-2): Tools first, followed by Article Content -->
+        <div class="lg:col-span-2 space-y-8">
+          
+          <!-- Generator & Tool Cards (Gaming Enhancements) -->
+          {gameSectionsConfig && (
+            <GameEnhancedSections
+              gameData={gameSectionsConfig}
+              gameId="fortnite"
+            />
+          )}
+
+          <!-- IMAGE 1: Featured Hero Image -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/fortnite-nickname-hero.svg"
+              alt="Fortnite Nickname mit stylischen Schriftvarianten auf einem Gaming-Setup"
+              class="w-full h-auto aspect-video object-cover"
+              loading="eager"
+            />
+            <p class="text-xs text-stone-400 p-3 text-center border-t border-white/5 bg-[#0a0a08]">
+              Ein passender Nickname verbindet Wiedererkennungswert, Lesbarkeit und persönlichen Gaming-Stil.
+            </p>
+          </div>
+
+          <!-- Section 1: Intro -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein guter <strong>Fortnite Nickname</strong> soll nicht nur cool aussehen. Er muss auch zu deinem Spielstil passen und sich leicht merken lassen. Viele Namen wirken jedoch schnell langweilig, wenn sie nur aus einem gewöhnlichen Wort und ein paar Zahlen bestehen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Mit einem Schrift- und Nickname-Generator kannst du deshalb verschiedene Varianten ausprobieren. Dabei kannst du deinen Namen mit fetten, kursiven oder gotischen Unicode-Zeichen sowie passenden Symbolen gestalten. Wichtig ist allerdings: Nicht jeder stylische Unicode-Name wird automatisch von Fortnite beziehungsweise deinem Epic-Games-Konto akzeptiert.
+            </p>
+          </div>
+
+          <!-- Section 2: Was ist ein Fortnite Nickname? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Was ist ein Fortnite Nickname?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein Fortnite Nickname ist der Name, unter dem andere Spieler dich erkennen. Für Fortnite ist dabei vor allem dein <em>Epic Games Display Name</em> relevant. Epic beschreibt ihn als den Namen, der unter anderem beim Spielen seiner Games angezeigt wird.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein guter Name sollte deshalb drei Dinge miteinander verbinden:
+            </p>
+            <ul class="space-y-2 text-sm text-stone-300 leading-relaxed list-disc list-inside">
+              <li><strong>Lesbarkeit</strong> – andere Spieler sollten ihn schnell erkennen.</li>
+              <li><strong>Eigener Stil</strong> – der Name sollte zu dir und deinem Spielstil passen.</li>
+              <li><strong>Einfachheit</strong> – zu viele Sonderzeichen können den Namen schwer lesbar machen.</li>
+            </ul>
+            
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed pt-2">
+              Beispiele für unterschiedliche Stilrichtungen sind:
+            </p>
+
+            <!-- Table of Styles -->
+            <div class="overflow-x-auto my-4 border border-white/10 rounded-2xl">
+              <table class="w-full text-left text-sm text-stone-300">
+                <thead class="bg-white/5 text-xs uppercase text-stone-400">
+                  <tr>
+                    <th scope="col" class="px-4 py-3">Stil</th>
+                    <th scope="col" class="px-4 py-3">Beispiel</th>
+                    <th scope="col" class="px-4 py-3">Kategorie Link</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Clean</td>
+                    <td class="px-4 py-3 font-mono text-cyan-400">ShadowNova</td>
+                    <td class="px-4 py-3 text-xs text-stone-400">Standard-Text</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Fett</td>
+                    <td class="px-4 py-3 font-mono text-amber-400">𝐒𝐡𝐚𝐝𝐨𝐰</td>
+                    <td class="px-4 py-3 text-xs"><a href="/schrift/fette-schrift" class="text-amber-400 hover:underline font-semibold">Fette Schrift</a></td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Kursiv</td>
+                    <td class="px-4 py-3 font-mono text-cyan-300">𝑺𝒉𝒂𝒅𝒐𝒘</td>
+                    <td class="px-4 py-3 text-xs"><a href="/schrift/kursive-schrift" class="text-cyan-400 hover:underline font-semibold">Kursive Schrift</a></td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Gotisch</td>
+                    <td class="px-4 py-3 font-mono text-purple-400">𝔖𝔥𝔞𝔡𝔬𝔴</td>
+                    <td class="px-4 py-3 text-xs"><a href="/schrift/gotische-schrift" class="text-purple-400 hover:underline font-semibold">Gotische Schrift</a></td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Dekorativ</td>
+                    <td class="px-4 py-3 font-mono text-emerald-400">꧁Shadow꧂</td>
+                    <td class="px-4 py-3 text-xs"><a href="/symbole" class="text-emerald-400 hover:underline font-semibold">Symbole &amp; Deko</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="text-xs sm:text-sm text-stone-400 leading-relaxed italic">
+              Die dargestellten Varianten basieren auf Unicode-Zeichen. Sie sind daher keine installierten Schriftdateien wie eine klassische .ttf- oder .otf-Schrift.
+            </p>
+          </div>
+
+          <!-- IMAGE 2: Stile Vergleich -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/fortnite-nickname-stile-vergleich.svg"
+              alt="Vier verschiedene Stile für einen Gaming-Nickname"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Clean, fett, kursiv oder gotisch: Der Schriftstil verändert die Wirkung eines Nicknames.
+            </p>
+          </div>
+
+          <!-- Section 3: So erstellst du einen coolen Fortnite-Namen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              So erstellst du einen coolen Fortnite-Namen
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Am einfachsten ist es, zuerst ein normales Wort oder deinen gewünschten Nickname festzulegen. Danach kannst du verschiedene Stile testen.
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-4 space-y-2">
+                <div class="flex items-center gap-2 text-cyan-400 font-bold text-sm">
+                  <span class="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center text-xs">1</span>
+                  Namen auswählen
+                </div>
+                <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                  Beginne mit einem kurzen Begriff, deinem bisherigen Namen oder einer Kombination aus zwei passenden Wörtern. Beispiele sind <em>Shadow</em>, <em>Nova</em>, <em>Frost</em> oder <em>Viper</em>.
+                </p>
+              </div>
+
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-4 space-y-2">
+                <div class="flex items-center gap-2 text-purple-400 font-bold text-sm">
+                  <span class="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center text-xs">2</span>
+                  Schriftstil ausprobieren
+                </div>
+                <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                  Teste anschließend <a href="/schrift/fette-schrift" class="text-purple-300 underline font-semibold">fette</a>, <a href="/schrift/kursive-schrift" class="text-purple-300 underline font-semibold">kursive</a>, <a href="/schrift/gotische-schrift" class="text-purple-300 underline font-semibold">gotische</a> oder dekorative Varianten in unserem <a href="/" class="text-amber-400 underline font-semibold">Schriftarten Generator</a>.
+                </p>
+              </div>
+
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-4 space-y-2">
+                <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm">
+                  <span class="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-xs">3</span>
+                  Symbole sparsam verwenden
+                </div>
+                <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                  Sterne, Klammern oder <a href="/symbole" class="text-emerald-300 underline font-semibold">Symbole</a> können einen Nickname interessanter machen. Allerdings ist weniger oft mehr. Ein überladener Name kann schlechter lesbar sein.
+                </p>
+              </div>
+
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-4 space-y-2">
+                <div class="flex items-center gap-2 text-amber-400 font-bold text-sm">
+                  <span class="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center text-xs">4</span>
+                  Kopieren und prüfen
+                </div>
+                <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                  Kopiere deine bevorzugte Variante und teste sie im vorgesehenen Epic-Feld. Dadurch siehst du direkt, ob der Name akzeptiert wird.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- IMAGE 3: Workflow Guide -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/fortnite-nickname-generator-workflow.svg"
+              alt="Gaming-Namen mit einem Online-Schriftgenerator erstellen und kopieren"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Mit einem Online-Generator lassen sich verschiedene Namensvarianten schnell vergleichen.
+            </p>
+          </div>
+
+          <!-- Section 4: Welche Fortnite-Namen wirken besonders gut? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Welche Fortnite-Namen wirken besonders gut?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Es gibt keinen objektiv besten Stil. Entscheidend ist, dass der Name zu deinem gewünschten Look passt.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für einen kompetitiven Stil eignen sich kurze und klare Namen wie <code>NovaAim</code> oder <code>FrostX</code>. Ein Aesthetic-Name kann dagegen stärker mit kursiven oder dekorativen Zeichen arbeiten.
+            </p>
+            
+            <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-4 space-y-2">
+              <p class="text-xs font-bold text-purple-400 uppercase tracking-wider">Dunkler Gaming-Look (Beispiele):</p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1 font-mono text-base text-white">
+                <div class="bg-[#0f172a] p-2 rounded-xl text-center border border-white/5">𝕯𝖆𝖗𝖐𝕹𝖔𝖛𝖆</div>
+                <div class="bg-[#0f172a] p-2 rounded-xl text-center border border-white/5">𝔖𝔥𝔞𝔡𝔬𝔴𝔛</div>
+                <div class="bg-[#0f172a] p-2 rounded-xl text-center border border-white/5">𝕭𝖑𝖆𝖈𝖐𝕁𝖊𝖙</div>
+              </div>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Bei Clan-Namen oder Team-Tags solltest du dagegen auf eine kurze, gut erkennbare Struktur setzen. So bleibt der Name auch in kleinen Darstellungen übersichtlich.
+            </p>
+          </div>
+
+          <!-- IMAGE 4: Epic Games Regeln Check -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/fortnite-nickname-epic-regeln-pruefen.svg"
+              alt="Gaming-Nickname vor dem Speichern auf Zeichenlänge und Regeln prüfen"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Vor dem Speichern sollten Zeichenlänge und Plattformregeln geprüft werden.
+            </p>
+          </div>
+
+          <!-- Section 5: Was muss ein Epic-Games-Name beachten? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Was muss ein Epic-Games-Name beachten?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Hier ist Vorsicht wichtig. Laut Epic Games muss ein Display Name <strong>zwischen 3 und 16 Zeichen lang sein</strong>. Außerdem dürfen Namen unter anderem keine vulgären, beleidigenden oder hasserfüllten Inhalte, bestimmte direkte Bezüge zu Epic sowie private persönliche Informationen enthalten (siehe <a href="https://www.epicgames.com/help/c-202300000001622/c-7261959845275/a202300000016056?lang=en-US" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-cyan-300 underline font-semibold">offizielle Regeln für Epic Games Display Names</a>).
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Der Name lässt sich außerdem nicht beliebig oft ändern. Epic gibt aktuell an, dass eine <strong>Änderung des Display Names einmal alle zwei Wochen</strong> (14 Tage Wartezeit) möglich ist.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Deshalb solltest du deinen gewünschten Fortnite Nickname vor dem Speichern sorgfältig prüfen. Besonders bei ungewöhnlichen Unicode-Zeichen ist ein Test sinnvoll, weil die Darstellung und Akzeptanz einzelner Zeichen von der jeweiligen Plattform abhängen kann.
+            </p>
+          </div>
+
+          <!-- Section 6: Fortnite Nickname direkt erstellen und kopieren -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Fortnite Nickname direkt erstellen und kopieren
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Mit einem Online-Generator kannst du mehrere Varianten schneller vergleichen, statt jeden Namen manuell zu formatieren. Gib deinen gewünschten Namen ein, probiere unterschiedliche Schriftstile aus und kopiere anschließend die Variante, die dir am besten gefällt.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für einen guten Gaming-Namen gilt dabei: <em>Lesbarkeit vor Dekoration</em>. Ein kurzer Name mit einem passenden Stil wirkt oft stärker als eine lange Kombination aus Symbolen.
+            </p>
+          </div>
+
+          <!-- Section 7: Häufige Fragen (FAQs) -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> Häufige Fragen zu Fortnite Nicknames
+            </h2>
+            <div class="space-y-4">
+              {fortniteFaqs.map((faq) => (
+                <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
+                  <h3 class="text-sm sm:text-base font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 8: Fazit -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Fazit
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein guter Fortnite Nickname muss nicht kompliziert sein. Wähle zunächst einen kurzen Namen mit Wiedererkennungswert und ergänze anschließend einen passenden Schriftstil oder wenige Symbole. So bleibt dein Name auffällig, ohne unnötig schwer lesbar zu werden.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Am wichtigsten ist die Prüfung vor dem endgültigen Speichern. Halte die aktuellen Epic-Regeln ein, achte auf die Zeichenlänge und teste ungewöhnliche Unicode-Zeichen vorher. So findest du einen Namen, der sowohl optisch als auch praktisch zu deinem Fortnite-Profil passt.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Entdecke auch unsere <a href="/schrift" class="text-amber-400 hover:text-amber-300 underline font-semibold">Schriftarten Übersicht</a> oder teste unseren universellen <a href="/" class="text-amber-400 hover:text-amber-300 underline font-semibold">Schriftarten Generator</a>.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- RIGHT SIDEBAR COLUMN -->
+        <div class="space-y-6">
+          
+          <!-- Beliebte Schriftstile -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>✨</span> Beliebte Gaming Stile
+            </h3>
+            <FontStyleGrid />
+          </div>
+
+          <!-- Weitere Spiele -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>🎮</span> Weitere Spiele
+            </h3>
+            <div class="space-y-2">
+              {otherGames.map((game) => (
+                <a
+                  href={game.slug}
+                  class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-cyan-500/30 transition-all text-sm group"
+                >
+                  <span class="font-medium text-stone-200 group-hover:text-cyan-400 transition-colors">
+                    {game.name} Nicknames
+                  </span>
+                  <span class="text-xs text-stone-400 group-hover:text-cyan-400 transition-colors">
+                    {game.genre} &rarr;
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Beliebte Social-Media Plattformen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>📱</span> Social-Media Schriften
+            </h3>
+            <div class="space-y-2">
+              <a
+                href="/plattform/discord"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#5865F2]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#5865F2] transition-colors">
+                  Discord Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/plattform/tiktok"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#25f4ee]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#25f4ee] transition-colors">
+                  TikTok Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/plattform/instagram"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#ec4899]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#ec4899] transition-colors">
+                  Instagram Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+</Layout>

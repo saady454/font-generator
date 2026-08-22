@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="handHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a14"/>
+      <stop offset="50%" stop-color="#121426"/>
+      <stop offset="100%" stop-color="#060810"/>
+    </linearGradient>
+    <linearGradient id="purpleGoldHand" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="50%" stop-color="#f472b6"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <filter id="handShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#handHeroBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="280" cy="200" r="260" fill="#c084fc" fill-opacity="0.10"/>
+  <circle cx="920" cy="460" r="280" fill="#f472b6" fill-opacity="0.08"/>
+
+  <!-- Subtle Lines -->
+  <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="1">
+    <line x1="80" y1="90" x2="1120" y2="90"/>
+    <line x1="80" y1="590" x2="1120" y2="590"/>
+  </g>
+
+  <!-- Header Badge -->
+  <g transform="translate(600, 60)" text-anchor="middle">
+    <rect x="-170" y="-18" width="340" height="36" rx="18" fill="#c084fc" fill-opacity="0.15" stroke="#c084fc" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="800" fill="#d8b4fe" letter-spacing="2">✍️ ELEGANT SCRIPT STUDIO</text>
+  </g>
+
+  <!-- Central Title -->
+  <text x="600" y="140" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+    Handschrift Generator: <tspan fill="url(#purpleGoldHand)">Schöne Handschrift kopieren</tspan>
+  </text>
+  <text x="600" y="175" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#94a3b8">
+    Elegante Kalligrafie, feine Script-Fonts &amp; persönliche Notizen für Instagram, WhatsApp &amp; TikTok
+  </text>
+
+  <!-- Main Generator Canvas Showcase Card -->
+  <g transform="translate(100, 215)" filter="url(#handShadow)">
+    <rect width="1000" height="400" rx="28" fill="#121526" stroke="#c084fc" stroke-opacity="0.3" stroke-width="1.5"/>
+
+    <!-- Inner Board -->
+    <rect x="25" y="25" width="950" height="350" rx="20" fill="#090b14" stroke="#ffffff" stroke-opacity="0.06"/>
+
+    <!-- Large Script Showcase: "Schöne Grüße" -->
+    <g transform="translate(500, 140)" text-anchor="middle">
+      <text y="0" font-family="Georgia, 'Brush Script MT', serif" font-size="64" font-style="italic" font-weight="700" fill="url(#purpleGoldHand)" letter-spacing="3">𝒮𝒸𝒽ö𝓃𝑒 𝐻𝒶𝓃𝒹𝓈𝒸𝒽𝓇𝒾𝒻𝓉</text>
+      <text y="55" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#94a3b8" letter-spacing="6">𝒦𝒶𝓁𝓁𝒾𝑔𝓇𝒶𝒻𝒾𝑒 &amp;bull; 𝒮𝒸𝓇𝒾𝓅𝓉 &amp;bull; 𝓝𝓸𝓽𝓲𝔃</text>
+    </g>
+
+    <!-- 4 Script Style Showcase Tiles Below -->
+    <g transform="translate(60, 260)">
+      
+      <g transform="translate(0, 0)">
+        <rect width="205" height="70" rx="14" fill="#171a2e" stroke="#c084fc" stroke-opacity="0.3"/>
+        <text x="20" y="26" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#c084fc" letter-spacing="1">KALLIGRAFIE</text>
+        <text x="20" y="52" font-family="Georgia, serif" font-size="17" font-style="italic" font-weight="700" fill="#ffffff">𝒵𝒾𝓉𝒶𝓉𝑒 &amp; 𝒩𝒶𝓂𝑒𝓃</text>
+      </g>
+
+      <g transform="translate(225, 0)">
+        <rect width="205" height="70" rx="14" fill="#171a2e" stroke="#f472b6" stroke-opacity="0.3"/>
+        <text x="20" y="26" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#f472b6" letter-spacing="1">SCRIPT STIL</text>
+        <text x="20" y="52" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#ffffff">𝓔𝓵𝓮𝓰𝓪𝓷𝓽𝓮 𝓑𝓲𝓸</text>
+      </g>
+
+      <g transform="translate(450, 0)">
+        <rect width="205" height="70" rx="14" fill="#171a2e" stroke="#fbbf24" stroke-opacity="0.3"/>
+        <text x="20" y="26" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#fbbf24" letter-spacing="1">BRUSH STIL</text>
+        <text x="20" y="52" font-family="Impact, sans-serif" font-size="16" font-weight="700" fill="#ffffff">𝑲𝒓𝒂𝒆𝒇𝒕𝒊𝒈 &amp; 𝑩𝒐𝒍𝒅</text>
+      </g>
+
+      <g transform="translate(675, 0)">
+        <rect width="205" height="70" rx="14" fill="#171a2e" stroke="#38bdf8" stroke-opacity="0.3"/>
+        <text x="20" y="26" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#38bdf8" letter-spacing="1">NOTIZSTIL</text>
+        <text x="20" y="52" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#ffffff">𝕃𝕠𝕔𝕜𝕖𝕣𝕖 ℕ𝕠𝕥𝕚𝕫</text>
+      </g>
+    </g>
+  </g>
+</svg>

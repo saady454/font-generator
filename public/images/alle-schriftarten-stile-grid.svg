@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grid14Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="50%" stop-color="#14142b"/>
+      <stop offset="100%" stop-color="#07090e"/>
+    </linearGradient>
+    <linearGradient id="grid14Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <filter id="grid14Shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#grid14Bg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="240" cy="200" r="240" fill="#38bdf8" fill-opacity="0.08"/>
+  <circle cx="960" cy="460" r="240" fill="#ec4899" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 45)" text-anchor="middle">
+    <rect x="-190" y="-16" width="380" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">TYPOGRAFIE-KATALOG</text>
+    <text y="46" font-family="system-ui, sans-serif" font-size="32" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Die 14 Schriftstile &amp; <tspan fill="url(#grid14Grad)">ihre Einsatzbereiche</tspan>
+    </text>
+    <text y="74" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">
+      Finde den perfekten Look für jedes Social-Media-Profil, Gaming-Tags und Chat-Nachrichten
+    </text>
+  </g>
+
+  <!-- 2 Columns with 7 rows each (14 styles total) -->
+  <g transform="translate(70, 135)">
+    
+    <!-- Left Column (Styles 1-7) -->
+    <g transform="translate(0, 0)">
+      
+      <!-- 1. Fette Schrift -->
+      <g transform="translate(0, 0)">
+        <rect width="510" height="64" rx="12" fill="#111827" stroke="#fbbf24" stroke-opacity="0.3" stroke-width="1.2"/>
+        <text x="20" y="27" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#fbbf24">1. FETTE SCHRIFT</text>
+        <text x="20" y="49" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">𝗦𝗰𝗵𝗿𝗶𝗳𝘁𝗮𝗿𝘁𝗲𝗻 𝗧𝗲𝘅𝘁</text>
+        <text x="490" y="38" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Bios &amp; Überschriften</text>
+      </g>
+
+      <!-- 2. Kursive Schrift -->
+      <g transform="translate(0, 72)">
+        <rect width="510" height="64" rx="12" fill="#111827" stroke="#f43f5e" stroke-opacity="0.3" stroke-width="1.2"/>
+        <text x="20" y="27" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#f43f5e">2. KURSIVE SCHRIFT</text>
+        <text x="20" y="49" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">𝓢𝓬𝓱𝓻𝓲𝓯𝓽𝓪𝓻𝓽𝓮𝓷 𝓣𝓮𝔁𝓽</text>
+        <text x="490" y="38" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Zitate &amp; elegante Bios</text>
+      </g>
+
+      <!-- 3. Gotische Schrift -->
+      <g transform="translate(0, 144)">
+        <rect width="510" height="64" rx="12" fill="#111827" stroke="#818cf8" stroke-opacity="0.3" stroke-width="1.2"/>
+        <text x="20" y="27" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#818cf8">3. GOTISCHE FRAKTUR</text>
+        <text x="20" y="49" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">𝕾𝖈𝖍𝖗𝖎𝖋𝖙𝖆𝖗𝖙𝖊𝖓 𝕿𝖊𝖝𝖙</text>
+        <text x="490" y="38" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Markante Profile &amp; Clans</text>
+      </g>
+
+      <!-- 4. Bubble Schrift -->
+      <g transform="translate(0, 216)">
+        <rect width="510" height="64" rx="12" fill="#111827" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.2"/>
+        <text x="20" y="27" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#38bdf8">4. BUBBLE SCHRIFT</text>
+        <text x="20" y="49" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Ⓢⓒⓗⓡⓘⓕⓣⓐⓡⓣⓔⓝ Ⓣⓔⓧⓣ</text>
+        <text x="490" y="38" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Social Media &amp; Chats</text>
+      </g>
+
+      <!-- 5. Kleine Schrift -->
+      <g transform="translate(0, 288)">
+        <rect width="510" height="64" rx="12" fill="#111827" stroke="#10b981" stroke-opacity="0.3" stroke-width="1.2"/>
+        <text x="20" y="27" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#10b981">5. KLEINE SCHRIFT (SMALL CAPS)</text>
+        <text x="20" y="49" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">sᴄʜʀɪғᴛᴀʀᴛᴇɴ ᴛᴇxᴛ</text>
+        <text x="490" y="38" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Kompakte Profile</text>
+      </g>
+
+      <!-- 6. Graffiti Schrift -->
+      <g transform="translate(0, 360)">
+        <rect width="510" height="64" rx="12" fill="#111827" stroke="#ec4899" stroke-opacity="0.3" stroke-width="1.2"/>
+        <text x="20" y="27" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#ec4899">6. GRAFFITI SCHRIFT</text>
+        <text x="20" y="49" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">𝕾𝖈𝖍𝖗𝖎𝖋𝖙𝖆𝖗𝖙𝖊𝖓 𝕿𝖊𝖝𝖙 ⚡</text>
+        <text x="490" y="38" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Kreative Urban Posts</text>
+      </g>
+
+      <!-- 7. Glitch Schrift -->
+      <g transform="translate(0, 432)">
+        <rect width="510" height="64" rx="12" fill="#111827" stroke="#a855f7" stroke-opacity="0.3" stroke-width="1.2"/>
+        <text x="20" y="27" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#a855f7">7. GLITCH (ZALGO) SCHRIFT</text>
+        <text x="20" y="49" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">S̶c̶h̶r̶i̶f̶t̶a̶r̶t̶e̶n̶ T̶e̶x̶t̶</text>
+        <text x="490" y="38" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Gaming &amp; Cyber-Looks</text>
+      </g>
+
+    </g>
+
+    <!-- Right Column (Styles 8-14) -->
+    <g transform="translate(550, 0)">
+      
+      <!-- 8. Durchgestrichen -->
+      <g transform="translate(0, 0)">
+        <rect width="510" height="64" rx="12" fill="#111827" stroke="#cbd5e1" stroke-opacity="0.3" stroke-width="1.2"/>
+        <text x="20" y="27" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#cbd5e1">8. DURCHGESTRICHENE SCHRIFT</text>
+        <text x="20" y="49" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">S̶c̶h̶r̶i̶f̶t̶a̶r̶t̶e̶n̶</text>
+        <text x="490" y="38" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Humorvolle Texte</text>
+      </g>
+
+      <!-- 9. Tattoo Schrift -->
+      <g transform="translate(0, 72)">
+        <rect width="510" height="64" rx="12" fill="#111827" stroke="#f59e0b" stroke-opacity="0.3" stroke-width="1.2"/>
+        <text x="20" y="27" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#f59e0b">9. TATTOO SCHRIFT</text>
+        <text x="20" y="49" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">𝔖𝔠𝔥𝔯𝔦𝔣𝔱𝔞𝔯𝔱𝔢𝔫 𝔗𝔢𝔵𝔱</text>
+        <text x="490" y="38" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Markante Schriftzüge</text>
+      </g>
+
+      <!-- 10. Handschrift -->
+      <g transform="translate(0, 144)">
+        <rect width="510" height="64" rx="12" fill="#111827" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1.2"/>
+        <text x="20" y="27" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#22c55e">10. HANDSCHRIFT (SCRIPT)</text>
+        <text x="20" y="49" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">𝒮𝒸𝒽𝓇𝒾𝒻𝓉𝒶𝓇𝓉𝑒𝓃 𝒯𝑒𝓍𝓉</text>
+        <text x="490" y="38" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Persönliche Grüße</text>
+      </g>
+
+      <!-- 11. Unterschrift -->
+      <g transform="translate(0, 216)">
+        <rect width="510" height="64" rx="12" fill="#111827" stroke="#06b6d4" stroke-opacity="0.3" stroke-width="1.2"/>
+        <text x="20" y="27" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#06b6d4">11. UNTERSCHRIFT</text>
+        <text x="20" y="49" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">𝓼𝓬𝓱𝓻𝓲𝓯𝓽𝓪𝓻𝓽𝓮𝓷 𝓽𝓮𝔁𝓽 ✍</text>
+        <text x="490" y="38" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Signatur-Texte</text>
+      </g>
+
+      <!-- 12. Dekorative Schrift -->
+      <g transform="translate(0, 288)">
+        <rect width="510" height="64" rx="12" fill="#111827" stroke="#e11d48" stroke-opacity="0.3" stroke-width="1.2"/>
+        <text x="20" y="27" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#e11d48">12. DEKORATIVE SCHRIFT</text>
+        <text x="20" y="49" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">★ 𝕊𝕔𝕙𝕣𝕚𝕗𝕥𝕒𝕣𝕥𝕖𝕟 ★</text>
+        <text x="490" y="38" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Aesthetic Bios</text>
+      </g>
+
+      <!-- 13. Eckige Schrift -->
+      <g transform="translate(0, 360)">
+        <rect width="510" height="64" rx="12" fill="#111827" stroke="#3b82f6" stroke-opacity="0.3" stroke-width="1.2"/>
+        <text x="20" y="27" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#3b82f6">13. ECKIGE SCHRIFT (SQUARED)</text>
+        <text x="20" y="49" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">🅂🄲🄷🅁🄸🄵🅃🄰🅁🅃🄴🄽</text>
+        <text x="490" y="38" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Gaming &amp; Techno</text>
+      </g>
+
+      <!-- 14. Wellige Schrift -->
+      <g transform="translate(0, 432)">
+        <rect width="510" height="64" rx="12" fill="#111827" stroke="#14b8a6" stroke-opacity="0.3" stroke-width="1.2"/>
+        <text x="20" y="27" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#14b8a6">14. WELLIGE SCHRIFT</text>
+        <text x="20" y="49" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">~*~ 𝒮𝒸𝒽𝓇𝒾𝒻𝓉 ~*~</text>
+        <text x="490" y="38" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Verspielte Profile</text>
+      </g>
+
+    </g>
+
+  </g>
+</svg>

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="splitGothBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a10"/>
+      <stop offset="100%" stop-color="#121624"/>
+    </linearGradient>
+    <linearGradient id="leftSideGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c2134"/>
+      <stop offset="100%" stop-color="#0f1320"/>
+    </linearGradient>
+    <linearGradient id="rightSideGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b2e"/>
+      <stop offset="100%" stop-color="#120e20"/>
+    </linearGradient>
+    <filter id="splitShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#splitGothBg)"/>
+
+  <!-- Title -->
+  <g transform="translate(600, 60)" text-anchor="middle">
+    <rect x="-170" y="-18" width="340" height="36" rx="18" fill="#d97706" fill-opacity="0.15" stroke="#d97706" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="sans-serif" font-size="13" font-weight="800" fill="#fbbf24" letter-spacing="1.5">TECHNISCHER VERGLEICH</text>
+    
+    <text y="55" font-family="sans-serif" font-size="32" font-weight="900" fill="#ffffff">
+      Unicode-Gotisch <tspan fill="#94a3b8">vs.</tspan> Echte Gothic-Fontdatei
+    </text>
+    <text y="85" font-family="sans-serif" font-size="14" fill="#94a3b8">
+      Wann sich kopierbarer Text lohnt und wann eine installierbare Schriftdatei nötig ist
+    </text>
+  </g>
+
+  <!-- Two Split Panels -->
+  <g transform="translate(80, 180)">
+    
+    <!-- Left Panel: Unicode Gotisch (Copy &amp; Paste) -->
+    <g transform="translate(0, 0)" filter="url(#splitShadow)">
+      <rect width="500" height="400" rx="20" fill="url(#leftSideGrad)" stroke="#d97706" stroke-opacity="0.4" stroke-width="1.5"/>
+      
+      <g transform="translate(30, 30)">
+        <rect width="180" height="28" rx="8" fill="#d97706" fill-opacity="0.2"/>
+        <text x="90" y="19" font-family="sans-serif" font-size="12" font-weight="800" fill="#fbbf24" text-anchor="middle">📱 UNICODE-GOTISCH</text>
+        
+        <text y="65" font-family="sans-serif" font-size="18" font-weight="800" fill="#ffffff">Kopierbarer Zeichentext</text>
+        <text y="88" font-family="sans-serif" font-size="12" fill="#94a3b8">Für Social Media, Chats &amp; Profile</text>
+
+        <!-- Preview Box -->
+        <g transform="translate(0, 110)">
+          <rect width="440" height="85" rx="12" fill="#090b12" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="20" y="38" font-family="monospace" font-size="11" fill="#64748b">Ausgabe im Zwischenspeicher:</text>
+          <text x="20" y="65" font-family="serif" font-size="24" font-weight="900" fill="#fbbf24">𝕲𝖔𝖙𝖎𝖘𝖈𝖍𝖊 𝕾𝖈𝖍𝖗𝖎𝖋𝖙 ⚔️</text>
+        </g>
+
+        <!-- Bullet List -->
+        <g transform="translate(0, 225)" font-family="sans-serif" font-size="13" fill="#cbd5e1">
+          <text y="0"><tspan fill="#10b981" font-weight="bold">✓</tspan> Keine Installation erforderlich</text>
+          <text y="26"><tspan fill="#10b981" font-weight="bold">✓</tspan> Funktioniert direkt in Instagram, Discord &amp; Games</text>
+          <text y="52"><tspan fill="#10b981" font-weight="bold">✓</tspan> 1-Klick in Zwischenablage</text>
+          <text y="78" fill="#f87171">✕ Eingeschränkte typografische Kontrolle</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Right Panel: Font File (.ttf / .otf) -->
+    <g transform="translate(540, 0)" filter="url(#splitShadow)">
+      <rect width="500" height="400" rx="20" fill="url(#rightSideGrad)" stroke="#a855f7" stroke-opacity="0.4" stroke-width="1.5"/>
+      
+      <g transform="translate(30, 30)">
+        <rect width="200" height="28" rx="8" fill="#a855f7" fill-opacity="0.2"/>
+        <text x="100" y="19" font-family="sans-serif" font-size="12" font-weight="800" fill="#c084fc" text-anchor="middle">💻 ECHTE FONT-DATEI</text>
+        
+        <text y="65" font-family="sans-serif" font-size="18" font-weight="800" fill="#ffffff">Schriftdatei (.TTF / .OTF / WOFF2)</text>
+        <text y="88" font-family="sans-serif" font-size="12" fill="#94a3b8">Für Photoshop, Illustrator, Print &amp; Web</text>
+
+        <!-- Preview Box -->
+        <g transform="translate(0, 110)">
+          <rect width="440" height="85" rx="12" fill="#090b12" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="20" y="38" font-family="monospace" font-size="11" fill="#64748b">Vektor-Schrift im Designprogramm:</text>
+          <text x="20" y="65" font-family="'Times New Roman', serif" font-size="22" font-weight="bold" fill="#c084fc">Gothic Blackletter Pro [Vektor]</text>
+        </g>
+
+        <!-- Bullet List -->
+        <g transform="translate(0, 225)" font-family="sans-serif" font-size="13" fill="#cbd5e1">
+          <text y="0"><tspan fill="#10b981" font-weight="bold">✓</tspan> Volle Kontrolle über Kerning &amp; Ligaturen</text>
+          <text y="26"><tspan fill="#10b981" font-weight="bold">✓</tspan> Perfekt für Logos, Poster, Tattoos &amp; Merch</text>
+          <text y="52"><tspan fill="#10b981" font-weight="bold">✓</tspan> Beliebige Schriftgrößen ohne Qualitätsverlust</text>
+          <text y="78" fill="#f87171">✕ Erfordert Installation &amp; passende Lizenz</text>
+        </g>
+      </g>
+    </g>
+
+  </g>
+</svg>

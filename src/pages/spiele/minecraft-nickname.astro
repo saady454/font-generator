@@ -1,0 +1,453 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TextStyleConverter from '../../components/TextStyleConverter.astro';
+import FontStyleGrid from '../../components/FontStyleGrid.astro';
+import GameEnhancedSections from '../../components/GameEnhancedSections.astro';
+import { GAMES_DATA, type GameInfo } from '../../data/game-metadata';
+import { GAME_NICKNAMES_DATA } from '../../data/game-nicknames';
+import { NAVIGATION_DATA } from '../../data/navigation';
+
+const gameInfo: GameInfo = GAMES_DATA['minecraft'] || {
+  id: 'minecraft',
+  name: 'Minecraft',
+  slug: '/spiele/minecraft-nickname',
+  genre: 'Sandbox / Survival',
+  description: 'Kreative Minecraft Nicknames, Symbole und Schriftarten für Java Edition, Bedrock und Server.',
+  exampleNicknames: [
+    '⚔️ 𝕯𝖆𝖗𝖐𝖂𝖔𝖑𝖋 ⚔️',
+    '【 ᴘ ɪ x ᴇ ʟ _ ᴋ ɪ ɴ ɢ 】',
+    '⚡ ʟ ᴜ ɴ ᴀ ʀ _ ᴄ ʀ ᴀ ꜰ ᴛ ⚡',
+    '꧁༺ ɴ ᴇ ᴛ ʜ ᴇ ʀ ༻꧂',
+    '⛏️ ʙ ᴜ ɪ ʟ ᴅ ᴇ ʀ ⛏️',
+  ],
+  namingRules: [
+    'Java Edition Profilnamen können bis zu 16 Zeichen lang sein.',
+    'Namensänderungen für Java Edition sind grundsätzlich einmal alle 30 Tage möglich.',
+    'Auf Multiplayer-Servern können durch Plugins (/nick) zusätzliche Unicode-Symbole genutzt werden.',
+  ],
+  recommendedStyles: ['Fett', 'Gotisch', 'Symbole & Trenner'],
+};
+
+const gameSectionsConfig = GAME_NICKNAMES_DATA['minecraft'];
+
+const minecraftFaqs = [
+  {
+    q: 'Kann ich jeden Unicode-Nickname in Minecraft verwenden?',
+    a: 'Nein, das sollte nicht pauschal angenommen werden. Unicode-Zeichen können je nach Eingabefeld, Edition, Server und Darstellung unterschiedlich behandelt werden. Teste die kopierte Variante deshalb direkt im vorgesehenen Feld.',
+  },
+  {
+    q: 'Wie finde ich einen guten Minecraft-Nickname?',
+    a: 'Starte mit einem kurzen Begriff und kombiniere ihn mit einem Thema wie PvP, Survival, Fantasy, Redstone oder Bauen. Danach kannst du Schriftstile und Symbole ausprobieren.',
+  },
+  {
+    q: 'Sind dekorative Minecraft-Nicknames besser?',
+    a: 'Nicht unbedingt. Ein auffälliger Name kann gut aussehen, aber Lesbarkeit und Kompatibilität sind wichtiger. Eine einfache Variante ist deshalb oft die sicherere Wahl.',
+  },
+  {
+    q: 'Kann ich meinen Namen später ändern?',
+    a: 'Bei Java Edition sind Namensänderungen grundsätzlich möglich. Minecraft nennt für die Änderung des Java-Namens ein Intervall von 30 Tagen. Prüfe vor einer Änderung die aktuellen Kontoregeln.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": minecraftFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+
+const otherGames = Object.values(GAMES_DATA).filter((g) => g.id !== 'minecraft');
+---
+
+<Layout
+  title="Minecraft Nickname: Coole Namen mit Schrift & Symbolen"
+  description="Minecraft Nickname gesucht? Entdecke coole Namen, Unicode-Schriftstile und Symbole. Erstelle Varianten, kopiere sie und prüfe die Kompatibilität."
+  canonicalUrl="/spiele/minecraft-nickname/"
+  schema={faqSchema}
+>
+  <main class="min-h-screen bg-[#0a0a08] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      
+      <!-- Breadcrumbs Navigation -->
+      <nav class="flex items-center gap-2 text-xs sm:text-sm text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Home</a>
+        <span>/</span>
+        <a href="/spiele" class="hover:text-amber-400 transition-colors">Gaming Nicknames</a>
+        <span>/</span>
+        <span class="text-stone-200">Minecraft</span>
+      </nav>
+
+      <!-- Page Header & H1 -->
+      <div class="text-center max-w-4xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
+          <span>⛏️</span> Java Edition &bull; Bedrock &bull; Multiplayer &bull; 3–16 Zeichen
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
+          Minecraft Nickname: Coole Namen erstellen und direkt kopieren
+        </h1>
+        <p class="text-base sm:text-lg text-stone-300 max-w-2xl mx-auto">
+          Finde kreative Minecraft-Nicknames, teste Schriftstile und Symbole und kopiere deine Lieblingsvariante direkt.
+        </p>
+      </div>
+
+      <!-- Main Interactive Font Converter Component -->
+      <TextStyleConverter
+        defaultText="PixelKing"
+        pageSlug="minecraft"
+        filterCategory="alle"
+        showCategoryTabs={true}
+        showPresets={true}
+        maxChars={16}
+        limit={12}
+        showMoreButton={true}
+      />
+
+      <!-- Content Grid: Left Column (Tools + Editorial Article) & Right Sidebar -->
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- LEFT COLUMN (lg:col-span-2): Tools first, followed by Article Content -->
+        <div class="lg:col-span-2 space-y-8">
+          
+          <!-- Generator & Tool Cards (Gaming Enhancements) -->
+          {gameSectionsConfig && (
+            <GameEnhancedSections
+              gameData={gameSectionsConfig}
+              gameId="minecraft"
+            />
+          )}
+
+          <!-- IMAGE 1: Featured Hero Image -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/minecraft-nickname-hero.svg"
+              alt="Minecraft Nickname mit verschiedenen Schriftstilen und Gaming-Symbolen"
+              class="w-full h-auto aspect-video object-cover"
+              loading="eager"
+            />
+            <p class="text-xs text-stone-400 p-3 text-center border-t border-white/5 bg-[#0a0a08]">
+              Kreative Nickname-Ideen mit unterschiedlichen Schriftstilen und Symbolen.
+            </p>
+          </div>
+
+          <!-- Section 1: Intro -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein guter <strong>Minecraft Nickname</strong> soll auffallen, leicht zu merken sein und zum eigenen Spielstil passen. Genau hier wird die Suche oft schwierig: Viele kurze Namen sind bereits vergeben, während lange Kombinationen mit Zahlen schnell beliebig wirken. Ein stylischer Nickname mit passenden Zeichen kann deshalb eine gute Ausgangsidee sein.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Mit einem Minecraft Nickname Generator kannst du deinen Namen mit verschiedenen Unicode-Stilen, Symbolen und Varianten ausprobieren. Wichtig ist aber: Eine dekorative Unicode-Version ist nicht automatisch für jedes Minecraft-Eingabefeld geeignet. Deshalb sollte ein Name immer dort getestet werden, wo er tatsächlich verwendet werden soll. Hier erfährst du, wie du einen passenden Namen findest, welche Stile sinnvoll sind und worauf du beim Kopieren achten solltest.
+            </p>
+          </div>
+
+          <!-- Section 2: So findest du einen passenden Namen & Welche Namen wirken gut -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Minecraft Nickname Generator: So findest du einen passenden Namen
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Der schnellste Weg ist eine Kombination aus einem kurzen Grundnamen und einem klaren Stil. Schreibe zuerst einen Begriff, der zu dir oder deinem Spielstil passt. Danach kannst du Varianten mit fetten, kursiven oder gotischen Zeichen ausprobieren.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Besonders praktisch sind Namen, die auch ohne Dekoration gut funktionieren. Beispiele sind etwa <em>DarkWolf</em>, <em>PixelBauer</em>, <em>LunarCraft</em> oder <em>NetherFox</em>. Anschließend kannst du eine stilisierte Version testen, zum Beispiel <code class="text-purple-400 font-mono font-bold">𝕯𝖆𝖗𝖐𝖂𝖔𝖑𝖋</code> oder <code class="text-emerald-400 font-mono font-bold">⚔️ PixelBauer ⚔️</code>.
+            </p>
+
+            <h3 class="text-lg font-bold text-white pt-3">
+              Welche Namen wirken gut?
+            </h3>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein starker Nickname ist meistens:
+            </p>
+            <ul class="space-y-2 text-sm text-stone-300 leading-relaxed list-disc list-inside">
+              <li>kurz und einfach zu lesen</li>
+              <li>leicht auszusprechen</li>
+              <li>passend zum Spielstil</li>
+              <li>nicht mit unnötigen Zahlen überladen</li>
+              <li>auch ohne Sonderzeichen noch erkennbar</li>
+            </ul>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed pt-2">
+              Für PvP passen eher klare oder aggressive Begriffe. Builder können Wörter aus der Minecraft-Welt nutzen. Für Survival oder Fantasy funktionieren Natur-, Tier- und Abenteuerbegriffe oft besser.
+            </p>
+          </div>
+
+          <!-- Section 3: Coole Minecraft Nicknames mit Schriftarten -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Coole Minecraft Nicknames mit Schriftarten
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein Schriftgenerator verändert nicht deine installierte Schriftart. Stattdessen werden normale Buchstaben in Zeichen aus Unicode-Schriftblöcken umgewandelt. Dadurch kannst du eine Variante kopieren und in ein unterstütztes Textfeld einfügen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für Gaming-Namen eignen sich vor allem:
+            </p>
+
+            <!-- Table of Styles -->
+            <div class="overflow-x-auto my-4 border border-white/10 rounded-2xl">
+              <table class="w-full text-left text-sm text-stone-300">
+                <thead class="bg-white/5 text-xs uppercase text-stone-400">
+                  <tr>
+                    <th scope="col" class="px-4 py-3">Stil</th>
+                    <th scope="col" class="px-4 py-3">Wirkung</th>
+                    <th scope="col" class="px-4 py-3">Beispiel</th>
+                    <th scope="col" class="px-4 py-3">Kategorie Link</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Fett</td>
+                    <td class="px-4 py-3 text-stone-300">klar und stark</td>
+                    <td class="px-4 py-3 font-mono text-amber-400">𝐏𝐢𝐱𝐞𝐥𝐊𝐢𝐧𝐠</td>
+                    <td class="px-4 py-3 text-xs"><a href="/schrift/fette-schrift" class="text-amber-400 hover:underline font-semibold">Fette Schrift</a></td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Kursiv</td>
+                    <td class="px-4 py-3 text-stone-300">elegant und leicht</td>
+                    <td class="px-4 py-3 font-mono text-cyan-300">𝑳𝒖𝒏𝒂𝒓</td>
+                    <td class="px-4 py-3 text-xs"><a href="/schrift/kursive-schrift" class="text-cyan-400 hover:underline font-semibold">Kursive Schrift</a></td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Gotisch</td>
+                    <td class="px-4 py-3 text-stone-300">dunkel und mystisch</td>
+                    <td class="px-4 py-3 font-mono text-purple-400">𝕯𝖆𝖗𝖐𝖂𝖔𝖑𝖋</td>
+                    <td class="px-4 py-3 text-xs"><a href="/schrift/gotische-schrift" class="text-purple-400 hover:underline font-semibold">Gotische Schrift</a></td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Dekorativ</td>
+                    <td class="px-4 py-3 text-stone-300">auffällig</td>
+                    <td class="px-4 py-3 font-mono text-pink-400">꧁CraftWolf꧂</td>
+                    <td class="px-4 py-3 text-xs"><a href="/symbole" class="text-pink-400 hover:underline font-semibold">Symbole</a></td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Symbole</td>
+                    <td class="px-4 py-3 text-stone-300">Gaming-Look</td>
+                    <td class="px-4 py-3 font-mono text-emerald-400">⚔️ CraftWolf ⚔️</td>
+                    <td class="px-4 py-3 text-xs"><a href="/symbole" class="text-emerald-400 hover:underline font-semibold">Symbole &amp; Emojis</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
+              Allerdings unterstützt nicht jedes Spiel oder Eingabefeld jedes Unicode-Zeichen. Deshalb solltest du zuerst eine einfache Variante bereithalten. Wenn ein Zeichen als Kästchen erscheint oder beim Einfügen entfernt wird, ist eine andere Version die bessere Wahl.
+            </p>
+          </div>
+
+          <!-- IMAGE 2: Stile Vergleich -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/minecraft-nickname-stile-vergleich.svg"
+              alt="Verschiedene Schriftstile für Gaming-Nicknames"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Fette, kursive, gotische und dekorative Varianten im Vergleich.
+            </p>
+          </div>
+
+          <!-- Section 4: Minecraft Nickname kopieren: Schritt für Schritt -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Minecraft Nickname kopieren: Schritt für Schritt
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Die Anwendung ist einfach:
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span>
+                <p class="text-xs sm:text-sm text-stone-300">Öffne den Minecraft-Nickname-Generator.</p>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span>
+                <p class="text-xs sm:text-sm text-stone-300">Gib deinen gewünschten Namen ein.</p>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span>
+                <p class="text-xs sm:text-sm text-stone-300">Prüfe mehrere Schriftstile.</p>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">4</span>
+                <p class="text-xs sm:text-sm text-stone-300">Kopiere deine bevorzugte Variante.</p>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3 sm:col-span-2">
+                <span class="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">5</span>
+                <p class="text-xs sm:text-sm text-stone-300">Füge sie in das gewünschte Minecraft-Feld ein und kontrolliere die Darstellung vor dem Speichern.</p>
+              </div>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed pt-2">
+              Wenn du einen Namen für einen Server verwendest, kann zusätzlich die jeweilige Server-Software entscheidend sein. Ein Server kann eigene Regeln für Namen, Farben oder Formatierungen haben. Daher ist ein Test im konkreten Spielumfeld sinnvoll.
+            </p>
+          </div>
+
+          <!-- IMAGE 3: Workflow Guide -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/minecraft-nickname-generator-workflow.svg"
+              alt="Minecraft-Nickname-Generator mit Kopieren-Funktion"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Nickname auswählen, kopieren und anschließend im gewünschten Eingabefeld testen.
+            </p>
+          </div>
+
+          <!-- Section 5: Minecraft-Nickname für Server auswählen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Minecraft-Nickname für Server auswählen
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Auf Multiplayer-Servern spielt der Kontext eine zusätzliche Rolle. Ein Name für einen Survival-Server kann anders wirken als ein Name für PvP, Skyblock oder Roleplay. Prüfe deshalb, ob der Stil zur jeweiligen Community passt. Außerdem solltest du Regeln des Servers beachten, bevor du Sonderzeichen, Farben oder spezielle Namensformatierungen verwendest.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Wenn du mehrere Varianten gefunden hast, lies sie einmal laut und ohne den Generator anzusehen. Ein guter Name sollte auch dann verständlich bleiben. Danach kannst du die schönste Version kopieren und direkt testen.
+            </p>
+          </div>
+
+          <!-- Section 6: Was ist bei Minecraft-Namen wichtig? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Was ist bei Minecraft-Namen wichtig?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Minecraft hat unterschiedliche Namenskonzepte. Besonders wichtig ist die Unterscheidung zwischen dem Java-Edition-Benutzernamen und einem Bedrock-Gamertag. Ein dekorierter Unicode-Text ist deshalb nicht automatisch dasselbe wie der offizielle Kontoname.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für Java Edition bietet Minecraft die Verwaltung des Profilnamens über das eigene Konto an. Nach Angaben der <a href="https://help.minecraft.net/hc/en-us/articles/25119638122509-Update-Banned-Skins-or-Usernames-in-Minecraft" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 underline font-semibold">offiziellen Minecraft-Hilfe zur Namensänderung</a> kann ein Java-Name <strong>einmal alle 30 Tage geändert werden</strong>.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Aus diesem Grund lohnt es sich, einen Namen langfristig auszuwählen. Vermeide private Daten, unnötige Zahlenfolgen und Trends, die schnell veralten. Ein kurzer, wiedererkennbarer Name funktioniert meist besser als eine überladene Zeichenkombination.
+            </p>
+          </div>
+
+          <!-- IMAGE 4: Basis vs. Deko -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/minecraft-nickname-basis-vs-deko.svg"
+              alt="Vergleich zwischen einfachem und dekorativem Gaming-Nickname"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Ein klarer Basisname bleibt praktisch, während dekorative Varianten für zusätzliche Gestaltung sorgen.
+            </p>
+          </div>
+
+          <!-- Section 7: Häufige Fragen zum Minecraft Nickname -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> Häufige Fragen zum Minecraft Nickname
+            </h2>
+            <div class="space-y-4">
+              {minecraftFaqs.map((faq) => (
+                <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
+                  <h3 class="text-sm sm:text-base font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 8: Fazit -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Fazit
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein guter Minecraft-Nickname muss nicht kompliziert sein. Entscheidend sind Wiedererkennung, Lesbarkeit und ein Stil, der zu deinem Spiel passt. Nutze einen Generator zunächst für Ideen und Varianten, statt blind möglichst viele Sonderzeichen einzubauen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Am besten erstellst du zwei Versionen: eine schlichte Basis und eine dekorative Variante. So kannst du schnell wechseln, falls ein Zeichen nicht unterstützt wird. Mit einem kurzen Namen, passenden Symbolen und einem klaren Stil bekommst du einen Nickname, der auch langfristig gut funktioniert.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Entdecke auch unsere <a href="/schrift" class="text-amber-400 hover:text-amber-300 underline font-semibold">Schriftarten Übersicht</a> oder teste unseren universellen <a href="/" class="text-amber-400 hover:text-amber-300 underline font-semibold">Schriftarten Generator</a>.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- RIGHT SIDEBAR COLUMN -->
+        <div class="space-y-6">
+          
+          <!-- Beliebte Schriftstile -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>✨</span> Beliebte Gaming Stile
+            </h3>
+            <FontStyleGrid />
+          </div>
+
+          <!-- Weitere Spiele -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>🎮</span> Weitere Spiele
+            </h3>
+            <div class="space-y-2">
+              {otherGames.map((game) => (
+                <a
+                  href={game.slug}
+                  class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-emerald-500/30 transition-all text-sm group"
+                >
+                  <span class="font-medium text-stone-200 group-hover:text-emerald-400 transition-colors">
+                    {game.name} Nicknames
+                  </span>
+                  <span class="text-xs text-stone-400 group-hover:text-emerald-400 transition-colors">
+                    {game.genre} &rarr;
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Beliebte Social-Media Plattformen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>📱</span> Social-Media Schriften
+            </h3>
+            <div class="space-y-2">
+              <a
+                href="/plattform/discord"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#5865F2]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#5865F2] transition-colors">
+                  Discord Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/plattform/tiktok"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#25f4ee]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#25f4ee] transition-colors">
+                  TikTok Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/plattform/instagram"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#ec4899]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#ec4899] transition-colors">
+                  Instagram Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+</Layout>

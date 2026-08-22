@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pipeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d1a"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="pipeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="pipeShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#pipeBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#38bdf8" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#f59e0b" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-190" y="-16" width="380" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">TEXT-RENDERING PIPELINE</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Wie Text auf dem <tspan fill="url(#pipeGrad)">Bildschirm entsteht</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Unicode-Zeichen ➔ Schriftart ➔ Glyphen-Prüfung ➔ Bildschirmausgabe oder Tofu (☐)
+    </text>
+  </g>
+
+  <!-- Pipeline Diagram Layout -->
+  <g transform="translate(80, 150)">
+    
+    <!-- Step 1: Unicode Codepoint -->
+    <g transform="translate(0, 80)" filter="url(#pipeShadow)">
+      <rect width="220" height="280" rx="18" fill="#111827" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="90" height="24" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+        <text x="45" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#38bdf8">1. UNICODE</text>
+
+        <rect y="35" width="180" height="75" rx="10" fill="#080d1a" stroke="#38bdf8" stroke-opacity="0.2"/>
+        <text x="90" y="70" text-anchor="middle" font-family="monospace" font-size="20" font-weight="bold" fill="#ffffff">U+1D43B</text>
+        <text x="90" y="95" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Mathematical Script H</text>
+
+        <g transform="translate(0, 130)" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="700" fill="#38bdf8">Abstrakter Wert:</text>
+          <text x="0" y="20">Der Text speichert</text>
+          <text x="0" y="38">nur diese Nummer.</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Arrow 1 to 2 -->
+    <g transform="translate(230, 210)" stroke="#38bdf8" stroke-width="3" fill="none">
+      <line x1="0" y1="0" x2="40" y2="0"/>
+      <polygon points="40,-6 52,0 40,6" fill="#38bdf8" stroke="none"/>
+    </g>
+
+    <!-- Step 2: Font Engine Lookup -->
+    <g transform="translate(290, 80)" filter="url(#pipeShadow)">
+      <rect width="250" height="280" rx="18" fill="#111827" stroke="#818cf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="110" height="24" rx="6" fill="#818cf8" fill-opacity="0.15"/>
+        <text x="55" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#818cf8">2. SCHRIFTART</text>
+
+        <rect y="35" width="210" height="75" rx="10" fill="#080d1a" stroke="#818cf8" stroke-opacity="0.2"/>
+        <text x="105" y="68" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Glyphen-Tabelle</text>
+        <text x="105" y="92" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#818cf8">Suche nach U+1D43B...</text>
+
+        <g transform="translate(0, 130)" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="700" fill="#818cf8">Prüfung im System:</text>
+          <text x="0" y="20">Besitzt die Schriftart</text>
+          <text x="0" y="38">eine passende Zeichnung?</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Branching Arrows 2 to 3A and 3B -->
+    <g transform="translate(550, 180)" stroke-width="3" fill="none">
+      <!-- Upper branch (Success) -->
+      <path d="M 0,40 Q 25,40 25,-20 T 50,-20" stroke="#22c55e"/>
+      <polygon points="50,-26 62,-20 50,-14" fill="#22c55e" stroke="none"/>
+      
+      <!-- Lower branch (Fallback / Tofu) -->
+      <path d="M 0,40 Q 25,40 25,100 T 50,100" stroke="#ef4444"/>
+      <polygon points="50,94 62,100 50,106" fill="#ef4444" stroke="none"/>
+    </g>
+
+    <!-- Step 3A: Success (Glyph Rendered) -->
+    <g transform="translate(620, 0)" filter="url(#pipeShadow)">
+      <rect width="420" height="200" rx="18" fill="#111827" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 20)">
+        <rect width="180" height="24" rx="6" fill="#22c55e" fill-opacity="0.15"/>
+        <text x="90" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#22c55e">✓ GLYPHE GEFUNDEN</text>
+
+        <rect y="35" width="370" height="65" rx="10" fill="#080d1a" stroke="#22c55e" stroke-opacity="0.2"/>
+        <text x="185" y="75" text-anchor="middle" font-family="monospace" font-size="32" font-weight="bold" fill="#22c55e">𝓗</text>
+
+        <text x="0" y="125" font-family="system-ui, sans-serif" font-size="12" fill="#ffffff">Bildschirm rendert das Zeichen gestochen scharf.</text>
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Normale Darstellung in modernen Apps.</text>
+      </g>
+    </g>
+
+    <!-- Step 3B: Fallback (Missing Glyph -> Tofu) -->
+    <g transform="translate(620, 230)" filter="url(#pipeShadow)">
+      <rect width="420" height="200" rx="18" fill="#111827" stroke="#ef4444" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 20)">
+        <rect width="170" height="24" rx="6" fill="#ef4444" fill-opacity="0.15"/>
+        <text x="85" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#ef4444">⚠ KEINE GLYPHE</text>
+
+        <rect y="35" width="370" height="65" rx="10" fill="#080d1a" stroke="#ef4444" stroke-opacity="0.2"/>
+        <text x="185" y="75" text-anchor="middle" font-family="monospace" font-size="32" font-weight="bold" fill="#ef4444">☐</text>
+
+        <text x="0" y="125" font-family="system-ui, sans-serif" font-size="12" fill="#ffffff">System zeigt das universelle Ersatz-Rechteck (Tofu).</text>
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Passiert auf älteren Systemen ohne Font-Unterstützung.</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

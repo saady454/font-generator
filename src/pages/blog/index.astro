@@ -2,7 +2,16 @@
 import Layout from '../../layouts/Layout.astro';
 import { BLOG_POSTS } from '../../data/blog-posts';
 
-const posts = Object.values(BLOG_POSTS);
+// Deduplicate articles by unique title to ensure each article appears exactly once
+const seen = new Set<string>();
+const posts = Object.values(BLOG_POSTS).filter((post) => {
+  const identifier = post.title.trim().toLowerCase();
+  if (seen.has(identifier)) {
+    return false;
+  }
+  seen.add(identifier);
+  return true;
+});
 ---
 
 <Layout

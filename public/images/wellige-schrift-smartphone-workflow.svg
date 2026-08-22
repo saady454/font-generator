@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="flowBgWave" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a14"/>
+      <stop offset="50%" stop-color="#0e1326"/>
+      <stop offset="100%" stop-color="#060810"/>
+    </linearGradient>
+    <linearGradient id="waveStepGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+    </linearGradient>
+    <filter id="cardShadowWaveStep" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#flowBgWave)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="200" cy="180" r="220" fill="#38bdf8" fill-opacity="0.08"/>
+  <circle cx="1000" cy="480" r="240" fill="#a855f7" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-160" y="-16" width="320" height="32" rx="16" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">SMARTPHONE WORKFLOW</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Wellige Schrift online <tspan fill="url(#waveStepGrad)">erstellen &amp; kopieren</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      In wenigen Schritten vom einfachen Text zum schwungvollen Wellen-Look
+    </text>
+  </g>
+
+  <!-- 3 Step Flow Columns Grid -->
+  <g transform="translate(70, 160)">
+    
+    <!-- Step 1: Text eingeben -->
+    <g transform="translate(0, 0)" filter="url(#cardShadowWaveStep)">
+      <rect width="335" height="440" rx="22" fill="#12162a" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+      <rect x="25" y="24" width="140" height="28" rx="14" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="95" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8">1. TEXT EINGEBEN</text>
+
+      <rect x="20" y="70" width="295" height="130" rx="14" fill="#080b16" stroke="#38bdf8" stroke-opacity="0.2"/>
+      <text x="20" y="30" transform="translate(20, 70)" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#38bdf8">INPUT-FELD</text>
+      <text x="20" y="75" transform="translate(20, 70)" font-family="system-ui, sans-serif" font-size="20" font-weight="600" fill="#ffffff">Good Vibes</text>
+      <line x1="40" y1="160" x2="165" y2="160" stroke="#38bdf8" stroke-dasharray="3 3"/>
+
+      <g transform="translate(25, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#38bdf8">ANLEITUNG:</text>
+        <text x="0" y="24" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Namen, Zitate oder Bio-Text tippen</text>
+        <text x="0" y="48" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Automatische Echtzeit-Vorschau</text>
+        <text x="0" y="72" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Keine App-Installation nötig</text>
+      </g>
+
+      <rect x="20" y="340" width="295" height="75" rx="12" fill="#151b32"/>
+      <text x="35" y="368" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">Tipp:</text>
+      <text x="35" y="390" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Wörter mit 4-12 Zeichen wirken optimal</text>
+    </g>
+
+    <!-- Step 2: Stil auswählen &amp; prüfen -->
+    <g transform="translate(365, 0)" filter="url(#cardShadowWaveStep)">
+      <rect width="335" height="440" rx="22" fill="#12162a" stroke="#a855f7" stroke-opacity="0.3" stroke-width="1.5"/>
+      <rect x="25" y="24" width="170" height="28" rx="14" fill="#a855f7" fill-opacity="0.15"/>
+      <text x="110" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#c084fc">2. VORSCHAU PRÜFEN</text>
+
+      <rect x="20" y="70" width="295" height="130" rx="14" fill="#080b16" stroke="#a855f7" stroke-opacity="0.2"/>
+      <text x="20" y="30" transform="translate(20, 70)" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#c084fc">WELLEN-VARIATIONEN</text>
+      <text x="20" y="65" transform="translate(20, 70)" font-family="Georgia, serif" font-size="18" font-weight="700" fill="#ffffff">G͠o͠o͠d͠ ͠V͠i͠b͠e͠s͠</text>
+      <text x="20" y="100" transform="translate(20, 70)" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#c084fc">〰️ 𝒢𝑜𝑜𝒹 𝒱𝒾𝒷𝑒𝓈 〰️</text>
+
+      <g transform="translate(25, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#c084fc">ANLEITUNG:</text>
+        <text x="0" y="24" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Tilden &amp; Wavy-Dashes vergleichen</text>
+        <text x="0" y="48" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Lesbarkeit auf Smartphone prüfen</text>
+        <text x="0" y="72" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Gewünschten Vibe auswählen</text>
+      </g>
+
+      <rect x="20" y="340" width="295" height="75" rx="12" fill="#151b32"/>
+      <text x="35" y="368" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#c084fc">Rendering:</text>
+      <text x="35" y="390" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Basiert auf standardisiertem Unicode</text>
+    </g>
+
+    <!-- Step 3: Kopieren &amp; Einfügen -->
+    <g transform="translate(730, 0)" filter="url(#cardShadowWaveStep)">
+      <rect width="335" height="440" rx="22" fill="#12162a" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1.5"/>
+      <rect x="25" y="24" width="160" height="28" rx="14" fill="#22c55e" fill-opacity="0.15"/>
+      <text x="105" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#4ade80">3. KOPIEREN &amp; NUTZEN</text>
+
+      <rect x="20" y="70" width="295" height="130" rx="14" fill="#080b16" stroke="#22c55e" stroke-opacity="0.2"/>
+      <rect x="40" y="105" width="255" height="45" rx="10" fill="#22c55e"/>
+      <text x="167" y="133" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">📋 1-KLICK KOPIEREN</text>
+      <text x="167" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#22c55e">✓ Sofort in die Zwischenablage</text>
+
+      <g transform="translate(25, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#4ade80">ANLEITUNG:</text>
+        <text x="0" y="24" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Button „Kopieren“ drücken</text>
+        <text x="0" y="48" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• In Instagram Bio oder Chat einfügen</text>
+        <text x="0" y="72" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Sofort mit Followern teilen</text>
+      </g>
+
+      <rect x="20" y="340" width="295" height="75" rx="12" fill="#151b32"/>
+      <text x="35" y="368" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#4ade80">Sofort aktiv:</text>
+      <text x="35" y="390" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Funktioniert auf iOS, Android &amp; PC</text>
+    </g>
+
+  </g>
+</svg>

@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="einsatzBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d1a"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="einsatzGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <filter id="einsatzShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#einsatzBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#38bdf8" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#818cf8" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-190" y="-16" width="380" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">PRAXIS-EINSATZBEREICHE</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Generator vs. Schriftdatei: <tspan fill="url(#einsatzGrad)">Wann nutzt man was?</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Social Media &amp; Chats vs. Professionelle Dokumente &amp; Print-Design
+    </text>
+  </g>
+
+  <!-- 2 Large Columns -->
+  <g transform="translate(80, 145)">
+    
+    <!-- Left Column: Generator Einsatz -->
+    <g transform="translate(0, 0)" filter="url(#einsatzShadow)">
+      <rect width="500" height="450" rx="20" fill="#111827" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 25)">
+        <rect width="210" height="26" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+        <text x="105" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#38bdf8">SCHRIFTARTEN-GENERATOR</text>
+
+        <!-- Mock Card -->
+        <rect y="40" width="450" height="110" rx="12" fill="#080d1a" stroke="#38bdf8" stroke-opacity="0.2"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">INSTAGRAM / TIKTOK BIO &amp; CHATS:</text>
+        <text x="20" y="68" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#ffffff">✨ 𝓛𝓲𝓯𝓮𝓼𝓽𝔂𝓵𝓮 &amp; 𝕿𝖗𝖆𝖛𝖊𝖑 ✈️</text>
+        <text x="20" y="96" font-family="system-ui, sans-serif" font-size="11" fill="#38bdf8">✓ 1-Klick Copy &amp; Paste &amp;bull; Plattformübergreifend</text>
+
+        <!-- Feature List -->
+        <g transform="translate(0, 175)" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="800" fill="#38bdf8">Typische Einsatzbereiche:</text>
+          
+          <text x="0" y="30" font-weight="700" fill="#ffffff">• Social Media:</text>
+          <text x="140" y="30" fill="#94a3b8">Instagram Bios, TikTok Beschreibungen</text>
+          
+          <text x="0" y="65" font-weight="700" fill="#ffffff">• Messenger:</text>
+          <text x="140" y="65" fill="#94a3b8">WhatsApp Status, Telegram Kanäle</text>
+          
+          <text x="0" y="100" font-weight="700" fill="#ffffff">• Gaming:</text>
+          <text x="140" y="100" fill="#94a3b8">Discord Nicknames, Clan-Tags in CS2/Fortnite</text>
+          
+          <text x="0" y="135" font-weight="700" fill="#ffffff">• Aufwand:</text>
+          <text x="140" y="135" fill="#38bdf8">0 Sekunden (Kein Download nötig)</text>
+        </g>
+
+        <rect y="355" width="450" height="40" rx="8" fill="#1e293b"/>
+        <text x="225" y="380" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#38bdf8">Fokus: Schnelligkeit, Flexibilität &amp; Social Web</text>
+      </g>
+    </g>
+
+    <!-- Right Column: TTF/OTF Einsatz -->
+    <g transform="translate(540, 0)" filter="url(#einsatzShadow)">
+      <rect width="500" height="450" rx="20" fill="#111827" stroke="#818cf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 25)">
+        <rect width="190" height="26" rx="6" fill="#818cf8" fill-opacity="0.15"/>
+        <text x="95" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#818cf8">SCHRIFTDATEI (.TTF / .OTF)</text>
+
+        <!-- Mock Card -->
+        <rect y="40" width="450" height="110" rx="12" fill="#080d1a" stroke="#818cf8" stroke-opacity="0.2"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">MICROSOFT WORD / INDESIGN / PHOTOSHOP:</text>
+        <text x="20" y="68" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#ffffff">Jahresbericht 2026.docx</text>
+        <text x="20" y="96" font-family="system-ui, sans-serif" font-size="11" fill="#818cf8">✓ Fester Schriftschnitt &amp;bull; Formatierung im Dokument</text>
+
+        <!-- Feature List -->
+        <g transform="translate(0, 175)" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="800" fill="#818cf8">Typische Einsatzbereiche:</text>
+          
+          <text x="0" y="30" font-weight="700" fill="#ffffff">• Office-Dokumente:</text>
+          <text x="150" y="30" fill="#94a3b8">Word, Excel, PowerPoint Präsentationen</text>
+          
+          <text x="0" y="65" font-weight="700" fill="#ffffff">• Grafikdesign:</text>
+          <text x="150" y="65" fill="#94a3b8">Logos, Flyer, Plakate, Visitenkarten</text>
+          
+          <text x="0" y="100" font-weight="700" fill="#ffffff">• Buchsatz &amp; PDF:</text>
+          <text x="150" y="100" fill="#94a3b8">Lange Fließtexte mit Ligaturen und Kerning</text>
+          
+          <text x="0" y="135" font-weight="700" fill="#ffffff">• Installation:</text>
+          <text x="150" y="135" fill="#818cf8">Systemweit in Windows / macOS</text>
+        </g>
+
+        <rect y="355" width="450" height="40" rx="8" fill="#1e293b"/>
+        <text x="225" y="380" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#818cf8">Fokus: Präzision, Layout &amp; professioneller Druck</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

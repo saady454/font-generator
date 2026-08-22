@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="valUiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08070d"/>
+      <stop offset="50%" stop-color="#120e1f"/>
+      <stop offset="100%" stop-color="#050408"/>
+    </linearGradient>
+    <linearGradient id="valUiGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff4655"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="valUiShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#valUiBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="200" cy="180" r="220" fill="#ff4655" fill-opacity="0.08"/>
+  <circle cx="1000" cy="460" r="240" fill="#06b6d4" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-170" y="-16" width="340" height="32" rx="16" fill="#1e111d" stroke="#ff4655" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#ff4655" letter-spacing="2">NAMENSFINDUNG &amp; WORKFLOW</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Taktische <tspan fill="url(#valUiGrad)">Valorant Gamertags erstellen</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Wie du mit 5 einfachen Schritten deinen perfekten Spielernamen findest
+    </text>
+  </g>
+
+  <!-- 4 Step &amp; Style Cards -->
+  <g transform="translate(60, 150)">
+    
+    <!-- Card 1: Clean -->
+    <g transform="translate(0, 0)" filter="url(#valUiShadow)">
+      <rect width="255" height="440" rx="20" fill="#130f21" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="45" cy="45" r="20" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="45" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#38bdf8">1</text>
+      <text x="80" y="50" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Clean</text>
+      
+      <g transform="translate(20, 95)">
+        <rect width="215" height="90" rx="12" fill="#06050b"/>
+        <text x="15" y="32" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#38bdf8">BEISPIELE</text>
+        <text x="15" y="58" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#ffffff">Vanta &amp;bull; Nexor</text>
+      </g>
+
+      <g transform="translate(20, 210)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Kernwort auswählen:</text>
+        <text x="0" y="24">Wähle einen kurzen,</text>
+        <text x="0" y="44">prägnanten Begriff</text>
+        <text x="0" y="64">ohne Sonderzeichen.</text>
+        <text x="0" y="94" font-weight="700" fill="#38bdf8">Maximal lesbar</text>
+      </g>
+
+      <rect x="20" y="380" width="215" height="36" rx="8" fill="#1b1429"/>
+      <text x="127" y="403" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">Schritt 1: Basis wählen</text>
+    </g>
+
+    <!-- Card 2: Tactical -->
+    <g transform="translate(280, 0)" filter="url(#valUiShadow)">
+      <rect width="255" height="440" rx="20" fill="#130f21" stroke="#ff4655" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="45" cy="45" r="20" fill="#ff4655" fill-opacity="0.15"/>
+      <text x="45" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#ff4655">2</text>
+      <text x="80" y="50" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Tactical</text>
+      
+      <g transform="translate(20, 95)">
+        <rect width="215" height="90" rx="12" fill="#06050b"/>
+        <text x="15" y="32" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#ff4655">BEISPIELE</text>
+        <text x="15" y="58" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#ffffff">SiteAce &amp;bull; Clutch</text>
+      </g>
+
+      <g transform="translate(20, 210)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Gaming-Begriff ergänzen:</text>
+        <text x="0" y="24">Kombiniere Wörter aus</text>
+        <text x="0" y="44">dem Taktik-Shooter</text>
+        <text x="0" y="64">(Crosshair, Site, Ace).</text>
+        <text x="0" y="94" font-weight="700" fill="#ff4655">Kompetitiv &amp; stark</text>
+      </g>
+
+      <rect x="20" y="380" width="215" height="36" rx="8" fill="#1b1429"/>
+      <text x="127" y="403" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ff4655">Schritt 2: Taktik-Fokus</text>
+    </g>
+
+    <!-- Card 3: Dark -->
+    <g transform="translate(560, 0)" filter="url(#valUiShadow)">
+      <rect width="255" height="440" rx="20" fill="#130f21" stroke="#c084fc" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="45" cy="45" r="20" fill="#c084fc" fill-opacity="0.15"/>
+      <text x="45" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#c084fc">3</text>
+      <text x="80" y="50" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Dark / Void</text>
+      
+      <g transform="translate(20, 95)">
+        <rect width="215" height="90" rx="12" fill="#06050b"/>
+        <text x="15" y="32" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#c084fc">BEISPIELE</text>
+        <text x="15" y="58" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#ffffff">VoidPeak &amp;bull; Shade</text>
+      </g>
+
+      <g transform="translate(20, 210)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Agenten-Inspiration:</text>
+        <text x="0" y="24">Begriffe wie Omen,</text>
+        <text x="0" y="44">Fade oder Viper als</text>
+        <text x="0" y="64">Stilvorbild nutzen.</text>
+        <text x="0" y="94" font-weight="700" fill="#c084fc">Mystisch &amp; dominant</text>
+      </g>
+
+      <rect x="20" y="380" width="215" height="36" rx="8" fill="#1b1429"/>
+      <text x="127" y="403" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#c084fc">Schritt 3: Thema setzen</text>
+    </g>
+
+    <!-- Card 4: Tagline -->
+    <g transform="translate(840, 0)" filter="url(#valUiShadow)">
+      <rect width="245" height="440" rx="20" fill="#130f21" stroke="#34d399" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="45" cy="45" r="20" fill="#34d399" fill-opacity="0.15"/>
+      <text x="45" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#06120b">4</text>
+      <text x="80" y="50" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Riot ID Check</text>
+      
+      <g transform="translate(20, 95)">
+        <rect width="205" height="90" rx="12" fill="#06050b"/>
+        <text x="15" y="32" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#34d399">TAGLINE</text>
+        <text x="15" y="58" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">Vanta <tspan fill="#34d399">#1337</tspan></text>
+      </g>
+
+      <g transform="translate(20, 210)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Riot Regeln prüfen:</text>
+        <text x="0" y="24">3-16 Zeichen Länge,</text>
+        <text x="0" y="44">Alphanumerisch,</text>
+        <text x="0" y="64">Tagline (3-5 Zeichen).</text>
+        <text x="0" y="94" font-weight="700" fill="#34d399">100 % zulässig</text>
+      </g>
+
+      <rect x="20" y="380" width="205" height="36" rx="8" fill="#1b1429"/>
+      <text x="122" y="403" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34d399">Schritt 4: Riot ID fertig</text>
+    </g>
+
+  </g>
+</svg>

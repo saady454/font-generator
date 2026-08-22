@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rfWingBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c16"/>
+      <stop offset="50%" stop-color="#141126"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="rfWingGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f472b6"/>
+      <stop offset="50%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="rfWingShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#rfWingBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#f472b6" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#38bdf8" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-180" y="-16" width="360" height="32" rx="16" fill="#2d1538" stroke="#f472b6" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#f472b6" letter-spacing="2">AESTHETIC SCHWINGEN &amp; SCHLEIFEN</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Flügel- &amp; <tspan fill="url(#rfWingGrad)">Schmetterlingszeichen</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Zarte Schwingen, Schleifen und florale Ornamente für deine Social-Media-Bio
+    </text>
+  </g>
+
+  <!-- 4 Symmetrical Wing Cards Grid -->
+  <g transform="translate(60, 150)">
+    
+    <!-- 1. ʚ♡ɞ Herz-Flügel -->
+    <g transform="translate(0, 0)" filter="url(#rfWingShadow)">
+      <rect width="255" height="440" rx="20" fill="#131428" stroke="#f472b6" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="115" height="24" rx="6" fill="#f472b6" fill-opacity="0.15"/>
+        <text x="57" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#f472b6">HERZ-FLÜGEL</text>
+        
+        <rect y="40" width="215" height="95" rx="12" fill="#090a16" stroke="#f472b6" stroke-opacity="0.2"/>
+        <text x="107" y="94" text-anchor="middle" font-size="28" fill="#f472b6">ʚ♡ɞ</text>
+        <text x="107" y="122" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="900" fill="#ffffff">ʚ♡ɞ Luna ʚ♡ɞ</text>
+
+        <g transform="translate(0, 155)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="700" fill="#f472b6">Verwendung:</text>
+          <text x="0" y="24">✓ Zarte Engelsflügel</text>
+          <text x="0" y="48">✓ Coquette &amp; Soft Girl</text>
+          <text x="0" y="72">✓ Beliebt in TikTok-Bios</text>
+          <text x="0" y="96">✓ Sehr feminin &amp; süß</text>
+        </g>
+
+        <rect y="375" width="215" height="36" rx="8" fill="#1e1836"/>
+        <text x="107" y="398" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f472b6">Stil: ʚ♡ɞ Name ʚ♡ɞ</text>
+      </g>
+    </g>
+
+    <!-- 2. ୨୧ Schleife -->
+    <g transform="translate(280, 0)" filter="url(#rfWingShadow)">
+      <rect width="255" height="440" rx="20" fill="#131428" stroke="#c084fc" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="110" height="24" rx="6" fill="#c084fc" fill-opacity="0.15"/>
+        <text x="55" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#c084fc">SCHLEIFE (BOW)</text>
+        
+        <rect y="40" width="215" height="95" rx="12" fill="#090a16" stroke="#c084fc" stroke-opacity="0.2"/>
+        <text x="107" y="94" text-anchor="middle" font-size="28" fill="#c084fc">୨୧</text>
+        <text x="107" y="122" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="900" fill="#ffffff">୨୧ Princess ୨୧</text>
+
+        <g transform="translate(0, 155)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="700" fill="#c084fc">Verwendung:</text>
+          <text x="0" y="24">✓ Eleganter Schleifen-Look</text>
+          <text x="0" y="48">✓ Instagram Profiltitel</text>
+          <text x="0" y="72">✓ Minimalistisch &amp; zart</text>
+          <text x="0" y="96">✓ Sehr modern &amp; trendy</text>
+        </g>
+
+        <rect y="375" width="215" height="36" rx="8" fill="#1e1836"/>
+        <text x="107" y="398" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#c084fc">Stil: ୨୧ Name ୨୧</text>
+      </g>
+    </g>
+
+    <!-- 3. ༺♡༻ Florale Schwingen -->
+    <g transform="translate(560, 0)" filter="url(#rfWingShadow)">
+      <rect width="255" height="440" rx="20" fill="#131428" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="130" height="24" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+        <text x="65" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#38bdf8">FLORALE SCHWINGEN</text>
+        
+        <rect y="40" width="215" height="95" rx="12" fill="#090a16" stroke="#38bdf8" stroke-opacity="0.2"/>
+        <text x="107" y="94" text-anchor="middle" font-size="24" fill="#38bdf8">༺♡༻</text>
+        <text x="107" y="122" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="900" fill="#ffffff">༺ Queen ༻</text>
+
+        <g transform="translate(0, 155)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="700" fill="#38bdf8">Verwendung:</text>
+          <text x="0" y="24">✓ Symmetrische Schwingen</text>
+          <text x="0" y="48">✓ Fantasy &amp; Gaming-Clan</text>
+          <text x="0" y="72">✓ Discord &amp; WhatsApp</text>
+          <text x="0" y="96">✓ Ästhetische Ranken</text>
+        </g>
+
+        <rect y="375" width="215" height="36" rx="8" fill="#1e1836"/>
+        <text x="107" y="398" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">Stil: ༺♡༻ Name ༺♡༻</text>
+      </g>
+    </g>
+
+    <!-- 4. ʚ✿ɞ Blüten-Schmetterling -->
+    <g transform="translate(840, 0)" filter="url(#rfWingShadow)">
+      <rect width="245" height="440" rx="20" fill="#131428" stroke="#34d399" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="130" height="24" rx="6" fill="#34d399" fill-opacity="0.15"/>
+        <text x="65" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#34d399">BLÜTEN-SCHMETTERLING</text>
+        
+        <rect y="40" width="205" height="95" rx="12" fill="#090a16" stroke="#34d399" stroke-opacity="0.2"/>
+        <text x="102" y="94" text-anchor="middle" font-size="26" fill="#34d399">ʚ✿ɞ</text>
+        <text x="102" y="122" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="900" fill="#ffffff">ʚ✿ɞ Blossom ʚ✿ɞ</text>
+
+        <g transform="translate(0, 155)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="700" fill="#34d399">Verwendung:</text>
+          <text x="0" y="24">✓ Schmetterling mit Blume</text>
+          <text x="0" y="48">✓ Frühlings- &amp; Natur-Vibes</text>
+          <text x="0" y="72">✓ Status &amp; Bio-Highlights</text>
+          <text x="0" y="96">✓ Sehr verspielt &amp; frisch</text>
+        </g>
+
+        <rect y="375" width="205" height="36" rx="8" fill="#1e1836"/>
+        <text x="102" y="398" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34d399">Stil: ʚ✿ɞ Name ʚ✿ɞ</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

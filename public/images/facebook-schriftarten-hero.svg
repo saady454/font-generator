@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fbHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060a14"/>
+      <stop offset="50%" stop-color="#0c1426"/>
+      <stop offset="100%" stop-color="#050812"/>
+    </linearGradient>
+    <linearGradient id="fbBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1877F2"/>
+      <stop offset="50%" stop-color="#0866FF"/>
+      <stop offset="100%" stop-color="#0052cc"/>
+    </linearGradient>
+    <linearGradient id="fbAccentLight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1877F2"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+    <filter id="fbShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#fbHeroBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="280" cy="200" r="280" fill="#1877F2" fill-opacity="0.10"/>
+  <circle cx="920" cy="460" r="300" fill="#60a5fa" fill-opacity="0.08"/>
+  <circle cx="600" cy="340" r="200" fill="#3b82f6" fill-opacity="0.05"/>
+
+  <!-- Top Header Badge -->
+  <g transform="translate(600, 55)" text-anchor="middle">
+    <rect x="-190" y="-18" width="380" height="36" rx="18" fill="#111c36" stroke="#1877F2" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#60a5fa" letter-spacing="2">📘 FACEBOOK SCHRIFTEN STUDIO</text>
+  </g>
+
+  <!-- Central Title -->
+  <text x="600" y="132" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="38" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+    Facebook Schriftarten: <tspan fill="url(#fbAccentLight)">Schöne Schrift zum Kopieren</tspan>
+  </text>
+  <text x="600" y="168" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#94a3b8">
+    Fette, kursive &amp; dekorative Unicode-Schriften für Beiträge, Posts, Gruppen &amp; Bio
+  </text>
+
+  <!-- Main Showcase Container -->
+  <g transform="translate(90, 205)" filter="url(#fbShadow)">
+    <rect width="1020" height="420" rx="28" fill="#0f172a" stroke="#1877F2" stroke-opacity="0.3" stroke-width="1.5"/>
+
+    <!-- Inner Grid Area -->
+    <rect x="25" y="25" width="970" height="370" rx="20" fill="#090d18" stroke="#ffffff" stroke-opacity="0.05"/>
+
+    <!-- Left: Facebook Feed Post Mockup Card -->
+    <g transform="translate(50, 45)">
+      <rect width="280" height="330" rx="20" fill="#131c33" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5"/>
+      
+      <!-- Post Author Header -->
+      <g transform="translate(18, 18)">
+        <circle cx="20" cy="20" r="18" fill="#1877F2"/>
+        <text x="20" y="26" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">f</text>
+        <text x="48" y="16" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#ffffff">Markus Schneider</text>
+        <text x="48" y="32" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Vor 2 Std. &amp;bull; 🌐 Öffentlich</text>
+      </g>
+
+      <!-- Post Body Text with Formatted Hook -->
+      <g transform="translate(18, 70)">
+        <!-- Hook Headline in Fett Sans -->
+        <rect width="244" height="38" rx="8" fill="#1877F2" fill-opacity="0.15" stroke="#1877F2" stroke-opacity="0.3"/>
+        <text x="12" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#60a5fa">🔥 𝗡𝗲𝘂𝗲𝘀 𝗔𝗻𝗴𝗲𝗯𝗼𝘁 𝗳ü𝗿 𝗱𝗶𝗲𝘀𝗲 𝗪𝗼𝗰𝗵𝗲!</text>
+        
+        <!-- Post Body in normal &amp; subtle italic -->
+        <text x="4" y="62" font-family="system-ui, sans-serif" font-size="12" fill="#e2e8f0">Entdecke unsere aktuellen Highlights.</text>
+        <text x="4" y="82" font-family="system-ui, sans-serif" font-size="12" font-style="italic" fill="#94a3b8">𝘌𝘹𝘬𝘭𝘶𝘴𝘪𝘷 𝘯𝘶𝘳 𝘧ü𝘳 𝘶𝘯𝘴𝘦𝘳𝘦 𝘊𝘰𝘮𝘮𝘶𝘯𝘪𝘵𝘺 ✨</text>
+        <text x="4" y="102" font-family="system-ui, sans-serif" font-size="12" fill="#e2e8f0">Jetzt reinschauen &amp; teilen!</text>
+      </g>
+
+      <!-- Post Inner Visual Box -->
+      <g transform="translate(18, 190)">
+        <rect width="244" height="80" rx="10" fill="#090d18" stroke="#1877F2" stroke-opacity="0.2"/>
+        <text x="122" y="36" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#ffffff">★ 𝓕𝓪𝓬𝓮𝓫𝓸𝓸𝓴 𝓥𝓲𝓫𝓮𝓼 ★</text>
+        <text x="122" y="58" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#60a5fa">schriftarten.io/plattform/facebook</text>
+      </g>
+
+      <!-- Reactions Bar -->
+      <g transform="translate(18, 285)">
+        <circle cx="10" cy="12" r="8" fill="#1877F2"/>
+        <text x="10" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10">👍</text>
+        <circle cx="24" cy="12" r="8" fill="#ef4444"/>
+        <text x="24" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10">❤️</text>
+        <text x="40" y="16" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">248 Gefällt mir &amp;bull; 42 Kommentare</text>
+      </g>
+    </g>
+
+    <!-- Right: Text Generator Showcase Card -->
+    <g transform="translate(365, 45)">
+      <rect width="605" height="330" rx="20" fill="#121a30" stroke="#ffffff" stroke-opacity="0.08"/>
+
+      <!-- Input Simulation -->
+      <g transform="translate(25, 20)">
+        <text x="0" y="14" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#60a5fa" letter-spacing="1">EINGABETEXT</text>
+        <rect x="0" y="24" width="555" height="42" rx="10" fill="#080c16" stroke="#1877F2" stroke-opacity="0.4"/>
+        <text x="16" y="50" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#ffffff">Neues Angebot</text>
+        <rect x="475" y="32" width="70" height="26" rx="6" fill="#1877F2"/>
+        <text x="510" y="49" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#ffffff">Live ✨</text>
+      </g>
+
+      <!-- Style Grid -->
+      <g transform="translate(25, 95)">
+        
+        <!-- Style 1: Fett Sans -->
+        <g transform="translate(0, 0)">
+          <rect width="265" height="46" rx="10" fill="#1a2544" stroke="#1877F2" stroke-opacity="0.3"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#60a5fa">FETT (ÜBERSCHRIFTEN)</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="15" font-weight="900" fill="#ffffff">𝗡𝗲𝘂𝗲𝘀 𝗔𝗻𝗴𝗲𝗯𝗼𝘁</text>
+          <rect x="200" y="10" width="55" height="26" rx="6" fill="#1877F2" fill-opacity="0.2"/>
+          <text x="227" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#60a5fa">Kopie</text>
+        </g>
+
+        <!-- Style 2: Kursiv -->
+        <g transform="translate(285, 0)">
+          <rect width="270" height="46" rx="10" fill="#1a2544" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#38bdf8">KURSIV (ZITATE)</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="15" font-style="italic" font-weight="600" fill="#ffffff">𝘕𝘦𝘶𝘦𝘴 𝘈𝘯𝘨𝘦𝘣𝘰𝘵</text>
+          <rect x="205" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="232" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Style 3: Schreibschrift -->
+        <g transform="translate(0, 56)">
+          <rect width="265" height="46" rx="10" fill="#1a2544" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#a78bfa">SCHREIBSCHRIFT</text>
+          <text x="12" y="36" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#ffffff">𝓝𝓮𝓾𝓮𝓼 𝓐𝓷𝓰𝓮𝓫𝓸𝓽</text>
+          <rect x="200" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="227" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Style 4: Gotisch -->
+        <g transform="translate(285, 56)">
+          <rect width="270" height="46" rx="10" fill="#1a2544" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#fbbf24">GOTISCH</text>
+          <text x="12" y="36" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#ffffff">𝔑𝔢𝔲𝔢𝔰 𝔄𝔫𝔤𝔢𝔟𝔬𝔱</text>
+          <rect x="205" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="232" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Style 5: Bubble -->
+        <g transform="translate(0, 112)">
+          <rect width="265" height="46" rx="10" fill="#1a2544" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#f472b6">BUBBLE / KREISE</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Ⓝⓔⓤⓔⓢ Ⓐⓝⓖⓔⓑⓞⓣ</text>
+          <rect x="200" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="227" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Style 6: Monospace -->
+        <g transform="translate(285, 112)">
+          <rect width="270" height="46" rx="10" fill="#1a2544" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#34d399">MONOSPACE</text>
+          <text x="12" y="36" font-family="Courier New, monospace" font-size="14" font-weight="700" fill="#ffffff">𝙽𝚎𝚞𝚎𝚜 𝙰𝚗𝚐𝚎𝚋𝚘𝚝</text>
+          <rect x="205" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="232" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Full width Bottom CTA -->
+        <g transform="translate(0, 168)">
+          <rect width="555" height="46" rx="10" fill="#1877F2"/>
+          <text x="277" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#ffffff">⚡ 500+ Stile für Facebook im Schriftarten Generator ausprobieren</text>
+        </g>
+
+      </g>
+    </g>
+  </g>
+</svg>

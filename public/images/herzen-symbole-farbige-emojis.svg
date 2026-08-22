@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="heartColorBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0712"/>
+      <stop offset="50%" stop-color="#1f0f24"/>
+      <stop offset="100%" stop-color="#08040a"/>
+    </linearGradient>
+    <linearGradient id="heartRainbowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="25%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#10b981"/>
+      <stop offset="75%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <filter id="heartColorShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#heartColorBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#ec4899" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#8b5cf6" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-180" y="-16" width="360" height="32" rx="16" fill="#2d1230" stroke="#f43f5e" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fb7185" letter-spacing="2">FARB-BEDEUTUNGEN DER EMOJIS</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Farbige Herz-Emojis <tspan fill="url(#heartRainbowGrad)">&amp; ihre Wirkung</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Welches farbige Herz für WhatsApp, Instagram &amp; Chats am besten passt
+    </text>
+  </g>
+
+  <!-- 9 Colored Heart Cards Grid (3x3) -->
+  <g transform="translate(60, 140)">
+    
+    <!-- 1. ❤️ Rot -->
+    <g transform="translate(0, 0)" filter="url(#heartColorShadow)">
+      <rect width="340" height="145" rx="16" fill="#180e1c" stroke="#ef4444" stroke-opacity="0.4" stroke-width="1.5"/>
+      <text x="25" y="65" font-size="44">❤️</text>
+      <g transform="translate(85, 30)">
+        <text x="0" y="16" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">Rotes Herz</text>
+        <text x="0" y="38" font-family="system-ui, sans-serif" font-size="12" fill="#ef4444" font-weight="700">Liebe, Romantik &amp; Leidenschaft</text>
+        <text x="0" y="60" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Der zeitlose Klassiker für Paare &amp; Liebe.</text>
+      </g>
+    </g>
+
+    <!-- 2. 🧡 Orange -->
+    <g transform="translate(370, 0)" filter="url(#heartColorShadow)">
+      <rect width="340" height="145" rx="16" fill="#180e1c" stroke="#f97316" stroke-opacity="0.4" stroke-width="1.5"/>
+      <text x="25" y="65" font-size="44">🧡</text>
+      <g transform="translate(85, 30)">
+        <text x="0" y="16" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">Oranges Herz</text>
+        <text x="0" y="38" font-family="system-ui, sans-serif" font-size="12" fill="#f97316" font-weight="700">Wärme, Energie &amp; Freundschaft</text>
+        <text x="0" y="60" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Herzlichkeit ohne Beziehungs-Kontext.</text>
+      </g>
+    </g>
+
+    <!-- 3. 💛 Gelb -->
+    <g transform="translate(740, 0)" filter="url(#heartColorShadow)">
+      <rect width="340" height="145" rx="16" fill="#180e1c" stroke="#eab308" stroke-opacity="0.4" stroke-width="1.5"/>
+      <text x="25" y="65" font-size="44">💛</text>
+      <g transform="translate(85, 30)">
+        <text x="0" y="16" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">Gelbes Herz</text>
+        <text x="0" y="38" font-family="system-ui, sans-serif" font-size="12" fill="#eab308" font-weight="700">Freude, Sonne &amp; Optimismus</text>
+        <text x="0" y="60" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Beste Freunde &amp; positive Stimmung.</text>
+      </g>
+    </g>
+
+    <!-- 4. 💚 Grün -->
+    <g transform="translate(0, 165)" filter="url(#heartColorShadow)">
+      <rect width="340" height="145" rx="16" fill="#180e1c" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+      <text x="25" y="65" font-size="44">💚</text>
+      <g transform="translate(85, 30)">
+        <text x="0" y="16" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">Grünes Herz</text>
+        <text x="0" y="38" font-family="system-ui, sans-serif" font-size="12" fill="#22c55e" font-weight="700">Natur, Hoffnung &amp; Harmonie</text>
+        <text x="0" y="60" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Gesundheit, Veganismus &amp; Neuanfang.</text>
+      </g>
+    </g>
+
+    <!-- 5. 💙 Blau -->
+    <g transform="translate(370, 165)" filter="url(#heartColorShadow)">
+      <rect width="340" height="145" rx="16" fill="#180e1c" stroke="#3b82f6" stroke-opacity="0.4" stroke-width="1.5"/>
+      <text x="25" y="65" font-size="44">💙</text>
+      <g transform="translate(85, 30)">
+        <text x="0" y="16" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">Blaues Herz</text>
+        <text x="0" y="38" font-family="system-ui, sans-serif" font-size="12" fill="#3b82f6" font-weight="700">Vertrauen, Loyalität &amp; Ruhe</text>
+        <text x="0" y="60" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Tiefe Verbundenheit &amp; Verlässlichkeit.</text>
+      </g>
+    </g>
+
+    <!-- 6. 💜 Lila -->
+    <g transform="translate(740, 165)" filter="url(#heartColorShadow)">
+      <rect width="340" height="145" rx="16" fill="#180e1c" stroke="#a855f7" stroke-opacity="0.4" stroke-width="1.5"/>
+      <text x="25" y="65" font-size="44">💜</text>
+      <g transform="translate(85, 30)">
+        <text x="0" y="16" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">Lila Herz</text>
+        <text x="0" y="38" font-family="system-ui, sans-serif" font-size="12" fill="#a855f7" font-weight="700">Magie, Glamour &amp; Ästhetik</text>
+        <text x="0" y="60" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Aesthetic Bios, K-Pop &amp; Kreativität.</text>
+      </g>
+    </g>
+
+    <!-- 7. 🖤 Schwarz -->
+    <g transform="translate(0, 330)" filter="url(#heartColorShadow)">
+      <rect width="340" height="145" rx="16" fill="#180e1c" stroke="#64748b" stroke-opacity="0.4" stroke-width="1.5"/>
+      <text x="25" y="65" font-size="44">🖤</text>
+      <g transform="translate(85, 30)">
+        <text x="0" y="16" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">Schwarzes Herz</text>
+        <text x="0" y="38" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8" font-weight="700">Dark Aesthetic, Trauer &amp; Tiefe</text>
+        <text x="0" y="60" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Schlichter Minimalismus &amp; Trauer.</text>
+      </g>
+    </g>
+
+    <!-- 8. 🤍 Weiß -->
+    <g transform="translate(370, 330)" filter="url(#heartColorShadow)">
+      <rect width="340" height="145" rx="16" fill="#180e1c" stroke="#e2e8f0" stroke-opacity="0.4" stroke-width="1.5"/>
+      <text x="25" y="65" font-size="44">🤍</text>
+      <g transform="translate(85, 30)">
+        <text x="0" y="16" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">Weißes Herz</text>
+        <text x="0" y="38" font-family="system-ui, sans-serif" font-size="12" fill="#f8fafc" font-weight="700">Reinheit, Frieden &amp; Eleganz</text>
+        <text x="0" y="60" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Clean Aesthetic &amp; aufrichtiges Mitgefühl.</text>
+      </g>
+    </g>
+
+    <!-- 9. 🤎 Braun -->
+    <g transform="translate(740, 330)" filter="url(#heartColorShadow)">
+      <rect width="340" height="145" rx="16" fill="#180e1c" stroke="#b45309" stroke-opacity="0.4" stroke-width="1.5"/>
+      <text x="25" y="65" font-size="44">🤎</text>
+      <g transform="translate(85, 30)">
+        <text x="0" y="16" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">Braunes Herz</text>
+        <text x="0" y="38" font-family="system-ui, sans-serif" font-size="12" fill="#d97706" font-weight="700">Gemütlichkeit &amp; Geborgenheit</text>
+        <text x="0" y="60" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Kaffee, Herbst &amp; Stabilität.</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

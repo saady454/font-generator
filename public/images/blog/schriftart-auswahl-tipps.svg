@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c12"/>
+      <stop offset="100%" stop-color="#141722"/>
+    </linearGradient>
+    <linearGradient id="stepGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a1f2e"/>
+      <stop offset="100%" stop-color="#121520"/>
+    </linearGradient>
+    <filter id="shadow4" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad4)"/>
+
+  <!-- Header -->
+  <g transform="translate(600, 60)" text-anchor="middle">
+    <rect x="-160" y="-18" width="320" height="36" rx="18" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="sans-serif" font-size="13" font-weight="800" fill="#fbbf24" letter-spacing="1.5">CHECKLISTE &amp; ENTSCHEIDUNG</text>
+    
+    <text y="55" font-family="sans-serif" font-size="32" font-weight="800" fill="#ffffff">
+      Die 4 goldenen Regeln der <tspan fill="#f59e0b">Schriftarten-Auswahl</tspan>
+    </text>
+    <text y="85" font-family="sans-serif" font-size="14" fill="#94a3b8">
+      So findest du für jeden Zweck den idealen Schriftstil ohne Darstellungsfehler
+    </text>
+  </g>
+
+  <!-- 4 Step Pillars Grid -->
+  <g transform="translate(60, 180)">
+    
+    <!-- Step 1: Lesbarkeit -->
+    <g transform="translate(0, 0)" filter="url(#shadow4)">
+      <rect width="255" height="420" rx="16" fill="url(#stepGrad)" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+      <circle cx="127" cy="65" r="32" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      <text x="127" y="73" font-family="sans-serif" font-size="24" text-anchor="middle">👁️</text>
+      
+      <text x="127" y="130" font-family="sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">1. Lesbarkeit zuerst</text>
+      <text x="127" y="152" font-family="sans-serif" font-size="12" font-weight="600" fill="#38bdf8" text-anchor="middle">Readability &amp; Focus</text>
+      
+      <line x1="25" y1="175" x2="230" y2="175" stroke="#ffffff" stroke-opacity="0.1"/>
+
+      <g transform="translate(20, 205)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#ffffff">Fließtext oder Akzent?</text>
+        <text y="24">• Fließtext braucht Ruhe:</text>
+        <text y="42" fill="#94a3b8">  Klare Serif oder Sans-Serif</text>
+        <text y="70">• Zierschriften nur für kurze</text>
+        <text y="88" fill="#94a3b8">  Worte oder Profil-Bios</text>
+        <text y="120">• Auf Zeilenabstand &amp;</text>
+        <text y="138" fill="#94a3b8">  Kontrast achten</text>
+      </g>
+    </g>
+
+    <!-- Step 2: Tonalität &amp; Stil -->
+    <g transform="translate(275, 0)" filter="url(#shadow4)">
+      <rect width="255" height="420" rx="16" fill="url(#stepGrad)" stroke="#ec4899" stroke-opacity="0.3" stroke-width="1.5"/>
+      <circle cx="127" cy="65" r="32" fill="#ec4899" fill-opacity="0.15" stroke="#ec4899" stroke-opacity="0.4" stroke-width="1.5"/>
+      <text x="127" y="73" font-family="sans-serif" font-size="24" text-anchor="middle">🎨</text>
+      
+      <text x="127" y="130" font-family="sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">2. Passender Charakter</text>
+      <text x="127" y="152" font-family="sans-serif" font-size="12" font-weight="600" fill="#f472b6" text-anchor="middle">Emotion &amp; Tonalität</text>
+      
+      <line x1="25" y1="175" x2="230" y2="175" stroke="#ffffff" stroke-opacity="0.1"/>
+
+      <g transform="translate(20, 205)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#ffffff">Welche Wirkung?</text>
+        <text y="24">• <tspan fill="#f472b6">Seriös:</tspan> Serif, Sans-Serif</text>
+        <text y="50">• <tspan fill="#f472b6">Kreativ:</tspan> Script, Kursiv</text>
+        <text y="76">• <tspan fill="#f472b6">Gaming:</tspan> Gotisch, Glitch, Bold</text>
+        <text y="102">• <tspan fill="#f472b6">Verspielt:</tspan> Bubble, Kreise</text>
+        <text y="138" fill="#94a3b8">Schrift erzeugt 90% des Gefühls</text>
+      </g>
+    </g>
+
+    <!-- Step 3: Zweck &amp; Plattform -->
+    <g transform="translate(550, 0)" filter="url(#shadow4)">
+      <rect width="255" height="420" rx="16" fill="url(#stepGrad)" stroke="#fbbf24" stroke-opacity="0.3" stroke-width="1.5"/>
+      <circle cx="127" cy="65" r="32" fill="#fbbf24" fill-opacity="0.15" stroke="#fbbf24" stroke-opacity="0.4" stroke-width="1.5"/>
+      <text x="127" y="73" font-family="sans-serif" font-size="24" text-anchor="middle">📱</text>
+      
+      <text x="127" y="130" font-family="sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">3. Zweck bestimmen</text>
+      <text x="127" y="152" font-family="sans-serif" font-size="12" font-weight="600" fill="#fbbf24" text-anchor="middle">Font vs. Unicode</text>
+      
+      <line x1="25" y1="175" x2="230" y2="175" stroke="#ffffff" stroke-opacity="0.1"/>
+
+      <g transform="translate(20, 205)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#ffffff">Wo wird es genutzt?</text>
+        <text y="24">• <tspan fill="#fbbf24">Social &amp; Gaming:</tspan></text>
+        <text y="42" fill="#94a3b8">  Kopierbarer Unicode-Text</text>
+        <text y="70">• <tspan fill="#fbbf24">Web &amp; Grafikdesign:</tspan></text>
+        <text y="88" fill="#94a3b8">  Font-Datei (.ttf / WOFF2)</text>
+        <text y="120">• Lizenzrechte bei echten</text>
+        <text y="138" fill="#94a3b8">  Schriftdateien prüfen</text>
+      </g>
+    </g>
+
+    <!-- Step 4: Kompatibilität &amp; Test -->
+    <g transform="translate(825, 0)" filter="url(#shadow4)">
+      <rect width="255" height="420" rx="16" fill="url(#stepGrad)" stroke="#10b981" stroke-opacity="0.3" stroke-width="1.5"/>
+      <circle cx="127" cy="65" r="32" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-opacity="0.4" stroke-width="1.5"/>
+      <text x="127" y="73" font-family="sans-serif" font-size="24" text-anchor="middle">🛡️</text>
+      
+      <text x="127" y="130" font-family="sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">4. Kompatibilität</text>
+      <text x="127" y="152" font-family="sans-serif" font-size="12" font-weight="600" fill="#34d399" text-anchor="middle">Kästchen (Tofu) meiden</text>
+      
+      <line x1="25" y1="175" x2="230" y2="175" stroke="#ffffff" stroke-opacity="0.1"/>
+
+      <g transform="translate(20, 205)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#ffffff">Live auf Endgerät testen</text>
+        <text y="24">• Deutsche Umlaute (ä, ö, ü)</text>
+        <text y="42" fill="#94a3b8">  auf Unterstützung prüfen</text>
+        <text y="70">• Fette Sans-Serif &amp; Kursiv</text>
+        <text y="88" fill="#94a3b8">  funktionieren zu 99%</text>
+        <text y="120">• Ältere Smartphones</text>
+        <text y="138" fill="#94a3b8">  mitdenken</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

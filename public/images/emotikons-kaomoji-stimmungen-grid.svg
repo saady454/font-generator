@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ekMoodBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090c14"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#05070d"/>
+    </linearGradient>
+    <linearGradient id="ekMoodGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+    <filter id="ekMoodShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#ekMoodBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="200" cy="180" r="220" fill="#34d399" fill-opacity="0.08"/>
+  <circle cx="1000" cy="460" r="240" fill="#fb7185" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-170" y="-16" width="340" height="32" rx="16" fill="#1e293b" stroke="#34d399" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#34d399" letter-spacing="2">6 EMOTIONS-KATEGORIEN</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Kaomoji nach <tspan fill="url(#ekMoodGrad)">Stimmung &amp; Emotion</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Finde den perfekten Gesichtsausdruck für jede Nachricht und Situation
+    </text>
+  </g>
+
+  <!-- 6 Emotion Grid Cards (2 rows of 3) -->
+  <g transform="translate(60, 145)">
+    
+    <!-- 1. Süß -->
+    <g transform="translate(0, 0)" filter="url(#ekMoodShadow)">
+      <rect width="340" height="210" rx="18" fill="#111827" stroke="#34d399" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="90" height="26" rx="6" fill="#34d399" fill-opacity="0.15"/>
+        <text x="45" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#34d399">1. SÜSS</text>
+        
+        <rect y="38" width="300" height="85" rx="10" fill="#080d1a" stroke="#34d399" stroke-opacity="0.2"/>
+        <text x="150" y="68" text-anchor="middle" font-family="monospace" font-size="18" font-weight="bold" fill="#ffffff">(◕‿◕) (｡♥‿♥｡)</text>
+        <text x="150" y="98" text-anchor="middle" font-family="monospace" font-size="15" fill="#34d399">(≧◡≦) (๑>ᴗ&lt;๑)</text>
+
+        <text x="0" y="148" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Freundlich, niedlich &amp; herzlich.</text>
+        <text x="0" y="170" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34d399">★ Ideal für persönliche Posts &amp; Bios</text>
+      </g>
+    </g>
+
+    <!-- 2. Fröhlich -->
+    <g transform="translate(370, 0)" filter="url(#ekMoodShadow)">
+      <rect width="340" height="210" rx="18" fill="#111827" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="110" height="26" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+        <text x="55" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#38bdf8">2. FRÖHLICH</text>
+        
+        <rect y="38" width="300" height="85" rx="10" fill="#080d1a" stroke="#38bdf8" stroke-opacity="0.2"/>
+        <text x="150" y="68" text-anchor="middle" font-family="monospace" font-size="18" font-weight="bold" fill="#ffffff">(^‿^) (≧▽≦)</text>
+        <text x="150" y="98" text-anchor="middle" font-family="monospace" font-size="14" fill="#38bdf8">٩(◕‿◕｡)۶ ヽ(・∀・)ﾉ</text>
+
+        <text x="0" y="148" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Begeisterung, Lachen &amp; Freude.</text>
+        <text x="0" y="170" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">★ Für Feiern, Spaß &amp; Gaming</text>
+      </g>
+    </g>
+
+    <!-- 3. Liebe &amp; Zuneigung -->
+    <g transform="translate(740, 0)" filter="url(#ekMoodShadow)">
+      <rect width="340" height="210" rx="18" fill="#111827" stroke="#fb7185" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="90" height="26" rx="6" fill="#fb7185" fill-opacity="0.15"/>
+        <text x="45" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#fb7185">3. LIEBE</text>
+        
+        <rect y="38" width="300" height="85" rx="10" fill="#080d1a" stroke="#fb7185" stroke-opacity="0.2"/>
+        <text x="150" y="68" text-anchor="middle" font-family="monospace" font-size="16" font-weight="bold" fill="#ffffff">(♥‿♥) (づ￣ ³￣)づ</text>
+        <text x="150" y="98" text-anchor="middle" font-family="monospace" font-size="14" fill="#fb7185">(っ˘з(˘⌣˘ ) (♡°▽°♡)</text>
+
+        <text x="0" y="148" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Küsse, Umarmungen &amp; Romantik.</text>
+        <text x="0" y="170" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fb7185">★ Für Partner &amp; beste Freunde</text>
+      </g>
+    </g>
+
+    <!-- 4. Traurig -->
+    <g transform="translate(0, 230)" filter="url(#ekMoodShadow)">
+      <rect width="340" height="210" rx="18" fill="#111827" stroke="#94a3b8" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="105" height="26" rx="6" fill="#94a3b8" fill-opacity="0.15"/>
+        <text x="52" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#94a3b8">4. TRAURIG</text>
+        
+        <rect y="38" width="300" height="85" rx="10" fill="#080d1a" stroke="#94a3b8" stroke-opacity="0.2"/>
+        <text x="150" y="68" text-anchor="middle" font-family="monospace" font-size="18" font-weight="bold" fill="#ffffff">(╥﹏╥) (T_T)</text>
+        <text x="150" y="98" text-anchor="middle" font-family="monospace" font-size="15" fill="#94a3b8">(ಥ_ಥ) (｡•́︿•̀｡)</text>
+
+        <text x="0" y="148" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Tränen, Mitleid &amp; Enttäuschung.</text>
+        <text x="0" y="170" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">★ Emotionale Reaktionen</text>
+      </g>
+    </g>
+
+    <!-- 5. Wütend -->
+    <g transform="translate(370, 230)" filter="url(#ekMoodShadow)">
+      <rect width="340" height="210" rx="18" fill="#111827" stroke="#f59e0b" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="100" height="26" rx="6" fill="#f59e0b" fill-opacity="0.15"/>
+        <text x="50" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#fbbf24">5. WÜTEND</text>
+        
+        <rect y="38" width="300" height="85" rx="10" fill="#080d1a" stroke="#f59e0b" stroke-opacity="0.2"/>
+        <text x="150" y="68" text-anchor="middle" font-family="monospace" font-size="16" font-weight="bold" fill="#ffffff">(ಠ_ಠ) (ง'̀-'́)ง</text>
+        <text x="150" y="98" text-anchor="middle" font-family="monospace" font-size="13" fill="#fbbf24">(╯°□°）╯︵ ┻━┻</text>
+
+        <text x="0" y="148" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Genervt, Skepsis &amp; Tisch umwerfen.</text>
+        <text x="0" y="170" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">★ Humorvolle Empörung</text>
+      </g>
+    </g>
+
+    <!-- 6. Überrascht -->
+    <g transform="translate(740, 230)" filter="url(#ekMoodShadow)">
+      <rect width="340" height="210" rx="18" fill="#111827" stroke="#c084fc" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <rect width="125" height="26" rx="6" fill="#c084fc" fill-opacity="0.15"/>
+        <text x="62" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#c084fc">6. ÜBERRASCHT</text>
+        
+        <rect y="38" width="300" height="85" rx="10" fill="#080d1a" stroke="#c084fc" stroke-opacity="0.2"/>
+        <text x="150" y="68" text-anchor="middle" font-family="monospace" font-size="17" font-weight="bold" fill="#ffffff">(⊙⊙) (°ロ°) !</text>
+        <text x="150" y="98" text-anchor="middle" font-family="monospace" font-size="14" fill="#c084fc">(・・;) (＠_＠)</text>
+
+        <text x="0" y="148" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Verblüfft, verwirrt &amp; schockiert.</text>
+        <text x="0" y="170" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#c084fc">★ Spontane Reaktionen</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="compBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c17"/>
+      <stop offset="50%" stop-color="#121829"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="compGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+    <filter id="compShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#compBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#fbbf24" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#38bdf8" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-180" y="-16" width="360" height="32" rx="16" fill="#1e293b" stroke="#fbbf24" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fbbf24" letter-spacing="2">TECHNISCHER VERGLEICH</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Unicode-Schrift vs. <tspan fill="url(#compGrad)">Echte Font-Datei</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Warum sich Textstile kopieren lassen und wie sich Zeichen von Schriftbibliotheken unterscheiden
+    </text>
+  </g>
+
+  <!-- 2 Columns Layout -->
+  <g transform="translate(80, 150)">
+    
+    <!-- Left Column: Unicode-Schrift -->
+    <g transform="translate(0, 0)" filter="url(#compShadow)">
+      <rect width="500" height="440" rx="20" fill="#111827" stroke="#fbbf24" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 25)">
+        <rect width="170" height="26" rx="6" fill="#fbbf24" fill-opacity="0.15"/>
+        <text x="85" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#fbbf24">1. UNICODE-SCHRIFT</text>
+
+        <!-- Mock Box -->
+        <rect y="40" width="450" height="100" rx="12" fill="#080d1a" stroke="#fbbf24" stroke-opacity="0.2"/>
+        <text x="20" y="30" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">STANDARD-ZEICHEN DER ZEICHENBANK:</text>
+        <text x="20" y="65" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#ffffff">𝕾𝖈𝖍𝖗𝖎𝖋𝖙 &amp;bull; 𝓢𝓬𝓱𝓻𝓲𝓯𝓽 &amp;bull; 𝗦𝗰𝗵𝗿𝗶𝗳𝘁</text>
+        <text x="20" y="88" font-family="monospace" font-size="11" fill="#fbbf24">Codepoints: U+1D516 &amp;bull; U+1D4E2 &amp;bull; U+1D5E6</text>
+
+        <!-- Feature List -->
+        <g transform="translate(0, 160)" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">
+          <text x="0" y="20">• <strong>Installation:</strong> Keine! Funktioniert direkt im Browser.</text>
+          <text x="0" y="55">• <strong>Verwendung:</strong> 1-Klick Copy &amp; Paste in Textfelder.</text>
+          <text x="0" y="90">• <strong>Plattformen:</strong> Instagram, TikTok, WhatsApp, Discord &amp; X.</text>
+          <text x="0" y="125">• <strong>Funktionsweise:</strong> Echte Zeichen bleiben beim Einfügen erhalten.</text>
+          <text x="0" y="160">• <strong>Einschränkung:</strong> Darstellung abhängig von installierten Systemglyphen.</text>
+        </g>
+
+        <rect y="350" width="450" height="38" rx="8" fill="#1e293b"/>
+        <text x="225" y="374" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#fbbf24">Einsatz: Social Media Bios, Nicknames &amp; Chat</text>
+      </g>
+    </g>
+
+    <!-- Right Column: Echte Font-Datei -->
+    <g transform="translate(540, 0)" filter="url(#compShadow)">
+      <rect width="500" height="440" rx="20" fill="#111827" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 25)">
+        <rect width="210" height="26" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+        <text x="105" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#38bdf8">2. ECHTE SCHRIFTDATEI</text>
+
+        <!-- Mock Box -->
+        <rect y="40" width="450" height="100" rx="12" fill="#080d1a" stroke="#38bdf8" stroke-opacity="0.2"/>
+        <text x="20" y="30" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">DATEIFORMATE (.TTF / .OTF / .WOFF2):</text>
+        <text x="20" y="65" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#ffffff">HelveticaNeue.otf &amp;bull; Roboto.ttf</text>
+        <text x="20" y="88" font-family="system-ui, sans-serif" font-size="11" fill="#38bdf8">Enthält Vektorkurven &amp; typografische Ligaturen</text>
+
+        <!-- Feature List -->
+        <g transform="translate(0, 160)" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">
+          <text x="0" y="20">• <strong>Installation:</strong> Im Betriebssystem (Windows/Mac) nötig.</text>
+          <text x="0" y="55">• <strong>Verwendung:</strong> Word, InDesign, Photoshop, Illustrator.</text>
+          <text x="0" y="90">• <strong>Webdesign:</strong> Per CSS <code>@font-face</code> auf eigenen Websites.</text>
+          <text x="0" y="125">• <strong>Kopieren:</strong> Formatierung geht bei Social Media verloren.</text>
+          <text x="0" y="160">• <strong>Lizenz:</strong> Kommerzielle Schrifterwerb-Lizenzen beachten.</text>
+        </g>
+
+        <rect y="350" width="450" height="38" rx="8" fill="#1e293b"/>
+        <text x="225" y="374" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#38bdf8">Einsatz: Desktop-Programme, Druck &amp; Webseiten</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

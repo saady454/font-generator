@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="valHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08070d"/>
+      <stop offset="50%" stop-color="#120e1f"/>
+      <stop offset="100%" stop-color="#050408"/>
+    </linearGradient>
+    <linearGradient id="valRedCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff4655"/>
+      <stop offset="50%" stop-color="#fa4454"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="valCyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="valCardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#000000" flood-opacity="0.85"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#valHeroBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="220" r="300" fill="#ff4655" fill-opacity="0.10"/>
+  <circle cx="940" cy="450" r="280" fill="#06b6d4" fill-opacity="0.08"/>
+  <circle cx="600" cy="300" r="220" fill="#a855f7" fill-opacity="0.05"/>
+
+  <!-- Top Badge -->
+  <g transform="translate(600, 55)" text-anchor="middle">
+    <rect x="-190" y="-18" width="380" height="36" rx="18" fill="#1e111d" stroke="#ff4655" stroke-opacity="0.5" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#ff4655" letter-spacing="2">🎯 TACTICAL GAMERTAG STUDIO</text>
+  </g>
+
+  <!-- Central Title -->
+  <text x="600" y="132" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="38" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+    Valorant Nickname: <tspan fill="url(#valRedCyan)">Coole Namen &amp; Gamertags</tspan>
+  </text>
+  <text x="600" y="168" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#94a3b8">
+    Finde deinen perfekten Spielnamen &amp; beachte die offiziellen Riot-ID-Regeln (3–16 Zeichen)
+  </text>
+
+  <!-- Main Showcase Container -->
+  <g transform="translate(90, 205)" filter="url(#valCardShadow)">
+    <rect width="1020" height="420" rx="28" fill="#0f0c18" stroke="#ff4655" stroke-opacity="0.35" stroke-width="1.5"/>
+
+    <!-- Inner Grid Area -->
+    <rect x="25" y="25" width="970" height="370" rx="20" fill="#06050b" stroke="#ffffff" stroke-opacity="0.05"/>
+
+    <!-- Left: Tactical Riot ID Player Card Mockup -->
+    <g transform="translate(50, 45)">
+      <rect width="280" height="330" rx="20" fill="#130f21" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5"/>
+      
+      <!-- Avatar &amp; Profile Header -->
+      <g transform="translate(18, 18)">
+        <circle cx="24" cy="24" r="23" fill="none" stroke="url(#valRedCyan)" stroke-width="2.5"/>
+        <circle cx="24" cy="24" r="20" fill="#1e1630"/>
+        <text x="24" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16">🎯</text>
+        <text x="58" y="18" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#ffffff">VantaAim</text>
+        <text x="58" y="34" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ff4655">#EUW &amp;bull; Radiant 🏆</text>
+      </g>
+
+      <!-- Stats Bar -->
+      <g transform="translate(18, 70)" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">
+        <text x="20" y="12" text-anchor="middle"><tspan font-weight="800" fill="#ffffff">Duelist</tspan><tspan dy="12" x="20">Rolle</tspan></text>
+        <text x="115" y="12" text-anchor="middle"><tspan font-weight="800" fill="#06b6d4">64.2%</tspan><tspan dy="12" x="115">HS-Rate</tspan></text>
+        <text x="205" y="12" text-anchor="middle"><tspan font-weight="800" fill="#ff4655">1.48</tspan><tspan dy="12" x="205">K/D ⚔️</tspan></text>
+      </g>
+
+      <!-- Display Name Simulation -->
+      <g transform="translate(18, 110)">
+        <rect width="244" height="135" rx="10" fill="#06050b" stroke="#ff4655" stroke-opacity="0.3"/>
+        
+        <text x="12" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#ff4655" letter-spacing="1">RIOT ID (NAME + TAGLINE)</text>
+        <text x="12" y="52" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">Vanta <tspan fill="#94a3b8" font-size="13">#EUW</tspan></text>
+        
+        <rect x="12" y="70" width="220" height="24" rx="6" fill="#1b1429"/>
+        <text x="20" y="86" font-family="system-ui, sans-serif" font-size="10" fill="#38bdf8">✓ 3-16 Alphanumerisch</text>
+        <text x="135" y="86" font-family="system-ui, sans-serif" font-size="10" fill="#34d399">✓ Riot Regel OK</text>
+        
+        <text x="12" y="118" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Status: Bereit für Premier &amp; Ranked 🛡️</text>
+      </g>
+
+      <!-- Action Button -->
+      <g transform="translate(18, 260)">
+        <rect width="244" height="34" rx="8" fill="url(#valRedCyan)"/>
+        <text x="122" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#ffffff">Riot ID kopieren 📋</text>
+      </g>
+    </g>
+
+    <!-- Right: Text Generator Showcase Card -->
+    <g transform="translate(365, 45)">
+      <rect width="605" height="330" rx="20" fill="#130f21" stroke="#ffffff" stroke-opacity="0.08"/>
+
+      <!-- Input Simulation -->
+      <g transform="translate(25, 20)">
+        <text x="0" y="14" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#ff4655" letter-spacing="1">VALORANT NAME EINGEBEN</text>
+        <rect x="0" y="24" width="555" height="42" rx="10" fill="#06050b" stroke="#ff4655" stroke-opacity="0.4"/>
+        <text x="16" y="50" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#ffffff">Vanta</text>
+        <rect x="465" y="32" width="80" height="26" rx="6" fill="url(#valRedCyan)"/>
+        <text x="505" y="49" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#ffffff">Generieren ✨</text>
+      </g>
+
+      <!-- Style Grid -->
+      <g transform="translate(25, 95)">
+        
+        <!-- Style 1: Clean -->
+        <g transform="translate(0, 0)">
+          <rect width="265" height="46" rx="10" fill="#1b1429" stroke="#38bdf8" stroke-opacity="0.3"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#38bdf8">CLEAN (RANKED KOMPATIBEL)</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="15" font-weight="900" fill="#ffffff">VantaAim</text>
+          <rect x="200" y="10" width="55" height="26" rx="6" fill="#38bdf8" fill-opacity="0.2"/>
+          <text x="227" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#38bdf8">Kopie</text>
+        </g>
+
+        <!-- Style 2: Tactical -->
+        <g transform="translate(285, 0)">
+          <rect width="270" height="46" rx="10" fill="#1b1429" stroke="#ff4655" stroke-opacity="0.3"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#ff4655">TACTICAL (SITE / ACE)</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="15" font-weight="900" fill="#ffffff">SiteAce</text>
+          <rect x="205" y="10" width="55" height="26" rx="6" fill="#ff4655" fill-opacity="0.2"/>
+          <text x="232" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ff4655">Kopie</text>
+        </g>
+
+        <!-- Style 3: Dark -->
+        <g transform="translate(0, 56)">
+          <rect width="265" height="46" rx="10" fill="#1b1429" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#c084fc">DARK (VOID / SHADOW)</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">VoidPeak</text>
+          <rect x="200" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="227" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Style 4: Fast -->
+        <g transform="translate(285, 56)">
+          <rect width="270" height="46" rx="10" fill="#1b1429" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#fbbf24">FAST (DASH / RUSH)</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">DashNova</text>
+          <rect x="205" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="232" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Style 5: Deutsch -->
+        <g transform="translate(0, 112)">
+          <rect width="265" height="46" rx="10" fill="#1b1429" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#34d399">DEUTSCHER GAMERTAG</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">BlitzAim</text>
+          <rect x="200" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="227" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Style 6: Unicode Preview -->
+        <g transform="translate(285, 112)">
+          <rect width="270" height="46" rx="10" fill="#1b1429" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#a78bfa">DISCORD / COMMUNITY STIL</text>
+          <text x="12" y="36" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#ffffff">𝕍𝕒𝕟𝕥𝕒</text>
+          <rect x="205" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="232" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Full width Bottom CTA -->
+        <g transform="translate(0, 168)">
+          <rect width="555" height="46" rx="10" fill="url(#valRedCyan)"/>
+          <text x="277" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#ffffff">⚡ 500+ Valorant Gamertags &amp; Taktische Namen jetzt erstellen</text>
+        </g>
+
+      </g>
+    </g>
+  </g>
+</svg>

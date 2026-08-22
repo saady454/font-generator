@@ -1,0 +1,426 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import GradientMeshBackground from '../../components/GradientMeshBackground.astro';
+import { GAMES_DATA } from '../../data/game-metadata';
+import { SITE_CONFIG } from '../../config/site';
+
+const gameIcons: Record<string, string> = {
+  fortnite: '🎯',
+  minecraft: '⛏️',
+  valorant: '🔥',
+  roblox: '🕹️',
+  'free-fire': '🏆',
+  cs2: '💣',
+};
+
+const gamesList = Object.values(GAMES_DATA).map((game) => ({
+  ...game,
+  icon: gameIcons[game.id] || '🎮',
+}));
+
+const faqs = [
+  {
+    question: 'Ist ein Gaming Nickname Generator kostenlos?',
+    answer: 'Ja. Auf unserer Website kannst du beliebig viele Gaming-Namen kostenlos generieren, stilisieren und mit einem Klick in die Zwischenablage kopieren.',
+  },
+  {
+    question: 'Kann ich Gaming-Namen für Fortnite, Minecraft und Valorant erstellen?',
+    answer: 'Ja. Unser Generator liefert Ideen und Unicode-Stile für verschiedene Spiele. Für die tatsächliche Nutzung musst du jedoch die jeweiligen Namensregeln und Zeichenbeschränkungen beachten.',
+  },
+  {
+    question: 'Kann ich meinen Nickname mit besonderen Schriftzeichen gestalten?',
+    answer: 'Ja, wenn das Zielspiel die verwendeten Zeichen unterstützt. Unser Generator stellt dafür Fraktur-, Bold- und Symbolvarianten bereit. Die Kompatibilität sollte trotzdem direkt im Spiel getestet werden.',
+  },
+  {
+    question: 'Was ist ein guter Gaming-Nickname?',
+    answer: 'Ein guter Nickname ist leicht zu merken, gut lesbar und passt zu deinem Spielstil. Ob der gewünschte Name noch frei ist, lässt sich direkt auf der jeweiligen Gaming-Plattform feststellen.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: 'Gaming Nickname Generator – Fortnite, Minecraft, Valorant & mehr',
+      description: 'Gaming Nickname Generator für Fortnite, Minecraft, Valorant & mehr. Erstelle coole, kurze und kreative Gaming-Namen mit Schriftstilen und Symbolen.',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `${SITE_CONFIG.baseUrl}/spiele/gaming-nickname-generator/`,
+      },
+      image: `${SITE_CONFIG.baseUrl}/images/spiele/gaming-nickname-generator-hero.svg`,
+      author: {
+        '@type': 'Organization',
+        name: 'Schriftarten.io',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Schriftarten.io',
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    },
+  ],
+};
+---
+
+<Layout
+  title="Gaming Nickname Generator – Fortnite, Minecraft, Valorant & mehr"
+  description="Gaming Nickname Generator für Fortnite, Minecraft, Valorant & mehr. Erstelle coole, kurze und kreative Gaming-Namen mit Schriftstilen und Symbolen."
+  canonicalUrl="/spiele/gaming-nickname-generator/"
+  schema={schema}
+>
+  <main class="relative bg-[#0F1220] min-h-screen py-12 md:py-16 overflow-hidden homepage-mesh-wrapper">
+    <!-- Reusable Multi-Color Gradient Mesh Layer -->
+    <GradientMeshBackground />
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <a href="/spiele/fortnite/" class="hover:text-white transition-colors">Spiele</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Gaming Nickname Generator</span>
+      </nav>
+
+      <!-- Header & Intro -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
+          <span>🎮 Gamertags & Clannamen</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          Gaming Nickname Generator – Fortnite, Minecraft, Valorant & mehr
+        </h1>
+        <p class="mt-4 text-base sm:text-lg text-stone-300 leading-relaxed">
+          Ein guter Gaming-Name soll kurz, einprägsam und passend zum eigenen Spielstil sein. Trotzdem sind viele einfache Namen bereits vergeben. Ein Gaming Nickname Generator hilft dabei, schnell neue Ideen für Fortnite, Minecraft, Valorant und weitere Spiele zu finden.
+        </p>
+        <p class="mt-3 text-sm sm:text-base text-stone-400 leading-relaxed">
+          Ein Name sollte nicht nur auffällig sein. Er muss auch gut lesbar sein, zum Spiel passen und sich einfach kopieren lassen. Unser Gaming Nickname Generator mit verschiedenen Schriftstilen und Symbolen bietet dir kreative Inspiration und direkt kopierbare Gamertags.
+        </p>
+      </div>
+
+      <!-- Featured Image 1 -->
+      <figure class="my-10 rounded-3xl overflow-hidden border border-white/10 bg-[#161614] shadow-2xl">
+        <img
+          src="/images/spiele/gaming-nickname-generator-hero.svg"
+          alt="Gaming Nickname Generator für kreative Gaming-Namen"
+          class="w-full h-auto object-cover"
+          loading="eager"
+        />
+        <figcaption class="p-4 text-xs sm:text-sm text-stone-400 text-center border-t border-white/5 bg-[#121210]">
+          Ein guter Gaming-Name sollte auffallen und gleichzeitig leicht lesbar bleiben.
+        </figcaption>
+      </figure>
+
+      <!-- 6 Game Cards Showcase Grid -->
+      <div class="mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 text-center sm:text-left">
+          Wähle dein Spiel für spezialisierte Nicknames
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {gamesList.map((game) => (
+            <a
+              href={game.slug}
+              class="group block p-6 rounded-3xl bg-[#141412] border border-white/10 hover:border-amber-500/40 shadow-xl hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-200 relative overflow-hidden"
+            >
+              <div class="flex items-start justify-between gap-3 mb-4">
+                <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                  {game.icon}
+                </div>
+                <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-stone-300 group-hover:bg-amber-500/20 group-hover:text-amber-300 group-hover:border-amber-500/30 transition-colors">
+                  {game.genre}
+                </span>
+              </div>
+
+              <h3 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors mb-2 flex items-center justify-between">
+                <span>{game.name}</span>
+                <span class="text-stone-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all">→</span>
+              </h3>
+
+              <p class="text-xs sm:text-sm text-stone-400 leading-relaxed mb-4">
+                {game.description}
+              </p>
+
+              <!-- Sample Nickname Preview -->
+              <div class="p-2.5 rounded-xl bg-[#0a0a08] border border-white/5 group-hover:border-amber-500/30 transition-colors">
+                <div class="text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-0.5">Vorschau:</div>
+                <div class="text-xs font-mono font-bold text-amber-400 truncate">
+                  {game.exampleNicknames[0]}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Rich Editorial Content Sections -->
+      <article class="prose prose-invert max-w-none space-y-12">
+        
+        <!-- Section 1: Gaming Nickname Generator: Namen für beliebte Spiele -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Gaming Nickname Generator: Namen für beliebte Spiele
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-6">
+            Die Suchabsicht hinter einem Gaming-Nickname-Generator ist klar: schnell einen verwendbaren Namen finden. Deshalb deckt unser Generator mehrere Spiele und unterschiedliche Stilrichtungen ab:
+          </p>
+
+          <!-- 6-Row Comparison Table -->
+          <div class="overflow-x-auto my-6 rounded-2xl border border-white/10">
+            <table class="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr class="bg-white/5 text-amber-400 border-b border-white/10">
+                  <th class="p-4 font-bold">Spiel</th>
+                  <th class="p-4 font-bold">Geeigneter Namensstil</th>
+                  <th class="p-4 font-bold">Typische Verwendung</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/5 text-stone-300">
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white"><a href="/spiele/fortnite/" class="text-amber-400 hover:underline">Fortnite</a></td>
+                  <td class="p-4">Clean, Pro, auffällig</td>
+                  <td class="p-4 text-stone-400">Spielername und Profil</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white"><a href="/spiele/minecraft/" class="text-amber-400 hover:underline">Minecraft</a></td>
+                  <td class="p-4">Fantasy, Mittelalter, Clean</td>
+                  <td class="p-4 text-stone-400">Server und Multiplayer</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white"><a href="/spiele/valorant/" class="text-amber-400 hover:underline">Valorant</a></td>
+                  <td class="p-4">Kurz, modern, kompetitiv</td>
+                  <td class="p-4 text-stone-400">Spielerprofil</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white"><a href="/spiele/roblox/" class="text-amber-400 hover:underline">Roblox</a></td>
+                  <td class="p-4">Kreativ, Aesthetic, Funny</td>
+                  <td class="p-4 text-stone-400">Display-Name</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white"><a href="/spiele/free-fire/" class="text-amber-400 hover:underline">Free Fire</a></td>
+                  <td class="p-4">Kurz, auffällig, symbolisch</td>
+                  <td class="p-4 text-stone-400">Mobile-Profil</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white"><a href="/spiele/cs2/" class="text-amber-400 hover:underline">CS2</a></td>
+                  <td class="p-4">Clean, kurz, kompetitiv</td>
+                  <td class="p-4 text-stone-400">Steam- und Spielprofil</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="text-stone-300 leading-relaxed mb-6">
+            Die konkreten Regeln für Namen unterscheiden sich je nach Spiel oder Plattform. Daher sollte ein erzeugter Name vor dem Einsatz immer im jeweiligen Feld getestet werden.
+          </p>
+
+          <!-- Editorial Image 2 -->
+          <figure class="my-8 rounded-2xl overflow-hidden border border-white/10 bg-[#161614]">
+            <img
+              src="/images/spiele/gaming-namensstile-uebersicht.svg"
+              alt="Verschiedene Gaming-Namensstile für unterschiedliche Spiele"
+              class="w-full h-auto object-cover"
+              loading="lazy"
+            />
+            <figcaption class="p-3 text-xs text-stone-400 text-center border-t border-white/5 bg-[#121210]">
+              Der passende Namensstil hängt vom Spiel und vom gewünschten Auftritt ab.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- Section 2: So funktioniert ein Gaming Nickname Generator -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            So funktioniert ein Gaming Nickname Generator
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Ein guter Generator sollte die Namenssuche möglichst einfach machen. Auf unserem <a href="/" class="text-amber-400 hover:text-amber-300 underline font-medium">Schriftarten Generator</a> können Texte eingegeben, verschiedene Stile ausgewählt und Ergebnisse per Klick kopiert werden. Das eignet sich auch hervorragend für Gaming-Nicknames.
+          </p>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Ein praktischer Ablauf sieht so aus:
+          </p>
+          <ol class="list-decimal list-inside space-y-2.5 text-stone-300 mb-6">
+            <li><strong>Grundidee eingeben:</strong> Nutze deinen Vornamen, ein Hobby, ein Tier, eine Farbe oder ein Lieblingswort.</li>
+            <li><strong>Stil auswählen:</strong> Pro, Fantasy, Gothic, fett, kursiv oder dekorativ können unterschiedliche Wirkungen erzeugen.</li>
+            <li><strong>Symbole testen:</strong> Sterne, Rahmen oder andere Zeichen können einen kurzen Namen ergänzen.</li>
+            <li><strong>Lesbarkeit prüfen:</strong> Der Name sollte auch in kleiner Darstellung und im Kill-Feed verständlich bleiben.</li>
+            <li><strong>Kopieren und testen:</strong> Füge den Namen direkt in das gewünschte Spiel oder Profil ein.</li>
+          </ol>
+          <p class="text-stone-300 leading-relaxed mb-6">
+            So entsteht aus einer einfachen Idee im Handumdrehen ein individueller Gamertag.
+          </p>
+
+          <!-- Editorial Image 3 -->
+          <figure class="my-8 rounded-2xl overflow-hidden border border-white/10 bg-[#161614]">
+            <img
+              src="/images/spiele/gaming-nickname-workflow.svg"
+              alt="Gaming-Nickname erstellen, auswählen und kopieren"
+              class="w-full h-auto object-cover"
+              loading="lazy"
+            />
+            <figcaption class="p-3 text-xs text-stone-400 text-center border-t border-white/5 bg-[#121210]">
+              Vom ersten Begriff bis zum fertigen Nickname sind nur wenige Schritte nötig.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- Section 3: Welche Gaming-Namen funktionieren gut? -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Welche Gaming-Namen funktionieren gut?
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-6">
+            Ein guter Name braucht nicht möglichst viele Sonderzeichen. Im Gegenteil: Zu viele dekorative Zeichen können die Lesbarkeit verschlechtern.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+              <h3 class="text-lg font-bold text-cyan-400 mb-2">⚡ Clean und kurz</h3>
+              <p class="text-sm text-stone-300 leading-relaxed">
+                Kurze Namen lassen sich leichter merken. Beispiele sind Kombinationen aus zwei einfachen Begriffen wie „NovaWolf“ oder „PixelRush“.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+              <h3 class="text-lg font-bold text-amber-400 mb-2">🎯 Pro und kompetitiv</h3>
+              <p class="text-sm text-stone-300 leading-relaxed">
+                Für einen kompetitiven Look passen klare Begriffe wie „Clutch“, „Aim“, „Core“ oder <a href="/schrift/fette-schrift/" class="text-amber-400 hover:underline">fette Schrift</a>. Ein ruhiger Name wirkt oft professioneller als eine lange Zeichenfolge.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+              <h3 class="text-lg font-bold text-emerald-400 mb-2">🐉 Fantasy und kreativ</h3>
+              <p class="text-sm text-stone-300 leading-relaxed">
+                Fantasy-Namen arbeiten mit Begriffen aus Natur, Mythologie oder <a href="/schrift/kursive-schrift/" class="text-amber-400 hover:underline">kursiver Schrift</a>. Für Minecraft oder Rollenspiele ist dieser Stil besonders passend.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+              <h3 class="text-lg font-bold text-purple-400 mb-2">★ Symbole und Unicode-Stile</h3>
+              <p class="text-sm text-stone-300 leading-relaxed">
+                Spezielle Zeichen heben einen Nickname optisch hervor. Die Darstellung hängt jedoch von Spiel, Plattform und Gerät ab.
+              </p>
+            </div>
+          </div>
+
+          <!-- Editorial Image 4 -->
+          <figure class="my-8 rounded-2xl overflow-hidden border border-white/10 bg-[#161614]">
+            <img
+              src="/images/spiele/gaming-symbole-kompatibilitaet.svg"
+              alt="Vergleich von normalen, dekorativen und symbolischen Gaming-Nicknames"
+              class="w-full h-auto object-cover"
+              loading="lazy"
+            />
+            <figcaption class="p-3 text-xs text-stone-400 text-center border-t border-white/5 bg-[#121210]">
+              Dekorative Zeichen können einen Namen hervorheben, sollten aber immer auf der Zielplattform getestet werden.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- Section 4: Gaming-Nickname für Fortnite, Minecraft und Valorant -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">
+            Gaming-Nickname für Fortnite, Minecraft und Valorant
+          </h2>
+
+          <div class="space-y-6">
+            <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+              <h3 class="text-xl font-bold text-sky-400 mb-2">🎯 Fortnite</h3>
+              <p class="text-stone-300 text-sm leading-relaxed mb-3">
+                Bei Fortnite ist der Epic-Games-Anzeigename relevant. Epic Games nennt für Display-Namen unter anderem eine Länge von 3 bis 16 Zeichen und schließt beleidigende oder bestimmte andere Inhalte aus. Namen können außerdem zurückgesetzt oder abgelehnt werden, wenn sie gegen die Regeln verstoßen. Mehr dazu findest du in den offiziellen Richtlinien von <a href="https://www.epicgames.com/help/c-202300000001622/c-7261959845275/a202300000016056?lang=en-US" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 underline font-medium">Epic Games: Regeln für Display-Namen</a>.
+              </p>
+              <p class="text-stone-400 text-xs">
+                👉 Entdecke unseren spezialisierten <a href="/spiele/fortnite/" class="text-amber-400 hover:underline font-medium">Fortnite Nickname Generator</a> mit vorkonfigurierten Clantags.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+              <h3 class="text-xl font-bold text-emerald-400 mb-2">⛏️ Minecraft</h3>
+              <p class="text-stone-300 text-sm leading-relaxed mb-3">
+                Bei Minecraft hängt die praktische Verwendung unter anderem davon ab, wo der Name eingesetzt wird, etwa im Java-Profil, Bedrock-Account oder auf einem bestimmten Multiplayer-Server. Daher solltest du die Regeln des jeweiligen Namensfeldes prüfen.
+              </p>
+              <p class="text-stone-400 text-xs">
+                👉 Nutze unseren <a href="/spiele/minecraft/" class="text-amber-400 hover:underline font-medium">Minecraft Nickname Generator</a> für Fantasy- und Server-Namen.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+              <h3 class="text-xl font-bold text-rose-400 mb-2">🔥 Valorant</h3>
+              <p class="text-stone-300 text-sm leading-relaxed mb-3">
+                Für Valorant ist ein kurzer und gut lesbarer Name sinnvoll. Besonders bei kompetitiven Spielen sollte der Nickname im Scoreboard schnell erkennbar sein. Bei speziellen Zeichen gilt auch hier: zuerst im tatsächlichen Riot-Profil testen.
+              </p>
+              <p class="text-stone-400 text-xs">
+                👉 Sieh dir unseren <a href="/spiele/valorant/" class="text-amber-400 hover:underline font-medium">Valorant Nickname Generator</a> an.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 5: So findest du einen besseren Nickname -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            So findest du einen besseren Nickname
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Wenn der erste Vorschlag nicht passt, ändere nicht sofort alles. Stattdessen kannst du gezielt eine Eigenschaft verändern:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-stone-300 mb-6">
+            <li>Kombiniere zwei Begriffe, die zu dir passen.</li>
+            <li>Verwende höchstens wenige auffällige Symbole.</li>
+            <li>Teste Varianten mit und ohne Zahlen.</li>
+            <li>Halte den Namen möglichst leicht lesbar.</li>
+            <li>Vermeide Begriffe, die du später nicht mehr verwenden möchtest.</li>
+            <li>Prüfe den fertigen Namen direkt auf der Zielplattform.</li>
+          </ul>
+          <p class="text-stone-300 leading-relaxed">
+            Ein solcher Generator ist besonders hilfreich, wenn dir die erste Idee fehlt. Die besten Ergebnisse entstehen meist durch kleine Anpassungen an einem passenden Ausgangsnamen.
+          </p>
+        </section>
+
+        <!-- Section 6: FAQ Accordion -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">
+            Häufige Fragen (FAQ)
+          </h2>
+          <div class="space-y-4">
+            {faqs.map((faq) => (
+              <details class="group bg-white/5 rounded-2xl border border-white/10 p-5 transition-all open:bg-white/[0.08]">
+                <summary class="flex justify-between items-center font-bold text-white cursor-pointer list-none select-none">
+                  <span>{faq.question}</span>
+                  <span class="text-amber-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p class="mt-4 text-sm text-stone-300 leading-relaxed border-t border-white/5 pt-4">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <!-- Section 7: Fazit -->
+        <section class="rounded-3xl bg-gradient-to-br from-amber-500/10 via-[#141412] to-amber-500/5 border border-amber-500/30 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Fazit
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Ein Gaming Nickname Generator spart Zeit, wenn du schnell einen passenden Namen für ein Spiel suchst. Besonders nützlich sind Filter nach Stil, einfache Copy-&-Paste-Funktionen und Varianten für unterschiedliche Spiele.
+          </p>
+          <p class="text-stone-300 leading-relaxed">
+            Am besten startest du mit einem kurzen Begriff und verfeinerst ihn anschließend. Prüfe danach die Lesbarkeit, die erlaubte Zeichenlänge und die Regeln des jeweiligen Spiels. So wird aus einer zufälligen Idee ein Nickname, den du langfristig verwenden kannst!
+          </p>
+        </section>
+
+      </article>
+    </div>
+  </main>
+</Layout>

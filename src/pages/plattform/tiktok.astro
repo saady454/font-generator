@@ -31,24 +31,20 @@ const platformInfo = PLATFORMS_DATA['tiktok'] || {
 
 const tiktokFaqs = [
   {
-    q: 'Kann ich meinen TikTok-Namen mit Sonderschrift ändern?',
-    a: 'Ja, absolut! TikTok unterscheidet zwischen deinem technischen @benutzernamen (nur Standardbuchstaben, Zahlen und Punkte erlaubt) und deinem öffentlichen Anzeigenamen (Display Name). In deinem Anzeigenamen kannst du jede beliebige Unicode-Schriftart aus unserem Generator verwenden.',
+    q: 'Sind TikTok Schriftarten kostenlos?',
+    a: 'Online-Unicode-Generatoren können ohne den Download einer klassischen Schriftdatei verwendet werden. Bei einem kostenlosen Generator gibst du deinen Text ein, wählst einen Stil und kopierst das Ergebnis direkt in deine Zwischenablage.',
   },
   {
-    q: 'Funktioniert Sonderschrift in TikTok-Kommentaren?',
-    a: 'Ja! Alle hier generierten Schriftzeichen basieren auf dem universellen Unicode-Standard. Du kannst sie kopieren und direkt in TikTok-Kommentare, Video-Antworten oder DMs einfügen, wo sie für alle Nutzer auf iOS, Android und PC sichtbar sind.',
+    q: 'Kann ich die Schriften in meiner TikTok-Bio verwenden?',
+    a: 'Ja, kopierter Unicode-Text kann in geeignete TikTok-Textfelder eingefügt werden. Prüfe nach dem Einfügen trotzdem die Darstellung und Lesbarkeit auf deinem Mobilgerät.',
   },
   {
-    q: 'Warum hat die TikTok-Bio ein Limit von 80 Zeichen?',
-    a: 'TikTok hält Profilbeschreibungen bewusst kompakt auf 80 Zeichen. Mit unserem Generator kannst du diese 80 Zeichen optisch aufwerten – z. B. durch Kapitälchen (ᴋʟᴇɪɴᴇ ɢʀᴏßʙᴜᴄʜsᴛᴀʙᴇɴ) oder gezielte fette Hervorhebungen von Schlüsselbegriffen.',
+    q: 'Warum werden manche Zeichen als Kästchen angezeigt?',
+    a: 'Ein Kästchen (auch Tofu-Symbol genannt) kann erscheinen, wenn das verwendete Betriebssystem oder die App ein bestimmtes Unicode-Zeichen nicht darstellen kann. In diesem Fall solltest du einen einfacheren Stil wie Fett oder Kursiv ausprobieren.',
   },
   {
-    q: 'Kann ich Sonderschriften in TikTok Video-Captions und Hashtags nutzen?',
-    a: 'In Video-Captions (Videobeschreibungen) funktionieren die Schriften hervorragend, um die ersten Zeilen als Aufmerksamkeits-Hook zu stylen. Bei Hashtags (#) empfiehlt es sich, Standardbuchstaben zu verwenden, damit der TikTok-Suchalgorithmus dein Video bestmöglich kategorisieren kann.',
-  },
-  {
-    q: 'Werden die Schriftarten auf iPhones und Android-Smartphones in TikTok angezeigt?',
-    a: 'Ja. Da es sich um offizielle Unicode-Codepoints handelt, rendern sowohl iOS als auch Android und Desktop-Webbrowser die Zeichen nativ ohne zusätzliche Apps.',
+    q: 'Sind TikTok Schriftarten echte Fonts?',
+    a: 'Nein. Bei einem Unicode-Generator wird normalerweise keine neue Schriftdatei (wie TTF oder OTF) installiert. Der erzeugte Text besteht aus speziellen Unicode-Zeichen, die optisch wie verschiedene Schriftstile wirken.',
   },
 ];
 
@@ -69,8 +65,8 @@ const widgetsConfig = PLATFORM_WIDGETS_DATA['tiktok'];
 ---
 
 <Layout
-  title="TikTok Schriftarten Generator – Bio, Captions & Username stylen"
-  description="Kostenloser TikTok Schriftarten Generator: Gestalte deine TikTok Bio (80 Zeichen Limit), Anzeigename und Video-Captions mit coolen Schriftarten zum Kopieren."
+  title="TikTok Schriftarten: Coole Schriften für Bio & Text kopieren"
+  description="TikTok Schriftarten kostenlos erstellen: Fette, kursive, gotische und dekorative Texte für Bio, Namen und Captions erstellen, kopieren und einfügen."
   canonicalUrl="/plattform/tiktok"
   schema={faqSchema}
 >
@@ -87,14 +83,14 @@ const widgetsConfig = PLATFORM_WIDGETS_DATA['tiktok'];
 
       <!-- Page Header -->
       <div class="text-center max-w-3xl mx-auto mb-10">
-        <div class="platform-guide-badge inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3 transition-all">
-          <span>🎵 TikTok Profil & Video Guide</span>
+        <div class="platform-guide-badge inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#25f4ee]/10 border border-[#25f4ee]/30 text-[#25f4ee] text-xs font-bold uppercase tracking-wider mb-3 transition-all">
+          <span>🎵 TikTok Profil &amp; Bio Guide</span>
         </div>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-          <span class="platform-h1-accent transition-colors">TikTok</span> Schriftarten Generator – Bio, Captions & Username stylen
+          <span class="text-[#25f4ee]">TikTok Schriftarten</span> – Coole Schriften kopieren und einfügen
         </h1>
         <p class="mt-4 text-base text-stone-300 leading-relaxed max-w-2xl mx-auto">
-          Verleihe deinem TikTok-Kanal einen unverwechselbaren Look: Style deinen <strong>Anzeigenamen</strong> (Display Name), maximiere deine <strong>80-Zeichen-Bio</strong> mit kompakten Unicode-Schriften und hebe wichtige Hooks in deinen <strong>Video-Captions</strong> hervor.
+          Erstelle stylische TikTok-Schriftarten für Bio, Namen und Captions und kopiere deinen Lieblingsstil direkt in TikTok.
         </p>
       </div>
 
@@ -110,11 +106,12 @@ const widgetsConfig = PLATFORM_WIDGETS_DATA['tiktok'];
         showMoreButton={true}
       />
 
-      <!-- Content Grid: Guidelines, Tips, Cross Links & 3 New Interactive Widgets -->
+      <!-- Content Grid: Guidelines, Editorial Article & Sidebar -->
       <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <!-- LEFT COLUMN (lg:col-span-2): 3 Interactive Widgets + Explanations, Guides, FAQs -->
+        <!-- LEFT COLUMN (lg:col-span-2): Generator Widgets first, followed by Editorial Content & FAQ -->
         <div class="lg:col-span-2 space-y-8">
-          <!-- 3 Interactive Widgets (Ideas, Symbols, Emojis) -->
+          
+          <!-- 3 Interactive Generator Widgets (Bio-Ideen, Symbol-Kombinationen, Themen-Emoji-Pakete) -->
           {widgetsConfig && (
             <PlatformInteractiveWidgets
               widgetsData={widgetsConfig}
@@ -122,99 +119,330 @@ const widgetsConfig = PLATFORM_WIDGETS_DATA['tiktok'];
             />
           )}
 
-          <!-- 4. Key Features / Wofür eignet sich TikTok Schrift -->
-          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
-            <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-              <span>🎯</span> Wofür du Schriftarten in TikTok nutzen kannst
-            </h2>
-            <ul class="space-y-2.5 text-sm text-stone-300">
-              {platformInfo.keyFeatures.map((feat) => (
-                <li class="flex items-start gap-2.5">
-                  <span class="text-amber-400 font-bold">✓</span>
-                  <span>{feat}</span>
-                </li>
-              ))}
-            </ul>
+          <!-- IMAGE 1: Featured Hero Image -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/tiktok-schriftarten-hero.svg"
+              alt="TikTok Schriftarten auf Smartphone und Textgenerator"
+              class="w-full h-auto aspect-video object-cover"
+              loading="eager"
+            />
+            <p class="text-xs text-stone-400 p-3 text-center border-t border-white/5 bg-[#0a0a08]">
+              Stylische Unicode-Schrift für TikTok direkt im Browser erstellen und kopieren.
+            </p>
           </div>
 
-          <!-- 5. Username vs. Display Name & 80-Char Limit Guide -->
-          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
-            <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-              <span>📱</span> Username vs. Anzeigename & 80-Zeichen Bio Limit
-            </h2>
-            <div class="space-y-4 text-xs sm:text-sm text-stone-300 leading-relaxed">
-              <div class="p-4 rounded-2xl bg-[#0a0a08] border border-white/5 space-y-2">
-                <div class="font-bold text-white flex items-center gap-2">
-                  <span class="text-amber-400">1.</span>
-                  <span>Anzeigename (Display Name) vs. @benutzername</span>
-                </div>
-                <p>
-                  Auf TikTok besitzt jedes Profil zwei Namen: Den technischen <strong>@benutzernamen</strong> (z. B. <code class="text-amber-400 font-mono">@max_muster</code>), der für Erwähnungen und Login dient und nur Standardbuchstaben erlaubt, sowie den sichtbaren <strong>Anzeigenamen</strong>. In den Profileinstellungen unter <em>„Profil bearbeiten → Name“</em> kannst du jede beliebige Unicode-Schriftart aus unserem Generator einfügen.
-                </p>
-              </div>
+          <!-- Section 1: Intro -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Eine normale TikTok-Bio oder Caption wirkt schnell langweilig. Mit <strong>TikTok Schriftarten</strong> kannst du Namen, kurze Texte und Profilbeschreibungen auffälliger gestalten. Besonders bei kurzen Texten kann ein anderer Stil sofort einen neuen Look erzeugen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Das Problem: Du kannst nicht einfach eine beliebige Schriftdatei in ein TikTok-Textfeld installieren. Stattdessen sind Unicode-Zeichen praktisch, weil sie als Text kopiert werden können. (<a href="https://www.unicode.org/standard/standard.html" target="_blank" rel="noopener noreferrer" class="text-[#25f4ee] hover:text-[#25f4ee]/80 underline font-semibold">Unicode Standard</a>) Hier erfährst du, wie das funktioniert, welche Stile sich eignen und worauf du beim Kopieren achten solltest.
+            </p>
+          </div>
 
-              <div class="p-4 rounded-2xl bg-[#0a0a08] border border-white/5 space-y-2">
-                <div class="font-bold text-white flex items-center gap-2">
-                  <span class="text-amber-400">2.</span>
-                  <span>Das 80-Zeichen-Limit der TikTok-Bio</span>
-                </div>
-                <p>
-                  Mit maximal <strong>80 Zeichen</strong> zählt die TikTok-Bio zu den kürzesten aller Social-Media-Netzwerke. Damit dein Profiltext nicht abgeschnitten wird, empfehlen sich kompakte Schriftarten wie <span class="text-amber-300 font-semibold">Kapitälchen (Small Caps)</span> oder dezente fette Schriftzüge für dein Haupt-Keyword.
-                </p>
+          <!-- Section 2: Was sind TikTok Schriftarten? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Was sind TikTok Schriftarten?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Bei einem Online-Schriftgenerator wird dein normaler Text in spezielle Unicode-Zeichen umgewandelt. Es handelt sich also nicht um eine heruntergeladene Schriftdatei wie TTF oder OTF. Vielmehr werden Zeichen verwendet, die optisch beispielsweise fett, kursiv, gotisch oder dekorativ wirken.
+            </p>
+            
+            <div class="p-5 rounded-2xl bg-[#0a0a08] border border-white/10 space-y-2 font-mono text-sm">
+              <p class="text-stone-400 font-bold uppercase tracking-wider text-xs mb-3 font-sans">Ein Beispiel:</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-stone-200">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-stone-400">Normal:</span> <span class="font-bold text-white font-sans">TikTok</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-[#25f4ee]">Fett:</span> <span class="font-bold text-white">𝗧𝗶𝗸𝗧𝗼𝗸</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-[#fe2c55]">Kursiv:</span> <span class="font-bold text-white">𝘛𝘪𝘬𝘛𝘰𝘬</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-purple-400">Schreibschrift:</span> <span class="font-bold text-white font-serif">𝓣𝓲𝓴𝓣𝓸𝓴</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-amber-400">Gotisch:</span> <span class="font-bold text-white font-serif">𝔗𝔦𝔨𝔗𝔬𝔨</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-sky-400">Monospace:</span> <span class="font-bold text-white">𝚃𝚒𝚔𝚃𝚘𝚔</span></div>
               </div>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Dadurch kannst du deinen Text direkt kopieren und anschließend in ein unterstütztes Textfeld einfügen.
+            </p>
+          </div>
+
+          <!-- Section 3: Welche TikTok-Schriftstile sind beliebt? & Table -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Welche TikTok-Schriftstile sind beliebt?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Der passende Stil hängt vor allem vom Zweck deines Textes ab. Für eine Bio eignet sich beispielsweise ein klarer Stil besser als ein schwer lesbarer Glitch-Effekt.
+            </p>
+
+            <div class="overflow-x-auto rounded-2xl border border-white/10">
+              <table class="w-full text-left text-sm text-stone-300">
+                <thead class="bg-white/5 text-white font-bold border-b border-white/10">
+                  <tr>
+                    <th class="p-3.5">Stil</th>
+                    <th class="p-3.5">Wirkung</th>
+                    <th class="p-3.5">Geeignet für</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/fette-schrift" class="text-[#25f4ee] hover:underline">Fett</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200 font-medium">Stark und deutlich</td>
+                    <td class="p-3.5">Namen, kurze Aussagen</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/kursive-schrift" class="text-[#fe2c55] hover:underline">Kursiv</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200 font-medium">Elegant und weich</td>
+                    <td class="p-3.5">Bio, Zitate</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/schreibschrift" class="text-purple-400 hover:underline">Schreibschrift</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200 font-medium">Kreativ und persönlich</td>
+                    <td class="p-3.5">Namen, kurze Sprüche</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/gotische-schrift" class="text-amber-400 hover:underline">Gotisch</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200 font-medium">Dunkel und markant</td>
+                    <td class="p-3.5">Nicknames, Gaming</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/bubble-schrift" class="text-pink-400 hover:underline">Bubble</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200 font-medium">Verspielt</td>
+                    <td class="p-3.5">Kurze Bio-Texte</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/glitch-schrift" class="text-[#25f4ee] hover:underline">Glitch</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200 font-medium">Auffällig und ungewöhnlich</td>
+                    <td class="p-3.5">Edgy Profile</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">Monospace</td>
+                    <td class="p-3.5 text-stone-200 font-medium">Technisch und schlicht</td>
+                    <td class="p-3.5">Gaming, Tech-Themen</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- IMAGE 2: Stile-Vergleich -->
+            <div class="rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="/images/tiktok-schriftarten-stile-vergleich.svg"
+                alt="Vergleich verschiedener TikTok Schriftarten und Schriftstile"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Fett, kursiv, Schreibschrift, Gothic und weitere Stile im direkten Vergleich.
+              </p>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für die meisten Profile gilt: Lesbarkeit sollte wichtiger sein als ein möglichst komplizierter Effekt. Deshalb eignen sich klare <a href="/schrift/fette-schrift" class="text-[#25f4ee] hover:underline font-semibold">fette</a> oder <a href="/schrift/kursive-schrift" class="text-[#25f4ee] hover:underline font-semibold">kursive</a> Varianten oft besser für längere Textstellen.
+            </p>
+          </div>
+
+          <!-- Section 4: So erstellst du TikTok Schriftarten -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              So erstellst du TikTok Schriftarten
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Die Verwendung ist unkompliziert:
+            </p>
+            <ul class="space-y-3 text-sm sm:text-base text-stone-300 leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#25f4ee] font-bold">1.</span>
+                <span><strong>Text eingeben:</strong> Schreibe deinen Namen, deine Bio oder eine kurze Caption in den Generator.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#25f4ee] font-bold">2.</span>
+                <span><strong>Stil auswählen:</strong> Vergleiche die verschiedenen Varianten in der Vorschau.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#25f4ee] font-bold">3.</span>
+                <span><strong>Text kopieren:</strong> Wähle den gewünschten Stil und kopiere ihn.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#25f4ee] font-bold">4.</span>
+                <span><strong>Bei TikTok einfügen:</strong> Öffne das gewünschte Textfeld und füge die Zeichen ein.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#25f4ee] font-bold">5.</span>
+                <span><strong>Darstellung prüfen:</strong> Kontrolliere anschließend, ob der Stil auf deinem Gerät korrekt angezeigt wird.</span>
+              </li>
+            </ul>
+
+            <div class="p-4 rounded-2xl bg-gradient-to-r from-[#25f4ee]/10 to-[#fe2c55]/10 border border-[#25f4ee]/30 text-center">
+              <a href="/" class="inline-flex items-center gap-2 text-white font-bold hover:text-[#25f4ee] transition-colors">
+                <span>👉 TikTok-Schriftarten auf unserem Schriftarten Generator ausprobieren</span>
+                <span>→</span>
+              </a>
+            </div>
+
+            <!-- IMAGE 3: Anleitung Step-by-Step -->
+            <div class="rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="/images/tiktok-schriftarten-anleitung.svg"
+                alt="TikTok Text eingeben, Schriftstil auswählen und kopieren"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Vom normalen Text zur kopierbaren Unicode-Schrift in wenigen Schritten.
+              </p>
             </div>
           </div>
 
-          <!-- 6. Practical Tips -->
-          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
-            <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-              <span>💡</span> Tipps für das perfekte TikTok Profil & Video-Captions
+          <!-- Section 5: Wo kannst du die Schriften verwenden? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Wo kannst du die Schriften verwenden?
             </h2>
-            <ul class="space-y-3 text-xs sm:text-sm text-stone-300">
-              {platformInfo.tips.map((tip) => (
-                <li class="flex items-start gap-2.5">
-                  <span class="text-amber-400 text-base">📌</span>
-                  <span class="leading-relaxed">{tip}</span>
-                </li>
-              ))}
-              <li class="flex items-start gap-2.5">
-                <span class="text-amber-400 text-base">📌</span>
-                <span class="leading-relaxed">
-                  <strong>Hook in Video-Captions:</strong> Formatiere die allererste Zeile deiner Videobeschreibung in fetter Schrift (<code class="text-amber-400 font-mono">𝐅𝐄𝐓𝐓</code>), um neugierige Blicke direkt beim Durchscrollen der For You Page (FYP) abzufangen.
-                </span>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              TikTok-Schriftstile eignen sich besonders für kurze Texte. Dazu gehören beispielsweise:
+            </p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-sm text-stone-300">
+              <li class="flex items-center gap-2 p-2.5 rounded-xl bg-[#0a0a08] border border-white/5">
+                <span class="text-[#25f4ee]">✓</span> Bio und Profilbeschreibung
+              </li>
+              <li class="flex items-center gap-2 p-2.5 rounded-xl bg-[#0a0a08] border border-white/5">
+                <span class="text-[#25f4ee]">✓</span> Anzeigename (Display Name)
+              </li>
+              <li class="flex items-center gap-2 p-2.5 rounded-xl bg-[#0a0a08] border border-white/5">
+                <span class="text-[#25f4ee]">✓</span> kurze Captions &amp; Videotitel
+              </li>
+              <li class="flex items-center gap-2 p-2.5 rounded-xl bg-[#0a0a08] border border-white/5">
+                <span class="text-[#25f4ee]">✓</span> Kommentare &amp; Antworten
+              </li>
+              <li class="flex items-center gap-2 p-2.5 rounded-xl bg-[#0a0a08] border border-white/5">
+                <span class="text-[#25f4ee]">✓</span> Nicknames &amp; Clan-Tags
+              </li>
+              <li class="flex items-center gap-2 p-2.5 rounded-xl bg-[#0a0a08] border border-white/5">
+                <span class="text-[#25f4ee]">✓</span> dekorative Textzeilen &amp; Trenner
               </li>
             </ul>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed mt-4">
+              Allerdings sollte nicht jeder Bereich mit ausgefallenen Zeichen gefüllt werden. Ein einzelnes Wort oder eine kurze Zeile kann wirkungsvoller sein als ein kompletter Absatz in einer dekorativen Variante wie <a href="/schrift/wellige-schrift" class="text-[#25f4ee] hover:underline font-semibold">Wellige Schrift</a> oder <a href="/schrift/eckige-schrift" class="text-[#25f4ee] hover:underline font-semibold">Eckige Schrift</a>.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Außerdem kann die Darstellung je nach Zeichen, Gerät oder Anwendung variieren. Wenn ein Zeichen nicht unterstützt wird, kann beispielsweise ein Ersatzzeichen erscheinen. Deshalb ist eine kurze Kontrolle nach dem Einfügen sinnvoll.
+            </p>
           </div>
 
-          <!-- 7. Platform FAQs (Final section in left column) -->
+          <!-- Section 6: TikTok Bio mit ausgefallener Schrift gestalten -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              TikTok Bio mit ausgefallener Schrift gestalten
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Eine gute Bio sollte schnell verständlich bleiben. Nutze deshalb am besten einen Stil für wichtige Wörter und normalen Text für zusätzliche Informationen.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="p-4 rounded-2xl bg-[#0a0a08] border border-white/5 space-y-1.5">
+                <span class="text-xs font-bold text-stone-400 uppercase tracking-wider">Normal:</span>
+                <p class="text-sm text-stone-300 font-mono">Creator | Gaming | Neue Videos</p>
+              </div>
+              <div class="p-4 rounded-2xl bg-[#0a0a08] border border-[#25f4ee]/30 space-y-1.5 shadow-lg shadow-[#25f4ee]/5">
+                <span class="text-xs font-bold text-[#25f4ee] uppercase tracking-wider">Mit Stil:</span>
+                <p class="text-sm text-white font-bold">𝗖𝗿𝗲𝗮𝘁𝗼𝗿 | 𝙂𝙖𝙢𝙞𝙣𝙜 | Neue Videos</p>
+              </div>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Auch Symbole oder Emojis können sparsam eingesetzt werden. Dadurch entsteht ein klarer visueller Akzent, ohne dass die Bio überladen wirkt.
+            </p>
+
+            <!-- IMAGE 4: Bio Guide Card -->
+            <div class="rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="/images/tiktok-schriftarten-bio-guide.svg"
+                alt="TikTok Bio mit dekorativer Schrift und normalem Text"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Eine dekorative Schrift wirkt besonders gut, wenn sie gezielt und sparsam eingesetzt wird.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 7: Warum funktionieren diese Zeichen? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Warum funktionieren diese Zeichen?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              <a href="https://www.unicode.org/standard/standard.html" target="_blank" rel="noopener noreferrer" class="text-[#25f4ee] hover:underline font-semibold">Unicode</a> ist ein internationaler Standard zur Darstellung von Textzeichen. Er weist Zeichen eindeutige Codepunkte zu und ermöglicht dadurch die Verarbeitung und den Austausch von Text auf unterschiedlichen Systemen. (<a href="https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-1/" target="_blank" rel="noopener noreferrer" class="text-[#25f4ee] hover:underline font-semibold">Unicode Standard Spezifikation</a>)
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein Schriftgenerator nutzt daraus passende Zeichenkombinationen. Deshalb muss der Empfänger nicht dieselbe installierte Schriftdatei besitzen. Trotzdem ist die Darstellung nicht für jedes einzelne Zeichen und jedes System garantiert identisch.
+            </p>
+          </div>
+
+
+
+          <!-- Section 8: Häufige Fragen (FAQs) -->
           <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
-            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-              <span>❓</span> Häufige Fragen zu TikTok Schriften
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> Häufige Fragen zu TikTok Schriftarten
             </h2>
             <div class="space-y-4">
               {tiktokFaqs.map((faq) => (
                 <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
-                  <h3 class="text-sm font-bold text-white mb-1.5">{faq.q}</h3>
-                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed whitespace-pre-line">{faq.a}</p>
+                  <h3 class="text-sm sm:text-base font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
+
+          <!-- Section 9: Fazit -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Fazit
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Mit TikTok Schriftarten kannst du kurze Profiltexte, Namen und Captions individueller gestalten. <a href="/schrift/fette-schrift" class="text-[#25f4ee] hover:underline font-semibold">Fett</a>, <a href="/schrift/kursive-schrift" class="text-[#25f4ee] hover:underline font-semibold">kursiv</a>, <a href="/schrift/schreibschrift" class="text-[#25f4ee] hover:underline font-semibold">Schreibschrift</a>, <a href="/schrift/gotische-schrift" class="text-[#25f4ee] hover:underline font-semibold">Gothic</a> oder Monospace bieten unterschiedliche Looks. Entscheidend ist jedoch, dass dein Text weiterhin schnell lesbar bleibt.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Am besten probierst du mehrere Varianten aus und kopierst anschließend den Stil, der zu deinem Profil passt. Für längere Informationen ist normaler Text meist die bessere Wahl, während dekorative Unicode-Zeichen besonders bei kurzen Akzenten sinnvoll sind.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Teste jetzt unseren universellen <a href="/" class="text-[#25f4ee] hover:underline font-semibold">Schriftarten Generator</a> für 500+ weitere Kombinationen!
+            </p>
+          </div>
+
         </div>
 
-        <!-- RIGHT SIDEBAR COLUMN: 1. Live TikTok Preview, 2. Beliebte Stile, 3. Weitere Plattformen -->
+        <!-- RIGHT SIDEBAR COLUMN: 1. Live Preview, 2. Beliebte Stile, 3. Weitere Plattformen -->
         <div class="space-y-6">
           <!-- 1. Live TikTok Preview Mockup Widget -->
           <PlatformPreviewWidget platformId="tiktok" />
 
-          <!-- 2. Beliebte Stile für TikTok (Using shared FontStyleGrid component) -->
+          <!-- 2. Beliebte Stile für TikTok -->
           <FontStyleGrid
             title="Beliebte Stile für TikTok"
             titleIcon="🎨"
-            isAmberTitle={true}
+            isAmberTitle={false}
           />
 
-          <!-- 2. Weitere Plattformen (List with arrows format stacked directly below) -->
+          <!-- 3. Weitere Plattformen -->
           <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
             <h3 class="text-sm font-bold uppercase tracking-wider text-stone-300 mb-4">
               Weitere Plattformen
@@ -225,10 +453,10 @@ const widgetsConfig = PLATFORM_WIDGETS_DATA['tiktok'];
                 .map((other) => (
                   <a
                     href={other.href}
-                    class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-amber-500/10 border border-white/5 hover:border-amber-500/30 text-xs font-semibold text-stone-300 hover:text-white transition-all group"
+                    class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-[#25f4ee]/10 border border-white/5 hover:border-[#25f4ee]/30 text-xs font-semibold text-stone-300 hover:text-white transition-all group"
                   >
                     <span>{other.icon} {other.title}</span>
-                    <span class="group-hover:translate-x-1 transition-transform text-amber-400">→</span>
+                    <span class="group-hover:translate-x-1 transition-transform text-[#25f4ee]">→</span>
                   </a>
                 ))}
             </div>

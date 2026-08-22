@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="valSplitBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08070d"/>
+      <stop offset="50%" stop-color="#120e1f"/>
+      <stop offset="100%" stop-color="#050408"/>
+    </linearGradient>
+    <linearGradient id="valGreenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <linearGradient id="valRedPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff4655"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <filter id="valSplitShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#valSplitBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#10b981" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#ff4655" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-170" y="-16" width="340" height="32" rx="16" fill="#1e111d" stroke="#ff4655" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#ff4655" letter-spacing="2">KOMPATIBILITÄTS-CHECK</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Gültige Riot ID <tspan fill="url(#valRedPurple)">vs.</tspan> Dekorative Unicode-Schrift
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Warum eine stylische Style-Vorschau nicht automatisch als Ingame-Name gespeichert werden kann
+    </text>
+  </g>
+
+  <!-- Split Comparison Cards -->
+  <g transform="translate(80, 155)">
+    
+    <!-- Left Card: Gültige Riot ID -->
+    <g transform="translate(0, 0)" filter="url(#valSplitShadow)">
+      <rect width="500" height="440" rx="24" fill="#130f21" stroke="#10b981" stroke-opacity="0.4" stroke-width="1.5"/>
+      
+      <g transform="translate(25, 25)">
+        <rect width="160" height="28" rx="8" fill="#10b981" fill-opacity="0.2"/>
+        <text x="80" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#34d399">1. GÜLTIGE RIOT ID</text>
+        
+        <rect y="45" width="450" height="80" rx="14" fill="#06050b" stroke="#10b981" stroke-opacity="0.2"/>
+        <text x="225" y="94" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#ffffff">Vanta <tspan fill="#34d399" font-size="22">#EUW</tspan></text>
+
+        <!-- Feature List -->
+        <g transform="translate(0, 150)" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="700" fill="#34d399">Regeln &amp; Eigenschaften:</text>
+          
+          <g transform="translate(0, 20)">
+            <text x="0" y="15" fill="#34d399" font-weight="900">✓</text>
+            <text x="22" y="15">3 bis 16 alphanumerische Zeichen (A–Z, 0–9)</text>
+          </g>
+
+          <g transform="translate(0, 50)">
+            <text x="0" y="15" fill="#34d399" font-weight="900">✓</text>
+            <text x="22" y="15">Tagline mit 3 bis 5 Zeichen (z. B. #EUW, #1337)</text>
+          </g>
+
+          <g transform="translate(0, 80)">
+            <text x="0" y="15" fill="#34d399" font-weight="900">✓</text>
+            <text x="22" y="15">100 % fehlerfrei im Ranked Matchmaking &amp; Kill-Feed</text>
+          </g>
+
+          <g transform="translate(0, 110)">
+            <text x="0" y="15" fill="#34d399" font-weight="900">✓</text>
+            <text x="22" y="15">Keine Darstellungsfehler / Kästchen bei Mitspielern</text>
+          </g>
+        </g>
+
+        <!-- Recommendation Box -->
+        <rect y="315" width="450" height="50" rx="10" fill="#06050b" stroke="#10b981" stroke-opacity="0.3"/>
+        <text x="225" y="346" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#34d399">
+          Offizieller Status: Direkt im Riot Client speicherbar
+        </text>
+      </g>
+    </g>
+
+    <!-- Right Card: Unicode Vorschau -->
+    <g transform="translate(540, 0)" filter="url(#valSplitShadow)">
+      <rect width="500" height="440" rx="24" fill="#130f21" stroke="#ff4655" stroke-opacity="0.4" stroke-width="1.5"/>
+      
+      <g transform="translate(25, 25)">
+        <rect width="200" height="28" rx="8" fill="#ff4655" fill-opacity="0.2"/>
+        <text x="100" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#ff4655">2. UNICODE-VORSCHAU</text>
+        
+        <rect y="45" width="450" height="80" rx="14" fill="#06050b" stroke="#ff4655" stroke-opacity="0.2"/>
+        <text x="225" y="94" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="800" fill="#ffffff">꧁ 𝕍𝕒𝕟𝕥𝕒 ꧂</text>
+
+        <!-- Feature List -->
+        <g transform="translate(0, 150)" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="700" fill="#ff4655">Einsatzbereiche &amp; Grenzen:</text>
+          
+          <g transform="translate(0, 20)">
+            <text x="0" y="15" fill="#f87171" font-weight="900">⚠️</text>
+            <text x="22" y="15">Wird von der Riot-Account-Verwaltung blockiert</text>
+          </g>
+
+          <g transform="translate(0, 50)">
+            <text x="0" y="15" fill="#c084fc" font-weight="900">★</text>
+            <text x="22" y="15">Ideal für Discord-Nicknames, Team-Banner &amp; Foren</text>
+          </g>
+
+          <g transform="translate(0, 80)">
+            <text x="0" y="15" fill="#c084fc" font-weight="900">★</text>
+            <text x="22" y="15">Perfekt für Twitch-, YouTube- &amp; TikTok-Gaming-Bios</text>
+          </g>
+
+          <g transform="translate(0, 110)">
+            <text x="0" y="15" fill="#c084fc" font-weight="900">★</text>
+            <text x="22" y="15">Kreative Inspiration für Clan-Logos &amp; Grafiken</text>
+          </g>
+        </g>
+
+        <!-- Recommendation Box -->
+        <rect y="315" width="450" height="50" rx="10" fill="#06050b" stroke="#ff4655" stroke-opacity="0.3"/>
+        <text x="225" y="346" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#ff4655">
+          Empfehlung: Für Social Media &amp; Community-Profile
+        </text>
+      </g>
+    </g>
+
+  </g>
+</svg>

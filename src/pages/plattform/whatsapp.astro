@@ -1,0 +1,495 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TextStyleConverter from '../../components/TextStyleConverter.astro';
+import FontStyleGrid from '../../components/FontStyleGrid.astro';
+import PlatformInteractiveWidgets from '../../components/PlatformInteractiveWidgets.astro';
+import PlatformPreviewWidget from '../../components/PlatformPreviewWidget.astro';
+import { PLATFORMS_DATA } from '../../data/platform-metadata';
+import { PLATFORM_WIDGETS_DATA } from '../../data/platform-widgets';
+import { NAVIGATION_DATA } from '../../data/navigation';
+
+const platformInfo = PLATFORMS_DATA['whatsapp'] || {
+  id: 'whatsapp',
+  name: 'WhatsApp',
+  slug: '/plattform/whatsapp',
+  icon: '💬',
+  tagline: 'WhatsApp Schriftarten für Chats, Status und Gruppennamen: Erstelle fette, kursive, verschnörkelte und dekorative Texte und kopiere sie direkt.',
+  bioLimit: 139,
+  hasNativeFormatting: true,
+  compatibleStyles: ['Fette Schrift', 'Kursive Schrift', 'Gotische Schrift', 'Schreibschrift', 'Bubble Schrift', 'Durchgestrichen'],
+  keyFeatures: [
+    'WhatsApp Info / Status (139 Zeichen) personalisieren',
+    'Gruppennamen und Gruppenbeschreibungen formatieren',
+    'Chat-Nachrichten ohne Markdown-Tags dauerhaft stylen',
+    'Glückwünsche & Geburtstagsnachrichten besonders hervorheben',
+  ],
+  tips: [
+    'Unterschied zur nativen Formatierung: Während WhatsApp-eigene Sternchen (*fett*) nur in WhatsApp wirken, bleibt unser Unicode-Text auch beim Weiterleiten in E-Mails oder SMS exakt formatiert.',
+    'Gotische Fraktur oder Kursivschrift eignet sich hervorragend für inspirierende WhatsApp Info-Sprüche.',
+  ],
+};
+
+const whatsappFaqs = [
+  {
+    q: 'Sind WhatsApp Schriftarten kostenlos?',
+    a: 'Ein Online-Unicode-Generator kann kostenlos genutzt werden, wenn der jeweilige Anbieter ihn ohne Bezahlung anbietet. Bei Schriftarten.io steht der Generator direkt im Browser zur Verfügung.',
+  },
+  {
+    q: 'Kann ich die Schriftarten in WhatsApp kopieren?',
+    a: 'Ja. Du kannst den erzeugten Text kopieren und anschließend in ein geeignetes WhatsApp-Textfeld einfügen. Prüfe danach kurz, ob alle Zeichen korrekt dargestellt werden.',
+  },
+  {
+    q: 'Sind das echte Schriftarten?',
+    a: 'Technisch handelt es sich bei solchen Generatoren nicht um installierte Schriftdateien. Der Text wird in spezielle Unicode-Zeichen umgewandelt. Deshalb kannst du ihn wie normalen Text kopieren.',
+  },
+  {
+    q: 'Warum sieht eine Schrift auf meinem Handy anders aus?',
+    a: 'Die Darstellung hängt unter anderem davon ab, welche Zeichen und Glyphen das verwendete System unterstützt. Bei Problemen ist eine einfachere Variante wie Fett oder Kursiv meist die beste Lösung.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": whatsappFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+
+const widgetsConfig = PLATFORM_WIDGETS_DATA['whatsapp'];
+---
+
+<Layout
+  title="WhatsApp Schriftarten – Coole Schriften kopieren & einfügen"
+  description="WhatsApp Schriftarten kostenlos erstellen: Nutze fette, kursive, gotische und dekorative Textstile für Chats, Status und Gruppennamen zum Kopieren."
+  canonicalUrl="/plattform/whatsapp"
+  schema={faqSchema}
+>
+  <main class="py-12 md:py-16 bg-[#0a0a08] platform-theme-whatsapp" data-platform-theme="whatsapp">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <a href="/plattform" class="hover:text-white transition-colors">Plattformen</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">WhatsApp</span>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="platform-guide-badge inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] text-xs font-bold uppercase tracking-wider mb-3 transition-all">
+          <span>💬 WhatsApp Chat &amp; Status Guide</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <span class="text-[#25D366]">WhatsApp Schriftarten</span> – Coole Schriften kopieren und einfügen
+        </h1>
+        <p class="mt-4 text-base text-stone-300 leading-relaxed max-w-2xl mx-auto">
+          WhatsApp Schriftarten für Chats, Status und Gruppennamen: Erstelle fette, kursive, verschnörkelte und dekorative Texte und kopiere sie direkt.
+        </p>
+      </div>
+
+      <!-- Interactive Converter Component -->
+      <TextStyleConverter
+        defaultText="Hallo WhatsApp ✨"
+        pageSlug="whatsapp"
+        filterCategory="alle"
+        showCategoryTabs={true}
+        showPresets={true}
+        maxChars={139}
+        limit={12}
+        showMoreButton={true}
+      />
+
+      <!-- Content Grid: Guidelines, Editorial Article & Sidebar -->
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- LEFT COLUMN (lg:col-span-2): Generator Widgets first, followed by Editorial Content & FAQ -->
+        <div class="lg:col-span-2 space-y-8">
+          
+          <!-- 3 Interactive Generator Widgets (Status-Ideen, Symbol-Kombinationen, Themen-Emoji-Pakete) -->
+          {widgetsConfig && (
+            <PlatformInteractiveWidgets
+              widgetsData={widgetsConfig}
+              platformId="whatsapp"
+            />
+          )}
+
+          <!-- IMAGE 1: Featured Hero Image -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/whatsapp-schriftarten-hero.svg"
+              alt="WhatsApp Schriftarten auf einem Smartphone mit verschiedenen Textstilen"
+              class="w-full h-auto aspect-video object-cover"
+              loading="eager"
+            />
+            <p class="text-xs text-stone-400 p-3 text-center border-t border-white/5 bg-[#0a0a08]">
+              Verschiedene Unicode-Schriftstile für kreative WhatsApp-Texte.
+            </p>
+          </div>
+
+          <!-- Section 1: Intro -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Normale WhatsApp-Nachrichten sehen schnell gleich aus. Wenn du einen Status, Gruppennamen oder eine besondere Nachricht hervorheben möchtest, können <strong>WhatsApp Schriftarten</strong> eine einfache Lösung sein. Mit verschiedenen Textstilen lässt sich ein kurzer Text auffälliger gestalten.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Dabei gibt es einen wichtigen Unterschied: Ein Online-Generator installiert normalerweise keine neue Schriftdatei auf deinem Smartphone. Stattdessen wird dein Text in spezielle Unicode-Zeichen umgewandelt. Dadurch kannst du das Ergebnis kopieren und in unterstützte Textfelder einfügen.
+            </p>
+          </div>
+
+          <!-- Section 2: Was sind WhatsApp Schriftarten? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Was sind WhatsApp Schriftarten?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Bei einem Schriftgenerator wird normaler Text in Zeichen mit einer anderen optischen Wirkung umgewandelt. So kann aus <code class="text-[#25D366] font-mono font-bold">Hallo</code> beispielsweise Folgendes werden:
+            </p>
+            
+            <div class="p-5 rounded-2xl bg-[#0a0a08] border border-white/10 space-y-2 font-mono text-sm">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-stone-200">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-[#25D366]">Fett:</span> <span class="font-bold text-white font-sans">𝗛𝗮𝗹𝗹𝗼</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-[#34B7F1]">Kursiv:</span> <span class="font-bold text-white font-sans">𝘏𝘢𝘭𝘭𝘰</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-purple-400">Schreibschrift:</span> <span class="font-bold text-white font-serif">𝓗𝓪𝓵𝓵𝓸</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-amber-400">Gotisch:</span> <span class="font-bold text-white font-serif">𝔞𝔩𝔩𝔬 / 𝔥𝔞𝔩𝔩𝔬</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-pink-400">Eingekreist:</span> <span class="font-bold text-white font-sans">ⓗⓐⓛⓛⓞ</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-emerald-400">Monospace:</span> <span class="font-bold text-white font-mono">𝙷𝚊𝚕𝚕𝚘</span></div>
+              </div>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Diese Varianten sind keine klassischen TTF- oder OTF-Fonts. Sie bestehen aus Unicode-Zeichen, die als Text kopiert werden können. Der <a href="https://www.unicode.org/standard/standard.html" target="_blank" rel="noopener noreferrer" class="text-[#25D366] hover:text-[#25D366]/80 underline font-semibold">Unicode-Standard</a> definiert die Zeichen und ihre Kodierung international.
+            </p>
+          </div>
+
+          <!-- Section 3: Welche Schriftarten eignen sich für WhatsApp? & Table -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Welche Schriftarten eignen sich für WhatsApp?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Der beste Stil hängt vom Zweck ab. Für eine kurze Nachricht kann eine fette Variante sinnvoll sein. Ein Status wirkt dagegen oft mit kursiver oder dekorativer Schrift interessanter.
+            </p>
+
+            <div class="overflow-x-auto rounded-2xl border border-white/10">
+              <table class="w-full text-left text-sm text-stone-300">
+                <thead class="bg-white/5 text-white font-bold border-b border-white/10">
+                  <tr>
+                    <th class="p-3.5">Stil</th>
+                    <th class="p-3.5">Wirkung</th>
+                    <th class="p-3.5">Gut geeignet für</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/fette-schrift" class="text-[#25D366] hover:underline">Fett</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200 font-medium">Klar und auffällig</td>
+                    <td class="p-3.5">wichtige Wörter, Gruppennamen</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/kursive-schrift" class="text-[#34B7F1] hover:underline">Kursiv</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200 font-medium">Elegant</td>
+                    <td class="p-3.5">Status und Zitate</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/schreibschrift" class="text-purple-400 hover:underline">Schreibschrift</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200 font-medium">Persönlich</td>
+                    <td class="p-3.5">Namen und kurze Sprüche</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/gotische-schrift" class="text-amber-400 hover:underline">Gotisch</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200 font-medium">Markant</td>
+                    <td class="p-3.5">besondere Nachrichten</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/bubble-schrift" class="text-pink-400 hover:underline">Bubble</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200 font-medium">Verspielt</td>
+                    <td class="p-3.5">kurze Texte</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">Monospace</td>
+                    <td class="p-3.5 text-stone-200 font-medium">Technisch</td>
+                    <td class="p-3.5">Gaming und Tech</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/durchgestrichen" class="text-emerald-400 hover:underline">Durchgestrichen</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200 font-medium">Effektvoll</td>
+                    <td class="p-3.5">einzelne Wörter</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- IMAGE 2: Stile-Vergleich -->
+            <div class="rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="/images/whatsapp-schriftarten-stile-vergleich.svg"
+                alt="Vergleich verschiedener WhatsApp Schriftarten"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Fett, kursiv, Schreibschrift, Gothic und weitere Varianten im Vergleich.
+              </p>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              <strong>Wichtig:</strong> Nicht jeder Text muss dekoriert werden. Gerade längere Nachrichten bleiben in normaler Schrift leichter lesbar.
+            </p>
+          </div>
+
+          <!-- Section 4: So erstellst du WhatsApp Schriftarten -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              So erstellst du WhatsApp Schriftarten
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Mit einem Online-Generator funktioniert die Umwandlung in wenigen Schritten:
+            </p>
+            <ul class="space-y-3 text-sm sm:text-base text-stone-300 leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#25D366] font-bold">1.</span>
+                <span><strong>Text eingeben:</strong> Schreibe deinen Namen, Status oder Nachricht in das Eingabefeld.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#25D366] font-bold">2.</span>
+                <span><strong>Stil auswählen:</strong> Vergleiche die verfügbaren Varianten.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#25D366] font-bold">3.</span>
+                <span><strong>Kopieren:</strong> Übernimm deinen Lieblingsstil in die Zwischenablage.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#25D366] font-bold">4.</span>
+                <span><strong>WhatsApp öffnen:</strong> Gehe zum gewünschten Chat oder Textfeld.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#25D366] font-bold">5.</span>
+                <span><strong>Einfügen:</strong> Füge den kopierten Text ein und prüfe die Darstellung.</span>
+              </li>
+            </ul>
+
+            <div class="p-4 rounded-2xl bg-gradient-to-r from-[#25D366]/10 to-[#128C7E]/10 border border-[#25D366]/30 text-center">
+              <a href="/" class="inline-flex items-center gap-2 text-white font-bold hover:text-[#25D366] transition-colors">
+                <span>👉 Nutze unseren universellen Schriftarten Generator für 500+ Schriftstile</span>
+                <span>→</span>
+              </a>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein Generator ist besonders praktisch, wenn du viele Varianten vergleichen möchtest. So musst du nicht jeden Stil einzeln erstellen.
+            </p>
+
+            <!-- IMAGE 3: Anleitung Step-by-Step -->
+            <div class="rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="/images/whatsapp-schriftarten-anleitung.svg"
+                alt="WhatsApp Schriftart erstellen, kopieren und einfügen"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Text eingeben, Stil auswählen, kopieren und anschließend in WhatsApp einfügen.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 5: Wo kannst du die Schriften verwenden? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Wo kannst du die Schriften verwenden?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              WhatsApp Schriftarten eignen sich vor allem für kurze Inhalte. Dazu gehören beispielsweise:
+            </p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-sm text-stone-300">
+              <li class="flex items-center gap-2 p-2.5 rounded-xl bg-[#0a0a08] border border-white/5">
+                <span class="text-[#25D366]">✓</span> WhatsApp-Status (139 Zeichen)
+              </li>
+              <li class="flex items-center gap-2 p-2.5 rounded-xl bg-[#0a0a08] border border-white/5">
+                <span class="text-[#25D366]">✓</span> Gruppennamen &amp; Beschreibungen
+              </li>
+              <li class="flex items-center gap-2 p-2.5 rounded-xl bg-[#0a0a08] border border-white/5">
+                <span class="text-[#25D366]">✓</span> Info- oder Profiltexte
+              </li>
+              <li class="flex items-center gap-2 p-2.5 rounded-xl bg-[#0a0a08] border border-white/5">
+                <span class="text-[#25D366]">✓</span> kurze Chat-Nachrichten
+              </li>
+              <li class="flex items-center gap-2 p-2.5 rounded-xl bg-[#0a0a08] border border-white/5">
+                <span class="text-[#25D366]">✓</span> Glückwünsche &amp; Einladungen
+              </li>
+              <li class="flex items-center gap-2 p-2.5 rounded-xl bg-[#0a0a08] border border-white/5">
+                <span class="text-[#25D366]">✓</span> Geburtstagsnachrichten
+              </li>
+            </ul>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed mt-4">
+              Darüber hinaus kannst du Unicode-Texte auch in anderen Apps verwenden, sofern das jeweilige Textfeld die Zeichen unterstützt.
+            </p>
+          </div>
+
+          <!-- Section 6: WhatsApp-Formatierung oder Unicode-Schrift? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              WhatsApp-Formatierung oder Unicode-Schrift?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              WhatsApp besitzt bereits eigene Möglichkeiten zur Textformatierung. Dazu gehören beispielsweise fett, kursiv und <a href="/schrift/durchgestrichen" class="text-[#25D366] hover:underline font-semibold">durchgestrichen</a>. Diese Formatierungen sind praktisch, wenn du innerhalb von WhatsApp schnell einen Text hervorheben möchtest.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein Unicode-Generator verfolgt dagegen einen anderen Ansatz. Er erzeugt Zeichen, die bereits als stilisierte Textzeichen vorliegen. Dadurch kannst du beispielsweise Schreibschrift, Bubble-Text oder andere dekorative Varianten kopieren.
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+              <div class="p-4 rounded-2xl bg-[#0a0a08] border border-white/5 space-y-2">
+                <span class="text-xs font-bold text-stone-400 uppercase tracking-wider">Native WhatsApp-Formatierung:</span>
+                <p class="text-sm text-stone-300">Schnell und praktisch für einfache Hervorhebungen mit Sonderzeichen (<code class="text-[#25D366] font-mono">*fett*</code>, <code class="text-[#25D366] font-mono">_kursiv_</code>).</p>
+              </div>
+              <div class="p-4 rounded-2xl bg-[#0a0a08] border border-[#25D366]/30 space-y-2 shadow-lg shadow-[#25D366]/5">
+                <span class="text-xs font-bold text-[#25D366] uppercase tracking-wider">Unicode-Generator:</span>
+                <p class="text-sm text-white">Mehr optische Varianten für kreative Texte, die auch außerhalb von WhatsApp formatiert bleiben.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 7: Tipps für einen gut lesbaren WhatsApp-Text -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Tipps für einen gut lesbaren WhatsApp-Text
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Eine auffällige Schrift ist nicht automatisch eine bessere Schrift. Deshalb lohnt es sich, den Stil passend zum Inhalt auszuwählen:
+            </p>
+            <ul class="space-y-3 text-sm sm:text-base text-stone-300 leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#25D366] font-bold">•</span>
+                <span><strong>Für wichtige Wörter:</strong> Nutze eine klare <a href="/schrift/fette-schrift" class="text-[#25D366] hover:underline font-semibold">fette Schrift</a>.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#25D366] font-bold">•</span>
+                <span><strong>Für einen Status:</strong> Eine dezente <a href="/schrift/kursive-schrift" class="text-[#25D366] hover:underline font-semibold">kursive Schrift</a> oder geschwungene Schrift kann gut funktionieren.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#25D366] font-bold">•</span>
+                <span><strong>Für besondere Anlässe:</strong> Dekorative Zeichen oder <a href="/schrift/gotische-schrift" class="text-[#25D366] hover:underline font-semibold">gotische Schrift</a> können bei Geburtstags- oder Glückwunschnachrichten einen zusätzlichen Effekt erzeugen.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#25D366] font-bold">•</span>
+                <span><strong>Für längere Nachrichten:</strong> Bleibe möglichst bei normalem Text. Manche ausgefallenen Unicode-Zeichen können auf bestimmten Geräten oder in bestimmten Anwendungen anders dargestellt werden.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Section 8: Warum werden manche Zeichen nicht richtig angezeigt? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Warum werden manche Zeichen nicht richtig angezeigt?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Nicht jedes Gerät oder jede Anwendung unterstützt jedes Unicode-Zeichen gleich. In solchen Fällen kann anstelle eines Zeichens beispielsweise ein leeres Kästchen erscheinen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Wenn das passiert, probiere zuerst einen einfacheren Stil. Fett, kursiv oder andere verbreitete Zeichenvarianten sind häufig die bessere Wahl als sehr seltene dekorative Zeichen.
+            </p>
+          </div>
+
+          <!-- IMAGE 4: Status Guide Card -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/whatsapp-schriftarten-status-guide.svg"
+              alt="WhatsApp Status mit dekorativer Schrift"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Dekorative Unicode-Zeichen wirken besonders gut als kurze Akzente im Status.
+            </p>
+          </div>
+
+
+
+          <!-- Section 9: Häufige Fragen (FAQs) -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> Häufige Fragen zu WhatsApp Schriftarten
+            </h2>
+            <div class="space-y-4">
+              {whatsappFaqs.map((faq) => (
+                <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
+                  <h3 class="text-sm sm:text-base font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 10: Fazit & Cross Links -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Fazit
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              WhatsApp Schriftarten sind eine einfache Möglichkeit, kurze Nachrichten, Status-Texte und Gruppennamen individueller zu gestalten. <a href="/schrift/fette-schrift" class="text-[#25D366] hover:underline font-semibold">Fett</a>, <a href="/schrift/kursive-schrift" class="text-[#25D366] hover:underline font-semibold">kursiv</a>, <a href="/schrift/schreibschrift" class="text-[#25D366] hover:underline font-semibold">Schreibschrift</a>, <a href="/schrift/bubble-schrift" class="text-[#25D366] hover:underline font-semibold">Bubble</a> und andere Varianten bieten unterschiedliche Looks, ohne dass du eine klassische Font-Datei installieren musst.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Am besten verwendest du dekorative Zeichen gezielt. Für kurze Akzente sind sie besonders praktisch, während längere Informationen mit normalem Text meist übersichtlicher bleiben. Probiere mehrere Varianten aus und wähle den Stil, der zu deinem Inhalt passt.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Entdecke auch unsere Schriftgeneratoren für <a href="/plattform/tiktok" class="text-[#25D366] hover:underline font-semibold">TikTok Schriftarten</a> und <a href="/plattform/instagram" class="text-[#25D366] hover:underline font-semibold">Instagram Schriftarten</a>.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- RIGHT SIDEBAR COLUMN: 1. Live Preview, 2. Beliebte Stile, 3. Weitere Plattformen -->
+        <div class="space-y-6">
+          <!-- 1. Live WhatsApp Preview Mockup Widget -->
+          <PlatformPreviewWidget platformId="whatsapp" />
+
+          <!-- 2. Beliebte Stile für WhatsApp -->
+          <FontStyleGrid
+            title="Beliebte Stile für WhatsApp"
+            titleIcon="🎨"
+            isAmberTitle={false}
+          />
+
+          <!-- 3. Weitere Plattformen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-stone-300 mb-4">
+              Weitere Plattformen
+            </h3>
+            <div class="space-y-2">
+              {NAVIGATION_DATA.platforms.items
+                .filter((item) => !item.href.includes('whatsapp'))
+                .map((other) => (
+                  <a
+                    href={other.href}
+                    class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-[#25D366]/10 border border-white/5 hover:border-[#25D366]/30 text-xs font-semibold text-stone-300 hover:text-white transition-all group"
+                  >
+                    <span>{other.icon} {other.title}</span>
+                    <span class="group-hover:translate-x-1 transition-transform text-[#25D366]">→</span>
+                  </a>
+                ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -132,6 +132,28 @@ const schemasToRender = schema
           }, 2200);
         }
       });
+
+      // Robust global image error handler to prevent broken image UI and fallback artifacts
+      window.addEventListener(
+        'error',
+        (event) => {
+          const target = event.target;
+          if (target && target.tagName === 'IMG') {
+            const figure = target.closest('figure');
+            if (figure) {
+              figure.style.display = 'none';
+            } else {
+              const parent = target.parentElement;
+              if (parent && parent.childElementCount === 1 && !parent.textContent.trim()) {
+                parent.style.display = 'none';
+              } else {
+                target.style.display = 'none';
+              }
+            }
+          }
+        },
+        true
+      );
     </script>
   </body>
 </html>

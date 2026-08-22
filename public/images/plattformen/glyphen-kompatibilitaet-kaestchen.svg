@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="tofuPlatBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c17"/>
+      <stop offset="50%" stop-color="#121829"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="tofuPlatGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <filter id="tofuPlatShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#tofuPlatBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#22c55e" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#ef4444" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-190" y="-16" width="380" height="32" rx="16" fill="#1e293b" stroke="#ef4444" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#f87171" letter-spacing="2">KOMPATIBILITÄTS-ANALYSE</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Warum entstehen <tspan fill="url(#tofuPlatGrad)">Kästchen (☐ Tofu)</tspan> statt Text?
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Wie unterschiedliche Betriebssysteme und Apps mit speziellen Unicode-Zeichen umgehen
+    </text>
+  </g>
+
+  <!-- 2 Devices Comparison Layout -->
+  <g transform="translate(80, 150)">
+    
+    <!-- Left Column: Modernes Gerät (Unterstützt) -->
+    <g transform="translate(0, 0)" filter="url(#tofuPlatShadow)">
+      <rect width="500" height="440" rx="20" fill="#111827" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 25)">
+        <rect width="210" height="26" rx="6" fill="#22c55e" fill-opacity="0.15"/>
+        <text x="105" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#22c55e">✓ MODERNE SMARTPHONES &amp; APPS</text>
+
+        <!-- Mock Preview Box -->
+        <rect y="40" width="450" height="110" rx="12" fill="#080d1a" stroke="#22c55e" stroke-opacity="0.2"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">KORREKTE DARSTELLUNG (ALLE GLYPHEN VORHANDEN):</text>
+        <text x="20" y="70" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#ffffff">★ 𝓜𝔂 𝓟𝓻𝓸𝓯𝓲𝓵𝓮 ★ 𝕾𝖍𝖆𝖉𝖔𝖜</text>
+        <text x="20" y="96" font-family="system-ui, sans-serif" font-size="11" fill="#22c55e">✓ Alle mathematischen Unicode-Glyphen im System installiert</text>
+
+        <!-- Feature List -->
+        <g transform="translate(0, 170)" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">
+          <text x="0" y="20">• iOS 15+, Android 10+, Windows 11 &amp; macOS.</text>
+          <text x="0" y="55">• Vollständige Unicode 15.0/16.0 Zeichensätze.</text>
+          <text x="0" y="90">• Emojis und Sonderzeichen werden farbig gerendert.</text>
+          <text x="0" y="125">• Optimale Lesbarkeit in Bios und Captions.</text>
+        </g>
+
+        <rect y="350" width="450" height="38" rx="8" fill="#1e293b"/>
+        <text x="225" y="374" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#22c55e">Status: 100 % Kompatibel &amp; Sichtbar</text>
+      </g>
+    </g>
+
+    <!-- Right Column: Älteres Gerät / Fehlende Glyphen (Tofu) -->
+    <g transform="translate(540, 0)" filter="url(#tofuPlatShadow)">
+      <rect width="500" height="440" rx="20" fill="#111827" stroke="#ef4444" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 25)">
+        <rect width="230" height="26" rx="6" fill="#ef4444" fill-opacity="0.15"/>
+        <text x="115" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#ef4444">⚠ FEHLENDE SCHRIFT-GLYPHEN (TOFU)</text>
+
+        <!-- Mock Preview Box -->
+        <rect y="40" width="450" height="110" rx="12" fill="#080d1a" stroke="#ef4444" stroke-opacity="0.2"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">DARSTELLUNGSFEHLER BEI FEHLENDER SCHRIFT:</text>
+        <text x="20" y="70" font-family="monospace" font-size="20" font-weight="900" fill="#ef4444">★ ☐☐ ☐☐☐☐☐☐ ★ ☐☐☐☐☐☐</text>
+        <text x="20" y="96" font-family="system-ui, sans-serif" font-size="11" fill="#ef4444">⚠ System-Schriftart kennt das Zeichen nicht ➔ Tofu Kästchen</text>
+
+        <!-- Feature List -->
+        <g transform="translate(0, 170)" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">
+          <text x="0" y="20">• Ältere Betriebssysteme oder reduzierte App-Fonts.</text>
+          <text x="0" y="55">• Text ist nicht kaputt, nur die visuelle Zeichnung fehlt.</text>
+          <text x="0" y="90">• <strong>Lösung:</strong> Standard-Stile (Fett, Kursiv, Small Caps) nutzen.</text>
+          <text x="0" y="125">• Komplexe Symbole und Zalgo sparsam dosieren.</text>
+        </g>
+
+        <rect y="350" width="450" height="38" rx="8" fill="#1e293b"/>
+        <text x="225" y="374" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#ef4444">Tipp: Wähle universelle Schriftstile</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="socialBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c16"/>
+      <stop offset="50%" stop-color="#121626"/>
+      <stop offset="100%" stop-color="#090b14"/>
+    </linearGradient>
+    <linearGradient id="bubbleFlowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#socialBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="250" cy="200" r="240" fill="#a855f7" fill-opacity="0.1"/>
+  <circle cx="950" cy="450" r="260" fill="#38bdf8" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-150" y="-16" width="300" height="32" rx="16" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">COPY &amp; PASTE WORKFLOW</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Bubble-Schrift für <tspan fill="#38bdf8">Social Media &amp; Chats</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      In 3 einfachen Schritten vom Online-Generator direkt in dein Profil einfügen
+    </text>
+  </g>
+
+  <!-- Flow Elements (3 Columns / Steps) -->
+  <g transform="translate(80, 165)">
+    <!-- Column 1: Generator Window (Browser) -->
+    <g transform="translate(0, 0)" filter="url(#softShadow)">
+      <rect width="320" height="420" rx="20" fill="#141828" stroke="#a855f7" stroke-opacity="0.3" stroke-width="1.5"/>
+      <rect width="320" height="40" rx="20" fill="#1b2034"/>
+      <rect y="20" width="320" height="20" fill="#1b2034"/>
+      <circle cx="20" cy="20" r="4" fill="#ef4444"/>
+      <circle cx="34" cy="20" r="4" fill="#eab308"/>
+      <circle cx="48" cy="20" r="4" fill="#22c55e"/>
+      <text x="170" y="25" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Generator Eingabe</text>
+
+      <text x="25" y="75" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#c084fc">SCHRITT 1: TEXT EINTIPPEN</text>
+      
+      <!-- Input box -->
+      <rect x="20" y="90" width="280" height="50" rx="10" fill="#0c0e18" stroke="#ffffff" stroke-opacity="0.1"/>
+      <text x="35" y="122" font-family="system-ui, sans-serif" font-size="15" fill="#ffffff">Sarah ✨</text>
+
+      <text x="25" y="175" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#c084fc">SCHRITT 2: STIL WÄHLEN</text>
+      
+      <!-- Result 1 -->
+      <rect x="20" y="190" width="280" height="52" rx="10" fill="#0c0e18" stroke="#a855f7" stroke-opacity="0.4"/>
+      <text x="35" y="222" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#ffffff">ⓢⓐⓡⓐⓗ ✨</text>
+      <rect x="220" y="200" width="70" height="32" rx="6" fill="#a855f7"/>
+      <text x="255" y="221" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#ffffff">KOPIEREN</text>
+
+      <!-- Result 2 -->
+      <rect x="20" y="255" width="280" height="52" rx="10" fill="#0c0e18" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="35" y="287" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#cbd5e1">🅢🅐🅡🅐🅗 ✨</text>
+      <rect x="220" y="265" width="70" height="32" rx="6" fill="#1e2438"/>
+      <text x="255" y="286" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">Kopieren</text>
+
+      <!-- Result 3 -->
+      <rect x="20" y="320" width="280" height="52" rx="10" fill="#0c0e18" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="35" y="352" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#cbd5e1">ⓈⒶⓇⒶⒽ ✨</text>
+      <rect x="220" y="330" width="70" height="32" rx="6" fill="#1e2438"/>
+      <text x="255" y="351" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">Kopieren</text>
+    </g>
+
+    <!-- Center Arrow Connector -->
+    <g transform="translate(335, 190)">
+      <circle cx="25" cy="25" r="22" fill="#1e2438" stroke="#38bdf8" stroke-width="2"/>
+      <text x="25" y="32" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#38bdf8">→</text>
+    </g>
+
+    <!-- Column 2: Instagram / Social Profile Field Mockup -->
+    <g transform="translate(385, 0)" filter="url(#softShadow)">
+      <rect width="310" height="420" rx="20" fill="#141828" stroke="#e1306c" stroke-opacity="0.3" stroke-width="1.5"/>
+      <rect width="310" height="40" rx="20" fill="#1b2034"/>
+      <rect y="20" width="310" height="20" fill="#1b2034"/>
+      <text x="155" y="26" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#e1306c">📸 Social Media Profil</text>
+
+      <!-- Profile avatar &amp; info -->
+      <circle cx="55" cy="85" r="26" fill="#e1306c" fill-opacity="0.2" stroke="#e1306c" stroke-width="2"/>
+      <text x="55" y="93" text-anchor="middle" font-size="20">🌸</text>
+      <text x="100" y="80" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">sarah.design</text>
+      <text x="100" y="98" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Content Creator</text>
+
+      <line x1="20" y1="125" x2="290" y2="125" stroke="#ffffff" stroke-opacity="0.08"/>
+
+      <!-- Bio Field with Paste Output -->
+      <text x="25" y="152" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">PROFIL-NAME &amp; BIO:</text>
+      
+      <rect x="20" y="165" width="270" height="100" rx="10" fill="#0c0e18" stroke="#e1306c" stroke-opacity="0.4"/>
+      <text x="35" y="195" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#ffffff">ⓢⓐⓡⓐⓗ ✨</text>
+      <text x="35" y="222" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">📍 Berlin &amp;bull; Creative Vlogs</text>
+      <text x="35" y="244" font-family="system-ui, sans-serif" font-size="12" fill="#c084fc">ⓃⒺⓌ Video jeden Sonntag! 🎬</text>
+
+      <!-- Follow button -->
+      <rect x="20" y="285" width="270" height="38" rx="8" fill="#38bdf8"/>
+      <text x="155" y="309" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Profil Bearbeiten</text>
+
+      <rect x="20" y="340" width="270" height="55" rx="8" fill="#1b2034" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="35" y="362" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#22c55e">✓ Sofort sichtbar</text>
+      <text x="35" y="380" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Keine App-Installation nötig</text>
+    </g>
+
+    <!-- Center Arrow Connector 2 -->
+    <g transform="translate(710, 190)">
+      <circle cx="25" cy="25" r="22" fill="#1e2438" stroke="#22c55e" stroke-width="2"/>
+      <text x="25" y="32" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#22c55e">→</text>
+    </g>
+
+    <!-- Column 3: WhatsApp &amp; Messenger Chat Bubble Mockup -->
+    <g transform="translate(760, 0)" filter="url(#softShadow)">
+      <rect width="280" height="420" rx="20" fill="#141828" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1.5"/>
+      <rect width="280" height="40" rx="20" fill="#1b2034"/>
+      <rect y="20" width="280" height="20" fill="#1b2034"/>
+      <text x="140" y="26" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#22c55e">💬 Chat &amp; Messenger</text>
+
+      <!-- Chat Bubbles -->
+      <g transform="translate(20, 60)">
+        <!-- Message 1 Incoming -->
+        <rect width="180" height="48" rx="12" fill="#1e2438"/>
+        <text x="15" y="24" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Alex:</text>
+        <text x="15" y="40" font-family="system-ui, sans-serif" font-size="12" fill="#ffffff">Wie heißt die Gruppe?</text>
+
+        <!-- Message 2 Outgoing Bubble Text -->
+        <g transform="translate(20, 65)">
+          <rect width="220" height="65" rx="12" fill="#065f46" stroke="#22c55e" stroke-opacity="0.4"/>
+          <text x="15" y="26" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#ffffff">ⓉⒺⒶⓂ ⒼⒶⓂⒾⓃⒼ 🎮</text>
+          <text x="15" y="48" font-family="system-ui, sans-serif" font-size="11" fill="#a7f3d0">Treffen um 20:00 Uhr!</text>
+        </g>
+
+        <!-- Message 3 Outgoing Bullet Points -->
+        <g transform="translate(20, 150)">
+          <rect width="220" height="110" rx="12" fill="#065f46" stroke="#22c55e" stroke-opacity="0.4"/>
+          <text x="15" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#6ee7b7">Regeln:</text>
+          <text x="15" y="46" font-family="system-ui, sans-serif" font-size="12" fill="#ffffff">➀ Pünktlich sein</text>
+          <text x="15" y="70" font-family="system-ui, sans-serif" font-size="12" fill="#ffffff">➁ Headset prüfen</text>
+          <text x="15" y="94" font-family="system-ui, sans-serif" font-size="12" fill="#ffffff">➂ Spaß haben! 🔥</text>
+        </g>
+
+        <rect y="280" width="240" height="50" rx="10" fill="#0c0e18" stroke="#ffffff" stroke-opacity="0.08"/>
+        <text x="15" y="302" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#22c55e">✓ Plattenübergreifend</text>
+        <text x="15" y="320" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">iOS &amp;bull; Android &amp;bull; Desktop</text>
+      </g>
+    </g>
+  </g>
+</svg>

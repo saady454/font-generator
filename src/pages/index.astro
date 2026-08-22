@@ -7,6 +7,7 @@ import CategoryShowcase from '../components/CategoryShowcase.astro';
 import PlatformTeaser from '../components/PlatformTeaser.astro';
 import GamingTeaser from '../components/GamingTeaser.astro';
 import UnicodeExplainer from '../components/UnicodeExplainer.astro';
+import SchriftartenGuide from '../components/SchriftartenGuide.astro';
 import FAQ from '../components/FAQ.astro';
 import { SITE_CONFIG } from '../config/site';
 ---
@@ -35,10 +36,13 @@ import { SITE_CONFIG } from '../config/site';
     <!-- Section 5: Gaming Nicknames Teaser (Fortnite & Minecraft first) -->
     <GamingTeaser />
 
-    <!-- Section 6: Unicode & Tofu (☐) Explainer Teaser with Blog Links -->
+    <!-- Section 6: Ausführlicher Schriftarten-Ratgeber & Typografie-Leitfaden -->
+    <SchriftartenGuide />
+
+    <!-- Section 7: Unicode & Tofu (☐) Explainer Teaser with Blog Links -->
     <UnicodeExplainer />
 
-    <!-- Section 7: Broad FAQ Block (15+ Questions, Schema-Marked) -->
+    <!-- Section 8: Broad FAQ Block (15+ Questions, Schema-Marked) -->
     <FAQ />
   </main>
 </Layout>

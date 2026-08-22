@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fetteHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d14"/>
+      <stop offset="50%" stop-color="#121826"/>
+      <stop offset="100%" stop-color="#080a10"/>
+    </linearGradient>
+    <linearGradient id="boldAmberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="fetteCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c2333" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#121622" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="fetteShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#fetteHeroBg)"/>
+
+  <!-- Subtle Glow -->
+  <circle cx="250" cy="180" r="280" fill="#f59e0b" fill-opacity="0.12"/>
+  <circle cx="950" cy="480" r="320" fill="#3b82f6" fill-opacity="0.08"/>
+
+  <!-- Typographic Grid Lines -->
+  <g stroke="#ffffff" stroke-opacity="0.05" stroke-dasharray="4 6">
+    <line x1="80" y1="120" x2="1120" y2="120"/>
+    <line x1="80" y1="260" x2="1120" y2="260"/>
+    <line x1="80" y1="400" x2="1120" y2="400"/>
+    <line x1="80" y1="540" x2="1120" y2="540"/>
+  </g>
+
+  <!-- Header Badge -->
+  <g transform="translate(600, 65)" text-anchor="middle">
+    <rect x="-140" y="-18" width="280" height="36" rx="18" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="800" fill="#fbbf24" letter-spacing="2">🔥 BOLD TEXT STUDIO</text>
+  </g>
+
+  <!-- Central Title -->
+  <text x="600" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="44" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+    Fette Schrift: <tspan fill="url(#boldAmberGrad)">Fett schreiben &amp; kopieren</tspan>
+  </text>
+  <text x="600" y="180" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#94a3b8">
+    Die wichtigsten fetten Unicode-Schriftschnitte für Social Media, Bios und Chats
+  </text>
+
+  <!-- 4 Bold Style Display Cards -->
+  <g transform="translate(80, 220)">
+    
+    <!-- 1. Bold Sans-Serif -->
+    <g transform="translate(0, 0)" filter="url(#fetteShadow)">
+      <rect width="240" height="270" rx="16" fill="url(#fetteCardGrad)" stroke="#f59e0b" stroke-opacity="0.5" stroke-width="1.5"/>
+      <rect x="15" y="15" width="120" height="22" rx="6" fill="#f59e0b" fill-opacity="0.2"/>
+      <text x="75" y="30" font-family="sans-serif" font-size="10" font-weight="800" fill="#fbbf24" text-anchor="middle">FETT SANS-SERIF</text>
+
+      <text x="120" y="115" font-family="system-ui, sans-serif" font-size="38" font-weight="900" fill="#ffffff" text-anchor="middle">𝐇𝐚𝐥𝐥𝐨</text>
+      <text x="120" y="155" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#fbbf24" text-anchor="middle">𝗪𝗲𝗹𝘁</text>
+
+      <line x1="20" y1="185" x2="220" y2="185" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="120" y="212" font-family="sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Modern, scharf &amp; klar</text>
+      <text x="120" y="235" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Instagram &amp; TikTok Bio</text>
+    </g>
+
+    <!-- 2. Bold Serif -->
+    <g transform="translate(265, 0)" filter="url(#fetteShadow)">
+      <rect width="240" height="270" rx="16" fill="url(#fetteCardGrad)" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+      <rect x="15" y="15" width="90" height="22" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="60" y="30" font-family="sans-serif" font-size="10" font-weight="800" fill="#38bdf8" text-anchor="middle">FETT SERIF</text>
+
+      <text x="120" y="115" font-family="'Times New Roman', serif" font-size="38" font-weight="900" fill="#ffffff" text-anchor="middle">𝐇𝐚𝐥𝐥𝐨</text>
+      <text x="120" y="155" font-family="'Times New Roman', serif" font-size="20" font-weight="800" fill="#38bdf8" text-anchor="middle">𝐖𝐞𝐥𝐭</text>
+
+      <line x1="20" y1="185" x2="220" y2="185" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="120" y="212" font-family="sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Klassisch &amp; edel</text>
+      <text x="120" y="235" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Editorial &amp; Zitate</text>
+    </g>
+
+    <!-- 3. Bold Italic (Fett Kursiv) -->
+    <g transform="translate(530, 0)" filter="url(#fetteShadow)">
+      <rect width="240" height="270" rx="16" fill="url(#fetteCardGrad)" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+      <rect x="15" y="15" width="95" height="22" rx="6" fill="#ec4899" fill-opacity="0.15"/>
+      <text x="62" y="30" font-family="sans-serif" font-size="10" font-weight="800" fill="#f472b6" text-anchor="middle">FETT KURSIV</text>
+
+      <text x="120" y="115" font-family="sans-serif" font-size="36" font-weight="900" font-style="italic" fill="#ffffff" text-anchor="middle">𝑯𝒂𝒍𝒍𝒐</text>
+      <text x="120" y="155" font-family="sans-serif" font-size="20" font-weight="800" font-style="italic" fill="#f472b6" text-anchor="middle">𝑾𝒆𝒍𝒕</text>
+
+      <line x1="20" y1="185" x2="220" y2="185" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="120" y="212" font-family="sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Dynamisch &amp; elegant</text>
+      <text x="120" y="235" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Status &amp; Headlines</text>
+    </g>
+
+    <!-- 4. Heavy / Boxed Bold -->
+    <g transform="translate(795, 0)" filter="url(#fetteShadow)">
+      <rect width="245" height="270" rx="16" fill="url(#fetteCardGrad)" stroke="#a855f7" stroke-opacity="0.3" stroke-width="1.5"/>
+      <rect x="15" y="15" width="105" height="22" rx="6" fill="#a855f7" fill-opacity="0.2"/>
+      <text x="67" y="30" font-family="sans-serif" font-size="10" font-weight="800" fill="#c084fc" text-anchor="middle">HEAVY BLACK</text>
+
+      <text x="122" y="115" font-family="monospace" font-size="34" font-weight="900" fill="#ffffff" text-anchor="middle">【𝐇𝐚𝐥𝐥𝐨】</text>
+      <text x="122" y="155" font-family="sans-serif" font-size="20" font-weight="900" fill="#c084fc" text-anchor="middle">⚡ 𝗪𝗘𝗟𝗧 ⚡</text>
+
+      <line x1="20" y1="185" x2="225" y2="185" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="122" y="212" font-family="sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Maximale Signalwirkung</text>
+      <text x="122" y="235" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Gaming &amp; Clan-Tags</text>
+    </g>
+  </g>
+
+  <!-- Bottom Tip -->
+  <g transform="translate(600, 580)" text-anchor="middle">
+    <rect x="-300" y="-18" width="600" height="36" rx="18" fill="#121622" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+    <text y="5" font-family="sans-serif" font-size="13" fill="#94a3b8">
+      💡 <tspan fill="#ffffff" font-weight="700">100% Kopierbar:</tspan> Funktioniert auf Instagram, WhatsApp, TikTok, Discord &amp; in Games
+    </text>
+  </g>
+</svg>

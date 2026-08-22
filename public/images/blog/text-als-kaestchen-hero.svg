@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="tofuHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d1a"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="tofuGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <filter id="tofuHeroShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#tofuHeroBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="280" cy="220" r="280" fill="#38bdf8" fill-opacity="0.08"/>
+  <circle cx="920" cy="450" r="280" fill="#ef4444" fill-opacity="0.08"/>
+
+  <!-- Top Badge -->
+  <g transform="translate(600, 55)" text-anchor="middle">
+    <rect x="-220" y="-18" width="440" height="36" rx="18" fill="#1e293b" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#fbbf24" letter-spacing="2">☐ TROUBLESHOOTING &amp;bull; TOFU-ZEICHEN BEHEBEN</text>
+  </g>
+
+  <!-- Central Title -->
+  <text x="600" y="132" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+    Warum wird Text als <tspan fill="url(#tofuGrad)">Kästchen (☐) angezeigt?</tspan>
+  </text>
+  <text x="600" y="168" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#94a3b8">
+    Ursachen für fehlende Glyphen, Tofu-Symbole und einfache Lösungen für Unicode &amp; Schriftarten
+  </text>
+
+  <!-- Main Container Visual Mockup -->
+  <g transform="translate(100, 205)" filter="url(#tofuHeroShadow)">
+    <rect width="1000" height="420" rx="26" fill="#111827" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+
+    <!-- Inner Grid Workspace -->
+    <rect x="25" y="25" width="950" height="370" rx="18" fill="#090d16" stroke="#ffffff" stroke-opacity="0.05"/>
+
+    <!-- Left: Modern Device (Glyph supported) -->
+    <g transform="translate(55, 55)">
+      <rect width="410" height="310" rx="16" fill="#161f30" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+      
+      <!-- Card Header -->
+      <g transform="translate(20, 20)">
+        <rect width="190" height="26" rx="6" fill="#22c55e" fill-opacity="0.15"/>
+        <text x="95" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#22c55e">✓ GLYPHE VORHANDEN</text>
+      </g>
+
+      <!-- Content Box -->
+      <g transform="translate(20, 60)">
+        <rect width="370" height="110" rx="12" fill="#0b1120" stroke="#22c55e" stroke-opacity="0.2"/>
+        <text x="15" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">MODERNES SMARTPHONE / PC:</text>
+        <text x="15" y="68" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#ffffff">Hallo Welt 🌟 𝓗𝓪𝓵𝓵𝓸</text>
+        <text x="15" y="98" font-family="system-ui, sans-serif" font-size="11" fill="#22c55e">✓ Alle Zeichen werden korrekt gerendert</text>
+      </g>
+
+      <!-- Explanation -->
+      <g transform="translate(20, 185)">
+        <rect width="370" height="95" rx="12" fill="#1e293b"/>
+        <text x="15" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#22c55e">WARUM ES FUNKTIONIERT:</text>
+        <text x="15" y="52" font-family="system-ui, sans-serif" font-size="12" fill="#ffffff">Das System besitzt eine passende Schriftart mit</text>
+        <text x="15" y="72" font-family="system-ui, sans-serif" font-size="12" fill="#ffffff">den benötigten Glyphen für den Unicode-Bereich.</text>
+      </g>
+    </g>
+
+    <!-- Right: Older Device / Missing Glyph (Tofu) -->
+    <g transform="translate(535, 55)">
+      <rect width="410" height="310" rx="16" fill="#161f30" stroke="#ef4444" stroke-opacity="0.4" stroke-width="1.5"/>
+      
+      <!-- Card Header -->
+      <g transform="translate(20, 20)">
+        <rect width="180" height="26" rx="6" fill="#ef4444" fill-opacity="0.15"/>
+        <text x="90" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#ef4444">⚠ GLYPHE FEHLT (TOFU)</text>
+      </g>
+
+      <!-- Content Box -->
+      <g transform="translate(20, 60)">
+        <rect width="370" height="110" rx="12" fill="#0b1120" stroke="#ef4444" stroke-opacity="0.2"/>
+        <text x="15" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">ÄLTERES GERÄT / RESTRIKTIVE APP:</text>
+        <text x="15" y="68" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#ef4444">Hallo Welt ☐ <tspan font-family="monospace">☐☐☐☐☐</tspan></text>
+        <text x="15" y="98" font-family="system-ui, sans-serif" font-size="11" fill="#ef4444">⚠ System zeigt leeres Ersatz-Quadrat (☐)</text>
+      </g>
+
+      <!-- Explanation -->
+      <g transform="translate(20, 185)">
+        <rect width="370" height="95" rx="12" fill="#1e293b"/>
+        <text x="15" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#fbbf24">WARUM TOFU ENTSTEHT:</text>
+        <text x="15" y="52" font-family="system-ui, sans-serif" font-size="12" fill="#ffffff">Codepunkt ist im Text vorhanden, aber der</text>
+        <text x="15" y="72" font-family="system-ui, sans-serif" font-size="12" fill="#ffffff">lokale Font kennt kein Bild (Glyphe) dafür.</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

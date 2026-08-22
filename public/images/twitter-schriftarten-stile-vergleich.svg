@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="twStileBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="50%" stop-color="#0c111c"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#twStileBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="200" cy="180" r="220" fill="#1d9bf0" fill-opacity="0.08"/>
+  <circle cx="1000" cy="500" r="240" fill="#ffffff" fill-opacity="0.04"/>
+
+  <!-- Section Header -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-170" y="-16" width="340" height="32" rx="16" fill="#101726" stroke="#1d9bf0" stroke-opacity="0.4"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#1d9bf0" letter-spacing="1.5">TYPOGRAFIE VERGLEICH</text>
+  </g>
+
+  <text x="600" y="115" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="900" fill="#ffffff">
+    Welche Schriftstile eignen sich am besten für X?
+  </text>
+  <text x="600" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#94a3b8">
+    Wirkung, Eignung und typografische Hinweise für dein Twitter / X Profil
+  </text>
+
+  <!-- 6 Comparison Rows Grid -->
+  <g transform="translate(100, 180)">
+    <!-- Column Headers -->
+    <rect width="1000" height="36" rx="8" fill="#101624"/>
+    <text x="30" y="23" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#1d9bf0" letter-spacing="1">STIL &amp; EFFEKT</text>
+    <text x="260" y="23" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#1d9bf0" letter-spacing="1">BEISPIEL (UNICODE)</text>
+    <text x="560" y="23" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#1d9bf0" letter-spacing="1">GEEIGNET FÜR</text>
+    <text x="820" y="23" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#1d9bf0" letter-spacing="1">HINWEIS</text>
+
+    <!-- Row 1: Fett -->
+    <g transform="translate(0, 46)">
+      <rect width="1000" height="52" rx="10" fill="#0b0f18" stroke="#1d9bf0" stroke-opacity="0.25"/>
+      <rect x="18" y="14" width="80" height="24" rx="6" fill="#1d9bf0" fill-opacity="0.15"/>
+      <text x="58" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#1d9bf0">Fett</text>
+      <text x="260" y="33" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#ffffff">𝗙𝗲𝘁𝘁𝗲 𝗦𝗰𝗵𝗿𝗶𝗳𝘁</text>
+      <text x="560" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#e7e9ea">wichtige Begriffe, Namen</text>
+      <text x="820" y="32" font-family="system-ui, sans-serif" font-size="13" fill="#4ade80">gut sichtbar</text>
+    </g>
+
+    <!-- Row 2: Kursiv -->
+    <g transform="translate(0, 106)">
+      <rect width="1000" height="52" rx="10" fill="#0b0f18" stroke="#ffffff" stroke-opacity="0.06"/>
+      <rect x="18" y="14" width="80" height="24" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="58" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#38bdf8">Kursiv</text>
+      <text x="260" y="33" font-family="system-ui, sans-serif" font-size="18" font-style="italic" font-weight="700" fill="#ffffff">𝘒𝘶𝘳𝘴𝘪𝘷𝘦 𝘚𝘤𝘩𝘳𝘪𝘧𝘵</text>
+      <text x="560" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#e7e9ea">kurze Akzente, Zitate</text>
+      <text x="820" y="32" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">eher dezent</text>
+    </g>
+
+    <!-- Row 3: Gothic -->
+    <g transform="translate(0, 166)">
+      <rect width="1000" height="52" rx="10" fill="#0b0f18" stroke="#ffffff" stroke-opacity="0.06"/>
+      <rect x="18" y="14" width="80" height="24" rx="6" fill="#fbbf24" fill-opacity="0.15"/>
+      <text x="58" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#fbbf24">Gothic</text>
+      <text x="260" y="33" font-family="Georgia, serif" font-size="18" font-weight="700" fill="#ffffff">𝔊𝔬𝔱𝔦𝔰𝔠𝔥𝔢 𝔖𝔠𝔥𝔯𝔦𝔣𝔱</text>
+      <text x="560" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#e7e9ea">Namen, kreative Profile</text>
+      <text x="820" y="32" font-family="system-ui, sans-serif" font-size="13" fill="#fbbf24">auffällig</text>
+    </g>
+
+    <!-- Row 4: Monospace -->
+    <g transform="translate(0, 226)">
+      <rect width="1000" height="52" rx="10" fill="#0b0f18" stroke="#ffffff" stroke-opacity="0.06"/>
+      <rect x="18" y="14" width="95" height="24" rx="6" fill="#34d399" fill-opacity="0.15"/>
+      <text x="65" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#34d399">Monospace</text>
+      <text x="260" y="33" font-family="Courier New, monospace" font-size="17" font-weight="700" fill="#ffffff">𝙼𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎 𝚃𝚎𝚡𝚝</text>
+      <text x="560" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#e7e9ea">technische Themen, Code</text>
+      <text x="820" y="32" font-family="system-ui, sans-serif" font-size="13" fill="#34d399">klarer Charakter</text>
+    </g>
+
+    <!-- Row 5: Kreise / Bubble -->
+    <g transform="translate(0, 286)">
+      <rect width="1000" height="52" rx="10" fill="#0b0f18" stroke="#ffffff" stroke-opacity="0.06"/>
+      <rect x="18" y="14" width="80" height="24" rx="6" fill="#f472b6" fill-opacity="0.15"/>
+      <text x="58" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#f472b6">Kreise</text>
+      <text x="260" y="33" font-family="system-ui, sans-serif" font-size="17" font-weight="700" fill="#ffffff">Ⓢⓣⓘⓛⓥⓞⓛⓛ</text>
+      <text x="560" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#e7e9ea">kurze Wörter, Deko</text>
+      <text x="820" y="32" font-family="system-ui, sans-serif" font-size="13" fill="#f472b6">dekorativ</text>
+    </g>
+
+    <!-- Row 6: Aesthetic -->
+    <g transform="translate(0, 346)">
+      <rect width="1000" height="52" rx="10" fill="#0b0f18" stroke="#ffffff" stroke-opacity="0.06"/>
+      <rect x="18" y="14" width="80" height="24" rx="6" fill="#c084fc" fill-opacity="0.15"/>
+      <text x="58" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#c084fc">Aesthetic</text>
+      <text x="260" y="33" font-family="Georgia, serif" font-size="17" font-weight="700" fill="#ffffff">𝓐𝓮𝓼𝓽𝓱𝓮𝓽𝓲𝓬 𝓥𝓲𝓫𝓮𝓼</text>
+      <text x="560" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#e7e9ea">Profile und kurze Texte</text>
+      <text x="820" y="32" font-family="system-ui, sans-serif" font-size="13" fill="#fbbf24">sparsam verwenden</text>
+    </g>
+
+  </g>
+</svg>

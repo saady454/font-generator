@@ -1,0 +1,457 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TextStyleConverter from '../../components/TextStyleConverter.astro';
+import FontStyleGrid from '../../components/FontStyleGrid.astro';
+import PlatformInteractiveWidgets from '../../components/PlatformInteractiveWidgets.astro';
+import PlatformPreviewWidget from '../../components/PlatformPreviewWidget.astro';
+import { PLATFORMS_DATA } from '../../data/platform-metadata';
+import { PLATFORM_WIDGETS_DATA } from '../../data/platform-widgets';
+import { NAVIGATION_DATA } from '../../data/navigation';
+
+const platformInfo = PLATFORMS_DATA['twitter-x'] || {
+  id: 'twitter-x',
+  name: 'Twitter / X',
+  slug: '/plattform/twitter-x',
+  icon: '✖️',
+  tagline: 'Schriftarten für X (Twitter) Bio (160 Zeichen), Anzeigename (50 Zeichen) & Tweets',
+  bioLimit: 160,
+  compatibleStyles: ['Fette Schrift', 'Kursive Schrift', 'Gotische Schrift', 'Monospace', 'Kapitälchen', 'Bubble Schrift'],
+  keyFeatures: [
+    '160-Zeichen X-Bio personalisieren',
+    'Anzeigenamen (Display Name bis 50 Zeichen) gestalten',
+    'Wichtige Tweet-Schlagzeilen und Hooks hervorheben',
+    'Thread-Überschriften mit Blickfang-Typografie formatieren',
+  ],
+  tips: [
+    'Setze Akzente in Tweets mit fetten Wörtern, um die Aufmerksamkeit beim schnellen Scrollen im Feed zu binden.',
+    'Wichtig: Verwende in Hashtags (#) normale Buchstaben, damit dein Post in der X-Suche optimal gefunden wird.',
+  ],
+};
+
+const twitterFaqs = [
+  {
+    q: 'Sind Twitter / X Schriftarten echte Fonts?',
+    a: 'Meistens nicht. Bei solchen Copy-&-Paste-Generatoren handelt es sich häufig um Unicode-Zeichen, die wie unterschiedliche Schriftstile aussehen. Eine Font-Datei wird dabei nicht installiert.',
+  },
+  {
+    q: 'Kann ich die generierten Zeichen kostenlos kopieren?',
+    a: 'Ja, bei unserem kostenlosen Online-Generator kannst du die angebotenen Textvarianten direkt auswählen und mit einem Klick in deine Zwischenablage kopieren. Eine Installation ist dafür nicht erforderlich.',
+  },
+  {
+    q: 'Kann ich solche Texte auch außerhalb von X verwenden?',
+    a: 'Ja, viele Unicode-basierte Varianten lassen sich auch in anderen Textfeldern (wie Instagram, WhatsApp, Discord oder Facebook) verwenden. Die Darstellung kann jedoch je nach Plattform und Gerät variieren.',
+  },
+  {
+    q: 'Warum sehen manche Buchstaben normal aus?',
+    a: 'Nicht für jeden Buchstaben existiert eine passende stilisierte Unicode-Variante. Deshalb können einzelne Zeichen, Sonderzeichen oder deutsche Umlaute wie Ä, Ö, Ü oder ß in einer Variante anders aussehen.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": twitterFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+
+const widgetsConfig = PLATFORM_WIDGETS_DATA['twitter-x'];
+---
+
+<Layout
+  title="Twitter / X Schriftarten – Coole Schrift zum Kopieren & Einfügen"
+  description="Twitter / X Schriftarten kostenlos erstellen: Nutze fette, kursive, Gothic- und andere Unicode-Stile für Posts, Bio und Anzeigename. Einfach kopieren & einfügen."
+  canonicalUrl="/plattform/twitter-x"
+  schema={faqSchema}
+>
+  <main class="py-12 md:py-16 bg-[#0a0a08] platform-theme-twitter-x" data-platform-theme="twitter-x">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <a href="/plattform" class="hover:text-white transition-colors">Plattformen</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Twitter / X</span>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="platform-guide-badge inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-3 transition-all">
+          <span>✖️ Twitter / X Profil &amp; Post Guide</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <span class="text-[#1d9bf0]">Twitter / X Schriftarten</span> – Text einfach kopieren und einfügen
+        </h1>
+        <p class="mt-4 text-base text-stone-300 leading-relaxed max-w-2xl mx-auto">
+          Erstelle stilvolle Twitter- und X-Texte mit Fett-, Kursiv-, Gothic- und weiteren Unicode-Stilen. Text eingeben, auswählen, kopieren und direkt verwenden.
+        </p>
+      </div>
+
+      <!-- Interactive Converter Component -->
+      <TextStyleConverter
+        defaultText="Twitter Hook ✨"
+        pageSlug="twitter-x"
+        filterCategory="alle"
+        showCategoryTabs={true}
+        showPresets={true}
+        maxChars={160}
+        limit={12}
+        showMoreButton={true}
+      />
+
+      <!-- Content Grid: Guidelines, Editorial Article & Sidebar -->
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- LEFT COLUMN (lg:col-span-2): Generator Widgets first, followed by Editorial Content & FAQ -->
+        <div class="lg:col-span-2 space-y-8">
+          
+          <!-- 3 Interactive Generator Widgets (Bio- & Tweet-Ideen, Symbol-Kombinationen, Themen-Emoji-Pakete) -->
+          {widgetsConfig && (
+            <PlatformInteractiveWidgets
+              widgetsData={widgetsConfig}
+              platformId="twitter-x"
+            />
+          )}
+
+          <!-- IMAGE 1: Featured Hero Image -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/twitter-schriftarten-hero.svg"
+              alt="Twitter / X Schriftarten und stilvolle Texte am Computer"
+              class="w-full h-auto aspect-video object-cover"
+              loading="eager"
+            />
+            <p class="text-xs text-stone-400 p-3 text-center border-t border-white/5 bg-[#0a0a08]">
+              Stilvolle Unicode-Texte lassen sich direkt im Browser erstellen und kopieren.
+            </p>
+          </div>
+
+          <!-- Section 1: Einführung -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Einführung
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Normale Texte auf Twitter beziehungsweise X wirken schnell schlicht. Gerade bei einem Anzeigenamen, einer Bio oder einem kurzen Beitrag kann eine besondere Schreibweise helfen, wichtige Wörter optisch hervorzuheben. Mit <strong>Twitter / X Schriftarten</strong> kannst du normalen Text in verschiedene dekorative Varianten umwandeln, ohne eine neue Schriftdatei installieren zu müssen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Das Problem ist jedoch: Nicht jede scheinbare Schrift ist tatsächlich eine installierbare Font. Viele Generatoren verwenden Unicode-Zeichen, die wie fette, kursive oder dekorative Buchstaben aussehen. Deshalb zeigen wir dir, wie du solche Texte erstellst, kopierst und sinnvoll auf X einsetzt.
+            </p>
+          </div>
+
+          <!-- Section 2: Was sind Twitter / X Schriftarten? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Was sind Twitter / X Schriftarten?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Bei einem Online-Schriftgenerator wird dein eingegebener Text in unterschiedliche Zeichenvarianten umgewandelt. Beispiele sind:
+            </p>
+            
+            <div class="p-5 rounded-2xl bg-[#0a0a08] border border-white/10 space-y-2 font-mono text-sm">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-stone-200">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-[#1d9bf0]">Fette Schrift:</span> <span class="font-bold text-white font-sans">𝐅𝐞𝐭𝐭𝐞 𝐒𝐜𝐡𝐫𝐢𝐟𝐭</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-[#38bdf8]">Kursive Schrift:</span> <span class="font-bold text-white font-sans">𝘒𝘶𝘳𝘴𝘪𝘷𝘦 𝘚𝘤𝘩𝘳𝘪𝘧𝘵</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-white">Fett &amp; kursiv:</span> <span class="font-bold text-white font-serif">𝑭𝒆𝒕𝒕 &amp; 𝒌𝒖𝒓𝒔𝒊𝒗</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-amber-400">Gotische Schrift:</span> <span class="font-bold text-white font-serif">𝔊𝔬𝔱𝔦𝔰𝔠𝔥𝔢 𝔖𝔠𝔥𝔯𝔦𝔣𝔱</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-emerald-400">Monospace:</span> <span class="font-bold text-white font-mono">𝕄𝕠𝕟𝕠𝕤𝕡𝕒𝕔𝕖</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-pink-400">Stilvoll (Kreise):</span> <span class="font-bold text-white font-sans">Ⓢⓣⓘⓛⓥⓞⓛⓛⓔ</span></div>
+              </div>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Dabei handelt es sich in vielen Fällen nicht um eine klassische Schriftart wie bei einer installierten Desktop-Font. Stattdessen werden Unicode-Zeichen verwendet. Unicode definiert unter anderem verschiedene Zeichen und kombinierende Zeichen, die von Software unterschiedlich dargestellt werden können.
+            </p>
+          </div>
+
+          <!-- Section 3: Wie kann ich Schrift für Twitter und X erstellen? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Wie kann ich Schrift für Twitter und X erstellen?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Die Anwendung ist einfach:
+            </p>
+            <ul class="space-y-3 text-sm sm:text-base text-stone-300 leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#1d9bf0] font-bold">1.</span>
+                <span>Öffne den <a href="/" class="text-[#1d9bf0] hover:underline font-semibold">Schriftarten Generator</a>.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#1d9bf0] font-bold">2.</span>
+                <span>Schreibe deinen gewünschten Text in das Eingabefeld.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#1d9bf0] font-bold">3.</span>
+                <span>Sieh dir die verschiedenen Varianten in der Vorschau an.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#1d9bf0] font-bold">4.</span>
+                <span>Wähle einen Stil, der gut lesbar bleibt.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#1d9bf0] font-bold">5.</span>
+                <span>Klicke auf <strong>Kopieren</strong>.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#1d9bf0] font-bold">6.</span>
+                <span>Füge den Text anschließend bei X ein.</span>
+              </li>
+            </ul>
+
+            <div class="p-4 rounded-2xl bg-gradient-to-r from-white/10 to-[#1d9bf0]/15 border border-[#1d9bf0]/30 text-center">
+              <a href="/" class="inline-flex items-center gap-2 text-white font-bold hover:text-[#1d9bf0] transition-colors">
+                <span>👉 Jetzt alle Unicode-Stile im Schriftarten Generator testen</span>
+                <span>→</span>
+              </a>
+            </div>
+
+            <!-- IMAGE 2: Anleitung Workflow -->
+            <div class="rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="/images/twitter-schriftarten-anleitung.svg"
+                alt="Schriftgenerator mit Text eingeben, Stil auswählen und kopieren"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Der Ablauf ist einfach: Text eingeben, Stil auswählen und kopieren.
+              </p>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für kurze Texte funktionieren auffällige Varianten besonders gut. Beispielsweise kannst du einen Namen, eine Überschrift oder ein einzelnes Schlüsselwort gestalten. Bei längeren Beiträgen ist dagegen eine dezente Variante oft angenehmer zu lesen.
+            </p>
+          </div>
+
+          <!-- Section 4: Wo lassen sich die Schriftstile auf X verwenden? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Wo lassen sich die Schriftstile auf X verwenden?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Besondere Zeichen können für verschiedene Bereiche eines X-Profils interessant sein. X unterscheidet dabei zwischen Benutzername und Anzeigename. Der Benutzername beziehungsweise Handle darf nur Buchstaben, Zahlen und Unterstriche enthalten und ist auf maximal 15 Zeichen begrenzt. Der Anzeigename kann dagegen bis zu 50 Zeichen lang sein.
+            </p>
+
+            <div class="space-y-4">
+              <div class="p-4 rounded-2xl bg-[#0a0a08] border border-white/5 space-y-1.5">
+                <h3 class="text-base font-bold text-white flex items-center gap-2">
+                  <span class="text-[#1d9bf0]">1.</span> Anzeigename (Display Name – max. 50 Zeichen)
+                </h3>
+                <p class="text-sm text-stone-300 leading-relaxed">
+                  Der Anzeigename ist eine gute Stelle für einen individuellen Stil. Eine kursive oder fett wirkende Variante kann beispielsweise einen Namen oder ein Thema hervorheben.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-[#0a0a08] border border-white/5 space-y-1.5">
+                <h3 class="text-base font-bold text-white flex items-center gap-2">
+                  <span class="text-[#1d9bf0]">2.</span> Bio (Steckbrief – max. 160 Zeichen)
+                </h3>
+                <p class="text-sm text-stone-300 leading-relaxed">
+                  Auch die Bio lässt sich kreativ gestalten. X gibt für die Bio ein Maximum von 160 Zeichen an. Gerade deshalb solltest du dekorative Zeichen sparsam einsetzen. Eine überladene Bio kann schwerer lesbar sein und unnötig viel Platz beanspruchen.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-[#0a0a08] border border-white/5 space-y-1.5">
+                <h3 class="text-base font-bold text-white flex items-center gap-2">
+                  <span class="text-[#1d9bf0]">3.</span> Posts (Tweets)
+                </h3>
+                <p class="text-sm text-stone-300 leading-relaxed">
+                  Bei Posts eignen sich besondere Zeichen vor allem für kurze Hervorhebungen. Zum Beispiel kann ein Begriff am Anfang eines Beitrags optisch anders gestaltet werden. Anschließend kannst du normalen Text verwenden.
+                </p>
+              </div>
+            </div>
+
+            <!-- IMAGE 3: Profil Anwendung -->
+            <div class="rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="/images/twitter-schriftarten-profil-anwendung.svg"
+                alt="Stilisierte Schrift für Anzeigename, Bio und Posts"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Besondere Zeichen eignen sich vor allem für kurze Profiltexte und Hervorhebungen.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 5: Welche Schriftstile eignen sich am besten? & Table -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Welche Schriftstile eignen sich am besten?
+            </h2>
+
+            <div class="overflow-x-auto rounded-2xl border border-white/10">
+              <table class="w-full text-left text-sm text-stone-300">
+                <thead class="bg-white/5 text-white font-bold border-b border-white/10">
+                  <tr>
+                    <th class="p-3.5">Stil</th>
+                    <th class="p-3.5">Geeignet für</th>
+                    <th class="p-3.5">Hinweis</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/fette-schrift" class="text-[#1d9bf0] hover:underline">Fett</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200">wichtige Begriffe, Namen</td>
+                    <td class="p-3.5 text-emerald-400 font-semibold">gut sichtbar</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/kursive-schrift" class="text-[#38bdf8] hover:underline">Kursiv</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200">kurze Akzente</td>
+                    <td class="p-3.5 text-stone-400">eher dezent</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/gotische-schrift" class="text-amber-400 hover:underline">Gothic</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200">Namen, kreative Profile</td>
+                    <td class="p-3.5 text-amber-400 font-semibold">auffällig</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">Monospace</td>
+                    <td class="p-3.5 text-stone-200">technische Themen</td>
+                    <td class="p-3.5 text-sky-400 font-semibold">klarer Charakter</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">Kreise</td>
+                    <td class="p-3.5 text-stone-200">kurze Wörter</td>
+                    <td class="p-3.5 text-pink-400 font-semibold">dekorativ</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">Aesthetic</td>
+                    <td class="p-3.5 text-stone-200">Profile und kurze Texte</td>
+                    <td class="p-3.5 text-amber-300 font-semibold">sparsam verwenden</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Die beste Variante hängt deshalb vom Zweck ab. Für einen professionellen Account ist eine gut lesbare Variante meist sinnvoller als ein stark dekorierter Stil. Für einen persönlichen Account darf der Text dagegen auffälliger sein.
+            </p>
+          </div>
+
+          <!-- Section 6: Warum funktionieren manche Zeichen nicht perfekt? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Warum funktionieren manche Zeichen nicht perfekt?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Unicode-Zeichen werden nicht immer auf jedem Gerät identisch dargestellt. Außerdem können bestimmte Zeichenkombinationen, insbesondere kombinierende Zeichen, von verschiedenen Anwendungen unterschiedlich gerendert werden. Der Unicode-Standard beschreibt solche kombinierenden Zeichen ausdrücklich als Zeichen, die sich auf ein vorhergehendes Basiszeichen beziehen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Deshalb solltest du einen fertigen Text vor dem Veröffentlichen kurz prüfen. Besonders bei Umlauten, Sonderzeichen, Emojis und stark dekorierten Varianten kann das Ergebnis anders aussehen als in der Vorschau.
+            </p>
+          </div>
+
+          <!-- Section 7: Twitter / X Schriftarten richtig einsetzen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Twitter / X Schriftarten richtig einsetzen
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Weniger ist oft mehr. Verwende einen Stil dort, wo er einen echten Zweck erfüllt. Ein kompletter Beitrag in einer stark dekorierten Variante kann beispielsweise schwerer zu lesen sein.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für einen guten Aufbau kannst du zunächst den normalen Text schreiben. Danach hebst du nur einzelne Wörter hervor. <a href="/schrift/fette-schrift" class="text-[#1d9bf0] hover:underline font-semibold">Fett</a> für wichtige Begriffe, eine dezente Variante für einen Namen oder ein Symbol am Anfang können bereits ausreichen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Außerdem solltest du zwischen einem X-Handle und einem Anzeigenamen unterscheiden. Ein besonderer Textstil ist nicht automatisch für jedes Profilfeld geeignet. Prüfe daher immer das tatsächliche Ergebnis vor dem Speichern. X weist beispielsweise darauf hin, dass bestimmte Inhalte in Profilfeldern zu Problemen beim Speichern führen können.
+            </p>
+
+            <!-- IMAGE 4: Stile Vergleich Infografik -->
+            <div class="rounded-2xl overflow-hidden border border-white/10 mt-4">
+              <img
+                src="/images/twitter-schriftarten-stile-vergleich.svg"
+                alt="Vergleich verschiedener Unicode-Schriftstile für X"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Nicht jeder Stil passt zu jedem Zweck – Lesbarkeit sollte immer an erster Stelle stehen.
+              </p>
+            </div>
+          </div>
+
+
+
+          <!-- Section 8: Häufige Fragen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> Häufige Fragen zu Twitter / X Schriftarten
+            </h2>
+            <div class="space-y-4">
+              {twitterFaqs.map((faq) => (
+                <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
+                  <h3 class="text-sm sm:text-base font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 9: Fazit -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Fazit
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Twitter / X Schriftarten sind eine einfache Möglichkeit, Namen, Bios und kurze Textstellen individueller zu gestalten. Besonders praktisch ist dabei das Copy-&-Paste-Prinzip: Text eingeben, Stil auswählen und das Ergebnis direkt übernehmen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Am besten verwendest du dekorative Zeichen gezielt statt flächendeckend. Prüfe außerdem die Darstellung auf X, bevor du einen wichtigen Profiltext veröffentlichst. Für aktuelle Vorgaben zu Profilfeldern und Zeichenlimits ist die <a href="https://help.x.com/articles/166743" target="_blank" rel="noopener noreferrer" class="text-[#1d9bf0] hover:underline font-semibold">offizielle X-Hilfe zur Profilgestaltung</a> die zuverlässigste Anlaufstelle.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Entdecke auch unsere Schriftgeneratoren für <a href="/plattform/instagram" class="text-[#1d9bf0] hover:underline font-semibold">Instagram Schriftarten</a>, <a href="/plattform/tiktok" class="text-[#1d9bf0] hover:underline font-semibold">TikTok Schriftarten</a>, <a href="/plattform/whatsapp" class="text-[#1d9bf0] hover:underline font-semibold">WhatsApp Schriftarten</a> und <a href="/plattform/discord" class="text-[#1d9bf0] hover:underline font-semibold">Discord Schriftarten</a>.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- RIGHT SIDEBAR COLUMN: 1. Live Preview, 2. Beliebte Stile, 3. Weitere Plattformen -->
+        <div class="space-y-6">
+          <!-- 1. Live Twitter/X Preview Mockup Widget -->
+          <PlatformPreviewWidget platformId="twitter-x" />
+
+          <!-- 2. Beliebte Stile für Twitter/X -->
+          <FontStyleGrid
+            title="Beliebte Stile für Twitter / X"
+            titleIcon="🎨"
+            isAmberTitle={false}
+          />
+
+          <!-- 3. Weitere Plattformen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-stone-300 mb-4">
+              Weitere Plattformen
+            </h3>
+            <div class="space-y-2">
+              {NAVIGATION_DATA.platforms.items
+                .filter((item) => !item.href.includes('twitter-x'))
+                .map((other) => (
+                  <a
+                    href={other.href}
+                    class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 text-xs font-semibold text-stone-300 hover:text-white transition-all group"
+                  >
+                    <span>{other.icon} {other.title}</span>
+                    <span class="group-hover:translate-x-1 transition-transform text-[#1d9bf0]">→</span>
+                  </a>
+                ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

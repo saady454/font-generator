@@ -1,0 +1,483 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TextStyleConverter from '../../components/TextStyleConverter.astro';
+import FontStyleGrid from '../../components/FontStyleGrid.astro';
+import GameEnhancedSections from '../../components/GameEnhancedSections.astro';
+import { GAMES_DATA, type GameInfo } from '../../data/game-metadata';
+import { GAME_NICKNAMES_DATA } from '../../data/game-nicknames';
+import { NAVIGATION_DATA } from '../../data/navigation';
+
+const gameInfo: GameInfo = GAMES_DATA['cs2'] || {
+  id: 'cs2',
+  name: 'Counter-Strike 2',
+  slug: '/spiele/cs2',
+  genre: 'Tactical FPS',
+  description: 'Taktische CS2 Nicknames, Steam Profilnamen und Clantags für Premier & Ranked.',
+  exampleNicknames: [
+    '🎯 s ʜ ᴀ ᴅ ᴏ ᴡ _ ᴛ ᴀ ᴘ 🎯',
+    '【 ᴄ ʟ ᴜ ᴛ ᴄ ʜ _ ᴀ ɪ ᴍ 】',
+    '★ s ᴍ ᴏ ᴋ ᴇ _ ᴡ ᴏ ʟ ꜰ ★',
+    '『 ᴀ ɪ ᴍ _ ᴄ ᴏ ʀ ᴇ 』',
+    '⚡ ꜰ ʀ ᴏ s ᴛ _ ᴀ ᴡ ᴘ ⚡',
+  ],
+  namingRules: [
+    'Steam Profilnamen sind in CS2 und im Scoreboard direkt sichtbar.',
+    'Halte den Namen kurz und prägnant für schnelle Voice-Callouts im Match.',
+    'Steam speichert frühere Profilnamen in der Namenshistorie deines Profils.',
+  ],
+  recommendedStyles: ['Competitive', 'Tactical', 'Minimal'],
+};
+
+const gameSectionsConfig = GAME_NICKNAMES_DATA['cs2'];
+
+const cs2Faqs = [
+  {
+    q: 'Kann ich Sonderzeichen in meinem CS2 Namen verwenden?',
+    a: 'Steam unterstützt verschiedene Möglichkeiten zur Gestaltung von Profilnamen. Trotzdem sollte man dekorative Unicode-Zeichen sparsam einsetzen. Eine gut lesbare Variante ist meistens praktischer als ein Name voller Symbole.',
+  },
+  {
+    q: 'Muss mein CS2 Nickname einzigartig sein?',
+    a: 'Dein Steam-Profilname ist nicht dasselbe wie eine eindeutige Account-ID. Deshalb solltest du einen Namen nicht nur danach auswählen, ob er einzigartig wirkt. Für eine erkennbare Gaming-Identität sind Lesbarkeit und Wiedererkennung wichtiger.',
+  },
+  {
+    q: 'Wie lang sollte ein CS2 Nickname sein?',
+    a: 'Eine kurze Schreibweise ist meistens die bessere Wahl. Sie lässt sich schneller erkennen und einfacher im Team aussprechen. Besonders im kompetitiven Spiel sollte der Name nicht unnötig kompliziert sein.',
+  },
+  {
+    q: 'Wo finde ich weitere stylische Namen?',
+    a: 'Du kannst deinen gewünschten Begriff zunächst mit einem Schriftgenerator gestalten und anschließend verschiedene Varianten vergleichen. So kannst du normale, fette, kursive oder dekorierte Schreibweisen ausprobieren, bevor du dich entscheidest.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": cs2Faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+
+const otherGames = Object.values(GAMES_DATA).filter((g) => g.id !== 'cs2');
+---
+
+<Layout
+  title="Counter-Strike 2 Nickname: Coole CS2 Namen zum Kopieren"
+  description="Counter-Strike 2 Nickname gesucht? Finde coole CS2 Namen, stylische Varianten und kurze Ideen zum Kopieren. Tipps für Steam und lesbare Nicknames."
+  canonicalUrl="/spiele/cs2/"
+  schema={faqSchema}
+>
+  <main class="min-h-screen bg-[#0a0a08] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      
+      <!-- Breadcrumbs Navigation -->
+      <nav class="flex items-center gap-2 text-xs sm:text-sm text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Home</a>
+        <span>/</span>
+        <a href="/spiele" class="hover:text-amber-400 transition-colors">Gaming Nicknames</a>
+        <span>/</span>
+        <span class="text-stone-200">Counter-Strike 2</span>
+      </nav>
+
+      <!-- Page Header & H1 -->
+      <div class="text-center max-w-4xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-4">
+          <span>💣</span> Steam Profil &bull; Premier &bull; Scoreboard &bull; Tactical FPS
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
+          Counter-Strike 2 Nickname – Coole CS2 Namen zum Kopieren
+        </h1>
+        <p class="text-base sm:text-lg text-stone-300 max-w-2xl mx-auto">
+          Finde einen passenden Counter-Strike 2 Nickname für Steam, Premier und deine nächste Runde. Erstelle stylische Namen, kopiere sie direkt und finde einen Look, der zu deinem Spielstil passt.
+        </p>
+      </div>
+
+      <!-- Main Interactive Font Converter Component -->
+      <TextStyleConverter
+        defaultText="ShadowTap"
+        pageSlug="cs2"
+        filterCategory="alle"
+        showCategoryTabs={true}
+        showPresets={true}
+        maxChars={16}
+        limit={12}
+        showMoreButton={true}
+      />
+
+      <!-- Content Grid: Left Column (Tools + Editorial Article) & Right Sidebar -->
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- LEFT COLUMN (lg:col-span-2): Tools first, followed by Article Content -->
+        <div class="lg:col-span-2 space-y-8">
+          
+          <!-- Generator & Tool Cards (Gaming Enhancements) -->
+          {gameSectionsConfig && (
+            <GameEnhancedSections
+              gameData={gameSectionsConfig}
+              gameId="cs2"
+            />
+          )}
+
+          <!-- IMAGE 1: Featured Hero Image -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/cs2-nickname-hero.svg"
+              alt="Spieler erstellt einen Counter-Strike 2 Nickname am Gaming-PC"
+              class="w-full h-auto aspect-video object-cover"
+              loading="eager"
+            />
+            <p class="text-xs text-stone-400 p-3 text-center border-t border-white/5 bg-[#0a0a08]">
+              Ein passender Nickname gehört zur persönlichen Gaming-Identität.
+            </p>
+          </div>
+
+          <!-- Section 1: Intro -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein guter <strong>Counter-Strike 2 Nickname</strong> ist schnell gefunden, aber nicht immer leicht auszuwählen. Viele Namen wirken zu lang, sind schwer zu lesen oder passen nicht zum eigenen Spielstil. Gerade im Scoreboard und Killfeed sollte dein Name klar erkennbar bleiben.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Statt lange nach Ideen zu suchen, kannst du einen Namen erstellen, verschiedene Schriftstile ausprobieren und deine Favoriten direkt kopieren. So findest du einen CS2 Nickname, der kurz, auffällig und trotzdem gut lesbar ist.
+            </p>
+          </div>
+
+          <!-- Section 2: Was macht einen guten CS2 Nickname aus? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Was macht einen guten CS2 Nickname aus?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Counter-Strike 2 ist ein taktischer Multiplayer-FPS mit kompetitiven Spielmodi. Dein Steam-Profilname ist dabei ein wichtiger Teil deiner öffentlichen Identität. Steam weist selbst darauf hin, dass Profilnamen unter anderem in Multiplayer-Spielen, Ranglisten und anderen Bereichen sichtbar sind.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für einen guten Namen kommt es deshalb weniger auf möglichst viele Sonderzeichen an. Wichtiger sind:
+            </p>
+            <ul class="space-y-2 text-sm text-stone-300 leading-relaxed list-disc list-inside">
+              <li>Kurz und leicht lesbar</li>
+              <li>Einfach auszusprechen</li>
+              <li>Passend zu deinem Spielstil</li>
+              <li>Nicht unnötig mit Symbolen überladen</li>
+              <li>Auch im Killfeed schnell erkennbar</li>
+            </ul>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed pt-2">
+              Beispielsweise können Namen wie <code>ShadowTap</code>, <code>ClutchAim</code>, <code>SilentRush</code> oder <code>SmokeWolf</code> einen klaren Gaming-Stil vermitteln.
+            </p>
+          </div>
+
+          <!-- IMAGE 2: Scoreboard Beispiele -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/cs2-nickname-scoreboard-beispiele.svg"
+              alt="Beispiele für kurze und gut lesbare CS2 Nicknames"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Kurze Namen lassen sich im Spiel schneller erkennen.
+            </p>
+          </div>
+
+          <!-- Section 3: Welche CS2 Nickname-Stile passen zu dir? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Welche CS2 Nickname-Stile passen zu dir?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Der beste Stil hängt davon ab, welchen Eindruck du im Matchmaking vermitteln möchtest:
+            </p>
+
+            <!-- Table of 8 Styles -->
+            <div class="overflow-x-auto my-4 border border-white/10 rounded-2xl">
+              <table class="w-full text-left text-sm text-stone-300">
+                <thead class="bg-white/5 text-xs uppercase text-stone-400">
+                  <tr>
+                    <th scope="col" class="px-4 py-3">Stil</th>
+                    <th scope="col" class="px-4 py-3">Beispiel</th>
+                    <th scope="col" class="px-4 py-3">Wirkung</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Competitive</td>
+                    <td class="px-4 py-3 font-mono text-amber-400">AimCore</td>
+                    <td class="px-4 py-3 text-stone-300">Clean und professionell</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Aggressiv</td>
+                    <td class="px-4 py-3 font-mono text-red-400">RushFury</td>
+                    <td class="px-4 py-3 text-stone-300">Schnell und offensiv</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Tactical</td>
+                    <td class="px-4 py-3 font-mono text-cyan-400">SmokeMind</td>
+                    <td class="px-4 py-3 text-stone-300">Ruhig und strategisch</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">AWP</td>
+                    <td class="px-4 py-3 font-mono text-emerald-400">FrostAWP</td>
+                    <td class="px-4 py-3 text-stone-300">Präzise und fokussiert</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Clutch</td>
+                    <td class="px-4 py-3 font-mono text-purple-400">LastRound</td>
+                    <td class="px-4 py-3 text-stone-300">Cool und selbstbewusst</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Funny</td>
+                    <td class="px-4 py-3 font-mono text-yellow-400">EcoEnjoyer</td>
+                    <td class="px-4 py-3 text-stone-300">Locker und humorvoll</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Minimal</td>
+                    <td class="px-4 py-3 font-mono text-stone-300">Vex</td>
+                    <td class="px-4 py-3 text-stone-300">Kurz und modern</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Stylish</td>
+                    <td class="px-4 py-3 font-mono text-pink-400">亗Vex亗</td>
+                    <td class="px-4 py-3 text-stone-300">Auffälliger Look</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
+              Allerdings muss dein Name nicht deine Rolle beschreiben. Wenn du zwischen AWP, Rifle und Support wechselst, ist ein neutraler Name oft die bessere Wahl.
+            </p>
+          </div>
+
+          <!-- Section 4: Counter-Strike 2 Nickname mit Sonderzeichen und Schrift -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Counter-Strike 2 Nickname mit Sonderzeichen und Schrift
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein stylischer Name kann durch Unicode-Zeichen, Symbole oder unterschiedliche Buchstabenvarianten auffallen. Dabei solltest du jedoch vorsichtig sein. Nicht jede dekorative Schreibweise ist überall gleich gut lesbar.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein sauberer Ansatz ist beispielsweise:
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
+              <div class="bg-[#1a1a16] border border-white/5 rounded-xl p-3 text-center">
+                <span class="text-[10px] text-stone-400 block uppercase font-bold">Normal</span>
+                <span class="font-mono font-bold text-white text-sm">Shadow</span>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-xl p-3 text-center">
+                <span class="text-[10px] text-cyan-400 block uppercase font-bold">Stylisch</span>
+                <span class="font-mono font-bold text-cyan-300 text-sm">Ｓｈａｄｏｗ</span>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-xl p-3 text-center">
+                <span class="text-[10px] text-amber-400 block uppercase font-bold">Dekoriert</span>
+                <span class="font-mono font-bold text-amber-300 text-sm">亗 Shadow 亗</span>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-xl p-3 text-center">
+                <span class="text-[10px] text-purple-400 block uppercase font-bold">Minimal</span>
+                <span class="font-mono font-bold text-purple-300 text-xs tracking-widest">S H A D O W</span>
+              </div>
+            </div>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed pt-2">
+              Gerade für CS2 empfiehlt sich eine Variante, die auch im schnellen Spiel erkennbar bleibt. Entdecke auch unsere Schriftarten wie <a href="/schrift/fette-schrift" class="text-amber-400 hover:underline font-semibold">Fette Schrift</a>, <a href="/schrift/kursive-schrift" class="text-cyan-400 hover:underline font-semibold">Kursive Schrift</a> oder passende <a href="/symbole" class="text-pink-400 hover:underline font-semibold">Symbole &amp; Emoji</a>.
+            </p>
+          </div>
+
+          <!-- IMAGE 3: Stile Vergleich -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/cs2-nickname-stile-vergleich.svg"
+              alt="Verschiedene Schriftstile für einen stylischen CS2 Nickname"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Verschiedene Schriftstile können einen normalen Nickname optisch verändern.
+            </p>
+          </div>
+
+          <!-- Section 5: So findest du einen passenden CS2 Nickname -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              So findest du einen passenden CS2 Nickname
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Beginne zunächst mit einem einfachen Begriff. Das kann dein Lieblingswort, ein Spielstil oder ein Begriff aus Counter-Strike sein.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Geeignete Themen sind zum Beispiel:
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1">
+              {['Aim', 'Clutch', 'Rush', 'Smoke', 'Flash', 'AWP', 'Tap', 'Frag', 'Shadow', 'Ghost', 'Frost', 'Phantom'].map((word) => (
+                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs font-mono text-amber-300">
+                  {word}
+                </span>
+              ))}
+            </div>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed pt-2">
+              Danach kannst du zwei Begriffe kombinieren. <em>GhostTap</em> wirkt beispielsweise anders als <em>RushGhost</em>. Anschließend kannst du eine passende Schriftvariante testen.
+            </p>
+            <p class="text-xs sm:text-sm text-stone-400 leading-relaxed bg-[#1a1a16] border border-white/5 rounded-xl p-3">
+              💡 <strong>Tipp:</strong> Speichere immer auch die normale Schreibweise. Sie ist eine praktische Alternative, falls eine dekorative Variante an einer bestimmten Stelle nicht sauber dargestellt wird.
+            </p>
+          </div>
+
+          <!-- Section 6: Wie ändere ich meinen Namen für CS2? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Wie ändere ich meinen Namen für CS2?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              CS2 wird über Steam gespielt, und dein Steam-Profilname ist öffentlich sichtbar. Steam bietet dafür eigene Profileinstellungen an (siehe <a href="https://help.steampowered.com/en/faqs/view/56C6-D584-CC80-4EB2" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 underline font-semibold">Steam Community-Profilnamen und Richtlinien</a>).
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span>
+                <p class="text-xs sm:text-sm text-stone-300">Öffne dein Steam-Profil.</p>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span>
+                <p class="text-xs sm:text-sm text-stone-300">Bearbeite deinen Profilnamen.</p>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span>
+                <p class="text-xs sm:text-sm text-stone-300">Wähle deinen neuen Namen.</p>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">4</span>
+                <p class="text-xs sm:text-sm text-stone-300">Speichere die Änderung.</p>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3 sm:col-span-2">
+                <span class="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">5</span>
+                <p class="text-xs sm:text-sm text-stone-300">Starte anschließend CS2 beziehungsweise aktualisiere das Spiel.</p>
+              </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-stone-400 leading-relaxed pt-2">
+              Steam erklärt außerdem, dass frühere Profilnamen in der Namenshistorie gespeichert werden können. Deshalb solltest du einen Namen wählen, mit dem du langfristig zufrieden bist.
+            </p>
+          </div>
+
+          <!-- IMAGE 4: Workflow Guide Graphic -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/cs2-nickname-workflow-guide.svg"
+              alt="Schritte zur Erstellung eines eigenen CS2 Nicknames"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Von der ersten Idee bis zum fertigen Nickname in wenigen Schritten.
+            </p>
+          </div>
+
+          <!-- Section 7: FAQ zum Counter-Strike 2 Nickname -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> FAQ zum Counter-Strike 2 Nickname
+            </h2>
+            <div class="space-y-4">
+              {cs2Faqs.map((faq) => (
+                <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
+                  <h3 class="text-sm sm:text-base font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 8: Fazit -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Fazit
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein starker Counter-Strike 2 Nickname muss nicht kompliziert sein. Entscheide dich zuerst für einen klaren Namen und passe anschließend Stil, Symbole oder Schrift an. Besonders im kompetitiven Umfeld sind kurze und gut erkennbare Namen eine praktische Wahl.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Am besten erstellst du mehrere Varianten und prüfst sie in der normalen sowie in einer stylischen Schreibweise. So bekommst du einen Namen, der nicht nur auffällt, sondern auch im Spiel schnell wiedererkannt werden kann.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Entdecke auch unseren <a href="/spiele" class="text-amber-400 hover:underline font-semibold">Gaming Nickname Generator für alle Spiele</a>, den <a href="/spiele/valorant" class="text-[#ff4655] hover:underline font-semibold">Valorant Nickname Generator</a>, den <a href="/spiele/fortnite-nickname" class="text-cyan-400 hover:underline font-semibold">Fortnite Nickname Generator</a> oder den <a href="/spiele/minecraft-nickname" class="text-emerald-400 hover:underline font-semibold">Minecraft Nickname Generator</a>.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- RIGHT SIDEBAR COLUMN -->
+        <div class="space-y-6">
+          
+          <!-- Beliebte Schriftstile -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>✨</span> Beliebte Gaming Stile
+            </h3>
+            <FontStyleGrid />
+          </div>
+
+          <!-- Weitere Spiele -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>🎮</span> Weitere Spiele
+            </h3>
+            <div class="space-y-2">
+              {otherGames.map((game) => (
+                <a
+                  href={game.slug}
+                  class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-amber-500/40 transition-all text-sm group"
+                >
+                  <span class="font-medium text-stone-200 group-hover:text-amber-400 transition-colors">
+                    {game.name} Nicknames
+                  </span>
+                  <span class="text-xs text-stone-400 group-hover:text-amber-400 transition-colors">
+                    {game.genre} &rarr;
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Beliebte Social-Media Plattformen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>📱</span> Social-Media Schriften
+            </h3>
+            <div class="space-y-2">
+              <a
+                href="/plattform/discord"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#5865F2]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#5865F2] transition-colors">
+                  Discord Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/plattform/tiktok"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#25f4ee]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#25f4ee] transition-colors">
+                  TikTok Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/plattform/instagram"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#ec4899]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#ec4899] transition-colors">
+                  Instagram Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+</Layout>

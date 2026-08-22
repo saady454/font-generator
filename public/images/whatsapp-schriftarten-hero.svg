@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="waHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040d0a"/>
+      <stop offset="50%" stop-color="#0b1714"/>
+      <stop offset="100%" stop-color="#050a08"/>
+    </linearGradient>
+    <linearGradient id="waGreenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#25D366"/>
+      <stop offset="60%" stop-color="#128C7E"/>
+      <stop offset="100%" stop-color="#075E54"/>
+    </linearGradient>
+    <linearGradient id="waAccentLight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#25D366"/>
+      <stop offset="100%" stop-color="#34B7F1"/>
+    </linearGradient>
+    <filter id="waShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#waHeroBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="280" cy="200" r="280" fill="#25D366" fill-opacity="0.09"/>
+  <circle cx="920" cy="460" r="300" fill="#128C7E" fill-opacity="0.08"/>
+  <circle cx="600" cy="340" r="200" fill="#34B7F1" fill-opacity="0.04"/>
+
+  <!-- Top Header Badge -->
+  <g transform="translate(600, 55)" text-anchor="middle">
+    <rect x="-190" y="-18" width="380" height="36" rx="18" fill="#0f241d" stroke="#25D366" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#25D366" letter-spacing="2">💬 WHATSAPP SCHRIFTEN STUDIO</text>
+  </g>
+
+  <!-- Central Title -->
+  <text x="600" y="132" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="38" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+    WhatsApp Schriftarten: <tspan fill="url(#waAccentLight)">Coole Schriften kopieren &amp; einfügen</tspan>
+  </text>
+  <text x="600" y="168" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#94a3b8">
+    Fette, kursive, verschnörkelte &amp; dekorative Texte für Chats, Status &amp; Gruppennamen
+  </text>
+
+  <!-- Main Showcase Container -->
+  <g transform="translate(90, 205)" filter="url(#waShadow)">
+    <rect width="1020" height="420" rx="28" fill="#0d1f19" stroke="#25D366" stroke-opacity="0.25" stroke-width="1.5"/>
+
+    <!-- Inner Grid Area -->
+    <rect x="25" y="25" width="970" height="370" rx="20" fill="#07120e" stroke="#ffffff" stroke-opacity="0.05"/>
+
+    <!-- Left: Smartphone Chat Preview Mockup -->
+    <g transform="translate(55, 50)">
+      <rect width="250" height="320" rx="24" fill="#11241c" stroke="#ffffff" stroke-opacity="0.1" stroke-width="2"/>
+      
+      <!-- Top Chat Header Bar -->
+      <rect x="0" y="0" width="250" height="52" rx="22" fill="#075E54"/>
+      <circle cx="28" cy="26" r="15" fill="#128C7E"/>
+      <text x="28" y="31" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12">💬</text>
+      <text x="50" y="22" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#ffffff">WhatsApp Chat</text>
+      <text x="50" y="36" font-family="system-ui, sans-serif" font-size="9" fill="#a7f3d0">online</text>
+
+      <!-- Chat Messages (Simulated WhatsApp Bubbles) -->
+      
+      <!-- Bubble 1 (Incoming): Standard text -->
+      <g transform="translate(14, 66)">
+        <rect width="180" height="44" rx="10" fill="#1a3328" stroke="#ffffff" stroke-opacity="0.05"/>
+        <text x="12" y="20" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Wie machst du die coole Schrift?</text>
+        <text x="12" y="34" font-family="system-ui, sans-serif" font-size="8" fill="#64748b">12:30</text>
+      </g>
+
+      <!-- Bubble 2 (Outgoing): Fett Unicode -->
+      <g transform="translate(46, 120)">
+        <rect width="190" height="46" rx="10" fill="#056162"/>
+        <text x="12" y="20" font-family="system-ui, sans-serif" font-size="11" font-weight="900" fill="#ffffff">𝗠𝗶𝘁 𝗦𝗰𝗵𝗿𝗶𝗳𝘁𝗮𝗿𝘁𝗲𝗻.𝗶𝗼! ✨</text>
+        <text x="12" y="36" font-family="system-ui, sans-serif" font-size="9" fill="#d1fae5">Einfach Text eingeben &amp; kopieren.</text>
+        <text x="175" y="38" text-anchor="end" font-family="system-ui, sans-serif" font-size="8" fill="#6ee7b7">12:31 ✓✓</text>
+      </g>
+
+      <!-- Bubble 3 (Outgoing): Schreibschrift + Kursiv -->
+      <g transform="translate(46, 176)">
+        <rect width="190" height="48" rx="10" fill="#056162"/>
+        <text x="12" y="20" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#ffffff">𝓦𝓾𝓷𝓭𝓮𝓻𝓼𝓬𝓱𝓸̈𝓷𝓮 𝘝𝘪𝘣𝘦𝘴 💖</text>
+        <text x="12" y="38" font-family="system-ui, sans-serif" font-size="9" fill="#d1fae5">Status: 𝘓𝘪𝘧𝘦 𝘪𝘴 𝘨𝘰𝘰𝘥 🌿</text>
+        <text x="175" y="40" text-anchor="end" font-family="system-ui, sans-serif" font-size="8" fill="#6ee7b7">12:32 ✓✓</text>
+      </g>
+
+      <!-- Status Bar Simulation at Bottom -->
+      <g transform="translate(14, 236)">
+        <rect width="222" height="40" rx="8" fill="#091b14" stroke="#25D366" stroke-opacity="0.3"/>
+        <text x="12" y="16" font-family="system-ui, sans-serif" font-size="8" font-weight="800" fill="#25D366" letter-spacing="0.5">INFO / STATUS AKTIV</text>
+        <text x="12" y="30" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">⚡ 𝗖𝗿𝗲𝗮𝘁𝗼𝗿 | 𝙂𝙖𝙢𝙞𝙣𝙜 | 2026 🔥</text>
+      </g>
+
+      <g transform="translate(14, 286)">
+        <rect width="222" height="24" rx="6" fill="#25D366"/>
+        <text x="111" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#052e16">100% WhatsApp kompatibel ✓</text>
+      </g>
+    </g>
+
+    <!-- Right: Text Generator Showcase -->
+    <g transform="translate(340, 50)">
+      <rect width="630" height="320" rx="20" fill="#0e231b" stroke="#ffffff" stroke-opacity="0.08"/>
+
+      <!-- Input Simulation -->
+      <g transform="translate(25, 20)">
+        <text x="0" y="14" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#6ee7b7" letter-spacing="1">EINGABETEXT</text>
+        <rect x="0" y="24" width="580" height="42" rx="10" fill="#07140f" stroke="#25D366" stroke-opacity="0.4"/>
+        <text x="16" y="50" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#ffffff">Hallo WhatsApp</text>
+        <rect x="495" y="32" width="75" height="26" rx="6" fill="#25D366"/>
+        <text x="532" y="49" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#064e3b">Sofort ⚡</text>
+      </g>
+
+      <!-- Style Grid -->
+      <g transform="translate(25, 100)">
+        
+        <!-- Style 1: Fett Sans -->
+        <g transform="translate(0, 0)">
+          <rect width="280" height="46" rx="10" fill="#132c22" stroke="#25D366" stroke-opacity="0.25"/>
+          <text x="14" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#25D366">FETT (UNICODE)</text>
+          <text x="14" y="36" font-family="system-ui, sans-serif" font-size="15" font-weight="900" fill="#ffffff">𝗛𝗮𝗹𝗹𝗼 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽</text>
+          <rect x="210" y="10" width="58" height="26" rx="6" fill="#25D366" fill-opacity="0.15"/>
+          <text x="239" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#25D366">Kopieren</text>
+        </g>
+
+        <!-- Style 2: Kursiv -->
+        <g transform="translate(300, 0)">
+          <rect width="280" height="46" rx="10" fill="#132c22" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="14" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#34B7F1">KURSIV (STATUS)</text>
+          <text x="14" y="36" font-family="system-ui, sans-serif" font-size="15" font-style="italic" font-weight="600" fill="#ffffff">𝘏𝘢𝘭𝘭𝘰 𝘞𝘩𝘢𝘵𝘴𝘈𝘱𝘱</text>
+          <rect x="210" y="10" width="58" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="239" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopieren</text>
+        </g>
+
+        <!-- Style 3: Schreibschrift -->
+        <g transform="translate(0, 56)">
+          <rect width="280" height="46" rx="10" fill="#132c22" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="14" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#a78bfa">SCHREIBSCHRIFT</text>
+          <text x="14" y="36" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#ffffff">𝓗𝓪𝓵𝓵𝓸 𝓦𝓱𝓪𝓽𝓼𝓐𝓹𝓹</text>
+          <rect x="210" y="10" width="58" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="239" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopieren</text>
+        </g>
+
+        <!-- Style 4: Gotisch / Fraktur -->
+        <g transform="translate(300, 56)">
+          <rect width="280" height="46" rx="10" fill="#132c22" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="14" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#fbbf24">GOTISCH</text>
+          <text x="14" y="36" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#ffffff">𝔥𝔞𝔩𝔩𝔬 𝔴𝔥𝔞𝔱𝔰𝔞𝔭𝔭</text>
+          <rect x="210" y="10" width="58" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="239" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopieren</text>
+        </g>
+
+        <!-- Style 5: Bubble -->
+        <g transform="translate(0, 112)">
+          <rect width="280" height="46" rx="10" fill="#132c22" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="14" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#f472b6">BUBBLE / KREISE</text>
+          <text x="14" y="36" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#ffffff">ⓗⓐⓛⓛⓞ ⓦⓗⓐⓣⓢⓐⓟⓟ</text>
+          <rect x="210" y="10" width="58" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="239" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopieren</text>
+        </g>
+
+        <!-- Style 6: Durchgestrichen -->
+        <g transform="translate(300, 112)">
+          <rect width="280" height="46" rx="10" fill="#132c22" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="14" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#38bdf8">DURCHGESTRICHEN</text>
+          <text x="14" y="36" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff">H̶a̶l̶l̶o̶ W̶h̶a̶t̶s̶A̶p̶p̶</text>
+          <rect x="210" y="10" width="58" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="239" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopieren</text>
+        </g>
+
+      </g>
+    </g>
+  </g>
+</svg>

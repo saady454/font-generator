@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="splitBoxBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a14"/>
+      <stop offset="50%" stop-color="#101426"/>
+      <stop offset="100%" stop-color="#060810"/>
+    </linearGradient>
+    <filter id="splitBoxShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#splitBoxBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="280" cy="300" r="260" fill="#38bdf8" fill-opacity="0.10"/>
+  <circle cx="920" cy="300" r="260" fill="#818cf8" fill-opacity="0.10"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-160" y="-16" width="320" height="32" rx="8" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">TECHNOLOGIE-VERGLEICH</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Eckige Unicode-Boxen vs. <tspan fill="#38bdf8">Klassische Font-Datei</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Enclosed / Square Characters (U+1F130) im Vergleich zu installierten Schriftdateien (.TTF / .OTF)
+    </text>
+  </g>
+
+  <!-- Split Comparison Layout -->
+  <g transform="translate(80, 160)">
+    
+    <!-- LEFT CARD: Unicode-Boxen (Copy &amp; Paste) -->
+    <g transform="translate(0, 0)" filter="url(#splitBoxShadow)">
+      <rect width="500" height="420" rx="20" fill="#121728" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5"/>
+      
+      <!-- Top Badge -->
+      <rect x="25" y="24" width="240" height="28" rx="8" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="38" y="43" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8">📋 UNICODE ENCLOSED BOXEN</text>
+      <text x="475" y="43" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#38bdf8" font-weight="700">Reiner Text</text>
+
+      <!-- Mockup Area -->
+      <rect x="25" y="68" width="450" height="150" rx="14" fill="#080c16" stroke="#38bdf8" stroke-opacity="0.2"/>
+      
+      <text x="225" y="125" text-anchor="middle" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#38bdf8">🅴🅲🅺🅸🅶</text>
+      <text x="225" y="158" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#ffffff" font-weight="600">✓ Sofortiges Copy &amp; Paste in Bio, Chat &amp; Game</text>
+      <text x="225" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Besteht aus Enclosed Alphanumeric Supplement Codepoints</text>
+
+      <!-- Feature List -->
+      <g transform="translate(25, 240)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Eigenschaften &amp; Vorteile:</text>
+        
+        <g transform="translate(0, 15)">
+          <circle cx="8" cy="8" r="5" fill="#38bdf8"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Funktioniert ohne Installation auf allen Plattformen</text>
+        </g>
+        <g transform="translate(0, 45)">
+          <circle cx="8" cy="8" r="5" fill="#38bdf8"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Ideal für Nicknames, Clan-Tags &amp; Social-Bios</text>
+        </g>
+        <g transform="translate(0, 75)">
+          <circle cx="8" cy="8" r="5" fill="#38bdf8"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Wird nativ vom Betriebssystem gerendert</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- RIGHT CARD: Echte geometrische Schriftdatei (.TTF / .OTF) -->
+    <g transform="translate(540, 0)" filter="url(#splitBoxShadow)">
+      <rect width="500" height="420" rx="20" fill="#121728" stroke="#818cf8" stroke-opacity="0.35" stroke-width="1.5"/>
+      
+      <!-- Top Badge -->
+      <rect x="25" y="24" width="240" height="28" rx="8" fill="#818cf8" fill-opacity="0.15"/>
+      <text x="38" y="43" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#a5b4fc">📁 GEOMETRISCHE FONT-DATEI</text>
+      <text x="475" y="43" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#818cf8" font-weight="700">Display-Font</text>
+
+      <!-- Mockup Area -->
+      <rect x="25" y="68" width="450" height="150" rx="14" fill="#080c16" stroke="#818cf8" stroke-opacity="0.2"/>
+      
+      <text x="225" y="125" text-anchor="middle" font-family="Impact, Arial Black, sans-serif" font-size="34" font-weight="900" fill="#a5b4fc">ECKIG BLOCK</text>
+      <text x="225" y="158" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#ffffff" font-weight="600">✓ Vektorschrift für Print, Plakate &amp; UI-Design</text>
+      <text x="225" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Wird lokal in Word, Photoshop oder Webseiten eingebunden</text>
+
+      <!-- Feature List -->
+      <g transform="translate(25, 240)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Eigenschaften &amp; Vorteile:</text>
+        
+        <g transform="translate(0, 15)">
+          <circle cx="8" cy="8" r="5" fill="#818cf8"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Hochauflösende Vektoren für Print &amp; UI</text>
+        </g>
+        <g transform="translate(0, 45)">
+          <circle cx="8" cy="8" r="5" fill="#818cf8"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Perfekte Skalierbarkeit ohne Artefakte</text>
+        </g>
+        <g transform="translate(0, 75)">
+          <circle cx="8" cy="8" r="5" fill="#818cf8"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Erfordert Schrift-Installation auf dem Computer</text>
+        </g>
+      </g>
+    </g>
+
+  </g>
+</svg>

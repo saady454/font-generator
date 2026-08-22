@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="levelsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07090f"/>
+      <stop offset="50%" stop-color="#0f1422"/>
+      <stop offset="100%" stop-color="#05070c"/>
+    </linearGradient>
+    <filter id="lvlShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#levelsBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="200" cy="200" r="220" fill="#22c55e" fill-opacity="0.08"/>
+  <circle cx="600" cy="200" r="220" fill="#eab308" fill-opacity="0.08"/>
+  <circle cx="1000" cy="200" r="220" fill="#ef4444" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-160" y="-16" width="320" height="32" rx="16" fill="#06b6d4" fill-opacity="0.15" stroke="#06b6d4" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">VERZERRUNGS-STUFEN</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      3 Stufen des <tspan fill="#38bdf8">Glitch- &amp; Zalgo-Effekts</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Von dezenter Lesbarkeit bis hin zu intensiver, chaotischer Textüberlagerung
+    </text>
+  </g>
+
+  <!-- 3 Level Columns Grid -->
+  <g transform="translate(70, 160)">
+    
+    <!-- Column 1: Stufe 1 - Subtiler Glitch (Green / Safe) -->
+    <g transform="translate(0, 0)" filter="url(#lvlShadow)">
+      <rect width="335" height="440" rx="22" fill="#101524" stroke="#22c55e" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="25" y="24" width="145" height="28" rx="14" fill="#22c55e" fill-opacity="0.15"/>
+      <text x="97" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#4ade80">1. SUBTILER GLITCH</text>
+      <text x="310" y="43" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#22c55e" font-weight="700">100% Lesbar</text>
+
+      <!-- Specimen Box -->
+      <rect x="20" y="70" width="295" height="120" rx="14" fill="#080a12" stroke="#22c55e" stroke-opacity="0.2"/>
+      <text x="147" y="140" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="800" fill="#ffffff" letter-spacing="2">G̵l̵i̵t̵c̵h̵ ̵T̵e̵x̵t̵</text>
+
+      <g transform="translate(25, 215)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#4ade80">MERKMALE:</text>
+        <text x="0" y="24" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Einzelne dezente Überlagerungen</text>
+        <text x="0" y="48" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Buchstaben bleiben klar erkennbar</text>
+        <text x="0" y="72" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Kein Überlappen benachbarter Zeilen</text>
+      </g>
+
+      <rect x="20" y="325" width="295" height="90" rx="12" fill="#161e30" stroke="#22c55e" stroke-opacity="0.2"/>
+      <text x="35" y="352" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#4ade80">OPTIMAL FÜR:</text>
+      <text x="35" y="374" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Instagram- &amp; TikTok-Bios</text>
+      <text x="35" y="394" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Namen, Überschriften &amp; Status</text>
+    </g>
+
+    <!-- Column 2: Stufe 2 - Mittlerer Glitch (Yellow / Warning) -->
+    <g transform="translate(365, 0)" filter="url(#lvlShadow)">
+      <rect width="335" height="440" rx="22" fill="#101524" stroke="#eab308" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="25" y="24" width="150" height="28" rx="14" fill="#eab308" fill-opacity="0.15"/>
+      <text x="100" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#facc15">2. MITTLERER GLITCH</text>
+      <text x="310" y="43" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#eab308" font-weight="700">Auffällig</text>
+
+      <!-- Specimen Box -->
+      <rect x="20" y="70" width="295" height="120" rx="14" fill="#080a12" stroke="#eab308" stroke-opacity="0.2"/>
+      <text x="147" y="140" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="800" fill="#facc15" letter-spacing="2">G̷l̷i̷t̷c̷h̷ ̷T̷e̷x̷t̷</text>
+
+      <g transform="translate(25, 215)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#facc15">MERKMALE:</text>
+        <text x="0" y="24" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Mehrere Diakritika oben &amp; unten</text>
+        <text x="0" y="48" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Sichtbare digitale Verzerrung</text>
+        <text x="0" y="72" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Cyberpunk- &amp; Hacker-Ästhetik</text>
+      </g>
+
+      <rect x="20" y="325" width="295" height="90" rx="12" fill="#161e30" stroke="#eab308" stroke-opacity="0.2"/>
+      <text x="35" y="352" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#facc15">OPTIMAL FÜR:</text>
+      <text x="35" y="374" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Gaming-Namen &amp; Clan-Tags</text>
+      <text x="35" y="394" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Discord-Rollen &amp; Chat-Hooks</text>
+    </g>
+
+    <!-- Column 3: Stufe 3 - Extremer Zalgo (Red / Danger) -->
+    <g transform="translate(730, 0)" filter="url(#lvlShadow)">
+      <rect width="335" height="440" rx="22" fill="#101524" stroke="#ef4444" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="25" y="24" width="150" height="28" rx="14" fill="#ef4444" fill-opacity="0.15"/>
+      <text x="100" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#f87171">3. EXTREMER ZALGO</text>
+      <text x="310" y="43" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#ef4444" font-weight="700">Chaotisch</text>
+
+      <!-- Specimen Box -->
+      <rect x="20" y="70" width="295" height="120" rx="14" fill="#080a12" stroke="#ef4444" stroke-opacity="0.3"/>
+      <text x="147" y="140" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="800" fill="#ef4444" letter-spacing="1">G̸̷̶l̸̷̶i̸̷̶t̸̷̶c̸̷̶h̸̷̶</text>
+
+      <g transform="translate(25, 215)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#f87171">MERKMALE:</text>
+        <text x="0" y="24" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Hohe vertikale Überlagerung</text>
+        <text x="0" y="48" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Text wird schwer lesbar</text>
+        <text x="0" y="72" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Unheimlicher Horror-Effekt</text>
+      </g>
+
+      <rect x="20" y="325" width="295" height="90" rx="12" fill="#161e30" stroke="#ef4444" stroke-opacity="0.2"/>
+      <text x="35" y="352" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f87171">OPTIMAL FÜR:</text>
+      <text x="35" y="374" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Horror- &amp; Creepypasta-Posts</text>
+      <text x="35" y="394" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Gezielte Mystery-Akzente</text>
+    </g>
+
+  </g>
+</svg>

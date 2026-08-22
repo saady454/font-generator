@@ -30,29 +30,25 @@ const gameInfo: GameInfo = GAMES_DATA['free-fire'] || {
 
 const gameSectionsConfig = GAME_NICKNAMES_DATA['free-fire'];
 
-const gameFaqs = [
+const freeFireFaqs = [
   {
-    q: 'Wie ändere ich meinen Spielernamen in Free Fire?',
-    a: '1. Öffne Free Fire und tippe oben links auf dein Profilbanner.\n2. Klicke auf das gelbe Bearbeiten-Symbol neben deinem aktuellen Nickname.\n3. Füge deinen kopierten stylischen Namen ein und bestätige die Änderung (mit Diamanten oder einer Namensänderungskarte).',
+    q: 'Kann ich einen Free Fire Nickname kostenlos erstellen?',
+    a: 'Ja. Der Generator auf Schriftarten.io ist für die Erstellung und das Kopieren der Varianten kostenlos. Ob eine Namensänderung im Spiel selbst Kosten verursacht, hängt dagegen von den aktuellen Optionen deines Free-Fire-Kontos ab.',
   },
   {
-    q: 'Gibt es ein Zeichenlimit für Free Fire Nicknames?',
-    a: 'Ja, Free Fire beschränkt Spielernamen auf maximal 12 Zeichen. Da manche Unicode-Symbole zwei Zeichen belegen können, empfiehlt sich ein kurzer Basisname.',
+    q: 'Welche Symbole sollte ich verwenden?',
+    a: 'Starte mit einfachen Zeichen wie ★, ✦, ⚡ oder dekorativen Klammern. Verwende lieber wenige gut lesbare Symbole als eine lange Kombination. Bei Problemen solltest du seltene Zeichen entfernen und den Namen erneut testen.',
   },
   {
-    q: 'Werden alle Sonderzeichen in Free Fire angezeigt?',
-    a: 'Die meisten standardisierten Unicode-Symbole (wie Sterne, Kronen, Blitze und japanische Klammern) werden auf iOS und modernen Android-Geräten fehlerfrei dargestellt.',
-  },
-  {
-    q: 'Kann ich für Sonderzeichen in Free Fire gebannt werden?',
-    a: 'Nein. Unicode-Schriftzeichen und Symbole sind standardisierter Text und stellen keinen Cheat oder Hack dar.',
+    q: 'Warum wird mein stylischer Name nicht richtig angezeigt?',
+    a: 'Unicode-Zeichen können je nach App, Gerät oder Eingabefeld unterschiedlich dargestellt werden. Ein Kästchen oder ein abgelehntes Zeichen ist ein Hinweis, eine einfachere Variante zu verwenden. Prüfe deshalb den fertigen Namen direkt in Free Fire, bevor du eine Änderung bestätigst.',
   },
 ];
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": gameFaqs.map((f) => ({
+  "mainEntity": freeFireFaqs.map((f) => ({
     "@type": "Question",
     "name": f.q,
     "acceptedAnswer": {
@@ -61,55 +57,60 @@ const faqSchema = {
     },
   })),
 };
+
+const otherGames = Object.values(GAMES_DATA).filter((g) => g.id !== 'free-fire');
 ---
 
 <Layout
-  title="Free Fire Nickname Generator – Coole Spielernamen & Symbole"
-  description="Kostenloser Free Fire Nickname Generator: Erstelle epische Spielernamen, Clantags und Sonderzeichen für Garena Free Fire. Jetzt kostenlos kopieren!"
-  canonicalUrl="/spiele/free-fire"
+  title="Free Fire Nickname – Stylische Namen erstellen & kopieren"
+  description="Free Fire Nickname erstellen: Nutze stylische Schriften, Symbole und kurze Namensideen. Erstelle deinen Namen, kopiere ihn und prüfe die Darstellung direkt im Spiel."
+  canonicalUrl="/spiele/free-fire/"
   schema={faqSchema}
 >
-  <main class="py-12 md:py-16 bg-[#0a0a08] game-theme-free-fire" data-game-theme="free-fire">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
-        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+  <main class="min-h-screen bg-[#0a0a08] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      
+      <!-- Breadcrumbs Navigation -->
+      <nav class="flex items-center gap-2 text-xs sm:text-sm text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Home</a>
         <span>/</span>
-        <a href="/spiele" class="hover:text-white transition-colors">Spiele</a>
+        <a href="/spiele" class="hover:text-amber-400 transition-colors">Gaming Nicknames</a>
         <span>/</span>
-        <span class="text-stone-300 font-semibold">Free Fire</span>
+        <span class="text-stone-200">Free Fire</span>
       </nav>
 
-      <!-- Page Header -->
-      <div class="text-center max-w-3xl mx-auto mb-10">
-        <div class="game-guide-badge inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3 transition-all">
-          <span>🎮 Mobile Battle Royale</span>
+      <!-- Page Header & H1 -->
+      <div class="text-center max-w-4xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-semibold uppercase tracking-wider mb-4">
+          <span>🔥</span> Mobile Battle Royale &bull; Kronen &bull; Symbole &bull; Max. 12 Zeichen
         </div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-          <span class="game-h1-accent transition-colors">Free Fire</span> Nickname Generator
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
+          Free Fire Nickname: Stylische Spielernamen mit Schrift &amp; Symbolen
         </h1>
-        <p class="mt-4 text-base text-stone-300 leading-relaxed max-w-2xl mx-auto">
-          {gameInfo.description} Gestalte deinen individuellen Spielernamen mit Kronen, Flügeln und einzigartigen Symbolen für das perfekte Free Fire Profil.
+        <p class="text-base sm:text-lg text-stone-300 max-w-2xl mx-auto">
+          Erstelle stylische Free-Fire-Namen mit Unicode-Schriften und passenden Symbolen. Finde einen gut lesbaren Nickname, kopiere ihn und prüfe ihn direkt im Spiel.
         </p>
       </div>
 
-      <!-- Main Interactive Text Converter Tool -->
+      <!-- Main Interactive Font Converter Component -->
       <TextStyleConverter
-        defaultText="PlayerOne"
+        defaultText="Shadow"
         pageSlug="free-fire"
-        filterCategory="spiele"
+        filterCategory="alle"
         showCategoryTabs={true}
         showPresets={true}
         maxChars={12}
-        limit={10}
+        limit={12}
         showMoreButton={true}
       />
 
-      <!-- Content Grid: 4 New Enhanced Sections + Rules & FAQs (Left) & Sidebar (Right) -->
+      <!-- Content Grid: Left Column (Tools + Editorial Article) & Right Sidebar -->
       <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <!-- LEFT COLUMN (lg:col-span-2) -->
+        
+        <!-- LEFT COLUMN (lg:col-span-2): Tools first, followed by Article Content -->
         <div class="lg:col-span-2 space-y-8">
-          <!-- 4 Enhanced Sections (Ready-made, Distinct styles, Categorized + Symbols, Manual Generator) -->
+          
+          <!-- Generator & Tool Cards (Gaming Enhancements) -->
           {gameSectionsConfig && (
             <GameEnhancedSections
               gameData={gameSectionsConfig}
@@ -117,88 +118,330 @@ const faqSchema = {
             />
           )}
 
-          <!-- Existing Section: Beliebte Nickname-Ideen für Free Fire -->
-          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
-            <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-              <span>⚡</span> Beliebte Nickname-Ideen für {gameInfo.name}
-            </h2>
-            <p class="text-xs sm:text-sm text-stone-400 mb-6">
-              Klicke auf einen Namen, um ihn sofort in die Zwischenablage zu kopieren:
+          <!-- IMAGE 1: Featured Hero Image -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/free-fire-nickname-hero.svg"
+              alt="Spieler erstellt einen stylischen Gaming-Nickname auf einem Smartphone"
+              class="w-full h-auto aspect-video object-cover"
+              loading="eager"
+            />
+            <p class="text-xs text-stone-400 p-3 text-center border-t border-white/5 bg-[#0a0a08]">
+              Ein gut gewählter Nickname kann das eigene Gaming-Profil persönlicher machen.
             </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="game-nicknames-grid">
-              {gameInfo.exampleNicknames.map((nick) => (
-                <button
-                  type="button"
-                  class="btn-copy-game-nick p-3.5 rounded-2xl bg-[#0a0a08] border border-white/5 hover:border-amber-500/40 text-left font-mono text-sm text-white flex items-center justify-between group hover:-translate-y-0.5 transition-all"
-                  data-text={nick}
-                >
-                  <span class="break-all">{nick}</span>
-                  <span class="px-2.5 py-1 rounded-lg bg-white/5 text-[11px] font-bold text-amber-400 group-hover:bg-amber-500 group-hover:text-black transition-colors shrink-0 ml-2">
-                    Kopieren
-                  </span>
-                </button>
-              ))}
+          </div>
+
+          <!-- Section 1: Intro -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein guter <strong>Free Fire Nickname</strong> soll sofort auffallen. Viele normale Namen wirken schnell austauschbar. Mit passenden Unicode-Schriften und wenigen Symbolen kannst du deinen Namen deutlich individueller gestalten.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Dabei ist ein überladener Name nicht automatisch besser. Zu viele Zeichen können die Lesbarkeit verschlechtern oder je nach Spielversion beziehungsweise Gerät anders dargestellt werden. Ein guter Ansatz ist deshalb: kurzen Basisnamen wählen, Stil testen, Symbole sparsam einsetzen und den fertigen Namen direkt in Free Fire prüfen.
+            </p>
+          </div>
+
+          <!-- Section 2: Free Fire Nickname erstellen und kopieren -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Free Fire Nickname erstellen und kopieren
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Auf Schriftarten.io kannst du deinen gewünschten Namen direkt in den Generator eingeben und verschiedene Varianten ansehen. Statt eine Schriftdatei zu installieren, werden dabei spezielle Unicode-Zeichen verwendet. Die fertige Variante lässt sich anschließend kopieren und in das entsprechende Namensfeld einfügen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für einen klaren Look funktionieren besonders kurze Kombinationen gut, zum Beispiel:
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-1">
+              <div class="bg-[#1a1a16] border border-white/5 rounded-xl p-2.5 text-center font-mono font-bold text-orange-400 text-sm">
+                𝗦𝗵𝗮𝗱𝗼𝘄
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-xl p-2.5 text-center font-mono font-bold text-purple-400 text-sm">
+                𝕽𝖆𝖛𝖊𝖓
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-xl p-2.5 text-center font-mono font-bold text-amber-400 text-sm">
+                ★Viper★
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-xl p-2.5 text-center font-mono font-bold text-cyan-400 text-sm">
+                『Ghost』
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-xl p-2.5 text-center font-mono font-bold text-yellow-400 text-sm col-span-2 sm:col-span-1">
+                ⚡Nova⚡
+              </div>
+            </div>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed pt-2">
+              Wichtig ist, den exakten Text vor dem Speichern im Spiel zu testen. Nicht jedes dekorative Unicode-Zeichen wird überall gleich dargestellt.
+            </p>
+          </div>
+
+          <!-- Section 3: Welche Schriftstile passen zu Free Fire? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Welche Schriftstile passen zu Free Fire?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für Gaming-Namen sind gut lesbare Stile besonders praktisch. Fett und kompakte Sans-Serif-Varianten wirken sauber und modern. Gotische oder Blackletter-Stile passen dagegen zu einem dunkleren, aggressiveren Look.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Auch kleine Kapitälchen können interessant sein, wenn der Name kurz bleiben soll. Kursivschrift eignet sich eher für einen dynamischen oder eleganten Stil. Zalgo- oder stark verzerrte Zeichen solltest du vorsichtig verwenden, weil komplexe Unicode-Kombinationen die Darstellung erschweren können.
+            </p>
+
+            <!-- Table of Styles -->
+            <div class="overflow-x-auto my-4 border border-white/10 rounded-2xl">
+              <table class="w-full text-left text-sm text-stone-300">
+                <thead class="bg-white/5 text-xs uppercase text-stone-400">
+                  <tr>
+                    <th scope="col" class="px-4 py-3">Stil</th>
+                    <th scope="col" class="px-4 py-3">Wirkung</th>
+                    <th scope="col" class="px-4 py-3">Geeignet für</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Fett</td>
+                    <td class="px-4 py-3 text-stone-300">klar und stark</td>
+                    <td class="px-4 py-3 font-mono text-orange-400">kurze Pro-Namen</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Gotisch</td>
+                    <td class="px-4 py-3 text-stone-300">dunkel und markant</td>
+                    <td class="px-4 py-3 font-mono text-purple-400">Fantasy- oder Dark-Style</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Kursiv</td>
+                    <td class="px-4 py-3 text-stone-300">dynamisch</td>
+                    <td class="px-4 py-3 font-mono text-cyan-400">schnelle, elegante Namen</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Small Caps</td>
+                    <td class="px-4 py-3 text-stone-300">kompakt</td>
+                    <td class="px-4 py-3 font-mono text-amber-400">kurze Nicknames</td>
+                  </tr>
+                  <tr class="hover:bg-white/5">
+                    <td class="px-4 py-3 font-semibold text-white">Dekorativ</td>
+                    <td class="px-4 py-3 text-stone-300">auffällig</td>
+                    <td class="px-4 py-3 font-mono text-pink-400">besondere Akzente</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
 
-          <!-- Existing Section: Namensregeln in Free Fire -->
-          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
-            <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-              <span>📋</span> Namensregeln in {gameInfo.name}
-            </h2>
-            <ul class="space-y-2.5 text-xs sm:text-sm text-stone-300">
-              {gameInfo.namingRules.map((rule) => (
-                <li class="flex items-start gap-2.5">
-                  <span class="text-amber-400 font-bold">✓</span>
-                  <span>{rule}</span>
-                </li>
-              ))}
-            </ul>
+          <!-- IMAGE 2: Stile Vergleich -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/free-fire-nickname-stile-vergleich.svg"
+              alt="Verschiedene Schriftstile für einen stylischen Gaming-Namen"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Fette, gotische, kursive und kompakte Stile erzeugen unterschiedliche Wirkungen.
+            </p>
           </div>
 
-          <!-- Existing Section: FAQ zu Free Fire Spielernamen -->
+          <!-- Section 4: Free Fire Namen mit Symbolen gestalten -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Free Fire Namen mit Symbolen gestalten
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Symbole können einen einfachen Namen stärker hervorheben. Beliebt sind Sterne, Blitze, Kronen, Pfeile und dekorative Klammern. Entscheidend ist jedoch die Balance.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein einfacher Aufbau ist: <code class="text-amber-400 font-mono font-bold">Symbol + Name + Symbol</code>
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Beispiele: <code>★Raven★</code>, <code>⚡Nova⚡</code>, <code>『Viper』</code> oder <code>♛King♛</code>.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein einzelnes Symbol mit einer auffälligen Schrift wirkt oft übersichtlicher. Für weitere passende Zeichen kannst du auch unsere interne Seite für <a href="/symbole" class="text-orange-400 hover:text-orange-300 underline font-semibold">Symbole &amp; Emojis</a> nutzen.
+            </p>
+          </div>
+
+          <!-- IMAGE 3: Symbole & Kronen -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/free-fire-nickname-symbole-kronen.svg"
+              alt="Gaming-Nickname mit Sternen, Kronen und dekorativen Symbolen"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Wenige passende Symbole wirken oft besser als eine überladene Kombination.
+            </p>
+          </div>
+
+          <!-- Section 5: Wie lang darf ein Free Fire Nickname sein? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Wie lang darf ein Free Fire Nickname sein?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Im Netz wird häufig ein Limit von <strong>12 Zeichen</strong> für den Free-Fire-Namen genannt. Allerdings habe ich in den von mir geprüften offiziellen Garena-Quellen keine allgemeine Seite gefunden, die dieses konkrete Zahlenlimit eindeutig als aktuelle Universalregel veröffentlicht. Deshalb sollte die Anzeige und Validierung im aktuellen Spiel immer als letzte Prüfung gelten.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Starte deshalb mit einem kurzen Basisnamen. Dekorative Zeichen benötigen ebenfalls Platz und können die Eingabe komplizierter machen. Wird eine Variante abgelehnt, entferne zuerst seltene Symbole und teste anschließend eine einfachere Schrift.
+            </p>
+          </div>
+
+          <!-- Section 6: So findest du einen guten Spielernamen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              So findest du einen guten Spielernamen
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein starker Name muss nicht kompliziert sein. Überlege zuerst, welche Wirkung du möchtest:
+            </p>
+            <ul class="space-y-2 text-sm text-stone-300 leading-relaxed list-disc list-inside">
+              <li><strong>Pro:</strong> kurz, klar und selbstbewusst.</li>
+              <li><strong>Dark:</strong> dunkle Wörter und eine gotische Schrift.</li>
+              <li><strong>Cool:</strong> ein kurzer Name mit einem Stern oder Blitz.</li>
+              <li><strong>Fantasy:</strong> Begriffe aus Mythologie oder Abenteuer.</li>
+              <li><strong>Clean:</strong> nur eine Schriftart ohne zusätzliche Dekoration.</li>
+            </ul>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed pt-2">
+              Danach gib den Basisnamen in den Generator ein und vergleiche mehrere Varianten. Achte besonders auf Lesbarkeit. Ein Name, den andere Spieler schnell erkennen können, ist oft praktischer als eine Kombination aus vielen seltenen Zeichen.
+            </p>
+          </div>
+
+          <!-- Section 7: Warum Unicode-Schriften praktisch sind -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Warum Unicode-Schriften praktisch sind
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Unicode-Schriftstile funktionieren anders als installierbare Font-Dateien. Der Generator ersetzt normale Buchstaben durch andere Unicode-Zeichen, sodass du das Ergebnis als Text kopieren kannst. Garena beschreibt für die Free-Fire-Markenwelt unter anderem eine eigene GFF-Schrift und erklärt auf der <a href="https://ff.garena.com/en/article/934/" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:text-orange-300 underline font-semibold">offiziellen Free Fire Website</a>, dass diese für verschiedene Sprachfamilien entwickelt wurde.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Trotzdem bedeutet Unicode nicht automatisch, dass jedes Zeichen überall unterstützt wird. Deshalb ist eine Vorschau hilfreich. Wenn ein Zeichen als Kästchen erscheint oder das Spiel den Namen nicht akzeptiert, ist eine einfachere Variante meist die bessere Wahl.
+            </p>
+          </div>
+
+          <!-- Section 8: Weitere Gaming-Nicknames -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Weitere Gaming-Nicknames
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Wenn du mehrere Spiele spielst, musst du nicht für jedes Spiel denselben Stil verwenden. Auf Schriftarten.io findest du eigene Generator-Seiten für <a href="/spiele/fortnite-nickname" class="text-cyan-400 hover:underline font-semibold">Fortnite Nicknames</a>, <a href="/spiele/minecraft-nickname" class="text-emerald-400 hover:underline font-semibold">Minecraft Nicknames</a>, <a href="/spiele/valorant" class="text-[#ff4655] hover:underline font-semibold">Valorant Nicknames</a> und <a href="/spiele/roblox" class="text-pink-400 hover:underline font-semibold">Roblox Nicknames</a>. So kannst du den Stil an das jeweilige Spiel anpassen.
+            </p>
+          </div>
+
+          <!-- IMAGE 4: Setup Graphic -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/free-fire-nickname-generator-setup.svg"
+              alt="Nickname-Generator auf einem Smartphone neben Gaming-Zubehör"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Ein Generator erleichtert das Vergleichen und Kopieren verschiedener Namensvarianten.
+            </p>
+          </div>
+
+          <!-- Section 9: Häufige Fragen (FAQs) -->
           <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
-            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-              <span>❓</span> FAQ zu {gameInfo.name} Spielernamen
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> Häufige Fragen zum Free Fire Nickname
             </h2>
             <div class="space-y-4">
-              {gameFaqs.map((faq) => (
+              {freeFireFaqs.map((faq) => (
                 <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
-                  <h3 class="text-sm font-bold text-white mb-1.5">{faq.q}</h3>
-                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed whitespace-pre-line">{faq.a}</p>
+                  <h3 class="text-sm sm:text-base font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
+
+          <!-- Section 10: Fazit -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Fazit
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein guter Free Fire Nickname braucht keine komplizierte Zeichenwand. Wähle zuerst einen kurzen Namen, entscheide dich für einen gut lesbaren Stil und ergänze höchstens wenige passende Symbole. Danach solltest du die fertige Kombination direkt im Spiel prüfen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für die meisten Spieler ist ein klarer, wiedererkennbarer Name die beste Lösung. Nutze den Generator, vergleiche mehrere Varianten und behalte die einfachste Version, die deinen gewünschten Stil trifft und im aktuellen Spiel korrekt dargestellt wird.
+            </p>
+          </div>
+
         </div>
 
         <!-- RIGHT SIDEBAR COLUMN -->
         <div class="space-y-6">
-          <FontStyleGrid
-            title="Empfohlene Schriftstile"
-            titleIcon="🎨"
-            isAmberTitle={true}
-          />
-
+          
+          <!-- Beliebte Schriftstile -->
           <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
-            <h3 class="text-sm font-bold uppercase tracking-wider text-stone-300 mb-4">
-              Weitere Spiele
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>✨</span> Beliebte Gaming Stile
+            </h3>
+            <FontStyleGrid />
+          </div>
+
+          <!-- Weitere Spiele -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>🎮</span> Weitere Spiele
             </h3>
             <div class="space-y-2">
-              {NAVIGATION_DATA.games.items
-                .filter((item) => !item.href.includes('free-fire'))
-                .map((other) => (
-                  <a
-                    href={other.href}
-                    class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-amber-500/10 border border-white/5 hover:border-amber-500/30 text-xs font-semibold text-stone-300 hover:text-white transition-all group"
-                  >
-                    <span>{other.icon} {other.title}</span>
-                    <span class="group-hover:translate-x-1 transition-transform text-amber-400">→</span>
-                  </a>
-                ))}
+              {otherGames.map((game) => (
+                <a
+                  href={game.slug}
+                  class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-orange-500/40 transition-all text-sm group"
+                >
+                  <span class="font-medium text-stone-200 group-hover:text-orange-400 transition-colors">
+                    {game.name} Nicknames
+                  </span>
+                  <span class="text-xs text-stone-400 group-hover:text-orange-400 transition-colors">
+                    {game.genre} &rarr;
+                  </span>
+                </a>
+              ))}
             </div>
           </div>
+
+          <!-- Beliebte Social-Media Plattformen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>📱</span> Social-Media Schriften
+            </h3>
+            <div class="space-y-2">
+              <a
+                href="/plattform/discord"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#5865F2]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#5865F2] transition-colors">
+                  Discord Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/plattform/tiktok"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#25f4ee]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#25f4ee] transition-colors">
+                  TikTok Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/plattform/instagram"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#ec4899]/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-[#ec4899] transition-colors">
+                  Instagram Schriftarten
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
         </div>
+
       </div>
     </div>
   </main>

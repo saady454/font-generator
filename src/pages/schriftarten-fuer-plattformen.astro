@@ -1,0 +1,398 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GradientMeshBackground from '../components/GradientMeshBackground.astro';
+import { PLATFORMS_DATA } from '../data/platform-metadata';
+import { SITE_CONFIG } from '../config/site';
+
+const platformsList = Object.values(PLATFORMS_DATA);
+
+const faqs = [
+  {
+    question: 'Kann ich dieselbe Schrift auf Instagram, TikTok und WhatsApp verwenden?',
+    answer: 'Oft ja, wenn der Stil aus Unicode-Zeichen besteht. Die tatsächliche Darstellung hängt aber von App, Gerät und unterstützten System-Glyphen ab.',
+  },
+  {
+    question: 'Muss ich eine Schriftart installieren?',
+    answer: 'Nein. Bei einem Unicode-Generator wird der erzeugte Text als Zeichen kopiert. Eine klassische Font-Installation (.ttf oder .otf) ist dafür nicht nötig.',
+  },
+  {
+    question: 'Warum erscheinen Kästchen statt Buchstaben?',
+    answer: 'Meist fehlt die passende Glyphe im verwendeten Betriebssystem oder in der verwendeten Schriftart. Dann hilft ein einfacherer Unicode-Stil wie fette Schrift oder Small Caps.',
+  },
+  {
+    question: 'Sind Unicode-Schriftarten für lange Texte geeignet?',
+    answer: 'Eher nicht. Für längere Informationen ist normaler Text meist leichter zu lesen und zugänglicher für Screenreader. Dekorative Stile passen besser zu kurzen Akzenten, Namen und Bios.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: 'Schriftarten für alle Plattformen – Instagram, TikTok & WhatsApp',
+      description: 'Schriftarten für Instagram, TikTok, WhatsApp & mehr: Unicode-Schriften erstellen, kopieren und richtig einsetzen. Tipps zu Stil, Kompatibilität und Lesbarkeit.',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `${SITE_CONFIG.baseUrl}/schriftarten-fuer-plattformen/`,
+      },
+      image: `${SITE_CONFIG.baseUrl}/images/plattformen/schriftarten-fuer-plattformen-hero.svg`,
+      author: {
+        '@type': 'Organization',
+        name: 'Schriftarten.io',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Schriftarten.io',
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    },
+  ],
+};
+---
+
+<Layout
+  title="Schriftarten für alle Plattformen – Instagram, TikTok & WhatsApp"
+  description="Schriftarten für Instagram, TikTok, WhatsApp & mehr: Unicode-Schriften erstellen, kopieren und richtig einsetzen. Tipps zu Stil, Kompatibilität und Lesbarkeit."
+  canonicalUrl="/schriftarten-fuer-plattformen/"
+  schema={schema}
+>
+  <main class="relative bg-[#0F1220] min-h-screen py-12 md:py-16 overflow-hidden homepage-mesh-wrapper">
+    <!-- Reusable Multi-Color Gradient Mesh Layer -->
+    <GradientMeshBackground />
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <a href="/plattformen/instagram/" class="hover:text-white transition-colors">Plattformen</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Schriftarten für alle Plattformen</span>
+      </nav>
+
+      <!-- Header & Intro -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
+          <span>📱 Cross-Platform Schriftarten</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          Schriftarten für alle Plattformen – Instagram, TikTok, WhatsApp & mehr
+        </h1>
+        <p class="mt-4 text-base sm:text-lg text-stone-300 leading-relaxed">
+          Wer auf Instagram, TikTok oder WhatsApp auffallen möchte, braucht nicht immer eine neue Schriftdatei. Oft reicht ein Unicode-Schriftstil, den du kopieren und in eine Bio, Caption, einen Namen oder eine Nachricht einfügen kannst. Genau hier helfen Schriftarten für alle Plattformen – Instagram, TikTok, WhatsApp & mehr: Text eingeben, Stil wählen und kopieren.
+        </p>
+        <p class="mt-3 text-sm sm:text-base text-stone-400 leading-relaxed">
+          Der Haken: Nicht jeder Stil passt zu jeder App oder jedem Textfeld. Manche Zeichen werden anders dargestellt oder gar nicht unterstützt. Deshalb zählen neben dem Look auch Lesbarkeit und Kompatibilität. Mit unserem <a href="/" class="text-amber-400 hover:text-amber-300 underline font-medium">Schriftarten-Generator</a> kannst du Varianten schnell und unkompliziert ausprobieren.
+        </p>
+      </div>
+
+      <!-- Featured Image 1 -->
+      <figure class="my-10 rounded-3xl overflow-hidden border border-white/10 bg-[#161614] shadow-2xl">
+        <img
+          src="/images/plattformen/schriftarten-fuer-plattformen-hero.svg"
+          alt="Schriftarten für Instagram, TikTok und WhatsApp mit einem Unicode-Generator erstellen"
+          class="w-full h-auto object-cover"
+          loading="eager"
+        />
+        <figcaption class="p-4 text-xs sm:text-sm text-stone-400 text-center border-t border-white/5 bg-[#121210]">
+          Unicode-Schriftstile lassen sich direkt erstellen, kopieren und in viele Textfelder einfügen.
+        </figcaption>
+      </figure>
+
+      <!-- 7 Platform Cards Showcase Grid -->
+      <div class="mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 text-center sm:text-left">
+          Schriftgeneratoren nach Plattform auswählen
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {platformsList.map((platform) => (
+            <a
+              href={platform.slug}
+              class="group block p-6 rounded-3xl bg-[#141412] border border-white/10 hover:border-amber-500/40 shadow-xl hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-200 relative overflow-hidden"
+            >
+              <div class="flex items-start justify-between gap-3 mb-4">
+                <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                  {platform.icon}
+                </div>
+                <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-stone-300 group-hover:bg-amber-500/20 group-hover:text-amber-300 group-hover:border-amber-500/30 transition-colors">
+                  Limit: {platform.bioLimit}
+                </span>
+              </div>
+
+              <h3 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors mb-2 flex items-center justify-between">
+                <span>{platform.name}</span>
+                <span class="text-stone-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all">→</span>
+              </h3>
+
+              <p class="text-xs sm:text-sm text-stone-400 leading-relaxed mb-4">
+                {platform.tagline}
+              </p>
+
+              <div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-amber-400/90 font-medium">
+                <span class="truncate">Schriftstile & Bio-Vorlagen</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Rich Editorial Content Sections -->
+      <article class="prose prose-invert max-w-none space-y-12">
+        
+        <!-- Section 1: Was sind plattformübergreifende Schriftarten? -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Was sind plattformübergreifende Schriftarten?
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Ein Online-Schriftgenerator installiert meist keine neue Font-Datei. Stattdessen werden normale Buchstaben durch Unicode-Zeichen ersetzt, die wie fett, kursiv, gotisch oder dekorativ aussehen. Unicode definiert Zeichen; eine Font-Datei bestimmt dagegen deren visuelle Darstellung. Das Unicode Consortium erklärt ausdrücklich, dass Unicode kein Font ist, sondern Zeichen standardisiert. Weitere Details findest du in den <a href="https://www.unicode.org/faq/font_keyboard.html" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 underline font-medium">Unicode FAQ zu Fonts und Zeichen</a>.
+          </p>
+          <p class="text-stone-300 leading-relaxed mb-6">
+            Das macht Copy &amp; Paste extrem praktisch: Der erzeugte Text kann in vielen Eingabefeldern genutzt werden, ohne eine TTF- oder OTF-Datei zu installieren. Trotzdem hängt die Darstellung vom jeweiligen Gerät, Betriebssystem, Programm und den verfügbaren Glyphen ab.
+          </p>
+
+          <!-- Editorial Image 2 -->
+          <figure class="my-8 rounded-2xl overflow-hidden border border-white/10 bg-[#161614]">
+            <img
+              src="/images/plattformen/unicode-text-vs-fontdatei-vergleich.svg"
+              alt="Unterschied zwischen Unicode-Schrift und echter Font-Datei"
+              class="w-full h-auto object-cover"
+              loading="lazy"
+            />
+            <figcaption class="p-3 text-xs text-stone-400 text-center border-t border-white/5 bg-[#121210]">
+              Unicode-Text und installierbare Font-Dateien funktionieren technisch unterschiedlich.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- Section 2: Schriftarten für Instagram, TikTok und WhatsApp -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">
+            Schriftarten für Instagram, TikTok und WhatsApp
+          </h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+              <h3 class="text-lg font-bold text-amber-400 mb-2">📸 Instagram</h3>
+              <p class="text-sm text-stone-300 leading-relaxed">
+                Für Bios, Captions, Namen und kurze Akzente eignen sich fette, kursive oder dekorative Zeichen. Bei längeren Texten bleibt normale Schrift meist besser lesbar. (Limit: 150 Zeichen im Steckbrief).
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+              <h3 class="text-lg font-bold text-cyan-400 mb-2">🎵 TikTok</h3>
+              <p class="text-sm text-stone-300 leading-relaxed">
+                Bei TikTok passen auffällige Stile besonders zu Profiltexten und kurzen Beschreibungen. Ein klarer Stil wirkt meist besser als eine Mischung aus zu vielen Sonderzeichen. (Limit: 80 Zeichen).
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+              <h3 class="text-lg font-bold text-emerald-400 mb-2">💬 WhatsApp</h3>
+              <p class="text-sm text-stone-300 leading-relaxed">
+                WhatsApp bietet eigene Textformatierungen (wie Sternchen für fett). Für einen besonderen Look kannst du zusätzlich Unicode-Zeichen kopieren. Sie sind jedoch nicht mit jeder nativen Formatierung gleichzusetzen. (Limit: 139 Zeichen).
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+              <h3 class="text-lg font-bold text-indigo-400 mb-2">🌐 Weitere Plattformen</h3>
+              <p class="text-sm text-stone-300 leading-relaxed">
+                Auch Discord, Facebook, X, Telegram und Gaming-Profile können Unicode-Stile verwenden. Bei Benutzernamen und Spielen gelten allerdings oft eigene Zeichenregeln und Filter.
+              </p>
+            </div>
+          </div>
+
+          <!-- Editorial Image 3 -->
+          <figure class="my-8 rounded-2xl overflow-hidden border border-white/10 bg-[#161614]">
+            <img
+              src="/images/plattformen/social-media-plattformen-preview.svg"
+              alt="Unicode-Schriftarten auf verschiedenen Social-Media-Plattformen"
+              class="w-full h-auto object-cover"
+              loading="lazy"
+            />
+            <figcaption class="p-3 text-xs text-stone-400 text-center border-t border-white/5 bg-[#121210]">
+              Ein Unicode-Stil kann auf verschiedenen Plattformen unterschiedlich dargestellt werden.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- Section 3: So erstellst du Schriftarten zum Kopieren -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            So erstellst du Schriftarten zum Kopieren
+          </h2>
+          <ol class="list-decimal list-inside space-y-2.5 text-stone-300 mb-6">
+            <li><strong>Text eingeben:</strong> Schreibe deinen Namen, Satz, deine Bio-Zeile oder deinen Status.</li>
+            <li><strong>Stil auswählen:</strong> Wähle zum Beispiel <a href="/schrift/fette-schrift/" class="text-amber-400 hover:text-amber-300 underline font-medium">fette Schrift</a>, <a href="/schrift/kursive-schrift/" class="text-amber-400 hover:text-amber-300 underline font-medium">kursive Schrift</a>, Bubble, gotisch oder kleine Buchstaben.</li>
+            <li><strong>Vorschau prüfen:</strong> Achte besonders auf deutsche Umlaute (ä, ö, ü, ß) und Sonderzeichen.</li>
+            <li><strong>Kopieren:</strong> Übernimm den gewünschten Stil mit einem Klick in die Zwischenablage.</li>
+            <li><strong>Einfügen:</strong> Setze den Text in das gewünschte Profil oder Chat-Feld ein.</li>
+          </ol>
+          <p class="text-stone-400 text-sm leading-relaxed">
+            💡 <em>Tipp:</em> Am besten testest du den Stil direkt auf der Zielplattform auf deinem Smartphone. So erkennst du sofort etwaige Darstellungsprobleme.
+          </p>
+        </section>
+
+        <!-- Section 4: Welche Stile sind besonders nützlich? -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Welche Stile sind besonders nützlich?
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-6">
+            Je nach Verwendungszweck bieten sich unterschiedliche Stilrichtungen an:
+          </p>
+
+          <!-- 6-Row Comparison Table -->
+          <div class="overflow-x-auto my-6 rounded-2xl border border-white/10">
+            <table class="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr class="bg-white/5 text-amber-400 border-b border-white/10">
+                  <th class="p-4 font-bold">Stil</th>
+                  <th class="p-4 font-bold">Geeignet für</th>
+                  <th class="p-4 font-bold">Hinweis</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/5 text-stone-300">
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white"><a href="/schrift/fette-schrift/" class="text-amber-400 hover:underline">Fett</a></td>
+                  <td class="p-4">Bios, Überschriften, wichtige Wörter</td>
+                  <td class="p-4 text-stone-400">Gut für kurze Akzente</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white"><a href="/schrift/kursive-schrift/" class="text-amber-400 hover:underline">Kursiv</a></td>
+                  <td class="p-4">Zitate, Sprüche, Profile</td>
+                  <td class="p-4 text-stone-400">Bei langen Texten weniger lesefreundlich</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white"><a href="/schrift/gotische-schrift/" class="text-amber-400 hover:underline">Gotisch</a></td>
+                  <td class="p-4">Nicknames, besondere Profile</td>
+                  <td class="p-4 text-stone-400">Auffällig, aber schwerer lesbar</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white"><a href="/schrift/bubble-schrift/" class="text-amber-400 hover:underline">Bubble</a></td>
+                  <td class="p-4">Namen, lockere Posts</td>
+                  <td class="p-4 text-stone-400">Eher dekorativ</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white"><a href="/schrift/kleine-schrift/" class="text-amber-400 hover:underline">Kleine Buchstaben</a></td>
+                  <td class="p-4">Bios, Namen</td>
+                  <td class="p-4 text-stone-400">Kompakter Look</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white"><a href="/schrift/dekorative-schrift/" class="text-amber-400 hover:underline">Dekorativ</a></td>
+                  <td class="p-4">Status, Nicknames</td>
+                  <td class="p-4 text-stone-400">Kompatibilität prüfen</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="text-stone-300 leading-relaxed">
+            Für Social Media ist ein Generator mit direkter Copy-&-Paste-Funktion meist praktischer als eine Sammlung installierbarer Font-Dateien.
+          </p>
+        </section>
+
+        <!-- Section 5: Warum werden manche Zeichen nicht richtig angezeigt? -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Warum werden manche Zeichen nicht richtig angezeigt?
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Ein häufiger Grund sind fehlende Glyphen. Unicode kann ein Zeichen standardisieren, aber nicht garantieren, dass jede Schrift auf jedem Gerät dafür eine passende Zeichnung (Glyphe) enthält. Dann kann ein Kästchen oder Ersatzzeichen (☐ Tofu) erscheinen.
+          </p>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Auch das Zielfeld kann Einschränkungen haben. Ein Stil kann in einer Bio problemlos funktionieren, während ein bestimmter Benutzername nur Standard-ASCII-Buchstaben akzeptiert. Deshalb lohnt sich ein kurzer Test.
+          </p>
+          <p class="text-stone-300 leading-relaxed mb-6">
+            Lesbarkeit ist ebenfalls wichtig. Dekorative Unicode-Zeichen eignen sich besser für Namen, kurze Überschriften und einzelne Akzente als für lange Fließtexte.
+          </p>
+
+          <!-- Editorial Image 4 -->
+          <figure class="my-8 rounded-2xl overflow-hidden border border-white/10 bg-[#161614]">
+            <img
+              src="/images/plattformen/glyphen-kompatibilitaet-kaestchen.svg"
+              alt="Fehlende Unicode-Glyphen können als Kästchen angezeigt werden"
+              class="w-full h-auto object-cover"
+              loading="lazy"
+            />
+            <figcaption class="p-3 text-xs text-stone-400 text-center border-t border-white/5 bg-[#121210]">
+              Fehlende Glyphen können dazu führen, dass einzelne Unicode-Zeichen nicht korrekt erscheinen.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- Section 6: Unicode-Text oder echte Font-Datei? -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Unicode-Text oder echte Font-Datei?
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Eine TTF-, OTF- oder WOFF2-Datei wird von einem Programm oder System als Schriftart installiert. Unicode-Text funktioniert anders: Der Text selbst enthält standardisierte Zeichen, die beim Kopieren ihre Form behalten.
+          </p>
+          <p class="text-stone-300 leading-relaxed">
+            Das ist ideal für Copy &amp; Paste auf Social Media. Wenn du dagegen eine Schrift in Photoshop, Word, Canva oder einem Designprogramm verwenden möchtest, brauchst du je nach Anwendung eine passende Font-Datei. Dabei solltest du immer die Lizenz der jeweiligen Schriftdatei prüfen.
+          </p>
+        </section>
+
+        <!-- Section 7: Tipps für bessere Social-Media-Texte -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Tipps für bessere Social-Media-Texte
+          </h2>
+          <ul class="list-disc list-inside space-y-2 text-stone-300">
+            <li>Nutze dekorative Zeichen sparsam und gezielt.</li>
+            <li>Hebe lieber einzelne Wörter als ganze Absätze hervor.</li>
+            <li>Prüfe Umlaute (ä, ö, ü) und Sonderzeichen vor dem Veröffentlichen.</li>
+            <li>Teste wichtige Texte direkt auf dem Smartphone.</li>
+            <li>Verwende normale Schrift für längere informative Texte.</li>
+            <li>Prüfe bei Usernames und Gaming-Tags die Regeln der jeweiligen Plattform.</li>
+          </ul>
+        </section>
+
+        <!-- Section 8: FAQ Accordion -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">
+            Häufige Fragen (FAQ)
+          </h2>
+          <div class="space-y-4">
+            {faqs.map((faq) => (
+              <details class="group bg-white/5 rounded-2xl border border-white/10 p-5 transition-all open:bg-white/[0.08]">
+                <summary class="flex justify-between items-center font-bold text-white cursor-pointer list-none select-none">
+                  <span>{faq.question}</span>
+                  <span class="text-amber-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p class="mt-4 text-sm text-stone-300 leading-relaxed border-t border-white/5 pt-4">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <!-- Section 9: Fazit -->
+        <section class="rounded-3xl bg-gradient-to-br from-amber-500/10 via-[#141412] to-amber-500/5 border border-amber-500/30 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Fazit
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Schriftarten für alle Plattformen – Instagram, TikTok, WhatsApp &amp; mehr sind praktisch, wenn du kurze Texte schnell gestalten und per Copy &amp; Paste einsetzen möchtest. Fett, kursiv, gotisch oder dekorativ können Bios, Namen und Social-Media-Akzente stilvoll hervorheben.
+          </p>
+          <p class="text-stone-300 leading-relaxed">
+            Am zuverlässigsten ist ein einfacher Ablauf: Text eingeben, Stil wählen, Darstellung prüfen und kopieren. Starte jetzt direkt mit unserem <a href="/" class="text-amber-400 hover:text-amber-300 underline font-medium">Schriftarten-Generator</a>, probiere <a href="/schrift/fette-schrift/" class="text-amber-400 hover:text-amber-300 underline font-medium">fette Schrift</a> oder <a href="/schrift/kursive-schrift/" class="text-amber-400 hover:text-amber-300 underline font-medium">kursive Schrift</a> aus!
+          </p>
+        </section>
+
+      </article>
+    </div>
+  </main>
+</Layout>

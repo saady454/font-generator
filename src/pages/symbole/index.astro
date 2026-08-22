@@ -6,27 +6,64 @@ import { SITE_CONFIG } from '../../config/site';
 
 const symbolsList = Object.values(SYMBOLS_DATA);
 
+const faqs = [
+  {
+    question: 'Sind Symbole zum Kopieren kostenlos?',
+    answer: 'Ja. Unicode-Zeichen selbst sind standardisierte Bestandteile des Unicode-Zeichensatzes und können auf unserer Website kostenlos ausgewählt und kopiert werden.',
+  },
+  {
+    question: 'Funktionieren die Zeichen auf dem Smartphone?',
+    answer: 'Viele Unicode-Zeichen und Emojis lassen sich problemlos auf iOS und Android kopieren und einfügen. Die visuelle Darstellung kann sich je nach Betriebssystem, App und installierter Schrift minimal unterscheiden.',
+  },
+  {
+    question: 'Kann ich Symbole für Gaming-Namen verwenden?',
+    answer: 'Das hängt vom jeweiligen Spiel und dessen Namensregeln ab. Ein Symbol kann technisch kopierbar sein, aber trotzdem von manchen Plattformen oder Spielen gefiltert werden. Wir empfehlen daher einen kurzen Test im Spiel.',
+  },
+  {
+    question: 'Was ist der Unterschied zwischen Symbolen und Emojis?',
+    answer: 'Klassische Symbole sind Textzeichen wie ★, ♡ oder →. Emojis sind standardisierte grafische Zeichen und Sequenzen wie ❤️, ✨ oder 🚀. Die offiziellen Unicode-Emoji-Charts dokumentieren die gültigen Zeichensätze.',
+  },
+];
+
 const schema = {
   '@context': 'https://schema.org',
-  '@type': 'CollectionPage',
-  name: 'Symbole & Emojis zum Kopieren – Sterne, Herzen, Rahmen & mehr',
-  description: 'Kopiere tausende beliebte Unicode-Symbole, Emojis, Rahmen, Herzen und Kaomojis mit einem Klick.',
-  url: `${SITE_CONFIG.baseUrl}/symbole`,
-  mainEntity: {
-    '@type': 'ItemList',
-    itemListElement: symbolsList.map((category, idx) => ({
-      '@type': 'ListItem',
-      position: idx + 1,
-      name: category.name,
-      url: `${SITE_CONFIG.baseUrl}${category.slug}`,
-    })),
-  },
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: 'Symbole & Emojis zum Kopieren – Sterne, Herzen, Rahmen & mehr',
+      description: 'Symbole & Emojis zum Kopieren: Entdecke Sterne ★, Herzen ♡, Rahmen ꧁꧂, Pfeile, Kaomojis und mehr. Einfach auswählen, kopieren und einfügen.',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `${SITE_CONFIG.baseUrl}/symbole/`,
+      },
+      image: `${SITE_CONFIG.baseUrl}/images/symbole/symbole-emojis-kopieren-hero.svg`,
+      author: {
+        '@type': 'Organization',
+        name: 'Schriftarten.io',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Schriftarten.io',
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    },
+  ],
 };
 ---
 
 <Layout
-  title="Symbole & Emojis zum Kopieren – Sterne, Herzen, Rahmen & mehr | Schriftarten.io"
-  description="Große Sammlung an Unicode-Symbolen zum 1-Klick Kopieren: Sterne, Herzen, ästhetische Rahmen, Flügel und Kaomojis für Instagram, WhatsApp & Gaming."
+  title="Symbole & Emojis zum Kopieren – Sterne, Herzen, Rahmen & mehr"
+  description="Symbole & Emojis zum Kopieren: Entdecke Sterne ★, Herzen ♡, Rahmen ꧁꧂, Pfeile, Kaomojis und mehr. Einfach auswählen, kopieren und einfügen."
   canonicalUrl="/symbole"
   schema={schema}
 >
@@ -34,7 +71,7 @@ const schema = {
     <!-- Reusable Multi-Color Gradient Mesh Layer -->
     <GradientMeshBackground />
 
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
       <!-- Breadcrumb -->
       <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
         <a href="/" class="hover:text-white transition-colors">Startseite</a>
@@ -42,8 +79,8 @@ const schema = {
         <span class="text-stone-300 font-semibold">Symbole</span>
       </nav>
 
-      <!-- Header -->
-      <div class="text-center max-w-3xl mx-auto mb-14">
+      <!-- Header & Intro -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
         <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
           <span>✨ Unicode Symbole & Emojis</span>
         </div>
@@ -51,49 +88,323 @@ const schema = {
           Symbole & Emojis zum Kopieren – Sterne, Herzen, Rahmen & mehr
         </h1>
         <p class="mt-4 text-base sm:text-lg text-stone-300 leading-relaxed">
-          Kopiere tausende beliebte Unicode-Symbole, Emojis, Rahmen, Herzen und Kaomojis mit einem einzigen Klick. Perfekt zum Verzieren deiner Social-Media-Bios, Nicknames, Chat-Nachrichten und Profil-Texte.
+          Schöne Symbole können einen Namen, eine Bio oder eine Nachricht schnell auffälliger machen. Wer jedoch nach einem bestimmten Stern, Herz oder dekorativen Zeichen sucht, möchte nicht lange durch unübersichtliche Zeichentabellen suchen. Genau dafür sind Symbole &amp; Emojis zum Kopieren praktisch.
+        </p>
+        <p class="mt-3 text-sm sm:text-base text-stone-400 leading-relaxed">
+          Hier findest du beliebte Zeichen zum direkten Kopieren. Dazu gehören Sterne, Herzen, Rahmen, Pfeile, Kaomojis und weitere Unicode-Zeichen. Wähle einfach ein Symbol aus, kopiere es und füge es an der gewünschten Stelle wieder ein.
         </p>
       </div>
 
-      <!-- 4 Symbol Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {symbolsList.map((category) => (
-          <a
-            href={category.slug}
-            class="group block p-8 rounded-3xl bg-[#141412] border border-white/10 hover:border-amber-500/40 shadow-xl hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-200 relative overflow-hidden"
-          >
-            <div class="flex items-start justify-between gap-3 mb-5">
-              <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
-                {category.icon}
-              </div>
-              <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/5 border border-white/10 text-stone-300 group-hover:bg-amber-500/20 group-hover:text-amber-300 group-hover:border-amber-500/30 transition-colors">
-                {category.symbols.length}+ Symbole
-              </span>
-            </div>
+      <!-- Featured Image 1 -->
+      <figure class="my-10 rounded-3xl overflow-hidden border border-white/10 bg-[#161614] shadow-2xl">
+        <img
+          src="/images/symbole/symbole-emojis-kopieren-hero.svg"
+          alt="Symbole und Emojis zum Kopieren mit Sternen Herzen und Rahmen"
+          class="w-full h-auto object-cover"
+          loading="eager"
+        />
+        <figcaption class="p-4 text-xs sm:text-sm text-stone-400 text-center border-t border-white/5 bg-[#121210]">
+          Sterne, Herzen, Rahmen und weitere Zeichen direkt kopieren und einfügen.
+        </figcaption>
+      </figure>
 
-            <h2 class="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors mb-2 flex items-center justify-between">
-              <span>{category.name}</span>
-              <span class="text-stone-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all">→</span>
-            </h2>
-
-            <p class="text-sm text-stone-400 leading-relaxed mb-6">
-              {category.description}
-            </p>
-
-            <!-- Sample Symbols Live Pill Preview -->
-            <div class="flex flex-wrap gap-2 pt-4 border-t border-white/5">
-              {category.symbols.slice(0, 8).map((sym) => (
-                <span class="px-2.5 py-1.5 rounded-xl bg-[#0a0a08] border border-white/5 text-sm font-mono text-stone-200 group-hover:border-amber-500/20 transition-colors">
-                  {sym.char}
+      <!-- 4 Symbol Category Cards Showcase Grid -->
+      <div class="mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 text-center sm:text-left">
+          Beliebte Symbol-Kategorien entdecken
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {symbolsList.map((category) => (
+            <a
+              href={category.slug}
+              class="group block p-7 rounded-3xl bg-[#141412] border border-white/10 hover:border-amber-500/40 shadow-xl hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-200 relative overflow-hidden"
+            >
+              <div class="flex items-start justify-between gap-3 mb-4">
+                <div class="w-13 h-13 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                  {category.icon}
+                </div>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/5 border border-white/10 text-stone-300 group-hover:bg-amber-500/20 group-hover:text-amber-300 group-hover:border-amber-500/30 transition-colors">
+                  {category.symbols.length}+ Symbole
                 </span>
-              ))}
-              <span class="px-2.5 py-1.5 rounded-xl bg-amber-500/10 text-xs font-bold text-amber-400">
-                + mehr
-              </span>
-            </div>
-          </a>
-        ))}
+              </div>
+
+              <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors mb-2 flex items-center justify-between">
+                <span>{category.name}</span>
+                <span class="text-stone-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all">→</span>
+              </h3>
+
+              <p class="text-xs sm:text-sm text-stone-400 leading-relaxed mb-5">
+                {category.description}
+              </p>
+
+              <!-- Sample Symbols Live Pill Preview -->
+              <div class="flex flex-wrap gap-2 pt-3 border-t border-white/5">
+                {category.symbols.slice(0, 7).map((sym) => (
+                  <span class="px-2.5 py-1 rounded-xl bg-[#0a0a08] border border-white/5 text-sm font-mono text-stone-200 group-hover:border-amber-500/20 transition-colors">
+                    {sym.char}
+                  </span>
+                ))}
+                <span class="px-2.5 py-1 rounded-xl bg-amber-500/10 text-xs font-bold text-amber-400">
+                  + alle
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
+
+      <!-- Rich Editorial Content Sections -->
+      <article class="prose prose-invert max-w-none space-y-12">
+        
+        <!-- Section 1: Beliebte Symbole zum Kopieren -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Beliebte Symbole zum Kopieren
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-6">
+            Für Namen, Bios und kurze Texte sind einfache Zeichen oft besonders vielseitig. Einige beliebte Beispiele:
+          </p>
+
+          <!-- 8-Row Symbol Table -->
+          <div class="overflow-x-auto my-6 rounded-2xl border border-white/10">
+            <table class="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr class="bg-white/5 text-amber-400 border-b border-white/10">
+                  <th class="p-4 font-bold">Kategorie</th>
+                  <th class="p-4 font-bold">Beispiele</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/5 text-stone-300">
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white"><a href="/symbole/sterne/" class="text-amber-400 hover:underline">Sterne</a></td>
+                  <td class="p-4 font-mono text-base text-amber-300">★ ☆ ✦ ✧ ✩ ✪ ✨</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white"><a href="/symbole/herzen/" class="text-amber-400 hover:underline">Herzen</a></td>
+                  <td class="p-4 font-mono text-base text-pink-400">♥ ♡ ❤ ❥ ❣ 💖 💕</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white"><a href="/symbole/rahmen/" class="text-amber-400 hover:underline">Rahmen</a></td>
+                  <td class="p-4 font-mono text-base text-purple-300">꧁ ꧂ ༺ ༻ 『 』 〖 〗</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white">Pfeile</td>
+                  <td class="p-4 font-mono text-base text-sky-400">→ ← ↑ ↓ ➜ ➤ ↗</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white">Häkchen</td>
+                  <td class="p-4 font-mono text-base text-emerald-400">✓ ✔ ☑</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white">Blumen</td>
+                  <td class="p-4 font-mono text-base text-rose-300">❀ ✿ ❁ ❃ ⚘</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white">Musik</td>
+                  <td class="p-4 font-mono text-base text-cyan-300">♪ ♫ ♬ ♩</td>
+                </tr>
+                <tr class="hover:bg-white/[0.02]">
+                  <td class="p-4 font-semibold text-white">Unendlich</td>
+                  <td class="p-4 font-mono text-base text-indigo-300">∞ ♾</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="text-stone-300 leading-relaxed">
+            Einige Zeichen wirken schlicht, andere eher dekorativ. Deshalb lohnt es sich, mehrere Varianten auszuprobieren.
+          </p>
+        </section>
+
+        <!-- Section 2: ★ Sterne zum Kopieren -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            ★ Sterne zum Kopieren
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Sterne gehören zu den beliebtesten dekorativen Zeichen. Klassische Varianten wie ★ und ☆ passen zu Überschriften, Profilnamen oder Bewertungen. Etwas auffälliger wirken ✦, ✧, ✪ oder ✯. Entdecke alle Varianten in unserer Übersicht für <a href="/symbole/sterne/" class="text-amber-400 hover:text-amber-300 underline font-medium">Sterne Symbole zum Kopieren</a>.
+          </p>
+
+          <!-- Editorial Image 2 -->
+          <figure class="my-8 rounded-2xl overflow-hidden border border-white/10 bg-[#161614]">
+            <img
+              src="/images/symbole/sterne-symbole-kopieren-preview.svg"
+              alt="Verschiedene Stern Symbole zum Kopieren"
+              class="w-full h-auto object-cover"
+              loading="lazy"
+            />
+            <figcaption class="p-3 text-xs text-stone-400 text-center border-t border-white/5 bg-[#121210]">
+              Klassische Sterne und dekorative Sternzeichen für Namen, Bios und Texte.
+            </figcaption>
+          </figure>
+
+          <p class="text-stone-300 leading-relaxed mb-3">
+            Auch kreative Kombinationen sind möglich:
+          </p>
+          <ul class="list-disc list-inside space-y-1.5 text-stone-300 mb-4 font-mono text-sm">
+            <li>★ Dein Name ★</li>
+            <li>✦ Dein Name ✦</li>
+            <li>☆ 𝓝𝓪𝓶𝓮 ☆</li>
+            <li>✨ Dreamer ✨</li>
+            <li>★★★★★</li>
+          </ul>
+          <p class="text-stone-300 leading-relaxed">
+            Für Bewertungen eignen sich außerdem Kombinationen wie ★★★★★, während einzelne Sterne gut als Trenner oder Dekoration funktionieren.
+          </p>
+        </section>
+
+        <!-- Section 3: ♥ Herzen und Liebes-Symbole -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            ♥ Herzen und Liebes-Symbole
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Herzen gibt es als klassische Textzeichen und als farbige Emojis. Zu den bekannten Varianten gehören ♥, ♡, ❤, ❥, ❣, 💖 und 💕. Besuche unsere Detailseite für <a href="/symbole/herzen/" class="text-amber-400 hover:text-amber-300 underline font-medium">Herzen Symbole zum Kopieren</a>.
+          </p>
+
+          <!-- Editorial Image 3 -->
+          <figure class="my-8 rounded-2xl overflow-hidden border border-white/10 bg-[#161614]">
+            <img
+              src="/images/symbole/herzen-symbole-kopieren-preview.svg"
+              alt="Herz Symbole und Herz Emojis zum Kopieren"
+              class="w-full h-auto object-cover"
+              loading="lazy"
+            />
+            <figcaption class="p-3 text-xs text-stone-400 text-center border-t border-white/5 bg-[#121210]">
+              Herzen in verschiedenen Formen für Nachrichten, Bios und kreative Namen.
+            </figcaption>
+          </figure>
+
+          <p class="text-stone-300 leading-relaxed mb-3">
+            Je nach gewünschtem Stil kannst du sie unterschiedlich einsetzen:
+          </p>
+          <ul class="list-disc list-inside space-y-1.5 text-stone-300 mb-4 font-mono text-sm">
+            <li>♡ Lieblingsmensch ♡</li>
+            <li>♥ Forever ♥</li>
+            <li>💖 Love 💖</li>
+            <li>❥ Hallo ❥</li>
+            <li>꧁♥ Name ♥꧂</li>
+          </ul>
+          <p class="text-stone-300 leading-relaxed">
+            Wichtig ist der Unterschied zwischen einem einfachen Unicode-Zeichen und einem Emoji. Unicode umfasst sowohl Symbole als auch Emoji-Zeichen und -Sequenzen. Die <a href="https://www.unicode.org/emoji/charts/" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 underline font-medium">offizielle Unicode-Emoji-Charts</a> zeigen außerdem, dass Emojis je nach Zeichen aus einzelnen Zeichen oder mehreren Codepoints bestehen können.
+          </p>
+        </section>
+
+        <!-- Section 4: ꧁ Rahmen, Klammern und dekorative Zeichen -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            ꧁ Rahmen, Klammern und dekorative Zeichen
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Rahmen eignen sich besonders für Nicknames, Statusmeldungen und kurze Profiltexte. Beliebt sind beispielsweise ꧁ ꧂ ༺ ༻ 『 』 〖 〗 〔 〕 ⟦ ⟧. Weitere Schmuckelemente findest du unter <a href="/symbole/rahmen/" class="text-amber-400 hover:text-amber-300 underline font-medium">Rahmen &amp; Flügel</a>.
+          </p>
+
+          <!-- Editorial Image 4 -->
+          <figure class="my-8 rounded-2xl overflow-hidden border border-white/10 bg-[#161614]">
+            <img
+              src="/images/symbole/rahmen-symbole-nicknames.svg"
+              alt="Dekorative Rahmen und Klammern für Nicknames"
+              class="w-full h-auto object-cover"
+              loading="lazy"
+            />
+            <figcaption class="p-3 text-xs text-stone-400 text-center border-t border-white/5 bg-[#121210]">
+              Dekorative Rahmen und Klammern können kurze Namen optisch hervorheben.
+            </figcaption>
+          </figure>
+
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Damit kannst du einen Namen optisch hervorheben, ohne eine Bilddatei zu erstellen. Zum Beispiel:
+          </p>
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10 font-mono text-center text-lg text-amber-300 mb-4">
+            ꧁𝓓𝓪𝓻𝓴꧂ &nbsp;&bull;&nbsp; ༺★ Gamer ★༻ &nbsp;&bull;&nbsp; 『𝓝𝓲𝓬𝓴』
+          </div>
+          <p class="text-stone-300 leading-relaxed">
+            Allerdings wird nicht jedes Zeichen auf jeder Plattform gleich dargestellt. Unicode definiert Zeichen, während das konkrete Erscheinungsbild von der verwendeten Schrift und dem jeweiligen Gerät abhängen kann. Der Unicode-Standard umfasst unter anderem Satzzeichen, mathematische Zeichen, technische Symbole, Pfeile, Dingbats und Emojis.
+          </p>
+        </section>
+
+        <!-- Section 5: Wo kann ich Symbole verwenden? -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Wo kann ich Symbole verwenden?
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Kopierte Zeichen eignen sich für viele kurze Textbereiche, zum Beispiel:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <strong class="text-white block mb-1">📸 Instagram</strong>
+              <span class="text-xs text-stone-300">Bio, Name, Highlight-Titel und Captions</span>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <strong class="text-white block mb-1">🎵 TikTok</strong>
+              <span class="text-xs text-stone-300">Profiltexte, Display-Name und Beschreibungen</span>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <strong class="text-white block mb-1">💬 WhatsApp</strong>
+              <span class="text-xs text-stone-300">Info-Status, Gruppennamen und Chat-Nachrichten</span>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <strong class="text-white block mb-1">🎮 Discord &amp; Gaming</strong>
+              <span class="text-xs text-stone-300">Server-Rollen, Spielernamen und Clantags</span>
+            </div>
+          </div>
+          <p class="text-stone-300 leading-relaxed">
+            Am besten funktionieren kurze Kombinationen. Du kannst Symbole auch perfekt mit unserer <a href="/schrift/" class="text-amber-400 hover:text-amber-300 underline font-medium">Schriftarten Übersicht</a> kombinieren. Zu viele dekorative Zeichen können einen Namen dagegen schwer lesbar machen.
+          </p>
+        </section>
+
+        <!-- Section 6: So funktioniert Copy & Paste -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            So funktioniert Copy &amp; Paste
+          </h2>
+          <ol class="list-decimal list-inside space-y-2 text-stone-300 mb-6">
+            <li>Suche ein passendes Symbol oder eine Kombination aus.</li>
+            <li>Klicke oder tippe auf das Zeichen.</li>
+            <li>Das Zeichen wird sofort in die Zwischenablage kopiert.</li>
+            <li>Öffne das gewünschte Textfeld in deiner App oder Website.</li>
+            <li>Füge es mit <kbd class="px-2 py-0.5 rounded bg-stone-800 text-xs border border-stone-700">Strg</kbd> + <kbd class="px-2 py-0.5 rounded bg-stone-800 text-xs border border-stone-700">V</kbd> am Computer oder über die Einfügen-Funktion am Smartphone ein.</li>
+          </ol>
+          <p class="text-stone-400 text-sm leading-relaxed">
+            Bei ungewöhnlichen Zeichen solltest du anschließend prüfen, ob sie auf dem Zielgerät korrekt angezeigt werden. Ein fehlendes Zeichen kann beispielsweise als leeres Kästchen (☐ Tofu) erscheinen.
+          </p>
+        </section>
+
+        <!-- Section 7: FAQ Accordion -->
+        <section class="rounded-3xl bg-[#141412] border border-white/10 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">
+            Häufige Fragen (FAQ)
+          </h2>
+          <div class="space-y-4">
+            {faqs.map((faq) => (
+              <details class="group bg-white/5 rounded-2xl border border-white/10 p-5 transition-all open:bg-white/[0.08]">
+                <summary class="flex justify-between items-center font-bold text-white cursor-pointer list-none select-none">
+                  <span>{faq.question}</span>
+                  <span class="text-amber-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p class="mt-4 text-sm text-stone-300 leading-relaxed border-t border-white/5 pt-4">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <!-- Section 8: Fazit -->
+        <section class="rounded-3xl bg-gradient-to-br from-amber-500/10 via-[#141412] to-amber-500/5 border border-amber-500/30 p-6 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Fazit
+          </h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            Für kreative Namen, Bios und kurze Nachrichten reichen oft wenige passende Zeichen aus. Sterne, Herzen und Rahmen sind besonders vielseitig, während Pfeile, Blumen oder Kaomojis zusätzliche Stilrichtungen ermöglichen.
+          </p>
+          <p class="text-stone-300 leading-relaxed">
+            Am praktischsten ist eine Sammlung mit direkter Copy-&-Paste-Funktion. So kannst du verschiedene Varianten testen und genau das Zeichen auswählen, das zu deinem Text passt. Wähle jetzt oben deine Lieblingskategorie oder entdecke unsere <a href="/schrift/" class="text-amber-400 hover:text-amber-300 underline font-medium">Schriftarten Übersicht</a>!
+          </p>
+        </section>
+
+      </article>
     </div>
   </main>
 </Layout>

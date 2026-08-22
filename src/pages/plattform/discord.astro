@@ -1,0 +1,416 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TextStyleConverter from '../../components/TextStyleConverter.astro';
+import FontStyleGrid from '../../components/FontStyleGrid.astro';
+import PlatformInteractiveWidgets from '../../components/PlatformInteractiveWidgets.astro';
+import PlatformPreviewWidget from '../../components/PlatformPreviewWidget.astro';
+import { PLATFORMS_DATA } from '../../data/platform-metadata';
+import { PLATFORM_WIDGETS_DATA } from '../../data/platform-widgets';
+import { NAVIGATION_DATA } from '../../data/navigation';
+
+const platformInfo = PLATFORMS_DATA['discord'] || {
+  id: 'discord',
+  name: 'Discord',
+  slug: '/plattform/discord',
+  icon: '🎮',
+  tagline: 'Unicode-Schriften für Discord Server-Namen, Rollen, Channel-Kategorien & Nicknames',
+  bioLimit: 190,
+  compatibleStyles: ['Fette Schrift', 'Kursive Schrift', 'Gotische Schrift', 'Kapitälchen', 'Monospace', 'Bubble Schrift', 'Zalgo Glitch'],
+  keyFeatures: [
+    'Server-Kanäle strukturieren (z. B. ┃💬-ᴄʜᴀᴛ, ┃📢-ᴀɴɴᴏᴜɴᴄᴇ)',
+    'Server-Rollen visuell hervorheben',
+    'Anzeigename (Display Name) & Nicknames gestalten',
+    'Server-Regeln & Überschriften betonen',
+  ],
+  tips: [
+    'Discord erlaubt in Server- und Kanalnamen kein Markdown. Unicode-Schriftarten sind hier die einzige Lösung für individuelle Typografie.',
+    'Verwende Box-Klammern (【】) und Trennstriche für eine professionelle Kanal-Hierarchie.',
+  ],
+};
+
+const discordFaqs = [
+  {
+    q: 'Funktionieren Discord Schriftarten überall?',
+    a: 'Nein, eine pauschale Garantie gibt es nicht. Die Darstellung hängt vom verwendeten Unicode-Zeichen und der Unterstützung durch Gerät und Betriebssystem ab. Bei Problemen ist ein einfacherer Stil wie Fett oder Kursiv die beste Alternative.',
+  },
+  {
+    q: 'Kann ich damit meinen Discord Username ändern?',
+    a: 'Nicht jeden Unicode-Stil. Discord begrenzt die Zeichen für den eindeutigen @Username (nur Kleinbuchstaben, Zahlen, Punkte und Unterstriche). Der öffentliche Anzeigename (Display Name) und Server-Nicknames bieten dagegen volle Unterstützung für Sonderzeichen und dekorative Unicode-Schriften.',
+  },
+  {
+    q: 'Brauche ich Discord Nitro?',
+    a: 'Für kopierten Unicode-Text ist kein Nitro erforderlich. Alle hier generierten Schriften sind 100 % kostenlos kopierbar. Discord bietet inzwischen zusätzlich eigene Display Name Styles als Nitro-Funktion an, die jedoch von universell kopierbaren Unicode-Zeichen zu unterscheiden sind.',
+  },
+  {
+    q: 'Warum erscheinen manche Buchstaben als Kästchen?',
+    a: 'Wenn ein leeres Kästchen (Tofu) erscheint, kann das jeweilige Betriebssystem das spezifische Zeichen nicht rendern. Verwende in diesem Fall einen einfacheren, hochkompatiblen Unicode-Stil (wie Fett Sans oder Kursiv) oder normalen Text.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": discordFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+
+const widgetsConfig = PLATFORM_WIDGETS_DATA['discord'];
+---
+
+<Layout
+  title="Discord Schriftarten: Coole Schriften zum Kopieren & Einfügen"
+  description="Discord Schriftarten kostenlos erstellen: Fette, kursive, gotische und weitere Unicode-Schriften kopieren und für Discord-Namen, Profile und Texte nutzen."
+  canonicalUrl="/plattform/discord"
+  schema={faqSchema}
+>
+  <main class="py-12 md:py-16 bg-[#0a0a08] platform-theme-discord" data-platform-theme="discord">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <a href="/plattform" class="hover:text-white transition-colors">Plattformen</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Discord</span>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="platform-guide-badge inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5865F2]/10 border border-[#5865F2]/30 text-[#808bf5] text-xs font-bold uppercase tracking-wider mb-3 transition-all">
+          <span>🎮 Discord Community &amp; Profile Guide</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <span class="text-[#808bf5]">Discord Schriftarten</span>: Coole Schriften zum Kopieren
+        </h1>
+        <p class="mt-4 text-base text-stone-300 leading-relaxed max-w-2xl mx-auto">
+          Erstelle stilvolle Discord-Schriften für Namen, Profile und kurze Texte. Unicode-Schriften einfach generieren, kopieren und bei Discord einfügen.
+        </p>
+      </div>
+
+      <!-- Interactive Converter Component -->
+      <TextStyleConverter
+        defaultText="Discord Nickname ✨"
+        pageSlug="discord"
+        filterCategory="alle"
+        showCategoryTabs={true}
+        showPresets={true}
+        maxChars={190}
+        limit={12}
+        showMoreButton={true}
+      />
+
+      <!-- Content Grid: Guidelines, Editorial Article & Sidebar -->
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- LEFT COLUMN (lg:col-span-2): Generator Widgets first, followed by Editorial Content & FAQ -->
+        <div class="lg:col-span-2 space-y-8">
+          
+          <!-- 3 Interactive Generator Widgets (Kanal- & Rollen-Ideen, Symbol-Kombinationen, Themen-Emoji-Pakete) -->
+          {widgetsConfig && (
+            <PlatformInteractiveWidgets
+              widgetsData={widgetsConfig}
+              platformId="discord"
+            />
+          )}
+
+          <!-- IMAGE 1: Featured Hero Image -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/discord-schriftarten-hero.svg"
+              alt="Discord Schriftarten mit verschiedenen Unicode-Schreibstilen"
+              class="w-full h-auto aspect-video object-cover"
+              loading="eager"
+            />
+            <p class="text-xs text-stone-400 p-3 text-center border-t border-white/5 bg-[#0a0a08]">
+              Verschiedene Unicode-Stile können kurzen Discord-Texten einen individuellen Look geben.
+            </p>
+          </div>
+
+          <!-- Section 1: Einleitung -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Einleitung
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Normale Discord-Texte sehen schnell gleich aus. Gerade bei Profilen, Servern oder kurzen Ankündigungen fehlt oft ein eigener Stil. <strong>Discord Schriftarten</strong> können dabei helfen, Namen und kurze Texte sichtbarer und individueller zu gestalten.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Das Problem: Nicht jede vermeintliche „Schrift“ ist eine echte installierte Font-Datei, und nicht jedes Unicode-Zeichen wird überall gleich dargestellt. Mit einem Unicode-Generator kannst du passende Zeichen auswählen, kopieren und direkt bei Discord einfügen. Hier erfährst du, welche Stile sinnvoll sind, wo du sie einsetzen kannst und worauf du bei der Darstellung achten solltest.
+            </p>
+          </div>
+
+          <!-- Section 2: Was sind Discord Schriftarten? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Was sind Discord Schriftarten?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Bei einem Online-Generator handelt es sich meist nicht um eine neue installierte Schriftart. Stattdessen wird normaler Text in spezielle Unicode-Zeichen umgewandelt. Der Unicode-Standard enthält dafür unter anderem mathematische alphanumerische Zeichen. Daraus entstehen beispielsweise <strong class="text-white">𝐅𝐞𝐭𝐭</strong>, <em class="text-[#38bdf8]">𝑲𝒖𝒓𝒔𝒊𝒗</em> oder <span class="text-amber-400 font-serif font-bold">𝔊𝔬𝔱𝔦𝔰𝔠𝔥</span>.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Dadurch musst du normalerweise keine Font-Datei installieren. Du kopierst den erzeugten Text und fügst ihn dort ein, wo Discord das jeweilige Zeichen akzeptiert. Allerdings hängt die Darstellung weiterhin vom konkreten Zeichen und der Unterstützung durch Gerät und Anwendung ab.
+            </p>
+          </div>
+
+          <!-- Section 3: Welche Stile eignen sich für Discord? & Table -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Welche Stile eignen sich für Discord?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Die passende Variante hängt vom Zweck ab. Für kurze Namen sind klare Stile oft praktischer als stark verzierte Zeichen.
+            </p>
+
+            <div class="overflow-x-auto rounded-2xl border border-white/10">
+              <table class="w-full text-left text-sm text-stone-300">
+                <thead class="bg-white/5 text-white font-bold border-b border-white/10">
+                  <tr>
+                    <th class="p-3.5">Stil</th>
+                    <th class="p-3.5">Beispiel</th>
+                    <th class="p-3.5">Geeignet für</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/fette-schrift" class="text-[#808bf5] hover:underline">Fett</a>
+                    </td>
+                    <td class="p-3.5 font-mono text-base font-bold text-white">𝗗𝗶𝘀𝗰𝗼𝗿𝗱</td>
+                    <td class="p-3.5 text-stone-200">Namen und Akzente</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/kursive-schrift" class="text-[#38bdf8] hover:underline">Kursiv</a>
+                    </td>
+                    <td class="p-3.5 font-mono text-base font-bold text-white">𝘋𝘪𝘴𝘤𝘰𝘳𝘥</td>
+                    <td class="p-3.5 text-stone-200">Status und kurze Texte</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/gotische-schrift" class="text-amber-400 hover:underline">Gotisch</a>
+                    </td>
+                    <td class="p-3.5 font-mono text-base font-bold text-white">𝔇𝔦𝔰𝔠𝔬𝔯𝔡</td>
+                    <td class="p-3.5 text-stone-200">Gaming und Fantasy</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">Monospace</td>
+                    <td class="p-3.5 font-mono text-base font-bold text-white">𝙳𝚒𝚜𝚌𝚘𝚛𝚍</td>
+                    <td class="p-3.5 text-stone-200">technischen Look</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/bubble-schrift" class="text-pink-400 hover:underline">Bubble</a>
+                    </td>
+                    <td class="p-3.5 font-mono text-base font-bold text-white">Ⓓⓘⓢⓒⓞⓡⓓ</td>
+                    <td class="p-3.5 text-stone-200">auffällige Namen</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- IMAGE 2: Stile-Vergleich -->
+            <div class="rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="/images/discord-schriftarten-stile-vergleich.svg"
+                alt="Vergleich von fetter kursiver gotischer und Monospace-Schrift"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Fette, kursive, gotische, Monospace- und Bubble-Stile unterscheiden sich deutlich in ihrer Wirkung.
+              </p>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Besonders wichtig bleibt die Lesbarkeit. Ein Stil kann interessant aussehen, aber in einem vollen Server schwerer zu erkennen sein. Deshalb sind einfache Varianten für wichtige Namen häufig die bessere Wahl.
+            </p>
+          </div>
+
+          <!-- Section 4: Discord Namen, Nicknames und Profiltexte gestalten -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Discord Namen, Nicknames und Profiltexte gestalten
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein wichtiger Unterschied betrifft den Discord-Benutzernamen und den Anzeigenamen. <a href="https://support.discord.com/hc/hi-in/articles/12620128861463-New-Usernames-Display-Names" target="_blank" rel="noopener noreferrer" class="text-[#808bf5] hover:underline font-semibold">Discords offizielle Informationen zu Usernames und Display Names</a> beschreiben den neuen Benutzernamen als eindeutigen Identifikator mit begrenzten erlaubten Zeichen. Anzeigenamen können dagegen Sonderzeichen, Leerzeichen, Emojis sowie Groß- und Kleinbuchstaben enthalten. Server- und Freundesnicknames können den Anzeigenamen zusätzlich ersetzen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für Discord Schriftarten ist deshalb der <strong>Anzeigename</strong> oder ein passender <strong>Nickname</strong> besonders interessant. Prüfe den kopierten Text trotzdem direkt in Discord. So erkennst du schnell, ob alle Zeichen korrekt übernommen werden.
+            </p>
+          </div>
+
+          <!-- Section 5: Discord Server und Rollen optisch strukturieren -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Discord Server und Rollen optisch strukturieren
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Unicode-Zeichen können auch für kurze Bezeichnungen innerhalb einer Community interessant sein. Beispielsweise lassen sich Rollennamen und Kanalnamen mit Symbolen, fetten Zeichen oder Kapitälchen (z. B. <code class="text-[#808bf5] font-mono">#┃📢-ᴀɴɴᴏᴜɴᴄᴇᴍᴇɴᴛꜱ</code>) voneinander abheben.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für längere Informationen solltest du jedoch normalen Text bevorzugen. Serverregeln, wichtige Hinweise und Anleitungen müssen schnell lesbar bleiben. Dekorative Zeichen eignen sich eher für kurze Überschriften, Kategorien oder einzelne Akzente.
+            </p>
+          </div>
+
+          <!-- Section 6: So erstellst du Discord Schriftarten -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              So erstellst du Discord Schriftarten
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Der Ablauf ist unkompliziert:
+            </p>
+            <ul class="space-y-3 text-sm sm:text-base text-stone-300 leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#808bf5] font-bold">1.</span>
+                <span>Öffne den <a href="/" class="text-[#808bf5] hover:underline font-semibold">Schriftarten-Generator</a>.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#808bf5] font-bold">2.</span>
+                <span>Gib deinen Namen oder Text ein.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#808bf5] font-bold">3.</span>
+                <span>Vergleiche mehrere Unicode-Stile in der Echtzeit-Vorschau.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#808bf5] font-bold">4.</span>
+                <span>Wähle eine gut lesbare Variante aus.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#808bf5] font-bold">5.</span>
+                <span>Klicke auf „Kopieren“.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#808bf5] font-bold">6.</span>
+                <span>Füge den Text an der gewünschten Stelle bei Discord ein.</span>
+              </li>
+            </ul>
+
+            <div class="p-4 rounded-2xl bg-gradient-to-r from-[#5865F2]/15 to-[#808bf5]/15 border border-[#5865F2]/30 text-center">
+              <a href="/" class="inline-flex items-center gap-2 text-white font-bold hover:text-[#808bf5] transition-colors">
+                <span>👉 Teste den Schriftarten-Generator jetzt mit über 500 Stilen</span>
+                <span>→</span>
+              </a>
+            </div>
+
+            <!-- IMAGE 3: Anleitung Step-by-Step -->
+            <div class="rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="/images/discord-schriftarten-anleitung.svg"
+                alt="Unicode-Schrift kopieren und in einen Chat einfügen"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Der typische Ablauf: Text eingeben, Stil auswählen, kopieren und anschließend einfügen.
+              </p>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für kurze Namen lohnt sich ein Test mit mehreren Varianten. Dadurch findest du schneller einen Stil, der sowohl optisch passt als auch gut lesbar bleibt.
+            </p>
+          </div>
+
+          <!-- Section 7: Was solltest du bei Unicode-Schriften beachten? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Was solltest du bei Unicode-Schriften beachten?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Unicode-Zeichen sind nicht dasselbe wie eine normale Font-Datei. Eine installierte Schrift verändert die Darstellung von Text innerhalb einer Anwendung. Bei einem Unicode-Generator werden dagegen die verwendeten Zeichen selbst verändert.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Außerdem ist weniger manchmal mehr. Stark dekorierte Zeichen können schlechter lesbar sein. Manche Zeichen werden auf bestimmten Geräten oder in einzelnen Anwendungen zudem anders dargestellt. Für längere Nachrichten ist normaler Text daher meist sinnvoller. Dekorative Zeichen passen eher zu kurzen Profilnamen, Überschriften oder einzelnen Hervorhebungen.
+            </p>
+          </div>
+
+          <!-- IMAGE 4: Unicode vs Font Infografik -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/discord-schriftarten-unicode-vs-font.svg"
+              alt="Unterschied zwischen Unicode-Text und installierter Schriftart"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Unicode-Text und installierte Font-Dateien funktionieren auf unterschiedliche Weise.
+            </p>
+          </div>
+
+
+
+          <!-- Section 8: Häufige Fragen zu Discord Schriftarten -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> Häufige Fragen zu Discord Schriftarten
+            </h2>
+            <div class="space-y-4">
+              {discordFaqs.map((faq) => (
+                <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
+                  <h3 class="text-sm sm:text-base font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 9: Fazit -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Fazit
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Die besten Discord Schriftarten sind nicht unbedingt die auffälligsten. Für Namen und kurze Profiltexte funktionieren klare <a href="/schrift/fette-schrift" class="text-[#808bf5] hover:underline font-semibold">fette</a>, <a href="/schrift/kursive-schrift" class="text-[#808bf5] hover:underline font-semibold">kursive</a> oder <a href="/schrift/gotische-schrift" class="text-[#808bf5] hover:underline font-semibold">gotische</a> Varianten oft besser als stark verzierte Zeichen. Entscheidend sind Lesbarkeit und eine korrekte Darstellung.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Am einfachsten ist ein kurzer Test: Text eingeben, mehrere Varianten vergleichen, kopieren und direkt bei Discord prüfen. Für wichtige Informationen bleibt normaler Text die sichere Wahl. Für kurze Namen und kreative Akzente können Unicode-Zeichen dagegen eine einfache Möglichkeit sein, deinem Discord-Profil einen eigenen Stil zu geben.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Entdecke auch unsere Schriftgeneratoren für <a href="/plattform/tiktok" class="text-[#808bf5] hover:underline font-semibold">TikTok Schriftarten</a>, <a href="/plattform/instagram" class="text-[#808bf5] hover:underline font-semibold">Instagram Schriftarten</a> und <a href="/plattform/whatsapp" class="text-[#808bf5] hover:underline font-semibold">WhatsApp Schriftarten</a>.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- RIGHT SIDEBAR COLUMN: 1. Live Preview, 2. Beliebte Stile, 3. Weitere Plattformen -->
+        <div class="space-y-6">
+          <!-- 1. Live Discord Preview Mockup Widget -->
+          <PlatformPreviewWidget platformId="discord" />
+
+          <!-- 2. Beliebte Stile für Discord -->
+          <FontStyleGrid
+            title="Beliebte Stile für Discord"
+            titleIcon="🎨"
+            isAmberTitle={false}
+          />
+
+          <!-- 3. Weitere Plattformen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-stone-300 mb-4">
+              Weitere Plattformen
+            </h3>
+            <div class="space-y-2">
+              {NAVIGATION_DATA.platforms.items
+                .filter((item) => !item.href.includes('discord'))
+                .map((other) => (
+                  <a
+                    href={other.href}
+                    class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-[#5865F2]/10 border border-white/5 hover:border-[#5865F2]/30 text-xs font-semibold text-stone-300 hover:text-white transition-all group"
+                  >
+                    <span>{other.icon} {other.title}</span>
+                    <span class="group-hover:translate-x-1 transition-transform text-[#808bf5]">→</span>
+                  </a>
+                ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

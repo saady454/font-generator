@@ -1,0 +1,376 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TextStyleConverter from '../../components/TextStyleConverter.astro';
+import FontStyleGrid from '../../components/FontStyleGrid.astro';
+import PlatformInteractiveWidgets from '../../components/PlatformInteractiveWidgets.astro';
+import PlatformPreviewWidget from '../../components/PlatformPreviewWidget.astro';
+import { PLATFORMS_DATA } from '../../data/platform-metadata';
+import { PLATFORM_WIDGETS_DATA } from '../../data/platform-widgets';
+import { NAVIGATION_DATA } from '../../data/navigation';
+
+const platformInfo = PLATFORMS_DATA['instagram'] || {
+  id: 'instagram',
+  name: 'Instagram',
+  slug: '/plattform/instagram',
+  icon: '📸',
+  tagline: 'Instagram Schriftarten für Bio, Namen, Captions und Stories: Text eingeben, Stil auswählen, kopieren und direkt bei Instagram einfügen.',
+  bioLimit: 150,
+  compatibleStyles: ['Fette Schrift', 'Kursive Schrift', 'Gotische Schrift', 'Bubble Schrift', 'Kapitälchen', 'Dekorativ'],
+  keyFeatures: [
+    '150-Zeichen Steckbrief (Bio) verschönern',
+    'Story-Texte und Sticker-Untertitel hervorheben',
+    'Kommentare und Direktnachrichten (DMs) stylen',
+    'Display-Name im Profil anpassen',
+  ],
+  tips: [
+    'Nutze fette oder kursive Schriften für die erste Zeile deiner Bio, um sofort ins Auge zu fallen.',
+    'Kombiniere dezente Symbole (wie ✨ oder 🌿) mit Kapitälchen für einen minimalistischen Aesthetic-Look.',
+    'Beachte: Der technische @handle erlaubt nur Standardbuchstaben; der sichtbare Profilname unterstützt alle Unicode-Schriften.',
+  ],
+};
+
+const instagramFaqs = [
+  {
+    q: 'Sind Instagram Schriftarten echte Fonts?',
+    a: 'Nicht unbedingt. Bei vielen Online-Generatoren handelt es sich um Unicode-Zeichen, die wie unterschiedliche Schriftstile aussehen. Sie werden daher nicht wie eine klassische Schriftdatei installiert.',
+  },
+  {
+    q: 'Kann ich Instagram Schriftarten kostenlos kopieren?',
+    a: 'Ja, ein Unicode-basierter Textgenerator kann Textvarianten erzeugen, die du anschließend kopierst und einfügst. Die konkrete Darstellung hängt jedoch vom verwendeten Zeichen und der jeweiligen Plattform ab.',
+  },
+  {
+    q: 'Warum werden manche Zeichen nicht richtig angezeigt?',
+    a: 'Unicode enthält sehr viele unterschiedliche Zeichen. Nicht jedes Zeichen wird von jeder Schriftart oder jedem System gleich dargestellt. Deshalb kann ein dekorativer Stil auf einem Gerät anders aussehen oder teilweise fehlen. Bei wichtigen Texten solltest du das Ergebnis vor dem Speichern prüfen.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": instagramFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+
+const widgetsConfig = PLATFORM_WIDGETS_DATA['instagram'];
+---
+
+<Layout
+  title="Instagram Schriftarten: Schöne Fonts zum Kopieren & Einfügen"
+  description="Instagram Schriftarten kostenlos erstellen: Entdecke fette, kursive, elegante und kreative Unicode-Schriften für deine Instagram-Bio, Captions und Stories."
+  canonicalUrl="/plattform/instagram"
+  schema={faqSchema}
+>
+  <main class="py-12 md:py-16 bg-[#0a0a08] platform-theme-instagram" data-platform-theme="instagram">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <a href="/plattform" class="hover:text-white transition-colors">Plattformen</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Instagram</span>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="platform-guide-badge inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3 transition-all">
+          <span>📸 Instagram Guide</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <span class="platform-h1-accent transition-colors">Instagram</span> Schriftarten – Schöne Schriften zum Kopieren
+        </h1>
+        <p class="mt-4 text-base text-stone-300 leading-relaxed max-w-2xl mx-auto">
+          Instagram Schriftarten für Bio, Namen, Captions und Stories: Text eingeben, Stil auswählen, kopieren und direkt bei Instagram einfügen.
+        </p>
+      </div>
+
+      <!-- Interactive Converter Component -->
+      <TextStyleConverter
+        defaultText="Instagram Bio Vibes ✨"
+        pageSlug="instagram"
+        filterCategory="alle"
+        showCategoryTabs={true}
+        showPresets={true}
+        maxChars={150}
+        limit={12}
+        showMoreButton={true}
+      />
+
+      <!-- Content Grid: Guidelines, Editorial Article & Sidebar -->
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- LEFT COLUMN (lg:col-span-2): Generator Widgets first, followed by Editorial Content & FAQ -->
+        <div class="lg:col-span-2 space-y-8">
+          
+          <!-- Interactive Generator Widgets (Bio-Ideen, Symbol-Kombinationen, Themen-Emoji-Pakete) -->
+          {widgetsConfig && (
+            <PlatformInteractiveWidgets
+              widgetsData={widgetsConfig}
+              platformId="instagram"
+            />
+          )}
+
+          <!-- Featured Hero Image -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/instagram-schriftarten-hero.svg"
+              alt="Instagram Schriftarten auf Smartphone und Textgenerator"
+              class="w-full h-auto aspect-video object-cover"
+              loading="eager"
+            />
+            <p class="text-xs text-stone-400 p-3 text-center border-t border-white/5 bg-[#0a0a08]">
+              Stylisierte Texte können direkt kopiert und in Social-Media-Profile eingefügt werden.
+            </p>
+          </div>
+
+          <!-- Section 1: Intro -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Instagram Schriftarten – Schöne Schriften zum Kopieren
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Eine normale Instagram-Bio wirkt schnell langweilig, besonders wenn viele Profile ähnlich aussehen. Mit Instagram Schriftarten kannst du Namen, kurze Texte und Bio-Inhalte optisch hervorheben, ohne eine zusätzliche Schriftdatei zu installieren.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Dabei ist wichtig zu wissen: Solche Stile sind meist keine installierten Fonts, sondern speziell dargestellte Unicode-Zeichen. Deshalb kannst du viele Varianten direkt kopieren und an der passenden Stelle bei Instagram einfügen. Der Unicode Standard beschreibt unter anderem verschiedene stilisierte alphanumerische Zeichen.
+            </p>
+          </div>
+
+          <!-- Section 2: Kostenlos erstellen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Instagram Schriftarten kostenlos erstellen
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Mit unserem <a href="/" class="text-amber-400 hover:text-amber-300 underline font-semibold">Schriftarten Generator</a> geht es besonders schnell:
+            </p>
+            <ul class="space-y-2 text-sm text-stone-300 leading-relaxed">
+              <li>• <strong>Text eingeben:</strong> Schreibe deinen Namen, eine Bio, ein Motto oder einen kurzen Satz in das obige Textfeld.</li>
+              <li>• <strong>Stil auswählen:</strong> Probiere beispielsweise fett, kursiv, Schreibschrift, Fraktur oder andere dekorative Varianten.</li>
+              <li>• <strong>Vorschau prüfen:</strong> Vergleiche die verschiedenen Ergebnisse und wähle einen gut lesbaren Stil.</li>
+              <li>• <strong>Kopieren:</strong> Über die Kopierfunktion landet der fertige Text mit einem Klick in deiner Zwischenablage.</li>
+              <li>• <strong>Einfügen:</strong> Öffne Instagram und füge den Text in das gewünschte Profil- oder Beitragsfeld ein.</li>
+            </ul>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              So musst du nicht jede Variante selbst zusammensetzen. Stattdessen kannst du mehrere Ergebnisse direkt miteinander vergleichen. Die technische Grundlage für diese Sonderzeichen ist im offiziellen <a href="https://www.unicode.org/charts/PDF/U1D400.pdf" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 underline font-semibold">Unicode Standard – Mathematical Alphanumeric Symbols</a> dokumentiert.
+            </p>
+          </div>
+
+          <!-- Section 3: Welche Schriften eignen sich für Instagram? & Table -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Welche Schriften eignen sich für Instagram?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Nicht jeder Stil passt zu jedem Zweck. Für eine Bio ist ein klarer und gut lesbarer Look meist sinnvoller als ein extrem dekorativer Text.
+            </p>
+
+            <div class="overflow-x-auto rounded-2xl border border-white/10">
+              <table class="w-full text-left text-sm text-stone-300">
+                <thead class="bg-white/5 text-white font-bold border-b border-white/10">
+                  <tr>
+                    <th class="p-3.5">Stil</th>
+                    <th class="p-3.5">Geeignet für</th>
+                    <th class="p-3.5">Wirkung</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">Fett</td>
+                    <td class="p-3.5">Namen, wichtige Wörter</td>
+                    <td class="p-3.5 text-amber-400 font-medium">auffällig</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">Kursiv</td>
+                    <td class="p-3.5">kurze Aussagen, Zitate</td>
+                    <td class="p-3.5 text-amber-400 font-medium">elegant</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">Schreibschrift</td>
+                    <td class="p-3.5">Bio, persönliche Texte</td>
+                    <td class="p-3.5 text-amber-400 font-medium">kreativ</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">Fraktur</td>
+                    <td class="p-3.5">Namen, besondere Profile</td>
+                    <td class="p-3.5 text-amber-400 font-medium">markant</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">Kleine Buchstaben</td>
+                    <td class="p-3.5">kurze Bio-Zeilen</td>
+                    <td class="p-3.5 text-amber-400 font-medium">minimalistisch</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">Dekorative Zeichen</td>
+                    <td class="p-3.5">Überschriften, kurze Texte</td>
+                    <td class="p-3.5 text-amber-400 font-medium">verspielt</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Image 2: Stile-Vergleich -->
+            <div class="rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="/images/instagram-schriftarten-stile-vergleich.svg"
+                alt="Verschiedene Instagram Schriftarten im Vergleich"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Fette, kursive, dekorative und weitere Stile unterscheiden sich deutlich in ihrer Wirkung.
+              </p>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Instagram Schriftarten funktionieren deshalb besonders gut, wenn der Stil zum Inhalt passt. Eine kurze Bio kann beispielsweise mit einem einzelnen hervorgehobenen Wort interessanter wirken, ohne dass jede Zeile verändert werden muss.
+            </p>
+          </div>
+
+          <!-- Section 4: Wo kannst du die Schrift verwenden? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Wo kannst du die Schrift verwenden?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Instagram bietet verschiedene Bereiche, in denen Nutzer Text eingeben können. Dazu gehören unter anderem die Bio, Profilangaben, Captions und Story-Inhalte. Die konkrete Unterstützung einzelner Unicode-Zeichen kann jedoch variieren.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Außerdem unterscheiden sich sichtbare Schriftzeichen von echten installierten Fonts. Bei einem Generator wird der Text nicht einfach mit einer neuen Schriftdatei formatiert. Stattdessen werden Zeichen verwendet, die auf Unicode basieren. Genau deshalb kannst du das Ergebnis wie normalen Text kopieren und einfügen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Bei ungewöhnlichen Zeichen solltest du anschließend kontrollieren, wie dein Text tatsächlich dargestellt wird. Je nach Zeichen, Gerät oder Anwendung kann die Darstellung unterschiedlich ausfallen.
+            </p>
+          </div>
+
+          <!-- Section 5: So findest du einen guten Stil für deine Bio -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              So findest du einen guten Stil für deine Bio
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein guter Instagram-Text muss nicht möglichst ausgefallen sein. Lesbarkeit kommt zuerst. Besonders bei längeren Bio-Texten können stark dekorierte Zeichen unübersichtlich werden.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für einen modernen Look eignen sich oft einfache fette oder kursive Varianten. Eine persönliche Bio kann dagegen von einer geschwungenen Schreibschrift profitieren. Für einen Gaming- oder kreativen Account passen auffälligere Zeichen und Symbole besser.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Am besten kombinierst du höchstens wenige Stile. Dadurch bleibt dein Profil übersichtlich und wichtige Informationen sind schneller erfassbar.
+            </p>
+
+            <!-- Image 3: Bio Guide -->
+            <div class="rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="/images/instagram-schriftarten-bio-guide.svg"
+                alt="Stylische Schrift für eine Social-Media-Bio auswählen"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Ein gut lesbarer Stil eignet sich besonders für kurze Bio-Texte.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 6: Instagram Schriftarten kopieren und einfügen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Instagram Schriftarten kopieren und einfügen
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Der praktische Vorteil liegt in der einfachen Nutzung. Du brauchst normalerweise kein Grafikprogramm und musst keine Schriftdatei herunterladen. Gib deinen Text in den Generator ein, wähle eine Variante und kopiere das Ergebnis.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Danach öffnest du Instagram und fügst den kopierten Text an der gewünschten Stelle ein. Falls einzelne Zeichen nicht korrekt erscheinen, solltest du eine andere Variante ausprobieren. Besonders dekorative Unicode-Zeichen können sich von normalen Buchstaben unterscheiden.
+            </p>
+          </div>
+
+          <!-- Image 4: Unicode Erklärung Infografik -->
+          <div class="rounded-2xl overflow-hidden border border-white/10 bg-[#141412]">
+            <img
+              src="/images/instagram-schriftarten-unicode-erklaerung.svg"
+              alt="So funktioniert Unicode-Text bei Instagram Schriftarten"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Viele sogenannte Social-Media-Fonts basieren auf speziellen Unicode-Zeichen statt auf installierten Schriftdateien.
+            </p>
+          </div>
+
+
+
+          <!-- Section 7: FAQs -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> Häufige Fragen zu Instagram Schriftarten
+            </h2>
+            <div class="space-y-4">
+              {instagramFaqs.map((faq) => (
+                <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
+                  <h3 class="text-sm sm:text-base font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 8: Fazit -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Fazit
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Instagram Schriftarten sind eine einfache Möglichkeit, kurze Profiltexte individueller zu gestalten. Entscheidend ist nicht, möglichst viele Effekte zu verwenden, sondern einen Stil zu wählen, der zu deinem Profil passt und trotzdem gut lesbar bleibt.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für die Praxis gilt daher: Text eingeben, mehrere Varianten vergleichen, eine klare Version auswählen und anschließend direkt bei Instagram testen. So bekommst du einen individuellen Look, ohne dein Profil unnötig kompliziert zu machen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Entdecke weitere Stile in unserer <a href="/schrift" class="text-amber-400 hover:text-amber-300 underline font-semibold">Schriftarten Übersicht</a> oder teste unseren universellen <a href="/" class="text-amber-400 hover:text-amber-300 underline font-semibold">Schriftarten Generator</a>.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- RIGHT SIDEBAR COLUMN: 1. Live Preview, 2. Beliebte Stile, 3. Weitere Plattformen -->
+        <div class="space-y-6">
+          <!-- 1. Live Instagram Preview Mockup Widget -->
+          <PlatformPreviewWidget platformId="instagram" />
+
+          <!-- 2. Beliebte Stile für Instagram -->
+          <FontStyleGrid
+            title="Beliebte Stile für Instagram"
+            titleIcon="🎨"
+            isAmberTitle={true}
+          />
+
+          <!-- 3. Weitere Plattformen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-stone-300 mb-4">
+              Weitere Plattformen
+            </h3>
+            <div class="space-y-2">
+              {NAVIGATION_DATA.platforms.items
+                .filter((item) => !item.href.includes('instagram'))
+                .map((other) => (
+                  <a
+                    href={other.href}
+                    class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-amber-500/10 border border-white/5 hover:border-amber-500/30 text-xs font-semibold text-stone-300 hover:text-white transition-all group"
+                  >
+                    <span>{other.icon} {other.title}</span>
+                    <span class="group-hover:translate-x-1 transition-transform text-amber-400">→</span>
+                  </a>
+                ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

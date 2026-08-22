@@ -1,0 +1,421 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TextStyleConverter from '../../components/TextStyleConverter.astro';
+import FontStyleGrid from '../../components/FontStyleGrid.astro';
+import PlatformInteractiveWidgets from '../../components/PlatformInteractiveWidgets.astro';
+import PlatformPreviewWidget from '../../components/PlatformPreviewWidget.astro';
+import { PLATFORMS_DATA } from '../../data/platform-metadata';
+import { PLATFORM_WIDGETS_DATA } from '../../data/platform-widgets';
+import { NAVIGATION_DATA } from '../../data/navigation';
+
+const platformInfo = PLATFORMS_DATA['facebook'] || {
+  id: 'facebook',
+  name: 'Facebook',
+  slug: '/plattform/facebook',
+  icon: '📘',
+  tagline: 'Schöne Facebook Schriftarten für Beiträge, Kommentare und Profiltexte einfach erstellen, kopieren und direkt bei Facebook einfügen.',
+  bioLimit: 101,
+  compatibleStyles: ['Fette Schrift', 'Kursive Schrift', 'Bubble Schrift', 'Gotische Schrift', 'Schreibschrift', 'Dekorativ'],
+  keyFeatures: [
+    'Beitrags-Überschriften in Feeds hervorheben',
+    'Facebook Bio und Steckbrief gestalten',
+    'Gruppen-Ankündigungen auffälliger machen',
+    'Kommentare mit Blickfang-Typografie verfassen',
+  ],
+  tips: [
+    'Fette Sans-Serif Schriften erhöhen die Klickrate bei längeren Textbeiträgen im Facebook-Feed deutlich.',
+    'Formatiere die erste Zeile deines Posts als Headline, um die Aufmerksamkeit beim Scrollen zu sichern.',
+  ],
+};
+
+const facebookFaqs = [
+  {
+    q: 'Kann ich Facebook Schriftarten kostenlos nutzen?',
+    a: 'Ja, ein Online-Unicode-Generator kann kostenlos verwendet werden. Bei Schriftarten.io steht dir das Tool direkt im Browser ohne Anmeldung und ohne Bezahlung zur Verfügung.',
+  },
+  {
+    q: 'Kann ich fette Schrift auf Facebook kopieren?',
+    a: 'Ja, Unicode-Varianten mit fetter Darstellung (Bold Sans oder Bold Serif) lassen sich als Zeichen mit einem Klick kopieren und anschließend in geeignete Facebook-Texte einfügen.',
+  },
+  {
+    q: 'Funktionieren alle Unicode-Schriften auf jedem Gerät?',
+    a: 'Nein, nicht garantiert. Die Darstellung hängt unter anderem davon ab, welche Zeichen vom verwendeten Betriebssystem, Browser oder der App unterstützt werden. Deshalb sind einfache Stile wie Fett oder Kursiv für wichtige Inhalte die sicherste Wahl.',
+  },
+  {
+    q: 'Kann ich meinen Facebook-Namen mit Fancy Fonts schreiben?',
+    a: 'Hier solltest du vorsichtig sein. Ein dekorativer Unicode-Name ist nicht dasselbe wie eine normale Profilnamensangabe. Für wichtige Kontodaten solltest du die jeweils geltenden Facebook-Namensrichtlinien beachten und deinen offiziellen Namen nicht mit Sonderzeichen verändern.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": facebookFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+
+const widgetsConfig = PLATFORM_WIDGETS_DATA['facebook'];
+---
+
+<Layout
+  title="Facebook Schriftarten – Schöne Schrift zum Kopieren & Einfügen"
+  description="Facebook Schriftarten kostenlos erstellen: Fette, kursive, gotische und dekorative Unicode-Schriften für Facebook kopieren und direkt einfügen."
+  canonicalUrl="/plattform/facebook"
+  schema={faqSchema}
+>
+  <main class="py-12 md:py-16 bg-[#0a0a08] platform-theme-facebook" data-platform-theme="facebook">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <a href="/plattform" class="hover:text-white transition-colors">Plattformen</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Facebook</span>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="platform-guide-badge inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1877F2]/10 border border-[#1877F2]/30 text-[#60a5fa] text-xs font-bold uppercase tracking-wider mb-3 transition-all">
+          <span>📘 Facebook Posts &amp; Feed Guide</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <span class="text-[#60a5fa]">Facebook Schriftarten</span> – Schöne Schrift zum Kopieren &amp; Einfügen
+        </h1>
+        <p class="mt-4 text-base text-stone-300 leading-relaxed max-w-2xl mx-auto">
+          Schöne Facebook Schriftarten für Beiträge, Kommentare und Profiltexte einfach erstellen, kopieren und direkt bei Facebook einfügen.
+        </p>
+      </div>
+
+      <!-- Interactive Converter Component -->
+      <TextStyleConverter
+        defaultText="Facebook Post Headline ✨"
+        pageSlug="facebook"
+        filterCategory="alle"
+        showCategoryTabs={true}
+        showPresets={true}
+        maxChars={101}
+        limit={12}
+        showMoreButton={true}
+      />
+
+      <!-- Content Grid: Guidelines, Editorial Article & Sidebar -->
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- LEFT COLUMN (lg:col-span-2): Generator Widgets first, followed by Editorial Content & FAQ -->
+        <div class="lg:col-span-2 space-y-8">
+          
+          <!-- 3 Interactive Generator Widgets (Post-Ideen, Symbol-Kombinationen, Themen-Emoji-Pakete) -->
+          {widgetsConfig && (
+            <PlatformInteractiveWidgets
+              widgetsData={widgetsConfig}
+              platformId="facebook"
+            />
+          )}
+
+          <!-- IMAGE 1: Featured Hero Image -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/facebook-schriftarten-hero.svg"
+              alt="Facebook Schriftarten zum Kopieren und Einfügen"
+              class="w-full h-auto aspect-video object-cover"
+              loading="eager"
+            />
+            <p class="text-xs text-stone-400 p-3 text-center border-t border-white/5 bg-[#0a0a08]">
+              Schöne Unicode-Schriftstile lassen sich direkt kopieren und in Facebook-Texte einfügen.
+            </p>
+          </div>
+
+          <!-- Section 1: Intro -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Normale Facebook-Texte sehen schnell langweilig aus. Besonders bei kurzen Beiträgen, Überschriften oder Profiltexten kann eine auffällige Schreibweise helfen, wichtige Wörter hervorzuheben. Mit <strong>Facebook Schriftarten</strong> kannst du normalen Text in verschiedene Unicode-Stile umwandeln und anschließend kopieren.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Dabei musst du keine Schriftdatei installieren. Stattdessen werden spezielle Unicode-Zeichen erzeugt, die wie fette, kursive oder dekorative Buchstaben aussehen. So kannst du deinen Text direkt in Facebook einfügen. Für lange Texte bleiben einfache Zeichen jedoch meist besser lesbar.
+            </p>
+          </div>
+
+          <!-- Section 2: Facebook Schriftarten kostenlos erstellen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Facebook Schriftarten kostenlos erstellen
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Mit einem Online-Schriftgenerator funktioniert die Umwandlung in wenigen Schritten:
+            </p>
+            <ul class="space-y-3 text-sm sm:text-base text-stone-300 leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#60a5fa] font-bold">1.</span>
+                <span><strong>Text eingeben:</strong> Schreibe einen Namen, eine Überschrift, ein Zitat oder einen kurzen Beitrag.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#60a5fa] font-bold">2.</span>
+                <span><strong>Stil auswählen:</strong> Probiere fette, kursive, gotische, Bubble- oder andere Varianten aus.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#60a5fa] font-bold">3.</span>
+                <span><strong>Text kopieren:</strong> Klicke auf den Kopieren-Button neben deinem gewünschten Ergebnis.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#60a5fa] font-bold">4.</span>
+                <span><strong>Bei Facebook einfügen:</strong> Füge den Text in das passende Facebook-Feld ein.</span>
+              </li>
+            </ul>
+
+            <div class="p-4 rounded-2xl bg-gradient-to-r from-[#1877F2]/15 to-[#60a5fa]/15 border border-[#1877F2]/30 text-center">
+              <a href="/" class="inline-flex items-center gap-2 text-white font-bold hover:text-[#60a5fa] transition-colors">
+                <span>👉 Auf Schriftarten.io stehen zahlreiche Unicode-Stile im Schriftarten Generator bereit</span>
+                <span>→</span>
+              </a>
+            </div>
+
+            <!-- IMAGE 2: Workflow Graphic -->
+            <div class="rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="/images/facebook-schriftarten-generator-workflow.svg"
+                alt="Facebook Schriftarten Generator mit verschiedenen Textstilen"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Text eingeben, Stil auswählen und den gewünschten Unicode-Text kopieren.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 3: Welche Schriftarten eignen sich für Facebook? & Table -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Welche Schriftarten eignen sich für Facebook?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Nicht jeder Stil ist für denselben Zweck geeignet. Deshalb lohnt es sich, nach dem Inhalt auszuwählen.
+            </p>
+
+            <div class="overflow-x-auto rounded-2xl border border-white/10">
+              <table class="w-full text-left text-sm text-stone-300">
+                <thead class="bg-white/5 text-white font-bold border-b border-white/10">
+                  <tr>
+                    <th class="p-3.5">Stil</th>
+                    <th class="p-3.5">Geeignet für</th>
+                    <th class="p-3.5">Beispiel</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/fette-schrift" class="text-[#60a5fa] hover:underline">Fett</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200">Überschriften und wichtige Wörter</td>
+                    <td class="p-3.5 font-mono text-base font-bold text-white">𝗡𝗲𝘂𝗲𝘀 𝗔𝗻𝗴𝗲𝗯𝗼𝘁</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/kursive-schrift" class="text-[#38bdf8] hover:underline">Kursiv</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200">Zitate und kurze Betonungen</td>
+                    <td class="p-3.5 font-mono text-base font-bold text-white">𝘐𝘋𝘦𝘪𝘯 𝘛𝘦𝘹𝘵</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/schreibschrift" class="text-purple-400 hover:underline">Schreibschrift</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200">Persönliche Beiträge</td>
+                    <td class="p-3.5 font-mono text-base font-bold text-white font-serif">𝓗𝓪𝓵𝓵𝓸 𝓕𝓻𝓮𝓾𝓷𝓭𝓮</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/gotische-schrift" class="text-amber-400 hover:underline">Gotisch</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200">Auffällige Namen und kurze Titel</td>
+                    <td class="p-3.5 font-mono text-base font-bold text-white font-serif">𝔐𝔢𝔦𝔫 𝔓𝔯𝔬𝔧𝔢𝔨𝔱</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/bubble-schrift" class="text-pink-400 hover:underline">Bubble</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200">Lockere und kreative Texte</td>
+                    <td class="p-3.5 font-mono text-base font-bold text-white">Ⓗⓐⓛⓛⓞ</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- IMAGE 3: Stile-Vergleich -->
+            <div class="rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="/images/facebook-schriftarten-stile-vergleich.svg"
+                alt="Verschiedene Schriftstile für Facebook-Texte"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Fette, kursive, Schreibschrift- und gotische Stile eignen sich für unterschiedliche Textarten.
+              </p>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              <a href="/schrift/fette-schrift" class="text-[#60a5fa] hover:underline font-semibold">Fette Schrift</a> ist oft die einfachste Wahl. Sie hebt kurze Überschriften hervor, ohne den gesamten Text schwer lesbar zu machen. <a href="/schrift/kursive-schrift" class="text-[#60a5fa] hover:underline font-semibold">Kursiv-</a> und Schreibschrift eignen sich dagegen eher für einzelne Wörter oder kurze Zeilen.
+            </p>
+          </div>
+
+          <!-- Section 4: Was sind Facebook Schriftarten eigentlich? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Was sind Facebook Schriftarten eigentlich?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Der Begriff „Schriftart“ ist bei solchen Generatoren etwas vereinfacht. Eine klassische Schriftart ist normalerweise eine installierbare Font-Datei, etwa im Format TTF oder OTF.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Bei einem Unicode-Generator werden dagegen Zeichen aus dem Unicode-Zeichensatz verwendet. Der <a href="https://www.unicode.org/versions/Unicode16.0.0/UnicodeStandard-16.0.pdf" target="_blank" rel="noopener noreferrer" class="text-[#60a5fa] hover:underline font-semibold">Unicode Standard</a> enthält unter anderem speziell gestaltete mathematische alphanumerische Zeichen, darunter Varianten mit fetter, kursiver oder Sans-Serif-Darstellung.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Deshalb funktioniert das Prinzip anders als bei einer installierten Schrift. Du kopierst nicht eine Font-Datei nach Facebook, sondern kopierst bereits formatähnliche Unicode-Zeichen.
+            </p>
+          </div>
+
+          <!-- Section 5: So nutzt du schöne Schrift bei Facebook -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              So nutzt du schöne Schrift bei Facebook
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für einen Beitrag kann eine kurze formatierte Überschrift sinnvoll sein:
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="p-4 rounded-2xl bg-[#0a0a08] border border-white/5 space-y-1.5">
+                <span class="text-xs font-bold text-stone-400 uppercase tracking-wider">Normal:</span>
+                <p class="text-sm text-stone-300 font-mono">Neues Angebot für diese Woche</p>
+              </div>
+              <div class="p-4 rounded-2xl bg-[#0a0a08] border border-[#1877F2]/30 space-y-1.5 shadow-lg shadow-[#1877F2]/5">
+                <span class="text-xs font-bold text-[#60a5fa] uppercase tracking-wider">Mit Unicode:</span>
+                <p class="text-sm text-white font-bold">𝗡𝗲𝘂𝗲𝘀 𝗔𝗻𝗴𝗲𝗯𝗼𝘁 𝗳ü𝗿 𝗱𝗶𝗲𝘀𝗲 𝗪𝗼𝗰𝗵𝗲</p>
+              </div>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed mt-2">
+              Danach kannst du den restlichen Inhalt in normaler Schrift schreiben. Dadurch bleibt der Beitrag übersichtlich.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Auch Kommentare, kurze Profiltexte oder Gruppentexte können sich für dekorative Unicode-Zeichen eignen. Allerdings solltest du nicht jede Zeile mit einem anderen Stil versehen. Zu viele Effekte machen einen Text schnell unruhig.
+            </p>
+          </div>
+
+          <!-- Section 6: Warum werden manche Zeichen als Kästchen angezeigt? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Warum werden manche Zeichen als Kästchen angezeigt?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Manchmal erscheint anstelle eines besonderen Zeichens ein leeres Rechteck (Tofu-Symbol). Das bedeutet normalerweise, dass die verwendete Schrift des Geräts oder der jeweiligen Anwendung das entsprechende Zeichen nicht darstellen kann.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Daher ist eine kurze Prüfung vor dem Veröffentlichen sinnvoll. Besonders ausgefallene Unicode-Zeichen können problematischer sein als einfache Varianten wie Fett oder Kursiv. Für wichtige Informationen solltest du deshalb möglichst gut lesbare Zeichen verwenden.
+            </p>
+
+            <!-- IMAGE 4: Tofu-Zeichen Infografik -->
+            <div class="rounded-2xl overflow-hidden border border-white/10 mt-4">
+              <img
+                src="/images/facebook-schriftarten-tofu-zeichen.svg"
+                alt="Unicode-Zeichen und fehlende Glyphen als Kästchen"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Fehlende Glyphen können dazu führen, dass einzelne Unicode-Zeichen als Kästchen erscheinen.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 7: Sind Facebook Schriftarten echte Fonts? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Sind Facebook Schriftarten echte Fonts?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Nein. Ein Unicode-Schriftgenerator erzeugt normalerweise keine TTF- oder OTF-Datei. Er verändert vielmehr die verwendeten Zeichen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Das ist ein wichtiger Unterschied: Eine echte Font-Datei wird für ein Designprogramm oder eine Website verwendet. Unicode-Text wird dagegen direkt als Zeichen kopiert und eingefügt.
+            </p>
+          </div>
+
+
+
+          <!-- Section 8: Häufige Fragen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> Häufige Fragen zu Facebook Schriftarten
+            </h2>
+            <div class="space-y-4">
+              {facebookFaqs.map((faq) => (
+                <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
+                  <h3 class="text-sm sm:text-base font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 9: Fazit -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Fazit
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Facebook Schriftarten sind eine einfache Möglichkeit, kurze Texte optisch hervorzuheben. Besonders <a href="/schrift/fette-schrift" class="text-[#60a5fa] hover:underline font-semibold">fette</a>, <a href="/schrift/kursive-schrift" class="text-[#60a5fa] hover:underline font-semibold">kursive</a> und dezente dekorative Stile eignen sich für Überschriften, kurze Aussagen, Kommentare und kreative Profiltexte.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Am besten funktioniert ein zurückhaltender Einsatz: ein passender Stil, kurze Textstellen und normale Schrift für längere Informationen. So bleibt dein Facebook-Text auffällig, ohne unnötig schwer lesbar zu werden.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Entdecke auch unsere Schriftgeneratoren für <a href="/plattform/instagram" class="text-[#60a5fa] hover:underline font-semibold">Instagram Schriftarten</a>, <a href="/plattform/tiktok" class="text-[#60a5fa] hover:underline font-semibold">TikTok Schriftarten</a>, <a href="/plattform/whatsapp" class="text-[#60a5fa] hover:underline font-semibold">WhatsApp Schriftarten</a> und <a href="/plattform/discord" class="text-[#60a5fa] hover:underline font-semibold">Discord Schriftarten</a>.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- RIGHT SIDEBAR COLUMN: 1. Live Preview, 2. Beliebte Stile, 3. Weitere Plattformen -->
+        <div class="space-y-6">
+          <!-- 1. Live Facebook Preview Mockup Widget -->
+          <PlatformPreviewWidget platformId="facebook" />
+
+          <!-- 2. Beliebte Stile für Facebook -->
+          <FontStyleGrid
+            title="Beliebte Stile für Facebook"
+            titleIcon="🎨"
+            isAmberTitle={false}
+          />
+
+          <!-- 3. Weitere Plattformen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-stone-300 mb-4">
+              Weitere Plattformen
+            </h3>
+            <div class="space-y-2">
+              {NAVIGATION_DATA.platforms.items
+                .filter((item) => !item.href.includes('facebook'))
+                .map((other) => (
+                  <a
+                    href={other.href}
+                    class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-[#1877F2]/10 border border-white/5 hover:border-[#1877F2]/30 text-xs font-semibold text-stone-300 hover:text-white transition-all group"
+                  >
+                    <span>{other.icon} {other.title}</span>
+                    <span class="group-hover:translate-x-1 transition-transform text-[#60a5fa]">→</span>
+                  </a>
+                ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

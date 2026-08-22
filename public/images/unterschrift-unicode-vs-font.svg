@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="splitSigBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a14"/>
+      <stop offset="50%" stop-color="#121526"/>
+      <stop offset="100%" stop-color="#060810"/>
+    </linearGradient>
+    <filter id="splitSigShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#splitSigBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="280" cy="300" r="260" fill="#38bdf8" fill-opacity="0.10"/>
+  <circle cx="920" cy="300" r="260" fill="#fbbf24" fill-opacity="0.10"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-160" y="-16" width="320" height="32" rx="16" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">TECHNIK &amp; RECHT</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Unicode-Signatur vs. <tspan fill="#38bdf8">Echte Schriftdatei &amp; QES</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Abgrenzung zwischen dekorativem Textdesign, installierten Schriftarten und rechtsgültiger E-Signatur
+    </text>
+  </g>
+
+  <!-- Split Comparison Layout -->
+  <g transform="translate(80, 160)">
+    
+    <!-- LEFT CARD: Unicode-Signatur (Dekorativer Text) -->
+    <g transform="translate(0, 0)" filter="url(#splitSigShadow)">
+      <rect width="500" height="420" rx="24" fill="#121728" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5"/>
+      
+      <!-- Top Badge -->
+      <rect x="25" y="24" width="240" height="28" rx="14" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="38" y="43" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8">📋 UNICODE-SIGNATUR</text>
+      <text x="475" y="43" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#38bdf8" font-weight="700">Dekorativer Text</text>
+
+      <!-- Mockup Area -->
+      <rect x="25" y="68" width="450" height="150" rx="16" fill="#080c16" stroke="#38bdf8" stroke-opacity="0.2"/>
+      
+      <text x="225" y="125" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-style="italic" font-weight="700" fill="#ffffff">𝓜𝓪𝔁 𝓜𝓾𝓼𝓽𝓮𝓻𝓶𝓪𝓷𝓷</text>
+      <path d="M100,140 Q225,155 350,140" fill="none" stroke="#38bdf8" stroke-width="2"/>
+      <text x="225" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#38bdf8" font-weight="600">✓ Direktes Copy &amp; Paste in E-Mail &amp; Bio</text>
+      <text x="225" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Basiert auf mathematischen &amp; Combining Zeichen</text>
+
+      <!-- Feature List -->
+      <g transform="translate(25, 240)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Eigenschaften &amp; Grenzen:</text>
+        
+        <g transform="translate(0, 15)">
+          <circle cx="8" cy="8" r="5" fill="#38bdf8"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Ideal für E-Mail-Grußformeln &amp; Social Bios</text>
+        </g>
+        <g transform="translate(0, 45)">
+          <circle cx="8" cy="8" r="5" fill="#38bdf8"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Keine Software- oder Font-Installation nötig</text>
+        </g>
+        <g transform="translate(0, 75)">
+          <circle cx="8" cy="8" r="5" fill="#f59e0b"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#fbbf24">⚠️ Keine qualifizierte elektronische Signatur (QES)</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- RIGHT CARD: Echte Font-Datei &amp; eIDAS QES -->
+    <g transform="translate(540, 0)" filter="url(#splitSigShadow)">
+      <rect width="500" height="420" rx="24" fill="#121728" stroke="#fbbf24" stroke-opacity="0.35" stroke-width="1.5"/>
+      
+      <!-- Top Badge -->
+      <rect x="25" y="24" width="240" height="28" rx="14" fill="#fbbf24" fill-opacity="0.15"/>
+      <text x="38" y="43" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fbbf24">📁 FONT-DATEI &amp; QES</text>
+      <text x="475" y="43" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#fbbf24" font-weight="700">Rechtsgültig / Vektor</text>
+
+      <!-- Mockup Area -->
+      <rect x="25" y="68" width="450" height="150" rx="16" fill="#080c16" stroke="#fbbf24" stroke-opacity="0.2"/>
+      
+      <text x="225" y="125" text-anchor="middle" font-family="Times New Roman, serif" font-size="28" font-weight="700" fill="#fbbf24">Max Mustermann</text>
+      <text x="225" y="158" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#22c55e" font-weight="700">🔒 Zertifiziert nach EU eIDAS-Verordnung</text>
+      <text x="225" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Kryptografischer Nachweis der Identität</text>
+
+      <!-- Feature List -->
+      <g transform="translate(25, 240)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Eigenschaften &amp; Rechtswirkung:</text>
+        
+        <g transform="translate(0, 15)">
+          <circle cx="8" cy="8" r="5" fill="#fbbf24"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Font-Dateien für Vektorgrafiken &amp; InDesign</text>
+        </g>
+        <g transform="translate(0, 45)">
+          <circle cx="8" cy="8" r="5" fill="#fbbf24"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">QES ersetzt gesetzlich die handschriftliche Unterschrift</text>
+        </g>
+        <g transform="translate(0, 75)">
+          <circle cx="8" cy="8" r="5" fill="#22c55e"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#4ade80">✓ Für rechtsverbindliche Verträge &amp; Behörden</text>
+        </g>
+      </g>
+    </g>
+
+  </g>
+</svg>

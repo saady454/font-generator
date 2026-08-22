@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gameGenHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08071a"/>
+      <stop offset="50%" stop-color="#120d2b"/>
+      <stop offset="100%" stop-color="#050312"/>
+    </linearGradient>
+    <linearGradient id="gameGenHeroGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="35%" stop-color="#a855f7"/>
+      <stop offset="70%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <filter id="gameGenHeroShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#000000" flood-opacity="0.85"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#gameGenHeroBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#ec4899" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#3b82f6" fill-opacity="0.08"/>
+
+  <!-- Top Badge -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-210" y="-16" width="420" height="32" rx="16" fill="#1e293b" stroke="#a855f7" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#a855f7" letter-spacing="2">🎮 GAMING NICKNAME GENERATOR</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Kreative Gaming-Namen für <tspan fill="url(#gameGenHeroGrad)">Fortnite, Minecraft &amp; Co.</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Finde coole Gamertags, Clannamen und Symbole direkt zum Kopieren
+    </text>
+  </g>
+
+  <!-- Main Showcase Container -->
+  <g transform="translate(90, 145)" filter="url(#gameGenHeroShadow)">
+    <rect width="1020" height="465" rx="22" fill="#111827" stroke="#a855f7" stroke-opacity="0.3" stroke-width="1.5"/>
+
+    <!-- 6 Game Nickname Cards Grid -->
+    <g transform="translate(25, 25)">
+      
+      <!-- 1. Fortnite Card -->
+      <g transform="translate(0, 0)">
+        <rect width="305" height="195" rx="16" fill="#161f30" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+        <g transform="translate(20, 18)">
+          <rect width="90" height="24" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+          <text x="45" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#38bdf8">FORTNITE</text>
+          
+          <rect y="35" width="265" height="70" rx="10" fill="#080d1a" stroke="#ffffff" stroke-opacity="0.05"/>
+          <text x="15" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#94a3b8">PRO &amp; CLAN TAGS:</text>
+          <text x="15" y="55" font-family="system-ui, sans-serif" font-size="17" font-weight="bold" fill="#ffffff">꧁ঔৣ☬V̶i̶p̶e̶r̶☬ঔৣ꧂</text>
+          
+          <text x="0" y="125" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Stil: Clean &amp; auffällige Flügelsymbole</text>
+        </g>
+      </g>
+
+      <!-- 2. Minecraft Card -->
+      <g transform="translate(332, 0)">
+        <rect width="305" height="195" rx="16" fill="#161f30" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+        <g transform="translate(20, 18)">
+          <rect width="105" height="24" rx="6" fill="#22c55e" fill-opacity="0.15"/>
+          <text x="52" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#22c55e">MINECRAFT</text>
+          
+          <rect y="35" width="265" height="70" rx="10" fill="#080d1a" stroke="#ffffff" stroke-opacity="0.05"/>
+          <text x="15" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#94a3b8">FANTASY &amp; SERVER:</text>
+          <text x="15" y="55" font-family="system-ui, sans-serif" font-size="17" font-weight="bold" fill="#ffffff">★ sʜᴀᴅᴏᴡ_ᴋɴɪɢʜᴛ ★</text>
+          
+          <text x="0" y="125" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Stil: Small Caps &amp; Stern-Akzente</text>
+        </g>
+      </g>
+
+      <!-- 3. Valorant Card -->
+      <g transform="translate(665, 0)">
+        <rect width="305" height="195" rx="16" fill="#161f30" stroke="#f43f5e" stroke-opacity="0.4" stroke-width="1.5"/>
+        <g transform="translate(20, 18)">
+          <rect width="90" height="24" rx="6" fill="#f43f5e" fill-opacity="0.15"/>
+          <text x="45" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#f43f5e">VALORANT</text>
+          
+          <rect y="35" width="265" height="70" rx="10" fill="#080d1a" stroke="#ffffff" stroke-opacity="0.05"/>
+          <text x="15" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#94a3b8">KOMPETITIV &amp; MODERN:</text>
+          <text x="15" y="55" font-family="system-ui, sans-serif" font-size="17" font-weight="bold" fill="#ffffff">𝕻𝖍𝖔𝖊𝖓𝖎𝖝#𝕰𝖀𝖂</text>
+          
+          <text x="0" y="125" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Stil: Kurze Fraktur &amp; Riot Tag</text>
+        </g>
+      </g>
+
+      <!-- 4. CS2 Card -->
+      <g transform="translate(0, 220)">
+        <rect width="305" height="195" rx="16" fill="#161f30" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.5"/>
+        <g transform="translate(20, 18)">
+          <rect width="110" height="24" rx="6" fill="#f59e0b" fill-opacity="0.15"/>
+          <text x="55" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#f59e0b">CS2 / STEAM</text>
+          
+          <rect y="35" width="265" height="70" rx="10" fill="#080d1a" stroke="#ffffff" stroke-opacity="0.05"/>
+          <text x="15" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#94a3b8">TACTICAL &amp; CLAN:</text>
+          <text x="15" y="55" font-family="system-ui, sans-serif" font-size="17" font-weight="bold" fill="#ffffff">[🄲🄻🄰🄽] 𝕬𝖎𝖒𝕭𝖔𝖙</text>
+          
+          <text x="0" y="125" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Stil: Eckige Zeichen für Clantags</text>
+        </g>
+      </g>
+
+      <!-- 5. Roblox Card -->
+      <g transform="translate(332, 220)">
+        <rect width="305" height="195" rx="16" fill="#161f30" stroke="#e11d48" stroke-opacity="0.4" stroke-width="1.5"/>
+        <g transform="translate(20, 18)">
+          <rect width="80" height="24" rx="6" fill="#e11d48" fill-opacity="0.15"/>
+          <text x="40" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#e11d48">ROBLOX</text>
+          
+          <rect y="35" width="265" height="70" rx="10" fill="#080d1a" stroke="#ffffff" stroke-opacity="0.05"/>
+          <text x="15" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#94a3b8">AESTHETIC &amp; FUNNY:</text>
+          <text x="15" y="55" font-family="system-ui, sans-serif" font-size="17" font-weight="bold" fill="#ffffff">❤ Ⓟⓡⓘⓝⓒⓔⓢⓢ ❤</text>
+          
+          <text x="0" y="125" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Stil: Bubble-Font &amp; Herz-Symbole</text>
+        </g>
+      </g>
+
+      <!-- 6. Free Fire Card -->
+      <g transform="translate(665, 220)">
+        <rect width="305" height="195" rx="16" fill="#161f30" stroke="#818cf8" stroke-opacity="0.4" stroke-width="1.5"/>
+        <g transform="translate(20, 18)">
+          <rect width="130" height="24" rx="6" fill="#818cf8" fill-opacity="0.15"/>
+          <text x="65" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#818cf8">FREE FIRE</text>
+          
+          <rect y="35" width="265" height="70" rx="10" fill="#080d1a" stroke="#ffffff" stroke-opacity="0.05"/>
+          <text x="15" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#94a3b8">MOBILE &amp; SYMBOLE:</text>
+          <text x="15" y="55" font-family="system-ui, sans-serif" font-size="17" font-weight="bold" fill="#ffffff">⚡ 𝕯𝖆𝖗𝖐_𝕱𝖎𝖗𝖊 ⚡</text>
+          
+          <text x="0" y="125" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Stil: Blitz-Symbole &amp; Fraktur</text>
+        </g>
+      </g>
+
+    </g>
+
+  </g>
+</svg>

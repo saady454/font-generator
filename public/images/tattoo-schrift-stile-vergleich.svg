@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="compBgTattoo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a10"/>
+      <stop offset="50%" stop-color="#12121e"/>
+      <stop offset="100%" stop-color="#08080d"/>
+    </linearGradient>
+    <filter id="tileShadowTattoo" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#compBgTattoo)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="200" cy="160" r="220" fill="#f59e0b" fill-opacity="0.08"/>
+  <circle cx="1000" cy="480" r="240" fill="#d97706" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-160" y="-16" width="320" height="32" rx="16" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fbbf24" letter-spacing="2">TYPOGRAFIE-STILVERGLEICH</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Die 5 wichtigsten <tspan fill="#fbbf24">Tattoo-Schriftstile</tspan> im Vergleich
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Dasselbe Wort „FOREVER“ in fünf unterschiedlichen typografischen Ausprägungen
+    </text>
+  </g>
+
+  <!-- 5 Vertical Specimen Cards -->
+  <g transform="translate(50, 155)">
+    
+    <!-- Card 1: Schreibschrift -->
+    <g transform="translate(0, 0)" filter="url(#tileShadowTattoo)">
+      <rect width="205" height="440" rx="18" fill="#12121c" stroke="#f59e0b" stroke-opacity="0.3" stroke-width="1.5"/>
+      <rect x="15" y="18" width="120" height="24" rx="6" fill="#f59e0b" fill-opacity="0.15"/>
+      <text x="75" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#fbbf24">SCHREIBSCHRIFT</text>
+
+      <rect x="15" y="55" width="175" height="150" rx="12" fill="#090910" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="102" y="145" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-style="italic" font-weight="700" fill="#fbbf24">𝐹𝑜𝓇𝑒𝓋𝑒𝓇</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Persönlich &amp; weich</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Namen, kurze Zitate</text>
+      </g>
+
+      <rect x="15" y="355" width="175" height="60" rx="10" fill="#181826"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#fbbf24">Filigran &amp; Zeitlos</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Beliebt am Unterarm</text>
+    </g>
+
+    <!-- Card 2: Kalligrafie -->
+    <g transform="translate(225, 0)" filter="url(#tileShadowTattoo)">
+      <rect width="205" height="440" rx="18" fill="#12121c" stroke="#d97706" stroke-opacity="0.3" stroke-width="1.5"/>
+      <rect x="15" y="18" width="105" height="24" rx="6" fill="#d97706" fill-opacity="0.15"/>
+      <text x="67" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#f59e0b">KALLIGRAFIE</text>
+
+      <rect x="15" y="55" width="175" height="150" rx="12" fill="#090910" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="102" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="800" fill="#f59e0b">𝓕𝓸𝓻𝓮𝓿𝓮𝓻</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Elegant &amp; dekorativ</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f59e0b">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Initialen, Sprüche</text>
+      </g>
+
+      <rect x="15" y="355" width="175" height="60" rx="10" fill="#181826"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#f59e0b">Schwungvoll</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Kunstvolle Serifen</text>
+    </g>
+
+    <!-- Card 3: Gothic / Blackletter -->
+    <g transform="translate(450, 0)" filter="url(#tileShadowTattoo)">
+      <rect width="205" height="440" rx="18" fill="#12121c" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1.5"/>
+      <rect x="15" y="18" width="125" height="24" rx="6" fill="#ffffff" fill-opacity="0.1"/>
+      <text x="77" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#ffffff">GOTHIC / BLACK</text>
+
+      <rect x="15" y="55" width="175" height="150" rx="12" fill="#090910" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="102" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="900" fill="#ffffff">𝕱𝖔𝖗𝖊𝖛𝖊𝖗</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Stark &amp; markant</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Kurze Wörter, Brust</text>
+      </g>
+
+      <rect x="15" y="355" width="175" height="60" rx="10" fill="#181826"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Klassisch &amp; Ernst</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Mittelalterlicher Look</text>
+    </g>
+
+    <!-- Card 4: Serifenschrift -->
+    <g transform="translate(675, 0)" filter="url(#tileShadowTattoo)">
+      <rect width="205" height="440" rx="18" fill="#12121c" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+      <rect x="15" y="18" width="115" height="24" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="72" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#38bdf8">SERIFENSCHRIFT</text>
+
+      <rect x="15" y="55" width="175" height="150" rx="12" fill="#090910" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="102" y="145" text-anchor="middle" font-family="Times New Roman, serif" font-size="28" font-weight="700" fill="#38bdf8">FOREVER</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Klassisch &amp; ruhig</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Namen, Daten (Römisch)</text>
+      </g>
+
+      <rect x="15" y="355" width="175" height="60" rx="10" fill="#181826"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#38bdf8">Maximale Klarheit</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Perfekt für Zahlen</text>
+    </g>
+
+    <!-- Card 5: Handschrift -->
+    <g transform="translate(900, 0)" filter="url(#tileShadowTattoo)">
+      <rect width="195" height="440" rx="18" fill="#12121c" stroke="#ec4899" stroke-opacity="0.3" stroke-width="1.5"/>
+      <rect x="15" y="18" width="105" height="24" rx="6" fill="#ec4899" fill-opacity="0.15"/>
+      <text x="67" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#f472b6">HANDSCHRIFT</text>
+
+      <rect x="15" y="55" width="165" height="150" rx="12" fill="#090910" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="97" y="145" text-anchor="middle" font-family="Comic Sans MS, cursive, sans-serif" font-size="24" font-weight="700" fill="#f472b6">Forever</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Individuell &amp; intim</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f472b6">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Echte Handschriften</text>
+      </g>
+
+      <rect x="15" y="355" width="165" height="60" rx="10" fill="#181826"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#f472b6">Persönlichstes Motiv</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Unikate Vorlagen</text>
+    </g>
+
+  </g>
+</svg>

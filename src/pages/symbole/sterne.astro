@@ -1,54 +1,104 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import GradientMeshBackground from '../../components/GradientMeshBackground.astro';
+import FontStyleGrid from '../../components/FontStyleGrid.astro';
 import { STAR_CATEGORIES, STAR_SYMBOLS_DATA } from '../../data/star-symbols';
 import { NAVIGATION_DATA } from '../../data/navigation';
 
 const totalCount = STAR_SYMBOLS_DATA.length;
+
+const starFaqs = [
+  {
+    q: 'Wie kann ich ein Sternsymbol kopieren?',
+    a: 'Wähle ein Zeichen aus der Liste aus, klicke darauf oder markiere es und kopiere es mit Strg+C (bzw. Tippen auf den Kopieren-Button) und füge es anschließend mit Strg+V ein.',
+  },
+  {
+    q: 'Was ist der Unterschied zwischen ★ und ⭐?',
+    a: '★ ist ein Unicode-Textzeichen namens BLACK STAR, das sich an Schriftgröße und Farbe anpasst. ⭐ ist ein Unicode-Zeichen für einen Stern (WHITE MEDIUM STAR), das typischerweise als farbiges Emoji des Betriebssystems dargestellt wird.',
+  },
+  {
+    q: 'Welches Sternsymbol ist am besten für einen Namen?',
+    a: 'Für einen klaren Nickname sind ★, ☆, ✦ oder ✩ gute Ausgangspunkte. Teste das Ergebnis trotzdem in der jeweiligen App, bevor du den Namen dauerhaft verwendest.',
+  },
+  {
+    q: 'Wo finde ich Sterne Symbole zum Kopieren?',
+    a: 'Auf dieser Seite findest du einfache, dekorative und emojiartige Sterne. Wähle einfach eine Variante aus und kopiere sie direkt in deinen gewünschten Text.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": starFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+
+const starTableData = [
+  { char: '★', name: 'Schwarzer Stern', suitableFor: 'Namen, Überschriften, Bewertungen' },
+  { char: '☆', name: 'Weißer Stern', suitableFor: 'dezente Texte und Profile' },
+  { char: '✦', name: 'Vierzackiger Stern', suitableFor: 'Dekoration und Bios' },
+  { char: '✧', name: 'Weißer vierzackiger Stern', suitableFor: 'leichte, elegante Designs' },
+  { char: '✩', name: 'Umrandeter Stern', suitableFor: 'Namen und Textdekoration' },
+  { char: '✪', name: 'Stern im Kreis', suitableFor: 'besondere Hervorhebung' },
+  { char: '✮', name: 'Dekorativer Stern', suitableFor: 'Nicknames und Profile' },
+  { char: '✯', name: 'Stern mit Umrandung', suitableFor: 'kreative Texte' },
+  { char: '✰', name: 'Weißer dekorativer Stern', suitableFor: 'ästhetische Designs' },
+  { char: '⋆', name: 'Kleiner Stern', suitableFor: 'Trennzeichen und Verzierungen' },
+  { char: '⭑', name: 'Kleiner schwarzer Stern', suitableFor: 'kurze Akzente' },
+  { char: '⭒', name: 'Kleiner weißer Stern', suitableFor: 'dezente Dekoration' },
+];
 ---
 
 <Layout
-  title="Sterne Symbole zum Kopieren – ★ ☆ ✦ ✨ Sternchen & Rating"
-  description={`Kopiere über ${totalCount} echte Stern-Symbole, funkelnde Emojis, Bewertungssterne (★★★★★) und Astrologie-Zeichen mit 1 Klick. Perfekt für Instagram, TikTok & Discord.`}
-  canonicalUrl="/symbole/sterne"
+  title="Sterne Symbole zum Kopieren ★ ☆ ✦ ✧ ⭐ – Copy & Paste"
+  description="Sterne Symbole zum Kopieren: ★ ☆ ✦ ✧ ⭐ und viele weitere Sternzeichen. Einfach auswählen, kopieren und für Namen, Bios, Chats und Texte nutzen."
+  canonicalUrl="/symbole/sterne/"
+  schema={faqSchema}
 >
-  <main class="relative bg-[#0F1220] min-h-screen py-12 md:py-16 overflow-hidden homepage-mesh-wrapper">
+  <main class="relative bg-[#0F1220] min-h-screen py-12 md:py-16 overflow-hidden homepage-mesh-wrapper text-white">
     <!-- Celestial Stars Themed Gradient Mesh Layer -->
     <GradientMeshBackground variant="stars" />
 
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
-      <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
-        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Breadcrumb Navigation -->
+      <nav class="flex items-center gap-2 text-xs sm:text-sm text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Home</a>
         <span>/</span>
-        <a href="/symbole" class="hover:text-white transition-colors">Symbole</a>
+        <a href="/symbole" class="hover:text-amber-400 transition-colors">Symbole</a>
         <span>/</span>
-        <span class="text-stone-300 font-semibold">Sterne & Funkeln</span>
+        <span class="text-stone-200">Sterne Symbole</span>
       </nav>
 
-      <!-- Page Header -->
-      <div class="text-center max-w-3xl mx-auto mb-10">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
-          <span>★ 1-Klick Kopieren</span>
+      <!-- Page Header & H1 -->
+      <div class="text-center max-w-4xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-4">
+          <span>★</span> 1-Klick Kopieren &bull; {totalCount} Sternzeichen &bull; Unicode &bull; Emojis
         </div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-          Sterne Symbole zum Kopieren
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
+          Sterne Symbole zum Kopieren ★ ☆ ✦ ✧ ✩ ⭐ 🌟
         </h1>
-        <p class="mt-4 text-base text-stone-300 leading-relaxed max-w-2xl mx-auto">
-          Kopiere funkelnde Sterne, magische Sternchen, Bewertungssterne und Astronomie-Symbole mit nur einem Klick. Perfekt für deine Instagram Bio, Gaming-Nicknames und Bewertungen.
+        <p class="text-base sm:text-lg text-stone-300 max-w-2xl mx-auto">
+          ★ ☆ ✦ ✧ ⭐ Schöne Sternsymbole direkt kopieren und für Namen, Bios, WhatsApp, Instagram und Texte verwenden.
         </p>
       </div>
 
-      <!-- Filterable Star Symbols Library -->
-      <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-xl">
+      <!-- Filterable Interactive Star Symbols Library -->
+      <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl mb-16">
         <!-- Section Header with Dynamic Counter -->
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-white/5">
           <div>
             <h2 class="text-xl font-bold text-white flex items-center gap-2">
-              <span>★</span> Stern-Symbole & Sternchen Bibliothek
+              <span>★</span> Stern-Symbole &amp; Sternchen Bibliothek
             </h2>
             <p class="text-xs text-stone-400 mt-1">
-              Wähle eine Kategorie, um die Symbole zu filtern, oder klicke direkt auf eine Karte zum Kopieren:
+              Wähle eine Kategorie, um die Symbole zu filtern, oder klicke direkt auf ein Symbol zum Kopieren:
             </p>
           </div>
           <span
@@ -78,10 +128,10 @@ const totalCount = STAR_SYMBOLS_DATA.length;
         </div>
 
         <!-- Symbol Cards Grid -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5" id="stars-library-grid">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5" id="stars-library-grid">
           {STAR_SYMBOLS_DATA.map((sym) => (
             <div
-              class="star-card p-4 rounded-2xl bg-[#0a0a08] border border-white/5 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all flex flex-col items-center justify-between gap-3 group text-center"
+              class="star-card p-4 rounded-2xl bg-[#0a0a08] border border-white/5 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all flex flex-col items-center justify-between gap-3 group text-center cursor-pointer"
               data-char={sym.char}
               data-category={sym.category}
             >
@@ -98,123 +148,421 @@ const totalCount = STAR_SYMBOLS_DATA.length;
               <!-- Kopieren Button -->
               <button
                 type="button"
-                class="btn-copy-star-card w-full py-1.5 px-2 rounded-lg bg-white/5 group-hover:bg-amber-500/20 group-hover:text-amber-300 border border-white/10 group-hover:border-amber-500/40 text-xs font-bold text-stone-300 transition-all"
-                data-char={sym.char}
-                title={`"${sym.char}" kopieren`}
+                class="btn-copy-star w-full py-1.5 px-3 rounded-lg bg-white/5 hover:bg-amber-500 hover:text-black border border-white/10 hover:border-amber-500 text-xs font-semibold text-stone-300 transition-all flex items-center justify-center gap-1"
+                aria-label={`Kopiere ${sym.germanLabel}`}
               >
-                Kopieren
+                <span>Kopieren</span>
               </button>
             </div>
           ))}
         </div>
       </div>
 
-      <!-- Cross Links to other Symbol categories & Silos -->
-      <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {NAVIGATION_DATA.symbols.items
-          .filter((item) => !item.href.includes('sterne'))
-          .map((other) => (
-            <a
-              href={other.href}
-              class="p-5 rounded-2xl bg-[#141412] border border-white/10 hover:border-amber-500/30 transition-all block group"
-            >
-              <div class="text-base font-bold text-white group-hover:text-amber-400 flex items-center justify-between">
-                <span>{other.icon} {other.title}</span>
-                <span>→</span>
+      <!-- Content Grid: Left Column (Editorial Article) & Right Sidebar -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- LEFT COLUMN (lg:col-span-2): Editorial Article Content -->
+        <div class="lg:col-span-2 space-y-8">
+
+          <!-- IMAGE 1: Featured Hero Image -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/sterne-symbole-hero.svg"
+              alt="Sterne Symbole zum Kopieren wie ★ ☆ ✦ und ⭐"
+              class="w-full h-auto aspect-video object-cover"
+              loading="eager"
+            />
+            <p class="text-xs text-stone-400 p-3 text-center border-t border-white/5 bg-[#0a0a08]">
+              Beliebte Sternsymbole zum Kopieren und Einfügen.
+            </p>
+          </div>
+
+          <!-- Section 1: Intro -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Wenn du <strong>Sterne Symbole zum Kopieren</strong> suchst, möchtest du meistens nicht lange nach passenden Zeichen suchen. Du willst ein schönes Symbol auswählen, sofort kopieren und in WhatsApp, Instagram, Discord, Profilnamen, Nachrichten oder einen Text einfügen. Besonders praktisch sind klassische Zeichen wie ★ und ☆, aber auch dekorative Sterne und Stern-Emojis.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein Emoji wie ⭐ ist außerdem etwas anderes als ein Unicode-Textzeichen wie ★. Deshalb findest du hier eine übersichtliche Auswahl, kurze Erklärungen und fertige Kombinationen.
+            </p>
+          </div>
+
+          <!-- Section 2: Sterne Symbole zum Kopieren (Table of 12) -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Sterne Symbole zum Kopieren
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Klicke beziehungsweise markiere das gewünschte Zeichen und kopiere es. Die wichtigsten Varianten sind:
+            </p>
+
+            <!-- Table of 12 Star Symbols -->
+            <div class="overflow-x-auto my-4 border border-white/10 rounded-2xl">
+              <table class="w-full text-left text-sm text-stone-300">
+                <thead class="bg-white/5 text-xs uppercase text-stone-400">
+                  <tr>
+                    <th scope="col" class="px-4 py-3">Symbol</th>
+                    <th scope="col" class="px-4 py-3">Bezeichnung</th>
+                    <th scope="col" class="px-4 py-3">Geeignet für</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                  {starTableData.map((item) => (
+                    <tr class="hover:bg-white/5">
+                      <td class="px-4 py-3 font-mono text-xl font-bold text-amber-400">{item.char}</td>
+                      <td class="px-4 py-3 font-semibold text-white">{item.name}</td>
+                      <td class="px-4 py-3 text-stone-300">{item.suitableFor}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
+              ★ und ☆ sind im Unicode-Standard als <code>BLACK STAR</code> und <code>WHITE STAR</code> definiert. Damit hast du die wichtigsten Sterne Symbole zum Kopieren schnell zur Hand. Für einen einfachen Namen reichen oft schon ★ oder ☆.
+            </p>
+          </div>
+
+          <!-- IMAGE 2: Vergleichstabelle Visual -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/sterne-symbole-vergleich-tabelle.svg"
+              alt="Verschiedene Sternsymbole und Sternzeichen zum Kopieren"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Klassische und dekorative Sterne im direkten Vergleich.
+            </p>
+          </div>
+
+          <!-- Section 3: Schöne Stern-Kombinationen zum Kopieren -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Schöne Stern-Kombinationen zum Kopieren
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein einzelner Stern reicht nicht immer. Für Bios, Namen oder Überschriften können Kombinationen interessanter aussehen. Zum Beispiel:
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-center justify-between group">
+                <span class="font-mono text-sm font-bold text-white">★彡 Dein Name 彡★</span>
+                <button class="btn-copy-inline px-2.5 py-1 bg-white/5 group-hover:bg-amber-500 group-hover:text-black rounded-lg text-xs font-semibold text-stone-300 transition-colors" data-copy="★彡 Dein Name 彡★">Kopieren</button>
               </div>
-              <div class="text-xs text-stone-400 mt-1">{other.description}</div>
-            </a>
-          ))}
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-center justify-between group">
+                <span class="font-mono text-sm font-bold text-white">☆ Dein Name ☆</span>
+                <button class="btn-copy-inline px-2.5 py-1 bg-white/5 group-hover:bg-amber-500 group-hover:text-black rounded-lg text-xs font-semibold text-stone-300 transition-colors" data-copy="☆ Dein Name ☆">Kopieren</button>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-center justify-between group">
+                <span class="font-mono text-sm font-bold text-white">✦ Dein Name ✦</span>
+                <button class="btn-copy-inline px-2.5 py-1 bg-white/5 group-hover:bg-amber-500 group-hover:text-black rounded-lg text-xs font-semibold text-stone-300 transition-colors" data-copy="✦ Dein Name ✦">Kopieren</button>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-center justify-between group">
+                <span class="font-mono text-sm font-bold text-white">⋆｡°✩ Dein Text ✩°｡⋆</span>
+                <button class="btn-copy-inline px-2.5 py-1 bg-white/5 group-hover:bg-amber-500 group-hover:text-black rounded-lg text-xs font-semibold text-stone-300 transition-colors" data-copy="⋆｡°✩ Dein Text ✩°｡⋆">Kopieren</button>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-center justify-between group sm:col-span-2">
+                <span class="font-mono text-xs sm:text-sm font-bold text-white">✧･ﾟ: ✧･ﾟ: Dein Text :･ﾟ✧:･ﾟ✧</span>
+                <button class="btn-copy-inline px-2.5 py-1 bg-white/5 group-hover:bg-amber-500 group-hover:text-black rounded-lg text-xs font-semibold text-stone-300 transition-colors" data-copy="✧･ﾟ: ✧･ﾟ: Dein Text :･ﾟ✧:･ﾟ✧">Kopieren</button>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-center justify-between group">
+                <span class="font-mono text-sm font-bold text-amber-400">★★★★★</span>
+                <button class="btn-copy-inline px-2.5 py-1 bg-white/5 group-hover:bg-amber-500 group-hover:text-black rounded-lg text-xs font-semibold text-stone-300 transition-colors" data-copy="★★★★★">Kopieren</button>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-center justify-between group">
+                <span class="font-mono text-sm font-bold text-white">✩₊˚.⋆☾⋆⁺₊✧</span>
+                <button class="btn-copy-inline px-2.5 py-1 bg-white/5 group-hover:bg-amber-500 group-hover:text-black rounded-lg text-xs font-semibold text-stone-300 transition-colors" data-copy="✩₊˚.⋆☾⋆⁺₊✧">Kopieren</button>
+              </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-stone-400 leading-relaxed pt-2">
+              Bei dekorativen Kombinationen solltest du allerdings prüfen, ob die Zielplattform alle Zeichen korrekt darstellt. Wenn ein Zeichen fehlt, kann stattdessen ein leeres Kästchen erscheinen.
+            </p>
+          </div>
+
+          <!-- Section 4: Stern Emoji oder Stern Symbol? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Stern Emoji oder Stern Symbol?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              ⭐ und 🌟 sehen wie Sterne aus, funktionieren aber anders als reine Textzeichen. Unicode führt ⭐ als <code>WHITE MEDIUM STAR</code> und 🌟 als <code>GLOWING STAR</code>.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein Stern-Emoji wird häufig in einer eigenen Emoji-Darstellung angezeigt. Deshalb kann sein Aussehen je nach Gerät oder Betriebssystem variieren. Textzeichen wie ★ oder ☆ werden dagegen mit einer Schriftart dargestellt.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für einen schlichten Namen ist ★ oder ☆ oft die bessere Wahl. Für einen auffälligeren Social-Media-Text passen dagegen ⭐ oder 🌟.
+            </p>
+          </div>
+
+          <!-- Section 5: Welche Sterne eignen sich für Namen und Bios? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Welche Sterne eignen sich für Namen und Bios?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für Nicknames und Profile sind einfache Zeichen meist am praktischsten. Sie lassen sich leichter lesen und wirken weniger überladen.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-4 space-y-2">
+                <span class="text-xs font-bold text-amber-400 uppercase tracking-wider block">Minimalistischer Stil</span>
+                <div class="text-xs text-stone-300 space-y-1 font-mono">
+                  <p>★ Name</p>
+                  <p>Name ☆</p>
+                  <p>★ Name ★</p>
+                </div>
+              </div>
+
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-4 space-y-2">
+                <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider block">Dekorativer Stil</span>
+                <div class="text-xs text-stone-300 space-y-1 font-mono">
+                  <p>✦ Name ✦</p>
+                  <p>✩ Name ✩</p>
+                  <p>⋆ Name ⋆</p>
+                </div>
+              </div>
+
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-4 space-y-2">
+                <span class="text-xs font-bold text-pink-400 uppercase tracking-wider block">Verspielter Stil</span>
+                <div class="text-xs text-stone-300 space-y-1 font-mono">
+                  <p>⭐ Name ⭐</p>
+                  <p>🌟 Name 🌟</p>
+                  <p>✨ Name ✨</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed pt-2">
+              Verwende nicht zu viele Symbole auf einmal. Ein oder zwei Sterne reichen oft, damit der Name auffällt, ohne schwer lesbar zu werden.
+            </p>
+          </div>
+
+          <!-- IMAGE 3: Bio & Social Media Visual -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/sterne-symbole-bio-social-media.svg"
+              alt="Sternsymbole für Namen und Social-Media-Bios"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Einfache Sternkombinationen können Namen und Bios hervorheben.
+            </p>
+          </div>
+
+          <!-- Section 6: Sterne für Bewertungen und Texte -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Sterne für Bewertungen und Texte
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Sterne werden auch für Bewertungen und einfache visuelle Markierungen genutzt. Klassische Beispiele sind:
+            </p>
+            
+            <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-4 font-mono text-sm space-y-2 max-w-sm">
+              <div class="flex justify-between items-center"><span class="text-amber-400 font-bold">★★★★★</span> <span class="text-xs text-stone-400">5 von 5 Sternen</span></div>
+              <div class="flex justify-between items-center"><span class="text-amber-400 font-bold">★★★★☆</span> <span class="text-xs text-stone-400">4 von 5 Sternen</span></div>
+              <div class="flex justify-between items-center"><span class="text-amber-400 font-bold">★★★☆☆</span> <span class="text-xs text-stone-400">3 von 5 Sternen</span></div>
+              <div class="flex justify-between items-center"><span class="text-amber-400 font-bold">★★☆☆☆</span> <span class="text-xs text-stone-400">2 von 5 Sternen</span></div>
+              <div class="flex justify-between items-center"><span class="text-amber-400 font-bold">★☆☆☆☆</span> <span class="text-xs text-stone-400">1 von 5 Sternen</span></div>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed pt-2">
+              Sterne eignen sich außerdem als Trennzeichen oder dekoratives Element in einer Überschrift. Für längere Inhalte sollte die Dekoration sparsam bleiben.
+            </p>
+          </div>
+
+          <!-- Section 7: Warum werden manche Sterne nicht richtig angezeigt? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Warum werden manche Sterne nicht richtig angezeigt?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Unicode enthält viele verschiedene Sternzeichen. Das verwendete Gerät, Programm oder die Schriftart muss das jeweilige Zeichen aber darstellen können. Der <a href="https://www.unicode.org/charts/nameslist/n_2600.html" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 underline font-semibold">offizielle Unicode-Standard für Sternzeichen</a> listet beispielsweise zahlreiche unterschiedliche Sternformen in verschiedenen Zeichenblöcken.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Wenn statt des gewünschten Sterns ein Quadrat erscheint, probiere zuerst ein einfacheres Zeichen wie ★, ☆ oder ✦. Danach kannst du prüfen, ob die ausgefallenere Variante unterstützt wird. Gerade bei Profilnamen und Chats lohnt sich ein kurzer Test vor dem Speichern.
+            </p>
+          </div>
+
+          <!-- IMAGE 4: Text vs Emoji -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/sterne-symbole-text-vs-emoji.svg"
+              alt="Unterschied zwischen Sternsymbolen und Stern-Emojis"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Textzeichen und Stern-Emojis können unterschiedlich dargestellt werden.
+            </p>
+          </div>
+
+          <!-- Section 8: Häufige Fragen zu Sternsymbolen (FAQs) -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> Häufige Fragen zu Sternsymbolen
+            </h2>
+            <div class="space-y-4">
+              {starFaqs.map((faq) => (
+                <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
+                  <h3 class="text-sm sm:text-base font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 9: Fazit -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Fazit
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Sterne Symbole zum Kopieren sind eine einfache Möglichkeit, Namen, Bios, Nachrichten und Überschriften optisch hervorzuheben. Für einen klaren Look eignen sich ★ und ☆ besonders gut. Dekorative Varianten wie ✦, ✧ oder ✩ bieten mehr Abwechslung.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Am besten wählst du das Symbol nach dem Einsatzort aus. Kopiere zuerst eine einfache Variante, teste sie in der gewünschten App und ergänze danach weitere Zeichen, wenn sie korrekt angezeigt werden. So bleibt dein Text gut lesbar und sieht trotzdem individuell aus.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Entdecke auch unsere Hauptseite für <a href="/symbole" class="text-amber-400 hover:underline font-semibold">alle Symbole &amp; Emoji</a>, die passenden <a href="/symbole/herzen" class="text-pink-400 hover:underline font-semibold">Herzen Symbole zum Kopieren</a> oder kombiniere deine Sterne mit unserer <a href="/schrift/fette-schrift" class="text-cyan-400 hover:underline font-semibold">Fetten Schrift</a>.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- RIGHT SIDEBAR COLUMN -->
+        <div class="space-y-6">
+          
+          <!-- Weitere Symbol-Kategorien -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>🌟</span> Weitere Symbole
+            </h3>
+            <div class="space-y-2">
+              <a
+                href="/symbole/herzen"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-pink-500/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-pink-400 transition-colors">
+                  ❤️ Herzen Symbole
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/symbole/rahmen"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-purple-500/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-purple-400 transition-colors">
+                  『』 Rahmen &amp; Trenner
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/symbole/emotikons"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-cyan-500/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-cyan-400 transition-colors">
+                  (◕‿◕) Kaomoji &amp; Emotikons
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/symbole"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-amber-500/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-amber-400 transition-colors">
+                  ✨ Alle Symbole Übersicht
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Beliebte Schriftstile -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>✨</span> Beliebte Schriftstile
+            </h3>
+            <FontStyleGrid />
+          </div>
+
+        </div>
+
       </div>
     </div>
   </main>
-</Layout>
 
-<!-- Client Side Interactivity for Filterable Stars Library -->
-<script define:vars={{ totalSymbolsCount: totalCount }}>
-  const starsGrid = document.getElementById('stars-library-grid');
-  const countDisplay = document.getElementById('star-count-display');
-  const categoryPills = document.querySelectorAll('.btn-star-cat');
+  <!-- Client-side script for 1-click copy & category filtering -->
+  <script is:inline>
+    // Filter Functionality
+    const catButtons = document.querySelectorAll('.btn-star-cat');
+    const cards = document.querySelectorAll('.star-card');
+    const countDisplay = document.getElementById('star-count-display');
 
-  async function copyToClipboard(text) {
-    if (!text) return;
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(text);
-      } else {
-        const textarea = document.createElement('textarea');
-        textarea.value = text;
-        textarea.style.position = 'fixed';
-        textarea.style.opacity = '0';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-      }
-      window.dispatchEvent(new CustomEvent('show-toast'));
-    } catch (err) {
-      console.error('Copy error:', err);
-    }
-  }
+    catButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        catButtons.forEach(b => {
+          b.classList.remove('bg-amber-500', 'text-black', 'shadow-md', 'shadow-amber-500/20');
+          b.classList.add('bg-[#0a0a08]', 'text-stone-300', 'border', 'border-white/10');
+        });
+        btn.classList.remove('bg-[#0a0a08]', 'text-stone-300', 'border', 'border-white/10');
+        btn.classList.add('bg-amber-500', 'text-black', 'shadow-md', 'shadow-amber-500/20');
 
-  // 1. Client-Side Category Filtering
-  categoryPills.forEach((pill) => {
-    pill.addEventListener('click', () => {
-      // Update active pill UI
-      categoryPills.forEach((p) => {
-        p.classList.remove('bg-amber-500', 'text-black', 'shadow-md', 'shadow-amber-500/20');
-        p.classList.add('bg-[#0a0a08]', 'text-stone-300', 'border', 'border-white/10');
-      });
-      pill.classList.remove('bg-[#0a0a08]', 'text-stone-300', 'border', 'border-white/10');
-      pill.classList.add('bg-amber-500', 'text-black', 'shadow-md', 'shadow-amber-500/20');
+        const cat = btn.getAttribute('data-category');
+        let visibleCount = 0;
 
-      const selectedCategory = pill.getAttribute('data-category');
-      const allCards = document.querySelectorAll('.star-card');
-      let visibleCount = 0;
+        cards.forEach(card => {
+          if (cat === 'alle' || card.getAttribute('data-category') === cat) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
 
-      allCards.forEach((card) => {
-        const cardCat = card.getAttribute('data-category');
-        if (selectedCategory === 'all' || cardCat === selectedCategory) {
-          (card).style.display = 'flex';
-          visibleCount++;
-        } else {
-          (card).style.display = 'none';
+        if (countDisplay) {
+          countDisplay.textContent = visibleCount + ' Symbole verfügbar';
         }
       });
-
-      // Update real dynamic counter
-      if (countDisplay) {
-        if (selectedCategory === 'all') {
-          countDisplay.textContent = `${totalSymbolsCount} Symbole verfügbar`;
-        } else {
-          countDisplay.textContent = `${visibleCount} von ${totalSymbolsCount} Symbolen`;
-        }
-      }
     });
-  });
 
-  // 2. Click Star Card / Copy Button
-  starsGrid?.addEventListener('click', (e) => {
-    const copyBtn = e.target.closest('.btn-copy-star-card');
-    const card = e.target.closest('.star-card');
-    if (!card) return;
+    // Copy Functionality on Cards
+    cards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        const char = card.getAttribute('data-char');
+        if (char) {
+          navigator.clipboard.writeText(char).then(() => {
+            const btn = card.querySelector('.btn-copy-star span');
+            if (btn) {
+              const original = btn.textContent;
+              btn.textContent = 'Kopiert! ✓';
+              setTimeout(() => {
+                btn.textContent = original;
+              }, 1500);
+            }
+          });
+        }
+      });
+    });
 
-    const char = card.getAttribute('data-char');
-    if (!char) return;
-
-    // Direct Copy to Clipboard
-    copyToClipboard(char);
-
-    // Visual button feedback
-    const targetBtn = copyBtn || card.querySelector('.btn-copy-star-card');
-    if (targetBtn) {
-      const origText = targetBtn.textContent;
-      targetBtn.textContent = 'Kopiert!';
-      targetBtn.classList.add('bg-amber-500', 'text-black');
-      setTimeout(() => {
-        targetBtn.textContent = origText;
-        targetBtn.classList.remove('bg-amber-500', 'text-black');
-      }, 1500);
-    }
-  });
-</script>
+    // Inline Copy Buttons
+    document.querySelectorAll('.btn-copy-inline').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = btn.getAttribute('data-copy');
+        if (text) {
+          navigator.clipboard.writeText(text).then(() => {
+            const original = btn.textContent;
+            btn.textContent = 'Kopiert! ✓';
+            setTimeout(() => {
+              btn.textContent = original;
+            }, 1500);
+          });
+        }
+      });
+    });
+  </script>
+</Layout>

@@ -85,6 +85,10 @@ const fontIcon = FONT_ICONS[font.slug] || '✨';
             <>
               {font.h1.split('–')[0]} &ndash; <span class="font-h1-accent">{font.h1.split('–')[1]}</span>
             </>
+          ) : font.h1.includes(':') ? (
+            <>
+              {font.h1.split(':')[0]}: <span class="font-h1-accent">{font.h1.split(':')[1]}</span>
+            </>
           ) : (
             <span class="font-h1-accent">{font.h1}</span>
           )}
@@ -104,39 +108,119 @@ const fontIcon = FONT_ICONS[font.slug] || '✨';
 
       <!-- Content Grid: Background, Use Cases & Cross-Linking to Platforms -->
       <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <!-- Main Column: Use Cases, History & Explanation -->
+        <!-- Main Column: Editorial Sections or Standard Use Cases -->
         <div class="lg:col-span-2 space-y-8">
-          <!-- 1. Dedicated Use Cases Section -->
-          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
-            <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-              <span>🎯</span> Wofür eignet sich diese Schrift?
-            </h2>
-            <ul class="space-y-3 text-sm text-stone-300">
-              {font.useCases.map((useCase) => (
-                <li class="flex items-start gap-3">
-                  <span class="w-5 h-5 rounded-md bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
-                    ✓
-                  </span>
-                  <span class="leading-relaxed">{useCase}</span>
-                </li>
+          
+          {font.editorialSections && font.editorialSections.length > 0 ? (
+            <!-- Rich Editorial Article Structure -->
+            <div class="space-y-8">
+              {font.editorialSections.map((sec) => (
+                <section class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-5">
+                  <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
+                    <span class="text-amber-400">#</span>
+                    <span>{sec.heading}</span>
+                  </h2>
+
+                  {sec.image && (
+                    <figure class="my-4 rounded-2xl overflow-hidden border border-white/10 bg-[#0d0f17] shadow-xl">
+                      <img
+                        src={sec.image.src}
+                        alt={sec.image.alt}
+                        class="w-full h-auto object-cover max-h-[400px]"
+                        loading="lazy"
+                      />
+                      {sec.image.caption && (
+                        <figcaption class="p-2.5 text-xs text-stone-400 text-center italic bg-white/5 border-t border-white/5">
+                          {sec.image.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  )}
+
+                  {sec.content.map((p) => (
+                    <p class="text-sm sm:text-base text-stone-300 leading-relaxed" set:html={p} />
+                  ))}
+
+                  <!-- Subsections (H3) -->
+                  {sec.subsections && sec.subsections.length > 0 && (
+                    <div class="mt-5 space-y-5 pl-3 border-l-2 border-amber-500/30">
+                      {sec.subsections.map((sub) => (
+                        <div class="space-y-2">
+                          <h3 class="text-base sm:text-lg font-bold text-amber-300">
+                            {sub.subheading}
+                          </h3>
+                          {sub.content.map((subP) => (
+                            <p class="text-xs sm:text-sm text-stone-300 leading-relaxed" set:html={subP} />
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  <!-- Comparison Table -->
+                  {sec.table && (
+                    <div class="my-4 overflow-x-auto rounded-2xl border border-white/10 bg-[#0d0f17] shadow-lg">
+                      <table class="w-full text-left text-xs sm:text-sm text-stone-300">
+                        <thead class="bg-amber-500/10 text-amber-300 text-xs uppercase font-bold tracking-wider border-b border-white/10">
+                          <tr>
+                            {sec.table.headers.map((h) => (
+                              <th class="py-3 px-4">{h}</th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5">
+                          {sec.table.rows.map((row, idx) => (
+                            <tr class={idx % 2 === 0 ? "bg-white/[0.02]" : "bg-transparent"}>
+                              {row.map((cell, cIdx) => (
+                                <td class={`py-3 px-4 ${cIdx === 0 ? "font-semibold text-white" : ""}`}>
+                                  {cell}
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+                </section>
               ))}
-            </ul>
-          </div>
+            </div>
+          ) : (
+            <!-- Standard Fallback Sections -->
+            <div class="space-y-8">
+              <!-- 1. Dedicated Use Cases Section -->
+              <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <span>🎯</span> Wofür eignet sich diese Schrift?
+                </h2>
+                <ul class="space-y-3 text-sm text-stone-300">
+                  {font.useCases.map((useCase) => (
+                    <li class="flex items-start gap-3">
+                      <span class="w-5 h-5 rounded-md bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                        ✓
+                      </span>
+                      <span class="leading-relaxed">{useCase}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          <!-- 2. Background & Unicode Typografie -->
-          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
-            <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-              <span>📖</span> Hintergrund & Unicode-Typografie
-            </h2>
-            <p class="text-sm text-stone-300 leading-relaxed mb-4">
-              {font.historyText}
-            </p>
-            <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
-              Im Gegensatz zu herkömmlichen Schriftdateien (.ttf/.otf) können diese Zeichen ohne jegliche Software-Installation direkt kopiert und in Eingabefeldern von Apps und Browsern verwendet werden.
-            </p>
-          </div>
+              <!-- 2. Background & Unicode Typografie -->
+              <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <span>📖</span> Hintergrund &amp; Unicode-Typografie
+                </h2>
+                <p class="text-sm text-stone-300 leading-relaxed mb-4">
+                  {font.historyText}
+                </p>
+                <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
+                  Im Gegensatz zu herkömmlichen Schriftdateien (.ttf/.otf) können diese Zeichen ohne jegliche Software-Installation direkt kopiert und in Eingabefeldern von Apps und Browsern verwendet werden.
+                </p>
+              </div>
+            </div>
+          )}
 
-          <!-- 3. FAQ Accordion for this Style -->
+          <!-- FAQ Accordion for this Style -->
           <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
             <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
               <span>❓</span> Häufige Fragen zu {font.name}
@@ -144,7 +228,7 @@ const fontIcon = FONT_ICONS[font.slug] || '✨';
             <div class="space-y-4">
               {font.faqs.map((faq) => (
                 <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
-                  <h3 class="text-sm font-bold text-white mb-1.5">{faq.q}</h3>
+                  <h3 class="text-sm sm:text-base font-bold text-white mb-1.5">{faq.q}</h3>
                   <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.a}</p>
                 </div>
               ))}

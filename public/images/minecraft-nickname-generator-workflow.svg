@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mcWfBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060e0a"/>
+      <stop offset="50%" stop-color="#0f2218"/>
+      <stop offset="100%" stop-color="#040906"/>
+    </linearGradient>
+    <linearGradient id="mcStepGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="mcWfShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#mcWfBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="240" cy="200" r="240" fill="#10b981" fill-opacity="0.10"/>
+  <circle cx="960" cy="450" r="260" fill="#38bdf8" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-170" y="-16" width="340" height="32" rx="16" fill="#132a1e" stroke="#10b981" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#34d399" letter-spacing="2">SCHRITT-FÜR-SCHRITT ANLEITUNG</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Minecraft Nickname <tspan fill="url(#mcStepGrad)">erstellen &amp; kopieren</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      In 5 einfachen Schritten zum perfekten Spielernamen für Java, Bedrock und Multiplayer
+    </text>
+  </g>
+
+  <!-- 5 Step Flow Cards -->
+  <g transform="translate(50, 150)">
+    
+    <!-- Step 1 -->
+    <g transform="translate(0, 0)" filter="url(#mcWfShadow)">
+      <rect width="205" height="440" rx="18" fill="#0f2218" stroke="#10b981" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="38" cy="42" r="18" fill="url(#mcStepGrad)"/>
+      <text x="38" y="48" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#06120b">1</text>
+      <text x="68" y="47" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#ffffff">Eingabe</text>
+      
+      <g transform="translate(15, 80)">
+        <rect width="175" height="75" rx="10" fill="#060e09"/>
+        <text x="12" y="26" font-family="system-ui, sans-serif" font-size="9" font-weight="800" fill="#34d399">BASISNAME</text>
+        <text x="12" y="52" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">DarkWolf</text>
+      </g>
+
+      <g transform="translate(15, 175)" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Generator öffnen:</text>
+        <text x="0" y="20">Gib deinen Namen</text>
+        <text x="0" y="38">in das obige Feld</text>
+        <text x="0" y="56">ein (z. B. DarkWolf,</text>
+        <text x="0" y="74">PixelBauer, Lunar).</text>
+      </g>
+
+      <rect x="15" y="380" width="175" height="34" rx="8" fill="#132a1e"/>
+      <text x="102" y="402" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#34d399">1. Name eingeben</text>
+    </g>
+
+    <!-- Step 2 -->
+    <g transform="translate(225, 0)" filter="url(#mcWfShadow)">
+      <rect width="205" height="440" rx="18" fill="#0f2218" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="38" cy="42" r="18" fill="url(#mcStepGrad)"/>
+      <text x="38" y="48" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#06120b">2</text>
+      <text x="68" y="47" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#ffffff">Stile prüfen</text>
+      
+      <g transform="translate(15, 80)">
+        <rect width="175" height="75" rx="10" fill="#060e09"/>
+        <text x="12" y="26" font-family="system-ui, sans-serif" font-size="11" font-weight="900" fill="#fbbf24">𝐏𝐢𝐱𝐞𝐥𝐊𝐢𝐧𝐠</text>
+        <text x="12" y="46" font-family="Georgia, serif" font-size="11" font-weight="700" fill="#a78bfa">𝕯𝖆𝖗𝖐𝖂𝖔𝖑𝖋</text>
+        <text x="12" y="64" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#34d399">⚔️ Pixel ⚔️</text>
+      </g>
+
+      <g transform="translate(15, 175)" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Stile vergleichen:</text>
+        <text x="0" y="20">Prüfe fette, kursive,</text>
+        <text x="0" y="38">gotische und mit</text>
+        <text x="0" y="56">Symbolen verzierte</text>
+        <text x="0" y="74">Varianten live.</text>
+      </g>
+
+      <rect x="15" y="380" width="175" height="34" rx="8" fill="#132a1e"/>
+      <text x="102" y="402" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#38bdf8">2. Stil auswählen</text>
+    </g>
+
+    <!-- Step 3 -->
+    <g transform="translate(450, 0)" filter="url(#mcWfShadow)">
+      <rect width="205" height="440" rx="18" fill="#0f2218" stroke="#fbbf24" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="38" cy="42" r="18" fill="url(#mcStepGrad)"/>
+      <text x="38" y="48" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#06120b">3</text>
+      <text x="68" y="47" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#ffffff">Kopieren</text>
+      
+      <g transform="translate(15, 80)">
+        <rect width="175" height="75" rx="10" fill="#060e09"/>
+        <rect x="12" y="16" width="150" height="42" rx="8" fill="#fbbf24" fill-opacity="0.2"/>
+        <text x="87" y="42" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#fbbf24">✓ 1-Klick Kopie</text>
+      </g>
+
+      <g transform="translate(15, 175)" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Favorit sichern:</text>
+        <text x="0" y="20">Klicke auf den</text>
+        <text x="0" y="38">Kopieren-Button –</text>
+        <text x="0" y="56">der Text landet</text>
+        <text x="0" y="74">in der Zwischenablage.</text>
+      </g>
+
+      <rect x="15" y="380" width="175" height="34" rx="8" fill="#132a1e"/>
+      <text x="102" y="402" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#fbbf24">3. Klick zum Kopieren</text>
+    </g>
+
+    <!-- Step 4 -->
+    <g transform="translate(675, 0)" filter="url(#mcWfShadow)">
+      <rect width="205" height="440" rx="18" fill="#0f2218" stroke="#a855f7" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="38" cy="42" r="18" fill="url(#mcStepGrad)"/>
+      <text x="38" y="48" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#06120b">4</text>
+      <text x="68" y="47" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#ffffff">Einfügen</text>
+      
+      <g transform="translate(15, 80)">
+        <rect width="175" height="75" rx="10" fill="#060e09"/>
+        <text x="12" y="26" font-family="system-ui, sans-serif" font-size="9" font-weight="800" fill="#a855f7">ZIELFELD</text>
+        <text x="12" y="50" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#ffffff">Server / Profil</text>
+      </g>
+
+      <g transform="translate(15, 175)" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Ins Spiel übertragen:</text>
+        <text x="0" y="20">Füge den Namen in</text>
+        <text x="0" y="38">das gewünschte</text>
+        <text x="0" y="56">Minecraft- oder</text>
+        <text x="0" y="74">Server-Textfeld ein.</text>
+      </g>
+
+      <rect x="15" y="380" width="175" height="34" rx="8" fill="#132a1e"/>
+      <text x="102" y="402" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#a855f7">4. Textfeld befüllen</text>
+    </g>
+
+    <!-- Step 5 -->
+    <g transform="translate(900, 0)" filter="url(#mcWfShadow)">
+      <rect width="200" height="440" rx="18" fill="#0f2218" stroke="#34d399" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="38" cy="42" r="18" fill="url(#mcStepGrad)"/>
+      <text x="38" y="48" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#06120b">5</text>
+      <text x="68" y="47" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#ffffff">Prüfen</text>
+      
+      <g transform="translate(15, 80)">
+        <rect width="170" height="75" rx="10" fill="#060e09" stroke="#34d399" stroke-opacity="0.3"/>
+        <text x="12" y="28" font-family="system-ui, sans-serif" font-size="9" font-weight="800" fill="#34d399">DARSTELLUNG</text>
+        <text x="12" y="52" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">✓ Keine Kästchen</text>
+      </g>
+
+      <g transform="translate(15, 175)" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Darstellung prüfen:</text>
+        <text x="0" y="20">Kontrolliere, ob alle</text>
+        <text x="0" y="38">Zeichen sauber</text>
+        <text x="0" y="56">dargestellt werden</text>
+        <text x="0" y="74">vor dem Speichern.</text>
+      </g>
+
+      <rect x="15" y="380" width="170" height="34" rx="8" fill="#132a1e"/>
+      <text x="100" y="402" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#34d399">5. Live Testen</text>
+    </g>
+
+  </g>
+</svg>

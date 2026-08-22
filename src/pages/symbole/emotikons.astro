@@ -1,59 +1,106 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import GradientMeshBackground from '../../components/GradientMeshBackground.astro';
+import FontStyleGrid from '../../components/FontStyleGrid.astro';
 import { EMOTIKONS_CATEGORIES, EMOTIKONS_SYMBOLS_DATA } from '../../data/expanded-symbols-data';
 import { NAVIGATION_DATA } from '../../data/navigation';
 
 const totalCount = EMOTIKONS_SYMBOLS_DATA.length;
+
+const kaomojiFaqs = [
+  {
+    q: 'Sind Kaomoji dasselbe wie Emojis?',
+    a: 'Nein. Kaomoji sind textbasierte Gesichtsausdrücke aus mehreren Zeichen (z. B. (◕‿◕)). Emojis sind grafische beziehungsweise codierte Bildzeichen (z. B. 😊).',
+  },
+  {
+    q: 'Kann ich Kaomoji auf WhatsApp und Instagram verwenden?',
+    a: 'Ja, in normalen Textfeldern können textbasierte Kaomoji problemlos eingefügt werden. Die konkrete Darstellung hängt jedoch von App, Gerät und unterstützten Zeichen ab.',
+  },
+  {
+    q: 'Welche Kaomoji eignen sich für eine Bio?',
+    a: 'Kurze Varianten wie (◕‿◕), (¬_¬), (≧◡≦) oder (｡♥‿♥｡) sind leicht lesbar und nehmen wenig Platz ein. Für eine Bio solltest du eher kurze Zeichenfolgen wählen.',
+  },
+  {
+    q: 'Warum werden manche Kaomoji nicht richtig angezeigt?',
+    a: 'Einige Zeichen werden nicht von jeder Schrift oder Plattform gleich dargestellt. Bei fehlender Unterstützung kann ein Kästchen oder ein anderes Ersatzzeichen erscheinen.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": kaomojiFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+
+const classicEmoticons = [
+  { char: ':-)', meaning: 'freundlich' },
+  { char: ':)', meaning: 'lächelnd' },
+  { char: ':D', meaning: 'sehr fröhlich' },
+  { char: ';)', meaning: 'zwinkernd' },
+  { char: ':(', meaning: 'traurig' },
+  { char: ':/', meaning: 'unsicher' },
+  { char: '<3', meaning: 'Herz' },
+  { char: ':O', meaning: 'überrascht' },
+  { char: ':-/', meaning: 'skeptisch' },
+];
 ---
 
 <Layout
-  title="Emotikons & Kaomoji zum Kopieren – (◕‿◕) ¯\_(ツ)_/¯ Emojis"
-  description={`Kopiere über ${totalCount} japanische Kaomojis, ASCII-Textgesichter, fröhliche, traurige und süße Emotikons mit 1 Klick für Discord, TikTok, Twitch & Social Media.`}
-  canonicalUrl="/symbole/emotikons"
+  title="Emotikons & Kaomoji zum Kopieren – Süße Textgesichter"
+  description="Emotikons & Kaomoji zum Kopieren: süße, lustige, traurige und wütende Textgesichter. Einfach auswählen, kopieren und direkt einfügen."
+  canonicalUrl="/symbole/emotikons/"
+  schema={faqSchema}
 >
-  <main class="relative bg-[#0F1220] min-h-screen py-12 md:py-16 overflow-hidden homepage-mesh-wrapper">
+  <main class="relative bg-[#0F1220] min-h-screen py-12 md:py-16 overflow-hidden homepage-mesh-wrapper text-white">
     <!-- Playful Kaomoji & Emotikons Themed Gradient Mesh Layer -->
     <GradientMeshBackground variant="emotikons" />
 
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
-      <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
-        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Breadcrumb Navigation -->
+      <nav class="flex items-center gap-2 text-xs sm:text-sm text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-400 transition-colors">Home</a>
         <span>/</span>
-        <a href="/symbole" class="hover:text-white transition-colors">Symbole</a>
+        <a href="/symbole" class="hover:text-amber-400 transition-colors">Symbole</a>
         <span>/</span>
-        <span class="text-stone-300 font-semibold">Emotikons & Kaomoji</span>
+        <span class="text-stone-200">Emotikons &amp; Kaomoji</span>
       </nav>
 
-      <!-- Page Header -->
-      <div class="text-center max-w-3xl mx-auto mb-10">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
-          <span>◕‿◕ 1-Klick Kopieren</span>
+      <!-- Page Header & H1 -->
+      <div class="text-center max-w-4xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
+          <span>◕‿◕</span> 1-Klick Kopieren &bull; {totalCount} Kaomoji &bull; ASCII Gesichter &bull; Unicode
         </div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-          Emotikons & Kaomoji zum Kopieren
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
+          Emotikons &amp; Kaomoji zum Kopieren
         </h1>
-        <p class="mt-4 text-base text-stone-300 leading-relaxed max-w-2xl mx-auto">
-          Kopiere japanische Kaomojis, niedliche ASCII-Textgesichter, Shrugs und emotionale Text-Smileys mit nur einem Klick. Perfekt für Twitch-Chats, Discord-Nachrichten und Bios.
+        <p class="text-base sm:text-lg text-stone-300 max-w-2xl mx-auto">
+          Süße, lustige und emotionale Kaomoji einfach kopieren und in WhatsApp, Instagram, Discord, TikTok oder Profilen einfügen.
         </p>
       </div>
 
-      <!-- Filterable Kaomoji Library -->
-      <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-xl">
+      <!-- Filterable Interactive Kaomoji Library -->
+      <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl mb-16">
         <!-- Section Header with Dynamic Counter -->
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-white/5">
           <div>
             <h2 class="text-xl font-bold text-white flex items-center gap-2">
-              <span>◕‿◕</span> Kaomoji & Text-Smileys Bibliothek
+              <span>◕‿◕</span> Kaomoji &amp; Text-Smileys Bibliothek
             </h2>
             <p class="text-xs text-stone-400 mt-1">
-              Wähle eine Stimmung, um die Kaomojis zu filtern, oder klicke direkt auf eine Karte zum Kopieren:
+              Wähle eine Stimmung, um die Kaomojis zu filtern, oder klicke direkt auf ein Kaomoji zum Kopieren:
             </p>
           </div>
           <span
             id="kaomoji-count-display"
-            class="px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold shrink-0 self-start sm:self-center"
+            class="px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold shrink-0 self-start sm:self-center"
           >
             {totalCount} Symbole verfügbar
           </span>
@@ -66,8 +113,8 @@ const totalCount = EMOTIKONS_SYMBOLS_DATA.length;
               type="button"
               class={`btn-kaomoji-cat px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 focus:outline-none ${
                 idx === 0
-                  ? 'bg-amber-500 text-black shadow-md shadow-amber-500/20'
-                  : 'bg-[#0a0a08] text-stone-300 border border-white/10 hover:border-amber-500/40 hover:text-white'
+                  ? 'bg-emerald-500 text-black shadow-md shadow-emerald-500/20'
+                  : 'bg-[#0a0a08] text-stone-300 border border-white/10 hover:border-emerald-500/40 hover:text-white'
               }`}
               data-category={cat.id}
             >
@@ -81,7 +128,7 @@ const totalCount = EMOTIKONS_SYMBOLS_DATA.length;
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5" id="kaomojis-library-grid">
           {EMOTIKONS_SYMBOLS_DATA.map((sym) => (
             <div
-              class="kaomoji-card p-4 rounded-2xl bg-[#0a0a08] border border-white/5 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all flex flex-col items-center justify-between gap-3 group text-center"
+              class="kaomoji-card p-4 rounded-2xl bg-[#0a0a08] border border-white/5 hover:border-emerald-500/40 hover:-translate-y-0.5 transition-all flex flex-col items-center justify-between gap-3 group text-center cursor-pointer"
               data-char={sym.char}
               data-category={sym.category}
             >
@@ -98,119 +145,444 @@ const totalCount = EMOTIKONS_SYMBOLS_DATA.length;
               <!-- Kopieren Button -->
               <button
                 type="button"
-                class="btn-copy-kaomoji-card w-full py-1.5 px-2 rounded-lg bg-white/5 group-hover:bg-amber-500/20 group-hover:text-amber-300 border border-white/10 group-hover:border-amber-500/40 text-xs font-bold text-stone-300 transition-all"
-                data-char={sym.char}
-                title={`"${sym.char}" kopieren`}
+                class="btn-copy-kaomoji w-full py-1.5 px-3 rounded-lg bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 hover:border-emerald-500 text-xs font-semibold text-stone-300 transition-all flex items-center justify-center gap-1"
+                aria-label={`Kopiere ${sym.germanLabel}`}
               >
-                Kopieren
+                <span>Kopieren</span>
               </button>
             </div>
           ))}
         </div>
       </div>
 
-      <!-- Cross Links to other Symbol categories & Silos -->
-      <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {NAVIGATION_DATA.symbols.items
-          .filter((item) => !item.href.includes('emotikons'))
-          .map((other) => (
-            <a
-              href={other.href}
-              class="p-5 rounded-2xl bg-[#141412] border border-white/10 hover:border-amber-500/30 transition-all block group"
-            >
-              <div class="text-base font-bold text-white group-hover:text-amber-400 flex items-center justify-between">
-                <span>{other.icon} {other.title}</span>
-                <span>→</span>
+      <!-- Content Grid: Left Column (Editorial Article) & Right Sidebar -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- LEFT COLUMN (lg:col-span-2): Editorial Article Content -->
+        <div class="lg:col-span-2 space-y-8">
+
+          <!-- IMAGE 1: Featured Hero Image -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/emotikons-kaomoji-hero.svg"
+              alt="Emotikons und Kaomoji zum Kopieren auf Laptop und Smartphone"
+              class="w-full h-auto aspect-video object-cover"
+              loading="eager"
+            />
+            <p class="text-xs text-stone-400 p-3 text-center border-t border-white/5 bg-[#0a0a08]">
+              Kaomoji machen kurze Nachrichten persönlicher und ausdrucksstärker.
+            </p>
+          </div>
+
+          <!-- Section 1: Intro -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Wer schnell einen passenden Ausdruck für eine Nachricht, Bio oder einen Kommentar sucht, möchte nicht lange nach einem kleinen Gesicht suchen. Klassische Emoticons wie :-) sind zwar bekannt, doch Kaomoji bieten deutlich mehr Varianten. Mit <strong>Emotikons &amp; Kaomoji zum Kopieren</strong> kannst du Gefühle, Reaktionen und kleine Gesten direkt als Text verwenden.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Gerade bei süßen, lustigen oder überraschten Reaktionen ist ein passendes Zeichen oft praktischer als ein langes Erklären. Deshalb findest du hier eine kompakte Auswahl zum Kopieren und Einfügen. Die Zeichen lassen sich einfach markieren oder über einen Kopieren-Button übernehmen und anschließend in Chats, Social Media, Profilen oder Kommentaren einsetzen. Entdecke auch unsere <a href="/symbole" class="text-emerald-400 hover:underline font-semibold">Symbole &amp; Emoji Übersicht</a> oder unseren <a href="/" class="text-amber-400 hover:underline font-semibold">Schriftarten Generator</a>.
+            </p>
+          </div>
+
+          <!-- Section 2: Emotikons & Kaomoji zum Kopieren (6 Kategorien) -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Emotikons &amp; Kaomoji zum Kopieren
+            </h2>
+
+            <!-- 1. Süße Kaomoji -->
+            <div class="space-y-2">
+              <h3 class="text-sm sm:text-base font-bold text-emerald-400">Süße Kaomoji</h3>
+              <div class="flex flex-wrap gap-2">
+                {['(◕‿◕)', '(｡♥‿♥｡)', '(≧◡≦)', '(◡‿◡)', '(✿◠‿◠)', '(๑>ᴗ<๑)'].map((k) => (
+                  <button class="btn-copy-inline px-3 py-1.5 bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 rounded-xl font-mono text-sm transition-all" data-copy={k}>
+                    {k}
+                  </button>
+                ))}
               </div>
-              <div class="text-xs text-stone-400 mt-1">{other.description}</div>
-            </a>
-          ))}
+              <p class="text-xs text-stone-400 leading-relaxed pt-1">
+                Diese Varianten passen besonders gut zu freundlichen Nachrichten, Profiltexten und persönlichen Posts. Außerdem lassen sich einfache Formen schnell mit Herzen oder anderen Symbolen kombinieren.
+              </p>
+            </div>
+
+            <!-- 2. Fröhlich und glücklich -->
+            <div class="space-y-2">
+              <h3 class="text-sm sm:text-base font-bold text-cyan-400">Fröhlich und glücklich</h3>
+              <div class="flex flex-wrap gap-2">
+                {['(^‿^)', '(＾▽＾)', '(◕ᴗ◕)', 'ヽ(・∀・)ﾉ', '(≧▽≦)', '٩(◕‿◕｡)۶'].map((k) => (
+                  <button class="btn-copy-inline px-3 py-1.5 bg-white/5 hover:bg-cyan-500 hover:text-black border border-white/10 rounded-xl font-mono text-sm transition-all" data-copy={k}>
+                    {k}
+                  </button>
+                ))}
+              </div>
+              <p class="text-xs text-stone-400 leading-relaxed pt-1">
+                Für Freude, Begeisterung oder eine positive Antwort eignen sich offene Gesichtsausdrücke. Ein Kaomoji wirkt dabei oft lockerer als ein einzelnes Standard-Emoji.
+              </p>
+            </div>
+
+            <!-- 3. Liebe und Zuneigung -->
+            <div class="space-y-2">
+              <h3 class="text-sm sm:text-base font-bold text-pink-400">Liebe und Zuneigung</h3>
+              <div class="flex flex-wrap gap-2">
+                {['(♥‿♥)', '(｡♥‿♥｡)', '(◕‿◕)♡', '(♡°▽°♡)', '(づ￣ ³￣)づ', '(っ˘з(˘⌣˘ )'].map((k) => (
+                  <button class="btn-copy-inline px-3 py-1.5 bg-white/5 hover:bg-pink-500 hover:text-white border border-white/10 rounded-xl font-mono text-sm transition-all" data-copy={k}>
+                    {k}
+                  </button>
+                ))}
+              </div>
+              <p class="text-xs text-stone-400 leading-relaxed pt-1">
+                Herz-Kaomoji sind praktisch für Nachrichten an Freunde, Partner oder Familie. Je nach Kontext kannst du eine dezente oder deutlich verspielte Variante wählen.
+              </p>
+            </div>
+
+            <!-- 4. Traurig und weinend -->
+            <div class="space-y-2">
+              <h3 class="text-sm sm:text-base font-bold text-stone-400">Traurig und weinend</h3>
+              <div class="flex flex-wrap gap-2">
+                {['(╥﹏╥)', '(T_T)', '(;_;)', '(T﹏T)', '(ಥ_ಥ)', '(｡•́︿•̀｡)'].map((k) => (
+                  <button class="btn-copy-inline px-3 py-1.5 bg-white/5 hover:bg-white/20 border border-white/10 rounded-xl font-mono text-sm transition-all" data-copy={k}>
+                    {k}
+                  </button>
+                ))}
+              </div>
+              <p class="text-xs text-stone-400 leading-relaxed pt-1">
+                Solche Gesichter zeigen Traurigkeit, Enttäuschung oder Weinen. Dabei sollte die Bedeutung immer zum Gespräch passen, weil ein Kaomoji je nach Kontext unterschiedlich wirken kann.
+              </p>
+            </div>
+
+            <!-- 5. Wütend und genervt -->
+            <div class="space-y-2">
+              <h3 class="text-sm sm:text-base font-bold text-amber-400">Wütend und genervt</h3>
+              <div class="flex flex-wrap gap-2">
+                {['(ಠ_ಠ)', '(╬ಠ益ಠ)', "(ง'̀-'́)ง", '(¬_¬)', '(•̀ᴗ•́)و', '(╯°□°）╯︵ ┻━┻'].map((k) => (
+                  <button class="btn-copy-inline px-3 py-1.5 bg-white/5 hover:bg-amber-500 hover:text-black border border-white/10 rounded-xl font-mono text-sm transition-all" data-copy={k}>
+                    {k}
+                  </button>
+                ))}
+              </div>
+              <p class="text-xs text-stone-400 leading-relaxed pt-1">
+                Die Auswahl reicht von genervt bis deutlich wütend. Besonders bekannte Formen wie der umgeworfene Tisch werden häufig humorvoll eingesetzt.
+              </p>
+            </div>
+
+            <!-- 6. Überrascht und verwirrt -->
+            <div class="space-y-2">
+              <h3 class="text-sm sm:text-base font-bold text-purple-400">Überrascht und verwirrt</h3>
+              <div class="flex flex-wrap gap-2">
+                {['(⊙⊙)', '(°ロ°) !', '(⊙▂⊙)', '(・・;)', '(・・?)', '(＠_＠)'].map((k) => (
+                  <button class="btn-copy-inline px-3 py-1.5 bg-white/5 hover:bg-purple-500 hover:text-white border border-white/10 rounded-xl font-mono text-sm transition-all" data-copy={k}>
+                    {k}
+                  </button>
+                ))}
+              </div>
+              <p class="text-xs text-stone-400 leading-relaxed pt-1">
+                Diese Zeichen passen zu Überraschung, Unsicherheit oder Verwirrung. Für Chats sind sie hilfreich, wenn eine Reaktion stärker sichtbar sein soll als ein normales Satzzeichen.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Section 3: Klassische Emoticons für schnelle Reaktionen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Klassische Emoticons für schnelle Reaktionen
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Nicht jedes Gesicht muss komplex sein. Klassische Emoticons bleiben nützlich, wenn eine kurze Reaktion genügt:
+            </p>
+
+            <!-- Table of 9 Classic Emoticons -->
+            <div class="overflow-x-auto my-4 border border-white/10 rounded-2xl">
+              <table class="w-full text-left text-sm text-stone-300">
+                <thead class="bg-white/5 text-xs uppercase text-stone-400">
+                  <tr>
+                    <th scope="col" class="px-4 py-3">Emoticon</th>
+                    <th scope="col" class="px-4 py-3">Bedeutung</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                  {classicEmoticons.map((item) => (
+                    <tr class="hover:bg-white/5">
+                      <td class="px-4 py-3 font-mono text-base font-bold text-emerald-400">{item.char}</td>
+                      <td class="px-4 py-3 text-stone-200 font-medium">{item.meaning}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
+              Solche Formen funktionieren oft auch dort, wo aufwendige Kaomoji unpraktisch sind. Außerdem sind sie schnell zu erkennen und leicht zu tippen.
+            </p>
+          </div>
+
+          <!-- IMAGE 2: Stimmungen Grid Visual -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/emotikons-kaomoji-stimmungen-grid.svg"
+              alt="Kaomoji nach Stimmung und Emotion sortiert"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Von Freude bis Überraschung: Für jede Stimmung gibt es passende Kaomoji.
+            </p>
+          </div>
+
+          <!-- Section 4: Welche Kaomoji passen zu welchem Anlass? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Welche Kaomoji passen zu welchem Anlass?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für eine lockere Nachricht eignen sich fröhliche und süße Gesichter. Bei einer Gratulation passen beispielsweise <code>(≧▽≦)</code> oder <code>(✿◠‿◠)</code>. Für eine überraschte Antwort ist dagegen <code>(⊙⊙)</code> klarer. Wenn du Ironie oder Skepsis ausdrücken möchtest, kann <code>(¬_¬)</code> besser passen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Bei öffentlichen Profilen sollte die Auswahl ebenfalls zum Stil passen. Ein einzelnes Kaomoji wirkt oft sauberer als eine lange Reihe verschiedener Zeichen. In Chats kannst du dagegen mehrere Ausdrücke kombinieren, solange die Nachricht noch gut lesbar bleibt.
+            </p>
+            <p class="text-xs sm:text-sm text-stone-400 leading-relaxed bg-[#1a1a16] border border-white/5 rounded-xl p-3">
+              💡 <strong>Wichtigste Regel:</strong> Verwende den Ausdruck so, dass die gewünschte Stimmung ohne zusätzliche Erklärung verständlich bleibt. Gerade ungewöhnliche Kaomoji können sonst missverstanden werden.
+            </p>
+          </div>
+
+          <!-- Section 5: Was ist der Unterschied zwischen Emoticons, Kaomoji und Emoji? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Was ist der Unterschied zwischen Emoticons, Kaomoji und Emoji?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein Emoticon besteht aus Zeichen und Satzzeichen, die zusammen einen Gesichtsausdruck oder eine Geste darstellen, zum Beispiel <code>:-)</code>. Unicode beschreibt Emoticons entsprechend als Zeichenfolgen, die einen Gesichtsausdruck oder eine Geste darstellen (siehe <a href="https://www.unicode.org/reports/tr51/" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 underline font-semibold">Unicode-Erklärung zu Emoticons und Emoji</a>).
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Kaomoji sind eine japanische Form solcher textbasierten Gesichtsausdrücke. Typisch ist die aufrechte Darstellung, bei der die Augen stark zur Wirkung beitragen. Ein Emoji dagegen ist ein bildhaftes Zeichen beziehungsweise eine codierte Emoji-Sequenz, die je nach System grafisch dargestellt werden kann.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für die praktische Nutzung bedeutet das: Emoticons und Kaomoji bestehen aus Textzeichen, während Emoji meist als farbige Symbole erscheinen. Deshalb kannst du Kaomoji besonders gut in Textfelder, Bios und Kommentare einfügen.
+            </p>
+          </div>
+
+          <!-- Section 6: So verwendest du Kaomoji -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              So verwendest du Kaomoji
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span>
+                <p class="text-xs sm:text-sm text-stone-300">Wähle einen passenden Ausdruck aus.</p>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span>
+                <p class="text-xs sm:text-sm text-stone-300">Kopiere das komplette Zeichen.</p>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span>
+                <p class="text-xs sm:text-sm text-stone-300">Öffne WhatsApp, Instagram, Discord, TikTok oder ein anderes Textfeld.</p>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">4</span>
+                <p class="text-xs sm:text-sm text-stone-300">Füge das Kaomoji ein.</p>
+              </div>
+              <div class="bg-[#1a1a16] border border-white/5 rounded-2xl p-3.5 flex items-start gap-3 sm:col-span-2">
+                <span class="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">5</span>
+                <p class="text-xs sm:text-sm text-stone-300">Prüfe kurz die Darstellung und sende den Text.</p>
+              </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-stone-400 leading-relaxed pt-2">
+              Bei ungewöhnlichen Unicode-Zeichen kann die Darstellung je nach Gerät, Betriebssystem oder verwendeter Schrift variieren. Wenn ein Zeichen als Kästchen erscheint, unterstützt die verwendete Schrift oder Anwendung es möglicherweise nicht.
+            </p>
+          </div>
+
+          <!-- IMAGE 3: Copy & Paste Workflow Visual -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/emotikons-kaomoji-copy-paste-workflow.svg"
+              alt="Kaomoji kopieren und in eine Nachricht einfügen"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Kaomoji auswählen, kopieren und direkt in einen Text einfügen.
+            </p>
+          </div>
+
+          <!-- IMAGE 4: Emoticon vs Kaomoji vs Emoji Visual -->
+          <div class="rounded-2xl overflow-hidden border border-white/10">
+            <img
+              src="/images/emotikons-kaomoji-emoticon-vs-emoji.svg"
+              alt="Unterschied zwischen Emoticon, Kaomoji und Emoji"
+              class="w-full h-auto aspect-video object-cover"
+              loading="lazy"
+            />
+            <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+              Emoticons und Kaomoji bestehen aus Textzeichen, während Emoji als Bildzeichen erscheinen.
+            </p>
+          </div>
+
+          <!-- Section 7: Häufige Fragen (FAQs) -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> Häufige Fragen
+            </h2>
+            <div class="space-y-4">
+              {kaomojiFaqs.map((faq) => (
+                <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
+                  <h3 class="text-sm sm:text-base font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 8: Fazit -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Fazit
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              <strong>Emotikons &amp; Kaomoji zum Kopieren</strong> sind eine einfache Möglichkeit, Text persönlicher zu gestalten. Ob süß, fröhlich, traurig, wütend oder überrascht: Mit wenigen Zeichen lässt sich eine Reaktion deutlich ausdrücken. Wähle deshalb nicht nur nach dem Aussehen, sondern auch nach der Stimmung des Gesprächs.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Am praktischsten ist eine kleine Sammlung mit deinen Favoriten. Kopiere häufig verwendete Kaomoji in deine Notizen oder nutze eine Kopierfunktion, damit sie beim nächsten Chat sofort verfügbar sind. So kannst du deine Nachrichten schnell und passend ergänzen, ohne jedes Zeichen selbst zusammensetzen zu müssen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Entdecke auch unsere <a href="/symbole" class="text-emerald-400 hover:underline font-semibold">Symbole &amp; Emoji Übersicht</a>, die passenden <a href="/symbole/herzen" class="text-pink-400 hover:underline font-semibold">Herzen Symbole zum Kopieren</a> oder die funkelnden <a href="/symbole/sterne" class="text-amber-400 hover:underline font-semibold">Sterne Symbole zum Kopieren</a>.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- RIGHT SIDEBAR COLUMN -->
+        <div class="space-y-6">
+          
+          <!-- Weitere Symbol-Kategorien -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>💖</span> Weitere Symbole
+            </h3>
+            <div class="space-y-2">
+              <a
+                href="/symbole/herzen"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-pink-500/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-pink-400 transition-colors">
+                  ❤️ Herzen Symbole
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/symbole/sterne"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-amber-500/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-amber-400 transition-colors">
+                  ★ Sterne Symbole
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/symbole/rahmen"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-purple-500/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-purple-400 transition-colors">
+                  『』 Rahmen &amp; Trenner
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+              <a
+                href="/symbole"
+                class="flex items-center justify-between p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-emerald-500/40 transition-all text-sm group"
+              >
+                <span class="font-medium text-stone-200 group-hover:text-emerald-400 transition-colors">
+                  ✨ Alle Symbole Übersicht
+                </span>
+                <span class="text-xs text-stone-400">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Beliebte Schriftstile -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span>✨</span> Beliebte Schriftstile
+            </h3>
+            <FontStyleGrid />
+          </div>
+
+        </div>
+
       </div>
     </div>
   </main>
-</Layout>
 
-<!-- Client Side Interactivity for Filterable Kaomojis Library -->
-<script define:vars={{ totalSymbolsCount: totalCount }}>
-  const kaomojisGrid = document.getElementById('kaomojis-library-grid');
-  const countDisplay = document.getElementById('kaomoji-count-display');
-  const categoryPills = document.querySelectorAll('.btn-kaomoji-cat');
+  <!-- Client-side script for 1-click copy & category filtering -->
+  <script is:inline>
+    // Filter Functionality
+    const catButtons = document.querySelectorAll('.btn-kaomoji-cat');
+    const cards = document.querySelectorAll('.kaomoji-card');
+    const countDisplay = document.getElementById('kaomoji-count-display');
 
-  async function copyToClipboard(text) {
-    if (!text) return;
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(text);
-      } else {
-        const textarea = document.createElement('textarea');
-        textarea.value = text;
-        textarea.style.position = 'fixed';
-        textarea.style.opacity = '0';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-      }
-      window.dispatchEvent(new CustomEvent('show-toast'));
-    } catch (err) {
-      console.error('Copy error:', err);
-    }
-  }
+    catButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        catButtons.forEach(b => {
+          b.classList.remove('bg-emerald-500', 'text-black', 'shadow-md', 'shadow-emerald-500/20');
+          b.classList.add('bg-[#0a0a08]', 'text-stone-300', 'border', 'border-white/10');
+        });
+        btn.classList.remove('bg-[#0a0a08]', 'text-stone-300', 'border', 'border-white/10');
+        btn.classList.add('bg-emerald-500', 'text-black', 'shadow-md', 'shadow-emerald-500/20');
 
-  // 1. Client-Side Category Filtering
-  categoryPills.forEach((pill) => {
-    pill.addEventListener('click', () => {
-      categoryPills.forEach((p) => {
-        p.classList.remove('bg-amber-500', 'text-black', 'shadow-md', 'shadow-amber-500/20');
-        p.classList.add('bg-[#0a0a08]', 'text-stone-300', 'border', 'border-white/10');
-      });
-      pill.classList.remove('bg-[#0a0a08]', 'text-stone-300', 'border', 'border-white/10');
-      pill.classList.add('bg-amber-500', 'text-black', 'shadow-md', 'shadow-amber-500/20');
+        const cat = btn.getAttribute('data-category');
+        let visibleCount = 0;
 
-      const selectedCategory = pill.getAttribute('data-category');
-      const allCards = document.querySelectorAll('.kaomoji-card');
-      let visibleCount = 0;
+        cards.forEach(card => {
+          if (cat === 'alle' || card.getAttribute('data-category') === cat) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
 
-      allCards.forEach((card) => {
-        const cardCat = card.getAttribute('data-category');
-        if (selectedCategory === 'all' || cardCat === selectedCategory) {
-          (card).style.display = 'flex';
-          visibleCount++;
-        } else {
-          (card).style.display = 'none';
+        if (countDisplay) {
+          countDisplay.textContent = visibleCount + ' Symbole verfügbar';
         }
       });
-
-      if (countDisplay) {
-        if (selectedCategory === 'all') {
-          countDisplay.textContent = `${totalSymbolsCount} Symbole verfügbar`;
-        } else {
-          countDisplay.textContent = `${visibleCount} von ${totalSymbolsCount} Symbolen`;
-        }
-      }
     });
-  });
 
-  // 2. Click Kaomoji Card / Copy Button
-  kaomojisGrid?.addEventListener('click', (e) => {
-    const copyBtn = e.target.closest('.btn-copy-kaomoji-card');
-    const card = e.target.closest('.kaomoji-card');
-    if (!card) return;
+    // Copy Functionality on Cards
+    cards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        const char = card.getAttribute('data-char');
+        if (char) {
+          navigator.clipboard.writeText(char).then(() => {
+            const btn = card.querySelector('.btn-copy-kaomoji span');
+            if (btn) {
+              const original = btn.textContent;
+              btn.textContent = 'Kopiert! ✓';
+              setTimeout(() => {
+                btn.textContent = original;
+              }, 1500);
+            }
+          });
+        }
+      });
+    });
 
-    const char = card.getAttribute('data-char');
-    if (!char) return;
-
-    copyToClipboard(char);
-
-    const targetBtn = copyBtn || card.querySelector('.btn-copy-kaomoji-card');
-    if (targetBtn) {
-      const origText = targetBtn.textContent;
-      targetBtn.textContent = 'Kopiert!';
-      targetBtn.classList.add('bg-amber-500', 'text-black');
-      setTimeout(() => {
-        targetBtn.textContent = origText;
-        targetBtn.classList.remove('bg-amber-500', 'text-black');
-      }, 1500);
-    }
-  });
-</script>
+    // Inline Copy Buttons
+    document.querySelectorAll('.btn-copy-inline').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = btn.getAttribute('data-copy');
+        if (text) {
+          navigator.clipboard.writeText(text).then(() => {
+            const original = btn.textContent;
+            btn.textContent = 'Kopiert! ✓';
+            setTimeout(() => {
+              btn.textContent = original;
+            }, 1500);
+          });
+        }
+      });
+    });
+  </script>
+</Layout>

@@ -10,7 +10,7 @@ import { NAVIGATION_DATA } from '../../data/navigation';
 
 export function getStaticPaths() {
   return Object.keys(PLATFORMS_DATA)
-    .filter((platKey) => platKey !== 'tiktok')
+    .filter((platKey) => platKey !== 'tiktok' && platKey !== 'instagram' && platKey !== 'whatsapp' && platKey !== 'discord' && platKey !== 'facebook' && platKey !== 'twitter-x' && platKey !== 'telegram')
     .map((platKey) => ({
       params: { platform: platKey },
       props: { platformInfo: PLATFORMS_DATA[platKey] },

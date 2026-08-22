@@ -1,0 +1,55 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TextStyleConverter from '../../components/TextStyleConverter.astro';
+import GradientMeshBackground from '../../components/GradientMeshBackground.astro';
+---
+
+<Layout
+  title="Schreibschrift Generator zum Kopieren – Schöne Schreibschrift online"
+  description="Schreibschrift Generator: Schreibe Texte in schöner geschwungener Schreibschrift. Einfach Text eingeben, Schriftstil wählen und sofort kopieren."
+  canonicalUrl="/schrift/handschrift"
+>
+  <main class="relative bg-[#0F1220] min-h-screen py-12 md:py-16 overflow-hidden homepage-mesh-wrapper">
+    <GradientMeshBackground />
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <a href="/schrift" class="hover:text-white transition-colors">Schriftarten</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Schreibschrift Generator</span>
+      </nav>
+
+      <!-- Header & Intro -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
+          <span>✍️ Schreibschrift &amp; Handschrift</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          Schreibschrift Generator zum Kopieren
+        </h1>
+        <p class="mt-4 text-base sm:text-lg text-stone-300 leading-relaxed">
+          Verwandle deinen normalen Text mit unserem Schreibschrift Generator in schöne geschwungene Schreibschrift und Handschrift-Buchstaben. Perfekt für Instagram, WhatsApp, TikTok und kreative Profiltexte.
+        </p>
+      </div>
+
+      <!-- Live Generator Tool -->
+      <div class="mb-14">
+        <TextStyleConverter initialText="Schreibschrift Text hier..." />
+      </div>
+
+      <!-- Quick Links -->
+      <div class="p-6 rounded-3xl bg-[#141412] border border-white/10 text-center">
+        <p class="text-stone-300 text-sm mb-3">
+          Entdecke auch unsere Hauptseite für Handschrift und kalligraphische Schriftstile:
+        </p>
+        <a href="/schrift/handschrift" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-500 text-black font-bold hover:bg-amber-400 transition-colors">
+          <span>Handschrift Generator öffnen</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>
