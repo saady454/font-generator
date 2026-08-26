@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 import { SITE_CONFIG } from '../config/site';
 
 interface Props {
@@ -106,6 +107,7 @@ const schemasToRender = schema
       <slot />
     </div>
     <Footer />
+    <CookieConsent />
 
     <!-- Universal Toast Notification for Clipboard Copy -->
     <div

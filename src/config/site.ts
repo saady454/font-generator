@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
   domain: "[DOMAIN]",
   baseUrl: "https://[DOMAIN]/",
   logoUrl: "https://[DOMAIN]/logo.png",
-  contactEmail: "[KONTAKT_EMAIL]",
+  contactEmail: "greppagdafro8982@gmail.com",
   social: {
     instagram: "[INSTAGRAM_URL]",
     tiktok: "[TIKTOK_URL]",
