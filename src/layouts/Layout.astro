@@ -55,7 +55,6 @@ const schemasToRender = schema
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
-    <meta name="google-site-verification" content="4y_cP1tzAOoNbT2UMZ44sYJB4JGqKGbco44F3WvFKes" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href={fullCanonical} />
@@ -100,6 +99,9 @@ const schemasToRender = schema
     {schemasToRender.map((s) => (
       <script type="application/ld+json" set:html={JSON.stringify(s)} />
     ))}
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="1fEHcNe4o9cegfCkOMnXBifVvbr5-aKpF5ZpntAQ95o" />
   </head>
   <body class="bg-void text-ghost font-sans antialiased min-h-screen flex flex-col selection:bg-amber-500 selection:text-black">
     <Header />

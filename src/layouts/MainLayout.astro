@@ -43,7 +43,6 @@ const organizationSchema = JSON.stringify({
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="google-site-verification" content="4y_cP1tzAOoNbT2UMZ44sYJB4JGqKGbco44F3WvFKes" />
     
     <!-- Canonical and Hreflang -->
     <link rel="canonical" href={SITE_CONFIG.baseUrl} />
@@ -73,6 +72,9 @@ const organizationSchema = JSON.stringify({
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json" set:html={webApplicationSchema} />
     <script type="application/ld+json" set:html={organizationSchema} />
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="1fEHcNe4o9cegfCkOMnXBifVvbr5-aKpF5ZpntAQ95o" />
   </head>
   <body class="bg-void text-ghost antialiased selection:bg-amber-500 selection:text-void min-h-screen">
     <slot />
