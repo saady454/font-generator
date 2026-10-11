@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="splitInstaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090a14"/>
+      <stop offset="50%" stop-color="#161226"/>
+      <stop offset="100%" stop-color="#080810"/>
+    </linearGradient>
+    <linearGradient id="flowInstaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <filter id="splitInstaShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#splitInstaBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="280" cy="300" r="260" fill="#ec4899" fill-opacity="0.10"/>
+  <circle cx="920" cy="300" r="260" fill="#3b82f6" fill-opacity="0.10"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-160" y="-16" width="320" height="32" rx="16" fill="#ec4899" fill-opacity="0.15" stroke="#ec4899" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#f472b6" letter-spacing="2">TECHNOLOGIE-GUIDE</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Wie funktionieren <tspan fill="url(#flowInstaGrad)">Instagram Schriftarten</tspan>?
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Der Weg von der Tastatureingabe über mathematische Unicode-Codepoints direkt in die Instagram App
+    </text>
+  </g>
+
+  <!-- 3-Stage Process Flow Grid -->
+  <g transform="translate(70, 160)">
+    
+    <!-- Stage 1: Input -->
+    <g transform="translate(0, 0)" filter="url(#splitInstaShadow)">
+      <rect width="335" height="420" rx="20" fill="#151226" stroke="#ec4899" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="25" y="24" width="130" height="28" rx="14" fill="#ec4899" fill-opacity="0.15"/>
+      <text x="90" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#f472b6">1. TASTATUR INPUT</text>
+
+      <rect x="25" y="68" width="285" height="140" rx="14" fill="#0b0816" stroke="#ec4899" stroke-opacity="0.2"/>
+      <text x="142" y="130" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff">Instagram</text>
+      <text x="142" y="170" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Standard ASCII-Zeichen (U+0049...)</text>
+
+      <g transform="translate(25, 235)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Eingabe:</text>
+        <text x="0" y="24" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">• Text in Generator tippen</text>
+        <text x="0" y="48" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">• Kein Font-Download nötig</text>
+        <text x="0" y="72" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">• Funktioniert in jedem Browser</text>
+      </g>
+    </g>
+
+    <!-- Stage 2: Unicode Mapping -->
+    <g transform="translate(365, 0)" filter="url(#splitInstaShadow)">
+      <rect width="335" height="420" rx="20" fill="#151226" stroke="#8b5cf6" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="25" y="24" width="165" height="28" rx="14" fill="#8b5cf6" fill-opacity="0.15"/>
+      <text x="107" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#a78bfa">2. UNICODE MAPPING</text>
+
+      <rect x="25" y="68" width="285" height="140" rx="14" fill="#0b0816" stroke="#8b5cf6" stroke-opacity="0.2"/>
+      <text x="142" y="115" text-anchor="middle" font-family="Georgia, serif" font-size="24" font-weight="900" fill="#a78bfa">𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦</text>
+      <text x="142" y="150" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-style="italic" fill="#ffffff">𝓘𝓷𝓼𝓽𝓪𝓰𝓻𝓪𝓶</text>
+      <text x="142" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Mathematical Alphanumeric Symbols</text>
+
+      <g transform="translate(25, 235)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Umwandlung:</text>
+        <text x="0" y="24" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">• Automatische Codepoint-Zuordnung</text>
+        <text x="0" y="48" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">• Über 50 typografische Stile</text>
+        <text x="0" y="72" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">• Echte universelle Textzeichen</text>
+      </g>
+    </g>
+
+    <!-- Stage 3: Copy &amp; Paste in Instagram -->
+    <g transform="translate(730, 0)" filter="url(#splitInstaShadow)">
+      <rect width="335" height="420" rx="20" fill="#151226" stroke="#3b82f6" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="25" y="24" width="165" height="28" rx="14" fill="#3b82f6" fill-opacity="0.15"/>
+      <text x="107" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#60a5fa">3. EINFÜGEN BEI INSTA</text>
+
+      <rect x="25" y="68" width="285" height="140" rx="14" fill="#0b0816" stroke="#3b82f6" stroke-opacity="0.2"/>
+      <rect x="45" y="95" width="205" height="40" rx="8" fill="#3b82f6"/>
+      <text x="147" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#ffffff">📋 KOPIEREN &amp; EINFÜGEN</text>
+      <text x="147" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34d399">✓ Nativ sichtbar auf allen Smartphones</text>
+
+      <g transform="translate(25, 235)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Verwendung:</text>
+        <text x="0" y="24" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">• Profilname (Display Name)</text>
+        <text x="0" y="48" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">• 150-Zeichen Instagram-Bio</text>
+        <text x="0" y="72" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">• Captions, Story-Text &amp; DMs</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

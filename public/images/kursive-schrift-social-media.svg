@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="smKBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c16"/>
+      <stop offset="100%" stop-color="#121628"/>
+    </linearGradient>
+    <linearGradient id="smKCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#192036"/>
+      <stop offset="100%" stop-color="#101322"/>
+    </linearGradient>
+    <filter id="smKShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#smKBg)"/>
+
+  <!-- Title -->
+  <g transform="translate(600, 60)" text-anchor="middle">
+    <rect x="-170" y="-18" width="340" height="36" rx="18" fill="#ec4899" fill-opacity="0.15" stroke="#ec4899" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="sans-serif" font-size="13" font-weight="800" fill="#f472b6" letter-spacing="1.5">SOCIAL MEDIA &amp; PROFILE</text>
+    
+    <text y="55" font-family="sans-serif" font-size="32" font-weight="900" fill="#ffffff">
+      Einsatzbereiche von <tspan fill="#f472b6">Kursiver Schrift</tspan>
+    </text>
+    <text y="85" font-family="sans-serif" font-size="14" fill="#94a3b8">
+      Wie du mit elegantem Kursivtext auf Instagram, WhatsApp, TikTok und Discord Akzente setzt
+    </text>
+  </g>
+
+  <!-- 3 Mockup Cards -->
+  <g transform="translate(70, 180)">
+    
+    <!-- 1. Instagram Bio &amp; Aesthetic Mockup -->
+    <g transform="translate(0, 0)" filter="url(#smKShadow)">
+      <rect width="325" height="400" rx="20" fill="url(#smKCardGrad)" stroke="#ec4899" stroke-opacity="0.3" stroke-width="1.5"/>
+      <path d="M 0 20 Q 0 0 20 0 L 305 0 Q 325 0 325 20 L 325 60 L 0 60 Z" fill="#ec4899" fill-opacity="0.1"/>
+      
+      <text x="30" y="38" font-family="sans-serif" font-size="18">📸</text>
+      <text x="60" y="38" font-family="sans-serif" font-size="15" font-weight="800" fill="#f472b6">Instagram Bio &amp; Zitate</text>
+
+      <!-- Profile Mockup Box -->
+      <g transform="translate(20, 80)">
+        <rect width="285" height="150" rx="12" fill="#0b0d14" stroke="#ffffff" stroke-opacity="0.08"/>
+        
+        <circle cx="35" cy="35" r="20" fill="#ec4899" fill-opacity="0.3" stroke="#ec4899"/>
+        <text x="35" y="41" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">🌸</text>
+        
+        <text x="70" y="32" font-family="system-ui, sans-serif" font-size="14" font-style="italic" font-weight="700" fill="#ffffff">𝘌𝘭𝘦𝘯𝘢 𝘔𝘢𝘳𝘪𝘦</text>
+        <text x="70" y="48" font-family="sans-serif" font-size="11" fill="#94a3b8">@elena_lifestyle</text>
+
+        <line x1="15" y1="70" x2="270" y2="70" stroke="#ffffff" stroke-opacity="0.05"/>
+
+        <g transform="translate(15, 90)" font-family="sans-serif" font-size="12">
+          <text y="0" font-style="italic" fill="#f472b6">„𝘍𝘰𝘤𝘶𝘴 𝘰𝘯 𝘵𝘩𝘦 𝘨𝘰𝘰𝘥 𝘵𝘩𝘪𝘯𝘨𝘴.“ ✨</text>
+          <text y="20" fill="#cbd5e1">📖 Lifestyle, Fotografie &amp; Poesie</text>
+          <text y="40" fill="#38bdf8">🔗 schriftarten.io/kursiv</text>
+        </g>
+      </g>
+
+      <g transform="translate(20, 255)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#f472b6">Best Practice:</text>
+        <text y="22">• Zitate &amp; Sinnsprüche hervorheben</text>
+        <text y="44">• Subtile Ästhetik im Profil</text>
+        <text y="66">• Perfekt für Lifestyle &amp; Kunst</text>
+      </g>
+    </g>
+
+    <!-- 2. WhatsApp &amp; Status -->
+    <g transform="translate(365, 0)" filter="url(#smKShadow)">
+      <rect width="325" height="400" rx="20" fill="url(#smKCardGrad)" stroke="#10b981" stroke-opacity="0.3" stroke-width="1.5"/>
+      <path d="M 0 20 Q 0 0 20 0 L 305 0 Q 325 0 325 20 L 325 60 L 0 60 Z" fill="#10b981" fill-opacity="0.1"/>
+      
+      <text x="30" y="38" font-family="sans-serif" font-size="18">💬</text>
+      <text x="60" y="38" font-family="sans-serif" font-size="15" font-weight="800" fill="#34d399">WhatsApp &amp; Status</text>
+
+      <!-- Chat Bubble Box -->
+      <g transform="translate(20, 80)">
+        <rect width="285" height="150" rx="12" fill="#0b0d14" stroke="#ffffff" stroke-opacity="0.08"/>
+        
+        <!-- Bubble 1 -->
+        <g transform="translate(15, 20)">
+          <rect width="255" height="48" rx="10" fill="#1e3a2f" stroke="#10b981" stroke-opacity="0.3"/>
+          <text x="15" y="20" font-family="sans-serif" font-size="11" font-style="italic" font-weight="700" fill="#34d399">🌸 𝘚𝘤𝘩ö𝘯𝘦𝘯 𝘚𝘰𝘯𝘯𝘵𝘢𝘨! ☕</text>
+          <text x="15" y="36" font-family="sans-serif" font-size="11" fill="#e2e8f0">Genieße deinen freien Tag.</text>
+        </g>
+
+        <!-- Bubble 2 -->
+        <g transform="translate(15, 80)">
+          <rect width="255" height="48" rx="10" fill="#1e2538" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="15" y="20" font-family="'Times New Roman', serif" font-size="13" font-style="italic" fill="#fbbf24">„𝐷𝑎𝑠 𝐺𝑒ℎ𝑒𝑖𝑚𝑛𝑖𝑠 𝑑𝑒𝑠 𝐺𝑙ü𝑐𝑘𝑠...“</text>
+          <text x="15" y="36" font-family="sans-serif" font-size="11" fill="#94a3b8">Aktueller WhatsApp-Status</text>
+        </g>
+      </g>
+
+      <g transform="translate(20, 255)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#34d399">Best Practice:</text>
+        <text y="22">• Persönliche Grüße &amp; Wünsche</text>
+        <text y="44">• Unabhängig von *kursiv*-Syntax</text>
+        <text y="66">• Funktioniert in allen Chats</text>
+      </g>
+    </g>
+
+    <!-- 3. TikTok &amp; Discord -->
+    <g transform="translate(730, 0)" filter="url(#smKShadow)">
+      <rect width="330" height="400" rx="20" fill="url(#smKCardGrad)" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+      <path d="M 0 20 Q 0 0 20 0 L 310 0 Q 330 0 330 20 L 330 60 L 0 60 Z" fill="#38bdf8" fill-opacity="0.1"/>
+      
+      <text x="30" y="38" font-family="sans-serif" font-size="18">🎵</text>
+      <text x="60" y="38" font-family="sans-serif" font-size="15" font-weight="800" fill="#38bdf8">TikTok &amp; Discord</text>
+
+      <!-- Video Caption Box -->
+      <g transform="translate(20, 80)">
+        <rect width="290" height="150" rx="12" fill="#0b0d14" stroke="#ffffff" stroke-opacity="0.08"/>
+        
+        <g transform="translate(15, 20)">
+          <rect width="260" height="45" rx="8" fill="#1a1c26" stroke="#38bdf8" stroke-opacity="0.3"/>
+          <text x="15" y="28" font-family="sans-serif" font-size="13" font-style="italic" font-weight="700" fill="#38bdf8">🎬 𝘕𝘦𝘶𝘦𝘴 𝘝𝘪𝘥𝘦𝘰 𝘪𝘴𝘵 𝘰𝘯𝘭𝘪𝘯𝘦!</text>
+        </g>
+
+        <g transform="translate(15, 80)">
+          <rect width="260" height="45" rx="8" fill="#1a1c26" stroke="#a855f7" stroke-opacity="0.3"/>
+          <text x="15" y="28" font-family="sans-serif" font-size="13" font-style="italic" font-weight="700" fill="#c084fc">🌙 𝘊𝘶𝘳𝘴𝘪𝘷𝘦_𝘝𝘪𝘣𝘦𝘴 (Discord)</text>
+        </g>
+      </g>
+
+      <g transform="translate(20, 255)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#38bdf8">Best Practice:</text>
+        <text y="22">• Video-Captions auflockern</text>
+        <text y="44">• Discord Über-mich-Text</text>
+        <text y="66">• Stilvolle Ästhetik</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

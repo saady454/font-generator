@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="compBgHand5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a14"/>
+      <stop offset="50%" stop-color="#121426"/>
+      <stop offset="100%" stop-color="#060810"/>
+    </linearGradient>
+    <filter id="tileShadowHand5" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#compBgHand5)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="200" cy="160" r="220" fill="#c084fc" fill-opacity="0.08"/>
+  <circle cx="1000" cy="480" r="240" fill="#f472b6" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-160" y="-16" width="320" height="32" rx="16" fill="#c084fc" fill-opacity="0.15" stroke="#c084fc" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#d8b4fe" letter-spacing="2">TYPOGRAFIE-VERGLEICH</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Die 5 wichtigsten <tspan fill="#d8b4fe">Handschrift-Stile</tspan> im Überblick
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Visuelle Gegenüberstellung von Kalligrafie, Script, Brush, Notiz- und Dekorativem Stil
+    </text>
+  </g>
+
+  <!-- 5 Vertical Cards Grid -->
+  <g transform="translate(50, 155)">
+    
+    <!-- Card 1: Kalligrafisch -->
+    <g transform="translate(0, 0)" filter="url(#tileShadowHand5)">
+      <rect width="205" height="440" rx="18" fill="#121526" stroke="#c084fc" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="18" width="120" height="24" rx="6" fill="#c084fc" fill-opacity="0.15"/>
+      <text x="75" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#d8b4fe">KALLIGRAFISCH</text>
+
+      <rect x="15" y="55" width="175" height="150" rx="12" fill="#080a12" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="102" y="145" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-style="italic" font-weight="700" fill="#d8b4fe">𝒜𝓊𝒻𝓇𝒾𝒸𝒽𝓉𝒾𝑔</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Elegant &amp; geschwungen</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#d8b4fe">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Zitate, Namen, Karten</text>
+      </g>
+
+      <rect x="15" y="355" width="175" height="60" rx="10" fill="#171a2e"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#d8b4fe">Festlich &amp; Vornehm</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Klassische Federführung</text>
+    </g>
+
+    <!-- Card 2: Script -->
+    <g transform="translate(225, 0)" filter="url(#tileShadowHand5)">
+      <rect width="205" height="440" rx="18" fill="#121526" stroke="#f472b6" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="18" width="90" height="24" rx="6" fill="#f472b6" fill-opacity="0.15"/>
+      <text x="60" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#f472b6">SCRIPT</text>
+
+      <rect x="15" y="55" width="175" height="150" rx="12" fill="#080a12" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="102" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="800" fill="#f472b6">𝓔𝓵𝓮𝓰𝓪𝓷𝓽</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Persönlich &amp; weich</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f472b6">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Bios, Grüße, kurze Texte</text>
+      </g>
+
+      <rect x="15" y="355" width="175" height="60" rx="10" fill="#171a2e"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#f472b6">Modern &amp; Clean</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Flüssiger Schriftfluss</text>
+    </g>
+
+    <!-- Card 3: Brush -->
+    <g transform="translate(450, 0)" filter="url(#tileShadowHand5)">
+      <rect width="205" height="440" rx="18" fill="#121526" stroke="#fbbf24" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="18" width="90" height="24" rx="6" fill="#fbbf24" fill-opacity="0.15"/>
+      <text x="60" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#fbbf24">BRUSH</text>
+
+      <rect x="15" y="55" width="175" height="150" rx="12" fill="#080a12" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="102" y="145" text-anchor="middle" font-family="Impact, sans-serif" font-size="28" font-weight="900" fill="#fbbf24">𝑩𝒓𝒖𝒔𝒉</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Kräftig &amp; kreativ</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Designs, Headlines</text>
+      </g>
+
+      <rect x="15" y="355" width="175" height="60" rx="10" fill="#171a2e"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#fbbf24">Dynamischer Pinsel</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Starker visueller Akzent</text>
+    </g>
+
+    <!-- Card 4: Notizstil -->
+    <g transform="translate(675, 0)" filter="url(#tileShadowHand5)">
+      <rect width="205" height="440" rx="18" fill="#121526" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="18" width="95" height="24" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="62" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#38bdf8">NOTIZSTIL</text>
+
+      <rect x="15" y="55" width="175" height="150" rx="12" fill="#080a12" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="102" y="145" text-anchor="middle" font-family="Comic Sans MS, sans-serif" font-size="24" font-weight="700" fill="#38bdf8">ℕ𝕠𝕥𝕚𝕫</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Locker &amp; schlicht</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Kurze Nachrichten</text>
+      </g>
+
+      <rect x="15" y="355" width="175" height="60" rx="10" fill="#171a2e"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#38bdf8">Ungezwungen</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Tagebuch &amp; Memos</text>
+    </g>
+
+    <!-- Card 5: Dekorativ -->
+    <g transform="translate(900, 0)" filter="url(#tileShadowHand5)">
+      <rect width="195" height="440" rx="18" fill="#121526" stroke="#ec4899" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="18" width="100" height="24" rx="6" fill="#ec4899" fill-opacity="0.15"/>
+      <text x="65" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#f472b6">DEKORATIV</text>
+
+      <rect x="15" y="55" width="165" height="150" rx="12" fill="#080a12" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="97" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#f472b6">✨ 𝒫𝑜𝑒𝓈𝒾𝑒 ✨</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Auffällig &amp; verspielt</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f472b6">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Social Media Posts</text>
+      </g>
+
+      <rect x="15" y="355" width="165" height="60" rx="10" fill="#171a2e"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#f472b6">Verspielt &amp; Bunt</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Blickfang in Captions</text>
+    </g>
+
+  </g>
+</svg>

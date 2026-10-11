@@ -1,0 +1,660 @@
+---
+interface Props {
+  platformId: string;
+}
+
+const { platformId } = Astro.props;
+
+const platformTitles: Record<string, { title: string; icon: string }> = {
+  'instagram': { title: 'Live Instagram-Vorschau', icon: '📸' },
+  'tiktok': { title: 'Live TikTok-Vorschau', icon: '🎵' },
+  'whatsapp': { title: 'Live WhatsApp-Vorschau', icon: '💬' },
+  'discord': { title: 'Live Discord-Vorschau', icon: '🎮' },
+  'facebook': { title: 'Live Facebook-Vorschau', icon: '📘' },
+  'twitter-x': { title: 'Live X-Vorschau', icon: '𝕏' },
+  'telegram': { title: 'Live Telegram-Vorschau', icon: '✈️' },
+};
+
+const currentConfig = platformTitles[platformId] || { title: 'Live-Vorschau', icon: '📱' };
+---
+
+<div class="bg-[#141412] border border-white/10 rounded-3xl p-5 sm:p-6 shadow-xl relative overflow-hidden" id="platform-live-widget" data-platform={platformId}>
+  <!-- Widget Header -->
+  <div class="flex items-center justify-between mb-4">
+    <div class="flex items-center gap-2">
+      <span class="text-xl">{currentConfig.icon}</span>
+      <h3 class="text-base font-bold text-white tracking-wide">
+        {currentConfig.title}
+      </h3>
+    </div>
+    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[10px] font-extrabold uppercase tracking-wider animate-pulse">
+      <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+      Echtzeit
+    </span>
+  </div>
+
+  <!-- Style Preset Switcher (Choose which font style is previewed in the mockup) -->
+  <div class="mb-4">
+    <div class="text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-2 flex items-center justify-between">
+      <span>Vorschau-Schriftstil:</span>
+      <span id="preview-active-style-label" class="text-amber-400 font-semibold lowercase">fett sans</span>
+    </div>
+    <div class="flex flex-wrap gap-1.5" id="preview-style-pills">
+      <button type="button" class="preview-style-pill active px-2.5 py-1 rounded-lg text-[11px] font-bold bg-amber-500 text-black shadow-sm transition-all" data-style="bold-sans">
+        Fett
+      </button>
+      <button type="button" class="preview-style-pill px-2.5 py-1 rounded-lg text-[11px] font-bold bg-white/5 hover:bg-white/10 text-stone-300 hover:text-white border border-white/10 transition-all" data-style="italic">
+        Kursiv
+      </button>
+      <button type="button" class="preview-style-pill px-2.5 py-1 rounded-lg text-[11px] font-bold bg-white/5 hover:bg-white/10 text-stone-300 hover:text-white border border-white/10 transition-all" data-style="script">
+        Script
+      </button>
+      <button type="button" class="preview-style-pill px-2.5 py-1 rounded-lg text-[11px] font-bold bg-white/5 hover:bg-white/10 text-stone-300 hover:text-white border border-white/10 transition-all" data-style="small-caps">
+        Kapitälchen
+      </button>
+      <button type="button" class="preview-style-pill px-2.5 py-1 rounded-lg text-[11px] font-bold bg-white/5 hover:bg-white/10 text-stone-300 hover:text-white border border-white/10 transition-all" data-style="bubble">
+        Bubbles
+      </button>
+      <button type="button" class="preview-style-pill px-2.5 py-1 rounded-lg text-[11px] font-bold bg-white/5 hover:bg-white/10 text-stone-300 hover:text-white border border-white/10 transition-all" data-style="gothic">
+        Gotisch
+      </button>
+      <button type="button" class="preview-style-pill px-2.5 py-1 rounded-lg text-[11px] font-bold bg-white/5 hover:bg-white/10 text-stone-300 hover:text-white border border-white/10 transition-all" data-style="strikethrough">
+        Gestrichen
+      </button>
+    </div>
+  </div>
+
+  <!-- PLATFORM SPECIFIC MOCKUP CONTAINER -->
+  <div class="relative mx-auto w-full text-white font-sans select-none">
+    
+    <!-- ============================================================ -->
+    <!-- 1. INSTAGRAM MOCKUP -->
+    <!-- ============================================================ -->
+    {platformId === 'instagram' && (
+      <div class="max-w-[320px] mx-auto rounded-[2.5rem] bg-[#0c0d14] border-[5px] border-stone-800/90 shadow-2xl shadow-black/80 overflow-hidden">
+        <!-- Status Bar -->
+        <div class="pt-2 px-5 pb-1 flex items-center justify-between text-[11px] text-stone-300 font-semibold">
+          <span>09:41</span>
+          <div class="h-4 w-20 bg-black rounded-full flex items-center justify-end px-2 gap-1 border border-white/5">
+            <div class="w-1.5 h-1.5 rounded-full bg-[#1e202e]"></div>
+            <div class="w-1 h-1 rounded-full bg-emerald-500/80 animate-pulse"></div>
+          </div>
+          <div class="flex items-center gap-1 text-[10px]">
+            <span>5G</span>
+            <span>🔋</span>
+          </div>
+        </div>
+
+        <!-- Top Header Bar -->
+        <div class="px-4 py-2 flex items-center justify-between border-b border-white/5">
+          <div class="flex items-center gap-1.5">
+            <span class="font-bold text-xs text-white tracking-tight flex items-center gap-1">
+              dein_instagram_name
+              <svg class="w-3.5 h-3.5 text-sky-400 inline" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </span>
+            <span class="text-[10px] text-stone-400">⌄</span>
+          </div>
+          <div class="flex items-center gap-3 text-stone-300 text-sm">
+            <span>➕</span>
+            <span class="font-bold">☰</span>
+          </div>
+        </div>
+
+        <!-- Profile Info -->
+        <div class="p-4 space-y-3">
+          <div class="flex items-center justify-between gap-3">
+            <div class="relative flex-shrink-0">
+              <div class="w-16 h-16 rounded-full p-[2.5px] bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 shadow-md">
+                <div class="w-full h-full rounded-full bg-[#161824] flex items-center justify-center text-white font-bold text-sm border-2 border-[#0c0d14]">
+                  <span>✨</span>
+                </div>
+              </div>
+              <span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-blue-500 text-white text-[10px] font-extrabold flex items-center justify-center border-2 border-[#0c0d14]">+</span>
+            </div>
+
+            <div class="flex-1 grid grid-cols-3 gap-1 text-center">
+              <div>
+                <div class="font-extrabold text-xs sm:text-sm text-white">128</div>
+                <div class="text-[10px] text-stone-400 leading-tight">Beiträge</div>
+              </div>
+              <div>
+                <div class="font-extrabold text-xs sm:text-sm text-white">10,4K</div>
+                <div class="text-[10px] text-stone-400 leading-tight">Follower</div>
+              </div>
+              <div>
+                <div class="font-extrabold text-xs sm:text-sm text-white">542</div>
+                <div class="text-[10px] text-stone-400 leading-tight">Gefolgt</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-1">
+            <div class="live-target-name font-bold text-xs text-white tracking-tight">Instagram Bio Vibes ✨</div>
+            <div class="text-[10px] text-stone-400 font-medium">Digital Creator · Social Media</div>
+            <div class="live-target-bio text-xs text-stone-200 mt-1 leading-snug whitespace-pre-wrap break-words min-h-[32px] bg-white/[0.03] p-2 rounded-xl border border-white/5 font-sans">
+              Instagram Bio Vibes ✨
+            </div>
+            <div class="text-[11px] text-sky-400 font-medium mt-1.5 flex items-center gap-1 truncate">
+              <span>🔗</span> <span class="hover:underline">schriftarten-generator.de/bio</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-7 gap-1.5 pt-1">
+            <button type="button" tabindex="-1" class="col-span-3 py-1.5 rounded-lg bg-white/10 text-stone-200 text-[11px] font-semibold pointer-events-none">Bearbeiten</button>
+            <button type="button" tabindex="-1" class="col-span-3 py-1.5 rounded-lg bg-white/10 text-stone-200 text-[11px] font-semibold pointer-events-none">Teilen</button>
+            <button type="button" tabindex="-1" class="col-span-1 py-1.5 rounded-lg bg-white/10 text-stone-200 text-[11px] font-semibold pointer-events-none flex items-center justify-center">👤</button>
+          </div>
+        </div>
+
+        <div class="py-2 flex justify-center bg-black/40">
+          <div class="w-24 h-1 bg-stone-500/60 rounded-full"></div>
+        </div>
+      </div>
+    )}
+
+    <!-- ============================================================ -->
+    <!-- 2. TIKTOK MOCKUP -->
+    <!-- ============================================================ -->
+    {platformId === 'tiktok' && (
+      <div class="max-w-[320px] mx-auto rounded-[2.5rem] bg-[#09090e] border-[5px] border-stone-800/90 shadow-2xl shadow-black/80 overflow-hidden">
+        <!-- Top Status Bar -->
+        <div class="pt-2 px-5 pb-1 flex items-center justify-between text-[11px] text-stone-300 font-semibold">
+          <span>09:41</span>
+          <div class="h-4 w-20 bg-black rounded-full flex items-center justify-end px-2 gap-1 border border-white/5">
+            <div class="w-1.5 h-1.5 rounded-full bg-[#1e202e]"></div>
+            <div class="w-1 h-1 rounded-full bg-cyan-400/80 animate-pulse"></div>
+          </div>
+          <div class="flex items-center gap-1 text-[10px]">
+            <span>5G</span>
+            <span>🔋</span>
+          </div>
+        </div>
+
+        <!-- TikTok Top Bar -->
+        <div class="px-4 py-2 flex items-center justify-between border-b border-white/5">
+          <span class="text-stone-400 text-xs">👤</span>
+          <div class="live-target-name font-bold text-xs text-white tracking-tight flex items-center gap-1">
+            TikTok Creator ✨
+            <span class="text-cyan-400 text-[10px]">✓</span>
+          </div>
+          <span class="text-stone-400 text-xs font-bold">⋮</span>
+        </div>
+
+        <!-- Profile Body -->
+        <div class="p-4 text-center space-y-3">
+          <!-- Center Avatar with TikTok Cyan/Rose accents -->
+          <div class="relative inline-block mx-auto">
+            <div class="w-20 h-20 rounded-full p-[2.5px] bg-gradient-to-tr from-cyan-400 via-stone-800 to-rose-500 shadow-md">
+              <div class="w-full h-full rounded-full bg-[#141522] flex items-center justify-center text-2xl border-2 border-[#09090e]">
+                🎵
+              </div>
+            </div>
+            <span class="absolute bottom-0 right-1 w-5 h-5 rounded-full bg-rose-500 text-white text-xs font-extrabold flex items-center justify-center border-2 border-[#09090e] shadow">+</span>
+          </div>
+
+          <!-- Handle -->
+          <div class="text-xs text-stone-300 font-medium -mt-1">@tiktok_star</div>
+
+          <!-- TikTok 3-Column Stats -->
+          <div class="flex items-center justify-center gap-6 text-center pt-1 border-y border-white/5 py-2">
+            <div>
+              <div class="font-extrabold text-sm text-white">48</div>
+              <div class="text-[10px] text-stone-400">Folgt</div>
+            </div>
+            <div class="w-[1px] h-6 bg-white/10"></div>
+            <div>
+              <div class="font-extrabold text-sm text-white">245,8K</div>
+              <div class="text-[10px] text-stone-400">Follower</div>
+            </div>
+            <div class="w-[1px] h-6 bg-white/10"></div>
+            <div>
+              <div class="font-extrabold text-sm text-white">1,8M</div>
+              <div class="text-[10px] text-stone-400">Gefällt mir</div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex gap-2 justify-center">
+            <button type="button" tabindex="-1" class="flex-1 py-2 px-3 rounded-lg bg-rose-600/90 text-white text-xs font-bold pointer-events-none shadow-sm">Profil bearbeiten</button>
+            <button type="button" tabindex="-1" class="py-2 px-3 rounded-lg bg-white/10 text-stone-200 text-xs font-bold pointer-events-none">↗️</button>
+          </div>
+
+          <!-- Live Bio Box -->
+          <div class="text-left bg-white/[0.03] p-3 rounded-xl border border-white/5">
+            <div class="text-[10px] text-stone-400 font-bold uppercase tracking-wider mb-1">TikTok Bio (80 Zeichen):</div>
+            <div class="live-target-bio text-xs text-stone-200 leading-snug whitespace-pre-wrap break-words min-h-[28px] font-sans">
+              TikTok Bio Vibes ✨
+            </div>
+          </div>
+
+          <!-- Video Caption Teaser -->
+          <div class="text-left bg-black/40 p-2.5 rounded-xl border border-white/5 text-[11px] text-stone-300 flex items-start gap-2">
+            <span class="text-rose-400 font-bold">▶</span>
+            <div class="flex-1 truncate">
+              <span class="text-stone-400 text-[10px] block font-semibold">Video-Caption Hook:</span>
+              <span class="live-target-caption text-white font-medium">TikTok Bio Vibes ✨</span>
+              <span class="text-cyan-400 text-[10px]"> #fyp #viral</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="py-2 flex justify-center bg-black/40">
+          <div class="w-24 h-1 bg-stone-500/60 rounded-full"></div>
+        </div>
+      </div>
+    )}
+
+    <!-- ============================================================ -->
+    <!-- 3. WHATSAPP MOCKUP (CHAT BUBBLE) -->
+    <!-- ============================================================ -->
+    {platformId === 'whatsapp' && (
+      <div class="max-w-[340px] mx-auto rounded-3xl bg-[#0b141a] border border-white/10 shadow-2xl overflow-hidden">
+        <!-- WhatsApp Header -->
+        <div class="bg-[#1f2c34] px-4 py-3 flex items-center justify-between border-b border-white/5">
+          <div class="flex items-center gap-3">
+            <span class="text-stone-400 text-sm">←</span>
+            <div class="relative">
+              <div class="w-9 h-9 rounded-full bg-emerald-700 flex items-center justify-center text-white font-bold text-sm">
+                💬
+              </div>
+              <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-[#1f2c34]"></span>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-white tracking-tight flex items-center gap-1.5">
+                Bester Freund / Gruppe
+              </div>
+              <div class="text-[10px] text-emerald-400 font-medium leading-none">online</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 text-stone-300 text-sm">
+            <span>📹</span>
+            <span>📞</span>
+            <span class="font-bold">⋮</span>
+          </div>
+        </div>
+
+        <!-- Chat Messages Background Surface -->
+        <div class="p-4 space-y-3 bg-[#0b141a] min-h-[220px] relative">
+          <!-- Date Pill -->
+          <div class="flex justify-center mb-2">
+            <span class="px-3 py-0.5 rounded-md bg-[#182229] text-stone-400 text-[10px] font-semibold uppercase tracking-wider shadow-sm">
+              Heute
+            </span>
+          </div>
+
+          <!-- Incoming Message (Left) -->
+          <div class="flex justify-start">
+            <div class="max-w-[85%] rounded-2xl rounded-tl-none bg-[#202c33] p-2.5 text-xs text-stone-200 shadow border border-white/5">
+              <p>Hey! Wie sieht dein neuer Schriftzug aus? Zeig mal 👀</p>
+              <div class="text-[9px] text-stone-400 text-right mt-1">14:28</div>
+            </div>
+          </div>
+
+          <!-- Outgoing Message (Right - Live Styled Message Bubble) -->
+          <div class="flex justify-end">
+            <div class="max-w-[90%] rounded-2xl rounded-tr-none bg-[#005c4b] p-3 text-xs text-white shadow-md border border-emerald-500/20">
+              <!-- Live Styled Text -->
+              <div class="live-target-bio text-sm leading-relaxed whitespace-pre-wrap break-words font-sans">
+                WhatsApp Bio Vibes ✨
+              </div>
+              <!-- Message Footer: Time + Double Blue Ticks -->
+              <div class="flex items-center justify-end gap-1 mt-1 text-[10px] text-emerald-200/80">
+                <span>14:29</span>
+                <span class="text-sky-300 font-bold">✓✓</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Input Mockup Footer -->
+        <div class="bg-[#1f2c34] p-2.5 flex items-center gap-2 border-t border-white/5">
+          <div class="flex-1 bg-[#2a3942] rounded-full px-3 py-1.5 text-xs text-stone-400 flex items-center justify-between">
+            <span class="truncate">Nachricht eingeben...</span>
+            <span class="text-stone-400">📎</span>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-[#00a884] flex items-center justify-center text-white text-xs shadow">
+            🎤
+          </div>
+        </div>
+      </div>
+    )}
+
+    <!-- ============================================================ -->
+    <!-- 4. DISCORD MOCKUP (PROFILE & CHANNEL CARD) -->
+    <!-- ============================================================ -->
+    {platformId === 'discord' && (
+      <div class="max-w-[340px] mx-auto rounded-3xl bg-[#1e1f22] border border-white/10 shadow-2xl overflow-hidden">
+        <!-- Top Colored Banner -->
+        <div class="h-16 bg-gradient-to-r from-indigo-900 via-purple-900 to-amber-900 relative">
+          <div class="absolute -bottom-6 left-4">
+            <div class="relative">
+              <div class="w-14 h-14 rounded-full bg-[#2b2d31] border-4 border-[#1e1f22] flex items-center justify-center text-xl shadow-lg">
+                🎮
+              </div>
+              <span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-[#1e1f22]" title="Online"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- User Profile Details -->
+        <div class="pt-8 px-4 pb-4 space-y-3">
+          <div>
+            <!-- Live Styled Nickname -->
+            <div class="live-target-name text-base font-extrabold text-white tracking-tight">
+              Discord Gamer ✨
+            </div>
+            <div class="text-[11px] text-stone-400 font-mono">gamertag#0001 · @gamertag</div>
+          </div>
+
+          <!-- Role Badges -->
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <span class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-400 border border-amber-500/30 text-[10px] font-bold flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Server Owner
+            </span>
+            <span class="px-2 py-0.5 rounded-md bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 text-[10px] font-bold">
+              VIP Member
+            </span>
+          </div>
+
+          <!-- About Me (Über mich) Live Box -->
+          <div class="bg-[#2b2d31] p-3 rounded-xl border border-white/5 space-y-1">
+            <div class="text-[10px] font-extrabold uppercase text-stone-400 tracking-wider">Über mich</div>
+            <div class="live-target-bio text-xs text-stone-200 leading-relaxed whitespace-pre-wrap break-words min-h-[28px] font-sans">
+              Discord Bio Vibes ✨
+            </div>
+          </div>
+
+          <!-- Live Channel Chat Preview -->
+          <div class="bg-[#232428] p-2.5 rounded-xl border border-white/5 text-xs flex items-start gap-2.5">
+            <div class="w-7 h-7 rounded-full bg-indigo-600 flex-shrink-0 flex items-center justify-center text-xs text-white font-bold">
+              #
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-1.5">
+                <span class="live-target-name font-bold text-amber-400 text-xs truncate">Discord Gamer</span>
+                <span class="text-[9px] text-stone-400">Heute 19:42</span>
+              </div>
+              <p class="live-target-caption text-stone-300 text-xs mt-0.5 whitespace-pre-wrap break-words">
+                Discord Bio Vibes ✨
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+
+    <!-- ============================================================ -->
+    <!-- 5. FACEBOOK MOCKUP (POST CARD) -->
+    <!-- ============================================================ -->
+    {platformId === 'facebook' && (
+      <div class="max-w-[340px] mx-auto rounded-3xl bg-[#242526] border border-white/10 shadow-2xl overflow-hidden p-4 space-y-3">
+        <!-- Post Header -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-10 h-10 rounded-full bg-[#3a3b3c] border border-white/10 flex items-center justify-center text-white font-bold text-sm">
+              👤
+            </div>
+            <div>
+              <div class="live-target-name text-xs sm:text-sm font-bold text-white tracking-tight">
+                Facebook Creator ✨
+              </div>
+              <div class="flex items-center gap-1 text-[10px] text-stone-400 font-medium">
+                <span>Gerade eben</span> · <span>🌍 Öffentlich</span>
+              </div>
+            </div>
+          </div>
+          <span class="text-stone-400 font-bold text-base">⋯</span>
+        </div>
+
+        <!-- Post Live Text Content -->
+        <div class="py-1">
+          <div class="live-target-bio text-sm sm:text-base text-stone-100 leading-relaxed whitespace-pre-wrap break-words min-h-[48px] font-sans">
+            Facebook Bio Vibes ✨
+          </div>
+        </div>
+
+        <!-- Post Stats Bar -->
+        <div class="flex items-center justify-between text-[11px] text-stone-400 pt-2 border-t border-white/5">
+          <div class="flex items-center gap-1">
+            <span class="text-xs">👍❤️</span> <span>84</span>
+          </div>
+          <div>14 Kommentare · 3 Mal geteilt</div>
+        </div>
+
+        <!-- Post Action Buttons -->
+        <div class="grid grid-cols-3 gap-1 pt-2 border-t border-white/5 text-center">
+          <button type="button" tabindex="-1" class="py-1.5 rounded-lg hover:bg-white/5 text-stone-300 text-xs font-semibold pointer-events-none flex items-center justify-center gap-1.5">
+            <span>👍</span> Gefällt mir
+          </button>
+          <button type="button" tabindex="-1" class="py-1.5 rounded-lg hover:bg-white/5 text-stone-300 text-xs font-semibold pointer-events-none flex items-center justify-center gap-1.5">
+            <span>💬</span> Kommentieren
+          </button>
+          <button type="button" tabindex="-1" class="py-1.5 rounded-lg hover:bg-white/5 text-stone-300 text-xs font-semibold pointer-events-none flex items-center justify-center gap-1.5">
+            <span>↗️</span> Teilen
+          </button>
+        </div>
+      </div>
+    )}
+
+    <!-- ============================================================ -->
+    <!-- 6. X (TWITTER) MOCKUP (TWEET CARD) -->
+    <!-- ============================================================ -->
+    {platformId === 'twitter-x' && (
+      <div class="max-w-[340px] mx-auto rounded-3xl bg-[#000000] border border-stone-800 shadow-2xl p-4 space-y-3">
+        <!-- Tweet Header -->
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 rounded-full bg-[#16181c] border border-white/10 flex-shrink-0 flex items-center justify-center text-white font-bold text-sm">
+            𝕏
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1.5 truncate">
+                <span class="live-target-name font-bold text-xs sm:text-sm text-white truncate">
+                  X Creator ✨
+                </span>
+                <svg class="w-3.5 h-3.5 text-sky-400 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <span class="text-[11px] text-stone-500 truncate">@handle · 2m</span>
+              </div>
+              <span class="text-stone-500 font-bold text-xs">⋯</span>
+            </div>
+
+            <!-- Tweet Body Live Text -->
+            <div class="live-target-bio text-xs sm:text-sm text-stone-100 mt-1.5 leading-relaxed whitespace-pre-wrap break-words font-sans">
+              Twitter / X Bio Vibes ✨
+            </div>
+
+            <!-- Character Gauge Indicator Bar (280 Limit) -->
+            <div class="mt-3 pt-2 border-t border-white/5 flex items-center justify-between text-[10px] text-stone-400">
+              <div class="flex items-center gap-2">
+                <div class="w-4 h-4 rounded-full border-2 border-amber-500 flex items-center justify-center text-[8px] text-amber-400 font-bold">
+                  ✓
+                </div>
+                <span id="x-char-indicator">Zeichenlimit: <strong class="text-white">280</strong> Zeichen</span>
+              </div>
+              <span class="text-sky-400 font-mono font-bold">#FontVibes</span>
+            </div>
+
+            <!-- Tweet Metrics Bar -->
+            <div class="flex items-center justify-between pt-2 text-[11px] text-stone-500">
+              <span class="flex items-center gap-1">💬 18</span>
+              <span class="flex items-center gap-1">🔁 42</span>
+              <span class="flex items-center gap-1 text-rose-400/80">❤️ 289</span>
+              <span class="flex items-center gap-1">📊 4.2K</span>
+              <span>📤</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+
+    <!-- ============================================================ -->
+    <!-- 7. TELEGRAM MOCKUP (CHANNEL HEADER & BROADCAST) -->
+    <!-- ============================================================ -->
+    {platformId === 'telegram' && (
+      <div class="max-w-[340px] mx-auto rounded-3xl bg-[#17212b] border border-white/10 shadow-2xl overflow-hidden">
+        <!-- Telegram Channel Header -->
+        <div class="bg-[#242f3d] p-3.5 flex items-center justify-between border-b border-white/5">
+          <div class="flex items-center gap-3">
+            <span class="text-stone-400 text-sm">←</span>
+            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-sky-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow">
+              ✈️
+            </div>
+            <div>
+              <div class="live-target-name text-xs sm:text-sm font-bold text-white tracking-tight">
+                Telegram Channel ✨
+              </div>
+              <div class="text-[10px] text-stone-400 font-medium">32.450 Abonnenten</div>
+            </div>
+          </div>
+          <span class="text-stone-300 font-bold text-base">⋮</span>
+        </div>
+
+        <!-- Pinned Bar -->
+        <div class="bg-[#1f2936] px-3.5 py-1.5 border-b border-white/5 flex items-center justify-between text-[11px] text-stone-300">
+          <div class="flex items-center gap-1.5 truncate">
+            <span class="text-sky-400 font-bold">📌</span>
+            <span class="truncate">Angepinnte Nachricht: Willkommen im Kanal!</span>
+          </div>
+        </div>
+
+        <!-- Telegram Broadcast Message Bubble -->
+        <div class="p-4 space-y-3 bg-[#0e1621] min-h-[160px]">
+          <div class="max-w-[95%] rounded-2xl rounded-tl-none bg-[#182533] p-3 text-xs text-white shadow-md border border-white/5">
+            <div class="text-[10px] text-sky-400 font-bold uppercase tracking-wider mb-1">
+              Kanal-Broadcast:
+            </div>
+            <!-- Live Styled Broadcast Message -->
+            <div class="live-target-bio text-xs sm:text-sm text-stone-100 leading-relaxed whitespace-pre-wrap break-words font-sans">
+              Telegram Bio Vibes ✨
+            </div>
+            <div class="flex items-center justify-end gap-1.5 mt-2 text-[10px] text-stone-400">
+              <span>👁 4.8K</span>
+              <span>16:45</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Broadcast Bar -->
+        <div class="bg-[#242f3d] py-2 px-4 text-center border-t border-white/5">
+          <span class="text-xs text-stone-300 font-semibold uppercase tracking-wider">Kanal beitreten</span>
+        </div>
+      </div>
+    )}
+
+  </div>
+
+  <!-- Mandatory Compliance Disclaimer Caption -->
+  <p class="text-center text-[11px] text-stone-400 mt-3 flex items-center justify-center gap-1.5">
+    <span>ℹ️</span>
+    <span>Beispielwerte zur Veranschaulichung</span>
+  </p>
+</div>
+
+<script>
+  import {
+    toBoldSans,
+    toItalicSerif,
+    toScript,
+    toSmallCaps,
+    toCircledWhite,
+    toBoldFraktur,
+    addCombining,
+  } from '../data/themed-variation-builder';
+
+  function initPlatformLivePreview() {
+    const inputBox = document.getElementById('converter-input-box') as HTMLTextAreaElement;
+    const stylePills = document.querySelectorAll('.preview-style-pill');
+    const activeLabel = document.getElementById('preview-active-style-label');
+    const nameTargets = document.querySelectorAll('.live-target-name');
+    const bioTargets = document.querySelectorAll('.live-target-bio');
+    const captionTargets = document.querySelectorAll('.live-target-caption');
+
+    let activeStyle = 'bold-sans';
+
+    const transformers: Record<string, (text: string) => string> = {
+      'bold-sans': (t) => toBoldSans(t),
+      'italic': (t) => toItalicSerif(t),
+      'script': (t) => toScript(t),
+      'small-caps': (t) => toSmallCaps(t),
+      'bubble': (t) => toCircledWhite(t),
+      'gothic': (t) => toBoldFraktur(t),
+      'strikethrough': (t) => addCombining(t, '\u0336'),
+    };
+
+    function updateAllPreviews() {
+      const rawText = inputBox ? inputBox.value.trim() || 'Schriftarten Generator ✨' : 'Schriftarten Generator ✨';
+      const transformFn = transformers[activeStyle] || transformers['bold-sans'];
+      const transformed = transformFn(rawText);
+
+      bioTargets.forEach((el) => {
+        el.textContent = transformed;
+      });
+
+      nameTargets.forEach((el) => {
+        el.textContent = transformed;
+      });
+
+      captionTargets.forEach((el) => {
+        el.textContent = transformed;
+      });
+    }
+
+    // Connect to input box typing in real-time
+    if (inputBox) {
+      inputBox.addEventListener('input', updateAllPreviews);
+    }
+
+    // Connect to preset inspiration pills
+    const presetPills = document.querySelectorAll('.preset-pill');
+    presetPills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        setTimeout(updateAllPreviews, 50);
+      });
+    });
+
+    // Connect to quick actions (upper, lower, clear)
+    ['btn-uppercase', 'btn-lowercase', 'btn-clear-text'].forEach((id) => {
+      const btn = document.getElementById(id);
+      if (btn) {
+        btn.addEventListener('click', () => {
+          setTimeout(updateAllPreviews, 50);
+        });
+      }
+    });
+
+    // Connect to style switcher pills
+    stylePills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        stylePills.forEach((p) => {
+          p.classList.remove('active', 'bg-amber-500', 'text-black', 'shadow-sm');
+          p.classList.add('bg-white/5', 'text-stone-300', 'border', 'border-white/10');
+        });
+
+        pill.classList.remove('bg-white/5', 'text-stone-300', 'border', 'border-white/10');
+        pill.classList.add('active', 'bg-amber-500', 'text-black', 'shadow-sm');
+
+        const styleKey = pill.getAttribute('data-style') || 'bold-sans';
+        activeStyle = styleKey;
+        if (activeLabel) {
+          activeLabel.textContent = pill.textContent?.trim().toLowerCase() || activeStyle;
+        }
+
+        updateAllPreviews();
+      });
+    });
+
+    // Initial render
+    updateAllPreviews();
+  }
+
+  // Initialize on page load and view transitions
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPlatformLivePreview);
+  } else {
+    initPlatformLivePreview();
+  }
+</script>

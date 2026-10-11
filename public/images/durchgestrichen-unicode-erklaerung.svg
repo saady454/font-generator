@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="explBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a14"/>
+      <stop offset="50%" stop-color="#101524"/>
+      <stop offset="100%" stop-color="#060810"/>
+    </linearGradient>
+    <linearGradient id="layerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <filter id="explShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#explBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="250" cy="180" r="220" fill="#38bdf8" fill-opacity="0.10"/>
+  <circle cx="950" cy="480" r="240" fill="#818cf8" fill-opacity="0.10"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-160" y="-16" width="320" height="32" rx="16" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">UNICODE ANATOMIE</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Wie funktioniert der <tspan fill="url(#layerGrad)">Unicode-Durchstrich?</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Überlagerung von Basis-Buchstaben und U+0336 Combining Long Stroke Overlay
+    </text>
+  </g>
+
+  <!-- Visual Exploded Layer View -->
+  <g transform="translate(80, 155)">
+    
+    <!-- Left Card: Layering Diagram -->
+    <g transform="translate(0, 0)" filter="url(#explShadow)">
+      <rect width="520" height="440" rx="24" fill="#121728" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+      <rect x="25" y="24" width="220" height="28" rx="14" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="38" y="43" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8">EBENEN-MODELL</text>
+
+      <!-- Layer 1: Combining Mark -->
+      <g transform="translate(40, 80)">
+        <rect width="440" height="85" rx="14" fill="#18223c" stroke="#38bdf8" stroke-width="1.5"/>
+        <text x="25" y="35" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8">EBENE 2: COMBINING MARK</text>
+        <text x="25" y="60" font-family="monospace" font-size="16" fill="#ffffff">U+0336 (Combining Long Stroke Overlay)</text>
+        <line x1="360" y1="42" x2="410" y2="42" stroke="#38bdf8" stroke-width="4"/>
+      </g>
+
+      <!-- Plus Operator -->
+      <text x="260" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="900" fill="#38bdf8">+</text>
+
+      <!-- Layer 2: Base Character -->
+      <g transform="translate(40, 215)">
+        <rect width="440" height="85" rx="14" fill="#0d1220" stroke="#ffffff" stroke-opacity="0.1"/>
+        <text x="25" y="35" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#94a3b8">EBENE 1: BASISBUCHSTABE</text>
+        <text x="25" y="60" font-family="monospace" font-size="16" fill="#ffffff">U+0054 (Lateinisches „T“)</text>
+        <text x="385" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#ffffff">T</text>
+      </g>
+
+      <!-- Equals Operator -->
+      <text x="260" y="330" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="900" fill="#22c55e">=</text>
+
+      <!-- Result Combined -->
+      <g transform="translate(40, 345)">
+        <rect width="440" height="70" rx="14" fill="#080a12" stroke="#22c55e" stroke-opacity="0.4"/>
+        <text x="25" y="42" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#22c55e">ERGEBNIS (Kombiniert):</text>
+        <text x="385" y="47" text-anchor="middle" font-family="system-ui, sans-serif" font-size="34" font-weight="800" fill="#ffffff">T̶</text>
+      </g>
+    </g>
+
+    <!-- Right Card: Word Transformation Example -->
+    <g transform="translate(550, 0)" filter="url(#explShadow)">
+      <rect width="490" height="440" rx="24" fill="#121728" stroke="#818cf8" stroke-opacity="0.3" stroke-width="1.5"/>
+      <rect x="25" y="24" width="220" height="28" rx="14" fill="#818cf8" fill-opacity="0.15"/>
+      <text x="38" y="43" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#a5b4fc">BEISPIEL-UMWANDLUNG</text>
+
+      <!-- Normal Word -->
+      <g transform="translate(30, 80)">
+        <rect width="430" height="95" rx="14" fill="#0d1220" stroke="#ffffff" stroke-opacity="0.08"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">NORMALER TEXT:</text>
+        <text x="20" y="68" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#ffffff">Heute gibt es ein Angebot</text>
+      </g>
+
+      <!-- Transformation Arrow -->
+      <g transform="translate(245, 205)" text-anchor="middle">
+        <circle cx="0" cy="0" r="20" fill="#818cf8" fill-opacity="0.2"/>
+        <text y="7" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#a5b4fc">↓</text>
+      </g>
+
+      <!-- Crossed-Out Word -->
+      <g transform="translate(30, 235)">
+        <rect width="430" height="95" rx="14" fill="#0d1220" stroke="#818cf8" stroke-opacity="0.3"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#818cf8">DURCHGESTRICHENER UNICODE-TEXT:</text>
+        <text x="20" y="68" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#38bdf8">H̶e̶u̶t̶e̶ ̶g̶i̶b̶t̶ ̶e̶s̶ ̶e̶i̶n̶ ̶A̶n̶g̶e̶b̶o̶t̶</text>
+      </g>
+
+      <!-- Key Fact Notice -->
+      <rect x="30" y="350" width="430" height="65" rx="12" fill="#182036"/>
+      <text x="45" y="375" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">✓ 100% Copy-and-Paste fähig</text>
+      <text x="45" y="395" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">Funktioniert ohne Schriftart-Installation auf jedem Gerät.</text>
+    </g>
+
+  </g>
+</svg>

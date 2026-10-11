@@ -1,0 +1,107 @@
+---
+export type GradientMeshVariant = 'default' | 'stars' | 'herzen' | 'rahmen' | 'emotikons';
+
+interface Props {
+  className?: string;
+  glowTopOpacity?: string;
+  variant?: GradientMeshVariant;
+}
+
+const { className = '', glowTopOpacity = 'opacity-90', variant = 'default' } = Astro.props;
+---
+
+{variant === 'stars' && (
+  <div class={`absolute inset-0 pointer-events-none overflow-hidden -z-10 select-none ${className}`} aria-hidden="true">
+    <!-- 1. Golden/Amber Star Glow (Hero & Top Celestial Accent, #F5C542 / #F5A623) -->
+    <div class="absolute -top-28 left-1/2 -translate-x-1/2 w-[950px] h-[650px] bg-[radial-gradient(ellipse_at_center,_rgba(245,197,66,0.20)_0%,_rgba(245,158,11,0.08)_50%,_transparent_75%)] blur-3xl opacity-90"></div>
+
+    <!-- 2. Deep Indigo / Night-Sky Blue Glow (Middle-Left & Depth, #1E3A6E / #2B2D6B) -->
+    <div class="absolute top-[600px] -left-36 w-[850px] h-[750px] bg-[radial-gradient(ellipse_at_center,_rgba(30,58,110,0.24)_0%,_rgba(43,45,107,0.10)_50%,_transparent_75%)] blur-3xl opacity-85"></div>
+
+    <!-- 3. Soft Violet / Celestial Purple Glow (Middle-Right, #6B4FA0 / #7C3AED) -->
+    <div class="absolute top-[1200px] -right-36 w-[800px] h-[750px] bg-[radial-gradient(ellipse_at_center,_rgba(107,79,160,0.20)_0%,_rgba(124,58,237,0.07)_50%,_transparent_75%)] blur-3xl opacity-80"></div>
+
+    <!-- 4. Subtle Silver/White Sparkle Highlights (Scattered soft celestial accents ~8-12%) -->
+    <div class="absolute top-[400px] right-[22%] w-[350px] h-[350px] bg-[radial-gradient(circle,_rgba(255,255,255,0.10)_0%,_rgba(245,197,66,0.04)_40%,_transparent_70%)] blur-2xl opacity-75"></div>
+    <div class="absolute top-[950px] left-[18%] w-[300px] h-[300px] bg-[radial-gradient(circle,_rgba(255,255,255,0.09)_0%,_rgba(224,231,255,0.03)_40%,_transparent_70%)] blur-2xl opacity-70"></div>
+
+    <!-- 5. Lower Deep Night-Sky & Golden Shimmer -->
+    <div class="absolute bottom-[120px] left-1/3 w-[750px] h-[600px] bg-[radial-gradient(ellipse_at_center,_rgba(245,197,66,0.12)_0%,_rgba(30,58,110,0.08)_50%,_transparent_75%)] blur-3xl opacity-75"></div>
+  </div>
+)}
+
+{variant === 'herzen' && (
+  <div class={`absolute inset-0 pointer-events-none overflow-hidden -z-10 select-none ${className}`} aria-hidden="true">
+    <!-- 1. Deep Rose/Red Glow (Hero & Romantic Top Accent, #E8385F) -->
+    <div class="absolute -top-28 left-1/2 -translate-x-1/2 w-[950px] h-[650px] bg-[radial-gradient(ellipse_at_center,_rgba(232,56,95,0.20)_0%,_rgba(225,29,72,0.08)_50%,_transparent_75%)] blur-3xl opacity-90"></div>
+
+    <!-- 2. Soft Romantic Pink Glow (Middle-Left, #F0729B) -->
+    <div class="absolute top-[600px] -left-36 w-[850px] h-[750px] bg-[radial-gradient(ellipse_at_center,_rgba(240,114,155,0.20)_0%,_rgba(244,63,94,0.08)_50%,_transparent_75%)] blur-3xl opacity-85"></div>
+
+    <!-- 3. Muted Burgundy/Wine Glow (Middle-Right & Depth, #7A2942) -->
+    <div class="absolute top-[1200px] -right-36 w-[800px] h-[750px] bg-[radial-gradient(ellipse_at_center,_rgba(122,41,66,0.22)_0%,_rgba(136,19,55,0.08)_50%,_transparent_75%)] blur-3xl opacity-80"></div>
+
+    <!-- 4. Subtle Warm Coral Highlights (~8-12%) -->
+    <div class="absolute top-[420px] right-[20%] w-[350px] h-[350px] bg-[radial-gradient(circle,_rgba(251,113,133,0.11)_0%,_rgba(244,114,182,0.04)_40%,_transparent_70%)] blur-2xl opacity-75"></div>
+    <div class="absolute top-[980px] left-[18%] w-[300px] h-[300px] bg-[radial-gradient(circle,_rgba(253,164,175,0.10)_0%,_rgba(225,29,72,0.03)_40%,_transparent_70%)] blur-2xl opacity-70"></div>
+
+    <!-- 5. Lower Deep Wine & Soft Rose Shimmer -->
+    <div class="absolute bottom-[120px] left-1/3 w-[750px] h-[600px] bg-[radial-gradient(ellipse_at_center,_rgba(232,56,95,0.14)_0%,_rgba(122,41,66,0.08)_50%,_transparent_75%)] blur-3xl opacity-75"></div>
+  </div>
+)}
+
+{variant === 'rahmen' && (
+  <div class={`absolute inset-0 pointer-events-none overflow-hidden -z-10 select-none ${className}`} aria-hidden="true">
+    <!-- 1. Deep Gold/Bronze Ornamental Glow (Hero & Top Accent, #C9962E / #B8860B) -->
+    <div class="absolute -top-28 left-1/2 -translate-x-1/2 w-[950px] h-[650px] bg-[radial-gradient(ellipse_at_center,_rgba(201,150,46,0.20)_0%,_rgba(184,134,11,0.08)_50%,_transparent_75%)] blur-3xl opacity-90"></div>
+
+    <!-- 2. Rich Regal Purple Glow (Middle-Left & Depth, #5B3A8E) -->
+    <div class="absolute top-[600px] -left-36 w-[850px] h-[750px] bg-[radial-gradient(ellipse_at_center,_rgba(91,58,142,0.22)_0%,_rgba(107,33,168,0.08)_50%,_transparent_75%)] blur-3xl opacity-85"></div>
+
+    <!-- 3. Muted Deep Teal / Emerald Glow (Middle-Right Contrast, #1F6B5C) -->
+    <div class="absolute top-[1200px] -right-36 w-[800px] h-[750px] bg-[radial-gradient(ellipse_at_center,_rgba(31,107,92,0.20)_0%,_rgba(19,78,74,0.08)_50%,_transparent_75%)] blur-3xl opacity-80"></div>
+
+    <!-- 4. Subtle Antique Gold/Amber Highlights (~8-12%) -->
+    <div class="absolute top-[420px] right-[20%] w-[350px] h-[350px] bg-[radial-gradient(circle,_rgba(251,191,36,0.11)_0%,_rgba(201,150,46,0.04)_40%,_transparent_70%)] blur-2xl opacity-75"></div>
+    <div class="absolute top-[980px] left-[18%] w-[300px] h-[300px] bg-[radial-gradient(circle,_rgba(217,119,6,0.09)_0%,_rgba(91,58,142,0.03)_40%,_transparent_70%)] blur-2xl opacity-70"></div>
+
+    <!-- 5. Lower Regal Gold & Purple Shimmer -->
+    <div class="absolute bottom-[120px] left-1/3 w-[750px] h-[600px] bg-[radial-gradient(ellipse_at_center,_rgba(201,150,46,0.12)_0%,_rgba(91,58,142,0.08)_50%,_transparent_75%)] blur-3xl opacity-75"></div>
+  </div>
+)}
+
+{variant === 'emotikons' && (
+  <div class={`absolute inset-0 pointer-events-none overflow-hidden -z-10 select-none ${className}`} aria-hidden="true">
+    <!-- 1. Bright Smiley Sunny Yellow Glow (Hero & Top Fun Accent, #F5C242) -->
+    <div class="absolute -top-28 left-1/2 -translate-x-1/2 w-[950px] h-[650px] bg-[radial-gradient(ellipse_at_center,_rgba(245,194,66,0.20)_0%,_rgba(234,179,8,0.08)_50%,_transparent_75%)] blur-3xl opacity-90"></div>
+
+    <!-- 2. Soft Orange-Coral Glow (Middle-Left & Warmth, #F2794D) -->
+    <div class="absolute top-[600px] -left-36 w-[850px] h-[750px] bg-[radial-gradient(ellipse_at_center,_rgba(242,121,77,0.20)_0%,_rgba(251,146,60,0.08)_50%,_transparent_75%)] blur-3xl opacity-85"></div>
+
+    <!-- 3. Playful Teal / Mint Glow (Middle-Right & Energy, #2DD4BF) -->
+    <div class="absolute top-[1200px] -right-36 w-[800px] h-[750px] bg-[radial-gradient(ellipse_at_center,_rgba(45,212,191,0.18)_0%,_rgba(20,184,166,0.07)_50%,_transparent_75%)] blur-3xl opacity-80"></div>
+
+    <!-- 4. Subtle Sunny Sparkle Highlights (~8-12%) -->
+    <div class="absolute top-[420px] right-[20%] w-[350px] h-[350px] bg-[radial-gradient(circle,_rgba(254,240,138,0.11)_0%,_rgba(245,194,66,0.04)_40%,_transparent_70%)] blur-2xl opacity-75"></div>
+    <div class="absolute top-[980px] left-[18%] w-[300px] h-[300px] bg-[radial-gradient(circle,_rgba(253,186,116,0.09)_0%,_rgba(45,212,191,0.03)_40%,_transparent_70%)] blur-2xl opacity-70"></div>
+
+    <!-- 5. Lower Warm Sunny-Coral Shimmer -->
+    <div class="absolute bottom-[120px] left-1/3 w-[750px] h-[600px] bg-[radial-gradient(ellipse_at_center,_rgba(245,194,66,0.12)_0%,_rgba(242,121,77,0.08)_50%,_transparent_75%)] blur-3xl opacity-75"></div>
+  </div>
+)}
+
+{variant === 'default' && (
+  <div class={`absolute inset-0 pointer-events-none overflow-hidden -z-10 select-none ${className}`} aria-hidden="true">
+    <!-- 1. Warm Orange/Amber Glow (Hero & Brand Accent, Top Center, #F5A623) -->
+    <div class={`absolute -top-28 left-1/2 -translate-x-1/2 w-[950px] h-[650px] bg-[radial-gradient(ellipse_at_center,_rgba(245,166,35,0.18)_0%,_rgba(245,158,11,0.08)_50%,_transparent_75%)] blur-3xl ${glowTopOpacity}`}></div>
+
+    <!-- 2. Deep Purple Glow (Middle-Left, #6B3FA0) -->
+    <div class="absolute top-[750px] -left-36 w-[800px] h-[750px] bg-[radial-gradient(ellipse_at_center,_rgba(107,63,160,0.20)_0%,_rgba(107,63,160,0.07)_50%,_transparent_75%)] blur-3xl opacity-80"></div>
+
+    <!-- 3. Muted Teal/Cyan Glow (Middle-Right, #1F8A8C) -->
+    <div class="absolute top-[1500px] -right-36 w-[850px] h-[800px] bg-[radial-gradient(ellipse_at_center,_rgba(31,138,140,0.18)_0%,_rgba(13,148,136,0.07)_50%,_transparent_75%)] blur-3xl opacity-80"></div>
+
+    <!-- 4. Subtle Magenta/Rose Glow (Bottom Section, #B33A6B) -->
+    <div class="absolute bottom-[200px] left-1/4 w-[750px] h-[650px] bg-[radial-gradient(ellipse_at_center,_rgba(179,58,107,0.15)_0%,_rgba(190,24,93,0.05)_50%,_transparent_75%)] blur-3xl opacity-75"></div>
+  </div>
+)}

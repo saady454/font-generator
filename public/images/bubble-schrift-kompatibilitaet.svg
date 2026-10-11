@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="compatBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c16"/>
+      <stop offset="50%" stop-color="#141828"/>
+      <stop offset="100%" stop-color="#090b14"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="cardGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#compatBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="300" cy="300" r="260" fill="#22c55e" fill-opacity="0.08"/>
+  <circle cx="900" cy="300" r="260" fill="#ef4444" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-160" y="-16" width="320" height="32" rx="16" fill="#a855f7" fill-opacity="0.15" stroke="#a855f7" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#c084fc" letter-spacing="2">KOMPATIBILITÄTS-RATGEBER</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Unicode-Unterstützung &amp; <tspan fill="#fbbf24">Fehlerbehebung</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Warum manche Geräte Zeichen einwandfrei anzeigen und andere ein leeres Kästchen (☐ Tofu) liefern
+    </text>
+  </g>
+
+  <!-- Side-by-Side Comparison (Supported vs Unsupported) -->
+  <g transform="translate(80, 160)">
+    
+    <!-- LEFT CARD: Modernes System (Supported 100%) -->
+    <g transform="translate(0, 0)" filter="url(#cardGlow)">
+      <rect width="500" height="420" rx="24" fill="#141828" stroke="#22c55e" stroke-opacity="0.35" stroke-width="1.5"/>
+      
+      <!-- Top Badge -->
+      <rect x="25" y="24" width="220" height="28" rx="14" fill="#22c55e" fill-opacity="0.15"/>
+      <text x="38" y="43" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#4ade80">✓ MODERNE GERÄTE &amp; APPS</text>
+      <text x="475" y="43" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#22c55e" font-weight="700">99.8% Support</text>
+
+      <!-- Visual Display Screen Mockup -->
+      <rect x="25" y="68" width="450" height="150" rx="16" fill="#0c0e18" stroke="#22c55e" stroke-opacity="0.2"/>
+      
+      <!-- Big Circled Character -->
+      <circle cx="100" cy="143" r="45" fill="#101424" stroke="#4ade80" stroke-width="2.5"/>
+      <text x="100" y="160" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="900" fill="#ffffff">ⓑ</text>
+      
+      <text x="175" y="125" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#ffffff">ⓑⓤⓑⓑⓛⓔ</text>
+      <text x="175" y="152" font-family="system-ui, sans-serif" font-size="13" fill="#4ade80" font-weight="600">✓ Glyphe im Zeichensatz vorhanden</text>
+      <text x="175" y="172" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Unicode U+24D1 wird korrekt gerendert</text>
+
+      <!-- Feature List -->
+      <g transform="translate(25, 240)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Voraussetzungen für perfekte Anzeige:</text>
+        
+        <g transform="translate(0, 15)">
+          <circle cx="8" cy="8" r="5" fill="#22c55e"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">iOS 12+, Android 9+, Windows 10/11, macOS</text>
+        </g>
+        <g transform="translate(0, 45)">
+          <circle cx="8" cy="8" r="5" fill="#22c55e"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Standard-Enclosed Alphanumerics Block</text>
+        </g>
+        <g transform="translate(0, 75)">
+          <circle cx="8" cy="8" r="5" fill="#22c55e"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Instagram, TikTok, WhatsApp &amp; Discord optimiert</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- RIGHT CARD: Älteres System (Missing Glyph / Tofu) -->
+    <g transform="translate(540, 0)" filter="url(#cardGlow)">
+      <rect width="500" height="420" rx="24" fill="#141828" stroke="#ef4444" stroke-opacity="0.35" stroke-width="1.5"/>
+      
+      <!-- Top Badge -->
+      <rect x="25" y="24" width="230" height="28" rx="14" fill="#ef4444" fill-opacity="0.15"/>
+      <text x="38" y="43" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#f87171">⚠️ VERALTETE BETRIEBSSYSTEME</text>
+      <text x="475" y="43" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#ef4444" font-weight="700">Tofu-Symbol (☐)</text>
+
+      <!-- Visual Display Screen Mockup with Tofu Box -->
+      <rect x="25" y="68" width="450" height="150" rx="16" fill="#0c0e18" stroke="#ef4444" stroke-opacity="0.2"/>
+      
+      <!-- Big Tofu Box -->
+      <rect x="60" y="100" width="80" height="85" rx="8" fill="#1e1820" stroke="#f87171" stroke-width="2.5" stroke-dasharray="4 4"/>
+      <text x="100" y="158" text-anchor="middle" font-family="system-ui, sans-serif" font-size="44" font-weight="700" fill="#f87171">☐</text>
+      
+      <text x="175" y="125" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#f87171">☐☐☐☐☐☐</text>
+      <text x="175" y="152" font-family="system-ui, sans-serif" font-size="13" fill="#f87171" font-weight="600">❌ Fehlende System-Schriftdatei</text>
+      <text x="175" y="172" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Fallback-Rechteck wird gerendert</text>
+
+      <!-- Solutions List -->
+      <g transform="translate(25, 240)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Praxis-Tipps &amp; Fallback-Lösungen:</text>
+        
+        <g transform="translate(0, 15)">
+          <circle cx="8" cy="8" r="5" fill="#f87171"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Vor dem Posten auf Smartphone kurz gegenchecken</text>
+        </g>
+        <g transform="translate(0, 45)">
+          <circle cx="8" cy="8" r="5" fill="#f87171"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Weiße Kreise (ⓑ) bieten die höchste Kompatibilität</text>
+        </g>
+        <g transform="translate(0, 75)">
+          <circle cx="8" cy="8" r="5" fill="#f87171"/>
+          <text x="24" y="12" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Bei Problemen auf Standard Fette Sans-Serif ausweichen</text>
+        </g>
+      </g>
+    </g>
+
+  </g>
+</svg>

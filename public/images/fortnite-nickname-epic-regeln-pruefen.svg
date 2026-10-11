@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fnRegelnBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070913"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#05070e"/>
+    </linearGradient>
+    <linearGradient id="fnRegelnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <filter id="fnRegelnShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#fnRegelnBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="180" r="240" fill="#f59e0b" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#6366f1" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-170" y="-16" width="340" height="32" rx="16" fill="#1e1b4b" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fbbf24" letter-spacing="2">OFFIZIELLE VORGABEN</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Checkliste für deinen <tspan fill="url(#fnRegelnGrad)">Epic Games Display Name</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      4 wichtige Regeln, die du vor dem Speichern deines Fortnite-Namens beachten musst
+    </text>
+  </g>
+
+  <!-- 4 Checklist Rule Cards (2x2 Grid) -->
+  <g transform="translate(70, 155)">
+    
+    <!-- Rule 1: Zeichenlänge -->
+    <g transform="translate(0, 0)" filter="url(#fnRegelnShadow)">
+      <rect width="510" height="205" rx="20" fill="#0f172a" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5"/>
+      
+      <circle cx="45" cy="45" r="20" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="45" y="52" text-anchor="middle" font-size="16">📏</text>
+      
+      <text x="80" y="42" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff">Zeichenlänge (3 bis 16 Zeichen)</text>
+      <text x="80" y="60" font-family="system-ui, sans-serif" font-size="12" fill="#38bdf8">Strikte Epic Games Obergrenze</text>
+
+      <g transform="translate(25, 90)">
+        <rect width="460" height="90" rx="12" fill="#090d16" stroke="#ffffff" stroke-opacity="0.05"/>
+        <text x="18" y="30" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Dein Anzeigename darf weder zu kurz noch zu lang sein.</text>
+        <text x="18" y="54" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Beachte: Einzelne Unicode-Symbole belegen teils 2 Zeichen.</text>
+        <text x="18" y="76" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34d399">✓ Empfehlung: Basisname mit 4-10 Buchstaben wählen</text>
+      </g>
+    </g>
+
+    <!-- Rule 2: 14-Tage Wartezeit -->
+    <g transform="translate(550, 0)" filter="url(#fnRegelnShadow)">
+      <rect width="510" height="205" rx="20" fill="#0f172a" stroke="#fbbf24" stroke-opacity="0.35" stroke-width="1.5"/>
+      
+      <circle cx="45" cy="45" r="20" fill="#fbbf24" fill-opacity="0.15"/>
+      <text x="45" y="52" text-anchor="middle" font-size="16">⏳</text>
+      
+      <text x="80" y="42" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff">14-Tage Änderungssperre</text>
+      <text x="80" y="60" font-family="system-ui, sans-serif" font-size="12" fill="#fbbf24">Änderung nur alle 2 Wochen möglich</text>
+
+      <g transform="translate(25, 90)">
+        <rect width="460" height="90" rx="12" fill="#090d16" stroke="#ffffff" stroke-opacity="0.05"/>
+        <text x="18" y="30" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Nach dem Speichern ist der Display Name für 14 Tage fix.</text>
+        <text x="18" y="54" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Tippfehler oder falsche Zeichen können nicht sofort revidiert werden.</text>
+        <text x="18" y="76" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">⚠️ Vor dem finalen Klick genau Korrektur lesen!</text>
+      </g>
+    </g>
+
+    <!-- Rule 3: Community-Richtlinien -->
+    <g transform="translate(0, 230)" filter="url(#fnRegelnShadow)">
+      <rect width="510" height="205" rx="20" fill="#0f172a" stroke="#ef4444" stroke-opacity="0.35" stroke-width="1.5"/>
+      
+      <circle cx="45" cy="45" r="20" fill="#ef4444" fill-opacity="0.15"/>
+      <text x="45" y="52" text-anchor="middle" font-size="16">🛡️</text>
+      
+      <text x="80" y="42" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff">Community-Regeln &amp; Richtlinien</text>
+      <text x="80" y="60" font-family="system-ui, sans-serif" font-size="12" fill="#f87171">Keine vulgären oder irreführenden Inhalte</text>
+
+      <g transform="translate(25, 90)">
+        <rect width="460" height="90" rx="12" fill="#090d16" stroke="#ffffff" stroke-opacity="0.05"/>
+        <text x="18" y="30" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Namen dürfen keine Beleidigungen oder private Daten enthalten.</text>
+        <text x="18" y="54" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Auch das Nachahmen offizieller Epic-Mitarbeiter ist untersagt.</text>
+        <text x="18" y="76" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34d399">✓ Bleibe sportlich, kreativ und respektvoll</text>
+      </g>
+    </g>
+
+    <!-- Rule 4: Konsolen-Gamertag Abweichung -->
+    <g transform="translate(550, 230)" filter="url(#fnRegelnShadow)">
+      <rect width="510" height="205" rx="20" fill="#0f172a" stroke="#a855f7" stroke-opacity="0.35" stroke-width="1.5"/>
+      
+      <circle cx="45" cy="45" r="20" fill="#a855f7" fill-opacity="0.15"/>
+      <text x="45" y="52" text-anchor="middle" font-size="16">🎮</text>
+      
+      <text x="80" y="42" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff">Konsolen-Gamertag (PS / Xbox)</text>
+      <text x="80" y="60" font-family="system-ui, sans-serif" font-size="12" fill="#c084fc">Anzeige auf PlayStation &amp; Xbox</text>
+
+      <g transform="translate(25, 90)">
+        <rect width="460" height="90" rx="12" fill="#090d16" stroke="#ffffff" stroke-opacity="0.05"/>
+        <text x="18" y="30" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Auf Konsolen wird oft der PSN-Name oder Xbox-Gamertag gezeigt.</text>
+        <text x="18" y="54" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Der Epic Display Name ist primär auf PC und im Crossplay aktiv.</text>
+        <text x="18" y="76" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#c084fc">ℹ️ Konsolennamen werden über das PSN / Xbox-Konto verwaltet</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

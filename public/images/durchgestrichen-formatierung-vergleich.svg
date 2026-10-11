@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="compBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a14"/>
+      <stop offset="50%" stop-color="#121628"/>
+      <stop offset="100%" stop-color="#060810"/>
+    </linearGradient>
+    <filter id="compShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#compBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="200" cy="200" r="220" fill="#38bdf8" fill-opacity="0.08"/>
+  <circle cx="600" cy="200" r="220" fill="#ec4899" fill-opacity="0.08"/>
+  <circle cx="1000" cy="200" r="220" fill="#22c55e" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-160" y="-16" width="320" height="32" rx="16" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">METHODEN-VERGLEICH</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Unicode vs. HTML/CSS vs. <tspan fill="#38bdf8">App-Formatierung</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Welche Methode eignet sich für welchen Einsatzzweck?
+    </text>
+  </g>
+
+  <!-- 3 Comparison Columns -->
+  <g transform="translate(70, 160)">
+    
+    <!-- Column 1: Unicode-Durchstrich -->
+    <g transform="translate(0, 0)" filter="url(#compShadow)">
+      <rect width="335" height="440" rx="22" fill="#121728" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="25" y="24" width="165" height="28" rx="14" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="107" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8">UNICODE-DURCHSTRICH</text>
+
+      <!-- Specimen Box -->
+      <rect x="20" y="70" width="295" height="110" rx="14" fill="#080a12" stroke="#38bdf8" stroke-opacity="0.2"/>
+      <text x="147" y="132" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#38bdf8">D̶u̶r̶c̶h̶g̶e̶s̶t̶r̶i̶c̶h̶e̶n̶</text>
+
+      <g transform="translate(25, 205)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#38bdf8">VORTEIL:</text>
+        <text x="0" y="22" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Überall als reiner Text kopierbar</text>
+        
+        <text x="0" y="52" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#ef4444">EINSCHRÄNKUNG:</text>
+        <text x="0" y="74" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Darstellung variiert je nach Font</text>
+      </g>
+
+      <rect x="20" y="325" width="295" height="90" rx="12" fill="#161e30" stroke="#38bdf8" stroke-opacity="0.2"/>
+      <text x="35" y="352" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">EINSATZBEREICH:</text>
+      <text x="35" y="374" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Social-Media-Bios, Chats &amp; Nicks</text>
+      <text x="35" y="394" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Kreativer Copy &amp; Paste Einsatz</text>
+    </g>
+
+    <!-- Column 2: HTML &amp; CSS (<del> / <s>) -->
+    <g transform="translate(365, 0)" filter="url(#compShadow)">
+      <rect width="335" height="440" rx="22" fill="#121728" stroke="#ec4899" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="25" y="24" width="130" height="28" rx="14" fill="#ec4899" fill-opacity="0.15"/>
+      <text x="90" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#f472b6">HTML &amp; CSS</text>
+
+      <!-- Specimen Box -->
+      <rect x="20" y="70" width="295" height="110" rx="14" fill="#080a12" stroke="#ec4899" stroke-opacity="0.2"/>
+      <text x="147" y="125" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#f472b6" style="text-decoration: line-through;">Durchgestrichen</text>
+      <text x="147" y="152" text-anchor="middle" font-family="monospace" font-size="11" fill="#94a3b8">&lt;del&gt;Text&lt;/del&gt;</text>
+
+      <g transform="translate(25, 205)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#f472b6">VORTEIL:</text>
+        <text x="0" y="22" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">100% semantisch &amp; barrierefrei</text>
+        
+        <text x="0" y="52" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#ef4444">EINSCHRÄNKUNG:</text>
+        <text x="0" y="74" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Nur in HTML/CSS Umgebungen</text>
+      </g>
+
+      <rect x="20" y="325" width="295" height="90" rx="12" fill="#161e30" stroke="#ec4899" stroke-opacity="0.2"/>
+      <text x="35" y="352" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f472b6">EINSATZBEREICH:</text>
+      <text x="35" y="374" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Websites, Blogs &amp; Onlineshops</text>
+      <text x="35" y="394" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Streichpreise &amp; Korrekturen</text>
+    </g>
+
+    <!-- Column 3: Native App-Formatierung (WhatsApp/Markdown) -->
+    <g transform="translate(730, 0)" filter="url(#compShadow)">
+      <rect width="335" height="440" rx="22" fill="#121728" stroke="#22c55e" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="25" y="24" width="165" height="28" rx="14" fill="#22c55e" fill-opacity="0.15"/>
+      <text x="107" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#4ade80">APP &amp; MARKDOWN</text>
+
+      <!-- Specimen Box -->
+      <rect x="20" y="70" width="295" height="110" rx="14" fill="#080a12" stroke="#22c55e" stroke-opacity="0.2"/>
+      <text x="147" y="125" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#4ade80" style="text-decoration: line-through;">Durchgestrichen</text>
+      <text x="147" y="152" text-anchor="middle" font-family="monospace" font-size="11" fill="#94a3b8">~Text~ / ~~Text~~</text>
+
+      <g transform="translate(25, 205)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#4ade80">VORTEIL:</text>
+        <text x="0" y="22" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Perfekt saubere App-Darstellung</text>
+        
+        <text x="0" y="52" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#ef4444">EINSCHRÄNKUNG:</text>
+        <text x="0" y="74" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Funktioniert nur in dieser App</text>
+      </g>
+
+      <rect x="20" y="325" width="295" height="90" rx="12" fill="#161e30" stroke="#22c55e" stroke-opacity="0.2"/>
+      <text x="35" y="352" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#4ade80">EINSATZBEREICH:</text>
+      <text x="35" y="374" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff">WhatsApp-Chats, Discord, Notion</text>
+      <text x="35" y="394" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Messenger-Formatierungen</text>
+    </g>
+
+  </g>
+</svg>

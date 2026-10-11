@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="starTabBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080914"/>
+      <stop offset="50%" stop-color="#121630"/>
+      <stop offset="100%" stop-color="#060710"/>
+    </linearGradient>
+    <linearGradient id="starTabGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <filter id="starTabShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#starTabBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="200" cy="180" r="220" fill="#fbbf24" fill-opacity="0.08"/>
+  <circle cx="1000" cy="460" r="240" fill="#818cf8" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-170" y="-16" width="340" height="32" rx="16" fill="#1e1f38" stroke="#fbbf24" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fbbf24" letter-spacing="2">UNICODE SYMBOLE IM VERGLEICH</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Die 12 beliebtesten <tspan fill="url(#starTabGrad)">Sternsymbole</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Vom klassischen Black Star ★ bis zum filigranen Dekostern ✰ im direkten Überblick
+    </text>
+  </g>
+
+  <!-- 6 Grid Comparison Cards (2 rows of 3) -->
+  <g transform="translate(60, 145)">
+    
+    <!-- Pair 1: ★ &amp; ☆ -->
+    <g transform="translate(0, 0)" filter="url(#starTabShadow)">
+      <rect width="340" height="210" rx="18" fill="#13172e" stroke="#fbbf24" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <text x="0" y="45" font-size="44" fill="#ffffff">★</text>
+        <text x="65" y="45" font-size="44" fill="#94a3b8">☆</text>
+        <rect x="130" y="14" width="170" height="34" rx="8" fill="#1e1f38"/>
+        <text x="215" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fbbf24">BLACK &amp; WHITE STAR</text>
+
+        <text x="0" y="95" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Klassische Grundsterne</text>
+        <text x="0" y="120" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Perfekt für Bewertungen, Namen &amp; Überschriften.</text>
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34d399">✓ 100 % Kompatibel auf allen Geräten</text>
+      </g>
+    </g>
+
+    <!-- Pair 2: ✦ &amp; ✧ -->
+    <g transform="translate(370, 0)" filter="url(#starTabShadow)">
+      <rect width="340" height="210" rx="18" fill="#13172e" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <text x="0" y="45" font-size="44" fill="#38bdf8">✦</text>
+        <text x="65" y="45" font-size="44" fill="#818cf8">✧</text>
+        <rect x="130" y="14" width="170" height="34" rx="8" fill="#1e1f38"/>
+        <text x="215" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8">FOUR POINTED STAR</text>
+
+        <text x="0" y="95" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Vierzackige Sterne</text>
+        <text x="0" y="120" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Eleganter, magischer Stil für Social-Media-Bios.</text>
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">★ Beliebtester Aesthetic-Look</text>
+      </g>
+    </g>
+
+    <!-- Pair 3: ✩ &amp; ✪ -->
+    <g transform="translate(740, 0)" filter="url(#starTabShadow)">
+      <rect width="340" height="210" rx="18" fill="#13172e" stroke="#c084fc" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <text x="0" y="45" font-size="44" fill="#ffffff">✩</text>
+        <text x="65" y="45" font-size="44" fill="#fbbf24">✪</text>
+        <rect x="130" y="14" width="170" height="34" rx="8" fill="#1e1f38"/>
+        <text x="215" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#c084fc">CIRCLED &amp; OUTLINE</text>
+
+        <text x="0" y="95" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Umrandet &amp; im Kreis</text>
+        <text x="0" y="120" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Besondere Hervorhebung für Badges &amp; Embleme.</text>
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#c084fc">★ Starker Eyecatcher</text>
+      </g>
+    </g>
+
+    <!-- Pair 4: ✮ &amp; ✯ -->
+    <g transform="translate(0, 230)" filter="url(#starTabShadow)">
+      <rect width="340" height="210" rx="18" fill="#13172e" stroke="#f472b6" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <text x="0" y="45" font-size="44" fill="#f472b6">✮</text>
+        <text x="65" y="45" font-size="44" fill="#ffffff">✯</text>
+        <rect x="130" y="14" width="170" height="34" rx="8" fill="#1e1f38"/>
+        <text x="215" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#f472b6">DECORATIVE STARS</text>
+
+        <text x="0" y="95" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Dekorative Sterne</text>
+        <text x="0" y="120" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Ideal für Gaming-Nicknames &amp; Clan-Profile.</text>
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f472b6">★ Dynamischer Schatteneffekt</text>
+      </g>
+    </g>
+
+    <!-- Pair 5: ✰ &amp; ⋆ -->
+    <g transform="translate(370, 230)" filter="url(#starTabShadow)">
+      <rect width="340" height="210" rx="18" fill="#13172e" stroke="#fbbf24" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <text x="0" y="45" font-size="44" fill="#fbbf24">✰</text>
+        <text x="65" y="45" font-size="44" fill="#38bdf8">⋆</text>
+        <rect x="130" y="14" width="170" height="34" rx="8" fill="#1e1f38"/>
+        <text x="215" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fbbf24">SHADOW &amp; STAR OPERATOR</text>
+
+        <text x="0" y="95" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Filigrane &amp; kleine Sterne</text>
+        <text x="0" y="120" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Hervorragend als Trennzeichen zwischen Wörtern.</text>
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">★ Zarte Textverzierung</text>
+      </g>
+    </g>
+
+    <!-- Pair 6: ⭑ &amp; ⭒ -->
+    <g transform="translate(740, 230)" filter="url(#starTabShadow)">
+      <rect width="340" height="210" rx="18" fill="#13172e" stroke="#34d399" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <text x="0" y="45" font-size="44" fill="#ffffff">⭑</text>
+        <text x="65" y="45" font-size="44" fill="#94a3b8">⭒</text>
+        <rect x="130" y="14" width="170" height="34" rx="8" fill="#1e1f38"/>
+        <text x="215" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#34d399">SMALL STARS (⭑ / ⭒)</text>
+
+        <text x="0" y="95" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Kompakte Mikro-Sterne</text>
+        <text x="0" y="120" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Dezente Akzente für kurze Statusmeldungen.</text>
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34d399">✓ Kompakt &amp; dezent</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

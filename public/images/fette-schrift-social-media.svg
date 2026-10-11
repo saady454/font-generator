@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="smBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c12"/>
+      <stop offset="100%" stop-color="#121622"/>
+    </linearGradient>
+    <linearGradient id="smCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a2030"/>
+      <stop offset="100%" stop-color="#111420"/>
+    </linearGradient>
+    <filter id="smShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#smBg)"/>
+
+  <!-- Title -->
+  <g transform="translate(600, 60)" text-anchor="middle">
+    <rect x="-160" y="-18" width="320" height="36" rx="18" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="sans-serif" font-size="13" font-weight="800" fill="#fbbf24" letter-spacing="1.5">SOCIAL MEDIA &amp; CHATS</text>
+    
+    <text y="55" font-family="sans-serif" font-size="32" font-weight="900" fill="#ffffff">
+      Einsatzbereiche von <tspan fill="#f59e0b">Fetter Schrift</tspan>
+    </text>
+    <text y="85" font-family="sans-serif" font-size="14" fill="#94a3b8">
+      Wie du mit gezielter Fettschrift auf Instagram, WhatsApp, TikTok und Discord herausstichst
+    </text>
+  </g>
+
+  <!-- 3 Mockup Cards -->
+  <g transform="translate(70, 180)">
+    
+    <!-- 1. Instagram Bio Mockup -->
+    <g transform="translate(0, 0)" filter="url(#smShadow)">
+      <rect width="325" height="400" rx="20" fill="url(#smCardGrad)" stroke="#ec4899" stroke-opacity="0.3" stroke-width="1.5"/>
+      <path d="M 0 20 Q 0 0 20 0 L 305 0 Q 325 0 325 20 L 325 60 L 0 60 Z" fill="#ec4899" fill-opacity="0.1"/>
+      
+      <text x="30" y="38" font-family="sans-serif" font-size="18">📸</text>
+      <text x="60" y="38" font-family="sans-serif" font-size="15" font-weight="800" fill="#f472b6">Instagram Bio</text>
+
+      <!-- Profile Mockup Box -->
+      <g transform="translate(20, 80)">
+        <rect width="285" height="150" rx="12" fill="#0b0d14" stroke="#ffffff" stroke-opacity="0.08"/>
+        
+        <circle cx="35" cy="35" r="20" fill="#f59e0b" fill-opacity="0.3" stroke="#f59e0b"/>
+        <text x="35" y="41" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">👤</text>
+        
+        <text x="70" y="32" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#ffffff">𝗠𝗔𝗫 𝗠𝗨𝗦𝗧𝗘𝗥𝗠𝗔𝗡𝗡</text>
+        <text x="70" y="48" font-family="sans-serif" font-size="11" fill="#94a3b8">@max_creator</text>
+
+        <line x1="15" y1="70" x2="270" y2="70" stroke="#ffffff" stroke-opacity="0.05"/>
+
+        <g transform="translate(15, 90)" font-family="sans-serif" font-size="12">
+          <text y="0" font-weight="800" fill="#fbbf24">🚀 𝗙𝗢𝗨𝗡𝗗𝗘𝗥 &amp; 𝗖𝗥𝗘𝗔𝗧𝗢𝗥</text>
+          <text y="20" fill="#cbd5e1">💡 Tägliche Typografie &amp; Design-Tipps</text>
+          <text y="40" fill="#38bdf8">🔗 schriftarten.io/fett</text>
+        </g>
+      </g>
+
+      <g transform="translate(20, 255)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#f472b6">Best Practice:</text>
+        <text y="22">• Erste Zeile markant hervorheben</text>
+        <text y="44">• Call-to-Actions betonen</text>
+        <text y="66">• Max. 1–2 Wörter pro Absatz</text>
+      </g>
+    </g>
+
+    <!-- 2. WhatsApp &amp; Messenger -->
+    <g transform="translate(365, 0)" filter="url(#smShadow)">
+      <rect width="325" height="400" rx="20" fill="url(#smCardGrad)" stroke="#10b981" stroke-opacity="0.3" stroke-width="1.5"/>
+      <path d="M 0 20 Q 0 0 20 0 L 305 0 Q 325 0 325 20 L 325 60 L 0 60 Z" fill="#10b981" fill-opacity="0.1"/>
+      
+      <text x="30" y="38" font-family="sans-serif" font-size="18">💬</text>
+      <text x="60" y="38" font-family="sans-serif" font-size="15" font-weight="800" fill="#34d399">WhatsApp &amp; Chats</text>
+
+      <!-- Chat Bubble Box -->
+      <g transform="translate(20, 80)">
+        <rect width="285" height="150" rx="12" fill="#0b0d14" stroke="#ffffff" stroke-opacity="0.08"/>
+        
+        <!-- Bubble 1 -->
+        <g transform="translate(15, 20)">
+          <rect width="255" height="48" rx="10" fill="#1e3a2f" stroke="#10b981" stroke-opacity="0.3"/>
+          <text x="15" y="20" font-family="sans-serif" font-size="11" font-weight="800" fill="#34d399">⚠️ 𝗪𝗜𝗖𝗛𝗧𝗜𝗚𝗘𝗥 𝗧𝗘𝗥𝗠𝗜𝗡:</text>
+          <text x="15" y="36" font-family="sans-serif" font-size="11" fill="#e2e8f0">Meeting morgen um 𝟏𝟎:𝟎𝟎 𝐔𝐡𝐫!</text>
+        </g>
+
+        <!-- Bubble 2 -->
+        <g transform="translate(15, 80)">
+          <rect width="255" height="48" rx="10" fill="#1e2538" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="15" y="20" font-family="sans-serif" font-size="11" font-weight="800" fill="#fbbf24">🎉 𝐇𝐚𝐩𝐩𝐲 𝐁𝐢𝐫𝐭𝐡𝐝𝐚𝐲!</text>
+          <text x="15" y="36" font-family="sans-serif" font-size="11" fill="#94a3b8">Alles Liebe zum Geburtstag! 🎂</text>
+        </g>
+      </g>
+
+      <g transform="translate(20, 255)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#34d399">Best Practice:</text>
+        <text y="22">• Fristen &amp; Notizen hervorheben</text>
+        <text y="44">• Bleibt beim Weiterleiten formatiert</text>
+        <text y="66">• Funktioniert auch in Gruppen</text>
+      </g>
+    </g>
+
+    <!-- 3. TikTok, Discord &amp; Gaming -->
+    <g transform="translate(730, 0)" filter="url(#smShadow)">
+      <rect width="330" height="400" rx="20" fill="url(#smCardGrad)" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+      <path d="M 0 20 Q 0 0 20 0 L 310 0 Q 330 0 330 20 L 330 60 L 0 60 Z" fill="#38bdf8" fill-opacity="0.1"/>
+      
+      <text x="30" y="38" font-family="sans-serif" font-size="18">🎮</text>
+      <text x="60" y="38" font-family="sans-serif" font-size="15" font-weight="800" fill="#38bdf8">Discord &amp; Gaming</text>
+
+      <!-- Gaming Tag Box -->
+      <g transform="translate(20, 80)">
+        <rect width="290" height="150" rx="12" fill="#0b0d14" stroke="#ffffff" stroke-opacity="0.08"/>
+        
+        <g transform="translate(15, 20)">
+          <rect width="260" height="45" rx="8" fill="#1a1c26" stroke="#38bdf8" stroke-opacity="0.3"/>
+          <text x="15" y="28" font-family="monospace" font-size="14" font-weight="900" fill="#38bdf8">【𝐒𝐇𝐀𝐃𝐎𝐖_𝐊𝐈𝐍𝐆】</text>
+        </g>
+
+        <g transform="translate(15, 80)">
+          <rect width="260" height="45" rx="8" fill="#1a1c26" stroke="#a855f7" stroke-opacity="0.3"/>
+          <text x="15" y="28" font-family="monospace" font-size="14" font-weight="900" fill="#c084fc">⚡ 𝗩𝗔𝗟𝗢𝗥𝗔𝗡𝗧_𝗔𝗖𝗘 ⚡</text>
+        </g>
+      </g>
+
+      <g transform="translate(20, 255)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#38bdf8">Best Practice:</text>
+        <text y="22">• Dominantes Scoreboard-Aussehen</text>
+        <text y="44">• Discord Server-Kanalnamen</text>
+        <text y="66">• Schnelle Wiedererkennung</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

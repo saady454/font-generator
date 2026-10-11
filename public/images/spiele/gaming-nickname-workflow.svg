@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gameFlowBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08071a"/>
+      <stop offset="50%" stop-color="#120d2b"/>
+      <stop offset="100%" stop-color="#050312"/>
+    </linearGradient>
+    <linearGradient id="gameFlowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="gameFlowShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#gameFlowBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="240" cy="200" r="240" fill="#ec4899" fill-opacity="0.08"/>
+  <circle cx="960" cy="460" r="240" fill="#38bdf8" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-190" y="-16" width="380" height="32" rx="16" fill="#1e293b" stroke="#a855f7" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#a855f7" letter-spacing="2">SCHRITT-FÜR-SCHRITT ANLEITUNG</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      In 5 Schritten zum <tspan fill="url(#gameFlowGrad)">perfekten Gamertag</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Wie du aus einer einfachen Idee einen unverkennbaren Gaming-Namen erstellst
+    </text>
+  </g>
+
+  <!-- 5 Horizontal Flow Cards -->
+  <g transform="translate(60, 160)">
+    
+    <!-- Step 1: Grundidee -->
+    <g transform="translate(0, 0)" filter="url(#gameFlowShadow)">
+      <rect width="200" height="420" rx="18" fill="#111827" stroke="#ec4899" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="100" cy="45" r="24" fill="#ec4899" fill-opacity="0.15"/>
+      <text x="100" y="53" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#ec4899">1</text>
+      
+      <text x="100" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Grundidee</text>
+      <text x="100" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Wort oder Name</text>
+
+      <rect x="15" y="145" width="170" height="75" rx="8" fill="#080d1a" stroke="#ec4899" stroke-opacity="0.3"/>
+      <text x="25" y="175" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Eingabe:</text>
+      <text x="25" y="200" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Shadow</text>
+
+      <g transform="translate(15, 240)" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">
+        <text x="0" y="15">• Vorname oder Tier</text>
+        <text x="0" y="35">• Farbe oder Attribut</text>
+        <text x="0" y="55">• Lieblingsbegriff</text>
+      </g>
+    </g>
+
+    <!-- Step 2: Stil wählen -->
+    <g transform="translate(220, 0)" filter="url(#gameFlowShadow)">
+      <rect width="200" height="420" rx="18" fill="#111827" stroke="#a855f7" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="100" cy="45" r="24" fill="#a855f7" fill-opacity="0.15"/>
+      <text x="100" y="53" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#a855f7">2</text>
+      
+      <text x="100" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Stil wählen</text>
+      <text x="100" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Gothic, Pro &amp; Fett</text>
+
+      <rect x="15" y="145" width="170" height="75" rx="8" fill="#080d1a" stroke="#a855f7" stroke-opacity="0.3"/>
+      <text x="25" y="175" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Schriftstil:</text>
+      <text x="25" y="200" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#a855f7">𝕾𝖍𝖆𝖉𝖔𝖜</text>
+
+      <g transform="translate(15, 240)" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">
+        <text x="0" y="15">• Gotische Fraktur</text>
+        <text x="0" y="35">• Fette Pro-Schrift</text>
+        <text x="0" y="55">• Zalgo-Glitch Look</text>
+      </g>
+    </g>
+
+    <!-- Step 3: Symbole -->
+    <g transform="translate(440, 0)" filter="url(#gameFlowShadow)">
+      <rect width="200" height="420" rx="18" fill="#111827" stroke="#3b82f6" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="100" cy="45" r="24" fill="#3b82f6" fill-opacity="0.15"/>
+      <text x="100" y="53" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#3b82f6">3</text>
+      
+      <text x="100" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Symbole</text>
+      <text x="100" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Flügel, Sterne &amp; Deko</text>
+
+      <rect x="15" y="145" width="170" height="75" rx="8" fill="#080d1a" stroke="#3b82f6" stroke-opacity="0.3"/>
+      <text x="25" y="175" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Mit Rahmen:</text>
+      <text x="25" y="200" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">★ 𝕾𝖍𝖆𝖉𝖔𝖜 ★</text>
+
+      <g transform="translate(15, 240)" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">
+        <text x="0" y="15">• Sterne &amp; Kronen</text>
+        <text x="0" y="35">• Flügel &amp; Schwerter</text>
+        <text x="0" y="55">• Dezente Klammern</text>
+      </g>
+    </g>
+
+    <!-- Step 4: Lesbarkeit -->
+    <g transform="translate(660, 0)" filter="url(#gameFlowShadow)">
+      <rect width="200" height="420" rx="18" fill="#111827" stroke="#fbbf24" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="100" cy="45" r="24" fill="#fbbf24" fill-opacity="0.15"/>
+      <text x="100" y="53" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#fbbf24">4</text>
+      
+      <text x="100" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Lesbarkeit</text>
+      <text x="100" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Kompaktheit prüfen</text>
+
+      <rect x="15" y="145" width="170" height="75" rx="8" fill="#080d1a" stroke="#fbbf24" stroke-opacity="0.3"/>
+      <text x="25" y="175" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">UI-Check:</text>
+      <text x="25" y="200" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#22c55e">✓ Gut erkennbar</text>
+
+      <g transform="translate(15, 240)" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">
+        <text x="0" y="15">• Nicht überladen</text>
+        <text x="0" y="35">• Im Kill-Feed lesbar</text>
+        <text x="0" y="55">• Zeichenlimit prüfen</text>
+      </g>
+    </g>
+
+    <!-- Step 5: Kopieren &amp; Testen -->
+    <g transform="translate(880, 0)" filter="url(#gameFlowShadow)">
+      <rect width="200" height="420" rx="18" fill="#111827" stroke="#10b981" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="100" cy="45" r="24" fill="#10b981" fill-opacity="0.15"/>
+      <text x="100" y="53" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#10b981">5</text>
+      
+      <text x="100" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Kopieren</text>
+      <text x="100" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">1-Klick Zwischenablage</text>
+
+      <rect x="15" y="145" width="170" height="75" rx="8" fill="#080d1a" stroke="#10b981" stroke-opacity="0.3"/>
+      <rect x="25" y="165" width="150" height="35" rx="6" fill="#10b981"/>
+      <text x="100" y="187" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#064e3b">✓ KOPIERT!</text>
+
+      <g transform="translate(15, 240)" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">
+        <text x="0" y="15">• In Spiel einfügen</text>
+        <text x="0" y="35">• Verfügbarkeit testen</text>
+        <text x="0" y="55">• Sofort losspielen</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

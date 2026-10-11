@@ -1,0 +1,82 @@
+---
+import { SITE_CONFIG } from '../config/site';
+
+const showcaseStyles = [
+  { name: 'Fette Schrift', icon: '𝐅', preview: '𝐅𝐞𝐭𝐭𝐞 𝐒𝐜𝐡𝐫𝐢𝐟𝐭', slug: '/schrift/fette-schrift', badge: 'Bestseller', desc: 'Sans-Serif & Serif Bold für auffällige Überschriften' },
+  { name: 'Kursive Schrift', icon: '𝘒', preview: '𝘒𝘶𝘳𝘴𝘪𝘷𝘦 𝘚𝘤𝘩𝘳𝘪𝘧𝘵', slug: '/schrift/kursive-schrift', badge: 'Beliebt', desc: 'Geschwungene Kursivschrift für stilvolle Bios' },
+  { name: 'Gotische Schrift', icon: '𝔊', preview: '𝔊𝔬𝔱𝔦𝔰𝔠𝔥𝔢 𝔖𝔠𝔥𝔯𝔦𝔣𝔱', slug: '/schrift/gotische-schrift', badge: 'Klassiker', desc: 'Traditionelle Fraktur & Altdeutsche Typografie' },
+  { name: 'Bubble Schrift', icon: 'Ⓒ', preview: 'Ⓑⓤⓑⓑⓛⓔ Ⓢⓒⓗⓡⓘⓕⓣ', slug: '/schrift/bubble-schrift', badge: 'Kreativ', desc: 'In Kreise gefasste Buchstaben für lockere Chats' },
+  { name: 'Kleine Schrift', icon: 'ᴀ', preview: 'ᴋʟᴇɪɴᴇ sᴄʜʀɪғᴛ', slug: '/schrift/kleine-schrift', badge: 'Minimal', desc: 'Kompakte Kapitälchen & Superscript' },
+  { name: 'Graffiti Schrift', icon: '🎨', preview: '𝓒𝓾𝓻𝓼𝓲𝓿𝓮 𝓢𝓬𝓻𝓲𝓹𝓽', slug: '/schrift/graffiti-schrift', badge: 'Urban', desc: 'Schwungvolle kalligrafische Schriftzüge' },
+  { name: 'Glitch Schrift', icon: '⚡', preview: 'Z̷a̷l̷g̷o̷ ̷G̷l̷i̷t̷c̷h̷', slug: '/schrift/glitch-schrift', badge: 'Cyber', desc: 'Verzerrte Zalgo-Zeichen für Hacker-Look' },
+  { name: 'Durchgestrichen', icon: 'S̶', preview: 'S̶t̶r̶i̶k̶e̶t̶h̶r̶o̶u̶g̶h̶', slug: '/schrift/durchgestrichen', badge: 'Effekt', desc: 'Horizontal durchgestrichener Text' },
+  { name: 'Tattoo Schrift', icon: '𝕿', preview: '𝕿𝖆𝖙𝖙𝖔𝖔 𝕾𝖈𝖍𝖗𝖎𝖋𝖙', slug: '/schrift/tattoo-schrift', badge: 'Episch', desc: 'Chicano, Gothic & altenglische Blackletter-Motive' },
+  { name: 'Handschrift', icon: '✍️', preview: '𝓗𝓪𝓷𝓭𝓼𝓬𝓱𝓻𝓲𝓯𝓽', slug: '/schrift/handschrift', badge: 'Kreativ', desc: 'Schwungvolle Signaturen & handgeschriebene Kalligrafie' },
+  { name: 'Unterschrift', icon: '✒️', preview: 'U̲n̲t̲e̲r̲s̲c̲h̲r̲i̲f̲t̲', slug: '/schrift/unterschrift', badge: 'Edel', desc: 'Stilvoll unterstrichene Wörter für Autogramme & Bios' },
+  { name: 'Dekorative Schrift', icon: '꧁', preview: '꧁ 𝒟𝑒𝓀𝑜𝓇𝒶𝓉𝒾𝓋 ꧂', slug: '/schrift/dekorative-schrift', badge: 'Aesthetic', desc: 'Verzierte Zeichen mit Engelsflügeln, Sternen & Ornamenten' },
+  { name: 'Eckige Schrift', icon: '【】', preview: '【 𝐄𝐜𝐤𝐢𝐠 】', slug: '/schrift/eckige-schrift', badge: 'Cyber', desc: 'Klammern, Boxen & mathematische Rahmen für Nicknames' },
+  { name: 'Wellige Schrift', icon: '〰️', preview: 'W͠e͠l͠l͠i͠g͠', slug: '/schrift/wellige-schrift', badge: 'Wellen', desc: 'Fließende Wellenlinien & Tilden über jedem Buchstaben' },
+];
+---
+
+<section class="py-20 bg-[#0a0a08]">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <div>
+        <div class="text-xs font-bold uppercase tracking-wider text-amber-500 mb-2">
+          Kategorien & Trends
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          Beliebte Schriftarten & Typografien
+        </h2>
+        <!-- Honest Sourced Data Notice per AGENTS.md Section 3 -->
+        <p class="mt-2 text-xs text-stone-400">
+          {SITE_CONFIG.placeholders.userCountNotice}
+        </p>
+      </div>
+
+      <a
+        href="/schrift"
+        class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:text-amber-300 hover:underline"
+      >
+        <span>Alle 14 Schriftarten entdecken</span>
+        <span>→</span>
+      </a>
+    </div>
+
+    <!-- Grid of All 14 Style Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {showcaseStyles.map((style) => (
+        <a
+          href={style.slug}
+          class="bg-[#141412] border border-white/10 hover:border-amber-500/40 rounded-2xl p-5 transition-all hover:-translate-y-1 group flex flex-col justify-between shadow-md hover:shadow-xl hover:shadow-amber-500/10"
+        >
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-xs font-bold text-white group-hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                <span class="text-stone-400 font-mono text-xs">{style.icon}</span>
+                <span>{style.name}</span>
+              </span>
+              <span class="px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-400 text-[10px] font-bold">
+                {style.badge}
+              </span>
+            </div>
+
+            <div class="py-3 text-base text-stone-200 font-sans break-all border-y border-white/5 my-2">
+              {style.preview}
+            </div>
+
+            <p class="text-xs text-stone-400 leading-relaxed">
+              {style.desc}
+            </p>
+          </div>
+
+          <div class="mt-4 pt-3 flex items-center justify-between text-xs text-stone-400 group-hover:text-amber-400 font-semibold border-t border-white/5">
+            <span>Stil-Generator öffnen</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

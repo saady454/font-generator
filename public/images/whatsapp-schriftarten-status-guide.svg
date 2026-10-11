@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="waStatusBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040c09"/>
+      <stop offset="50%" stop-color="#0c1d18"/>
+      <stop offset="100%" stop-color="#050a08"/>
+    </linearGradient>
+    <linearGradient id="waEmeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#25D366"/>
+      <stop offset="50%" stop-color="#128C7E"/>
+      <stop offset="100%" stop-color="#34B7F1"/>
+    </linearGradient>
+    <filter id="waStatusShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#waStatusBg)"/>
+
+  <!-- Ambient Lights -->
+  <circle cx="300" cy="200" r="260" fill="#25D366" fill-opacity="0.08"/>
+  <circle cx="900" cy="450" r="280" fill="#128C7E" fill-opacity="0.08"/>
+
+  <!-- Badge &amp; Header -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-170" y="-16" width="340" height="32" rx="16" fill="#10261e" stroke="#25D366" stroke-opacity="0.35"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#25D366" letter-spacing="1.5">STATUS &amp; PROFIL GUIDE</text>
+  </g>
+
+  <text x="600" y="115" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="34" font-weight="900" fill="#ffffff">
+    WhatsApp Status &amp; Chat: Gekonnte Akzente statt Reizüberflutung
+  </text>
+  <text x="600" y="148" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#94a3b8">
+    Fokus auf Lesbarkeit: 1-2 gezielte stilisierte Wörter erzeugen den perfekten Eindruck
+  </text>
+
+  <!-- 3 Comparison Cards (Standard vs Überladen vs Ideal) -->
+  <g transform="translate(80, 185)">
+    
+    <!-- Card 1: Standard (Unauffällig) -->
+    <g transform="translate(0, 0)" filter="url(#waStatusShadow)">
+      <rect width="320" height="420" rx="20" fill="#0c1d17" stroke="#ffffff" stroke-opacity="0.08"/>
+      <rect x="20" y="20" width="100" height="26" rx="6" fill="#163327"/>
+      <text x="70" y="37" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">STANDARDSCHRIFT</text>
+      
+      <!-- Profile Header -->
+      <g transform="translate(20, 65)">
+        <circle cx="30" cy="30" r="24" fill="#16382b"/>
+        <text x="30" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16">👤</text>
+        <text x="68" y="26" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Sarah Weber</text>
+        <text x="68" y="42" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">WhatsApp Info</text>
+      </g>
+
+      <rect x="20" y="140" width="280" height="180" rx="12" fill="#06120d" stroke="#ffffff" stroke-opacity="0.04"/>
+      <text x="36" y="175" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Verfügbar</text>
+      <text x="36" y="205" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Urlaub in den Bergen.</text>
+      <text x="36" y="228" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Nur dringende Anrufe bitte.</text>
+      <text x="36" y="258" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Zuletzt aktualisiert: gestern</text>
+
+      <g transform="translate(20, 340)">
+        <text x="10" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">⚡ Wirkung: <tspan fill="#e2e8f0" font-weight="600">Neutral &amp; alltäglich</tspan></text>
+        <text x="10" y="42" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">Fällt in Kontaktlisten kaum auf.</text>
+      </g>
+    </g>
+
+    <!-- Card 2: Zu überladen (Negativbeispiel) -->
+    <g transform="translate(360, 0)" filter="url(#waStatusShadow)">
+      <rect width="320" height="420" rx="20" fill="#0c1d17" stroke="#ef4444" stroke-opacity="0.3"/>
+      <rect x="20" y="20" width="130" height="26" rx="6" fill="#ef4444" fill-opacity="0.15"/>
+      <text x="85" y="37" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#f87171">⚠️ ZU VIEL DEKO</text>
+      
+      <!-- Profile Header -->
+      <g transform="translate(20, 65)">
+        <circle cx="30" cy="30" r="24" fill="#16382b"/>
+        <text x="30" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16">🌸</text>
+        <text x="68" y="26" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#ffffff">𝕾𝖆𝖗𝖆𝖍 𝖂𝖊𝖇𝖊𝖗</text>
+        <text x="68" y="42" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">WhatsApp Info</text>
+      </g>
+
+      <rect x="20" y="140" width="280" height="180" rx="12" fill="#06120d" stroke="#ef4444" stroke-opacity="0.2"/>
+      <text x="36" y="175" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#f87171">꧁★ 𝓤𝓻𝓵𝓪𝓾𝓫 𝓲𝓷 𝓭𝓮𝓷 𝓑𝓮𝓻𝓰𝓮𝓷 ★꧂</text>
+      <text x="36" y="205" font-family="Georgia, serif" font-size="11" fill="#ffffff">𝔑𝔲𝔯 𝔡𝔯𝔦𝔫𝔤𝔢𝔫𝔡𝔢 𝔄𝔫𝔯𝔲𝔣𝔢</text>
+      <text x="36" y="228" font-family="system-ui, sans-serif" font-size="11" fill="#ffffff">𝘉𝘪𝘵𝘵𝘦 𝘬𝘦𝘪𝘯𝘦 𝘚𝘱𝘢𝘮-𝘕𝘢𝘤𝘩𝘳𝘪𝘤𝘩𝘵𝘦𝘯</text>
+      <text x="36" y="258" font-family="Courier New, monospace" font-size="11" fill="#25D366">【 𝚠𝚑𝚊𝚝𝚜𝚊𝚙𝚙.𝚌𝚘𝚖 】</text>
+
+      <g transform="translate(20, 340)">
+        <text x="10" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#f87171" font-weight="700">❌ Anstrengend zu lesen</text>
+        <text x="10" y="42" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Schwer erfassbar auf kleinen Displays.</text>
+      </g>
+    </g>
+
+    <!-- Card 3: Perfekte Balance (Empfohlen) -->
+    <g transform="translate(720, 0)" filter="url(#waStatusShadow)">
+      <rect width="320" height="420" rx="20" fill="#0f261d" stroke="#25D366" stroke-width="2"/>
+      <rect x="20" y="20" width="135" height="26" rx="6" fill="#25D366" fill-opacity="0.2"/>
+      <text x="87" y="37" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="900" fill="#25D366">✨ IDEALE BALANCE</text>
+      
+      <!-- Profile Header -->
+      <g transform="translate(20, 65)">
+        <circle cx="30" cy="30" r="24" fill="#194534" stroke="url(#waEmeraldGrad)" stroke-width="2"/>
+        <text x="30" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16">🏔️</text>
+        <text x="68" y="26" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">𝗦𝗮𝗿𝗮𝗵 𝗪𝗲𝗯𝗲𝗿 🌿</text>
+        <text x="68" y="42" font-family="system-ui, sans-serif" font-size="11" fill="#25D366">Online</text>
+      </g>
+
+      <rect x="20" y="140" width="280" height="180" rx="12" fill="#071711" stroke="#25D366" stroke-opacity="0.3"/>
+      <text x="36" y="175" font-family="system-ui, sans-serif" font-size="13" font-weight="900" fill="#25D366">𝘜𝘳𝘭𝘢𝘶𝘣 𝘪𝘯 𝘥𝘦𝘯 𝘉𝘦𝘳𝘨𝘦𝘯 🏔️✨</text>
+      <text x="36" y="205" font-family="system-ui, sans-serif" font-size="12" fill="#e2e8f0">Aktuell offline – genieße die Natur.</text>
+      <text x="36" y="228" font-family="system-ui, sans-serif" font-size="12" fill="#e2e8f0">Dringendes gerne per Anruf!</text>
+      <text x="36" y="258" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#34B7F1">📍 Tirol &amp;bull; 2026</text>
+
+      <g transform="translate(20, 340)">
+        <text x="10" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#25D366" font-weight="800">✅ Maximaler Stil &amp; Lesbarkeit</text>
+        <text x="10" y="42" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">Blickfang im Chat &amp; Kontakt-Tab.</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

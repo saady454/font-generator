@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ekWfBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090c14"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#05070d"/>
+    </linearGradient>
+    <linearGradient id="ekWfGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <filter id="ekWfShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#ekWfBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#34d399" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#38bdf8" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-180" y="-16" width="360" height="32" rx="16" fill="#1e293b" stroke="#34d399" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#34d399" letter-spacing="2">4 SCHRITTE ZUM EINFÜGEN</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      So einfach nutzt du <tspan fill="url(#ekWfGrad)">Kaomoji im Chat</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Auswählen, mit einem Klick kopieren und direkt in deine Lieblings-App einfügen
+    </text>
+  </g>
+
+  <!-- 4 Connected Process Cards -->
+  <g transform="translate(60, 155)">
+    
+    <!-- Stage 1 -->
+    <g transform="translate(0, 0)" filter="url(#ekWfShadow)">
+      <rect width="255" height="430" rx="20" fill="#111827" stroke="#34d399" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="45" cy="45" r="20" fill="#34d399" fill-opacity="0.15"/>
+      <text x="45" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#34d399">1</text>
+      <text x="80" y="50" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Auswählen</text>
+      
+      <g transform="translate(20, 95)">
+        <rect width="215" height="75" rx="12" fill="#080d1a"/>
+        <text x="15" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#34d399">PASSENDES GESICHT</text>
+        <text x="15" y="54" font-family="monospace" font-size="18" font-weight="900" fill="#ffffff">(◕‿◕)</text>
+      </g>
+
+      <g transform="translate(20, 195)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Stimmung finden:</text>
+        <text x="0" y="24">Wähle die Emotion,</text>
+        <text x="0" y="44">die zu deiner</text>
+        <text x="0" y="64">Nachricht passt.</text>
+        <text x="0" y="94" font-weight="700" fill="#34d399">Süß, fröhlich, cool</text>
+      </g>
+
+      <rect x="20" y="370" width="215" height="36" rx="8" fill="#1e293b"/>
+      <text x="127" y="393" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34d399">1. Gesicht wählen</text>
+    </g>
+
+    <!-- Stage 2 -->
+    <g transform="translate(280, 0)" filter="url(#ekWfShadow)">
+      <rect width="255" height="430" rx="20" fill="#111827" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="45" cy="45" r="20" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="45" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#38bdf8">2</text>
+      <text x="80" y="50" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Kopieren</text>
+      
+      <g transform="translate(20, 95)">
+        <rect width="215" height="75" rx="12" fill="#080d1a"/>
+        <text x="15" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#38bdf8">CLIPBOARD</text>
+        <text x="15" y="54" font-family="system-ui, sans-serif" font-size="15" font-weight="900" fill="#ffffff">Kopiert! 📋</text>
+      </g>
+
+      <g transform="translate(20, 195)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">1-Klick Aktion:</text>
+        <text x="0" y="24">Tippe auf das Symbol</text>
+        <text x="0" y="44">oder klicke Kopieren.</text>
+        <text x="0" y="64">Liegt im Speicher.</text>
+        <text x="0" y="94" font-weight="700" fill="#38bdf8">Sofort bereit</text>
+      </g>
+
+      <rect x="20" y="370" width="215" height="36" rx="8" fill="#1e293b"/>
+      <text x="127" y="393" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">2. Klick &amp; Speichern</text>
+    </g>
+
+    <!-- Stage 3 -->
+    <g transform="translate(560, 0)" filter="url(#ekWfShadow)">
+      <rect width="255" height="430" rx="20" fill="#111827" stroke="#c084fc" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="45" cy="45" r="20" fill="#c084fc" fill-opacity="0.15"/>
+      <text x="45" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#c084fc">3</text>
+      <text x="80" y="50" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">App öffnen</text>
+      
+      <g transform="translate(20, 95)">
+        <rect width="215" height="75" rx="12" fill="#080d1a"/>
+        <text x="15" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#c084fc">ZIELFELD</text>
+        <text x="15" y="54" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#ffffff">Chat &amp;bull; Bio &amp;bull; Nick</text>
+      </g>
+
+      <g transform="translate(20, 195)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Überall kompatibel:</text>
+        <text x="0" y="24">WhatsApp, Discord,</text>
+        <text x="0" y="44">Instagram, TikTok</text>
+        <text x="0" y="64">oder Gaming-Profil.</text>
+        <text x="0" y="94" font-weight="700" fill="#c084fc">Jedes Textfeld</text>
+      </g>
+
+      <rect x="20" y="370" width="215" height="36" rx="8" fill="#1e293b"/>
+      <text x="127" y="393" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#c084fc">3. App öffnen</text>
+    </g>
+
+    <!-- Stage 4 -->
+    <g transform="translate(840, 0)" filter="url(#ekWfShadow)">
+      <rect width="245" height="430" rx="20" fill="#111827" stroke="#fbbf24" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="45" cy="45" r="20" fill="#fbbf24" fill-opacity="0.15"/>
+      <text x="45" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#fbbf24">4</text>
+      <text x="80" y="50" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Einfügen</text>
+      
+      <g transform="translate(20, 95)">
+        <rect width="205" height="75" rx="12" fill="#080d1a"/>
+        <text x="15" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#fbbf24">FERTIG</text>
+        <text x="15" y="54" font-family="monospace" font-size="13" font-weight="900" fill="#ffffff">Hi! (◕‿◕)✨</text>
+      </g>
+
+      <g transform="translate(20, 195)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Strg+V / Einfügen:</text>
+        <text x="0" y="24">Absenden und</text>
+        <text x="0" y="44">Freunde mit süßen</text>
+        <text x="0" y="64">Gesichtern erfreuen.</text>
+        <text x="0" y="94" font-weight="700" fill="#fbbf24">100 % Ausdruck</text>
+      </g>
+
+      <rect x="20" y="370" width="205" height="36" rx="8" fill="#1e293b"/>
+      <text x="122" y="393" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">4. Absenden ✨</text>
+    </g>
+
+  </g>
+</svg>

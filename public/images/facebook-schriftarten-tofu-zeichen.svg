@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fbTofuBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060913"/>
+      <stop offset="50%" stop-color="#0f162c"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="fbGoodGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <linearGradient id="fbBadGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <filter id="fbTofuShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#fbTofuBg)"/>
+
+  <!-- Ambient Lights -->
+  <circle cx="300" cy="200" r="260" fill="#1877F2" fill-opacity="0.08"/>
+  <circle cx="900" cy="450" r="280" fill="#60a5fa" fill-opacity="0.08"/>
+
+  <!-- Badge &amp; Header -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-170" y="-16" width="340" height="32" rx="16" fill="#141f38" stroke="#1877F2" stroke-opacity="0.35"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#60a5fa" letter-spacing="1.5">KOMPATIBILITÄTS GUIDE</text>
+  </g>
+
+  <text x="600" y="115" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="34" font-weight="900" fill="#ffffff">
+    Warum werden manche Zeichen als Kästchen angezeigt?
+  </text>
+  <text x="600" y="148" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#94a3b8">
+    Fehlende Glyphen auf älteren Geräten verstehen und mit universellen Stilen vermeiden
+  </text>
+
+  <!-- Side-by-Side Comparison Cards -->
+  <g transform="translate(100, 185)">
+    
+    <!-- Left Card: Korrekt gerendertes Unicode-Zeichen (Erfolg) -->
+    <g transform="translate(0, 0)" filter="url(#fbTofuShadow)">
+      <rect width="480" height="420" rx="22" fill="#0d182e" stroke="#22c55e" stroke-width="2"/>
+      
+      <rect x="25" y="24" width="180" height="28" rx="8" fill="#22c55e" fill-opacity="0.2"/>
+      <text x="115" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#4ade80">✓ KORREKTE DARSTELLUNG</text>
+
+      <text x="25" y="85" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#ffffff">
+        Unterstütztes Unicode-Zeichen
+      </text>
+      <text x="25" y="110" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">
+        System besitzt die passende Schriftglyphe
+      </text>
+
+      <!-- Visual Demonstration Box -->
+      <g transform="translate(25, 130)">
+        <rect width="430" height="130" rx="14" fill="#080d1a" stroke="#22c55e" stroke-opacity="0.3"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#4ade80">FACEBOOK FEED DARSTELLUNG:</text>
+        <text x="20" y="70" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#ffffff">𝗡𝗲𝘂𝗲𝘀 𝗔𝗻𝗴𝗲𝗯𝗼𝘁 𝗳ü𝗿 𝗱𝗶𝗰𝗵 ✨</text>
+        <text x="20" y="105" font-family="system-ui, sans-serif" font-size="12" fill="#4ade80">✓ 100% sauber lesbar auf allen Smartphones</text>
+      </g>
+
+      <!-- Bullet Points -->
+      <g transform="translate(25, 285)" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">
+        <text x="0" y="20"><tspan fill="#22c55e" font-weight="900">✓</tspan> Fette Sans-Serif Zeichen sind universell</text>
+        <text x="0" y="48"><tspan fill="#22c55e" font-weight="900">✓</tspan> Standard Kursivschrift wird überall unterstützt</text>
+        <text x="0" y="76"><tspan fill="#22c55e" font-weight="900">✓</tspan> Maximale Klickrate im Facebook Newsfeed</text>
+        <text x="0" y="104"><tspan fill="#22c55e" font-weight="900">✓</tspan> Auch in Gruppen &amp; Kommentaren perfekt</text>
+      </g>
+    </g>
+
+    <!-- Right Card: Fehlende Glyphe / Tofu Kästchen -->
+    <g transform="translate(520, 0)" filter="url(#fbTofuShadow)">
+      <rect width="480" height="420" rx="22" fill="#0d182e" stroke="#ef4444" stroke-opacity="0.4"/>
+      
+      <rect x="25" y="24" width="180" height="28" rx="8" fill="#ef4444" fill-opacity="0.15"/>
+      <text x="115" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#f87171">✕ FEHLENDE GLYPHE (TOFU)</text>
+
+      <text x="25" y="85" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#ffffff">
+        Nicht unterstütztes Sonderzeichen
+      </text>
+      <text x="25" y="110" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">
+        System kennt das seltene Zeichen nicht
+      </text>
+
+      <!-- Visual Demonstration Box -->
+      <g transform="translate(25, 130)">
+        <rect width="430" height="130" rx="14" fill="#080d1a" stroke="#ef4444" stroke-opacity="0.3"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#f87171">FEHLERHAFTE DARSTELLUNG:</text>
+        <text x="20" y="70" font-family="monospace" font-size="22" font-weight="700" fill="#ef4444">N⃞e⃞u⃞e⃞s⃞ A⃞n⃞g⃞e⃞b⃞o⃞t⃞ ⯐</text>
+        <text x="20" y="105" font-family="system-ui, sans-serif" font-size="12" fill="#f87171">⚠️ Ersatzkästchen statt schöner Schrift</text>
+      </g>
+
+      <!-- Bullet Points -->
+      <g transform="translate(25, 285)" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">
+        <text x="0" y="20"><tspan fill="#ef4444" font-weight="900">✕</tspan> Sehr seltene Symbole oder extreme Glitch-Stile</text>
+        <text x="0" y="48"><tspan fill="#ef4444" font-weight="900">✕</tspan> Ältere Android-Versionen ohne Unicode 16 Glyphen</text>
+        <text x="0" y="76"><tspan fill="#eab308" font-weight="900">💡</tspan> Lösung: Zu fette oder kursive Schrift wechseln</text>
+        <text x="0" y="104"><tspan fill="#eab308" font-weight="900">💡</tspan> Vor dem Absenden im Facebook-Feld prüfen</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

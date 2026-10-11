@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE_CONFIG } from '../config/site';
+---
+
+<Layout
+  title="Cookie-Richtlinie & Speichereinstellungen nach TDDDG | Schriftarten.io"
+  description="Transparente Erklärung über den Einsatz von Cookies und lokalem Browserspeicher (LocalStorage) auf Schriftarten.io."
+  canonicalUrl="/cookie-richtlinie"
+>
+  <main class="py-16 bg-[#0a0a08]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Cookie-Richtlinie</span>
+      </nav>
+
+      <div class="mb-10 pb-8 border-b border-white/10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
+          <span>🍪 Transparenz & TDDDG</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Cookie-Richtlinie
+        </h1>
+        <p class="mt-2 text-sm text-stone-400">
+          Informationen über Speichertechnologien gemäß § 25 TDDDG
+        </p>
+      </div>
+
+      <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-10 space-y-8 text-stone-300 text-sm leading-relaxed">
+        <div>
+          <h2 class="text-lg font-bold text-white mb-2">1. Was sind Cookies und lokaler Speicher?</h2>
+          <p>
+            Cookies und LocalStorage sind kleine Datenelemente, die dein Webbrowser auf deinem Endgerät speichert. Wir verwenden ausschließlich technisch notwendige Einträge im LocalStorage, um deine bevorzugte Designeinstellung (Dark Mode / Light Mode) zu sichern.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-bold text-white mb-2">2. Keine Tracking- oder Third-Party-Cookies</h2>
+          <p>
+            Unsere Website setzt im Auslieferungszustand <strong class="text-white">keine Werbe- oder Profiling-Cookies von Drittanbietern</strong> ein. Die Nutzung des Generators erfolgt ohne Tracking.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-bold text-white mb-2">3. Übersicht der gespeicherten Werte</h2>
+          <div class="bg-[#0a0a08] border border-white/5 rounded-2xl p-5 font-mono text-xs sm:text-sm text-stone-300 space-y-2">
+            <p><strong class="text-amber-400">Schlüssel:</strong> <code class="text-white">theme</code></p>
+            <p><strong class="text-amber-400">Zweck:</strong> Speichert, ob du das dunkle oder helle Theme ausgewählt hast.</p>
+            <p><strong class="text-amber-400">Speicherdauer:</strong> Persistent im LocalStorage bis zum manuellen Leeren des Browser-Caches.</p>
+            <p><strong class="text-amber-400">Rechtsgrundlage:</strong> § 25 Abs. 2 Nr. 2 TDDDG (technisch erforderlich).</p>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-bold text-white mb-2">4. Speicherdaten löschen</h2>
+          <p>
+            Du kannst den LocalStorage und gespeicherte Daten jederzeit über die Einstellungen deines Webbrowsers (unter "Chronik / Website-Daten löschen") leeren.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

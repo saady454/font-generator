@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE_CONFIG } from '../config/site';
+
+const breadcrumbs = [
+  { name: 'Startseite', url: '/' },
+  { name: 'Impressum', url: '/impressum' },
+];
+---
+
+<Layout
+  title="Impressum & Gesetzliche Anbieterkennzeichnung nach § 5 DDG | Schriftarten.io"
+  description="Gesetzlich vorgeschriebenes Impressum und Anbieterkennzeichnung gemäß § 5 DDG für die Website Schriftarten.io."
+  canonicalUrl="/impressum"
+>
+  <main class="py-16 bg-[#0a0a08]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Impressum</span>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="mb-10 pb-8 border-b border-white/10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
+          <span>⚖️ Rechtliche Anbieterkennzeichnung</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Impressum
+        </h1>
+        <p class="mt-2 text-sm text-stone-400">
+          Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG / ehemals TMG)
+        </p>
+      </div>
+
+      <!-- Legal Content Card -->
+      <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-10 space-y-8 text-stone-300 text-sm leading-relaxed">
+        <!-- Section 1: Betreiber -->
+        <div>
+          <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+            <span>🏢</span> Diensteanbieter & Verantwortlicher
+          </h2>
+          <div class="bg-[#0a0a08] border border-white/5 rounded-2xl p-5 space-y-2 text-stone-300 font-mono text-xs sm:text-sm">
+            <p><strong class="text-white">Name / Unternehmen:</strong> [NAME_DES_BETREIBERS]</p>
+            <p><strong class="text-white">Vertreten durch:</strong> [VERTRETUNGSBERECHTIGTE_PERSON]</p>
+            <p><strong class="text-white">Anschrift:</strong> [STRASSE_UND_HAUSNUMMER], [PLZ_UND_ORT], Deutschland</p>
+          </div>
+        </div>
+
+        <!-- Section 2: Kontakt -->
+        <div>
+          <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+            <span>✉️</span> Kontaktmöglichkeiten
+          </h2>
+          <div class="bg-[#0a0a08] border border-white/5 rounded-2xl p-5 space-y-2 text-stone-300 text-xs sm:text-sm">
+            <p><strong class="text-white">E-Mail:</strong> <a href={`mailto:${SITE_CONFIG.contactEmail}`} class="text-amber-400 hover:underline">{SITE_CONFIG.contactEmail}</a></p>
+            <p><strong class="text-white">Website:</strong> <a href={SITE_CONFIG.baseUrl} class="text-amber-400 hover:underline">{SITE_CONFIG.baseUrl}</a></p>
+            <p><strong class="text-white">Telefon:</strong> [TELEFONNUMMER_OPTIONAL]</p>
+          </div>
+        </div>
+
+        <!-- Section 3: Register & USt-IdNr -->
+        <div>
+          <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+            <span>📋</span> Registereintrag & Umsatzsteuer-ID
+          </h2>
+          <p class="text-xs sm:text-sm text-stone-400">
+            <strong>Umsatzsteuer-Identifikationsnummer:</strong> gemäß § 27 a Umsatzsteuergesetz: [UST_IDNR_FALLS_VORHANDEN]<br />
+            <strong>Registergericht:</strong> [REGISTERGERICHT_FALLS_EINTRAGUNG_VORLIEGT] — <strong>Registernummer:</strong> [HRB_NUMMER]
+          </p>
+        </div>
+
+        <!-- Section 4: Verantwortlich für den Inhalt -->
+        <div>
+          <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+            <span>✍️</span> Redaktionell verantwortlich (§ 18 Abs. 2 MStV)
+          </h2>
+          <p class="text-xs sm:text-sm text-stone-400">
+            [NAME_DES_VERANTWORTLICHEN_FÜR_INHALTE]<br />
+            [ADRESSE_DES_VERANTWORTLICHEN]
+          </p>
+        </div>
+
+        <!-- Section 5: Haftung für Inhalte & Links -->
+        <div class="space-y-4 pt-4 border-t border-white/5 text-xs sm:text-sm text-stone-400">
+          <h3 class="text-base font-bold text-white">Haftung für Inhalte</h3>
+          <p>
+            Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.
+          </p>
+
+          <h3 class="text-base font-bold text-white">Haftung für Links</h3>
+          <p>
+            Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+          </p>
+
+          <h3 class="text-base font-bold text-white">Urheberrecht</h3>
+          <p>
+            Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,498 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TextStyleConverter from '../../components/TextStyleConverter.astro';
+import FontStyleGrid from '../../components/FontStyleGrid.astro';
+import PlatformInteractiveWidgets from '../../components/PlatformInteractiveWidgets.astro';
+import PlatformPreviewWidget from '../../components/PlatformPreviewWidget.astro';
+import { PLATFORMS_DATA } from '../../data/platform-metadata';
+import { PLATFORM_WIDGETS_DATA } from '../../data/platform-widgets';
+import { NAVIGATION_DATA } from '../../data/navigation';
+
+const platformInfo = PLATFORMS_DATA['telegram'] || {
+  id: 'telegram',
+  name: 'Telegram',
+  slug: '/plattform/telegram',
+  icon: '✈️',
+  tagline: 'Unicode-Schriften für Telegram Kanal-Titel, Gruppen-Ankündigungen, Chat-Nachrichten & Bio',
+  bioLimit: 70,
+  compatibleStyles: ['Fette Schrift', 'Kursive Schrift', 'Gotische Schrift', 'Monospace', 'Bubble Schrift', 'Kapitälchen'],
+  keyFeatures: [
+    'Kanal- und Gruppen-Titel als Blickfang hervorheben',
+    '70-Zeichen Telegram-Bio stylen',
+    'Chat-Nachrichten und Ankündigungen strukturieren',
+    'Display-Namen mit individuellen Unicode-Zeichen personalisieren',
+  ],
+  tips: [
+    'Telegram unterstützt intern Markdown und HTML Formatierung – mit Unicode-Schriftarten kannst du zusätzlich ausgefallene Stile wie Gotisch oder Bubble nutzen.',
+    'Formatiere Gruppenregeln und Überschriften fett, damit Mitglieder wichtige Botschaften sofort überfliegen können.',
+  ],
+};
+
+const telegramFaqs = [
+  {
+    q: 'Sind Telegram Schriftarten echte installierbare Fonts?',
+    a: 'Nein, bei Copy-&-Paste-Generatoren handelt es sich meist um Unicode-Zeichen und nicht um herunterladbare Font-Dateien. Sie werden direkt als Text in die Zwischenablage kopiert und eingefügt.',
+  },
+  {
+    q: 'Funktionieren alle Schriftstile in Telegram?',
+    a: 'Nicht unbedingt. Die Darstellung kann von den verwendeten Unicode-Zeichen, dem Gerät und der verwendeten Schriftunterstützung abhängen. Deshalb sollte ein wichtiger Text vor dem Absenden kurz geprüft werden.',
+  },
+  {
+    q: 'Brauche ich für fette oder kursive Texte einen Generator?',
+    a: 'Nicht immer. Telegram bietet eigene native Formatierungsfunktionen für fette und kursive Schrift. Ein Generator ist vor allem interessant, wenn du zusätzliche dekorative Varianten wie Gotisch, Fraktur oder Bubble-Schrift ausprobieren möchtest.',
+  },
+  {
+    q: 'Kann ich Telegram Schriftarten auch in anderen Apps verwenden?',
+    a: 'Ja, viele Unicode-Zeichen lassen sich grundsätzlich auch in anderen Textfeldern (wie WhatsApp, Discord, Instagram oder TikTok) einfügen. Trotzdem kann die Darstellung je nach App und unterstützten Zeichen variieren.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": telegramFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+
+const widgetsConfig = PLATFORM_WIDGETS_DATA['telegram'];
+---
+
+<Layout
+  title="Telegram Schriftarten – Coole Schrift zum Kopieren & Einfügen"
+  description="Telegram Schriftarten kostenlos erstellen: Fette, kursive, Gothic- und weitere Unicode-Stile für Nachrichten und Profile. Einfach Text eingeben, kopieren und einfügen."
+  canonicalUrl="/plattform/telegram"
+  schema={faqSchema}
+>
+  <main class="py-12 md:py-16 bg-[#0a0a08] platform-theme-telegram" data-platform-theme="telegram">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <a href="/plattform" class="hover:text-white transition-colors">Plattformen</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Telegram</span>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="platform-guide-badge inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#229ED9]/10 border border-[#229ED9]/30 text-[#7dd3fc] text-xs font-bold uppercase tracking-wider mb-3 transition-all">
+          <span>✈️ Telegram Messenger &amp; Channel Guide</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <span class="text-[#2AABEE]">Telegram Schriftarten</span> – Stylische Texte kopieren und einfügen
+        </h1>
+        <p class="mt-4 text-base text-stone-300 leading-relaxed max-w-2xl mx-auto">
+          Erstelle fette, kursive, Gothic- und weitere stylische Texte für Telegram. Text eingeben, Variante auswählen, kopieren und direkt in Chats, Gruppen oder Profilen verwenden.
+        </p>
+      </div>
+
+      <!-- Interactive Converter Component -->
+      <TextStyleConverter
+        defaultText="Telegram Kanal ✨"
+        pageSlug="telegram"
+        filterCategory="alle"
+        showCategoryTabs={true}
+        showPresets={true}
+        maxChars={70}
+        limit={12}
+        showMoreButton={true}
+      />
+
+      <!-- Content Grid: Guidelines, Editorial Article & Sidebar -->
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- LEFT COLUMN (lg:col-span-2): Generator Widgets first, followed by Editorial Content & FAQ -->
+        <div class="lg:col-span-2 space-y-8">
+          
+          <!-- 3 Interactive Generator Widgets (Kanal- & Gruppenname-Ideen, Symbol-Kombinationen, Themen-Emoji-Pakete) -->
+          {widgetsConfig && (
+            <PlatformInteractiveWidgets
+              widgetsData={widgetsConfig}
+              platformId="telegram"
+            />
+          )}
+
+          <!-- IMAGE 1: Featured Hero Image -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/telegram-schriftarten-hero.svg"
+              alt="Telegram Schriftarten für stylische Nachrichten"
+              class="w-full h-auto aspect-video object-cover"
+              loading="eager"
+            />
+            <p class="text-xs text-stone-400 p-3 text-center border-t border-white/5 bg-[#0a0a08]">
+              Mit einem Schriftgenerator lassen sich verschiedene Textstile für Telegram erstellen.
+            </p>
+          </div>
+
+          <!-- Section 1: Intro -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Normale Nachrichten wirken manchmal etwas langweilig. Mit <strong>Telegram Schriftarten</strong> kannst du einzelne Wörter, Namen oder kurze Textstellen auffälliger gestalten. Besonders für Gruppen, Kanäle, Profiltexte und kreative Nachrichten sind verschiedene Unicode-Stile interessant.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Dabei gibt es einen wichtigen Unterschied: Telegram bietet selbst Textformatierungen wie Fett, Kursiv, Unterstrichen und Durchgestrichen. Ein Schriftgenerator arbeitet dagegen häufig mit speziellen Unicode-Zeichen, die wie andere Schriftarten aussehen. Dadurch kannst du zusätzliche Varianten ausprobieren, solltest aber immer auf Lesbarkeit und die Darstellung auf deinem Gerät achten.
+            </p>
+          </div>
+
+          <!-- Section 2: Was sind Telegram Schriftarten? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Was sind Telegram Schriftarten?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Bei einem Schriftgenerator wird normaler Text in verschiedene Zeichenvarianten umgewandelt. Zum Beispiel:
+            </p>
+            
+            <div class="p-5 rounded-2xl bg-[#0a0a08] border border-white/10 space-y-2 font-mono text-sm">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-stone-200">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-[#2AABEE]">Fett:</span> <span class="font-bold text-white font-sans">𝐅𝐞𝐭𝐭</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-[#38bdf8]">Kursiv:</span> <span class="font-bold text-white font-sans">𝘒𝘶𝘳𝘴𝘪𝘷</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-white">Fett &amp; kursiv:</span> <span class="font-bold text-white font-serif">𝑭𝒆𝒕𝒕 &amp; 𝒌𝒖𝒓𝒔𝒊𝒗</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-amber-400">Gotisch:</span> <span class="font-bold text-white font-serif">𝔊𝔬𝔱𝔦𝔰𝔠𝔥</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-emerald-400">Monospace:</span> <span class="font-bold text-white font-mono">𝕄𝕠𝕟𝕠𝕤𝕡𝕒𝕔𝕖</span></div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-white/5"><span class="text-pink-400">Bubble:</span> <span class="font-bold text-white font-sans">ⓑⓤⓑⓑⓛⓔ</span></div>
+              </div>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Technisch handelt es sich dabei häufig nicht um installierte Font-Dateien. Stattdessen werden Unicode-Zeichen verwendet. Der Unicode-Standard enthält beispielsweise mathematische Alphabete mit Varianten wie Bold, Italic, Script, Fraktur, Double-Struck und Monospace. Diese Zeichen sind jedoch ursprünglich für bestimmte semantische Zwecke definiert und nicht einfach als normale Schriftarten gedacht.
+            </p>
+          </div>
+
+          <!-- Section 3: Wie erstelle ich eine Telegram Schrift? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Wie erstelle ich eine Telegram Schrift?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Der Vorgang ist unkompliziert:
+            </p>
+            <ul class="space-y-3 text-sm sm:text-base text-stone-300 leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#2AABEE] font-bold">1.</span>
+                <span>Öffne den <a href="/" class="text-[#2AABEE] hover:underline font-semibold">Schriftarten Generator</a>.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#2AABEE] font-bold">2.</span>
+                <span>Gib deinen Text ein.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#2AABEE] font-bold">3.</span>
+                <span>Durchsuche die verfügbaren Varianten.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#2AABEE] font-bold">4.</span>
+                <span>Wähle einen gut lesbaren Stil.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#2AABEE] font-bold">5.</span>
+                <span>Kopiere das Ergebnis mit einem Klick.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#2AABEE] font-bold">6.</span>
+                <span>Füge es in Telegram ein.</span>
+              </li>
+            </ul>
+
+            <div class="p-4 rounded-2xl bg-gradient-to-r from-[#229ED9]/15 to-[#7dd3fc]/15 border border-[#229ED9]/30 text-center">
+              <a href="/" class="inline-flex items-center gap-2 text-white font-bold hover:text-[#7dd3fc] transition-colors">
+                <span>👉 Jetzt alle Telegram-Stile im Schriftarten Generator ausprobieren</span>
+                <span>→</span>
+              </a>
+            </div>
+
+            <!-- IMAGE 2: Anleitung Workflow -->
+            <div class="rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="/images/telegram-schriftarten-anleitung.svg"
+                alt="Telegram Schrift mit einem Online-Generator erstellen"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Text eingeben, Stil auswählen und das Ergebnis kopieren.
+              </p>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              So kannst du beispielsweise einen Namen oder eine kurze Überschrift gestalten. Für längere Nachrichten ist eine dezente Variante meistens besser geeignet. Außerdem solltest du Sonderzeichen und deutsche Buchstaben wie ä, ö, ü und ß kontrollieren, weil nicht jeder Stil alle Zeichen gleich unterstützt.
+            </p>
+          </div>
+
+          <!-- Section 4: Welche Schriftstile eignen sich für Telegram? & Table -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Welche Schriftstile eignen sich für Telegram?
+            </h2>
+
+            <div class="overflow-x-auto rounded-2xl border border-white/10">
+              <table class="w-full text-left text-sm text-stone-300">
+                <thead class="bg-white/5 text-white font-bold border-b border-white/10">
+                  <tr>
+                    <th class="p-3.5">Stil</th>
+                    <th class="p-3.5">Geeignet für</th>
+                    <th class="p-3.5">Wirkung</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/fette-schrift" class="text-[#2AABEE] hover:underline">Fett</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200">wichtige Wörter</td>
+                    <td class="p-3.5 text-emerald-400 font-semibold">auffällig</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/kursive-schrift" class="text-[#38bdf8] hover:underline">Kursiv</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200">kurze Betonungen</td>
+                    <td class="p-3.5 text-stone-400">dezent</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/gotische-schrift" class="text-amber-400 hover:underline">Gothic / Fraktur</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200">Namen und kreative Texte</td>
+                    <td class="p-3.5 text-amber-400 font-semibold">markant</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">Monospace</td>
+                    <td class="p-3.5 text-stone-200">technische Inhalte</td>
+                    <td class="p-3.5 text-sky-400 font-semibold">sachlich</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">
+                      <a href="/schrift/bubble-schrift" class="text-pink-400 hover:underline">Bubble</a>
+                    </td>
+                    <td class="p-3.5 text-stone-200">kurze Namen</td>
+                    <td class="p-3.5 text-pink-400 font-semibold">verspielt</td>
+                  </tr>
+                  <tr class="hover:bg-white/[0.02]">
+                    <td class="p-3.5 font-bold text-white">Script</td>
+                    <td class="p-3.5 text-stone-200">kreative Profile</td>
+                    <td class="p-3.5 text-purple-400 font-semibold">dekorativ</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- IMAGE 3: Stile Vergleich -->
+            <div class="rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="/images/telegram-schriftarten-stile-vergleich.svg"
+                alt="Vergleich verschiedener Schriftstile für Telegram"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Je nach Zweck eignen sich unterschiedliche Schriftstile für kurze Telegram-Texte.
+              </p>
+            </div>
+
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Welcher Stil passt, hängt deshalb vom Einsatz ab. Ein auffälliger <a href="/schrift/gotische-schrift" class="text-[#2AABEE] hover:underline font-semibold">Gothic-Stil</a> kann für einen Profilnamen interessant sein. Für eine längere Nachricht ist dagegen ein gut lesbarer Stil sinnvoller.
+            </p>
+          </div>
+
+          <!-- Section 5: Telegram-Formatierung oder Unicode-Schrift? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Telegram-Formatierung oder Unicode-Schrift?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Hier lohnt sich eine klare Unterscheidung. Telegram unterstützt native Formatierungen wie fett, kursiv, Unterstreichung, Durchstreichung, Spoiler und weitere Textoptionen. Diese Formatierungen werden von Telegram als Textformatierung verarbeitet. Die offizielle Telegram-Dokumentation beschreibt unter anderem entsprechende Markdown- und HTML-Formatierungen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Ein Unicode-Generator verfolgt einen anderen Ansatz. Statt normalen Buchstaben mit einer Formatierung zu versehen, erzeugt er Zeichen aus unterschiedlichen Unicode-Bereichen. Deshalb sehen sie wie andere Schriftstile aus und können per Copy &amp; Paste übertragen werden.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für eine einfache Hervorhebung reicht die integrierte Telegram-Formatierung oft aus. Wenn du dagegen einen besonderen Look möchtest, kann ein Generator zusätzliche Varianten liefern.
+            </p>
+          </div>
+
+          <!-- Section 6: Wo kann ich solche Texte verwenden? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Wo kann ich solche Texte verwenden?
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="p-4 rounded-2xl bg-[#0a0a08] border border-white/5 space-y-1.5">
+                <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                  <span class="text-[#2AABEE]">1.</span> Telegram-Nachrichten
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                  Kurze dekorative Texte können Nachrichten persönlicher machen. Besonders geeignet sind Überschriften, Begriffe oder einzelne Zeilen.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-[#0a0a08] border border-white/5 space-y-1.5">
+                <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                  <span class="text-[#2AABEE]">2.</span> Gruppen und Kanäle
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                  In einer Gruppe oder einem Kanal können stilisierte kurze Überschriften dabei helfen, Informationen optisch voneinander zu trennen.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-[#0a0a08] border border-white/5 space-y-1.5">
+                <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                  <span class="text-[#2AABEE]">3.</span> Namen und Profiltexte
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                  Ein besonderer Unicode-Stil kann auch für einen Namen oder eine kurze Beschreibung interessant sein.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-[#0a0a08] border border-white/5 space-y-1.5">
+                <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                  <span class="text-[#2AABEE]">4.</span> Status &amp; Ankündigungen
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                  Für kurze Hinweise eignen sich fette oder dekorative Varianten. Ein ganzer Textblock in einer ungewöhnlichen Schreibweise wirkt dagegen schnell unübersichtlich.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 7: Warum sehen manche Zeichen auf Telegram anders aus? -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Warum sehen manche Zeichen auf Telegram anders aus?
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Unicode-Zeichen werden von der verwendeten Schrift und der jeweiligen Software dargestellt. Deshalb kann ein Zeichen auf einem Gerät anders aussehen als auf einem anderen. Besonders bei seltenen Zeichen, kombinierenden Zeichen oder dekorativen Kombinationen sind Unterschiede möglich.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Aus diesem Grund solltest du einen wichtigen Text nach dem Einfügen kontrollieren. Bei geschäftlichen oder wichtigen Nachrichten ist eine normale Telegram-Formatierung oft die sicherere Wahl. Bei dekorativen Texten lohnt sich dagegen eine kurze Vorschau auf dem eigenen Gerät.
+            </p>
+
+            <!-- IMAGE 4: Lesbarkeit prüfen Infografik -->
+            <div class="rounded-2xl overflow-hidden border border-white/10 mt-4">
+              <img
+                src="/images/telegram-schriftarten-lesbarkeit-pruefen.svg"
+                alt="Lesbarkeit von stylischen Telegram Texten prüfen"
+                class="w-full h-auto aspect-video object-cover"
+                loading="lazy"
+              />
+              <p class="text-xs text-stone-400 p-2.5 text-center bg-[#0a0a08] border-t border-white/5">
+                Vor dem Absenden sollte ein dekorativer Text auf Lesbarkeit und Darstellung geprüft werden.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 8: Tipps für gut lesbare Telegram Schriftarten -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Tipps für gut lesbare Telegram Schriftarten
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Am besten verwendest du dekorative Zeichen gezielt. Eine einzelne Überschrift oder ein wichtiges Wort reicht oft schon aus.
+            </p>
+            <ul class="space-y-2.5 text-sm sm:text-base text-stone-300 leading-relaxed">
+              <li class="flex items-start gap-2">
+                <span class="text-[#2AABEE] font-bold">✓</span>
+                <span>Verwende keine übermäßig komplizierten Zeichen für lange Texte.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#2AABEE] font-bold">✓</span>
+                <span>Prüfe deutsche Sonderzeichen und Umlaute vor dem Absenden.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#2AABEE] font-bold">✓</span>
+                <span>Nutze auffällige Stile eher für kurze Textstellen.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#2AABEE] font-bold">✓</span>
+                <span>Teste wichtige Texte nach dem Einfügen.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#2AABEE] font-bold">✓</span>
+                <span>Kombiniere nicht zu viele verschiedene Stile in einer einzigen Nachricht.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#2AABEE] font-bold">✓</span>
+                <span>Bevorzuge Lesbarkeit vor einem möglichst außergewöhnlichen Design.</span>
+              </li>
+            </ul>
+          </div>
+
+
+
+          <!-- Section 9: Häufige Fragen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>❓</span> Häufige Fragen zu Telegram Schriftarten
+            </h2>
+            <div class="space-y-4">
+              {telegramFaqs.map((faq) => (
+                <div class="border-b border-white/5 pb-4 last:border-b-0 last:pb-0">
+                  <h3 class="text-sm sm:text-base font-bold text-white mb-1.5">{faq.q}</h3>
+                  <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 10: Fazit -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Fazit
+            </h2>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Telegram Schriftarten sind praktisch, wenn du kurze Texte, Namen oder Überschriften individueller gestalten möchtest. Ein Generator macht den Vorgang schnell: Text eingeben, Stil auswählen, kopieren und anschließend in Telegram einfügen.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Für normale Hervorhebungen sind die integrierten Telegram-Formatierungen oft ausreichend. Für zusätzliche dekorative Varianten bietet Unicode mehr Möglichkeiten. Entscheidend ist jedoch, dass der Text lesbar bleibt und auf dem Zielgerät korrekt dargestellt wird. Bei technischen Fragen zur offiziellen Telegram-Formatierung sind die <a href="https://core.telegram.org/bots/api" target="_blank" rel="noopener noreferrer" class="text-[#2AABEE] hover:underline font-semibold">Telegram-Dokumentationen zu Textformatierungen</a> die zuverlässigste Referenz.
+            </p>
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+              Entdecke auch unsere Schriftgeneratoren für <a href="/plattform/whatsapp" class="text-[#2AABEE] hover:underline font-semibold">WhatsApp Schriftarten</a>, <a href="/plattform/discord" class="text-[#2AABEE] hover:underline font-semibold">Discord Schriftarten</a>, <a href="/plattform/instagram" class="text-[#2AABEE] hover:underline font-semibold">Instagram Schriftarten</a>, <a href="/plattform/tiktok" class="text-[#2AABEE] hover:underline font-semibold">TikTok Schriftarten</a> und <a href="/plattform/facebook" class="text-[#2AABEE] hover:underline font-semibold">Facebook Schriftarten</a>.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- RIGHT SIDEBAR COLUMN: 1. Live Preview, 2. Beliebte Stile, 3. Weitere Plattformen -->
+        <div class="space-y-6">
+          <!-- 1. Live Telegram Preview Mockup Widget -->
+          <PlatformPreviewWidget platformId="telegram" />
+
+          <!-- 2. Beliebte Stile für Telegram -->
+          <FontStyleGrid
+            title="Beliebte Stile für Telegram"
+            titleIcon="🎨"
+            isAmberTitle={false}
+          />
+
+          <!-- 3. Weitere Plattformen -->
+          <div class="bg-[#141412] border border-white/10 rounded-3xl p-6">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-stone-300 mb-4">
+              Weitere Plattformen
+            </h3>
+            <div class="space-y-2">
+              {NAVIGATION_DATA.platforms.items
+                .filter((item) => !item.href.includes('telegram'))
+                .map((other) => (
+                  <a
+                    href={other.href}
+                    class="flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-[#229ED9]/10 border border-white/5 hover:border-[#229ED9]/30 text-xs font-semibold text-stone-300 hover:text-white transition-all group"
+                  >
+                    <span>{other.icon} {other.title}</span>
+                    <span class="group-hover:translate-x-1 transition-transform text-[#2AABEE]">→</span>
+                  </a>
+                ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

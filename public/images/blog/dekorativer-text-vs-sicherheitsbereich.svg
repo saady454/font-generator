@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="diffBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d1a"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="diffGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <filter id="diffShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#diffBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#22c55e" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#ef4444" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-190" y="-16" width="380" height="32" rx="16" fill="#1e293b" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#22c55e" letter-spacing="2">SICHERHEITS-RICHTLINIEN</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Kreative Deko vs. <tspan fill="url(#diffGrad)">Sicherheitskritischer Bereich</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Wann Unicode-Schrift bedenkenlos ist und wann du genaue Vorsicht walten lassen musst
+    </text>
+  </g>
+
+  <!-- 2 Columns Layout -->
+  <g transform="translate(80, 145)">
+    
+    <!-- Left Column: Safe / Creative -->
+    <g transform="translate(0, 0)" filter="url(#diffShadow)">
+      <rect width="500" height="450" rx="20" fill="#111827" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 25)">
+        <rect width="170" height="26" rx="6" fill="#22c55e" fill-opacity="0.15"/>
+        <text x="85" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#22c55e">✓ HARMLOS &amp; KREATIV</text>
+
+        <!-- Mock Card -->
+        <rect y="40" width="450" height="110" rx="12" fill="#080d1a" stroke="#22c55e" stroke-opacity="0.2"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">SOCIAL MEDIA &amp; NICKNAMES:</text>
+        <text x="20" y="68" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#ffffff">★ 𝓜𝔂 𝓟𝓻𝓸𝓯𝓲𝓵𝓮 ★ 𝕾𝖍𝖆𝖉𝖔𝖜</text>
+        <text x="20" y="96" font-family="system-ui, sans-serif" font-size="11" fill="#22c55e">✓ Ideal für Bios, Chats &amp; Posts &amp;bull; Keine Sicherheitsgefahr</text>
+
+        <!-- Feature List -->
+        <g transform="translate(0, 175)" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="800" fill="#22c55e">Unbedenkliche Nutzung:</text>
+          
+          <text x="0" y="30" font-weight="700" fill="#ffffff">• Instagram &amp; TikTok Bio:</text>
+          <text x="175" y="30" fill="#94a3b8">Ästhetische Schriftstile &amp; Symbole</text>
+          
+          <text x="0" y="65" font-weight="700" fill="#ffffff">• Gaming Nicknames:</text>
+          <text x="175" y="65" fill="#94a3b8">Discord, CS2 &amp; Fortnite Clan-Tags</text>
+          
+          <text x="0" y="100" font-weight="700" fill="#ffffff">• WhatsApp Nachrichten:</text>
+          <text x="175" y="100" fill="#94a3b8">Fette &amp; kursive Schmucktexte</text>
+          
+          <text x="0" y="135" font-weight="700" fill="#ffffff">• Sicherheitsrisiko:</text>
+          <text x="175" y="135" fill="#22c55e">Keines (Rein visuelle Unterhaltung)</text>
+        </g>
+
+        <rect y="355" width="450" height="40" rx="8" fill="#1e293b"/>
+        <text x="225" y="380" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#22c55e">Empfehlung: Frei nutzen für kreative Profile</text>
+      </g>
+    </g>
+
+    <!-- Right Column: High-risk / Security Sensitive -->
+    <g transform="translate(540, 0)" filter="url(#diffShadow)">
+      <rect width="500" height="450" rx="20" fill="#111827" stroke="#ef4444" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 25)">
+        <rect width="200" height="26" rx="6" fill="#ef4444" fill-opacity="0.15"/>
+        <text x="100" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#ef4444">⚠ SICHERHEITSKRITISCH</text>
+
+        <!-- Mock Card -->
+        <rect y="40" width="450" height="110" rx="12" fill="#080d1a" stroke="#ef4444" stroke-opacity="0.2"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">DOMAINS, LOGINS &amp; PASSWÖRTER:</text>
+        <text x="20" y="68" font-family="monospace" font-size="18" font-weight="bold" fill="#ef4444">https://secure-bаnk.com/login</text>
+        <text x="20" y="96" font-family="system-ui, sans-serif" font-size="11" fill="#ef4444">⚠ Hohe Täuschungsgefahr durch IDN-Spoofing</text>
+
+        <!-- Feature List -->
+        <g transform="translate(0, 175)" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="800" fill="#ef4444">Hier genau prüfen:</text>
+          
+          <text x="0" y="30" font-weight="700" fill="#ffffff">• Web-Adressen (URLs):</text>
+          <text x="175" y="30" fill="#94a3b8">Prüfe auf fremde Zeichensätze</text>
+          
+          <text x="0" y="65" font-weight="700" fill="#ffffff">• E-Mail-Absender:</text>
+          <text x="175" y="65" fill="#94a3b8">Vollständige Adresse kontrollieren</text>
+          
+          <text x="0" y="100" font-weight="700" fill="#ffffff">• Passwörter:</text>
+          <text x="175" y="100" fill="#94a3b8">Keine dekorativen Unicode-Stile nutzen</text>
+          
+          <text x="0" y="135" font-weight="700" fill="#ffffff">• Quellcode &amp; Tokens:</text>
+          <text x="175" y="135" fill="#ef4444">Codepoints &amp; Editor-Warnungen beachten</text>
+        </g>
+
+        <rect y="355" width="450" height="40" rx="8" fill="#1e293b"/>
+        <text x="225" y="380" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#ef4444">Empfehlung: Nur Standard-ASCII verwenden</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

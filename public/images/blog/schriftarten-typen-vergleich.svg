@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0f17"/>
+      <stop offset="100%" stop-color="#141824"/>
+    </linearGradient>
+    <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a1f2e"/>
+      <stop offset="100%" stop-color="#121520"/>
+    </linearGradient>
+    <linearGradient id="highlightGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <filter id="shadow2" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad2)"/>
+
+  <!-- Top Title -->
+  <g transform="translate(600, 55)" text-anchor="middle">
+    <text font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="800" fill="#ffffff">
+      Die 4 wichtigsten <tspan fill="#f59e0b">Schriftarten-Grundtypen</tspan> im Vergleich
+    </text>
+    <text y="30" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#94a3b8">
+      Derselbe Mustertext „Typografie“ in 4 grundverschiedenen typografischen Richtungen
+    </text>
+  </g>
+
+  <!-- 4 Column Comparison Cards -->
+  <g transform="translate(60, 130)">
+    
+    <!-- 1. SERIF -->
+    <g transform="translate(0, 0)" filter="url(#shadow2)">
+      <rect width="255" height="470" rx="16" fill="url(#cardGrad2)" stroke="#fbbf24" stroke-opacity="0.3" stroke-width="1.5"/>
+      <path d="M 0 16 Q 0 0 16 0 L 239 0 Q 255 0 255 16 L 255 60 L 0 60 Z" fill="#fbbf24" fill-opacity="0.1"/>
+      <text x="127" y="38" font-family="sans-serif" font-size="14" font-weight="800" fill="#fbbf24" text-anchor="middle">1. SERIFENSCHRIFTEN</text>
+      
+      <!-- Sample rendering -->
+      <rect x="15" y="75" width="225" height="110" rx="10" fill="#0b0d14" stroke="#ffffff" stroke-opacity="0.05"/>
+      <text x="127" y="125" font-family="'Times New Roman', Georgia, serif" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle">Typografie</text>
+      <text x="127" y="155" font-family="'Times New Roman', Georgia, serif" font-size="14" fill="#94a3b8" text-anchor="middle">Garfield • Times • Merriweather</text>
+      <circle cx="68" cy="118" r="5" fill="#f59e0b" fill-opacity="0.4" stroke="#f59e0b"/>
+      <circle cx="187" cy="118" r="5" fill="#f59e0b" fill-opacity="0.4" stroke="#f59e0b"/>
+
+      <!-- Characteristics -->
+      <g transform="translate(20, 205)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#fbbf24">Merkmale:</text>
+        <text y="22">• Feine Quer- &amp; Endstriche (Serifen)</text>
+        <text y="42">• Optische Leseführung der Zeile</text>
+        <text y="62">• Klassisch, seriös, vertrauensvoll</text>
+
+        <line x1="0" y1="85" x2="215" y2="85" stroke="#ffffff" stroke-opacity="0.1"/>
+
+        <text y="110" font-weight="700" fill="#fbbf24">Ideal für:</text>
+        <text y="132">✓ Lange Fließtexte &amp; Bücher</text>
+        <text y="152">✓ Redaktionelle Magazine</text>
+        <text y="172">✓ Formelle &amp; akademische Texte</text>
+        <text y="192">✓ Edle Branding-Überschriften</text>
+      </g>
+    </g>
+
+    <!-- 2. SANS-SERIF -->
+    <g transform="translate(275, 0)" filter="url(#shadow2)">
+      <rect width="255" height="470" rx="16" fill="url(#cardGrad2)" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+      <path d="M 0 16 Q 0 0 16 0 L 239 0 Q 255 0 255 16 L 255 60 L 0 60 Z" fill="#38bdf8" fill-opacity="0.1"/>
+      <text x="127" y="38" font-family="sans-serif" font-size="14" font-weight="800" fill="#38bdf8" text-anchor="middle">2. SERIFENLOSE (SANS)</text>
+      
+      <!-- Sample rendering -->
+      <rect x="15" y="75" width="225" height="110" rx="10" fill="#0b0d14" stroke="#ffffff" stroke-opacity="0.05"/>
+      <text x="127" y="125" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle">Typografie</text>
+      <text x="127" y="155" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">Inter • Roboto • Helvetica</text>
+
+      <!-- Characteristics -->
+      <g transform="translate(20, 205)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#38bdf8">Merkmale:</text>
+        <text y="22">• Glatte Kanten ohne Ausläufer</text>
+        <text y="42">• Klare, geometrische Formen</text>
+        <text y="62">• Modern, minimalistisch, direkt</text>
+
+        <line x1="0" y1="85" x2="215" y2="85" stroke="#ffffff" stroke-opacity="0.1"/>
+
+        <text y="110" font-weight="700" fill="#38bdf8">Ideal für:</text>
+        <text y="132">✓ Websites &amp; Mobile Apps</text>
+        <text y="152">✓ User Interfaces &amp; Buttons</text>
+        <text y="172">✓ Moderne Tech-Marken</text>
+        <text y="192">✓ Bildschirme aller Größen</text>
+      </g>
+    </g>
+
+    <!-- 3. SCRIPT / KURSIV -->
+    <g transform="translate(550, 0)" filter="url(#shadow2)">
+      <rect width="255" height="470" rx="16" fill="url(#cardGrad2)" stroke="#ec4899" stroke-opacity="0.3" stroke-width="1.5"/>
+      <path d="M 0 16 Q 0 0 16 0 L 239 0 Q 255 0 255 16 L 255 60 L 0 60 Z" fill="#ec4899" fill-opacity="0.1"/>
+      <text x="127" y="38" font-family="sans-serif" font-size="14" font-weight="800" fill="#f472b6" text-anchor="middle">3. SCHREIBSCHRIFTEN</text>
+      
+      <!-- Sample rendering -->
+      <rect x="15" y="75" width="225" height="110" rx="10" fill="#0b0d14" stroke="#ffffff" stroke-opacity="0.05"/>
+      <text x="127" y="128" font-family="'Brush Script MT', 'Segoe Script', cursive" font-size="32" fill="#ffffff" text-anchor="middle">Typografie</text>
+      <text x="127" y="155" font-family="sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">Kursive • Handschrift • Script</text>
+
+      <!-- Characteristics -->
+      <g transform="translate(20, 205)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#f472b6">Merkmale:</text>
+        <text y="22">• Geneigt, verbundene Buchstaben</text>
+        <text y="42">• Handgemachter Kalligrafie-Look</text>
+        <text y="62">• Persönlich, elegant, kreativ</text>
+
+        <line x1="0" y1="85" x2="215" y2="85" stroke="#ffffff" stroke-opacity="0.1"/>
+
+        <text y="110" font-weight="700" fill="#f472b6">Ideal für:</text>
+        <text y="132">✓ Hochzeitseinladungen &amp; Karten</text>
+        <text y="152">✓ Instagram &amp; TikTok Bios</text>
+        <text y="172">✓ Zitate &amp; persönliche Notizen</text>
+        <text y="192">⚠️ Nicht für lange Absätze</text>
+      </g>
+    </g>
+
+    <!-- 4. DEKORATIV &amp; GOTISCH -->
+    <g transform="translate(825, 0)" filter="url(#shadow2)">
+      <rect width="255" height="470" rx="16" fill="url(#cardGrad2)" stroke="#a855f7" stroke-opacity="0.3" stroke-width="1.5"/>
+      <path d="M 0 16 Q 0 0 16 0 L 239 0 Q 255 0 255 16 L 255 60 L 0 60 Z" fill="#a855f7" fill-opacity="0.1"/>
+      <text x="127" y="38" font-family="sans-serif" font-size="14" font-weight="800" fill="#c084fc" text-anchor="middle">4. DEKORATIV &amp; GOTISCH</text>
+      
+      <!-- Sample rendering -->
+      <rect x="15" y="75" width="225" height="110" rx="10" fill="#0b0d14" stroke="#ffffff" stroke-opacity="0.05"/>
+      <text x="127" y="125" font-family="serif" font-size="28" fill="#ffffff" text-anchor="middle">𝔗𝔶𝔭𝔬𝔤𝔯𝔞𝔭𝔥𝔦𝔢</text>
+      <text x="127" y="155" font-family="sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">Fraktur • Bubble • Glitch • 3D</text>
+
+      <!-- Characteristics -->
+      <g transform="translate(20, 205)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#c084fc">Merkmale:</text>
+        <text y="22">• Hoher visueller Kontrast</text>
+        <text y="42">• Gezielte Verzierungen &amp; Brüche</text>
+        <text y="62">• Auffallend, mutig &amp; unkonventionell</text>
+
+        <line x1="0" y1="85" x2="215" y2="85" stroke="#ffffff" stroke-opacity="0.1"/>
+
+        <text y="110" font-weight="700" fill="#c084fc">Ideal für:</text>
+        <text y="132">✓ Gaming-Namen (Fortnite, CS2)</text>
+        <text y="132">✓ Social-Media-Headlines</text>
+        <text y="172">✓ Plakate &amp; Tattoos</text>
+        <text y="192">⚠️ Sparsam dosieren!</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Bottom Tip -->
+  <text x="600" y="635" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#64748b">
+    Quelle: Typografische Klassifikation nach DIN 16518 &amp; moderner Web-Standard
+  </text>
+</svg>

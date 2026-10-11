@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="uniDiffBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d1a"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="uniDiffGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <filter id="uniDiffShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#uniDiffBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="240" cy="200" r="240" fill="#38bdf8" fill-opacity="0.08"/>
+  <circle cx="960" cy="450" r="240" fill="#c084fc" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-180" y="-16" width="360" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">TYPOGRAFISCHE BEGRIFFE</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Unicode vs. Codepunkt <tspan fill="url(#uniDiffGrad)">vs. Schriftart vs. Glyphe</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Die 4 Bausteine der digitalen Typografie und wie sie zusammenwirken
+    </text>
+  </g>
+
+  <!-- 4 Column Comparison Cards -->
+  <g transform="translate(60, 150)">
+    
+    <!-- 1. Unicode Standard -->
+    <g transform="translate(0, 0)" filter="url(#uniDiffShadow)">
+      <rect width="250" height="440" rx="20" fill="#111827" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(20, 25)">
+        <rect width="110" height="26" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+        <text x="55" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#38bdf8">1. UNICODE</text>
+
+        <rect y="40" width="210" height="85" rx="12" fill="#080d1a" stroke="#38bdf8" stroke-opacity="0.2"/>
+        <text x="105" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#ffffff">Standard</text>
+        <text x="105" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#38bdf8">Das Regelwerk</text>
+
+        <g transform="translate(0, 145)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="800" fill="#38bdf8">Aufgabe:</text>
+          <text x="0" y="24">Definiert alle Zeichen</text>
+          <text x="0" y="44">weltweit unabhängig von</text>
+          <text x="0" y="64">Sprache, Plattform</text>
+          <text x="0" y="84">oder Programm.</text>
+          <text x="0" y="120" font-weight="700" fill="#94a3b8">159.801 Zeichen</text>
+        </g>
+
+        <rect y="340" width="210" height="36" rx="8" fill="#1e293b"/>
+        <text x="105" y="363" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">Globaler Konsens</text>
+      </g>
+    </g>
+
+    <!-- 2. Codepunkt -->
+    <g transform="translate(275, 0)" filter="url(#uniDiffShadow)">
+      <rect width="250" height="440" rx="20" fill="#111827" stroke="#818cf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(20, 25)">
+        <rect width="130" height="26" rx="6" fill="#818cf8" fill-opacity="0.15"/>
+        <text x="65" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#818cf8">2. CODEPUNKT</text>
+
+        <rect y="40" width="210" height="85" rx="12" fill="#080d1a" stroke="#818cf8" stroke-opacity="0.2"/>
+        <text x="105" y="80" text-anchor="middle" font-family="monospace" font-size="22" font-weight="900" fill="#ffffff">U+0041</text>
+        <text x="105" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#818cf8">Eindeutige ID</text>
+
+        <g transform="translate(0, 145)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="800" fill="#818cf8">Aufgabe:</text>
+          <text x="0" y="24">Jedem Zeichen wird</text>
+          <text x="0" y="44">eine feste Nummer</text>
+          <text x="0" y="64">zugeordnet.</text>
+          <text x="0" y="84">Hexadezimal notiert.</text>
+          <text x="0" y="120" font-weight="700" fill="#94a3b8">Abstrakter Wert</text>
+        </g>
+
+        <rect y="340" width="210" height="36" rx="8" fill="#1e293b"/>
+        <text x="105" y="363" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#818cf8">Identifikationsnummer</text>
+      </g>
+    </g>
+
+    <!-- 3. Schriftart (Font) -->
+    <g transform="translate(550, 0)" filter="url(#uniDiffShadow)">
+      <rect width="250" height="440" rx="20" fill="#111827" stroke="#c084fc" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(20, 25)">
+        <rect width="130" height="26" rx="6" fill="#c084fc" fill-opacity="0.15"/>
+        <text x="65" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#c084fc">3. SCHRIFTART</text>
+
+        <rect y="40" width="210" height="85" rx="12" fill="#080d1a" stroke="#c084fc" stroke-opacity="0.2"/>
+        <text x="105" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#ffffff">.ttf / .otf</text>
+        <text x="105" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#c084fc">Die Zeichendatei</text>
+
+        <g transform="translate(0, 145)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="800" fill="#c084fc">Aufgabe:</text>
+          <text x="0" y="24">Sammlung von</text>
+          <text x="0" y="44">Vektorkurven und</text>
+          <text x="0" y="64">Design-Regeln für</text>
+          <text x="0" y="84">eine Zeichenfamilie.</text>
+          <text x="0" y="120" font-weight="700" fill="#94a3b8">Installierte Datei</text>
+        </g>
+
+        <rect y="340" width="210" height="36" rx="8" fill="#1e293b"/>
+        <text x="105" y="363" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#c084fc">Design-Sammlung</text>
+      </g>
+    </g>
+
+    <!-- 4. Glyphe -->
+    <g transform="translate(825, 0)" filter="url(#uniDiffShadow)">
+      <rect width="250" height="440" rx="20" fill="#111827" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(20, 25)">
+        <rect width="105" height="26" rx="6" fill="#22c55e" fill-opacity="0.15"/>
+        <text x="52" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#22c55e">4. GLYPHE</text>
+
+        <rect y="40" width="210" height="85" rx="12" fill="#080d1a" stroke="#22c55e" stroke-opacity="0.2"/>
+        <text x="105" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-size="32" font-weight="bold" fill="#ffffff">A / <tspan font-family="serif" font-style="italic" fill="#22c55e">A</tspan></text>
+        <text x="105" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#22c55e">Sichtbares Bild</text>
+
+        <g transform="translate(0, 145)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="800" fill="#22c55e">Aufgabe:</text>
+          <text x="0" y="24">Das tatsächliche</text>
+          <text x="0" y="44">gezeichnete Bild</text>
+          <text x="0" y="64">auf dem Bildschirm</text>
+          <text x="0" y="84">oder im Druck.</text>
+          <text x="0" y="120" font-weight="700" fill="#94a3b8">Visuelle Form</text>
+        </g>
+
+        <rect y="340" width="210" height="36" rx="8" fill="#1e293b"/>
+        <text x="105" y="363" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#22c55e">Konkrete Zeichnung</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

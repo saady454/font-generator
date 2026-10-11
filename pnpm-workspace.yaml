@@ -1,0 +1,5 @@
+Notepad mein exactly ye kar do:
+
+allowBuilds:
+  esbuild: true
+  sharp: true

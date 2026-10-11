@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cs2WfBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a0f"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#05070a"/>
+    </linearGradient>
+    <linearGradient id="cs2WfGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="cs2WfShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#cs2WfBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#f59e0b" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#38bdf8" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-180" y="-16" width="360" height="32" rx="16" fill="#201810" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fbbf24" letter-spacing="2">4-STUFEN WORKFLOW</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Schritte zum perfekten <tspan fill="url(#cs2WfGrad)">CS2 Nickname</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Von der ersten Begriffsidee bis zum aktualisierten Steam-Profilnamen
+    </text>
+  </g>
+
+  <!-- 4 Connected Process Cards -->
+  <g transform="translate(60, 155)">
+    
+    <!-- Stage 1 -->
+    <g transform="translate(0, 0)" filter="url(#cs2WfShadow)">
+      <rect width="255" height="430" rx="20" fill="#0f1522" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="45" cy="45" r="20" fill="#f59e0b" fill-opacity="0.15"/>
+      <text x="45" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#fbbf24">1</text>
+      <text x="80" y="50" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Basiswort</text>
+      
+      <g transform="translate(20, 95)">
+        <rect width="215" height="75" rx="12" fill="#090d15"/>
+        <text x="15" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#fbbf24">BEGRIFFE</text>
+        <text x="15" y="52" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">Aim &amp;bull; Tap &amp;bull; Rush</text>
+      </g>
+
+      <g transform="translate(20, 195)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Kern auswählen:</text>
+        <text x="0" y="24">Nutze CS2-Begriffe</text>
+        <text x="0" y="44">wie Smoke, Flash,</text>
+        <text x="0" y="64">Clutch, Tap, Frost.</text>
+        <text x="0" y="94" font-weight="700" fill="#fbbf24">Taktischer Bezug</text>
+      </g>
+
+      <rect x="20" y="370" width="215" height="36" rx="8" fill="#182236"/>
+      <text x="127" y="393" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">1. Wort finden</text>
+    </g>
+
+    <!-- Stage 2 -->
+    <g transform="translate(280, 0)" filter="url(#cs2WfShadow)">
+      <rect width="255" height="430" rx="20" fill="#0f1522" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="45" cy="45" r="20" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="45" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#38bdf8">2</text>
+      <text x="80" y="50" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Kombinieren</text>
+      
+      <g transform="translate(20, 95)">
+        <rect width="215" height="75" rx="12" fill="#090d15"/>
+        <text x="15" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#38bdf8">KOMBINATION</text>
+        <text x="15" y="52" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">ShadowTap</text>
+      </g>
+
+      <g transform="translate(20, 195)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Zwei Wörter verbinden:</text>
+        <text x="0" y="24">Z. B. Ghost + Tap,</text>
+        <text x="0" y="44">Silent + Rush oder</text>
+        <text x="0" y="64">Smoke + Mind.</text>
+        <text x="0" y="94" font-weight="700" fill="#38bdf8">Klar &amp; markant</text>
+      </g>
+
+      <rect x="20" y="370" width="215" height="36" rx="8" fill="#182236"/>
+      <text x="127" y="393" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">2. Name formen</text>
+    </g>
+
+    <!-- Stage 3 -->
+    <g transform="translate(560, 0)" filter="url(#cs2WfShadow)">
+      <rect width="255" height="430" rx="20" fill="#0f1522" stroke="#c084fc" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="45" cy="45" r="20" fill="#c084fc" fill-opacity="0.15"/>
+      <text x="45" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#c084fc">3</text>
+      <text x="80" y="50" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Stil wählen</text>
+      
+      <g transform="translate(20, 95)">
+        <rect width="215" height="75" rx="12" fill="#090d15"/>
+        <text x="15" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#c084fc">GENERATOR</text>
+        <text x="15" y="52" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">亗 ShadowTap 亗</text>
+      </g>
+
+      <g transform="translate(20, 195)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Typografie anpassen:</text>
+        <text x="0" y="24">Fett, Minimal oder</text>
+        <text x="0" y="44">dezente Symbole</text>
+        <text x="0" y="64">im Generator testen.</text>
+        <text x="0" y="94" font-weight="700" fill="#c084fc">Lesbarkeit prüfen</text>
+      </g>
+
+      <rect x="20" y="370" width="215" height="36" rx="8" fill="#182236"/>
+      <text x="127" y="393" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#c084fc">3. Look verfeinern</text>
+    </g>
+
+    <!-- Stage 4 -->
+    <g transform="translate(840, 0)" filter="url(#cs2WfShadow)">
+      <rect width="245" height="430" rx="20" fill="#0f1522" stroke="#34d399" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="45" cy="45" r="20" fill="#34d399" fill-opacity="0.15"/>
+      <text x="45" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#34d399">4</text>
+      <text x="80" y="50" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Steam Aktiv</text>
+      
+      <g transform="translate(20, 95)">
+        <rect width="205" height="75" rx="12" fill="#090d15"/>
+        <text x="15" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#34d399">STEAM PROFIL</text>
+        <text x="15" y="52" font-family="system-ui, sans-serif" font-size="15" font-weight="900" fill="#ffffff">Gespeichert ✅</text>
+      </g>
+
+      <g transform="translate(20, 195)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Im Spiel starten:</text>
+        <text x="0" y="24">In Steam einfügen,</text>
+        <text x="0" y="44">CS2 starten &amp;</text>
+        <text x="0" y="64">im Scoreboard glänzen.</text>
+        <text x="0" y="94" font-weight="700" fill="#34d399">Premier Ready!</text>
+      </g>
+
+      <rect x="20" y="370" width="205" height="36" rx="8" fill="#182236"/>
+      <text x="122" y="393" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34d399">4. Ready für Match</text>
+    </g>
+
+  </g>
+</svg>

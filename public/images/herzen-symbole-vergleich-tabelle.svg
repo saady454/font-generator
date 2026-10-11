@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="heartTabBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0712"/>
+      <stop offset="50%" stop-color="#1f0f24"/>
+      <stop offset="100%" stop-color="#08040a"/>
+    </linearGradient>
+    <linearGradient id="heartTabGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <filter id="heartTabShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#heartTabBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="200" cy="180" r="220" fill="#f43f5e" fill-opacity="0.10"/>
+  <circle cx="1000" cy="460" r="240" fill="#c084fc" fill-opacity="0.10"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-170" y="-16" width="340" height="32" rx="16" fill="#2d1230" stroke="#f43f5e" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fb7185" letter-spacing="2">HERZZEICHEN IM VERGLEICH</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Die 12 beliebtesten <tspan fill="url(#heartTabGrad)">Herzsymbole</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Vom klassischen leeren Herz ♡ bis zum funkelnden Emoji 💖 im direkten Überblick
+    </text>
+  </g>
+
+  <!-- 6 Grid Comparison Cards (2 rows of 3) -->
+  <g transform="translate(60, 145)">
+    
+    <!-- Pair 1: ♡ &amp; ♥ -->
+    <g transform="translate(0, 0)" filter="url(#heartTabShadow)">
+      <rect width="340" height="210" rx="18" fill="#180e1c" stroke="#fb7185" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <text x="0" y="45" font-size="44" fill="#ffffff">♡</text>
+        <text x="65" y="45" font-size="44" fill="#f43f5e">♥</text>
+        <rect x="130" y="14" width="170" height="34" rx="8" fill="#2a1430"/>
+        <text x="215" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fb7185">WHITE &amp; BLACK HEART</text>
+
+        <text x="0" y="95" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Klassische Text-Herzen</text>
+        <text x="0" y="120" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Perfekt für Instagram Bios, Namen &amp; Chats.</text>
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34d399">✓ Universell auf allen Geräten lesbar</text>
+      </g>
+    </g>
+
+    <!-- Pair 2: ❤ &amp; ❥ -->
+    <g transform="translate(370, 0)" filter="url(#heartTabShadow)">
+      <rect width="340" height="210" rx="18" fill="#180e1c" stroke="#f43f5e" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <text x="0" y="45" font-size="44" fill="#f43f5e">❤</text>
+        <text x="65" y="45" font-size="44" fill="#c084fc">❥</text>
+        <rect x="130" y="14" width="170" height="34" rx="8" fill="#2a1430"/>
+        <text x="215" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#f43f5e">HEAVY &amp; ROTATED</text>
+
+        <text x="0" y="95" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Schweres &amp; gedrehtes Herz</text>
+        <text x="0" y="120" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Starke visuelle Akzente für Nachrichten.</text>
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f43f5e">♥ Ausdrucksstark &amp; dynamisch</text>
+      </g>
+    </g>
+
+    <!-- Pair 3: ❦ &amp; ❣ -->
+    <g transform="translate(740, 0)" filter="url(#heartTabShadow)">
+      <rect width="340" height="210" rx="18" fill="#180e1c" stroke="#c084fc" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <text x="0" y="45" font-size="44" fill="#c084fc">❦</text>
+        <text x="65" y="45" font-size="44" fill="#f43f5e">❣</text>
+        <rect x="130" y="14" width="170" height="34" rx="8" fill="#2a1430"/>
+        <text x="215" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#c084fc">FLORAL &amp; EXCLAMATION</text>
+
+        <text x="0" y="95" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Florale &amp; Deko-Herzen</text>
+        <text x="0" y="120" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Historischer Vintage-Look für Steckbriefe.</text>
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#c084fc">★ Romantischer Buchschmuck</text>
+      </g>
+    </g>
+
+    <!-- Pair 4: 💕 &amp; 💖 -->
+    <g transform="translate(0, 230)" filter="url(#heartTabShadow)">
+      <rect width="340" height="210" rx="18" fill="#180e1c" stroke="#f472b6" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <text x="0" y="45" font-size="40">💕</text>
+        <text x="65" y="45" font-size="40">💖</text>
+        <rect x="130" y="14" width="170" height="34" rx="8" fill="#2a1430"/>
+        <text x="215" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#f472b6">TWO HEARTS &amp; SPARKLE</text>
+
+        <text x="0" y="95" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Zwei Herzen &amp; Funkeln</text>
+        <text x="0" y="120" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Beliebteste Emojis für Zuneigung &amp; Chats.</text>
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f472b6">★ Freundschaft &amp; Romantik</text>
+      </g>
+    </g>
+
+    <!-- Pair 5: 💗 &amp; 💘 -->
+    <g transform="translate(370, 230)" filter="url(#heartTabShadow)">
+      <rect width="340" height="210" rx="18" fill="#180e1c" stroke="#fb7185" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <text x="0" y="45" font-size="40">💗</text>
+        <text x="65" y="45" font-size="40">💘</text>
+        <rect x="130" y="14" width="170" height="34" rx="8" fill="#2a1430"/>
+        <text x="215" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fb7185">GROWING &amp; ARROW</text>
+
+        <text x="0" y="95" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Wachsendes Herz &amp; Pfeil</text>
+        <text x="0" y="120" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Amor-Pfeil und wachsende Gefühle im Chat.</text>
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fb7185">★ Verliebt &amp; emotional</text>
+      </g>
+    </g>
+
+    <!-- Pair 6: 💓 &amp; 💔 -->
+    <g transform="translate(740, 230)" filter="url(#heartTabShadow)">
+      <rect width="340" height="210" rx="18" fill="#180e1c" stroke="#f43f5e" stroke-opacity="0.35" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <text x="0" y="45" font-size="40">💓</text>
+        <text x="65" y="45" font-size="40">💔</text>
+        <rect x="130" y="14" width="170" height="34" rx="8" fill="#2a1430"/>
+        <text x="215" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#f43f5e">BEATING &amp; BROKEN</text>
+
+        <text x="0" y="95" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Schlagend &amp; gebrochen</text>
+        <text x="0" y="120" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Aufregung oder Liebeskummer im Status.</text>
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f43f5e">★ Intensive Gefühle</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

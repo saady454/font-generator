@@ -1,0 +1,273 @@
+---
+// src/components/CookieConsent.astro
+---
+
+<!-- Compact Bottom-Left Floating Cookie Card -->
+<div
+  id="cookie-consent-card"
+  class="fixed z-50 bg-[#141412] text-stone-300 border border-white/15 rounded-2xl shadow-2xl shadow-black/90 p-5 transition-all duration-300 transform translate-y-6 opacity-0 pointer-events-none hidden"
+  style="bottom: 24px; left: 24px; max-width: 480px; width: calc(100vw - 48px); box-sizing: border-box; backdrop-filter: blur(12px);"
+  role="dialog"
+  aria-modal="false"
+  aria-labelledby="cookie-consent-heading"
+>
+  <!-- Card Header with Close 'X' Button -->
+  <div class="flex items-start justify-between gap-3 mb-2.5">
+    <h2 id="cookie-consent-heading" class="text-sm sm:text-base font-bold text-white tracking-tight">
+      Ihre Privatsphäre ist uns wichtig
+    </h2>
+    <button
+      type="button"
+      id="btn-consent-close-x"
+      class="text-stone-400 hover:text-white transition-colors p-1 -mr-1 -mt-1 rounded-lg hover:bg-white/10 cursor-pointer"
+      aria-label="Schließen"
+      title="Schließen"
+    >
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Compact Description with Inline Links -->
+  <p class="text-xs text-stone-400 leading-relaxed mb-3.5">
+    Wir verwenden Cookies und ähnliche Technologien, um unsere Website bereitzustellen, die Nutzung zu analysieren und – mit Ihrer Einwilligung – personalisierte Werbung anzuzeigen. Weitere Details finden Sie in unserer <a href="/datenschutz" class="text-amber-400 underline hover:text-amber-300">Datenschutzerklärung</a> und <a href="/cookie-richtlinie" class="text-amber-400 underline hover:text-amber-300">Cookie-Richtlinie</a>. Sie können Ihre Auswahl jederzeit ändern.
+  </p>
+
+  <!-- Expandable Detailed Settings Panel -->
+  <div id="cookie-categories-panel" class="space-y-2 mb-3.5 pt-3 border-t border-white/10 hidden">
+    <!-- Category 1: Notwendige Cookies -->
+    <div class="bg-[#0e0e0c] border border-white/5 rounded-xl p-2.5 flex items-center justify-between gap-2.5">
+      <div>
+        <h3 class="text-xs font-bold text-white">Notwendige Cookies</h3>
+        <p class="text-[11px] text-stone-400 leading-snug">
+          Für grundlegende Website-Funktionen erforderlich.
+        </p>
+      </div>
+      <span class="px-2 py-0.5 rounded bg-stone-800 text-stone-400 text-[10px] font-semibold uppercase tracking-wider shrink-0 border border-white/5">
+        Aktiv
+      </span>
+    </div>
+
+    <!-- Category 2: Analyse-Cookies -->
+    <div class="bg-[#0e0e0c] border border-white/5 rounded-xl p-2.5 flex items-center justify-between gap-2.5">
+      <div>
+        <h3 class="text-xs font-bold text-white">Analyse-Cookies</h3>
+        <p class="text-[11px] text-stone-400 leading-snug">
+          Hilft uns zu verstehen, wie Besucher die Website nutzen.
+        </p>
+      </div>
+      <label class="relative inline-flex items-center cursor-pointer shrink-0">
+        <input type="checkbox" id="consent-toggle-analytics" class="sr-only peer" />
+        <div class="w-9 h-5 bg-stone-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-amber-500"></div>
+      </label>
+    </div>
+
+    <!-- Category 3: Werbe-Cookies -->
+    <div class="bg-[#0e0e0c] border border-white/5 rounded-xl p-2.5 flex items-center justify-between gap-2.5">
+      <div>
+        <h3 class="text-xs font-bold text-white">Werbe-Cookies</h3>
+        <p class="text-[11px] text-stone-400 leading-snug">
+          Wird verwendet, um personalisierte Werbung anzuzeigen.
+        </p>
+      </div>
+      <label class="relative inline-flex items-center cursor-pointer shrink-0">
+        <input type="checkbox" id="consent-toggle-marketing" class="sr-only peer" />
+        <div class="w-9 h-5 bg-stone-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-amber-500"></div>
+      </label>
+    </div>
+
+    <!-- Save Custom Preferences Button inside settings -->
+    <button
+      type="button"
+      id="btn-consent-save-custom"
+      class="w-full py-2 px-3 rounded-xl border border-amber-500/40 bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 text-xs font-bold transition-all cursor-pointer text-center"
+    >
+      Auswahl speichern
+    </button>
+  </div>
+
+  <!-- Buttons Layout: Side-by-side Primary/Secondary + Settings below -->
+  <div class="flex flex-col gap-2 pt-0.5">
+    <div class="flex items-center gap-2">
+      <button
+        type="button"
+        id="btn-consent-reject"
+        class="flex-1 py-2 px-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 text-stone-200 text-xs font-semibold transition-colors cursor-pointer text-center"
+      >
+        Ablehnen
+      </button>
+
+      <button
+        type="button"
+        id="btn-consent-accept-all"
+        class="flex-1 py-2 px-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black text-xs font-bold shadow-md shadow-amber-500/20 transition-all cursor-pointer text-center"
+      >
+        Alle akzeptieren
+      </button>
+    </div>
+
+    <button
+      type="button"
+      id="btn-consent-settings"
+      class="w-full py-2 px-3 rounded-xl border border-white/10 hover:border-amber-500/40 bg-white/5 hover:bg-amber-500/10 text-stone-300 hover:text-amber-400 text-xs font-medium transition-all cursor-pointer text-center"
+    >
+      Datenschutzeinstellungen
+    </button>
+  </div>
+</div>
+
+<style>
+  #cookie-consent-card {
+    position: fixed !important;
+    bottom: 24px !important;
+    left: 24px !important;
+    right: auto !important;
+    top: auto !important;
+    max-width: 480px !important;
+    width: min(480px, calc(100vw - 48px)) !important;
+    z-index: 9999 !important;
+  }
+
+  @media (max-width: 640px) {
+    #cookie-consent-card {
+      bottom: 16px !important;
+      left: 16px !important;
+      right: 16px !important;
+      width: calc(100vw - 32px) !important;
+      max-width: 100% !important;
+    }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    const STORAGE_KEY = 'schriftarten_cookie_consent';
+
+    function getStoredConsent() {
+      try {
+        const item = localStorage.getItem(STORAGE_KEY);
+        return item ? JSON.parse(item) : null;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function saveConsent(status, analytics, marketing) {
+      const consentState = {
+        status: status, // 'accepted' | 'rejected' | 'custom'
+        necessary: true,
+        analytics: !!analytics,
+        marketing: !!marketing,
+        timestamp: new Date().toISOString(),
+        version: 1
+      };
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(consentState));
+      } catch (e) {}
+
+      window.dispatchEvent(new CustomEvent('cookie-consent-updated', { detail: consentState }));
+      closeConsentCard();
+    }
+
+    function showConsentCard(showSettings = false) {
+      const card = document.getElementById('cookie-consent-card');
+      const panel = document.getElementById('cookie-categories-panel');
+      const toggleAnalytics = document.getElementById('consent-toggle-analytics');
+      const toggleMarketing = document.getElementById('consent-toggle-marketing');
+
+      if (!card) return;
+
+      const current = getStoredConsent();
+      if (toggleAnalytics) toggleAnalytics.checked = !!(current && current.analytics);
+      if (toggleMarketing) toggleMarketing.checked = !!(current && current.marketing);
+
+      if (showSettings && panel) {
+        panel.classList.remove('hidden');
+      }
+
+      card.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        card.classList.remove('translate-y-6', 'opacity-0', 'pointer-events-none');
+        card.classList.add('translate-y-0', 'opacity-100');
+      });
+    }
+
+    function closeConsentCard() {
+      const card = document.getElementById('cookie-consent-card');
+      if (!card) return;
+
+      card.classList.remove('translate-y-0', 'opacity-100');
+      card.classList.add('translate-y-6', 'opacity-0', 'pointer-events-none');
+
+      setTimeout(() => {
+        card.classList.add('hidden');
+      }, 300);
+    }
+
+    function toggleSettingsPanel() {
+      const panel = document.getElementById('cookie-categories-panel');
+      if (!panel) return;
+      panel.classList.toggle('hidden');
+    }
+
+    function initCookieConsent() {
+      const btnAcceptAll = document.getElementById('btn-consent-accept-all');
+      const btnReject = document.getElementById('btn-consent-reject');
+      const btnSettings = document.getElementById('btn-consent-settings');
+      const btnCloseX = document.getElementById('btn-consent-close-x');
+      const btnSaveCustom = document.getElementById('btn-consent-save-custom');
+      const toggleAnalytics = document.getElementById('consent-toggle-analytics');
+      const toggleMarketing = document.getElementById('consent-toggle-marketing');
+
+      btnAcceptAll?.addEventListener('click', () => {
+        saveConsent('accepted', true, true);
+      });
+
+      btnReject?.addEventListener('click', () => {
+        saveConsent('rejected', false, false);
+      });
+
+      btnCloseX?.addEventListener('click', () => {
+        saveConsent('rejected', false, false);
+      });
+
+      btnSettings?.addEventListener('click', () => {
+        toggleSettingsPanel();
+      });
+
+      btnSaveCustom?.addEventListener('click', () => {
+        const analytics = toggleAnalytics ? toggleAnalytics.checked : false;
+        const marketing = toggleMarketing ? toggleMarketing.checked : false;
+        saveConsent('custom', analytics, marketing);
+      });
+
+      // Global event listeners to reopen settings at any time
+      window.addEventListener('open-cookie-settings', () => showConsentCard(true));
+      window.addEventListener('open-consent-settings', () => showConsentCard(true));
+
+      // Footer button listener
+      document.addEventListener('click', (e) => {
+        if (e.target && (e.target.id === 'footer-cookie-settings' || e.target.closest('#footer-cookie-settings'))) {
+          e.preventDefault();
+          showConsentCard(true);
+        }
+      });
+
+      // Show on first visit
+      const stored = getStoredConsent();
+      if (!stored) {
+        setTimeout(() => {
+          showConsentCard(false);
+        }, 300);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCookieConsent);
+    } else {
+      initCookieConsent();
+    }
+  })();
+</script>

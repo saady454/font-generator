@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="variantSmallBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c16"/>
+      <stop offset="50%" stop-color="#121626"/>
+      <stop offset="100%" stop-color="#080a12"/>
+    </linearGradient>
+    <linearGradient id="smallGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <filter id="columnShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#variantSmallBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="250" cy="180" r="220" fill="#818cf8" fill-opacity="0.10"/>
+  <circle cx="950" cy="450" r="240" fill="#c084fc" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-150" y="-16" width="300" height="32" rx="16" fill="#818cf8" fill-opacity="0.15" stroke="#818cf8" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#a5b4fc" letter-spacing="2">TYPOGRAFIE-VERGLEICH</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Small Caps vs. <tspan fill="url(#smallGrad)">Hoch- &amp; Tiefgestellt</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Vergleich der Schriftlinien, Buchstabenhöhen und optimalen Einsatzbereiche
+    </text>
+  </g>
+
+  <!-- 3 Side-by-Side Comparison Columns -->
+  <g transform="translate(70, 160)">
+    
+    <!-- Column 1: Small Caps -->
+    <g transform="translate(0, 0)" filter="url(#columnShadow)">
+      <rect width="330" height="440" rx="22" fill="#141828" stroke="#818cf8" stroke-opacity="0.4" stroke-width="2"/>
+      
+      <rect x="25" y="24" width="130" height="28" rx="14" fill="#818cf8" fill-opacity="0.2"/>
+      <text x="90" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#a5b4fc">1. SMALL CAPS</text>
+      <text x="305" y="43" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Kapitälchen</text>
+
+      <!-- Visual Specimen Box -->
+      <rect x="20" y="70" width="290" height="110" rx="14" fill="#0c0e18" stroke="#ffffff" stroke-opacity="0.08"/>
+      
+      <!-- Baseline Guides -->
+      <line x1="30" y1="120" x2="300" y2="120" stroke="#818cf8" stroke-opacity="0.2" stroke-dasharray="2 2"/>
+      <line x1="30" y1="150" x2="300" y2="150" stroke="#818cf8" stroke-opacity="0.4"/>
+      
+      <text x="165" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="1">ᴋʟᴇɪɴᴇ ꜱᴄʜʀɪꜰᴛ</text>
+
+      <g transform="translate(25, 205)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#a5b4fc">EIGENSCHAFTEN:</text>
+        <text x="0" y="24" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Großbuchstaben in x-Höhe</text>
+        <text x="0" y="48" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Sehr gute Lesbarkeit</text>
+        <text x="0" y="72" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Höchste Plattform-Stabilität</text>
+      </g>
+
+      <rect x="20" y="325" width="290" height="90" rx="12" fill="#1b2034" stroke="#818cf8" stroke-opacity="0.2"/>
+      <text x="35" y="352" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#818cf8">OPTIMAL FÜR:</text>
+      <text x="35" y="374" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Instagram- &amp; TikTok-Bios</text>
+      <text x="35" y="394" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Namen, Labels &amp; kurze Absätze</text>
+    </g>
+
+    <!-- Column 2: Hochgestellt (Superscript) -->
+    <g transform="translate(365, 0)" filter="url(#columnShadow)">
+      <rect width="330" height="440" rx="22" fill="#141828" stroke="#c084fc" stroke-opacity="0.3" stroke-width="1.5"/>
+      
+      <rect x="25" y="24" width="140" height="28" rx="14" fill="#c084fc" fill-opacity="0.15"/>
+      <text x="95" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#c084fc">2. HOCHGESTELLT</text>
+      <text x="305" y="43" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Superscript</text>
+
+      <!-- Visual Specimen Box -->
+      <rect x="20" y="70" width="290" height="110" rx="14" fill="#0c0e18" stroke="#ffffff" stroke-opacity="0.08"/>
+      
+      <!-- Baseline Guides -->
+      <line x1="30" y1="105" x2="300" y2="105" stroke="#c084fc" stroke-opacity="0.4"/>
+      <line x1="30" y1="150" x2="300" y2="150" stroke="#ffffff" stroke-opacity="0.1" stroke-dasharray="2 2"/>
+      
+      <text x="165" y="125" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600" fill="#ffffff">ᴷˡᵉⁱⁿᵉ ˢᶜʰʳⁱᶠᵗ</text>
+
+      <g transform="translate(25, 205)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#c084fc">EIGENSCHAFTEN:</text>
+        <text x="0" y="24" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Oberhalb der Grundlinie</text>
+        <text x="0" y="48" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Sehr kompakter Mini-Look</text>
+        <text x="0" y="72" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Mathematische Herkunft</text>
+      </g>
+
+      <rect x="20" y="325" width="290" height="90" rx="12" fill="#1b2034" stroke="#c084fc" stroke-opacity="0.2"/>
+      <text x="35" y="352" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#c084fc">OPTIMAL FÜR:</text>
+      <text x="35" y="374" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Zusatzangaben &amp; Akzente</text>
+      <text x="35" y="394" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Max ᴳᵃᵐᵉʳ &amp;bull; ᴹᵘˢᶦᶜ &amp;bull; ᴳᵉʳᵐᵃⁿʸ</text>
+    </g>
+
+    <!-- Column 3: Tiefgestellt (Subscript) -->
+    <g transform="translate(730, 0)" filter="url(#columnShadow)">
+      <rect width="330" height="440" rx="22" fill="#141828" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+      
+      <rect x="25" y="24" width="130" height="28" rx="14" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="90" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8">3. TIEFGESTELLT</text>
+      <text x="305" y="43" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Subscript</text>
+
+      <!-- Visual Specimen Box -->
+      <rect x="20" y="70" width="290" height="110" rx="14" fill="#0c0e18" stroke="#ffffff" stroke-opacity="0.08"/>
+      
+      <!-- Baseline Guides -->
+      <line x1="30" y1="120" x2="300" y2="120" stroke="#ffffff" stroke-opacity="0.1" stroke-dasharray="2 2"/>
+      <line x1="30" y1="160" x2="300" y2="160" stroke="#38bdf8" stroke-opacity="0.4"/>
+      
+      <text x="165" y="160" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="600" fill="#ffffff">ₖₗₑᵢₙₑ ₛcₕᵣᵢfₜ</text>
+
+      <g transform="translate(25, 205)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#38bdf8">EIGENSCHAFTEN:</text>
+        <text x="0" y="24" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Unterhalb der Grundlinie</text>
+        <text x="0" y="48" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Unvollständiger Zeichensatz</text>
+        <text x="0" y="72" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">• Feiner Zier-Effekt</text>
+      </g>
+
+      <rect x="20" y="325" width="290" height="90" rx="12" fill="#1b2034" stroke="#38bdf8" stroke-opacity="0.2"/>
+      <text x="35" y="352" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">OPTIMAL FÜR:</text>
+      <text x="35" y="374" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Einzelne Zierwörter</text>
+      <text x="35" y="394" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Sub-Labels &amp; Formel-Stil</text>
+    </g>
+  </g>
+</svg>

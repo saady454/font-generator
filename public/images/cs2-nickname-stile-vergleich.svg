@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cs2StileBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a0f"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#05070a"/>
+    </linearGradient>
+    <linearGradient id="cs2StileGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="cs2StileShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#cs2StileBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#f59e0b" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#38bdf8" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-180" y="-16" width="360" height="32" rx="16" fill="#201810" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fbbf24" letter-spacing="2">TYPOGRAFIE &amp; SCHRIFTEN</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      4 Schriftstile für <tspan fill="url(#cs2StileGrad)">deinen CS2 Nickname</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Vom schlichten Basisnamen bis zur dezenten Unicode-Gestaltung
+    </text>
+  </g>
+
+  <!-- 4 Style Cards Grid -->
+  <g transform="translate(60, 150)">
+    
+    <!-- Card 1: Normal -->
+    <g transform="translate(0, 0)" filter="url(#cs2StileShadow)">
+      <rect width="255" height="440" rx="20" fill="#0f1522" stroke="#34d399" stroke-opacity="0.4" stroke-width="1.5"/>
+      <rect x="20" y="20" width="85" height="24" rx="6" fill="#34d399" fill-opacity="0.15"/>
+      <text x="62" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#34d399">1. NORMAL</text>
+      
+      <g transform="translate(20, 80)">
+        <rect width="215" height="85" rx="12" fill="#090d15" stroke="#34d399" stroke-opacity="0.2"/>
+        <text x="107" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="900" fill="#ffffff">Shadow</text>
+      </g>
+
+      <g transform="translate(20, 200)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#34d399">Vorteile:</text>
+        <text x="0" y="24">✓ 100 % lesbar im Killfeed</text>
+        <text x="0" y="48">✓ Leicht von Mates ausrufbar</text>
+        <text x="0" y="72">✓ Pro &amp; E-Sports Standard</text>
+        <text x="0" y="96">✓ Keine Darstellungsfehler</text>
+      </g>
+
+      <rect x="20" y="375" width="215" height="36" rx="8" fill="#182236"/>
+      <text x="127" y="398" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34d399">Empfehlung: Premier &amp; Cups</text>
+    </g>
+
+    <!-- Card 2: Stylisch -->
+    <g transform="translate(280, 0)" filter="url(#cs2StileShadow)">
+      <rect width="255" height="440" rx="20" fill="#0f1522" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      <rect x="20" y="20" width="95" height="24" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="67" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#38bdf8">2. STYLISCH</text>
+      
+      <g transform="translate(20, 80)">
+        <rect width="215" height="85" rx="12" fill="#090d15" stroke="#38bdf8" stroke-opacity="0.2"/>
+        <text x="107" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#38bdf8">Ｓｈａｄｏｗ</text>
+      </g>
+
+      <g transform="translate(20, 200)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#38bdf8">Vorteile:</text>
+        <text x="0" y="24">✓ Breitere Buchstabenform</text>
+        <text x="0" y="48">✓ Fällt im Scoreboard auf</text>
+        <text x="0" y="72">✓ Moderner Vaporwave-Look</text>
+        <text x="0" y="96">✓ Gut mit AWP kombinierbar</text>
+      </g>
+
+      <rect x="20" y="375" width="215" height="36" rx="8" fill="#182236"/>
+      <text x="127" y="398" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">Breite Fullwidth-Schrift</text>
+    </g>
+
+    <!-- Card 3: Dekoriert -->
+    <g transform="translate(560, 0)" filter="url(#cs2StileShadow)">
+      <rect width="255" height="440" rx="20" fill="#0f1522" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.5"/>
+      <rect x="20" y="20" width="115" height="24" rx="6" fill="#f59e0b" fill-opacity="0.15"/>
+      <text x="77" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#fbbf24">3. DEKORIERT</text>
+      
+      <g transform="translate(20, 80)">
+        <rect width="215" height="85" rx="12" fill="#090d15" stroke="#f59e0b" stroke-opacity="0.2"/>
+        <text x="107" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#fbbf24">亗 Shadow 亗</text>
+      </g>
+
+      <g transform="translate(20, 200)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#fbbf24">Vorteile:</text>
+        <text x="0" y="24">✓ Symmetrische Symbole</text>
+        <text x="0" y="48">✓ Kronen- &amp; Krieger-Optik</text>
+        <text x="0" y="72">✓ Ideal für Steam-Profil</text>
+        <text x="0" y="96">✓ Starker Wiedererkennungswert</text>
+      </g>
+
+      <rect x="20" y="375" width="215" height="36" rx="8" fill="#182236"/>
+      <text x="127" y="398" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">Auffälliger Clan-Look</text>
+    </g>
+
+    <!-- Card 4: Minimal -->
+    <g transform="translate(840, 0)" filter="url(#cs2StileShadow)">
+      <rect width="245" height="440" rx="20" fill="#0f1522" stroke="#c084fc" stroke-opacity="0.4" stroke-width="1.5"/>
+      <rect x="20" y="20" width="85" height="24" rx="6" fill="#c084fc" fill-opacity="0.15"/>
+      <text x="62" y="36" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#c084fc">4. MINIMAL</text>
+      
+      <g transform="translate(20, 80)">
+        <rect width="205" height="85" rx="12" fill="#090d15" stroke="#c084fc" stroke-opacity="0.2"/>
+        <text x="102" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff" letter-spacing="4">S H A D O W</text>
+      </g>
+
+      <g transform="translate(20, 200)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#c084fc">Vorteile:</text>
+        <text x="0" y="24">✓ Stilvoll gesperrte Schrift</text>
+        <text x="0" y="48">✓ Clean &amp; extrem modern</text>
+        <text x="0" y="72">✓ Funktioniert überall</text>
+        <text x="0" y="96">✓ Sehr ästhetischer Look</text>
+      </g>
+
+      <rect x="20" y="375" width="205" height="36" rx="8" fill="#182236"/>
+      <text x="122" y="398" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#c084fc">Clean &amp; Gesperrt</text>
+    </g>
+
+  </g>
+</svg>

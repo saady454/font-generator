@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bfsgClBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d1a"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="bfsgClGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <filter id="bfsgClShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bfsgClBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#22c55e" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#38bdf8" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-200" y="-16" width="400" height="32" rx="16" fill="#1e293b" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#22c55e" letter-spacing="2">ACCESSIBILITY CHECKLISTE</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Checkliste für <tspan fill="url(#bfsgClGrad)">barrierearme Webseiten</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      9 essenzielle Kriterien für eine gesetzeskonforme und nutzerfreundliche Website
+    </text>
+  </g>
+
+  <!-- 9 Checklist Items (3 Columns x 3 Rows) -->
+  <g transform="translate(80, 145)">
+    
+    <!-- Item 1 -->
+    <g transform="translate(0, 0)" filter="url(#bfsgClShadow)">
+      <rect width="330" height="135" rx="16" fill="#111827" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <circle cx="15" cy="15" r="14" fill="#22c55e" fill-opacity="0.15"/>
+        <text x="15" y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#22c55e">✓</text>
+        <text x="40" y="20" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Verständliche Texte</text>
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Überschriften und Fließtexte in klarem, lesbarem Standard-Text.</text>
+      </g>
+    </g>
+
+    <!-- Item 2 -->
+    <g transform="translate(355, 0)" filter="url(#bfsgClShadow)">
+      <rect width="330" height="135" rx="16" fill="#111827" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <circle cx="15" cy="15" r="14" fill="#38bdf8" fill-opacity="0.15"/>
+        <text x="15" y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#38bdf8">✓</text>
+        <text x="40" y="20" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Klare Navigation</text>
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Menüs, Links und Breadcrumbs ohne störende Zierschriften.</text>
+      </g>
+    </g>
+
+    <!-- Item 3 -->
+    <g transform="translate(710, 0)" filter="url(#bfsgClShadow)">
+      <rect width="330" height="135" rx="16" fill="#111827" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <circle cx="15" cy="15" r="14" fill="#22c55e" fill-opacity="0.15"/>
+        <text x="15" y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#22c55e">✓</text>
+        <text x="40" y="20" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Ausreichende Kontraste</text>
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Kontrastverhältnis von mindestens 4,5:1 (WCAG AA Standard).</text>
+      </g>
+    </g>
+
+    <!-- Item 4 -->
+    <g transform="translate(0, 155)" filter="url(#bfsgClShadow)">
+      <rect width="330" height="135" rx="16" fill="#111827" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <circle cx="15" cy="15" r="14" fill="#38bdf8" fill-opacity="0.15"/>
+        <text x="15" y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#38bdf8">✓</text>
+        <text x="40" y="20" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Tastaturbedienbarkeit</text>
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Alle Elemente und Buttons sind per Tab-Taste erreichbar.</text>
+      </g>
+    </g>
+
+    <!-- Item 5 -->
+    <g transform="translate(355, 155)" filter="url(#bfsgClShadow)">
+      <rect width="330" height="135" rx="16" fill="#111827" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <circle cx="15" cy="15" r="14" fill="#22c55e" fill-opacity="0.15"/>
+        <text x="15" y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#22c55e">✓</text>
+        <text x="40" y="20" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Formularbeschriftung</text>
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Eindeutige &lt;label&gt;-Tags für alle Eingabefelder und Checkboxen.</text>
+      </g>
+    </g>
+
+    <!-- Item 6 -->
+    <g transform="translate(710, 155)" filter="url(#bfsgClShadow)">
+      <rect width="330" height="135" rx="16" fill="#111827" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <circle cx="15" cy="15" r="14" fill="#38bdf8" fill-opacity="0.15"/>
+        <text x="15" y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#38bdf8">✓</text>
+        <text x="40" y="20" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Sinnvolle Alt-Texte</text>
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Aussagekräftige Bildbeschreibungen für alle Grafiken.</text>
+      </g>
+    </g>
+
+    <!-- Item 7 -->
+    <g transform="translate(0, 310)" filter="url(#bfsgClShadow)">
+      <rect width="330" height="135" rx="16" fill="#111827" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <circle cx="15" cy="15" r="14" fill="#22c55e" fill-opacity="0.15"/>
+        <text x="15" y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#22c55e">✓</text>
+        <text x="40" y="20" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Logische Struktur</text>
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Hierarchische Überschriften-Ebenen (H1, H2, H3) ohne Lücken.</text>
+      </g>
+    </g>
+
+    <!-- Item 8 -->
+    <g transform="translate(355, 310)" filter="url(#bfsgClShadow)">
+      <rect width="330" height="135" rx="16" fill="#111827" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <circle cx="15" cy="15" r="14" fill="#38bdf8" fill-opacity="0.15"/>
+        <text x="15" y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#38bdf8">✓</text>
+        <text x="40" y="20" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Erkennbare Buttons</text>
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Klare Handlungsaufforderungen ("Kaufen", "Absenden").</text>
+      </g>
+    </g>
+
+    <!-- Item 9 -->
+    <g transform="translate(710, 310)" filter="url(#bfsgClShadow)">
+      <rect width="330" height="135" rx="16" fill="#111827" stroke="#fbbf24" stroke-opacity="0.3" stroke-width="1.5"/>
+      <g transform="translate(20, 20)">
+        <circle cx="15" cy="15" r="14" fill="#fbbf24" fill-opacity="0.15"/>
+        <text x="15" y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#fbbf24">✓</text>
+        <text x="40" y="20" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Dezente Zierschriften</text>
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Unicode-Zeichen nur als zusätzliche Deko, nicht für Fließtext.</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

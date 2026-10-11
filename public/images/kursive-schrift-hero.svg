@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="kursivHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c16"/>
+      <stop offset="50%" stop-color="#141829"/>
+      <stop offset="100%" stop-color="#080912"/>
+    </linearGradient>
+    <linearGradient id="roseAmberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f472b6"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="kursivCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c2136" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#111424" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="kursivShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#kursivHeroBg)"/>
+
+  <!-- Glowing Aesthetic Orbs -->
+  <circle cx="280" cy="190" r="300" fill="#ec4899" fill-opacity="0.10"/>
+  <circle cx="920" cy="460" r="320" fill="#f59e0b" fill-opacity="0.08"/>
+
+  <!-- Slanted Typographic Guide Lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-dasharray="4 6">
+    <line x1="120" y1="120" x2="1080" y2="120"/>
+    <line x1="120" y1="260" x2="1080" y2="260"/>
+    <line x1="120" y1="400" x2="1080" y2="400"/>
+    <line x1="120" y1="540" x2="1080" y2="540"/>
+  </g>
+
+  <!-- Header Badge -->
+  <g transform="translate(600, 65)" text-anchor="middle">
+    <rect x="-150" y="-18" width="300" height="36" rx="18" fill="#ec4899" fill-opacity="0.15" stroke="#ec4899" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="800" fill="#f472b6" letter-spacing="2">🌸 ITALIC &amp; SCRIPT STUDIO</text>
+  </g>
+
+  <!-- Central Title -->
+  <text x="600" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="44" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+    Kursive Schrift: <tspan fill="url(#roseAmberGrad)">Kursiv schreiben &amp; kopieren</tspan>
+  </text>
+  <text x="600" y="180" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#94a3b8">
+    Elegante schräge und geschwungene Unicode-Buchstaben für Zitate, Bios &amp; Status
+  </text>
+
+  <!-- 4 Cards Display -->
+  <g transform="translate(80, 220)">
+    
+    <!-- 1. Italic Sans-Serif -->
+    <g transform="translate(0, 0)" filter="url(#kursivShadow)">
+      <rect width="240" height="270" rx="16" fill="url(#kursivCardGrad)" stroke="#f472b6" stroke-opacity="0.5" stroke-width="1.5"/>
+      <rect x="15" y="15" width="120" height="22" rx="6" fill="#f472b6" fill-opacity="0.2"/>
+      <text x="75" y="30" font-family="sans-serif" font-size="10" font-weight="800" fill="#f472b6" text-anchor="middle">KURSIV SANS</text>
+
+      <text x="120" y="115" font-family="system-ui, sans-serif" font-size="36" font-style="italic" font-weight="600" fill="#ffffff" text-anchor="middle">𝘏𝘢𝘭𝘭𝘰</text>
+      <text x="120" y="155" font-family="system-ui, sans-serif" font-size="22" font-style="italic" font-weight="700" fill="#f472b6" text-anchor="middle">𝘞𝘦𝘭𝘵</text>
+
+      <line x1="20" y1="185" x2="220" y2="185" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="120" y="212" font-family="sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Modern &amp; subtil geneigt</text>
+      <text x="120" y="235" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Instagram Bio &amp; Captions</text>
+    </g>
+
+    <!-- 2. Italic Serif (Elegance) -->
+    <g transform="translate(265, 0)" filter="url(#kursivShadow)">
+      <rect width="240" height="270" rx="16" fill="url(#kursivCardGrad)" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+      <rect x="15" y="15" width="105" height="22" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="67" y="30" font-family="sans-serif" font-size="10" font-weight="800" fill="#38bdf8" text-anchor="middle">KURSIV SERIF</text>
+
+      <text x="120" y="115" font-family="'Times New Roman', serif" font-size="38" font-style="italic" fill="#ffffff" text-anchor="middle">𝐻𝑎𝑙𝑙𝑜</text>
+      <text x="120" y="155" font-family="'Times New Roman', serif" font-size="22" font-style="italic" fill="#38bdf8" text-anchor="middle">𝑊𝑒𝑙𝑡</text>
+
+      <line x1="20" y1="185" x2="220" y2="185" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="120" y="212" font-family="sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Edel, klassisch &amp; poetisch</text>
+      <text x="120" y="235" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Zitate &amp; Sprüche</text>
+    </g>
+
+    <!-- 3. Bold Italic (Fett Kursiv) -->
+    <g transform="translate(530, 0)" filter="url(#kursivShadow)">
+      <rect width="240" height="270" rx="16" fill="url(#kursivCardGrad)" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+      <rect x="15" y="15" width="95" height="22" rx="6" fill="#fbbf24" fill-opacity="0.15"/>
+      <text x="62" y="30" font-family="sans-serif" font-size="10" font-weight="800" fill="#fbbf24" text-anchor="middle">FETT KURSIV</text>
+
+      <text x="120" y="115" font-family="sans-serif" font-size="36" font-weight="900" font-style="italic" fill="#ffffff" text-anchor="middle">𝑯𝒂𝒍𝒍𝒐</text>
+      <text x="120" y="155" font-family="sans-serif" font-size="22" font-weight="800" font-style="italic" fill="#fbbf24" text-anchor="middle">𝑾𝒆𝒍𝒕</text>
+
+      <line x1="20" y1="185" x2="220" y2="185" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="120" y="212" font-family="sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Ausdrucksstark &amp; dynamisch</text>
+      <text x="120" y="235" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Headlines &amp; Status</text>
+    </g>
+
+    <!-- 4. Calligraphy / Script -->
+    <g transform="translate(795, 0)" filter="url(#kursivShadow)">
+      <rect width="245" height="270" rx="16" fill="url(#kursivCardGrad)" stroke="#c084fc" stroke-opacity="0.4" stroke-width="1.5"/>
+      <rect x="15" y="15" width="115" height="22" rx="6" fill="#a855f7" fill-opacity="0.2"/>
+      <text x="72" y="30" font-family="sans-serif" font-size="10" font-weight="800" fill="#c084fc" text-anchor="middle">HANDSCHRIFT</text>
+
+      <text x="122" y="115" font-family="cursive, sans-serif" font-size="36" font-weight="700" fill="#ffffff" text-anchor="middle">𝓗𝓪𝓵𝓵𝓸</text>
+      <text x="122" y="155" font-family="cursive, sans-serif" font-size="22" font-weight="700" fill="#c084fc" text-anchor="middle">𝓦𝓮𝓵𝓽</text>
+
+      <line x1="20" y1="185" x2="225" y2="185" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="122" y="212" font-family="sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Fließende Schlaufen</text>
+      <text x="122" y="235" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Ästhetik &amp; Romantik</text>
+    </g>
+  </g>
+
+  <!-- Bottom Tip -->
+  <g transform="translate(600, 580)" text-anchor="middle">
+    <rect x="-300" y="-18" width="600" height="36" rx="18" fill="#111424" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+    <text y="5" font-family="sans-serif" font-size="13" fill="#94a3b8">
+      ✨ <tspan fill="#ffffff" font-weight="700">100% Unicode-Kompatibel:</tspan> Einfach kopieren und in jedes Textfeld einfügen
+    </text>
+  </g>
+</svg>

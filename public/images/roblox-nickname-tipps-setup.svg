@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rbxTippsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a12"/>
+      <stop offset="50%" stop-color="#141126"/>
+      <stop offset="100%" stop-color="#06070d"/>
+    </linearGradient>
+    <linearGradient id="rbxTippsGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <filter id="rbxTippsShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#rbxTippsBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="180" r="240" fill="#ec4899" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#3b82f6" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-170" y="-16" width="340" height="32" rx="16" fill="#1e1832" stroke="#ec4899" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#f472b6" letter-spacing="2">PROFI-RATGEBER</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      5 Tipps für einen <tspan fill="url(#rbxTippsGrad)">besseren Roblox Nickname</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Wie du einen kreativen, einprägsamen Namen für dein Roblox-Profil erstellst
+    </text>
+  </g>
+
+  <!-- 5 Tip Cards (2 top, 3 bottom) -->
+  <g transform="translate(60, 145)">
+    
+    <!-- Tip 1 -->
+    <g transform="translate(0, 0)" filter="url(#rbxTippsShadow)">
+      <rect width="525" height="150" rx="18" fill="#131024" stroke="#ec4899" stroke-opacity="0.35" stroke-width="1.5"/>
+      <circle cx="45" cy="42" r="20" fill="#ec4899" fill-opacity="0.15"/>
+      <text x="45" y="49" text-anchor="middle" font-size="16">✨</text>
+      
+      <text x="80" y="38" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff">1. Mach ihn leicht lesbar</text>
+      <text x="80" y="56" font-family="system-ui, sans-serif" font-size="12" fill="#f472b6">Schnelles Wiedererkennen im Spiel</text>
+
+      <g transform="translate(20, 85)">
+        <text x="0" y="14" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Ein kurzer, klar strukturierter Name bleibt Mitspielern</text>
+        <text x="0" y="36" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#34d399">sofort im Gedächtnis und liest sich im Chat flüssig.</text>
+      </g>
+    </g>
+
+    <!-- Tip 2 -->
+    <g transform="translate(555, 0)" filter="url(#rbxTippsShadow)">
+      <rect width="525" height="150" rx="18" fill="#131024" stroke="#fbbf24" stroke-opacity="0.35" stroke-width="1.5"/>
+      <circle cx="45" cy="42" r="20" fill="#fbbf24" fill-opacity="0.15"/>
+      <text x="45" y="49" text-anchor="middle" font-size="16">🔢</text>
+      
+      <text x="80" y="38" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff">2. Vermeide unnötige Zahlen</text>
+      <text x="80" y="56" font-family="system-ui, sans-serif" font-size="12" fill="#fbbf24">Zufällige Nummernfolgen wirken beliebig</text>
+
+      <g transform="translate(20, 85)">
+        <text x="0" y="14" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Statt <tspan fill="#f87171">Luna78419</tspan> lieber <tspan fill="#34d399">LunaNova</tspan> oder <tspan fill="#f472b6">CloudyLuna</tspan> nutzen.</text>
+        <text x="0" y="36" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#fbbf24">Das wirkt viel persönlicher und stilvoller.</text>
+      </g>
+    </g>
+
+    <!-- Tip 3 -->
+    <g transform="translate(0, 175)" filter="url(#rbxTippsShadow)">
+      <rect width="340" height="290" rx="18" fill="#131024" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5"/>
+      <circle cx="40" cy="42" r="18" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="40" y="49" text-anchor="middle" font-size="15">🎨</text>
+      
+      <text x="70" y="38" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">3. Klares Thema</text>
+      <text x="70" y="54" font-family="system-ui, sans-serif" font-size="11" fill="#38bdf8">Tiere, Fantasy, Gaming</text>
+
+      <g transform="translate(20, 85)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="14">Wähle eine thematische</text>
+        <text x="0" y="36">Richtung, die zu dir passt:</text>
+        <text x="0" y="64" font-weight="700" fill="#ffffff">&amp;bull; Bunny, Fox, Cat, Wolf</text>
+        <text x="0" y="88" font-weight="700" fill="#ffffff">&amp;bull; Ninja, Star, Mystic, Nova</text>
+        <text x="0" y="118" fill="#94a3b8" font-size="11">Gibt dem Profil Charakter.</text>
+      </g>
+    </g>
+
+    <!-- Tip 4 -->
+    <g transform="translate(370, 175)" filter="url(#rbxTippsShadow)">
+      <rect width="340" height="290" rx="18" fill="#131024" stroke="#8b5cf6" stroke-opacity="0.35" stroke-width="1.5"/>
+      <circle cx="40" cy="42" r="18" fill="#8b5cf6" fill-opacity="0.15"/>
+      <text x="40" y="49" text-anchor="middle" font-size="15">📝</text>
+      
+      <text x="70" y="38" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">4. Varianten vergleichen</text>
+      <text x="70" y="54" font-family="system-ui, sans-serif" font-size="11" fill="#a78bfa">Nicht den ersten Einfall nehmen</text>
+
+      <g transform="translate(20, 85)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="14">Erstelle 5–10 Kombinationen</text>
+        <text x="0" y="36">im Generator.</text>
+        <text x="0" y="64">Lies sie laut vor und</text>
+        <text x="0" y="86">wähle deinen Favoriten.</text>
+        <text x="0" y="118" fill="#94a3b8" font-size="11">Verhindert schnelles Bereuen.</text>
+      </g>
+    </g>
+
+    <!-- Tip 5 -->
+    <g transform="translate(740, 175)" filter="url(#rbxTippsShadow)">
+      <rect width="340" height="290" rx="18" fill="#131024" stroke="#34d399" stroke-opacity="0.35" stroke-width="1.5"/>
+      <circle cx="40" cy="42" r="18" fill="#34d399" fill-opacity="0.15"/>
+      <text x="40" y="49" text-anchor="middle" font-size="15">🛡️</text>
+      
+      <text x="70" y="38" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">5. An Zweck denken</text>
+      <text x="70" y="54" font-family="system-ui, sans-serif" font-size="11" fill="#34d399">Anzeigename vs. Login-ID</text>
+
+      <g transform="translate(20, 85)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="14">Anzeigenamen sind flexibel</text>
+        <text x="0" y="36">und kostenlos alle 7 Tage</text>
+        <text x="0" y="64">änderbar – perfekt für</text>
+        <text x="0" y="86">kreative Spielphasen!</text>
+        <text x="0" y="118" fill="#34d399" font-size="11 font-weight=700">7-Tage-Regel nutzen.</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

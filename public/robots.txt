@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://schriftarten.netlify.app/sitemap.xml

@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ekHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090c14"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#05070d"/>
+    </linearGradient>
+    <linearGradient id="ekPastelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="ekYellowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="ekHeroShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#000000" flood-opacity="0.85"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#ekHeroBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="220" r="300" fill="#34d399" fill-opacity="0.10"/>
+  <circle cx="940" cy="450" r="280" fill="#fbbf24" fill-opacity="0.10"/>
+  <circle cx="600" cy="300" r="220" fill="#38bdf8" fill-opacity="0.05"/>
+
+  <!-- Top Badge -->
+  <g transform="translate(600, 55)" text-anchor="middle">
+    <rect x="-200" y="-18" width="400" height="36" rx="18" fill="#1e293b" stroke="#34d399" stroke-opacity="0.5" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#34d399" letter-spacing="2">(◕‿◕) KAOMOJI &amp; EMOTIKONS (◕‿◕)</text>
+  </g>
+
+  <!-- Central Title -->
+  <text x="600" y="132" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="38" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+    Emotikons &amp; Kaomoji: <tspan fill="url(#ekPastelGrad)">(◕‿◕) (｡♥‿♥｡) zum Kopieren</tspan>
+  </text>
+  <text x="600" y="168" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#94a3b8">
+    Süße Textgesichter, japanische Kaomojis &amp; Reaktionen mit 1 Klick in die Zwischenablage
+  </text>
+
+  <!-- Main Showcase Container -->
+  <g transform="translate(90, 205)" filter="url(#ekHeroShadow)">
+    <rect width="1020" height="420" rx="28" fill="#111827" stroke="#34d399" stroke-opacity="0.35" stroke-width="1.5"/>
+
+    <!-- Inner Grid Area -->
+    <rect x="25" y="25" width="970" height="370" rx="20" fill="#080d1a" stroke="#ffffff" stroke-opacity="0.05"/>
+
+    <!-- Left: Kaomoji Showcase Card Mockup -->
+    <g transform="translate(50, 45)">
+      <rect width="280" height="330" rx="20" fill="#172033" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5"/>
+      
+      <!-- Card Header -->
+      <g transform="translate(18, 18)">
+        <circle cx="24" cy="24" r="23" fill="none" stroke="url(#ekPastelGrad)" stroke-width="2.5"/>
+        <circle cx="24" cy="24" r="20" fill="#1e293b"/>
+        <text x="24" y="30" text-anchor="middle" font-size="14" fill="#34d399">◕‿◕</text>
+        <text x="58" y="18" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#ffffff">Textgesichter</text>
+        <text x="58" y="34" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34d399">1-Klick Copy &amp; Paste</text>
+      </g>
+
+      <!-- Symbol Quick Display Grid -->
+      <g transform="translate(18, 70)">
+        <rect width="244" height="175" rx="12" fill="#0b1220" stroke="#34d399" stroke-opacity="0.25"/>
+        
+        <text x="12" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#34d399" letter-spacing="1">BELIEBTE KAOMOJI</text>
+        
+        <!-- Big Kaomojis Display -->
+        <g transform="translate(12, 38)" font-size="15" font-family="monospace" font-weight="bold">
+          <text x="10" y="28" fill="#34d399">(◕‿◕)</text>
+          <text x="120" y="28" fill="#fb7185">(｡♥‿♥｡)</text>
+
+          <text x="10" y="65" fill="#38bdf8">(≧◡≦)</text>
+          <text x="120" y="65" fill="#fbbf24">٩(◕‿◕｡)۶</text>
+
+          <text x="10" y="102" fill="#c084fc">(づ￣ ³￣)づ</text>
+          <text x="130" y="102" fill="#ffffff">(ಠ_ಠ)</text>
+        </g>
+
+        <!-- Shrug Banner -->
+        <rect x="12" y="132" width="220" height="30" rx="8" fill="#1e293b"/>
+        <text x="122" y="152" text-anchor="middle" font-size="12" fill="#34d399" font-family="monospace">¯\_(ツ)_/¯ <tspan fill="#94a3b8" font-size="11">Classic Shrug</tspan></text>
+      </g>
+
+      <!-- Action Button -->
+      <g transform="translate(18, 265)">
+        <rect width="244" height="36" rx="10" fill="url(#ekPastelGrad)"/>
+        <text x="122" y="23" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#080d1a">◕‿◕ Kaomoji kopiert! 📋</text>
+      </g>
+    </g>
+
+    <!-- Right: Categories Showcase Card -->
+    <g transform="translate(365, 45)">
+      <rect width="605" height="330" rx="20" fill="#172033" stroke="#ffffff" stroke-opacity="0.08"/>
+
+      <!-- Input Simulation -->
+      <g transform="translate(25, 20)">
+        <text x="0" y="14" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#34d399" letter-spacing="1">KAOMOJI AUSWÄHLEN &amp; EINFÜGEN</text>
+        <rect x="0" y="24" width="555" height="42" rx="10" fill="#080d1a" stroke="#34d399" stroke-opacity="0.4"/>
+        <text x="16" y="50" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#ffffff">Guten Morgen (◕‿◕)✿</text>
+        <rect x="445" y="32" width="100" height="26" rx="6" fill="url(#ekPastelGrad)"/>
+        <text x="495" y="49" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#080d1a">Kopieren</text>
+      </g>
+
+      <!-- Style Grid -->
+      <g transform="translate(25, 95)">
+        
+        <!-- Combination 1: Süß &amp; Freundlich -->
+        <g transform="translate(0, 0)">
+          <rect width="265" height="46" rx="10" fill="#1e293b" stroke="#34d399" stroke-opacity="0.3"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#34d399">SÜSS &amp; NIEDLICH</text>
+          <text x="12" y="36" font-family="system-ui, monospace" font-size="14" font-weight="900" fill="#ffffff">(◕‿◕) (๑>ᴗ&lt;๑)</text>
+          <rect x="200" y="10" width="55" height="26" rx="6" fill="#34d399" fill-opacity="0.2"/>
+          <text x="227" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#34d399">Kopie</text>
+        </g>
+
+        <!-- Combination 2: Fröhlich -->
+        <g transform="translate(285, 0)">
+          <rect width="270" height="46" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.3"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#38bdf8">FRÖHLICH &amp; BEGEISTERT</text>
+          <text x="12" y="36" font-family="system-ui, monospace" font-size="14" font-weight="900" fill="#ffffff">(≧▽≦) ٩(◕‿◕｡)۶</text>
+          <rect x="205" y="10" width="55" height="26" rx="6" fill="#38bdf8" fill-opacity="0.2"/>
+          <text x="232" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#38bdf8">Kopie</text>
+        </g>
+
+        <!-- Combination 3: Liebe -->
+        <g transform="translate(0, 56)">
+          <rect width="265" height="46" rx="10" fill="#1e293b" stroke="#fb7185" stroke-opacity="0.3"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#fb7185">LIEBE &amp; KUSS</text>
+          <text x="12" y="36" font-family="system-ui, monospace" font-size="13" font-weight="800" fill="#ffffff">(｡♥‿♥｡) (づ￣ ³￣)づ</text>
+          <rect x="200" y="10" width="55" height="26" rx="6" fill="#fb7185" fill-opacity="0.2"/>
+          <text x="227" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#fb7185">Kopie</text>
+        </g>
+
+        <!-- Combination 4: Wütend &amp; Shrug -->
+        <g transform="translate(285, 56)">
+          <rect width="270" height="46" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-opacity="0.3"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#fbbf24">WÜTEND &amp; GENNERVT</text>
+          <text x="12" y="36" font-family="system-ui, monospace" font-size="14" font-weight="800" fill="#ffffff">(ಠ_ಠ) (¬_¬)</text>
+          <rect x="205" y="10" width="55" height="26" rx="6" fill="#f59e0b" fill-opacity="0.2"/>
+          <text x="232" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#fbbf24">Kopie</text>
+        </g>
+
+        <!-- Combination 5: Traurig -->
+        <g transform="translate(0, 112)">
+          <rect width="265" height="46" rx="10" fill="#1e293b" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#94a3b8">TRAURIG &amp; WEINEND</text>
+          <text x="12" y="36" font-family="system-ui, monospace" font-size="13" font-weight="800" fill="#ffffff">(╥﹏╥) (T_T) (ಥ_ಥ)</text>
+          <rect x="200" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="227" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Combination 6: Überrascht -->
+        <g transform="translate(285, 112)">
+          <rect width="270" height="46" rx="10" fill="#1e293b" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#c084fc">ÜBERRASCHT &amp; VERWIRRT</text>
+          <text x="12" y="36" font-family="system-ui, monospace" font-size="14" font-weight="800" fill="#ffffff">(⊙⊙) (°ロ°) ! (＠_＠)</text>
+          <rect x="205" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="232" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Full width Bottom CTA -->
+        <g transform="translate(0, 168)">
+          <rect width="555" height="46" rx="10" fill="url(#ekPastelGrad)"/>
+          <text x="277" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#080d1a">✨ Über 100+ Kaomoji &amp; Emotikons jetzt direkt kopieren</text>
+        </g>
+
+      </g>
+    </g>
+  </g>
+</svg>

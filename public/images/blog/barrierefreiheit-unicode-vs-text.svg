@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bfsgTechBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d1a"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="bfsgTechGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <filter id="bfsgTechShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bfsgTechBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="240" cy="200" r="240" fill="#38bdf8" fill-opacity="0.08"/>
+  <circle cx="960" cy="450" r="240" fill="#c084fc" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-180" y="-16" width="360" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">TECHNISCHE GRUNDLAGEN</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Normaler Text vs. <tspan fill="url(#bfsgTechGrad)">Mathematischer Unicode</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Warum Zierschriften keine reinen CSS-Formatierungen sind, sondern völlig neue Zeichen
+    </text>
+  </g>
+
+  <!-- Split Comparison (2 Columns) -->
+  <g transform="translate(80, 150)">
+    
+    <!-- Left: Normal Text -->
+    <g transform="translate(0, 0)" filter="url(#bfsgTechShadow)">
+      <rect width="500" height="440" rx="22" fill="#111827" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(30, 30)">
+        <rect width="180" height="26" rx="6" fill="#22c55e" fill-opacity="0.15"/>
+        <text x="90" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#22c55e">1. NORMALER TEXT</text>
+
+        <!-- Big Display -->
+        <rect y="45" width="440" height="85" rx="14" fill="#080d1a" stroke="#22c55e" stroke-opacity="0.3"/>
+        <text x="220" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="36" font-weight="900" fill="#ffffff">Hallo</text>
+
+        <!-- Technical Breakdown -->
+        <g transform="translate(0, 155)" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="800" fill="#22c55e">Unicode Codepoints:</text>
+          <text x="0" y="26" font-family="monospace" fill="#38bdf8">U+0048 &amp;bull; U+0061 &amp;bull; U+006C &amp;bull; U+006C &amp;bull; U+006F</text>
+          
+          <text x="0" y="65" font-weight="800" fill="#22c55e">Bedeutung im Unicode-Standard:</text>
+          <text x="0" y="88">Standard-Buchstaben des lateinischen Grundalphabets (ASCII).</text>
+          
+          <text x="0" y="125" font-weight="800" fill="#22c55e">Formatierungsmethode:</text>
+          <text x="0" y="148">Visuell über CSS (<tspan font-family="monospace" fill="#22c55e">&lt;strong&gt;</tspan>, <tspan font-family="monospace" fill="#22c55e">font-weight: bold</tspan>).</text>
+
+          <text x="0" y="185" font-weight="800" fill="#22c55e">Accessibility-Score:</text>
+          <text x="0" y="208">✓ 100 % barrierefrei für alle Screenreader weltweit.</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Right: Mathematical Unicode Text -->
+    <g transform="translate(540, 0)" filter="url(#bfsgTechShadow)">
+      <rect width="500" height="440" rx="22" fill="#111827" stroke="#fbbf24" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(30, 30)">
+        <rect width="210" height="26" rx="6" fill="#fbbf24" fill-opacity="0.15"/>
+        <text x="105" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#fbbf24">2. DEKORATIVER UNICODE</text>
+
+        <!-- Big Display -->
+        <rect y="45" width="440" height="85" rx="14" fill="#080d1a" stroke="#fbbf24" stroke-opacity="0.3"/>
+        <text x="220" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="36" font-weight="900" fill="#fbbf24">𝓗𝓪𝓵𝓵𝓸</text>
+
+        <!-- Technical Breakdown -->
+        <g transform="translate(0, 155)" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">
+          <text x="0" y="0" font-weight="800" fill="#fbbf24">Unicode Codepoints:</text>
+          <text x="0" y="26" font-family="monospace" fill="#fbbf24">U+1D43B &amp;bull; U+1D4EA &amp;bull; U+1D4F5 &amp;bull; U+1D4F5 &amp;bull; U+1D4F8</text>
+          
+          <text x="0" y="65" font-weight="800" fill="#fbbf24">Bedeutung im Unicode-Standard:</text>
+          <text x="0" y="88">Mathematical Script Symbols (für mathematische Formeln).</text>
+          
+          <text x="0" y="125" font-weight="800" fill="#fbbf24">Formatierungsmethode:</text>
+          <text x="0" y="148">Vollständiger Zeichentausch durch den Generator.</text>
+
+          <text x="0" y="185" font-weight="800" fill="#fbbf24">Accessibility-Score:</text>
+          <text x="0" y="208">⚠ Eingeschränkt (wird oft zeichenweise buchstabiert).</text>
+        </g>
+      </g>
+    </g>
+
+  </g>
+</svg>

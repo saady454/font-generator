@@ -1,0 +1,98 @@
+# ========================================================
+# Netlify 301 Redirect Rules for Schriftarten.io
+# SEO Silo Architecture & URL Consolidation
+# ========================================================
+
+# Silo 1 - Schrift Consolidation
+/schriftarten                         /schrift                                  301!
+/schriftarten/                        /schrift                                  301!
+/schrift/schreibschrift               /schrift/handschrift                      301!
+/schrift/schreibschrift/              /schrift/handschrift                      301!
+
+# Silo 2 - Plattform Consolidation
+/schriftarten-fuer-plattformen        /plattform                                301!
+/schriftarten-fuer-plattformen/       /plattform                                301!
+/instagram-schriftarten               /plattform/instagram                      301!
+/instagram-schriftarten/              /plattform/instagram                      301!
+/discord-schriftarten                 /plattform/discord                        301!
+/discord-schriftarten/                /plattform/discord                        301!
+/facebook-schriftarten                /plattform/facebook                       301!
+/facebook-schriftarten/               /plattform/facebook                       301!
+/twitter-schriftarten                 /plattform/twitter-x                      301!
+/twitter-schriftarten/                /plattform/twitter-x                      301!
+/telegram-schriftarten                /plattform/telegram                       301!
+/telegram-schriftarten/               /plattform/telegram                       301!
+/plattform/telegram-schriftarten      /plattform/telegram                       301!
+/plattform/telegram-schriftarten/     /plattform/telegram                       301!
+/plattform/twitter-schriftarten       /plattform/twitter-x                      301!
+/plattform/twitter-schriftarten/      /plattform/twitter-x                      301!
+
+# /plattformen/* Duplicate mappings
+/plattformen                          /plattform                                301!
+/plattformen/                         /plattform                                301!
+/plattformen/instagram                /plattform/instagram                      301!
+/plattformen/instagram/               /plattform/instagram                      301!
+/plattformen/instagram-schriftarten   /plattform/instagram                      301!
+/plattformen/instagram-schriftarten/  /plattform/instagram                      301!
+/plattformen/tiktok                   /plattform/tiktok                         301!
+/plattformen/tiktok/                  /plattform/tiktok                         301!
+/plattformen/whatsapp                 /plattform/whatsapp                       301!
+/plattformen/whatsapp/                /plattform/whatsapp                       301!
+/plattformen/whatsapp-schriftarten    /plattform/whatsapp                       301!
+/plattformen/whatsapp-schriftarten/   /plattform/whatsapp                       301!
+/plattformen/discord                  /plattform/discord                        301!
+/plattformen/discord/                 /plattform/discord                        301!
+/plattformen/discord-schriftarten     /plattform/discord                        301!
+/plattformen/discord-schriftarten/    /plattform/discord                        301!
+/plattformen/facebook                 /plattform/facebook                       301!
+/plattformen/facebook/                /plattform/facebook                       301!
+/plattformen/facebook-schriftarten    /plattform/facebook                       301!
+/plattformen/facebook-schriftarten/   /plattform/facebook                       301!
+/plattformen/twitter-x                /plattform/twitter-x                      301!
+/plattformen/twitter-x/               /plattform/twitter-x                      301!
+/plattformen/twitter-schriftarten     /plattform/twitter-x                      301!
+/plattformen/twitter-schriftarten/    /plattform/twitter-x                      301!
+/plattformen/telegram                 /plattform/telegram                       301!
+/plattformen/telegram/                /plattform/telegram                       301!
+/plattformen/telegram-schriftarten    /plattform/telegram                       301!
+/plattformen/telegram-schriftarten/   /plattform/telegram                       301!
+
+# Silo 3 - Spiele Nickname & Duplicate Consolidation
+/counter-strike-2-nickname            /spiele/cs2                               301!
+/counter-strike-2-nickname/           /spiele/cs2                               301!
+/spiele/fortnite-nickname             /spiele/fortnite                          301!
+/spiele/fortnite-nickname/            /spiele/fortnite                          301!
+/spiele/minecraft-nickname            /spiele/minecraft                         301!
+/spiele/minecraft-nickname/           /spiele/minecraft                         301!
+/spiele/counter-strike-2              /spiele/cs2                               301!
+/spiele/counter-strike-2/             /spiele/cs2                               301!
+/spiele/cs2-nickname                  /spiele/cs2                               301!
+/spiele/cs2-nickname/                 /spiele/cs2                               301!
+/spiele/free-fire-nickname            /spiele/free-fire                         301!
+/spiele/free-fire-nickname/           /spiele/free-fire                         301!
+/spiele/gaming-nickname-generator     /spiele                                   301!
+/spiele/gaming-nickname-generator/    /spiele                                   301!
+/spiele/roblox-nickname               /spiele/roblox                            301!
+/spiele/roblox-nickname/              /spiele/roblox                            301!
+/spiele/valorant-nickname             /spiele/valorant                          301!
+/spiele/valorant-nickname/            /spiele/valorant                          301!
+
+# Silo 4 - Symbole Consolidation
+/symbole/rahmen-fluegel               /symbole/rahmen                           301!
+/symbole/rahmen-fluegel/              /symbole/rahmen                           301!
+/symbole/emotikons-kaomoji            /symbole/emotikons                        301!
+/symbole/emotikons-kaomoji/           /symbole/emotikons                        301!
+
+# Silo 5 - Blog Duplicate Consolidation
+/blog/barrierefreiheit-barrierefreiheitsstaerkungsgesetz-bfsg-2025-unicode-text     /blog/barrierefreiheit-bfsg-unicode-schriften-screenreader    301!
+/blog/barrierefreiheit-barrierefreiheitsstaerkungsgesetz-bfsg-2025-unicode-text/    /blog/barrierefreiheit-bfsg-unicode-schriften-screenreader    301!
+/blog/unicode-schriftarten-und-schriftgeneratoren-technischer-leitfaden              /blog/was-ist-unicode-schriftgeneratoren                      301!
+/blog/unicode-schriftarten-und-schriftgeneratoren-technischer-leitfaden/             /blog/was-ist-unicode-schriftgeneratoren                      301!
+/blog/warum-erscheinen-manche-schriftarten-als-kaestchen-tofu-problem                /blog/text-als-kaestchen-unicode-schriftarten                 301!
+/blog/warum-erscheinen-manche-schriftarten-als-kaestchen-tofu-problem/               /blog/text-als-kaestchen-unicode-schriftarten                 301!
+/blog/fraktur-schwabacher-gotische-schriften-geschichte-typografie                   /blog/fraktur-und-schwabacher-geschichte                      301!
+/blog/fraktur-schwabacher-gotische-schriften-geschichte-typografie/                  /blog/fraktur-und-schwabacher-geschichte                      301!
+/blog/schriftarten-generatoren-vs-schriftdateien-ttf-otf-wo-liegt-der-unterschied     /blog/schriftarten-generator-vs-schriftdatei-ttf-otf          301!
+/blog/schriftarten-generatoren-vs-schriftdateien-ttf-otf-wo-liegt-der-unterschied/    /blog/schriftarten-generator-vs-schriftdatei-ttf-otf          301!
+/blog/homoglyphen-spoofing-unicode-sicherheit                                        /blog/unicode-homoglyphen-sicherheit                          301!
+/blog/homoglyphen-spoofing-unicode-sicherheit/                                       /blog/unicode-homoglyphen-sicherheit                          301!

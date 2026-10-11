@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rfAppBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c16"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="rfAppGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+    <filter id="rfAppShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#rfAppBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#38bdf8" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#c084fc" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-180" y="-16" width="360" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">PLATTFORM-ANWENDUNGEN</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Symbole in <tspan fill="url(#rfAppGrad)">Bio, Chat &amp; Nickname</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Wie Rahmen, Klammern und Schwingen auf Instagram, Discord, Fortnite &amp; WhatsApp wirken
+    </text>
+  </g>
+
+  <!-- 3 Application Cards (Instagram, Gaming, WhatsApp) -->
+  <g transform="translate(60, 150)">
+    
+    <!-- 1. Instagram Bio -->
+    <g transform="translate(0, 0)" filter="url(#rfAppShadow)">
+      <rect width="340" height="440" rx="22" fill="#111827" stroke="#ec4899" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 25)">
+        <rect width="130" height="26" rx="6" fill="#ec4899" fill-opacity="0.15"/>
+        <text x="65" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#f472b6">INSTAGRAM BIO</text>
+        
+        <circle cx="145" cy="85" r="32" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+        <text x="145" y="93" text-anchor="middle" font-size="24">📸</text>
+
+        <text x="145" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" font-weight="900" fill="#ffffff">ʚ♡ɞ Luna ʚ♡ɞ</text>
+        <text x="145" y="165" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">@luna.aesthetic</text>
+
+        <rect y="185" width="290" height="135" rx="12" fill="#090d16"/>
+        <g transform="translate(15, 20)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+          <text x="0" y="14">『 Photography &amp; Art 』</text>
+          <text x="0" y="38">୨୧ Soft girl vibes &amp;bull; Berlin ୨୧</text>
+          <text x="0" y="62">༺ dreaming in pastel ༻</text>
+          <text x="0" y="92" font-size="11" fill="#ec4899 font-weight=700">luna-art.de ↗</text>
+        </g>
+
+        <rect y="340" width="290" height="36" rx="8" fill="#1e293b"/>
+        <text x="145" y="363" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f472b6">Stil: ʚ♡ɞ Name ʚ♡ɞ &amp;bull; 『 』</text>
+      </g>
+    </g>
+
+    <!-- 2. Gaming Nickname -->
+    <g transform="translate(370, 0)" filter="url(#rfAppShadow)">
+      <rect width="340" height="440" rx="22" fill="#111827" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 25)">
+        <rect width="140" height="26" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+        <text x="70" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#38bdf8">GAMING &amp; CLAN</text>
+        
+        <circle cx="145" cy="85" r="32" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+        <text x="145" y="93" text-anchor="middle" font-size="24">⚔️</text>
+
+        <text x="145" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">꧁༺ Shadow ༻꧂</text>
+        <text x="145" y="165" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#38bdf8">CS2 &amp;bull; Valorant &amp;bull; Fortnite</text>
+
+        <rect y="185" width="290" height="135" rx="12" fill="#090d16"/>
+        <g transform="translate(15, 20)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+          <text x="0" y="14">【 Clan: VORTEX ELITE 】</text>
+          <text x="0" y="38">〖 Role: AWP / Duelist 〗</text>
+          <text x="0" y="62">〘 Premier Rating: 24.500 〙</text>
+          <text x="0" y="92" font-size="11" fill="#38bdf8 font-weight=700">discord.gg/vortex ↗</text>
+        </g>
+
+        <rect y="340" width="290" height="36" rx="8" fill="#1e293b"/>
+        <text x="145" y="363" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">Stil: ꧁༺ Name ༻꧂ &amp;bull; 【 】</text>
+      </g>
+    </g>
+
+    <!-- 3. WhatsApp Chat &amp; Textbox -->
+    <g transform="translate(740, 0)" filter="url(#rfAppShadow)">
+      <rect width="340" height="440" rx="22" fill="#111827" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 25)">
+        <rect width="130" height="26" rx="6" fill="#22c55e" fill-opacity="0.15"/>
+        <text x="65" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#22c55e">WHATSAPP CHAT</text>
+        
+        <circle cx="145" cy="85" r="32" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+        <text x="145" y="93" text-anchor="middle" font-size="24">💬</text>
+
+        <text x="145" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" font-weight="900" fill="#ffffff">❴ Team Info ❵</text>
+        <text x="145" y="165" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#22c55e">Gruppen-Ankündigung</text>
+
+        <rect y="185" width="290" height="135" rx="12" fill="#090d16"/>
+        <g transform="translate(15, 20)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+          <text x="0" y="14" font-family="monospace" fill="#22c55e">╔══════════════════╗</text>
+          <text x="0" y="34" font-family="monospace" fill="#ffffff">║ Wichtiges Update ║</text>
+          <text x="0" y="54" font-family="monospace" fill="#22c55e">╚══════════════════╝</text>
+          <text x="0" y="76">ʚ✿ɞ Meeting heute um 18 Uhr</text>
+          <text x="0" y="96">【 Bitte pünktlich sein! 】</text>
+        </g>
+
+        <rect y="340" width="290" height="36" rx="8" fill="#1e293b"/>
+        <text x="145" y="363" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#22c55e">Stil: ╔══╗ &amp;bull; ❴ ❵ &amp;bull; ʚ✿ɞ</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

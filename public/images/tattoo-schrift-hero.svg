@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="tattooHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a10"/>
+      <stop offset="50%" stop-color="#14141e"/>
+      <stop offset="100%" stop-color="#08080d"/>
+    </linearGradient>
+    <linearGradient id="inkGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <filter id="tattooShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#tattooHeroBg)"/>
+
+  <!-- Ambient Amber &amp; Warm Studio Glows -->
+  <circle cx="280" cy="220" r="260" fill="#f59e0b" fill-opacity="0.10"/>
+  <circle cx="920" cy="460" r="280" fill="#d97706" fill-opacity="0.08"/>
+
+  <!-- Subtle Studio Lines &amp; Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="1">
+    <line x1="100" y1="100" x2="1100" y2="100"/>
+    <line x1="100" y1="580" x2="1100" y2="580"/>
+  </g>
+
+  <!-- Header Badge -->
+  <g transform="translate(600, 60)" text-anchor="middle">
+    <rect x="-170" y="-18" width="340" height="36" rx="18" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="800" fill="#fbbf24" letter-spacing="2">🖋️ TATTOO LETTERING STUDIO</text>
+  </g>
+
+  <!-- Central Title -->
+  <text x="600" y="140" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+    Tattoo Schrift: <tspan fill="url(#inkGold)">Schöne Schriftzüge ausprobieren</tspan>
+  </text>
+  <text x="600" y="175" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#94a3b8">
+    Schreibschrift, Kalligrafie, Gothic &amp; Chicano-Styles für Namen, Daten &amp; Zitate
+  </text>
+
+  <!-- Main Tattoo Canvas Showcase Card -->
+  <g transform="translate(100, 215)" filter="url(#tattooShadow)">
+    <rect width="1000" height="400" rx="28" fill="#12121c" stroke="#f59e0b" stroke-opacity="0.3" stroke-width="1.5"/>
+
+    <!-- Studio Parchment / Skin Tone Board Inner -->
+    <rect x="25" y="25" width="950" height="350" rx="20" fill="#0b0b12" stroke="#ffffff" stroke-opacity="0.06"/>
+
+    <!-- Large Elegant Script Lettering Display: "Amor Vincit Omnia" -->
+    <g transform="translate(500, 140)" text-anchor="middle">
+      <text y="0" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-style="italic" font-weight="700" fill="url(#inkGold)" letter-spacing="3">𝒯𝒶𝓉𝓉𝑜𝑜 𝐿𝑒𝓉𝓉𝑒𝓇𝒾𝓃𝑔</text>
+      <text y="55" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#94a3b8" letter-spacing="6">𝕲𝖔𝖙𝖍𝖎𝖈 &amp;bull; 𝓒𝓱𝓲𝓬𝓪𝓷𝓸 &amp;bull; 𝒮𝒸𝓇𝒾𝓅𝓉</text>
+    </g>
+
+    <!-- 4 Tattoo Style Showcase Tiles Below -->
+    <g transform="translate(60, 260)">
+      
+      <g transform="translate(0, 0)">
+        <rect width="205" height="70" rx="14" fill="#181824" stroke="#f59e0b" stroke-opacity="0.3"/>
+        <text x="20" y="26" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#fbbf24" letter-spacing="1">SCHREIBSCHRIFT</text>
+        <text x="20" y="52" font-family="Georgia, serif" font-size="17" font-style="italic" font-weight="700" fill="#ffffff">𝒩𝒶𝓂𝑒 &amp; 𝒟𝒶𝓉𝓊𝓂</text>
+      </g>
+
+      <g transform="translate(225, 0)">
+        <rect width="205" height="70" rx="14" fill="#181824" stroke="#d97706" stroke-opacity="0.3"/>
+        <text x="20" y="26" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#f59e0b" letter-spacing="1">KALLIGRAFIE</text>
+        <text x="20" y="52" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#ffffff">𝓔𝓵𝓮𝓰𝓪𝓷𝓽 𝓢𝓽𝔂𝓵𝓮</text>
+      </g>
+
+      <g transform="translate(450, 0)">
+        <rect width="205" height="70" rx="14" fill="#181824" stroke="#ffffff" stroke-opacity="0.15"/>
+        <text x="20" y="26" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#e2e8f0" letter-spacing="1">GOTHIC / FRAKTUR</text>
+        <text x="20" y="52" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#ffffff">𝕭𝖑𝖆𝖈𝖐𝖑𝖊𝖙𝖙𝖊𝖗</text>
+      </g>
+
+      <g transform="translate(675, 0)">
+        <rect width="205" height="70" rx="14" fill="#181824" stroke="#38bdf8" stroke-opacity="0.3"/>
+        <text x="20" y="26" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#38bdf8" letter-spacing="1">HANDSCHRIFT</text>
+        <text x="20" y="52" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#ffffff">𝔈𝔯𝔦𝔫𝔫𝔢𝔯𝔲𝔫𝔤</text>
+      </g>
+    </g>
+  </g>
+</svg>

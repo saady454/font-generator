@@ -1,0 +1,67 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { BLOG_POSTS } from '../../data/blog-posts';
+
+const posts = Object.values(BLOG_POSTS);
+---
+
+<Layout
+  title="Magazin & E-E-A-T Ratgeber – Unicode, Typografie & BFSG | Schriftarten.io"
+  description="Lerne alles über Unicode-Typografie, digitale Barrierefreiheit (BFSG), Schriftarten-Geschichte (Fraktur) und Troubleshooting für Social Media."
+  canonicalUrl="/blog"
+>
+  <main class="py-16 bg-[#0a0a08]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-stone-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Startseite</a>
+        <span>/</span>
+        <span class="text-stone-300 font-semibold">Magazin & Ratgeber</span>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
+          <span>📖 E-E-A-T Wissenszentrum</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          Typografie, Unicode & Ratgeber
+        </h1>
+        <p class="mt-4 text-base text-stone-300 max-w-2xl leading-relaxed">
+          Fundierte Artikel über digitale Barrierefreiheit (BFSG), die Funktionsweise von Unicode-Generatoren, historische Frakturschriften und Sicherheit im Netz.
+        </p>
+      </div>
+
+      <!-- Articles Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {posts.map((post) => (
+          <article class="bg-[#141412] border border-white/10 hover:border-amber-500/40 rounded-3xl p-6 sm:p-8 transition-all hover:-translate-y-1 flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between text-xs text-stone-400 mb-4">
+                <span class="px-2.5 py-1 rounded-full bg-amber-500/15 text-amber-400 font-bold text-[11px]">
+                  {post.category}
+                </span>
+                <span>{post.readTime}</span>
+              </div>
+
+              <h2 class="text-lg sm:text-xl font-bold text-white group-hover:text-amber-400 transition-colors mb-3 leading-snug">
+                <a href={`/blog/${post.slug}`} class="focus:outline-none">
+                  {post.title}
+                </a>
+              </h2>
+
+              <p class="text-xs sm:text-sm text-stone-300 leading-relaxed mb-6">
+                {post.teaser}
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs font-bold text-amber-400 group-hover:text-amber-300">
+              <span>Vollständigen Artikel lesen</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </main>
+</Layout>

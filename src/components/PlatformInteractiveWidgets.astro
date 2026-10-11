@@ -1,0 +1,395 @@
+---
+import type { PlatformWidgetsConfig } from '../data/platform-widgets';
+
+interface Props {
+  widgetsData: PlatformWidgetsConfig;
+  platformId: string;
+}
+
+const { widgetsData, platformId } = Astro.props;
+const { ideasWidget, symbolWidget, emojiWidget } = widgetsData;
+
+const initialCategory = ideasWidget.categories[0]?.id || 'all';
+const initialSuggestions = ideasWidget.suggestions[initialCategory] || [];
+
+const initialEmojiPkg = emojiWidget.packages[0];
+---
+
+<div class="platform-widgets-wrapper space-y-8 w-full" data-platform={platformId}>
+  <!-- ========================================================= -->
+  <!-- WIDGET 1: Platform Ideas Generator -->
+  <!-- ========================================================= -->
+  <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-xl">
+    <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+      <h2 class="text-xl font-bold text-white flex items-center gap-2">
+        <span>✨</span> {ideasWidget.title}
+      </h2>
+      {ideasWidget.badgeText && (
+        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400">
+          {ideasWidget.badgeText}
+        </span>
+      )}
+    </div>
+    <p class="text-xs sm:text-sm text-stone-400 mb-6">
+      {ideasWidget.description}
+    </p>
+
+    <!-- Category Pills -->
+    <div class="flex flex-wrap gap-2 mb-6 ideas-category-pills" role="tablist">
+      {ideasWidget.categories.map((cat, idx) => (
+        <button
+          type="button"
+          class={`idea-cat-pill px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+            idx === 0
+              ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20 active-idea-pill'
+              : 'bg-[#0a0a08] text-stone-300 hover:text-white border border-white/10 hover:border-amber-500/30'
+          }`}
+          data-category={cat.id}
+        >
+          <span>{cat.icon}</span>
+          <span>{cat.label}</span>
+        </button>
+      ))}
+    </div>
+
+    <!-- Ideas List Display -->
+    <div class="space-y-3 ideas-suggestions-container">
+      {initialSuggestions.map((idea) => (
+        <div class="p-3.5 sm:p-4 rounded-2xl bg-[#0a0a08] border border-white/5 hover:border-amber-500/30 transition-all flex items-center justify-between gap-3 group">
+          <span class="text-xs sm:text-sm text-stone-200 font-medium whitespace-pre-line break-all select-all font-mono">
+            {idea}
+          </span>
+          <button
+            type="button"
+            class="btn-copy-idea shrink-0 px-3.5 py-1.5 rounded-lg bg-white/5 hover:bg-amber-500 hover:text-black border border-white/10 hover:border-amber-500 text-xs font-bold text-stone-300 transition-all"
+            data-text={idea}
+            title="In Zwischenablage kopieren"
+          >
+            Kopieren
+          </button>
+        </div>
+      ))}
+    </div>
+
+    <!-- Accuracy Disclaimer Note -->
+    {ideasWidget.disclaimer && (
+      <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-stone-500">
+        {ideasWidget.disclaimer}
+      </div>
+    )}
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- WIDGET 2: Symbol-Kombinationen Generator -->
+  <!-- ========================================================= -->
+  <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-xl">
+    <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+      <h2 class="text-xl font-bold text-white flex items-center gap-2">
+        <span>꧁</span> {symbolWidget.title}
+      </h2>
+      <a
+        href={symbolWidget.linkUrl}
+        class="text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1 transition-colors"
+      >
+        <span>{symbolWidget.linkLabel}</span>
+        <span>→</span>
+      </a>
+    </div>
+    <p class="text-xs sm:text-sm text-stone-400 mb-6">
+      {symbolWidget.description}
+    </p>
+
+    <!-- Text Input -->
+    <div class="mb-6">
+      <label class="block text-xs font-bold uppercase tracking-wider text-amber-400 mb-2">
+        {symbolWidget.inputLabel}
+      </label>
+      <input
+        type="text"
+        value={symbolWidget.defaultValue}
+        placeholder={symbolWidget.placeholder}
+        maxlength="40"
+        class="symbol-wrap-input w-full bg-[#0a0a08] border-2 border-white/10 focus:border-amber-500 rounded-xl px-4 py-3 text-white text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-amber-500/20 transition-all"
+      />
+    </div>
+
+    <!-- Live Combinations Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 symbol-combos-container">
+      <!-- Populated via script -->
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- WIDGET 3: Themen-Emoji-Pakete -->
+  <!-- ========================================================= -->
+  <div class="bg-[#141412] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-xl">
+    <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+      <h2 class="text-xl font-bold text-white flex items-center gap-2">
+        <span>🎭</span> {emojiWidget.title}
+      </h2>
+      {emojiWidget.badgeText && (
+        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400">
+          {emojiWidget.badgeText}
+        </span>
+      )}
+    </div>
+    <p class="text-xs sm:text-sm text-stone-400 mb-6">
+      {emojiWidget.description}
+    </p>
+
+    <!-- Category Pills for Emojis -->
+    <div class="flex flex-wrap gap-2 mb-6 emoji-category-pills" role="tablist">
+      {emojiWidget.packages.map((pkg, idx) => (
+        <button
+          type="button"
+          class={`emoji-cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+            idx === 0
+              ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20 active-emoji-pill'
+              : 'bg-[#0a0a08] text-stone-300 hover:text-white border border-white/10 hover:border-amber-500/30'
+          }`}
+          data-pkg-id={pkg.id}
+        >
+          <span>{pkg.icon}</span>
+          <span>{pkg.label}</span>
+        </button>
+      ))}
+    </div>
+
+    <!-- Active Emoji Set Display Card -->
+    <div class="p-5 sm:p-6 rounded-2xl bg-[#0a0a08] border border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center justify-center gap-3 flex-wrap text-2xl sm:text-3xl emoji-display-row">
+        {initialEmojiPkg.emojis.map((em) => (
+          <button
+            type="button"
+            class="single-emoji-btn p-2 rounded-xl bg-white/5 hover:bg-white/10 hover:scale-125 transition-all focus:outline-none"
+            data-emoji={em}
+            title={`"${em}" einzeln kopieren`}
+          >
+            {em}
+          </button>
+        ))}
+      </div>
+
+      <button
+        type="button"
+        class="btn-copy-all-emojis w-full sm:w-auto px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs sm:text-sm shadow-lg shadow-amber-500/20 hover:scale-105 active:scale-95 transition-all shrink-0 flex items-center justify-center gap-2"
+        data-text={initialEmojiPkg.emojis.join(' ')}
+      >
+        <span>📋</span>
+        <span>Alle kopieren</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Embedded JSON data for client-side interactivity -->
+<script define:vars={{ suggestionsData: ideasWidget.suggestions, emojiPackagesData: emojiWidget.packages, defaultPlaceholder: symbolWidget.placeholder }}>
+  // Helper for copying text to clipboard + trigger toast
+  async function copyToClipboard(text) {
+    if (!text) return;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const temp = document.createElement('textarea');
+        temp.value = text;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand('copy');
+        document.body.removeChild(temp);
+      }
+      window.dispatchEvent(new CustomEvent('show-toast'));
+    } catch (err) {
+      console.error('Clipboard copy failed:', err);
+    }
+  }
+
+  // WIDGET 1: Ideas Switcher & Copy
+  const ideaPills = document.querySelectorAll('.idea-cat-pill');
+  const ideasContainer = document.querySelector('.ideas-suggestions-container');
+
+  function renderIdeas(catId) {
+    if (!ideasContainer) return;
+    const items = suggestionsData[catId] || [];
+    ideasContainer.innerHTML = items
+      .map(
+        (idea) => `
+        <div class="p-3.5 sm:p-4 rounded-2xl bg-[#0a0a08] border border-white/5 hover:border-amber-500/30 transition-all flex items-center justify-between gap-3 group">
+          <span class="text-xs sm:text-sm text-stone-200 font-medium whitespace-pre-line break-all select-all font-mono">${idea}</span>
+          <button
+            type="button"
+            class="btn-copy-idea shrink-0 px-3.5 py-1.5 rounded-lg bg-white/5 hover:bg-amber-500 hover:text-black border border-white/10 hover:border-amber-500 text-xs font-bold text-stone-300 transition-all"
+            data-text="${idea.replace(/"/g, '&quot;')}"
+            title="In Zwischenablage kopieren"
+          >
+            Kopieren
+          </button>
+        </div>
+      `
+      )
+      .join('');
+  }
+
+  ideaPills.forEach((pill) => {
+    pill.addEventListener('click', () => {
+      ideaPills.forEach((p) => {
+        p.classList.remove('bg-amber-500', 'text-black', 'shadow-lg', 'shadow-amber-500/20', 'active-idea-pill');
+        p.classList.add('bg-[#0a0a08]', 'text-stone-300', 'border', 'border-white/10');
+      });
+      pill.classList.remove('bg-[#0a0a08]', 'text-stone-300', 'border', 'border-white/10');
+      pill.classList.add('bg-amber-500', 'text-black', 'shadow-lg', 'shadow-amber-500/20', 'active-idea-pill');
+
+      const cat = pill.getAttribute('data-category');
+      if (cat) renderIdeas(cat);
+    });
+  });
+
+  ideasContainer?.addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn-copy-idea');
+    if (btn) {
+      const text = btn.getAttribute('data-text');
+      if (text) {
+        copyToClipboard(text);
+        const origText = btn.textContent;
+        btn.textContent = 'Kopiert!';
+        btn.classList.add('bg-amber-500', 'text-black');
+        setTimeout(() => {
+          btn.textContent = origText;
+          btn.classList.remove('bg-amber-500', 'text-black');
+        }, 1500);
+      }
+    }
+  });
+
+  // WIDGET 2: Symbol Combos Live Wrapper
+  const symbolInput = document.querySelector('.symbol-wrap-input');
+  const combosContainer = document.querySelector('.symbol-combos-container');
+
+  const frameTemplates = [
+    (t) => `『 ${t} 』`,
+    (t) => `⋆｡°✩ ${t} ✩°｡⋆`,
+    (t) => `꧁༺ ${t} ༻꧂`,
+    (t) => `✦ ${t} ✦`,
+    (t) => `【 ${t} 】`,
+    (t) => `『${t}⌗』`,
+    (t) => `┊ 𓆩 ${t} 𓆪 ┊`,
+    (t) => `░▒▓ ${t} ▓▒░`,
+    (t) => `✧･ﾟ: * ${t} *:･ﾟ✧`,
+    (t) => `༺ ${t} ༻`,
+  ];
+
+  function renderSymbolCombinations() {
+    if (!combosContainer) return;
+    const text = symbolInput?.value.trim() || defaultPlaceholder || 'Name';
+    combosContainer.innerHTML = frameTemplates
+      .map((tmpl) => {
+        const framed = tmpl(text);
+        return `
+          <div class="p-3.5 rounded-2xl bg-[#0a0a08] border border-white/5 hover:border-amber-500/30 transition-all flex items-center justify-between gap-2.5">
+            <span class="text-xs sm:text-sm text-stone-100 font-semibold truncate select-all font-mono">${framed}</span>
+            <button
+              type="button"
+              class="btn-copy-combo shrink-0 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-amber-500 hover:text-black border border-white/10 hover:border-amber-500 text-xs font-bold text-stone-300 transition-all"
+              data-text="${framed.replace(/"/g, '&quot;')}"
+              title="Kombination kopieren"
+            >
+              Kopieren
+            </button>
+          </div>
+        `;
+      })
+      .join('');
+  }
+
+  symbolInput?.addEventListener('input', renderSymbolCombinations);
+  renderSymbolCombinations();
+
+  combosContainer?.addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn-copy-combo');
+    if (btn) {
+      const text = btn.getAttribute('data-text');
+      if (text) {
+        copyToClipboard(text);
+        const origText = btn.textContent;
+        btn.textContent = 'Kopiert!';
+        btn.classList.add('bg-amber-500', 'text-black');
+        setTimeout(() => {
+          btn.textContent = origText;
+          btn.classList.remove('bg-amber-500', 'text-black');
+        }, 1500);
+      }
+    }
+  });
+
+  // WIDGET 3: Emoji Packages Switcher & Copy
+  const emojiPills = document.querySelectorAll('.emoji-cat-pill');
+  const emojiDisplayRow = document.querySelector('.emoji-display-row');
+  const btnCopyAllEmojis = document.querySelector('.btn-copy-all-emojis');
+
+  const emojiMap = {};
+  emojiPackagesData.forEach((pkg) => {
+    emojiMap[pkg.id] = pkg.emojis;
+  });
+
+  function renderEmojiPackage(pkgId) {
+    if (!emojiDisplayRow) return;
+    const emojis = emojiMap[pkgId] || [];
+    emojiDisplayRow.innerHTML = emojis
+      .map(
+        (em) => `
+        <button
+          type="button"
+          class="single-emoji-btn p-2 rounded-xl bg-white/5 hover:bg-white/10 hover:scale-125 transition-all focus:outline-none"
+          data-emoji="${em}"
+          title="\"${em}\" einzeln kopieren"
+        >
+          ${em}
+        </button>
+      `
+      )
+      .join('');
+
+    if (btnCopyAllEmojis) {
+      btnCopyAllEmojis.setAttribute('data-text', emojis.join(' '));
+    }
+  }
+
+  emojiPills.forEach((pill) => {
+    pill.addEventListener('click', () => {
+      emojiPills.forEach((p) => {
+        p.classList.remove('bg-amber-500', 'text-black', 'shadow-lg', 'shadow-amber-500/20', 'active-emoji-pill');
+        p.classList.add('bg-[#0a0a08]', 'text-stone-300', 'border', 'border-white/10');
+      });
+      pill.classList.remove('bg-[#0a0a08]', 'text-stone-300', 'border', 'border-white/10');
+      pill.classList.add('bg-amber-500', 'text-black', 'shadow-lg', 'shadow-amber-500/20', 'active-emoji-pill');
+
+      const pkgId = pill.getAttribute('data-pkg-id');
+      if (pkgId) renderEmojiPackage(pkgId);
+    });
+  });
+
+  emojiDisplayRow?.addEventListener('click', (e) => {
+    const btn = e.target.closest('.single-emoji-btn');
+    if (btn) {
+      const emoji = btn.getAttribute('data-emoji');
+      if (emoji) {
+        copyToClipboard(emoji);
+      }
+    }
+  });
+
+  btnCopyAllEmojis?.addEventListener('click', () => {
+    const text = btnCopyAllEmojis.getAttribute('data-text');
+    if (text) {
+      copyToClipboard(text);
+      const span = btnCopyAllEmojis.querySelector('span:last-child');
+      if (span) {
+        const origText = span.textContent;
+        span.textContent = 'Kopiert!';
+        setTimeout(() => {
+          span.textContent = origText;
+        }, 1500);
+      }
+    }
+  });
+</script>

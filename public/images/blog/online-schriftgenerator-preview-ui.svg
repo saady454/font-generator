@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="uiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d1a"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="uiGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <filter id="uiShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#uiBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#38bdf8" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#818cf8" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-180" y="-16" width="360" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">BENUTZEROBERFLÄCHE</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      So funktioniert der <tspan fill="url(#uiGrad)">Online-Schriftgenerator</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Echtzeit-Umwandlung von normalem Text in dutzende Unicode-Stile mit 1-Klick-Kopierfunktion
+    </text>
+  </g>
+
+  <!-- Browser UI Mockup -->
+  <g transform="translate(100, 140)" filter="url(#uiShadow)">
+    <rect width="1000" height="465" rx="20" fill="#111827" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+
+    <!-- Browser Bar -->
+    <rect width="1000" height="44" rx="20" fill="#1e293b"/>
+    <circle cx="25" cy="22" r="6" fill="#ef4444"/>
+    <circle cx="45" cy="22" r="6" fill="#f59e0b"/>
+    <circle cx="65" cy="22" r="6" fill="#22c55e"/>
+    
+    <rect x="180" y="8" width="640" height="28" rx="8" fill="#0b1120"/>
+    <text x="500" y="26" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">https://schriftarten.netlify.app</text>
+
+    <!-- Main Workspace -->
+    <g transform="translate(30, 65)">
+      
+      <!-- Input Field -->
+      <rect width="940" height="60" rx="14" fill="#0b1120" stroke="#38bdf8" stroke-opacity="0.5" stroke-width="1.5"/>
+      <text x="25" y="38" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">Hallo Welt 🌟</text>
+      <text x="915" y="36" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#38bdf8">Eingabe (Normaler Text)</text>
+
+      <!-- 4 Font Output Cards Grid (2x2) -->
+      <g transform="translate(0, 80)">
+        
+        <!-- Card 1: Fette Schrift -->
+        <g transform="translate(0, 0)">
+          <rect width="455" height="135" rx="14" fill="#161f30" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="20" y="30" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#38bdf8">FETTE SCHRIFT (MATHEMATICAL BOLD)</text>
+          <text x="20" y="75" font-family="system-ui, sans-serif" font-size="24" font-weight="900" fill="#ffffff">𝐇𝐚𝐥𝐥𝐨 𝐖𝐞𝐥𝐭 🌟</text>
+          
+          <rect x="330" y="85" width="105" height="34" rx="8" fill="#38bdf8"/>
+          <text x="382" y="106" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#000000">Kopieren 📋</text>
+        </g>
+
+        <!-- Card 2: Kursive Schrift -->
+        <g transform="translate(485, 0)">
+          <rect width="455" height="135" rx="14" fill="#161f30" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="20" y="30" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#818cf8">KURSIVE SCHRIFT (ITALIC SCRIPT)</text>
+          <text x="20" y="75" font-family="Georgia, serif" font-size="24" font-weight="bold" font-style="italic" fill="#ffffff">𝓗𝓪𝓵𝓵𝓸 𝓦𝓮𝓵𝓽 🌟</text>
+          
+          <rect x="330" y="85" width="105" height="34" rx="8" fill="#818cf8"/>
+          <text x="382" y="106" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#ffffff">Kopieren 📋</text>
+        </g>
+
+        <!-- Card 3: Gotische Schrift (Fraktur) -->
+        <g transform="translate(0, 150)">
+          <rect width="455" height="135" rx="14" fill="#161f30" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="20" y="30" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#fbbf24">GOTISCHE SCHRIFT (FRAKTUR)</text>
+          <text x="20" y="75" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="#ffffff">𝕳𝖆𝖑𝖑𝖔 𝖂𝖊𝖑𝖙 🌟</text>
+          
+          <rect x="330" y="85" width="105" height="34" rx="8" fill="#fbbf24"/>
+          <text x="382" y="106" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#000000">Kopieren 📋</text>
+        </g>
+
+        <!-- Card 4: Bubble Schrift -->
+        <g transform="translate(485, 150)">
+          <rect width="455" height="135" rx="14" fill="#161f30" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="20" y="30" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#22c55e">BUBBLE SCHRIFT (CIRCLED LETTERS)</text>
+          <text x="20" y="75" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#ffffff">Ⓗⓐⓛⓛⓞ Ⓦⓔⓛⓣ 🌟</text>
+          
+          <rect x="330" y="85" width="105" height="34" rx="8" fill="#22c55e"/>
+          <text x="382" y="106" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#000000">Kopieren 📋</text>
+        </g>
+
+      </g>
+    </g>
+
+  </g>
+</svg>

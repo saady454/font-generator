@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="compBgSig5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a14"/>
+      <stop offset="50%" stop-color="#121526"/>
+      <stop offset="100%" stop-color="#060810"/>
+    </linearGradient>
+    <filter id="tileShadowSig5" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#compBgSig5)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="200" cy="160" r="220" fill="#38bdf8" fill-opacity="0.08"/>
+  <circle cx="1000" cy="480" r="240" fill="#818cf8" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-160" y="-16" width="320" height="32" rx="16" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">STIL-ÜBERSICHT</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Die 5 wichtigsten <tspan fill="#38bdf8">Signatur-Stile</tspan> für deinen Namen
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Klassisch, Modern, Akademisch, Unterstrichen und Fette Signatur im direkten Vergleich
+    </text>
+  </g>
+
+  <!-- 5 Vertical Cards Grid -->
+  <g transform="translate(50, 155)">
+    
+    <!-- Card 1: Klassisch -->
+    <g transform="translate(0, 0)" filter="url(#tileShadowSig5)">
+      <rect width="205" height="440" rx="18" fill="#121728" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="18" width="105" height="24" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="67" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#38bdf8">KLASSISCH</text>
+
+      <rect x="15" y="55" width="175" height="150" rx="12" fill="#080c16" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="102" y="138" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-style="italic" font-weight="700" fill="#38bdf8">𝓙. 𝓜𝓾𝓼𝓽𝓮𝓻</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Elegant &amp; fließend</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Profile, persönliche Texte</text>
+      </g>
+
+      <rect x="15" y="355" width="175" height="60" rx="10" fill="#161c30"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#38bdf8">Geschwungener Look</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Klassische Handschrift</text>
+    </g>
+
+    <!-- Card 2: Modern -->
+    <g transform="translate(225, 0)" filter="url(#tileShadowSig5)">
+      <rect width="205" height="440" rx="18" fill="#121728" stroke="#818cf8" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="18" width="95" height="24" rx="6" fill="#818cf8" fill-opacity="0.15"/>
+      <text x="62" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#a5b4fc">MODERN</text>
+
+      <rect x="15" y="55" width="175" height="150" rx="12" fill="#080c16" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="102" y="138" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#a5b4fc">ᴊ. ᴍᴜsᴛᴇʀ</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Klar &amp; minimalistisch</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#a5b4fc">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Business-Profile, Tech</text>
+      </g>
+
+      <rect x="15" y="355" width="175" height="60" rx="10" fill="#161c30"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#a5b4fc">Small Caps Look</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Zurückhaltend &amp; Clean</text>
+    </g>
+
+    <!-- Card 3: Akademisch -->
+    <g transform="translate(450, 0)" filter="url(#tileShadowSig5)">
+      <rect width="205" height="440" rx="18" fill="#121728" stroke="#fbbf24" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="18" width="115" height="24" rx="6" fill="#fbbf24" fill-opacity="0.15"/>
+      <text x="72" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#fbbf24">AKADEMISCH</text>
+
+      <rect x="15" y="55" width="175" height="150" rx="12" fill="#080c16" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="102" y="138" text-anchor="middle" font-family="'Times New Roman', serif" font-size="22" font-style="italic" font-weight="700" fill="#fbbf24">𝑱. 𝑴𝒖𝒔𝒕𝒆𝒓</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Seriös &amp; traditionell</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Professionelle Namen</text>
+      </g>
+
+      <rect x="15" y="355" width="175" height="60" rx="10" fill="#161c30"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#fbbf24">Serifen-Italic</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Vornehmer Auftritt</text>
+    </g>
+
+    <!-- Card 4: Unterstrichen -->
+    <g transform="translate(675, 0)" filter="url(#tileShadowSig5)">
+      <rect width="205" height="440" rx="18" fill="#121728" stroke="#22c55e" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="18" width="125" height="24" rx="6" fill="#22c55e" fill-opacity="0.15"/>
+      <text x="77" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#4ade80">UNTERSTRICHEN</text>
+
+      <rect x="15" y="55" width="175" height="150" rx="12" fill="#080c16" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="102" y="138" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#4ade80">J̲.̲ ̲M̲u̲s̲t̲e̲r̲</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Markant &amp; dekorativ</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#4ade80">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Social Media &amp; Posts</text>
+      </g>
+
+      <rect x="15" y="355" width="175" height="60" rx="10" fill="#161c30"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#4ade80">Combining Underline</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Unterstrich-Effekt</text>
+    </g>
+
+    <!-- Card 5: Fette Signatur -->
+    <g transform="translate(900, 0)" filter="url(#tileShadowSig5)">
+      <rect width="195" height="440" rx="18" fill="#121728" stroke="#ec4899" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="18" width="115" height="24" rx="6" fill="#ec4899" fill-opacity="0.15"/>
+      <text x="72" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#f472b6">FETTE SIGNATUR</text>
+
+      <rect x="15" y="55" width="165" height="150" rx="12" fill="#080c16" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="97" y="138" text-anchor="middle" font-family="Impact, sans-serif" font-size="22" font-weight="900" fill="#f472b6">𝑱. 𝑴𝒖𝒔𝒕𝒆𝒓</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Auffällig &amp; kraftvoll</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f472b6">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Branding, Kreatives</text>
+      </g>
+
+      <rect x="15" y="355" width="165" height="60" rx="10" fill="#161c30"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#f472b6">Bold Lettering</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Starker Kontrast</text>
+    </g>
+
+  </g>
+</svg>

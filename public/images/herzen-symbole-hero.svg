@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="heartHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0712"/>
+      <stop offset="50%" stop-color="#1f0f24"/>
+      <stop offset="100%" stop-color="#08040a"/>
+    </linearGradient>
+    <linearGradient id="heartPinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="50%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+    <linearGradient id="heartPurpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+    <filter id="heartHeroShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#000000" flood-opacity="0.85"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#heartHeroBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="220" r="300" fill="#f43f5e" fill-opacity="0.12"/>
+  <circle cx="940" cy="450" r="280" fill="#c084fc" fill-opacity="0.10"/>
+  <circle cx="600" cy="300" r="220" fill="#fb7185" fill-opacity="0.05"/>
+
+  <!-- Top Badge -->
+  <g transform="translate(600, 55)" text-anchor="middle">
+    <rect x="-190" y="-18" width="380" height="36" rx="18" fill="#2d1230" stroke="#f43f5e" stroke-opacity="0.5" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#fb7185" letter-spacing="2">💕 HERZEN SYMBOLE STUDIO</text>
+  </g>
+
+  <!-- Central Title -->
+  <text x="600" y="132" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="38" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+    Herzen Symbole: <tspan fill="url(#heartPinkGrad)">♥ ♡ ❤ 💕 zum Kopieren</tspan>
+  </text>
+  <text x="600" y="168" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#94a3b8">
+    Schöne Herzzeichen, Liebes-Symbole &amp; Emojis mit 1 Klick in die Zwischenablage
+  </text>
+
+  <!-- Main Showcase Container -->
+  <g transform="translate(90, 205)" filter="url(#heartHeroShadow)">
+    <rect width="1020" height="420" rx="28" fill="#180e1c" stroke="#f43f5e" stroke-opacity="0.35" stroke-width="1.5"/>
+
+    <!-- Inner Grid Area -->
+    <rect x="25" y="25" width="970" height="370" rx="20" fill="#0d0710" stroke="#ffffff" stroke-opacity="0.05"/>
+
+    <!-- Left: Heart Showcase Card Mockup -->
+    <g transform="translate(50, 45)">
+      <rect width="280" height="330" rx="20" fill="#221227" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5"/>
+      
+      <!-- Card Header -->
+      <g transform="translate(18, 18)">
+        <circle cx="24" cy="24" r="23" fill="none" stroke="url(#heartPinkGrad)" stroke-width="2.5"/>
+        <circle cx="24" cy="24" r="20" fill="#32163a"/>
+        <text x="24" y="32" text-anchor="middle" font-size="18" fill="#f43f5e">♥</text>
+        <text x="58" y="18" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#ffffff">Herzzeichen</text>
+        <text x="58" y="34" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fb7185">1-Klick Copy &amp; Paste</text>
+      </g>
+
+      <!-- Symbol Quick Display Grid -->
+      <g transform="translate(18, 70)">
+        <rect width="244" height="175" rx="12" fill="#120916" stroke="#f43f5e" stroke-opacity="0.25"/>
+        
+        <text x="12" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#fb7185" letter-spacing="1">BELIEBTE HERZEN</text>
+        
+        <!-- Big Hearts Display -->
+        <g transform="translate(12, 38)" font-size="28">
+          <text x="15" y="30" fill="#ffffff">♡</text>
+          <text x="65" y="30" fill="#f43f5e">♥</text>
+          <text x="115" y="30" fill="#fb7185">❤</text>
+          <text x="165" y="30" fill="#c084fc">❥</text>
+
+          <text x="15" y="75" fill="#f472b6">❦</text>
+          <text x="65" y="75" fill="#f43f5e">❣</text>
+          <text x="115" y="75" fill="#f43f5e">💕</text>
+          <text x="165" y="75" fill="#fb7185">💖</text>
+        </g>
+
+        <!-- Aesthetic Hearts Banner -->
+        <rect x="12" y="132" width="220" height="30" rx="8" fill="#2d1533"/>
+        <text x="122" y="152" text-anchor="middle" font-size="13" fill="#fb7185">୨♡୧ <tspan fill="#ffffff" font-size="12">Aesthetic Heart</tspan> ୨♡୧</text>
+      </g>
+
+      <!-- Action Button -->
+      <g transform="translate(18, 265)">
+        <rect width="244" height="36" rx="10" fill="url(#heartPinkGrad)"/>
+        <text x="122" y="23" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#ffffff">♥ Symbol kopiert! 📋</text>
+      </g>
+    </g>
+
+    <!-- Right: Heart Combinations &amp; Decor Showcase Card -->
+    <g transform="translate(365, 45)">
+      <rect width="605" height="330" rx="20" fill="#221227" stroke="#ffffff" stroke-opacity="0.08"/>
+
+      <!-- Input Simulation -->
+      <g transform="translate(25, 20)">
+        <text x="0" y="14" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#fb7185" letter-spacing="1">TEXT MIT HERZEN DEKORIEREN</text>
+        <rect x="0" y="24" width="555" height="42" rx="10" fill="#0d0710" stroke="#f43f5e" stroke-opacity="0.4"/>
+        <text x="16" y="50" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#ffffff">Mia</text>
+        <rect x="445" y="32" width="100" height="26" rx="6" fill="url(#heartPinkGrad)"/>
+        <text x="495" y="49" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#ffffff">♥ Kopieren</text>
+      </g>
+
+      <!-- Style Grid -->
+      <g transform="translate(25, 95)">
+        
+        <!-- Combination 1: Leeres Herz -->
+        <g transform="translate(0, 0)">
+          <rect width="265" height="46" rx="10" fill="#2a1430" stroke="#fb7185" stroke-opacity="0.3"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#fb7185">MINIMALISTISCHES WEISSES HERZ</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="15" font-weight="900" fill="#ffffff">♡ Mia ♡</text>
+          <rect x="200" y="10" width="55" height="26" rx="6" fill="#f43f5e" fill-opacity="0.2"/>
+          <text x="227" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#fb7185">Kopie</text>
+        </g>
+
+        <!-- Combination 2: Ausgefülltes Herz -->
+        <g transform="translate(285, 0)">
+          <rect width="270" height="46" rx="10" fill="#2a1430" stroke="#f43f5e" stroke-opacity="0.3"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#f43f5e">KLASSISCHES SCHWARZES HERZ</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="15" font-weight="900" fill="#ffffff">♥ Mia ♥</text>
+          <rect x="205" y="10" width="55" height="26" rx="6" fill="#f43f5e" fill-opacity="0.2"/>
+          <text x="232" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#f43f5e">Kopie</text>
+        </g>
+
+        <!-- Combination 3: Aesthetic Schleife -->
+        <g transform="translate(0, 56)">
+          <rect width="265" height="46" rx="10" fill="#2a1430" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#c084fc">SCHLEIFEN-HERZ (AESTHETIC)</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">୨♡୧ Mia ୨♡୧</text>
+          <rect x="200" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="227" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Combination 4: Schmetterling &amp; Engel -->
+        <g transform="translate(285, 56)">
+          <rect width="270" height="46" rx="10" fill="#2a1430" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#f472b6">ENGEL- &amp; FLÜGEL-HERZ</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">˚ʚ♡ɞ˚ Mia ˚ʚ♡ɞ˚</text>
+          <rect x="205" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="232" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Combination 5: Magische Sterne &amp; Herz -->
+        <g transform="translate(0, 112)">
+          <rect width="265" height="46" rx="10" fill="#2a1430" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#fb7185">FUNKELNDES KOSMISCHES HERZ</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">⋆｡♡˚ Mia ˚♡｡⋆</text>
+          <rect x="200" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="227" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Combination 6: Farbige Emojis -->
+        <g transform="translate(285, 112)">
+          <rect width="270" height="46" rx="10" fill="#2a1430" stroke="#ffffff" stroke-opacity="0.08"/>
+          <text x="12" y="18" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#f43f5e">EMOJIS &amp; SPARKLE</text>
+          <text x="12" y="36" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">💕 Mia 💖</text>
+          <rect x="205" y="10" width="55" height="26" rx="6" fill="#ffffff" fill-opacity="0.08"/>
+          <text x="232" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Kopie</text>
+        </g>
+
+        <!-- Full width Bottom CTA -->
+        <g transform="translate(0, 168)">
+          <rect width="555" height="46" rx="10" fill="url(#heartPinkGrad)"/>
+          <text x="277" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#ffffff">💕 Über 100+ Herzen Symbole &amp; Kombinationen jetzt kopieren</text>
+        </g>
+
+      </g>
+    </g>
+  </g>
+</svg>

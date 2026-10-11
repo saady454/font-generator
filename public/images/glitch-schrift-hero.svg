@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="glitchHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07090f"/>
+      <stop offset="50%" stop-color="#0f1422"/>
+      <stop offset="100%" stop-color="#05070c"/>
+    </linearGradient>
+    <linearGradient id="cyanRedGlitch" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <filter id="glitchGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#glitchHeroBg)"/>
+
+  <!-- Cyberpunk Glows -->
+  <circle cx="280" cy="200" r="280" fill="#06b6d4" fill-opacity="0.12"/>
+  <circle cx="920" cy="460" r="300" fill="#ec4899" fill-opacity="0.12"/>
+
+  <!-- Digital Scanlines -->
+  <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="1">
+    <line x1="0" y1="80" x2="1200" y2="80"/>
+    <line x1="0" y1="160" x2="1200" y2="160"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="320" x2="1200" y2="320"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="480" x2="1200" y2="480"/>
+    <line x1="0" y1="560" x2="1200" y2="560"/>
+  </g>
+
+  <!-- Header Badge -->
+  <g transform="translate(600, 60)" text-anchor="middle">
+    <rect x="-160" y="-18" width="320" height="36" rx="18" fill="#06b6d4" fill-opacity="0.15" stroke="#06b6d4" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="800" fill="#38bdf8" letter-spacing="2">⚡ ZALGO &amp; CYBERPUNK LAB</text>
+  </g>
+
+  <!-- Central Title -->
+  <text x="600" y="140" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+    Glitch Schrift: <tspan fill="url(#cyanRedGlitch)">Verzerrte Schrift kopieren</tspan>
+  </text>
+  <text x="600" y="175" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#94a3b8">
+    Zalgo-Effekte, Combining Marks &amp; gestörte Zeichen für Discord, TikTok, Gaming &amp; Bios
+  </text>
+
+  <!-- Big Futuristic Terminal Showcase Card -->
+  <g transform="translate(100, 215)" filter="url(#glitchGlow)">
+    <rect width="1000" height="400" rx="28" fill="#101524" stroke="#06b6d4" stroke-opacity="0.3" stroke-width="1.5"/>
+
+    <!-- Terminal Top Bar -->
+    <rect width="1000" height="52" rx="28" fill="#151b2e"/>
+    <rect y="28" width="1000" height="24" fill="#151b2e"/>
+    <circle cx="35" cy="26" r="6" fill="#ef4444" fill-opacity="0.8"/>
+    <circle cx="55" cy="26" r="6" fill="#eab308" fill-opacity="0.8"/>
+    <circle cx="75" cy="26" r="6" fill="#22c55e" fill-opacity="0.8"/>
+    <rect x="340" y="13" width="320" height="26" rx="13" fill="#090d16" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="500" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" font-weight="500">schriftarten.io/schrift/glitch-schrift</text>
+
+    <!-- Main Glitch Offset Centerpiece -->
+    <g transform="translate(500, 160)" text-anchor="middle">
+      <!-- Red Glitch Layer (Offset Left) -->
+      <text x="-6" y="-3" font-family="Impact, 'Arial Black', monospace" font-size="76" font-weight="900" fill="#ef4444" fill-opacity="0.7" letter-spacing="6">G̵L̵I̵T̵C̵H̵</text>
+      <!-- Cyan Glitch Layer (Offset Right) -->
+      <text x="6" y="3" font-family="Impact, 'Arial Black', monospace" font-size="76" font-weight="900" fill="#06b6d4" fill-opacity="0.7" letter-spacing="6">G̵L̵I̵T̵C̵H̵</text>
+      <!-- Main White Text -->
+      <text x="0" y="0" font-family="Impact, 'Arial Black', monospace" font-size="76" font-weight="900" fill="#ffffff" letter-spacing="6">G̵L̵I̵T̵C̵H̵</text>
+      
+      <text y="58" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#38bdf8" letter-spacing="4">Z̵A̵L̵G̵O̵ &amp;bull; C̵Y̵B̵E̵R̵P̵U̵N̵K̵ &amp;bull; H̵A̵C̵K̵E̵R̵</text>
+    </g>
+
+    <!-- 3 Level Indicators Below -->
+    <g transform="translate(70, 270)">
+      <g transform="translate(0, 0)">
+        <rect width="270" height="65" rx="14" fill="#090d16" stroke="#06b6d4" stroke-opacity="0.3"/>
+        <text x="20" y="26" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#38bdf8" letter-spacing="1">STUFE 1: LEICHTER GLITCH</text>
+        <text x="20" y="50" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#ffffff">G̵l̵i̵t̵c̵h̵ (Dezent)</text>
+      </g>
+
+      <g transform="translate(295, 0)">
+        <rect width="270" height="65" rx="14" fill="#090d16" stroke="#ec4899" stroke-opacity="0.3"/>
+        <text x="20" y="26" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#f472b6" letter-spacing="1">STUFE 2: MEDIUM ZALGO</text>
+        <text x="20" y="50" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#ffffff">G̶l̶i̶t̶c̶h̶ (Sichtbar)</text>
+      </g>
+
+      <g transform="translate(590, 0)">
+        <rect width="270" height="65" rx="14" fill="#090d16" stroke="#ef4444" stroke-opacity="0.3"/>
+        <text x="20" y="26" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#f87171" letter-spacing="1">STUFE 3: INTENSIV CHAOTISCH</text>
+        <text x="20" y="50" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#ffffff">G̷l̷i̷t̷c̷h̷ (Extreme)</text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="diffGothBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a10"/>
+      <stop offset="100%" stop-color="#121624"/>
+    </linearGradient>
+    <linearGradient id="diffCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#181e2e"/>
+      <stop offset="100%" stop-color="#0e121c"/>
+    </linearGradient>
+    <filter id="diffShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#diffGothBg)"/>
+
+  <!-- Title -->
+  <g transform="translate(600, 60)" text-anchor="middle">
+    <rect x="-190" y="-18" width="380" height="36" rx="18" fill="#d97706" fill-opacity="0.15" stroke="#d97706" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="sans-serif" font-size="13" font-weight="800" fill="#fbbf24" letter-spacing="1.5">TYPOGRAFISCHE UNTERSCHIEDE</text>
+    
+    <text y="55" font-family="sans-serif" font-size="32" font-weight="900" fill="#ffffff">
+      Fraktur, Blackletter, Old English &amp; Gothic
+    </text>
+    <text y="85" font-family="sans-serif" font-size="14" fill="#94a3b8">
+      Vier verwandte Schriftfamilien im direkten visuellen und historischen Vergleich
+    </text>
+  </g>
+
+  <!-- 4 Comparison Columns -->
+  <g transform="translate(60, 180)">
+    
+    <!-- Column 1: Fraktur -->
+    <g transform="translate(0, 0)" filter="url(#diffShadow)">
+      <rect width="250" height="380" rx="18" fill="url(#diffCardGrad)" stroke="#d97706" stroke-opacity="0.4" stroke-width="1.5"/>
+      <rect x="20" y="20" width="90" height="24" rx="6" fill="#d97706" fill-opacity="0.2"/>
+      <text x="65" y="36" font-family="sans-serif" font-size="11" font-weight="800" fill="#fbbf24" text-anchor="middle">FRAKTUR</text>
+
+      <text x="125" y="110" font-family="serif" font-size="44" fill="#ffffff" text-anchor="middle">𝔅𝔲𝔠𝔥</text>
+      <text x="125" y="150" font-family="sans-serif" font-size="13" font-weight="700" fill="#fbbf24" text-anchor="middle">Gebrochene Linien</text>
+
+      <line x1="20" y1="180" x2="230" y2="180" stroke="#ffffff" stroke-opacity="0.08"/>
+
+      <g transform="translate(20, 205)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#ffffff">Eigenschaften:</text>
+        <text y="24">• Scharfe Brechungen</text>
+        <text y="48">• Feine Haarstriche</text>
+        <text y="72">• Deutscher Buchdruck</text>
+        <text y="96" fill="#fbbf24">• 16.–20. Jahrhundert</text>
+        <text y="125" font-size="11" fill="#94a3b8">Ideal für Namen &amp; Titel</text>
+      </g>
+    </g>
+
+    <!-- Column 2: Blackletter -->
+    <g transform="translate(275, 0)" filter="url(#diffShadow)">
+      <rect width="250" height="380" rx="18" fill="url(#diffCardGrad)" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+      <rect x="20" y="20" width="115" height="24" rx="6" fill="#fbbf24" fill-opacity="0.15"/>
+      <text x="77" y="36" font-family="sans-serif" font-size="11" font-weight="800" fill="#fbbf24" text-anchor="middle">BLACKLETTER</text>
+
+      <text x="125" y="110" font-family="serif" font-size="44" font-weight="900" fill="#ffffff" text-anchor="middle">𝕯𝖆𝖗𝖐</text>
+      <text x="125" y="150" font-family="sans-serif" font-size="13" font-weight="700" fill="#f59e0b" text-anchor="middle">Dunkle Textur</text>
+
+      <line x1="20" y1="180" x2="230" y2="180" stroke="#ffffff" stroke-opacity="0.08"/>
+
+      <g transform="translate(20, 205)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#ffffff">Eigenschaften:</text>
+        <text y="24">• Hohe Deckkraft</text>
+        <text y="48">• Eng gesetzte Lettern</text>
+        <text y="72">• Starker Kontrast</text>
+        <text y="96" fill="#f59e0b">• Internationale Sammelbezeichnung</text>
+        <text y="125" font-size="11" fill="#94a3b8">Gaming &amp; Clan-Tags</text>
+      </g>
+    </g>
+
+    <!-- Column 3: Old English -->
+    <g transform="translate(550, 0)" filter="url(#diffShadow)">
+      <rect width="250" height="380" rx="18" fill="url(#diffCardGrad)" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+      <rect x="20" y="20" width="110" height="24" rx="6" fill="#a855f7" fill-opacity="0.15"/>
+      <text x="75" y="36" font-family="sans-serif" font-size="11" font-weight="800" fill="#c084fc" text-anchor="middle">OLD ENGLISH</text>
+
+      <text x="125" y="110" font-family="serif" font-size="40" font-weight="700" fill="#ffffff" text-anchor="middle">𝕶𝖎𝖓𝖌</text>
+      <text x="125" y="150" font-family="sans-serif" font-size="13" font-weight="700" fill="#c084fc" text-anchor="middle">Mittelalterlich</text>
+
+      <line x1="20" y1="180" x2="230" y2="180" stroke="#ffffff" stroke-opacity="0.08"/>
+
+      <g transform="translate(20, 205)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#ffffff">Eigenschaften:</text>
+        <text y="24">• Reich verziert</text>
+        <text y="48">• Britischer Textura-Stil</text>
+        <text y="72">• Urkunden &amp; Wappen</text>
+        <text y="96" fill="#c084fc">• Manuskript-Tradition</text>
+        <text y="125" font-size="11" fill="#94a3b8">Fantasy &amp; Zitate</text>
+      </g>
+    </g>
+
+    <!-- Column 4: Modern Gothic -->
+    <g transform="translate(825, 0)" filter="url(#diffShadow)">
+      <rect width="255" height="380" rx="18" fill="url(#diffCardGrad)" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+      <rect x="20" y="20" width="125" height="24" rx="6" fill="#38bdf8" fill-opacity="0.2"/>
+      <text x="82" y="36" font-family="sans-serif" font-size="11" font-weight="800" fill="#38bdf8" text-anchor="middle">MODERN GOTHIC</text>
+
+      <text x="127" y="110" font-family="monospace" font-size="34" font-weight="900" fill="#ffffff" text-anchor="middle">༺ 𝕷𝖊𝖌𝖊𝖓𝖉 ༻</text>
+      <text x="127" y="150" font-family="sans-serif" font-size="13" font-weight="700" fill="#38bdf8" text-anchor="middle">Tattoo &amp; Streetwear</text>
+
+      <line x1="20" y1="180" x2="235" y2="180" stroke="#ffffff" stroke-opacity="0.08"/>
+
+      <g transform="translate(20, 205)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text y="0" font-weight="700" fill="#ffffff">Eigenschaften:</text>
+        <text y="24">• Chicano &amp; Urban Lettering</text>
+        <text y="48">• Dekorative Flügel &amp; Sterne</text>
+        <text y="72">• Dark Aesthetic Profile</text>
+        <text y="96" fill="#38bdf8">• Social Media Bios</text>
+        <text y="125" font-size="11" fill="#94a3b8">Instagram &amp; TikTok</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="compBgWave5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a14"/>
+      <stop offset="50%" stop-color="#0e1326"/>
+      <stop offset="100%" stop-color="#060810"/>
+    </linearGradient>
+    <filter id="tileShadowWave5" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#compBgWave5)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="200" cy="160" r="220" fill="#38bdf8" fill-opacity="0.08"/>
+  <circle cx="1000" cy="480" r="240" fill="#ec4899" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-160" y="-16" width="320" height="32" rx="16" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">STIL-VERGLEICH</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Die 5 wichtigsten <tspan fill="#38bdf8">Wellen-Schriftstile</tspan> im Überblick
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Wellen-Effekt, Geschwungen, Retro-Welle, Groovy und Dezente Welle im direkten Vergleich
+    </text>
+  </g>
+
+  <!-- 5 Vertical Cards Grid -->
+  <g transform="translate(50, 155)">
+    
+    <!-- Card 1: Wellen-Effekt -->
+    <g transform="translate(0, 0)" filter="url(#tileShadowWave5)">
+      <rect width="205" height="440" rx="18" fill="#12162a" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="18" width="130" height="24" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="80" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#38bdf8">WELLEN-EFFEKT</text>
+
+      <rect x="15" y="55" width="175" height="150" rx="12" fill="#080b16" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="102" y="138" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#38bdf8">W͠e͠l͠l͠e͠n͠</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Verspielt &amp; auffällig</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Bios, Namen &amp; Tags</text>
+      </g>
+
+      <rect x="15" y="355" width="175" height="60" rx="10" fill="#151b32"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#38bdf8">Double Tilde (U+0360)</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Kombinierte Wellen</text>
+    </g>
+
+    <!-- Card 2: Geschwungener Stil -->
+    <g transform="translate(225, 0)" filter="url(#tileShadowWave5)">
+      <rect width="205" height="440" rx="18" fill="#12162a" stroke="#a855f7" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="18" width="135" height="24" rx="6" fill="#a855f7" fill-opacity="0.15"/>
+      <text x="82" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#c084fc">GESCHWUNGEN</text>
+
+      <rect x="15" y="55" width="175" height="150" rx="12" fill="#080b16" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="102" y="138" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-style="italic" font-weight="700" fill="#c084fc">𝒮𝒸𝒽𝓌𝓊𝓃𝑔</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Weich &amp; kreativ</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#c084fc">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Kurze Sprüche &amp; Quotes</text>
+      </g>
+
+      <rect x="15" y="355" width="175" height="60" rx="10" fill="#151b32"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#c084fc">Harmonischer Fluss</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Elegante Rundungen</text>
+    </g>
+
+    <!-- Card 3: Retro-Welle -->
+    <g transform="translate(450, 0)" filter="url(#tileShadowWave5)">
+      <rect width="205" height="440" rx="18" fill="#12162a" stroke="#ec4899" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="18" width="115" height="24" rx="6" fill="#ec4899" fill-opacity="0.15"/>
+      <text x="72" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#f472b6">RETRO-WELLE</text>
+
+      <rect x="15" y="55" width="175" height="150" rx="12" fill="#080b16" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="102" y="138" text-anchor="middle" font-family="Impact, sans-serif" font-size="20" font-weight="700" fill="#f472b6">≋ 𝑹𝑬𝑻𝑹𝑶 ≋</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Nostalgisch &amp; markant</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f472b6">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Kreative Designs</text>
+      </g>
+
+      <rect x="15" y="355" width="175" height="60" rx="10" fill="#151b32"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#f472b6">70s / 80s Vintage</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Dreifach-Wellen (≋)</text>
+    </g>
+
+    <!-- Card 4: Groovy-Stil -->
+    <g transform="translate(675, 0)" filter="url(#tileShadowWave5)">
+      <rect width="205" height="440" rx="18" fill="#12162a" stroke="#fbbf24" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="18" width="115" height="24" rx="6" fill="#fbbf24" fill-opacity="0.15"/>
+      <text x="72" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#fbbf24">GROOVY-STIL</text>
+
+      <rect x="15" y="55" width="175" height="150" rx="12" fill="#080b16" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="102" y="138" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#fbbf24">~ 𝒢𝓇𝑜𝑜𝓋𝓎 ~</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Locker &amp; dynamisch</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Social Media Feeds</text>
+      </g>
+
+      <rect x="15" y="355" width="175" height="60" rx="10" fill="#151b32"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#fbbf24">Tilden-Rahmen</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Unbeschwerter Vibe</text>
+    </g>
+
+    <!-- Card 5: Dezente Welle -->
+    <g transform="translate(900, 0)" filter="url(#tileShadowWave5)">
+      <rect width="195" height="440" rx="18" fill="#12162a" stroke="#34d399" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="18" width="120" height="24" rx="6" fill="#34d399" fill-opacity="0.15"/>
+      <text x="75" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#34d399">DEZENTE WELLE</text>
+
+      <rect x="15" y="55" width="165" height="150" rx="12" fill="#080b16" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="97" y="138" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#34d399">〰️ 𝒲𝒶𝓋𝑒 〰️</text>
+
+      <g transform="translate(15, 230)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">WIRKUNG:</text>
+        <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Ruhig &amp; stilvoll</text>
+
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34d399">GEEIGNET FÜR:</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Kurze Profiltexte</text>
+      </g>
+
+      <rect x="15" y="355" width="165" height="60" rx="10" fill="#151b32"/>
+      <text x="25" y="380" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#34d399">Wavy Dash (U+3030)</text>
+      <text x="25" y="398" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Sanfte Trenner</text>
+    </g>
+
+  </g>
+</svg>

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="compHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d1a"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="compHeroGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <filter id="compHeroShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#compHeroBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="280" cy="220" r="280" fill="#38bdf8" fill-opacity="0.08"/>
+  <circle cx="920" cy="450" r="280" fill="#818cf8" fill-opacity="0.08"/>
+
+  <!-- Top Badge -->
+  <g transform="translate(600, 55)" text-anchor="middle">
+    <rect x="-220" y="-18" width="440" height="36" rx="18" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">TYPOGRAFIE-RATGEBER &amp;bull; FORMATVERGLEICH</text>
+  </g>
+
+  <!-- Central Title -->
+  <text x="600" y="132" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+    Schriftarten-Generator <tspan fill="url(#compHeroGrad)">vs. TTF &amp; OTF Schriftdatei</tspan>
+  </text>
+  <text x="600" y="168" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+    Copy-and-Paste Unicode-Stile für Social Media im Vergleich zu installierbaren Font-Dateien
+  </text>
+
+  <!-- Main Container Visual Mockup -->
+  <g transform="translate(100, 205)" filter="url(#compHeroShadow)">
+    <rect width="1000" height="420" rx="26" fill="#111827" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+
+    <!-- Inner Workspace Container -->
+    <rect x="25" y="25" width="950" height="370" rx="18" fill="#090d16" stroke="#ffffff" stroke-opacity="0.05"/>
+
+    <!-- Left: Online Schriftarten-Generator -->
+    <g transform="translate(55, 55)">
+      <rect width="410" height="310" rx="16" fill="#161f30" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      
+      <!-- Card Header -->
+      <g transform="translate(20, 20)">
+        <rect width="190" height="26" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+        <text x="95" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#38bdf8">1. SCHRIFTARTEN-GENERATOR</text>
+      </g>
+
+      <!-- Content Box -->
+      <g transform="translate(20, 60)">
+        <rect width="370" height="110" rx="12" fill="#0b1120" stroke="#38bdf8" stroke-opacity="0.2"/>
+        <text x="15" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">UNICODE TEXT-OUTPUT:</text>
+        <text x="15" y="68" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#ffffff">𝓗𝓪𝓵𝓵𝓸 𝓦𝓮𝓵𝓽 &amp;bull; 𝕳𝖆𝖑𝖑𝖔</text>
+        <text x="15" y="98" font-family="system-ui, sans-serif" font-size="11" fill="#38bdf8">✓ Direkt kopierbar &amp;bull; Keine Installation nötig</text>
+      </g>
+
+      <!-- Description -->
+      <g transform="translate(20, 185)">
+        <rect width="370" height="95" rx="12" fill="#1e293b"/>
+        <text x="15" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#38bdf8">OPTIMAL FÜR:</text>
+        <text x="15" y="52" font-family="system-ui, sans-serif" font-size="12" fill="#ffffff">Instagram Bios, WhatsApp Chats, TikTok &amp;</text>
+        <text x="15" y="72" font-family="system-ui, sans-serif" font-size="12" fill="#ffffff">Gaming-Nicknames in Discord oder CS2.</text>
+      </g>
+    </g>
+
+    <!-- Right: Echte Schriftdatei (.TTF / .OTF) -->
+    <g transform="translate(535, 55)">
+      <rect width="410" height="310" rx="16" fill="#161f30" stroke="#818cf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      
+      <!-- Card Header -->
+      <g transform="translate(20, 20)">
+        <rect width="180" height="26" rx="6" fill="#818cf8" fill-opacity="0.15"/>
+        <text x="90" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#818cf8">2. SCHRIFTDATEI (.TTF / .OTF)</text>
+      </g>
+
+      <!-- Content Box -->
+      <g transform="translate(20, 60)">
+        <rect width="370" height="110" rx="12" fill="#0b1120" stroke="#818cf8" stroke-opacity="0.2"/>
+        <text x="15" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">VEKTORBASIERTE TYPOGRAFIE:</text>
+        <text x="15" y="68" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#ffffff">Helvetica .OTF &amp;bull; Roboto .TTF</text>
+        <text x="15" y="98" font-family="system-ui, sans-serif" font-size="11" fill="#818cf8">✓ Im Betriebssystem / Word installierbar</text>
+      </g>
+
+      <!-- Description -->
+      <g transform="translate(20, 185)">
+        <rect width="370" height="95" rx="12" fill="#1e293b"/>
+        <text x="15" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#818cf8">OPTIMAL FÜR:</text>
+        <text x="15" y="52" font-family="system-ui, sans-serif" font-size="12" fill="#ffffff">Microsoft Word, Photoshop, InDesign, Logos,</text>
+        <text x="15" y="72" font-family="system-ui, sans-serif" font-size="12" fill="#ffffff">Bücher, Plakate &amp; komplexe Fließtexte.</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

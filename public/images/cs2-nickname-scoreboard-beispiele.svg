@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cs2SbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080a0f"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#05070a"/>
+    </linearGradient>
+    <linearGradient id="cs2SbGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="cs2SbShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#cs2SbBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="180" r="260" fill="#f59e0b" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#38bdf8" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-180" y="-16" width="360" height="32" rx="16" fill="#201810" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fbbf24" letter-spacing="2">SCOREBOARD &amp; KILLFEED CHECK</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      CS2 Nicknames im <tspan fill="url(#cs2SbGrad)">Scoreboard-Vergleich</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Warum kurze, prägnante Spielernamen im kompetitiven Matchmaking gewinnen
+    </text>
+  </g>
+
+  <!-- Scoreboard Container -->
+  <g transform="translate(100, 150)" filter="url(#cs2SbShadow)">
+    <rect width="1000" height="450" rx="24" fill="#0f1522" stroke="#f59e0b" stroke-opacity="0.35" stroke-width="1.5"/>
+
+    <!-- Scoreboard Header -->
+    <g transform="translate(30, 25)">
+      <rect width="940" height="40" rx="10" fill="#182236"/>
+      <text x="25" y="25" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fbbf24">SPIELERNAME (PROFIL)</text>
+      <text x="360" y="25" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#94a3b8">K / D / A</text>
+      <text x="540" y="25" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#94a3b8">ADR</text>
+      <text x="680" y="25" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#94a3b8">HS %</text>
+      <text x="820" y="25" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fbbf24">MVP ★</text>
+    </g>
+
+    <!-- Row 1: ShadowTap -->
+    <g transform="translate(30, 80)">
+      <rect width="940" height="58" rx="12" fill="#141c2c" stroke="#f59e0b" stroke-opacity="0.3"/>
+      <circle cx="28" cy="29" r="16" fill="#f59e0b" fill-opacity="0.2"/>
+      <text x="28" y="34" text-anchor="middle" font-size="13">👑</text>
+      <text x="56" y="35" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">ShadowTap</text>
+      <text x="360" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#34d399">24 / 8 / 4</text>
+      <text x="540" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#ffffff">118.4</text>
+      <text x="680" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#38bdf8">75.0%</text>
+      <text x="820" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#fbbf24">★★★★ (4)</text>
+    </g>
+
+    <!-- Row 2: ClutchAim -->
+    <g transform="translate(30, 148)">
+      <rect width="940" height="58" rx="12" fill="#090d15"/>
+      <circle cx="28" cy="29" r="16" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="28" y="34" text-anchor="middle" font-size="13">🎯</text>
+      <text x="56" y="35" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff">ClutchAim</text>
+      <text x="360" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#34d399">19 / 11 / 6</text>
+      <text x="540" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#ffffff">94.2</text>
+      <text x="680" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#38bdf8">68.4%</text>
+      <text x="820" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#fbbf24">★★★ (3)</text>
+    </g>
+
+    <!-- Row 3: SmokeWolf -->
+    <g transform="translate(30, 216)">
+      <rect width="940" height="58" rx="12" fill="#090d15"/>
+      <circle cx="28" cy="29" r="16" fill="#818cf8" fill-opacity="0.15"/>
+      <text x="28" y="34" text-anchor="middle" font-size="13">🐺</text>
+      <text x="56" y="35" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff">SmokeWolf</text>
+      <text x="360" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#34d399">16 / 12 / 8</text>
+      <text x="540" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#ffffff">82.6</text>
+      <text x="680" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#38bdf8">56.2%</text>
+      <text x="820" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#fbbf24">★★ (2)</text>
+    </g>
+
+    <!-- Row 4: AimCore -->
+    <g transform="translate(30, 284)">
+      <rect width="940" height="58" rx="12" fill="#090d15"/>
+      <circle cx="28" cy="29" r="16" fill="#34d399" fill-opacity="0.15"/>
+      <text x="28" y="34" text-anchor="middle" font-size="13">⚡</text>
+      <text x="56" y="35" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff">AimCore</text>
+      <text x="360" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#34d399">14 / 13 / 5</text>
+      <text x="540" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#ffffff">76.0</text>
+      <text x="680" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#38bdf8">64.3%</text>
+      <text x="820" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#fbbf24">★ (1)</text>
+    </g>
+
+    <!-- Row 5: FrostAWP -->
+    <g transform="translate(30, 352)">
+      <rect width="940" height="58" rx="12" fill="#090d15"/>
+      <circle cx="28" cy="29" r="16" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="28" y="34" text-anchor="middle" font-size="13">❄️</text>
+      <text x="56" y="35" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff">FrostAWP</text>
+      <text x="360" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#34d399">12 / 10 / 3</text>
+      <text x="540" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#ffffff">71.8</text>
+      <text x="680" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#38bdf8">50.0%</text>
+      <text x="820" y="35" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#fbbf24">★ (1)</text>
+    </g>
+
+  </g>
+</svg>

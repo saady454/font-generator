@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="draftBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a10"/>
+      <stop offset="50%" stop-color="#141420"/>
+      <stop offset="100%" stop-color="#08080e"/>
+    </linearGradient>
+    <filter id="draftShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#draftBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="280" cy="200" r="260" fill="#f59e0b" fill-opacity="0.08"/>
+  <circle cx="920" cy="450" r="260" fill="#fbbf24" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-160" y="-16" width="320" height="32" rx="16" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fbbf24" letter-spacing="2">VORLAGEN-VERGLEICH</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      3 Entwurfs-Varianten für <tspan fill="#fbbf24">dein Tattoo-Motiv</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Direkter Vergleich des Namens „Alexander“ in Schreibschrift, Gothic und Serif
+    </text>
+  </g>
+
+  <!-- 3 Side-by-Side Paper Draft Cards -->
+  <g transform="translate(80, 160)">
+    
+    <!-- Draft 1: Filigrane Schreibschrift -->
+    <g transform="translate(0, 0)" filter="url(#draftShadow)">
+      <rect width="325" height="440" rx="22" fill="#12121e" stroke="#f59e0b" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="25" y="24" width="165" height="28" rx="14" fill="#f59e0b" fill-opacity="0.15"/>
+      <text x="107" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#fbbf24">ENTWURF A: SCRIPT</text>
+
+      <!-- Paper Sheet Mockup -->
+      <g transform="translate(20, 68)">
+        <rect width="285" height="220" rx="14" fill="#090910" stroke="#f59e0b" stroke-opacity="0.3"/>
+        <text x="20" y="35" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#94a3b8">FLASH SHEET #1</text>
+        
+        <g transform="translate(142, 125)" text-anchor="middle">
+          <text y="0" font-family="Georgia, serif" font-size="36" font-style="italic" font-weight="700" fill="#ffffff">𝒜𝓁𝑒𝓍𝒶𝓃𝒹𝑒𝓇</text>
+          <line x1="-80" y1="20" x2="80" y2="20" stroke="#f59e0b" stroke-width="1.5"/>
+        </g>
+
+        <rect x="20" y="170" width="245" height="35" rx="8" fill="#161624"/>
+        <text x="142" y="192" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#cbd5e1">Stil: Feine Cursive Lines</text>
+      </g>
+
+      <g transform="translate(25, 310)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#fbbf24">EIGNUNG:</text>
+        <text x="0" y="22" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Perfekt für Unterarm &amp; Handgelenk</text>
+        <text x="0" y="44" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Weicher, emotionaler Charakter</text>
+      </g>
+
+      <rect x="20" y="380" width="285" height="40" rx="10" fill="#18182a"/>
+      <text x="162" y="405" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#22c55e">✓ Favorit für Namen</text>
+    </g>
+
+    <!-- Draft 2: Gothic Blackletter -->
+    <g transform="translate(355, 0)" filter="url(#draftShadow)">
+      <rect width="325" height="440" rx="22" fill="#12121e" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1.5"/>
+      <rect x="25" y="24" width="165" height="28" rx="14" fill="#ffffff" fill-opacity="0.1"/>
+      <text x="107" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#ffffff">ENTWURF B: GOTHIC</text>
+
+      <!-- Paper Sheet Mockup -->
+      <g transform="translate(20, 68)">
+        <rect width="285" height="220" rx="14" fill="#090910" stroke="#ffffff" stroke-opacity="0.15"/>
+        <text x="20" y="35" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#94a3b8">FLASH SHEET #2</text>
+        
+        <g transform="translate(142, 125)" text-anchor="middle">
+          <text y="0" font-family="'Times New Roman', serif" font-size="34" font-weight="900" fill="#ffffff">𝕬𝖑𝖊𝖝𝖆𝖓𝖉𝖊𝖗</text>
+          <line x1="-80" y1="20" x2="80" y2="20" stroke="#ffffff" stroke-width="1.5"/>
+        </g>
+
+        <rect x="20" y="170" width="245" height="35" rx="8" fill="#161624"/>
+        <text x="142" y="192" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#cbd5e1">Stil: Old English Fraktur</text>
+      </g>
+
+      <g transform="translate(25, 310)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#ffffff">EIGNUNG:</text>
+        <text x="0" y="22" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Ideal für Brust, Nacken &amp; Rücken</text>
+        <text x="0" y="44" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Kraftvolles Statement</text>
+      </g>
+
+      <rect x="20" y="380" width="285" height="40" rx="10" fill="#18182a"/>
+      <text x="162" y="405" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">✓ Markanter Street-Look</text>
+    </g>
+
+    <!-- Draft 3: Zeitlose Serifenschrift -->
+    <g transform="translate(710, 0)" filter="url(#draftShadow)">
+      <rect width="325" height="440" rx="22" fill="#12121e" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="25" y="24" width="165" height="28" rx="14" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="107" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#38bdf8">ENTWURF C: SERIF</text>
+
+      <!-- Paper Sheet Mockup -->
+      <g transform="translate(20, 68)">
+        <rect width="285" height="220" rx="14" fill="#090910" stroke="#38bdf8" stroke-opacity="0.3"/>
+        <text x="20" y="35" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#94a3b8">FLASH SHEET #3</text>
+        
+        <g transform="translate(142, 125)" text-anchor="middle">
+          <text y="0" font-family="Times New Roman, serif" font-size="30" font-weight="700" fill="#ffffff" letter-spacing="2">ALEXANDER</text>
+          <line x1="-80" y1="20" x2="80" y2="20" stroke="#38bdf8" stroke-width="1.5"/>
+        </g>
+
+        <rect x="20" y="170" width="245" height="35" rx="8" fill="#161624"/>
+        <text x="142" y="192" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#cbd5e1">Stil: Klassische Typewriter / Römisch</text>
+      </g>
+
+      <g transform="translate(25, 310)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#38bdf8">EIGNUNG:</text>
+        <text x="0" y="22" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">Hervorragend für Daten &amp; Zitate</text>
+        <text x="0" y="44" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Ruhig &amp; unaufdringlich</text>
+      </g>
+
+      <rect x="20" y="380" width="285" height="40" rx="10" fill="#18182a"/>
+      <text x="162" y="405" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">✓ Höchste Lesbarkeit</text>
+    </g>
+
+  </g>
+</svg>

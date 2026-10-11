@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bfsgHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d1a"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="bfsgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="bfsgAccentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <filter id="bfsgHeroShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bfsgHeroBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="280" cy="220" r="280" fill="#38bdf8" fill-opacity="0.08"/>
+  <circle cx="920" cy="450" r="280" fill="#818cf8" fill-opacity="0.08"/>
+
+  <!-- Top Badge -->
+  <g transform="translate(600, 55)" text-anchor="middle">
+    <rect x="-210" y="-18" width="420" height="36" rx="18" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">DIGITALE BARRIEREFREIHEIT &amp; BFSG 2025</text>
+  </g>
+
+  <!-- Central Title -->
+  <text x="600" y="132" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+    Unicode-Schriften &amp; <tspan fill="url(#bfsgGrad)">Screenreader im Check</tspan>
+  </text>
+  <text x="600" y="168" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#94a3b8">
+    Wie Sprachausgaben Zierschriften interpretieren und was das Barrierefreiheitsstärkungsgesetz regelt
+  </text>
+
+  <!-- Main Container Visual Mockup -->
+  <g transform="translate(100, 205)" filter="url(#bfsgHeroShadow)">
+    <rect width="1000" height="420" rx="26" fill="#111827" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5"/>
+
+    <!-- Inner Split Workspace -->
+    <rect x="25" y="25" width="950" height="370" rx="18" fill="#090d16" stroke="#ffffff" stroke-opacity="0.05"/>
+
+    <!-- Left Side: Accessible Plain Text -->
+    <g transform="translate(55, 55)">
+      <rect width="410" height="310" rx="16" fill="#161f30" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+      
+      <!-- Card Header -->
+      <g transform="translate(20, 20)">
+        <rect width="160" height="26" rx="6" fill="#22c55e" fill-opacity="0.15"/>
+        <text x="80" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#22c55e">✓ BARRIEREFREI (STANDARD)</text>
+      </g>
+
+      <!-- Content Box -->
+      <g transform="translate(20, 60)">
+        <rect width="370" height="110" rx="12" fill="#0b1120" stroke="#22c55e" stroke-opacity="0.2"/>
+        <text x="15" y="32" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#94a3b8">TEXTEINGABE:</text>
+        <text x="15" y="65" font-family="system-ui, sans-serif" font-size="24" font-weight="900" fill="#ffffff">Hallo, herzlich willkommen!</text>
+        <text x="15" y="95" font-family="monospace" font-size="11" fill="#22c55e">Codepoints: U+0048 U+0061 U+006C...</text>
+      </g>
+
+      <!-- Audio / Screenreader Simulation -->
+      <g transform="translate(20, 185)">
+        <rect width="370" height="95" rx="12" fill="#1e293b"/>
+        <text x="15" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#22c55e">🔊 SCREENREADER-AUSGABE (NVDA / VoiceOver):</text>
+        <text x="15" y="52" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#ffffff">„Hallo, herzlich willkommen!“</text>
+        <text x="15" y="78" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">✓ Natürlich gesprochen &amp;bull; 100 % verständlich</text>
+      </g>
+    </g>
+
+    <!-- Right Side: Decorative Mathematical Unicode -->
+    <g transform="translate(535, 55)">
+      <rect width="410" height="310" rx="16" fill="#161f30" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="1.5"/>
+      
+      <!-- Card Header -->
+      <g transform="translate(20, 20)">
+        <rect width="185" height="26" rx="6" fill="#f59e0b" fill-opacity="0.15"/>
+        <text x="92" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#fbbf24">⚠ DEKORATIVER UNICODE</text>
+      </g>
+
+      <!-- Content Box -->
+      <g transform="translate(20, 60)">
+        <rect width="370" height="110" rx="12" fill="#0b1120" stroke="#f59e0b" stroke-opacity="0.2"/>
+        <text x="15" y="32" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#94a3b8">ZIERSCHRIFT (MATHEMATISCH):</text>
+        <text x="15" y="65" font-family="system-ui, sans-serif" font-size="24" font-weight="900" fill="#fbbf24">𝓗𝓪𝓵𝓵𝓸, 𝔀𝓲𝓵𝓵𝓴𝓸𝓶𝓶𝓮𝓷!</text>
+        <text x="15" y="95" font-family="monospace" font-size="11" fill="#f59e0b">Codepoints: U+1D43B U+1D4EA U+1D4F5...</text>
+      </g>
+
+      <!-- Audio / Screenreader Simulation -->
+      <g transform="translate(20, 185)">
+        <rect width="370" height="95" rx="12" fill="#1e293b"/>
+        <text x="15" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#fbbf24">🔊 SCREENREADER-AUSGABE (NVDA / VoiceOver):</text>
+        <text x="15" y="52" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#fca5a5">„Mathematisches Schreibschrift-H, mathematisches...“</text>
+        <text x="15" y="78" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">⚠ Buchstabiert jedes Zeichen einzeln &amp;bull; Schwer verständlich</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

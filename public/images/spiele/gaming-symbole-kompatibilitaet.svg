@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="symKompBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08071a"/>
+      <stop offset="50%" stop-color="#120d2b"/>
+      <stop offset="100%" stop-color="#050312"/>
+    </linearGradient>
+    <linearGradient id="symKompGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f43f5e"/>
+    </linearGradient>
+    <filter id="symKompShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#symKompBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#10b981" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#f43f5e" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-190" y="-16" width="380" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">KOMPATIBILITÄTS-VERGLEICH</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Normaler Text vs. <tspan fill="url(#symKompGrad)">Deko &amp; Symbole</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Wie sich unterschiedliche Namensstile auf Kompatibilität und Wiedererkennung auswirken
+    </text>
+  </g>
+
+  <!-- 3 Comparison Columns -->
+  <g transform="translate(80, 150)">
+    
+    <!-- 1. Normaler Plain Text -->
+    <g transform="translate(0, 0)" filter="url(#symKompShadow)">
+      <rect width="325" height="440" rx="20" fill="#111827" stroke="#10b981" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 25)">
+        <rect width="170" height="26" rx="6" fill="#10b981" fill-opacity="0.15"/>
+        <text x="85" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#10b981">1. CLEAN STANDARD</text>
+
+        <!-- Preview Box -->
+        <rect y="40" width="275" height="100" rx="12" fill="#080d1a" stroke="#10b981" stroke-opacity="0.2"/>
+        <text x="15" y="30" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#94a3b8">STANDARD ASCII:</text>
+        <text x="15" y="65" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">NovaWolf &amp;bull; Viper</text>
+        <text x="15" y="88" font-family="system-ui, sans-serif" font-size="11" fill="#10b981">✓ 100 % Kompatibilität</text>
+
+        <!-- Bullets -->
+        <g transform="translate(0, 160)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+          <text x="0" y="20">• Funktioniert in jedem Game</text>
+          <text x="0" y="50">• Keine Tofu-Kästchen</text>
+          <text x="0" y="80">• Schnelle Eingabe im Chat</text>
+          <text x="0" y="110">• Perfekt für Esport-IDs</text>
+        </g>
+
+        <rect y="350" width="275" height="38" rx="8" fill="#1e293b"/>
+        <text x="137" y="374" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#10b981">Empfehlung: Maximale Sicherheit</text>
+      </g>
+    </g>
+
+    <!-- 2. Fetter Deko-Text -->
+    <g transform="translate(355, 0)" filter="url(#symKompShadow)">
+      <rect width="325" height="440" rx="20" fill="#111827" stroke="#fbbf24" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 25)">
+        <rect width="180" height="26" rx="6" fill="#fbbf24" fill-opacity="0.15"/>
+        <text x="90" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#fbbf24">2. FETTER UNICODE</text>
+
+        <!-- Preview Box -->
+        <rect y="40" width="275" height="100" rx="12" fill="#080d1a" stroke="#fbbf24" stroke-opacity="0.2"/>
+        <text x="15" y="30" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#94a3b8">BOLD / GOTHIC STILE:</text>
+        <text x="15" y="65" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">𝗡𝗼𝘃𝗮𝗪𝗼𝗹𝗳 &amp;bull; 𝖁𝖎𝖕𝖊𝖗</text>
+        <text x="15" y="88" font-family="system-ui, sans-serif" font-size="11" fill="#fbbf24">⚡ Sehr hohe Sichtbarkeit</text>
+
+        <!-- Bullets -->
+        <g transform="translate(0, 160)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+          <text x="0" y="20">• Hebt sich im Scoreboard ab</text>
+          <text x="0" y="50">• Discord, Steam &amp; Roblox OK</text>
+          <text x="0" y="80">• Sehr gute Lesbarkeit</text>
+          <text x="0" y="110">• Vorab im Spiel testen</text>
+        </g>
+
+        <rect y="350" width="275" height="38" rx="8" fill="#1e293b"/>
+        <text x="137" y="374" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">Empfehlung: Beliebtester Stil</text>
+      </g>
+    </g>
+
+    <!-- 3. Symbole &amp; Flügel -->
+    <g transform="translate(710, 0)" filter="url(#symKompShadow)">
+      <rect width="325" height="440" rx="20" fill="#111827" stroke="#f43f5e" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 25)">
+        <rect width="180" height="26" rx="6" fill="#f43f5e" fill-opacity="0.15"/>
+        <text x="90" y="18" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#f43f5e">3. SYMBOLE &amp; DÉCOR</text>
+
+        <!-- Preview Box -->
+        <rect y="40" width="275" height="100" rx="12" fill="#080d1a" stroke="#f43f5e" stroke-opacity="0.2"/>
+        <text x="15" y="30" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#94a3b8">FLÜGEL, KRONEN, RAHMEN:</text>
+        <text x="15" y="65" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">꧁ঔৣ☬ 𝖁𝖎𝖕𝖊𝖗 ☬ঔৣ꧂</text>
+        <text x="15" y="88" font-family="system-ui, sans-serif" font-size="11" fill="#f43f5e">⚠ Auf Spiel-Filter achten</text>
+
+        <!-- Bullets -->
+        <g transform="translate(0, 160)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+          <text x="0" y="20">• Extrem auffälliger Look</text>
+          <text x="0" y="50">• Free Fire &amp; Social Profile</text>
+          <text x="0" y="80">• Manche Spiele blockieren Sonderz.</text>
+          <text x="0" y="110">• Immer zuerst live testen</text>
+        </g>
+
+        <rect y="350" width="275" height="38" rx="8" fill="#1e293b"/>
+        <text x="137" y="374" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f43f5e">Empfehlung: Für kreative Profile</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

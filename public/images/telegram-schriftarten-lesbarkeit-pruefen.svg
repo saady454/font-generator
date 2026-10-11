@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="tgCheckBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050914"/>
+      <stop offset="50%" stop-color="#0b1528"/>
+      <stop offset="100%" stop-color="#040810"/>
+    </linearGradient>
+    <linearGradient id="tgCheckGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <filter id="tgCheckShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#tgCheckBg)"/>
+
+  <!-- Ambient Lights -->
+  <circle cx="300" cy="200" r="260" fill="#229ED9" fill-opacity="0.08"/>
+  <circle cx="900" cy="450" r="280" fill="#7dd3fc" fill-opacity="0.06"/>
+
+  <!-- Badge &amp; Header -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-170" y="-16" width="340" height="32" rx="16" fill="#0f1f38" stroke="#229ED9" stroke-opacity="0.35"/>
+    <text y="5" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#7dd3fc" letter-spacing="1.5">QUALITÄTS- &amp; LESBARKEITS-CHECK</text>
+  </g>
+
+  <text x="600" y="115" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="34" font-weight="900" fill="#ffffff">
+    Lesbarkeit von stylischen Telegram Texten prüfen
+  </text>
+  <text x="600" y="148" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#94a3b8">
+    Vor dem Absenden den richtigen Mittelweg zwischen Design und schneller Erfassbarkeit finden
+  </text>
+
+  <!-- Side-by-Side Comparison Cards -->
+  <g transform="translate(100, 185)">
+    
+    <!-- Left Card: Perfekt lesbar (Empfohlen) -->
+    <g transform="translate(0, 0)" filter="url(#tgCheckShadow)">
+      <rect width="480" height="420" rx="22" fill="#0c172a" stroke="#22c55e" stroke-width="2"/>
+      
+      <rect x="25" y="24" width="180" height="28" rx="8" fill="#22c55e" fill-opacity="0.2"/>
+      <text x="115" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#4ade80">✓ OPTIMALE LESBARKEIT</text>
+
+      <text x="25" y="85" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#ffffff">
+        Gezielte Akzente &amp; Überschriften
+      </text>
+      <text x="25" y="110" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">
+        Fette Headline + normaler Nachrichtentext
+      </text>
+
+      <!-- Visual Chat Simulation Box -->
+      <g transform="translate(25, 130)">
+        <rect width="430" height="130" rx="14" fill="#060b16" stroke="#22c55e" stroke-opacity="0.3"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#4ade80">TELEGRAM KANAL POST:</text>
+        <text x="20" y="65" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">📢 𝗪𝗶𝗰𝗵𝘁𝗶𝗴𝗲𝘀 𝗨𝗽𝗱𝗮𝘁𝗲 𝗳ü𝗿 𝗱𝗶𝗲 𝗚𝗿𝘂𝗽𝗽𝗲!</text>
+        <text x="20" y="90" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">Hier folgt die Erklärung in normaler Schrift, damit</text>
+        <text x="20" y="110" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">alle Mitglieder den Text schnell erfassen können.</text>
+      </g>
+
+      <!-- Bullet Points -->
+      <g transform="translate(25, 285)" font-family="system-ui, sans-serif" font-size="13" fill="#cbd5e1">
+        <text x="0" y="20"><tspan fill="#22c55e" font-weight="900">✓</tspan> Sofort erfassbar beim Überfliegen im Chat</text>
+        <text x="0" y="48"><tspan fill="#22c55e" font-weight="900">✓</tspan> Funktioniert garantiert auf iOS, Android &amp; Desktop</text>
+        <text x="0" y="76"><tspan fill="#22c55e" font-weight="900">✓</tspan> Barrierefrei &amp; augenfreundlich</text>
+        <text x="0" y="104"><tspan fill="#22c55e" font-weight="900">✓</tspan> Ideal für Kanäle, Ankündigungen &amp; Regeln</text>
+      </g>
+    </g>
+
+    <!-- Right Card: Zu überladen (Vermeiden) -->
+    <g transform="translate(520, 0)" filter="url(#tgCheckShadow)">
+      <rect width="480" height="420" rx="22" fill="#0c172a" stroke="#ef4444" stroke-opacity="0.4"/>
+      
+      <rect x="25" y="24" width="180" height="28" rx="8" fill="#ef4444" fill-opacity="0.15"/>
+      <text x="115" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#f87171">✕ ÜBERLADENER TEXT</text>
+
+      <text x="25" y="85" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#ffffff">
+        Zu viele Stile in einer Nachricht
+      </text>
+      <text x="25" y="110" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">
+        Ganze Absätze in Fraktur / Glitch
+      </text>
+
+      <!-- Visual Chat Simulation Box -->
+      <g transform="translate(25, 130)">
+        <rect width="430" height="130" rx="14" fill="#060b16" stroke="#ef4444" stroke-opacity="0.3"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#f87171">SCHWER LESBARER POST:</text>
+        <text x="20" y="65" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#f87171">𝔚𝔦𝔠𝔥𝔱𝔦𝔤𝔢𝔰 𝔘𝔭𝔡𝔞𝔱𝔢 𝔣𝔲𝔢𝔯 𝔡𝔦𝔢 𝔊𝔯𝔲𝔭𝔭𝔢!</text>
+        <text x="20" y="90" font-family="Georgia, serif" font-size="12" fill="#94a3b8">𝔇𝔦𝔢𝔰𝔢𝔯 𝔤𝔞𝔫𝔷𝔢 𝔗𝔢𝔵𝔱 𝔦𝔰𝔱 𝔦𝔫 𝔉𝔯𝔞𝔨𝔱𝔲𝔯 𝔤𝔢𝔰𝔠𝔥𝔯𝔦𝔢𝔟𝔢𝔫</text>
+        <text x="20" y="110" font-family="monospace" font-size="11" fill="#ef4444">Ⓗⓘⓔⓡ ⓦⓘⓡⓓ ⓓⓐⓢ Ⓛⓔⓢⓔⓝ ⓐⓝⓢⓣⓡⓔⓝⓖⓔⓝⓓ</text>
+      </g>
+
+      <!-- Bullet Points -->
+      <g transform="translate(25, 285)" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">
+        <text x="0" y="20"><tspan fill="#ef4444" font-weight="900">✕</tspan> Ermüdet das Auge bei längeren Nachrichten</text>
+        <text x="0" y="48"><tspan fill="#ef4444" font-weight="900">✕</tspan> Screenreader können Buchstaben falsch vorlesen</text>
+        <text x="0" y="76"><tspan fill="#eab308" font-weight="900">💡</tspan> Tipp: Deko nur für Namen &amp; 1. Zeile nutzen</text>
+        <text x="0" y="104"><tspan fill="#eab308" font-weight="900">💡</tspan> Umlaute (ä, ö, ü) vor dem Senden prüfen</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

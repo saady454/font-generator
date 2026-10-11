@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fnWfBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070913"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#05070e"/>
+    </linearGradient>
+    <linearGradient id="fnStepGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <filter id="fnWfShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#fnWfBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="240" cy="200" r="240" fill="#a855f7" fill-opacity="0.10"/>
+  <circle cx="960" cy="450" r="260" fill="#06b6d4" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-160" y="-16" width="320" height="32" rx="16" fill="#1e1b4b" stroke="#a855f7" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#c084fc" letter-spacing="2">4-SCHRITTE ANLEITUNG</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      So erstellst du deinen <tspan fill="url(#fnStepGrad)">Fortnite Nickname</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Vom Basiswort zum fertigen, kopierbaren Gaming-Namen in wenigen Sekunden
+    </text>
+  </g>
+
+  <!-- 4 Step Flow Cards -->
+  <g transform="translate(60, 150)">
+    
+    <!-- Step 1 -->
+    <g transform="translate(0, 0)" filter="url(#fnWfShadow)">
+      <rect width="250" height="440" rx="20" fill="#0f172a" stroke="#a855f7" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="45" cy="45" r="22" fill="url(#fnStepGrad)"/>
+      <text x="45" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">1</text>
+      <text x="80" y="50" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Basisname</text>
+      
+      <g transform="translate(20, 95)">
+        <rect width="210" height="90" rx="12" fill="#090d16" stroke="#ffffff" stroke-opacity="0.05"/>
+        <text x="15" y="32" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#a855f7">EINGABE</text>
+        <text x="15" y="60" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#ffffff">Shadow</text>
+      </g>
+
+      <g transform="translate(20, 210)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Namen auswählen:</text>
+        <text x="0" y="24">Wähle einen prägnanten</text>
+        <text x="0" y="44">Begriff wie <tspan fill="#38bdf8">Shadow</tspan>,</text>
+        <text x="0" y="64"><tspan fill="#38bdf8">Nova</tspan>, <tspan fill="#38bdf8">Frost</tspan> oder <tspan fill="#38bdf8">Viper</tspan>.</text>
+        <text x="0" y="94" fill="#94a3b8" font-size="11">Kurz &amp; einprägsam</text>
+      </g>
+
+      <rect x="20" y="380" width="210" height="36" rx="8" fill="#1e293b"/>
+      <text x="125" y="403" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#a855f7">Schritt 1: Wort finden</text>
+    </g>
+
+    <!-- Step 2 -->
+    <g transform="translate(275, 0)" filter="url(#fnWfShadow)">
+      <rect width="250" height="440" rx="20" fill="#0f172a" stroke="#6366f1" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="45" cy="45" r="22" fill="url(#fnStepGrad)"/>
+      <text x="45" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">2</text>
+      <text x="80" y="50" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Stil wählen</text>
+      
+      <g transform="translate(20, 95)">
+        <rect width="210" height="90" rx="12" fill="#090d16" stroke="#ffffff" stroke-opacity="0.05"/>
+        <text x="15" y="30" font-family="system-ui, sans-serif" font-size="13" font-weight="900" fill="#fbbf24">𝐒𝐡𝐚𝐝𝐨𝐰</text>
+        <text x="15" y="54" font-family="Georgia, serif" font-size="13" font-style="italic" font-weight="700" fill="#c084fc">𝑺𝒉𝒂𝒅𝒐𝒘</text>
+        <text x="15" y="76" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#f43f5e">𝔖𝔥𝔞𝔡𝔬𝔴</text>
+      </g>
+
+      <g transform="translate(20, 210)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Schrift ausprobieren:</text>
+        <text x="0" y="24">Teste fette, kursive</text>
+        <text x="0" y="44">oder gotische Varianten</text>
+        <text x="0" y="64">im Generator für</text>
+        <text x="0" y="84">deinen Spielstil.</text>
+      </g>
+
+      <rect x="20" y="380" width="210" height="36" rx="8" fill="#1e293b"/>
+      <text x="125" y="403" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#6366f1">Schritt 2: Stile testen</text>
+    </g>
+
+    <!-- Step 3 -->
+    <g transform="translate(550, 0)" filter="url(#fnWfShadow)">
+      <rect width="250" height="440" rx="20" fill="#0f172a" stroke="#06b6d4" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="45" cy="45" r="22" fill="url(#fnStepGrad)"/>
+      <text x="45" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">3</text>
+      <text x="80" y="50" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Deko / Symbole</text>
+      
+      <g transform="translate(20, 95)">
+        <rect width="210" height="90" rx="12" fill="#090d16" stroke="#ffffff" stroke-opacity="0.05"/>
+        <text x="15" y="32" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#06b6d4">KOMBINATION</text>
+        <text x="15" y="60" font-family="system-ui, sans-serif" font-size="15" font-weight="900" fill="#ffffff">꧁ 𝕾𝖍𝖆𝖉𝔬𝖜 ꧂</text>
+      </g>
+
+      <g transform="translate(20, 210)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Symbole sparsam:</text>
+        <text x="0" y="24">Ergänze dezente</text>
+        <text x="0" y="44">Klammern oder Sterne.</text>
+        <text x="0" y="70" font-weight="700" fill="#f59e0b">Weniger ist mehr!</text>
+        <text x="0" y="90" font-size="11" fill="#94a3b8">Lesbarkeit bewahren</text>
+      </g>
+
+      <rect x="20" y="380" width="210" height="36" rx="8" fill="#1e293b"/>
+      <text x="125" y="403" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#06b6d4">Schritt 3: Akzente setzen</text>
+    </g>
+
+    <!-- Step 4 -->
+    <g transform="translate(825, 0)" filter="url(#fnWfShadow)">
+      <rect width="250" height="440" rx="20" fill="#0f172a" stroke="#34d399" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="45" cy="45" r="22" fill="url(#fnStepGrad)"/>
+      <text x="45" y="52" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">4</text>
+      <text x="80" y="50" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">Kopieren</text>
+      
+      <g transform="translate(20, 95)">
+        <rect width="210" height="90" rx="12" fill="#090d16" stroke="#34d399" stroke-opacity="0.3"/>
+        <text x="15" y="32" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#34d399">ZWISCHENABLAGE</text>
+        <text x="15" y="60" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#ffffff">✓ In Epic Games einfügen</text>
+      </g>
+
+      <g transform="translate(20, 210)" font-family="system-ui, sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="0" y="0" font-weight="700" fill="#ffffff">Prüfen &amp; Speichern:</text>
+        <text x="0" y="24">Kopiere den Namen</text>
+        <text x="0" y="44">mit 1 Klick und teste</text>
+        <text x="0" y="64">ihn im Epic Account</text>
+        <text x="0" y="84">auf 3-16 Zeichen.</text>
+      </g>
+
+      <rect x="20" y="380" width="210" height="36" rx="8" fill="#1e293b"/>
+      <text x="125" y="403" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34d399">Schritt 4: Bei Epic einfügen</text>
+    </g>
+
+  </g>
+</svg>

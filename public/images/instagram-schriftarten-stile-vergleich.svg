@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="compBgInsta" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090a14"/>
+      <stop offset="50%" stop-color="#161226"/>
+      <stop offset="100%" stop-color="#080810"/>
+    </linearGradient>
+    <filter id="tileShadowInsta" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#compBgInsta)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="200" cy="160" r="220" fill="#ec4899" fill-opacity="0.08"/>
+  <circle cx="1000" cy="480" r="240" fill="#8b5cf6" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-160" y="-16" width="320" height="32" rx="16" fill="#ec4899" fill-opacity="0.15" stroke="#ec4899" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#f472b6" letter-spacing="2">INSTAGRAM STIL-GUIDE</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Die 6 beliebtesten <tspan fill="#f472b6">Instagram Schriftstile</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Fett, Kursiv, Schreibschrift, Fraktur, Kleine Buchstaben &amp; Dekorative Zeichen
+    </text>
+  </g>
+
+  <!-- 6 Grid Cards (2 rows of 3) -->
+  <g transform="translate(60, 145)">
+    
+    <!-- Row 1, Col 1: Fett -->
+    <g transform="translate(0, 0)" filter="url(#tileShadowInsta)">
+      <rect width="345" height="225" rx="18" fill="#151226" stroke="#f59e0b" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="15" width="80" height="22" rx="6" fill="#f59e0b" fill-opacity="0.15"/>
+      <text x="55" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#fbbf24">FETT</text>
+      
+      <rect x="15" y="45" width="315" height="65" rx="10" fill="#0b0816"/>
+      <text x="172" y="88" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#ffffff">𝐅𝐞𝐭𝐭𝐞 𝐒𝐜𝐡𝐫𝐢𝐟𝐭</text>
+
+      <g transform="translate(15, 125)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Wirkung: <tspan fill="#cbd5e1" font-weight="400">Auffällig &amp; kraftvoll</tspan></text>
+        <text x="0" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">Geeignet für: <tspan fill="#cbd5e1" font-weight="400">Namen, wichtige Schlüsselwörter</tspan></text>
+      </g>
+    </g>
+
+    <!-- Row 1, Col 2: Kursiv -->
+    <g transform="translate(365, 0)" filter="url(#tileShadowInsta)">
+      <rect width="345" height="225" rx="18" fill="#151226" stroke="#ec4899" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="15" width="90" height="22" rx="6" fill="#ec4899" fill-opacity="0.15"/>
+      <text x="60" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#f472b6">KURSIV</text>
+      
+      <rect x="15" y="45" width="315" height="65" rx="10" fill="#0b0816"/>
+      <text x="172" y="88" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-style="italic" font-weight="700" fill="#ffffff">𝘒𝘶𝘳𝘴𝘪𝘷𝘦 𝘚𝘤𝘩𝘳𝘪𝘧𝘵</text>
+
+      <g transform="translate(15, 125)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Wirkung: <tspan fill="#cbd5e1" font-weight="400">Elegant &amp; vornehm</tspan></text>
+        <text x="0" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f472b6">Geeignet für: <tspan fill="#cbd5e1" font-weight="400">Kurze Zitate, Slogans</tspan></text>
+      </g>
+    </g>
+
+    <!-- Row 1, Col 3: Schreibschrift -->
+    <g transform="translate(730, 0)" filter="url(#tileShadowInsta)">
+      <rect width="345" height="225" rx="18" fill="#151226" stroke="#8b5cf6" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="15" width="130" height="22" rx="6" fill="#8b5cf6" fill-opacity="0.15"/>
+      <text x="80" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#a78bfa">SCHREIBSCHRIFT</text>
+      
+      <rect x="15" y="45" width="315" height="65" rx="10" fill="#0b0816"/>
+      <text x="172" y="88" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-style="italic" font-weight="700" fill="#a78bfa">𝒮𝒸𝒽𝓇𝑒𝒾𝒷𝓈𝒸𝒽𝓇𝒾𝒻𝓉</text>
+
+      <g transform="translate(15, 125)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Wirkung: <tspan fill="#cbd5e1" font-weight="400">Kreativ &amp; persönlich</tspan></text>
+        <text x="0" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#a78bfa">Geeignet für: <tspan fill="#cbd5e1" font-weight="400">Bio, persönliche Vorstellungen</tspan></text>
+      </g>
+    </g>
+
+    <!-- Row 2, Col 1: Fraktur / Gotisch -->
+    <g transform="translate(0, 245)" filter="url(#tileShadowInsta)">
+      <rect width="345" height="225" rx="18" fill="#151226" stroke="#3b82f6" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="15" width="90" height="22" rx="6" fill="#3b82f6" fill-opacity="0.15"/>
+      <text x="60" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#60a5fa">FRAKTUR</text>
+      
+      <rect x="15" y="45" width="315" height="65" rx="10" fill="#0b0816"/>
+      <text x="172" y="88" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#60a5fa">𝔊𝔬𝔱𝔦𝔰𝔠𝔥𝔢 𝔖𝔠𝔥𝔯𝔦𝔣𝔱</text>
+
+      <g transform="translate(15, 125)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Wirkung: <tspan fill="#cbd5e1" font-weight="400">Markant &amp; edel</tspan></text>
+        <text x="0" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#60a5fa">Geeignet für: <tspan fill="#cbd5e1" font-weight="400">Namen, besondere Profile</tspan></text>
+      </g>
+    </g>
+
+    <!-- Row 2, Col 2: Kleine Buchstaben -->
+    <g transform="translate(365, 245)" filter="url(#tileShadowInsta)">
+      <rect width="345" height="225" rx="18" fill="#151226" stroke="#10b981" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="15" width="140" height="22" rx="6" fill="#10b981" fill-opacity="0.15"/>
+      <text x="85" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#34d399">KLEINE BUCHSTABEN</text>
+      
+      <rect x="15" y="45" width="315" height="65" rx="10" fill="#0b0816"/>
+      <text x="172" y="88" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#34d399">ᴋʟᴇɪɴᴇ ʙᴜᴄʜsᴛᴀʙᴇɴ</text>
+
+      <g transform="translate(15, 125)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Wirkung: <tspan fill="#cbd5e1" font-weight="400">Minimalistisch &amp; dezent</tspan></text>
+        <text x="0" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34d399">Geeignet für: <tspan fill="#cbd5e1" font-weight="400">Kurze Bio-Zeilen &amp; Links</tspan></text>
+      </g>
+    </g>
+
+    <!-- Row 2, Col 3: Dekorative Zeichen -->
+    <g transform="translate(730, 245)" filter="url(#tileShadowInsta)">
+      <rect width="345" height="225" rx="18" fill="#151226" stroke="#ec4899" stroke-opacity="0.35" stroke-width="1.5"/>
+      <rect x="15" y="15" width="145" height="22" rx="6" fill="#ec4899" fill-opacity="0.15"/>
+      <text x="87" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#f472b6">DEKORATIVE ZEICHEN</text>
+      
+      <rect x="15" y="45" width="315" height="65" rx="10" fill="#0b0816"/>
+      <text x="172" y="88" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#f472b6">꧁ 𝒟𝑒𝓀𝑜𝓇𝒶𝓉𝒾𝓋 ꧂</text>
+
+      <g transform="translate(15, 125)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Wirkung: <tspan fill="#cbd5e1" font-weight="400">Verspielt &amp; magisch</tspan></text>
+        <text x="0" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f472b6">Geeignet für: <tspan fill="#cbd5e1" font-weight="400">Überschriften &amp; Highlights</tspan></text>
+      </g>
+    </g>
+
+  </g>
+</svg>

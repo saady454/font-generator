@@ -1,0 +1,147 @@
+---
+import { Menu, X, Sun, Moon } from '@lucide/astro';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 h-16 bg-void/85 backdrop-blur-xl border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 h-full flex justify-between items-center">
+    <!-- Brand Logo -->
+    <a href="/#" class="flex items-center gap-1 group focus:outline-none">
+      <span class="text-ghost font-bold tracking-widest text-sm group-hover:text-white transition-colors">SCHRIFTARTEN</span>
+      <span class="text-amber-500 font-bold tracking-widest text-sm group-hover:text-amber-400 transition-colors">GENERATOR</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="/#" class="text-sm font-medium text-sand hover:text-ghost transition-colors nav-link-underline">Schriftarten</a>
+      <a href="/#" class="text-sm font-medium text-sand hover:text-ghost transition-colors nav-link-underline">Plattformen</a>
+      <a href="/#" class="text-sm font-medium text-sand hover:text-ghost transition-colors nav-link-underline">Spiele</a>
+      <a href="/#" class="text-sm font-medium text-sand hover:text-ghost transition-colors nav-link-underline">Symbole</a>
+      <a href="/#" class="text-sm font-medium text-sand hover:text-ghost transition-colors nav-link-underline">Blog</a>
+    </nav>
+
+    <!-- Desktop Dark Mode Toggle -->
+    <div class="hidden md:flex items-center">
+      <button
+        id="theme-toggle-desktop"
+        type="button"
+        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 text-sm font-medium text-sand hover:text-ghost hover:border-amber-500/40 transition-all focus:outline-none"
+        aria-label="Design Farbschema anpassen"
+      >
+        <Moon class="w-4 h-4 text-amber-500 dark-icon" />
+        <Sun class="w-4 h-4 text-amber-400 light-icon hidden" />
+        <span id="theme-text-desktop">Dunkel</span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="flex md:hidden items-center gap-3">
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        class="text-amber-500 font-semibold text-sm flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-amber-500/20 bg-amber-500/5 hover:bg-amber-500/10 transition-all"
+        aria-label="Hauptmenü öffnen"
+      >
+        <Menu class="w-4 h-4" />
+        <span>Menü</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Fullscreen Overlay -->
+<div
+  id="mobile-overlay"
+  class="fixed inset-0 bg-void/95 backdrop-blur-2xl z-50 hidden flex-col justify-center items-center p-6 transition-all duration-300"
+>
+  <!-- Close Button -->
+  <button
+    id="mobile-close-btn"
+    type="button"
+    class="absolute top-5 right-6 text-sand hover:text-ghost flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 text-sm font-semibold transition-all"
+    aria-label="Menü schließen"
+  >
+    <X class="w-5 h-5 text-sand" />
+    <span>Schließen</span>
+  </button>
+
+  <!-- Mobile Links Stack -->
+  <nav class="flex flex-col items-center space-y-6 text-center">
+    <a href="/#" class="mobile-nav-link text-2xl font-semibold text-ghost hover:text-amber-500 transition-colors">Schriftarten</a>
+    <a href="/#" class="mobile-nav-link text-2xl font-semibold text-ghost hover:text-amber-500 transition-colors">Plattformen</a>
+    <a href="/#" class="mobile-nav-link text-2xl font-semibold text-ghost hover:text-amber-500 transition-colors">Spiele</a>
+    <a href="/#" class="mobile-nav-link text-2xl font-semibold text-ghost hover:text-amber-500 transition-colors">Symbole</a>
+    <a href="/#" class="mobile-nav-link text-2xl font-semibold text-ghost hover:text-amber-500 transition-colors">Blog</a>
+
+    <div class="pt-6 border-t border-white/10 w-full flex justify-center">
+      <button
+        id="theme-toggle-mobile"
+        type="button"
+        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/10 text-base font-semibold text-sand hover:text-ghost hover:border-amber-500 transition-all"
+      >
+        <Moon class="w-5 h-5 text-amber-500 dark-icon-mobile" />
+        <Sun class="w-5 h-5 text-amber-400 light-icon-mobile hidden" />
+        <span id="theme-text-mobile">Dunkel</span>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<script>
+  // Theme handling with localStorage
+  const currentTheme = localStorage.getItem('theme') || 'dark';
+  if (currentTheme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    updateThemeUI('light');
+  }
+
+  function updateThemeUI(theme: string) {
+    const desktopText = document.getElementById('theme-text-desktop');
+    const mobileText = document.getElementById('theme-text-mobile');
+    const isLight = theme === 'light';
+
+    if (desktopText) desktopText.textContent = isLight ? 'Hell' : 'Dunkel';
+    if (mobileText) mobileText.textContent = isLight ? 'Hell' : 'Dunkel';
+
+    document.querySelectorAll('.dark-icon, .dark-icon-mobile').forEach(el => el.classList.toggle('hidden', isLight));
+    document.querySelectorAll('.light-icon, .light-icon-mobile').forEach(el => el.classList.toggle('hidden', !isLight));
+  }
+
+  function toggleTheme() {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const newTheme = isLight ? 'dark' : 'light';
+    if (newTheme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+    localStorage.setItem('theme', newTheme);
+    updateThemeUI(newTheme);
+  }
+
+  document.getElementById('theme-toggle-desktop')?.addEventListener('click', toggleTheme);
+  document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggleTheme);
+
+  // Mobile menu handling
+  const mobileOverlay = document.getElementById('mobile-overlay');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileCloseBtn = document.getElementById('mobile-close-btn');
+
+  function openMobileMenu() {
+    mobileOverlay?.classList.remove('hidden');
+    mobileOverlay?.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileMenu() {
+    mobileOverlay?.classList.add('hidden');
+    mobileOverlay?.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  mobileMenuBtn?.addEventListener('click', openMobileMenu);
+  mobileCloseBtn?.addEventListener('click', closeMobileMenu);
+
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+</script>

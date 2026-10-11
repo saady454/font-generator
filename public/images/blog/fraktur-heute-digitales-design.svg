@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="digiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0907"/>
+      <stop offset="50%" stop-color="#17140f"/>
+      <stop offset="100%" stop-color="#050403"/>
+    </linearGradient>
+    <linearGradient id="digiGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="digiShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#digiBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="260" cy="200" r="260" fill="#fbbf24" fill-opacity="0.08"/>
+  <circle cx="940" cy="460" r="260" fill="#818cf8" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-190" y="-16" width="380" height="32" rx="16" fill="#1e1b15" stroke="#fbbf24" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#fbbf24" letter-spacing="2">MODERNE ANWENDUNGEN</text>
+    <text y="48" font-family="Georgia, serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Fraktur &amp; Schwabacher <tspan fill="url(#digiGold)">heute digital</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Vom Bleisatz zum Vektordesign: Gaming, Tattoo-Art, Branding und Social Media
+    </text>
+  </g>
+
+  <!-- 4 Application Cards (2x2 Grid) -->
+  <g transform="translate(80, 145)">
+    
+    <!-- 1. Gaming &amp; Clan-Namen -->
+    <g transform="translate(0, 0)" filter="url(#digiShadow)">
+      <rect width="500" height="210" rx="18" fill="#14120e" stroke="#fbbf24" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 20)">
+        <circle cx="16" cy="16" r="15" fill="#fbbf24" fill-opacity="0.15"/>
+        <text x="16" y="21" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#fbbf24">1</text>
+        <text x="45" y="21" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Gaming &amp; E-Sports Nicknames</text>
+
+        <rect y="45" width="450" height="70" rx="10" fill="#0c0a08" stroke="#fbbf24" stroke-opacity="0.2"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#fbbf24">Beliebt in CS2, Fortnite &amp; Minecraft:</text>
+        <text x="20" y="58" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#ffffff">𝔖𝔥𝔞𝔡𝔬𝔴 𝔎𝔫𝔦𝔤𝔥𝔱 &amp;bull; 𝕯𝖆𝖗𝖐 𝕷𝖔𝖗𝖉</text>
+
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Verleiht Clan-Tags und Spielerprofilen einen epischen, düsteren Look.</text>
+      </g>
+    </g>
+
+    <!-- 2. Tattoo-Design &amp; Lettering -->
+    <g transform="translate(540, 0)" filter="url(#digiShadow)">
+      <rect width="500" height="210" rx="18" fill="#14120e" stroke="#818cf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 20)">
+        <circle cx="16" cy="16" r="15" fill="#818cf8" fill-opacity="0.15"/>
+        <text x="16" y="21" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#818cf8">2</text>
+        <text x="45" y="21" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Tattoo-Kunst &amp; Chicano Lettering</text>
+
+        <rect y="45" width="450" height="70" rx="10" fill="#0c0a08" stroke="#818cf8" stroke-opacity="0.2"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#818cf8">Schriftzug-Vorlagen:</text>
+        <text x="20" y="58" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#ffffff">𝔉𝔞𝔪𝔦𝔩𝔦𝔞 &amp;bull; 𝕱𝖗𝖊𝖊𝖉𝖔𝖒 &amp;bull; 𝔏𝔬𝔶𝔞𝔩𝔱𝔶</text>
+
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Extrem gefragt für filigrane Rücken-, Brust- und Unterarm-Motive.</text>
+      </g>
+    </g>
+
+    <!-- 3. Tradition &amp; Gastronomie -->
+    <g transform="translate(0, 230)" filter="url(#digiShadow)">
+      <rect width="500" height="210" rx="18" fill="#14120e" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 20)">
+        <circle cx="16" cy="16" r="15" fill="#38bdf8" fill-opacity="0.15"/>
+        <text x="16" y="21" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#38bdf8">3</text>
+        <text x="45" y="21" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Brauereien, Wappen &amp; Gastronomie</text>
+
+        <rect y="45" width="450" height="70" rx="10" fill="#0c0a08" stroke="#38bdf8" stroke-opacity="0.2"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#38bdf8">Handwerk &amp; Tradition:</text>
+        <text x="20" y="58" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#ffffff">𝔅𝔯𝔞𝔲𝔥𝔞𝔲𝔰 &amp;bull; 𝔊𝔞𝔰𝔱𝔥𝔬𝔣 &amp;bull; 𝔚𝔞𝔭𝔭𝔢𝔫</text>
+
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Klassische Beschilderungen, Bier-Etiketten und Vereinslogos.</text>
+      </g>
+    </g>
+
+    <!-- 4. Social Media &amp; Bio-Design -->
+    <g transform="translate(540, 230)" filter="url(#digiShadow)">
+      <rect width="500" height="210" rx="18" fill="#14120e" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+      <g transform="translate(25, 20)">
+        <circle cx="16" cy="16" r="15" fill="#22c55e" fill-opacity="0.15"/>
+        <text x="16" y="21" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#22c55e">4</text>
+        <text x="45" y="21" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Social Media Bios &amp; Headlines</text>
+
+        <rect y="45" width="450" height="70" rx="10" fill="#0c0a08" stroke="#22c55e" stroke-opacity="0.2"/>
+        <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#22c55e">1-Klick Copy &amp; Paste:</text>
+        <text x="20" y="58" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#ffffff">Instagram &amp;bull; TikTok &amp;bull; Discord</text>
+
+        <text x="0" y="145" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Mathematische Unicode-Fraktur für Überschriften ohne Font-Download.</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

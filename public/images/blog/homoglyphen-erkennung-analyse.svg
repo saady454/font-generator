@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="inspBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d1a"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="inspGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <filter id="inspShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#inspBg)"/>
+
+  <!-- Ambient Glows -->
+  <circle cx="240" cy="200" r="240" fill="#38bdf8" fill-opacity="0.08"/>
+  <circle cx="960" cy="450" r="240" fill="#ef4444" fill-opacity="0.08"/>
+
+  <!-- Header Section -->
+  <g transform="translate(600, 50)" text-anchor="middle">
+    <rect x="-180" y="-16" width="360" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text y="5" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" letter-spacing="2">INSPEKTIONS-METHODIK</text>
+    <text y="48" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">
+      Homoglyphen &amp; URLs <tspan fill="url(#inspGrad)">technisch prüfen</tspan>
+    </text>
+    <text y="78" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">
+      Schritt-für-Schritt-Analyse von Codepoints, Schriftsystemen und Punycode-Konvertierungen
+    </text>
+  </g>
+
+  <!-- Inspector Dashboard Window -->
+  <g transform="translate(100, 140)" filter="url(#inspShadow)">
+    <rect width="1000" height="465" rx="20" fill="#111827" stroke="#ef4444" stroke-opacity="0.3" stroke-width="1.5"/>
+
+    <!-- Browser URL Bar Mockup -->
+    <g transform="translate(30, 25)">
+      <rect width="940" height="55" rx="12" fill="#080d1a" stroke="#ef4444" stroke-width="1.5"/>
+      <circle cx="30" cy="27" r="10" fill="#ef4444" fill-opacity="0.2"/>
+      <text x="30" y="32" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#ef4444">⚠</text>
+      
+      <text x="55" y="34" font-family="monospace" font-size="17" fill="#ffffff">https://www.apple.com</text>
+      <text x="280" y="34" font-family="system-ui, sans-serif" font-size="12" fill="#ef4444">➔ Warnung: Enthält kyrillisches 'а' (U+0430) statt lateinischem 'a' (U+0061)</text>
+      
+      <rect x="760" y="10" width="165" height="35" rx="8" fill="#ef4444" fill-opacity="0.2"/>
+      <text x="842" y="32" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#ef4444">MIXED SCRIPT DETECTED</text>
+    </g>
+
+    <!-- Table of Codepoints Breakdown -->
+    <g transform="translate(30, 100)">
+      
+      <!-- Table Header -->
+      <rect width="940" height="38" rx="8" fill="#1e293b"/>
+      <text x="25" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">ZEICHEN</text>
+      <text x="130" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">CODEPOINT</text>
+      <text x="270" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">SCHRIFTSYSTEM</text>
+      <text x="450" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">OFFIZIELLER UNICODE-NAME</text>
+      <text x="760" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">STATUS</text>
+
+      <!-- Row 1: 'a' kyrillisch (SUSPICIOUS) -->
+      <g transform="translate(0, 48)">
+        <rect width="940" height="46" rx="8" fill="#1f1315" stroke="#ef4444" stroke-opacity="0.3"/>
+        <text x="25" y="29" font-family="monospace" font-size="20" font-weight="bold" fill="#ef4444">а</text>
+        <text x="130" y="29" font-family="monospace" font-size="13" font-weight="bold" fill="#ffffff">U+0430</text>
+        <text x="270" y="29" font-family="system-ui, sans-serif" font-size="12" fill="#ef4444">Cyrillic (Kyrillisch)</text>
+        <text x="450" y="29" font-family="system-ui, sans-serif" font-size="12" fill="#ffffff">CYRILLIC SMALL LETTER A</text>
+        <rect x="760" y="8" width="160" height="28" rx="6" fill="#ef4444"/>
+        <text x="840" y="26" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#ffffff">⚠ HOMOGLYPH ALARM</text>
+      </g>
+
+      <!-- Row 2: 'p' lateinisch (OK) -->
+      <g transform="translate(0, 102)">
+        <rect width="940" height="46" rx="8" fill="#161f30" stroke="#ffffff" stroke-opacity="0.05"/>
+        <text x="25" y="29" font-family="monospace" font-size="20" font-weight="bold" fill="#22c55e">p</text>
+        <text x="130" y="29" font-family="monospace" font-size="13" font-weight="bold" fill="#ffffff">U+0070</text>
+        <text x="270" y="29" font-family="system-ui, sans-serif" font-size="12" fill="#22c55e">Latin (Lateinisch)</text>
+        <text x="450" y="29" font-family="system-ui, sans-serif" font-size="12" fill="#ffffff">LATIN SMALL LETTER P</text>
+        <rect x="760" y="8" width="160" height="28" rx="6" fill="#22c55e" fill-opacity="0.2"/>
+        <text x="840" y="26" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#22c55e">✓ REGULÄRES ZEICHEN</text>
+      </g>
+
+      <!-- Row 3: Punycode Resolution -->
+      <g transform="translate(0, 160)">
+        <rect width="940" height="65" rx="10" fill="#080d1a" stroke="#38bdf8" stroke-opacity="0.3"/>
+        <text x="20" y="26" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#38bdf8">PUNYCODE-KONVERTIERUNG IM DNS-SYSTEM:</text>
+        <text x="20" y="48" font-family="monospace" font-size="15" font-weight="bold" fill="#fbbf24">xn--pple-43d.com</text>
+        <text x="350" y="48" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">➔ Moderne Browser blockieren gemischte Skripte oder zeigen Punycode im Adressfeld an.</text>
+      </g>
+
+    </g>
+
+  </g>
+</svg>
